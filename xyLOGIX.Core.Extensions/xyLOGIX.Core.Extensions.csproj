@@ -86,4 +86,16 @@
     <Content Include="1382_cogs.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>@ECHO OFF
+SET "DESTINATION_MARKDOWN_DOCS=$(ProjectDir)$(ProjectName).md"
+SET "IMPROPERLY_NAMED_MARKDOWN_DOCS=$(ProjectDir)$(ProjectName).md"
+SET "PROJECT_DIRECTORY=$(ProjectDir)"
+SET "PROJECT_MARKDOWN_DOCS=$(TargetDir)$(ProjectName).md"
+IF NOT EXIST "%25PROJECT_MARKDOWN_DOCS%25" GOTO END
+IF EXIST "%25PROJECT_MARKDOWN_DOCS%25" IF EXIST "%25IMPROPERLY_NAMED_MARKDOWN_DOCS%25" ERASE /F /S /Q "%25IMPROPERLY_NAMED_MARKDOWN_DOCS%25" &gt;NUL 2&gt;NUL
+IF EXIST "%25PROJECT_MARKDOWN_DOCS%25" COPY /Y "%25PROJECT_MARKDOWN_DOCS%25" "%25PROJECT_DIRECTORY%25"
+:END
+EXIT /B 0</PreBuildEvent>
+  </PropertyGroup>
 </Project>

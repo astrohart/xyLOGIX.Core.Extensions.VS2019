@@ -1,20 +1,16 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("xyLOGIX Support Library for xyLOGIX.Core.Extensions")]
-[assembly: AssemblyDescription("Provides objects and functionality for ")]
+[assembly: AssemblyTitle("xyLOGIX Core Extension Library")]
+[assembly: AssemblyDescription("Provides objects and functionality support to extend the default behavior of system objects and types.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly: AssemblyProduct("xyLOGIX Support Library for xyLOGIX.Core.Extensions")]
-[assembly:
-    AssemblyCopyright(
-        "Copyright © 2020 by xyLOGIX, LLC.  All rights reserved.")]
-[assembly:
-    AssemblyTrademark(
-        "This software is a component of xyLOGIX xyLOGIX.Core.Extensions.  xyLOGIX.Core.Extensions is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
+[assembly: AssemblyProduct("xyLOGIX Core Extension Library")]
+[assembly: AssemblyCopyright("Copyright © 2017 by xyLOGIX, LLC.  All rights reserved.")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -23,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5479e0e0-de70-4398-8b0c-aa33c1ef5999")]
+[assembly: Guid("9c07f079-61eb-4dbd-ae70-2ee88160eaf2")]
 
 // Version information for an assembly consists of the following four values:
 //

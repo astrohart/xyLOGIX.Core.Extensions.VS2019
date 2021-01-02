@@ -9,6 +9,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>Thread-safe way to run managed code against, e.g., a GUI-thread control.</summary>
         /// <param name="obj">Reference to an instance of an object that implements the <see cref="T:System.ComponentModel.ISynchronizeInvoke" /> interface.</param>
         /// <param name="action">Reference to a <see cref="T:System.Windows.Forms.MethodInvoker" /> delegate that defines the code to be run.</param>
+        /// <remarks>This method should always be called for a child control of a frame window; never the window itself (even though, technically, it also derives from <see cref="T:System.Windows.Forms.Control" /> and implements the <see cref="T:System.ComponentModel.ISynchronizeInvoke" /> interface.</remarks>
         public static void InvokeIfRequired(this ISynchronizeInvoke obj,
             MethodInvoker action)
         {

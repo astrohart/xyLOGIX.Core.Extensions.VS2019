@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions
 {
+    /// <summary>Helper methods for manipulating windows forms.</summary>
     public static class FormExtensions
     {
-        /// <summary>Centers this form on the specified <see cref="parent" /> form.</summary>
+        /// <summary>Centers this form on the specified <paramref name="parent" /> form.</summary>
         /// <param name="child">Reference to the form to be centered.</param>
         /// <param name="parent">Reference to the parent form.</param>
         public static void CenterForm(this Form child, Form parent)
         {
+            if (child == null || child.IsDisposed) return;
+
             child.StartPosition = FormStartPosition.Manual;
             child.Location = new Point(
                 parent.Location.X + (parent.Width - child.Width) / 2,
@@ -19,14 +23,12 @@ namespace xyLOGIX.Core.Extensions
             );
         }
 
-        /// <summary>Centers the specified <see cref="form" /> to the specific <see cref="screen" /> that is passed.</summary>
+        /// <summary>Centers the specified <paramref name="form" /> to the specific <paramref name="screen" /> that is passed.</summary>
         /// <param name="form">Reference to an instance of <see cref="T:System.Windows.Forms.Form" /> that specifies the form to be centered.</param>
         /// <param name="screen">Reference to an instance of <see cref="T:System.Windows.Forms.Screen" /> that specifies the screen that the form is to be centered on.</param>
         public static void CenterForm(this Form form, Screen screen)
         {
-            if (form == null)
-                // stop.
-                throw new ArgumentNullException(nameof(form));
+            if (form == null || form.IsDisposed) return;
 
             if (screen == null)
                 // stop.
@@ -43,7 +45,37 @@ namespace xyLOGIX.Core.Extensions
             form.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        /// <summary>Shows the specified <see cref="form" /> on the user's primary monitor (whatever monitor they have designated as Monitor #1)</summary>
+        /// <summary>Shows a modal dialog that can be awaited upon while a task completes.</summary>
+        /// <param name="form">Reference to an instance of an object that is a child class of <see cref="T:System.Windows.Forms.Form" /> that represents the form to be shown.</param>
+        /// <param name="owner">Reference to an instance of an object that implements the <see cref="T:System.Windows.Forms.IWin32Window" /> that represents the form's owner window.</param>
+        /// <returns>
+        ///     An awaitable
+        ///     <see
+        ///         cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
+        ///     that contains the result of the dialog's closure.
+        /// </returns>
+        public static async Task<DialogResult> ShowDialogAsync(this Form form,
+            IWin32Window owner)
+        {
+            await Task.Yield();
+            return form.IsDisposed ? DialogResult.OK : form.ShowDialog(owner);
+        }
+
+        /// <summary>Shows a modal dialog that can be awaited upon while a task completes.</summary>
+        /// <param name="form">Reference to an instance of an object that is a child class of <see cref="T:System.Windows.Forms.Form" /> that represents the form to be shown.</param>
+        /// <returns>
+        ///     An awaitable
+        ///     <see
+        ///         cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
+        ///     that contains the result of the dialog's closure.
+        /// </returns>
+        public static async Task<DialogResult> ShowDialogAsync(this Form form)
+        {
+            await Task.Yield();
+            return form.IsDisposed ? DialogResult.OK : form.ShowDialog();
+        }
+
+        /// <summary>Shows the specified <paramref name="form" /> on the user's primary monitor (whatever monitor they have designated as Monitor #1)</summary>
         /// <param name="form">Reference to the <see cref="T:System.Windows.Forms.Form" /> to be moved to the user's primary monitor.  The form is also centered on the screen.</param>
         public static void ShowOnPrimaryMonitor(this Form form)
         {

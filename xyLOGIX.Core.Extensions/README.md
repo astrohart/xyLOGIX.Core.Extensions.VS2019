@@ -3,6 +3,8 @@
 
 ## Contents
 
+- [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
+  - [InvokeIfRequired(obj,action)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
@@ -11,6 +13,8 @@
 - [FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions')
   - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(System.Windows.Forms.Form,System.Windows.Forms.Form)')
   - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(System.Windows.Forms.Form,System.Windows.Forms.Screen)')
+  - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-System-Windows-Forms-Form,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(System.Windows.Forms.Form,System.Windows.Forms.IWin32Window)')
+  - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(System.Windows.Forms.Form)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(System.Windows.Forms.Form)')
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
@@ -75,6 +79,31 @@
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
   - [IsSameOrSubclass(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclass-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclass(System.Type,System.Type)')
+
+<a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>
+## ControlExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Helper methods for extending the functionality of controls and forms.
+
+<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker-'></a>
+### InvokeIfRequired(obj,action) `method`
+
+##### Summary
+
+Thread-safe way to run managed code against, e.g., a GUI-thread control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | Reference to an instance of an object that implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
+| action | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | Reference to a [MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines the code to be run. |
 
 <a name='T-xyLOGIX-Core-Extensions-DictionaryExtensions'></a>
 ## DictionaryExtensions `type`
@@ -179,12 +208,16 @@ see, e.g.,
 
 xyLOGIX.Core.Extensions
 
+##### Summary
+
+Helper methods for manipulating windows forms.
+
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Form-'></a>
 ### CenterForm(child,parent) `method`
 
 ##### Summary
 
-Centers this form on the specified [](#!-parent 'parent') form.
+Centers this form on the specified `parent` form.
 
 ##### Parameters
 
@@ -198,7 +231,7 @@ Centers this form on the specified [](#!-parent 'parent') form.
 
 ##### Summary
 
-Centers the specified [](#!-form 'form') to the specific [](#!-screen 'screen') that is passed.
+Centers the specified `form` to the specific `screen` that is passed.
 
 ##### Parameters
 
@@ -207,12 +240,51 @@ Centers the specified [](#!-form 'form') to the specific [](#!-screen 'screen') 
 | form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to an instance of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that specifies the form to be centered. |
 | screen | [System.Windows.Forms.Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') | Reference to an instance of [Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') that specifies the screen that the form is to be centered on. |
 
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-System-Windows-Forms-Form,System-Windows-Forms-IWin32Window-'></a>
+### ShowDialogAsync(form,owner) `method`
+
+##### Summary
+
+Shows a modal dialog that can be awaited upon while a task completes.
+
+##### Returns
+
+An awaitable
+    [DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
+    that contains the result of the dialog's closure.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to an instance of an object that is a child class of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form to be shown. |
+| owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Reference to an instance of an object that implements the [IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') that represents the form's owner window. |
+
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-System-Windows-Forms-Form-'></a>
+### ShowDialogAsync(form) `method`
+
+##### Summary
+
+Shows a modal dialog that can be awaited upon while a task completes.
+
+##### Returns
+
+An awaitable
+    [DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
+    that contains the result of the dialog's closure.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to an instance of an object that is a child class of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form to be shown. |
+
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-System-Windows-Forms-Form-'></a>
 ### ShowOnPrimaryMonitor(form) `method`
 
 ##### Summary
 
-Shows the specified [](#!-form 'form') on the user's primary monitor (whatever monitor they have designated as Monitor #1)
+Shows the specified `form` on the user's primary monitor (whatever monitor they have designated as Monitor #1)
 
 ##### Parameters
 

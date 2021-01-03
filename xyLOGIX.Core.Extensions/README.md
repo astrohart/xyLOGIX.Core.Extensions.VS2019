@@ -9,7 +9,9 @@
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
   - [IsAnyOf\`\`1(source,testObjects)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]- 'xyLOGIX.Core.Extensions.EnumerableExtensions.IsAnyOf``1(``0,``0[])')
+  - [ShuffleIterator\`\`1(source,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ShuffleIterator``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ShuffleIterator``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
   - [Shuffle\`\`1(source)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})')
+  - [Shuffle\`\`1(source,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
 - [FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions')
   - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(System.Windows.Forms.Form,System.Windows.Forms.Form)')
   - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(System.Windows.Forms.Form,System.Windows.Forms.Screen)')
@@ -105,6 +107,10 @@ Thread-safe way to run managed code against, e.g., a GUI-thread control.
 | obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | Reference to an instance of an object that implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
 | action | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | Reference to a [MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines the code to be run. |
 
+##### Remarks
+
+This method should always be called for a child control of a frame window; never the window itself (even though, technically, it also derives from [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface.
+
 <a name='T-xyLOGIX-Core-Extensions-DictionaryExtensions'></a>
 ## DictionaryExtensions `type`
 
@@ -121,7 +127,7 @@ Provides methods for extending any dictionary.
 
 ##### Summary
 
-Transforms an instance of an object of type [Dictionary\`2](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary`2 'System.Collections.Generic.Dictionary`2') into an object by mapping the dictionary elements onto the object's properties that have the same name.
+Transforms an instance of an object of type [String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') into an object by mapping the dictionary elements onto the object's properties that have the same name.
 
 ##### Returns
 
@@ -131,7 +137,7 @@ Reference to an instance of an object of type T whose properties are filled in w
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') | Reference to an instance of an object of type [Dictionary\`2](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary`2 'System.Collections.Generic.Dictionary`2'), whose key-value pairs identify what properties to fill with what information. |
+| source | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') | Reference to an instance of an object of type [String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}'), whose key-value pairs identify what properties to fill with what information. |
 
 ##### Generic Types
 
@@ -150,16 +156,20 @@ In order for this method to work, the object and the dictionary must have the sa
 
 xyLOGIX.Core.Extensions
 
+##### Summary
+
+Helper methods for collections.
+
 <a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]-'></a>
 ### IsAnyOf\`\`1(source,testObjects) `method`
 
 ##### Summary
 
-Compares the [](#!-source 'source') object with the [](#!-testObjects 'testObjects') provided, to see if any of the [](#!-testObjects 'testObjects') is a match.
+Compares the `source` object with the `testObjects` provided, to see if any of the `testObjects` is a match.
 
 ##### Returns
 
-True if any of the [](#!-testObjects 'testObjects') equals the source; false otherwise.
+True if any of the `testObjects` equals the source; false otherwise.
 
 ##### Parameters
 
@@ -173,6 +183,34 @@ True if any of the [](#!-testObjects 'testObjects') equals the source; false oth
 | Name | Description |
 | ---- | ----------- |
 | T | Type of the object to be tested. |
+
+<a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-ShuffleIterator``1-System-Collections-Generic-IEnumerable{``0},System-Random-'></a>
+### ShuffleIterator\`\`1(source,rng) `method`
+
+##### Summary
+
+Shuffles the elements of the sequence into a random order, and then returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.  Uses the random-number generator passed in the `rng` parameter.  Behaves like the [Shuffle](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle') method, although this method can be utilized as an iterator.
+
+##### Returns
+
+A new sequence, with the order of the elements randomized, according to the Fisher-Yates-Durstenfeld shuffle.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Sequence to be shuffled. |
+| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to generate new random values for the shuffle operation. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | Type of the elements of the sequence. |
+
+##### Remarks
+
+see, e.g.,
 
 <a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0}-'></a>
 ### Shuffle\`\`1(source) `method`
@@ -190,6 +228,34 @@ A new sequence, with the order of the elements randomized, according to the Fish
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Sequence to be shuffled. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | Type of the elements of the sequence. |
+
+##### Remarks
+
+see, e.g.,
+
+<a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0},System-Random-'></a>
+### Shuffle\`\`1(source,rng) `method`
+
+##### Summary
+
+Shuffles the elements of the sequence into a random order, and then returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.  Uses the random-number generator passed in the `rng` parameter.
+
+##### Returns
+
+A new sequence, with the order of the elements randomized, according to the Fisher-Yates-Durstenfeld shuffle.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Sequence to be shuffled. |
+| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to generate new random values for the shuffle operation. |
 
 ##### Generic Types
 
@@ -1348,15 +1414,15 @@ Helper methods to assist in handling runtime type information.
 
 ##### Summary
 
-Ascertains whether the [](#!-potentialDescendant 'potentialDescendant') is of the same, or a subclass of, the base class whose [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') is passed.
+Ascertains whether the `potentialDescendant` is of the same, or a subclass of, the base class whose [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') is passed.
 
 ##### Returns
 
-True if the type of the [](#!-potentialDescendant 'potentialDescendant') is the same as, or a subclass of, the base type.
+True if the type of the `potentialDescendant` is the same as, or a subclass of, the base type.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | potentialDescendant | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Type to be examined. |
-| potentialBaseType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Reference to the [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') structure of the class you think might be the [](#!-potentialDescendant 'potentialDescendant')'s base. |
+| potentialBaseType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Reference to the [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') structure of the class you think might be the `potentialDescendant`'s base. |

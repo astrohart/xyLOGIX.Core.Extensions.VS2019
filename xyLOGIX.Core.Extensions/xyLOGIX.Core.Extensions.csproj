@@ -43,6 +43,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\x86\Debug\xyLOGIX.Core.Extensions.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -54,6 +55,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\x86\Release\xyLOGIX.Core.Extensions.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <OutputType>Library</OutputType>
@@ -106,16 +108,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>@ECHO OFF
-SET "DESTINATION_MARKDOWN_DOCS=$(ProjectDir)$(ProjectName).md"
-SET "IMPROPERLY_NAMED_MARKDOWN_DOCS=$(ProjectDir)$(ProjectName).md"
-SET "PROJECT_DIRECTORY=$(ProjectDir)"
-SET "PROJECT_MARKDOWN_DOCS=$(TargetDir)$(ProjectName).md"
-IF NOT EXIST "%25PROJECT_MARKDOWN_DOCS%25" GOTO END
-IF EXIST "%25PROJECT_MARKDOWN_DOCS%25" IF EXIST "%25IMPROPERLY_NAMED_MARKDOWN_DOCS%25" ERASE /F /S /Q "%25IMPROPERLY_NAMED_MARKDOWN_DOCS%25" &gt;NUL 2&gt;NUL
-IF EXIST "%25PROJECT_MARKDOWN_DOCS%25" COPY /Y "%25PROJECT_MARKDOWN_DOCS%25" "%25PROJECT_DIRECTORY%25\README.md"
-:END
-EXIT /B 0</PreBuildEvent>
+    <PreBuildEvent>if exist "$(TargetDir)$(ProjectName).md" (
+    if exist "$(ProjectDir)README.md" (
+        erase /F /Q "$(ProjectDir)README.md"
+    )
+    copy /Y "$(TargetDir)$(ProjectName).md" "$(ProjectDir)README.md"
+    git commit -m "Update README.md"
+    git push -u origin master
+)
+exit /b 0</PreBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Vsxmd.1.4.5\build\Vsxmd.targets" Condition="Exists('..\packages\Vsxmd.1.4.5\build\Vsxmd.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

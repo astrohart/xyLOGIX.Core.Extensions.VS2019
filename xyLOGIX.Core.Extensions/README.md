@@ -91,25 +91,60 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Helper methods for extending the functionality of controls and forms.
+The `ControlExtensions` class provides helper methods for extending the functionality of .NET framework controls.
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker-'></a>
 ### InvokeIfRequired(obj,action) `method`
 
 ##### Summary
 
-Thread-safe way to run managed code against, e.g., a GUI-thread control.
+Provides a thread-safe way to run managed code against, e.g., a GUI-thread control.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | Reference to an instance of an object that implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
-| action | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | Reference to a [MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines the code to be run. |
+| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | (Required.) Reference to an instance of an object that implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
+| action | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | (Required.) Reference to a [MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines the code to be run. |
+
+##### Example
+
+This example shows how to call the [InvokeIfRequired](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired') method.
+
+```
+ namespace Foo
+ {
+     public class Form1
+     {
+         private System.Windows.Forms.Label mainInstructionLabel;
+         private System.Windows.Forms.TextBox filenameTextBox;
+         private System.Windows.Forms.Button okButton;
+         public Form1()
+         {
+             InitializeComponent();
+         }
+         protected override void OnLoad(EventArgs e)
+         {
+             // Let's suppose we are calling this form from another thread.
+             // To fill the text box, we need to use Invoke, if required.
+             // NOTE: You can call the InvokeIfRequired extension method on any
+             // of the child controls of the form.  Just do not call it on the form
+             // itself; i.e., do not do 'this.InvokeIfRequired(...)'.
+             filenameTextBox.InvokeIfRequired(()=&gt; {
+                 mainInstructionLabel.Text = "Type the name of the &amp;file to open:";
+                 okButton.DialogResult = DialogResult.OK;
+                 AcceptButton = okButton;
+             });
+         }
+         /* ... other form code ... */
+     }
+ }
+ 
+```
 
 ##### Remarks
 
-This method should always be called for a child control of a frame window; never the window itself (even though, technically, it also derives from [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface.
+This method should always be called for a child control of a frame window; never the window itself (even though, technically, it also derives from [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface).
 
 <a name='T-xyLOGIX-Core-Extensions-DictionaryExtensions'></a>
 ## DictionaryExtensions `type`

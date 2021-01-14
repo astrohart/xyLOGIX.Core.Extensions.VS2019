@@ -128,4 +128,17 @@ exit /b 0</PreBuildEvent>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Vsxmd.1.4.5\build\Vsxmd.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Vsxmd.1.4.5\build\Vsxmd.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>if "$(ConfigurationName)"=="Release" (
+	erase /F /S /Q "$(TargetDir)*.pdb"
+	erase /F /S /Q "$(TargetDir)*.config"
+	erase /F /S /Q "$(TargetDir)*.vshost.exe"
+	attrib +r "$(TargetDir)$(ProjectName).xml"
+	attrib +r "$(TargetDir)$(ProjectName).md"
+	erase /F /S /Q "$(TargetDir)*.xml"
+	attrib -r "$(TargetDir)$(ProjectName).xml"
+	attrib -r "$(TargetDir)$(ProjectName).md"
+)
+exit /b 0</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -34,7 +34,7 @@ namespace xyLOGIX.Core.Extensions
         ///             // of the child controls of the form.  Just do not call it on the form
         ///             // itself; i.e., do not do 'this.InvokeIfRequired(...)'.
         ///             filenameTextBox.InvokeIfRequired(()=> {
-        ///                 mainInstructionLabel.Text = "Type the name of the &amp;file to open:";
+        ///                 mainInstructionLabel.Text = "Type the name of the &file to open:";
         ///                 okButton.DialogResult = DialogResult.OK;
         ///                 AcceptButton = okButton;
         ///             });

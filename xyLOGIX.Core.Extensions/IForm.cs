@@ -8,8 +8,26 @@ using System.Windows.Forms.Layout;
 
 namespace xyLOGIX.Core.Extensions
 {
+   /// <summary>
+   /// Defines the public-exposed methods and properties of an object that
+   /// implements a Windows Form.
+   /// </summary>
+   /// <remarks>
+   /// This interface is allows any object to serve as a proxy for a Windows
+   /// Form. This interface is here so that any form, in principle, that
+   /// implements the methods and properties below can be extended by the
+   /// <see
+   ///    cref="T:xyLOGIX.Core.Extensions.FormExtensions" />
+   /// class without
+   /// necessarily having to be a Windows Form per se. NOTE: The methods and
+   /// properties of this interface are not documented here. Please see the
+   /// <see
+   ///    cref="T:System.Windows.Forms.Form" />
+   /// class' XML doc comments for the documentation.
+   /// </remarks>
    public interface IForm : IWin32Window
    {
+#pragma warning disable 1591
       IButtonControl AcceptButton { get; set; }
       AccessibleObject AccessibilityObject { get; }
       string AccessibleDefaultActionDescription { get; set; }
@@ -492,5 +510,6 @@ namespace xyLOGIX.Core.Extensions
       bool ValidateChildren();
 
       bool ValidateChildren(ValidationConstraints validationConstraints);
+#pragma warning restore 1591
    }
 }

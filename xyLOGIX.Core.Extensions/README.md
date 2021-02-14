@@ -25,6 +25,7 @@
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
 - [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions')
+  - [AddDistinct(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct-System-Collections-IList,System-Object- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct(System.Collections.IList,System.Object)')
   - [AddDistinct\`\`1(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.IList{``0},``0)')
   - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
@@ -525,6 +526,26 @@ xyLOGIX.Core.Extensions
 ##### Summary
 
 Provides methods to help with lists of items.
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct-System-Collections-IList,System-Object-'></a>
+### AddDistinct(list,item) `method`
+
+##### Summary
+
+Adds an `item` to a `list`, but only
+if the item is not already present in the list. If it is, then this
+method does nothing. If `null` is passed for the
+`list`
+parameter, then this method likewise also does nothing.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| list | [System.Collections.IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') | Reference to an instance of an object that implements the
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList')
+interface. |
+| item | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | Element to be added to the collection, unless it's in the collection already. |
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0-'></a>
 ### AddDistinct\`\`1(list,item) `method`

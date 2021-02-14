@@ -65,6 +65,32 @@ namespace xyLOGIX.Core.Extensions
       }
 
       /// <summary>
+      /// Adds an <paramref name="item" /> to a <paramref name="list" />, but only
+      /// if the item is not already present in the list. If it is, then this
+      /// method does nothing. If <c>null</c> is passed for the
+      /// <paramref
+      ///    name="list" />
+      /// parameter, then this method likewise also does nothing.
+      /// </summary>
+      /// <param name="list">
+      /// Reference to an instance of an object that implements the
+      /// <see
+      ///    cref="T:System.Collections.IList" />
+      /// interface.
+      /// </param>
+      /// <param name="item">
+      /// Element to be added to the collection, unless it's in the collection already.
+      /// </param>
+      public static void AddDistinct(this IList list, object item)
+      {
+         if (list == null) return;
+
+         if (list.Contains(item)) return;
+
+         list.Add(item);
+      }
+
+      /// <summary>
       /// Creates a duplicate of the list given to it and returns a reference to
       /// the clone.
       /// </summary>

@@ -13,13 +13,13 @@
   - [Shuffle\`\`1(source)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})')
   - [Shuffle\`\`1(source,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
 - [FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions')
-  - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(System.Windows.Forms.Form,System.Windows.Forms.Form)')
-  - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(System.Windows.Forms.Form,System.Windows.Forms.Screen)')
+  - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Form)')
+  - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Screen)')
   - [DoIfDisposed(form,action)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
   - [DoIfNotDisposed(form,action)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfNotDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
-  - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-System-Windows-Forms-Form,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(System.Windows.Forms.Form,System.Windows.Forms.IWin32Window)')
-  - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(System.Windows.Forms.Form)')
-  - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(System.Windows.Forms.Form)')
+  - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
+  - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
+  - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
 - [IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm')
   - [ProgressBar](#P-xyLOGIX-Core-Extensions-IForm-ProgressBar 'xyLOGIX.Core.Extensions.IForm.ProgressBar')
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
@@ -327,7 +327,7 @@ xyLOGIX.Core.Extensions
 
 Helper methods for manipulating windows forms.
 
-<a name='M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Form-'></a>
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Form-'></a>
 ### CenterForm(child,parent) `method`
 
 ##### Summary
@@ -338,10 +338,10 @@ Centers this form on the specified `parent` form.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| child | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to the form to be centered. |
+| child | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the form to be centered. |
 | parent | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to the parent form. |
 
-<a name='M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-System-Windows-Forms-Form,System-Windows-Forms-Screen-'></a>
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen-'></a>
 ### CenterForm(form,screen) `method`
 
 ##### Summary
@@ -353,7 +353,7 @@ Centers the specified `form` to the specific
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to an instance of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
 that specifies the form to be centered. |
 | screen | [System.Windows.Forms.Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') | Reference to an instance of
 [Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen')
@@ -394,7 +394,7 @@ nothing is done.
 | action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the form
 is not disposed. |
 
-<a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-System-Windows-Forms-Form,System-Windows-Forms-IWin32Window-'></a>
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
 ### ShowDialogAsync(form,owner) `method`
 
 ##### Summary
@@ -411,7 +411,7 @@ that contains the result of the dialog's closure.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to an instance of an object that is a child class of
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of
 [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
 that represents the form to be shown. |
 | owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Reference to an instance of an object that implements the
@@ -419,7 +419,7 @@ that represents the form to be shown. |
 that represents the
 form's owner window. |
 
-<a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-System-Windows-Forms-Form-'></a>
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm-'></a>
 ### ShowDialogAsync(form) `method`
 
 ##### Summary
@@ -436,11 +436,11 @@ that contains the result of the dialog's closure.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to an instance of an object that is a child class of
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of
 [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
 that represents the form to be shown. |
 
-<a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-System-Windows-Forms-Form-'></a>
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm-'></a>
 ### ShowOnPrimaryMonitor(form) `method`
 
 ##### Summary
@@ -452,7 +452,7 @@ monitor (whatever monitor they have designated as Monitor #1)
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') to be moved
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') to be moved
 to the user's primary monitor. The form is also centered on the screen. |
 
 <a name='T-xyLOGIX-Core-Extensions-IForm'></a>
@@ -461,6 +461,23 @@ to the user's primary monitor. The form is also centered on the screen. |
 ##### Namespace
 
 xyLOGIX.Core.Extensions
+
+##### Summary
+
+Defines the public-exposed methods and properties of an object that
+implements a Windows Form.
+
+##### Remarks
+
+This interface is allows any object to serve as a proxy for a Windows
+Form. This interface is here so that any form, in principle, that
+implements the methods and properties below can be extended by the
+[FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions')
+class without
+necessarily having to be a Windows Form per se. NOTE: The methods and
+properties of this interface are not documented here. Please see the
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+class' XML doc comments for the documentation.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-ProgressBar'></a>
 ### ProgressBar `property`

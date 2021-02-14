@@ -24,13 +24,12 @@
   - [ProgressBar](#P-xyLOGIX-Core-Extensions-IForm-ProgressBar 'xyLOGIX.Core.Extensions.IForm.ProgressBar')
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
-- [ListHelpers](#T-xyLOGIX-Core-Extensions-ListHelpers 'xyLOGIX.Core.Extensions.ListHelpers')
-  - [AddDistinct(collection,item)](#M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct-System-Windows-Forms-ComboBox-ObjectCollection,System-Object- 'xyLOGIX.Core.Extensions.ListHelpers.AddDistinct(System.Windows.Forms.ComboBox.ObjectCollection,System.Object)')
-  - [AddDistinct\`\`1(list,item)](#M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct``1-System-Collections-Generic-IList{``0},``0- 'xyLOGIX.Core.Extensions.ListHelpers.AddDistinct``1(System.Collections.Generic.IList{``0},``0)')
-  - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListHelpers.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
-  - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListHelpers-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListHelpers.Clone``1(System.Collections.Generic.ICollection{``0})')
-  - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListHelpers-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListHelpers.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
-  - [ToSetString(list)](#M-xyLOGIX-Core-Extensions-ListHelpers-ToSetString-System-Collections-IList- 'xyLOGIX.Core.Extensions.ListHelpers.ToSetString(System.Collections.IList)')
+- [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions')
+  - [AddDistinct\`\`1(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.IList{``0},``0)')
+  - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
+  - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
+  - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
+  - [ToSetString(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString-System-Collections-IList- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString(System.Collections.IList)')
 - [Resources](#T-xyLOGIX-Core-Extensions-Properties-Resources 'xyLOGIX.Core.Extensions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Properties.Resources.Culture')
   - [NCharsMustBePositive](#P-xyLOGIX-Core-Extensions-Properties-Resources-NCharsMustBePositive 'xyLOGIX.Core.Extensions.Properties.Resources.NCharsMustBePositive')
@@ -499,8 +498,8 @@ Returns a value indicating whether the specified `value` is equal to one of the 
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Integer to be compared to the members of the list. |
 | list | [System.Int32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32[] 'System.Int32[]') | Collection of integers that should be searched for the `value`. |
 
-<a name='T-xyLOGIX-Core-Extensions-ListHelpers'></a>
-## ListHelpers `type`
+<a name='T-xyLOGIX-Core-Extensions-ListExtensions'></a>
+## ListExtensions `type`
 
 ##### Namespace
 
@@ -510,32 +509,7 @@ xyLOGIX.Core.Extensions
 
 Provides methods to help with lists of items.
 
-<a name='M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct-System-Windows-Forms-ComboBox-ObjectCollection,System-Object-'></a>
-### AddDistinct(collection,item) `method`
-
-##### Summary
-
-Adds an `item` to a `collection`,
-but only if the item is not already present in the collection. If it
-is, then this method does nothing.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| collection | [System.Windows.Forms.ComboBox.ObjectCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.ObjectCollection 'System.Windows.Forms.ComboBox.ObjectCollection') | Reference to a collection that implements the
-[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
-interface for items of
-type `T`. |
-| item | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | Element to be added to the collection, unless it's in the collection already. |
-
-##### Generic Types
-
-| Name | Description |
-| ---- | ----------- |
-| T | Type of the new element. |
-
-<a name='M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct``1-System-Collections-Generic-IList{``0},``0-'></a>
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0-'></a>
 ### AddDistinct\`\`1(list,item) `method`
 
 ##### Summary
@@ -548,7 +522,7 @@ this method does nothing.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a collection that implements the
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a list that implements the
 [IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
 interface for items of
 type `T`. |
@@ -560,32 +534,34 @@ type `T`. |
 | ---- | ----------- |
 | T | Type of the new element. |
 
-<a name='M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0-'></a>
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0-'></a>
 ### AddDistinct\`\`1(collection,item) `method`
 
 ##### Summary
 
 Adds an `item` to a `collection`,
-but only if the item is not already present in the collection. If it
-is, then this method does nothing.
+but only if the item is not already present in the collection. If the
+`item` is already a member of the
+`collection`
+, then this method does nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a collection that implements the
-[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
-interface for items of
-type `T`. |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a list that implements the
+[ICollection{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{T}')
+interface for
+items of type `T`. |
 | item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
 
 ##### Generic Types
 
 | Name | Description |
 | ---- | ----------- |
-| T | Type of the new element. |
+| T | Type of the elements of the `collection`. |
 
-<a name='M-xyLOGIX-Core-Extensions-ListHelpers-Clone``1-System-Collections-Generic-ICollection{``0}-'></a>
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}-'></a>
 ### Clone\`\`1(source) `method`
 
 ##### Summary
@@ -610,7 +586,7 @@ Reference to the duplicate of the collection referenced by
 | ---- | ----------- |
 | T | Type of object in the list. |
 
-<a name='M-xyLOGIX-Core-Extensions-ListHelpers-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}-'></a>
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}-'></a>
 ### IsOneOf(value,valueSet) `method`
 
 ##### Summary
@@ -630,7 +606,7 @@ true if `value` is in the `valueSet`
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to compare. |
 | valueSet | [System.Collections.Generic.IEnumerable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.Int32}') | Range of integer values to check. |
 
-<a name='M-xyLOGIX-Core-Extensions-ListHelpers-ToSetString-System-Collections-IList-'></a>
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString-System-Collections-IList-'></a>
 ### ToSetString(list) `method`
 
 ##### Summary

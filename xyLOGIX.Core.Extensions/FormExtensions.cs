@@ -20,7 +20,7 @@ namespace xyLOGIX.Core.Extensions
       /// <param name="parent">
       /// Reference to the parent form.
       /// </param>
-      public static void CenterForm(this Form child, Form parent)
+      public static void CenterForm(this IForm child, Form parent)
       {
          if (child == null || child.IsDisposed) return;
 
@@ -46,7 +46,7 @@ namespace xyLOGIX.Core.Extensions
       /// that specifies the screen that
       /// the form is to be centered on.
       /// </param>
-      public static void CenterForm(this Form form, Screen screen)
+      public static void CenterForm(this IForm form, Screen screen)
       {
          if (form == null || form.IsDisposed) return;
 
@@ -126,7 +126,7 @@ namespace xyLOGIX.Core.Extensions
       ///    cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
       /// that contains the result of the dialog's closure.
       /// </returns>
-      public static async Task<DialogResult> ShowDialogAsync(this Form form,
+      public static async Task<DialogResult> ShowDialogAsync(this IForm form,
          IWin32Window owner)
       {
          await Task.Yield();
@@ -148,7 +148,7 @@ namespace xyLOGIX.Core.Extensions
       ///    cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
       /// that contains the result of the dialog's closure.
       /// </returns>
-      public static async Task<DialogResult> ShowDialogAsync(this Form form)
+      public static async Task<DialogResult> ShowDialogAsync(this IForm form)
       {
          await Task.Yield();
          return form.IsDisposed ? DialogResult.OK : form.ShowDialog();
@@ -162,7 +162,7 @@ namespace xyLOGIX.Core.Extensions
       /// Reference to the <see cref="T:System.Windows.Forms.Form" /> to be moved
       /// to the user's primary monitor. The form is also centered on the screen.
       /// </param>
-      public static void ShowOnPrimaryMonitor(this Form form)
+      public static void ShowOnPrimaryMonitor(this IForm form)
       {
          if (form == null) throw new ArgumentNullException(nameof(form));
 

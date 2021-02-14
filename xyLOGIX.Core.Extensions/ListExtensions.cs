@@ -7,7 +7,7 @@ namespace xyLOGIX.Core.Extensions
    /// <summary>
    /// Provides methods to help with lists of items.
    /// </summary>
-   public static class ListHelpers
+   public static class ListExtensions
    {
       /// <summary>
       /// Adds an <paramref name="item" /> to a <paramref name="list" />, but only

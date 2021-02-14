@@ -15,7 +15,7 @@ namespace xyLOGIX.Core.Extensions
       /// this method does nothing.
       /// </summary>
       /// <param name="list">
-      /// Reference to a collection that implements the
+      /// Reference to a list that implements the
       /// <see
       ///    cref="T:System.Collections.Generic.IList" />
       /// interface for items of
@@ -32,6 +32,36 @@ namespace xyLOGIX.Core.Extensions
          if (list.Contains(item)) return;
 
          list.Add(item);
+      }
+
+      /// <summary>
+      /// Adds an <paramref name="item" /> to a <paramref name="collection" />,
+      /// but only if the item is not already present in the collection. If the
+      /// <paramref name="item" /> is already a member of the
+      /// <paramref
+      ///    name="collection" />
+      /// , then this method does nothing.
+      /// </summary>
+      /// <param name="collection">
+      /// Reference to a list that implements the
+      /// <see
+      ///    cref="T:System.Collections.Generic.ICollection{T}" />
+      /// interface for
+      /// items of type <typeparamref name="T" />.
+      /// </param>
+      /// <param name="item">
+      /// Element to be added to the collection, unless it's in the collection already.
+      /// </param>
+      /// <typeparam name="T">
+      /// Type of the elements of the <paramref name="collection" />.
+      /// </typeparam>
+      public static void AddDistinct<T>(this ICollection<T> collection, T item)
+      {
+         if (collection == null) return;
+
+         if (collection.Contains(item)) return;
+
+         collection.Add(item);
       }
 
       /// <summary>

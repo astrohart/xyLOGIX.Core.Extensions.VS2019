@@ -25,6 +25,9 @@
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
 - [ListHelpers](#T-xyLOGIX-Core-Extensions-ListHelpers 'xyLOGIX.Core.Extensions.ListHelpers')
+  - [AddDistinct(collection,item)](#M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct-System-Windows-Forms-ComboBox-ObjectCollection,System-Object- 'xyLOGIX.Core.Extensions.ListHelpers.AddDistinct(System.Windows.Forms.ComboBox.ObjectCollection,System.Object)')
+  - [AddDistinct\`\`1(list,item)](#M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct``1-System-Collections-Generic-IList{``0},``0- 'xyLOGIX.Core.Extensions.ListHelpers.AddDistinct``1(System.Collections.Generic.IList{``0},``0)')
+  - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListHelpers.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListHelpers-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListHelpers.Clone``1(System.Collections.Generic.ICollection{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListHelpers-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListHelpers.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
   - [ToSetString(list)](#M-xyLOGIX-Core-Extensions-ListHelpers-ToSetString-System-Collections-IList- 'xyLOGIX.Core.Extensions.ListHelpers.ToSetString(System.Collections.IList)')
@@ -507,16 +510,93 @@ xyLOGIX.Core.Extensions
 
 Provides methods to help with lists of items.
 
+<a name='M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct-System-Windows-Forms-ComboBox-ObjectCollection,System-Object-'></a>
+### AddDistinct(collection,item) `method`
+
+##### Summary
+
+Adds an `item` to a `collection`,
+but only if the item is not already present in the collection. If it
+is, then this method does nothing.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Windows.Forms.ComboBox.ObjectCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.ObjectCollection 'System.Windows.Forms.ComboBox.ObjectCollection') | Reference to a collection that implements the
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
+interface for items of
+type `T`. |
+| item | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | Element to be added to the collection, unless it's in the collection already. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | Type of the new element. |
+
+<a name='M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct``1-System-Collections-Generic-IList{``0},``0-'></a>
+### AddDistinct\`\`1(list,item) `method`
+
+##### Summary
+
+Adds an `item` to a `list`, but only
+if the item is not already present in the collection. If it is, then
+this method does nothing.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a collection that implements the
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
+interface for items of
+type `T`. |
+| item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | Type of the new element. |
+
+<a name='M-xyLOGIX-Core-Extensions-ListHelpers-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0-'></a>
+### AddDistinct\`\`1(collection,item) `method`
+
+##### Summary
+
+Adds an `item` to a `collection`,
+but only if the item is not already present in the collection. If it
+is, then this method does nothing.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a collection that implements the
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
+interface for items of
+type `T`. |
+| item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | Type of the new element. |
+
 <a name='M-xyLOGIX-Core-Extensions-ListHelpers-Clone``1-System-Collections-Generic-ICollection{``0}-'></a>
 ### Clone\`\`1(source) `method`
 
 ##### Summary
 
-Creates a duplicate of the list given to it and returns a reference to the clone.
+Creates a duplicate of the list given to it and returns a reference to
+the clone.
 
 ##### Returns
 
-Reference to the duplicate of the collection referenced by `source`.
+Reference to the duplicate of the collection referenced by
+`source`.
 
 ##### Parameters
 
@@ -535,11 +615,13 @@ Reference to the duplicate of the collection referenced by `source`.
 
 ##### Summary
 
-Gets a value indicating whether the `value` is among the elements of the `valueSet`.
+Gets a value indicating whether the `value` is among
+the elements of the `valueSet`.
 
 ##### Returns
 
-true if `value` is in the `valueSet`; false otherwise.
+true if `value` is in the `valueSet`
+; false otherwise.
 
 ##### Parameters
 
@@ -553,7 +635,8 @@ true if `value` is in the `valueSet`; false otherwise.
 
 ##### Summary
 
-Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.  Stops past the tenth item.
+Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.
+Stops past the tenth item.
 
 ##### Returns
 
@@ -567,7 +650,8 @@ The `list`, formatted as a set string.
 
 ##### Remarks
 
-This method is helpful for writing some of the members of a collection to a log file.
+This method is helpful for writing some of the members of a collection
+to a log file.
 
 <a name='T-xyLOGIX-Core-Extensions-Properties-Resources'></a>
 ## Resources `type`

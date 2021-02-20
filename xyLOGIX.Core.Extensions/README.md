@@ -3,6 +3,11 @@
 
 ## Contents
 
+- [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
+  - [AreAllItemsSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.AreAllItemsSelected(System.Windows.Forms.CheckedListBox)')
+  - [CheckAll(checkedListBox,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckAll(System.Windows.Forms.CheckedListBox,System.Boolean)')
+  - [CheckByName(checkedListBox,itemName,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckByName-System-Windows-Forms-CheckedListBox,System-String,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckByName(System.Windows.Forms.CheckedListBox,System.String,System.Boolean)')
+  - [GetCheckedByName(checkedListBox,itemName)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.GetCheckedByName(System.Windows.Forms.CheckedListBox,System.String)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
   - [InvokeIfRequired(obj,action)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
@@ -30,7 +35,8 @@
   - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
-  - [ToSetString(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString-System-Collections-IList- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString(System.Collections.IList)')
+  - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
+  - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
 - [Resources](#T-xyLOGIX-Core-Extensions-Properties-Resources 'xyLOGIX.Core.Extensions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Properties.Resources.Culture')
   - [NCharsMustBePositive](#P-xyLOGIX-Core-Extensions-Properties-Resources-NCharsMustBePositive 'xyLOGIX.Core.Extensions.Properties.Resources.NCharsMustBePositive')
@@ -88,6 +94,130 @@
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
   - [IsSameOrSubclass(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclass-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclass(System.Type,System.Type)')
+
+<a name='T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions'></a>
+## CheckedListBoxExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Extension methods for a [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox').
+
+<a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox-'></a>
+### AreAllItemsSelected(checkedListBox) `method`
+
+##### Summary
+
+Gets a value indicating whether all the items in the
+`checkedListBox`
+box are selected.
+
+##### Returns
+
+`true` if all the items in the checked list box are selected;
+`false` otherwise, or if the list box contains zero items.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
+the items of which
+are to be checked. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [ArgumentNullException](#T-ArgumentNullException 'ArgumentNullException') | Thrown if the required parameter, `checkedListBox`,
+is passed a `null` value. |
+
+<a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean-'></a>
+### CheckAll(checkedListBox,isChecked) `method`
+
+##### Summary
+
+Toggles the Checked state of all the items in the specified
+`checkedListBox`
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) A [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') to
+act upon. |
+| isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of all the list items
+or not. Default value is `true`. |
+
+##### Remarks
+
+If the `checkedListBox` parameter is `null`,
+or if the checked list box contains zero items, then this method
+does nothing.
+
+<a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckByName-System-Windows-Forms-CheckedListBox,System-String,System-Boolean-'></a>
+### CheckByName(checkedListBox,itemName,isChecked) `method`
+
+##### Summary
+
+Sets the Checked state of the check the box whose name is identical
+to the value in the `itemName` parameter.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) A [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') to
+act upon. |
+| itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the name of the item whose Checked
+state is to be altered. |
+| isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of the list item whose
+name matches that of the string specified by the
+`itemName`
+parameter. Default value is `true`. |
+
+<a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String-'></a>
+### GetCheckedByName(checkedListBox,itemName) `method`
+
+##### Summary
+
+Gets the Checked state ( `true` for checked, `false` for
+unchecked) of the `checkedListBox` item with the
+specified `itemName`.
+
+##### Returns
+
+`false` if the item having a caption of
+`itemName`
+does not exist or the
+`checkedListBox`
+has zero items, or the checked state --
+`true` for checked, `false` for unchecked -- of the item
+whose caption matches the `itemName` parameter's value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
+containing the items
+to be checked. |
+| itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the caption of the item whose Checked
+state should be ascertained. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [ArgumentNullException](#T-ArgumentNullException 'ArgumentNullException') | Thrown if the required parameter, `checkedListBox`,
+is passed a `null` value. |
+| [ArgumentException](#T-ArgumentException 'ArgumentException') | Thrown if the required parameter, `itemName`, is
+passed a blank or `null` string for a value. |
 
 <a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>
 ## ControlExtensions `type`
@@ -644,8 +774,8 @@ true if `value` is in the `valueSet`
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to compare. |
 | valueSet | [System.Collections.Generic.IEnumerable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.Int32}') | Range of integer values to check. |
 
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString-System-Collections-IList-'></a>
-### ToSetString(list) `method`
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}-'></a>
+### ToSetString\`\`1(list) `method`
 
 ##### Summary
 
@@ -660,7 +790,42 @@ The `list`, formatted as a set string.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| list | [System.Collections.IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') | List to be written. |
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | List to be written. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | The type of each element of the list. |
+
+##### Remarks
+
+This method is helpful for writing some of the members of a collection
+to a log file.
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}-'></a>
+### ToSetString\`\`1(collection) `method`
+
+##### Summary
+
+Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.
+Stops past the tenth item.
+
+##### Returns
+
+The `collection`, formatted as a set string.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Collection to be written. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | The type of each element of the list. |
 
 ##### Remarks
 

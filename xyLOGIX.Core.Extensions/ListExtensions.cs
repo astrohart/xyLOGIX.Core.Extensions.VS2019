@@ -131,6 +131,7 @@ namespace xyLOGIX.Core.Extensions
          return valueSet.Any(n => n == value);
       }
 
+      /*
       /// <summary>
       /// Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.
       /// Stops past the tenth item.
@@ -166,6 +167,7 @@ namespace xyLOGIX.Core.Extensions
 
          return result;
       }
+      */
 
       /// <summary>
       /// Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.
@@ -204,6 +206,7 @@ namespace xyLOGIX.Core.Extensions
          return result;
       }
 
+      /*
       /// <summary>
       /// Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.
       /// Stops past the tenth item.
@@ -239,6 +242,7 @@ namespace xyLOGIX.Core.Extensions
 
          return result;
       }
+      */
 
       /// <summary>
       /// Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.

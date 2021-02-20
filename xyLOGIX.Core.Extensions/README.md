@@ -595,7 +595,7 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Defines the public-exposed methods and properties of an object that
+Defines the publicly-exposed methods and properties of an object that
 implements a Windows Form.
 
 ##### Remarks

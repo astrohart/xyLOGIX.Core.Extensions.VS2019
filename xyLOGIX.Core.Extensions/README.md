@@ -216,7 +216,7 @@ state should be ascertained. |
 | ---- | ----------- |
 | [ArgumentNullException](#T-ArgumentNullException 'ArgumentNullException') | Thrown if the required parameter, `checkedListBox`,
 is passed a `null` value. |
-| [ArgumentException](#T-ArgumentException 'ArgumentException') | Thrown if the required parameter, `itemName`, is
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter, `itemName`, is
 passed a blank or `null` string for a value. |
 
 <a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>

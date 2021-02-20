@@ -143,7 +143,7 @@ namespace xyLOGIX.Core.Extensions
         /// Thrown if the required parameter, <paramref name="checkedListBox" />,
         /// is passed a <c>null</c> value.
         /// </exception>
-        /// <exception cref="T:ArgumentException">
+        /// <exception cref="T:System.ArgumentException">
         /// Thrown if the required parameter, <paramref name="itemName" />, is
         /// passed a blank or <c>null</c> string for a value.
         /// </exception>

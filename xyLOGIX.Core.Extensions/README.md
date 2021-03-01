@@ -9,7 +9,6 @@
   - [CheckByName(checkedListBox,itemName,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckByName-System-Windows-Forms-CheckedListBox,System-String,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckByName(System.Windows.Forms.CheckedListBox,System.String,System.Boolean)')
   - [GetCheckedByName(checkedListBox,itemName)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.GetCheckedByName(System.Windows.Forms.CheckedListBox,System.String)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
-  - [InvokeIfRequired(obj,action)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
@@ -111,9 +110,7 @@ Extension methods for a [CheckedListBox](http://msdn.microsoft.com/query/dev14.q
 
 ##### Summary
 
-Gets a value indicating whether all the items in the
-`checkedListBox`
-box are selected.
+Gets a value indicating whether all the items in the `checkedListBox` box are selected.
 
 ##### Returns
 
@@ -124,9 +121,7 @@ box are selected.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
-[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
-the items of which
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') the items of which
 are to be checked. |
 
 ##### Exceptions
@@ -176,9 +171,7 @@ act upon. |
 | itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the name of the item whose Checked
 state is to be altered. |
 | isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of the list item whose
-name matches that of the string specified by the
-`itemName`
-parameter. Default value is `true`. |
+name matches that of the string specified by the `itemName` parameter. Default value is `true`. |
 
 <a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String-'></a>
 ### GetCheckedByName(checkedListBox,itemName) `method`
@@ -191,11 +184,7 @@ specified `itemName`.
 
 ##### Returns
 
-`false` if the item having a caption of
-`itemName`
-does not exist or the
-`checkedListBox`
-has zero items, or the checked state --
+`false` if the item having a caption of `itemName` does not exist or the `checkedListBox` has zero items, or the checked state --
 `true` for checked, `false` for unchecked -- of the item
 whose caption matches the `itemName` parameter's value.
 
@@ -203,9 +192,7 @@ whose caption matches the `itemName` parameter's value.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
-[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
-containing the items
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') containing the items
 to be checked. |
 | itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the caption of the item whose Checked
 state should be ascertained. |
@@ -228,60 +215,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-The `ControlExtensions` class provides helper methods for extending the functionality of .NET framework controls.
-
-<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker-'></a>
-### InvokeIfRequired(obj,action) `method`
-
-##### Summary
-
-Provides a thread-safe way to run managed code against, e.g., a GUI-thread control.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | (Required.) Reference to an instance of an object that implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
-| action | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | (Required.) Reference to a [MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines the code to be run. |
-
-##### Example
-
-This example shows how to call the [InvokeIfRequired](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired') method.
-
-```
- namespace Foo
- {
-     public class Form1
-     {
-         private System.Windows.Forms.Label mainInstructionLabel;
-         private System.Windows.Forms.TextBox filenameTextBox;
-         private System.Windows.Forms.Button okButton;
-         public Form1()
-         {
-             InitializeComponent();
-         }
-         protected override void OnLoad(EventArgs e)
-         {
-             // Let's suppose we are calling this form from another thread.
-             // To fill the text box, we need to use Invoke, if required.
-             // NOTE: You can call the InvokeIfRequired extension method on any
-             // of the child controls of the form.  Just do not call it on the form
-             // itself; i.e., do not do 'this.InvokeIfRequired(...)'.
-             filenameTextBox.InvokeIfRequired(()=&gt; {
-                 mainInstructionLabel.Text = "Type the name of the file to open:";
-                 okButton.DialogResult = DialogResult.OK;
-                 AcceptButton = okButton;
-             });
-         }
-         /* ... other form code ... */
-     }
- }
- 
-```
-
-##### Remarks
-
-This method should always be called for a child control of a frame window; never the window itself (even though, technically, it also derives from [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface).
+The `ControlExtensions` class provides helper methods for extending
+the functionality of .NET framework controls.
 
 <a name='T-xyLOGIX-Core-Extensions-DictionaryExtensions'></a>
 ## DictionaryExtensions `type`
@@ -299,8 +234,7 @@ Provides methods for extending any dictionary.
 
 ##### Summary
 
-Transforms an instance of an object of type
-[String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
+Transforms an instance of an object of type [String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
 into an object by mapping the dictionary elements onto the object's
 properties that have the same name.
 
@@ -313,10 +247,8 @@ filled in with the values from the `source`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') | Reference to an instance of an object of type
-[String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
-,
-whose key-value pairs identify what properties to fill with what information. |
+| source | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') | Reference to an instance of an object of type [String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
+, whose key-value pairs identify what properties to fill with what information. |
 
 ##### Generic Types
 
@@ -349,7 +281,8 @@ Compares the `source` object with the `testObjects` provided, to see if any of t
 
 ##### Returns
 
-True if any of the `testObjects` equals the source; false otherwise.
+True if any of the `testObjects` equals the source;
+false otherwise.
 
 ##### Parameters
 
@@ -369,18 +302,23 @@ True if any of the `testObjects` equals the source; false otherwise.
 
 ##### Summary
 
-Shuffles the elements of the sequence into a random order, and then returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.  Uses the random-number generator passed in the `rng` parameter.  Behaves like the [Shuffle](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle') method, although this method can be utilized as an iterator.
+Shuffles the elements of the sequence into a random order, and then
+returns the resulting sequence. From the Fisher-Yates-Durstenfeld
+shuffle. Uses the random-number generator passed in the `rng` parameter. Behaves like the [Shuffle](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle')
+method, although this method can be utilized as an iterator.
 
 ##### Returns
 
-A new sequence, with the order of the elements randomized, according to the Fisher-Yates-Durstenfeld shuffle.
+A new sequence, with the order of the elements randomized, according
+to the Fisher-Yates-Durstenfeld shuffle.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Sequence to be shuffled. |
-| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to generate new random values for the shuffle operation. |
+| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to generate new
+random values for the shuffle operation. |
 
 ##### Generic Types
 
@@ -397,11 +335,13 @@ see, e.g.,
 
 ##### Summary
 
-Shuffles the elements of the sequence into a random order, and then returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.
+Shuffles the elements of the sequence into a random order, and then
+returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.
 
 ##### Returns
 
-A new sequence, with the order of the elements randomized, according to the Fisher-Yates-Durstenfeld shuffle.
+A new sequence, with the order of the elements randomized, according
+to the Fisher-Yates-Durstenfeld shuffle.
 
 ##### Parameters
 
@@ -424,18 +364,22 @@ see, e.g.,
 
 ##### Summary
 
-Shuffles the elements of the sequence into a random order, and then returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.  Uses the random-number generator passed in the `rng` parameter.
+Shuffles the elements of the sequence into a random order, and then
+returns the resulting sequence. From the Fisher-Yates-Durstenfeld
+shuffle. Uses the random-number generator passed in the `rng` parameter.
 
 ##### Returns
 
-A new sequence, with the order of the elements randomized, according to the Fisher-Yates-Durstenfeld shuffle.
+A new sequence, with the order of the elements randomized, according
+to the Fisher-Yates-Durstenfeld shuffle.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Sequence to be shuffled. |
-| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to generate new random values for the shuffle operation. |
+| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to generate new
+random values for the shuffle operation. |
 
 ##### Generic Types
 
@@ -484,20 +428,17 @@ Centers the specified `form` to the specific
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-that specifies the form to be centered. |
-| screen | [System.Windows.Forms.Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') | Reference to an instance of
-[Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen')
-that specifies the screen that
-the form is to be centered on. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that specifies the form to be centered. |
+| screen | [System.Windows.Forms.Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') | Reference to an instance of [Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') that specifies the screen
+that the form is to be centered on. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action-'></a>
 ### DoIfDisposed(form,action) `method`
 
 ##### Summary
 
-Invokes an action on the form unless it's not disposed, in which case
-nothing is done.
+Invokes an action on the form unless it's not disposed, in which
+case nothing is done.
 
 ##### Parameters
 
@@ -505,8 +446,8 @@ nothing is done.
 | ---- | ---- | ----------- |
 | form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to perform the
 `action`. |
-| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the form
-is disposed. |
+| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
+form is disposed. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action-'></a>
 ### DoIfNotDisposed(form,action) `method`
@@ -522,8 +463,8 @@ nothing is done.
 | ---- | ---- | ----------- |
 | form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to perform the
 `action`. |
-| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the form
-is not disposed. |
+| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
+form is not disposed. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
 ### ShowDialogAsync(form,owner) `method`
@@ -534,20 +475,15 @@ Shows a modal dialog that can be awaited upon while a task completes.
 
 ##### Returns
 
-An awaitable
-[DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
+An awaitable [DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
 that contains the result of the dialog's closure.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-that represents the form to be shown. |
-| owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Reference to an instance of an object that implements the
-[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window')
-that represents the
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form to be shown. |
+| owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Reference to an instance of an object that implements the [IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') that represents the
 form's owner window. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm-'></a>
@@ -559,17 +495,14 @@ Shows a modal dialog that can be awaited upon while a task completes.
 
 ##### Returns
 
-An awaitable
-[DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
+An awaitable [DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
 that contains the result of the dialog's closure.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-that represents the form to be shown. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form to be shown. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm-'></a>
 ### ShowOnPrimaryMonitor(form) `method`
@@ -583,8 +516,9 @@ monitor (whatever monitor they have designated as Monitor #1)
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') to be moved
-to the user's primary monitor. The form is also centered on the screen. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') to be
+moved to the user's primary monitor. The form is also centered on
+the screen. |
 
 <a name='T-xyLOGIX-Core-Extensions-IForm'></a>
 ## IForm `type`
@@ -602,13 +536,11 @@ implements a Windows Form.
 
 This interface is allows any object to serve as a proxy for a Windows
 Form. This interface is here so that any form, in principle, that
-implements the methods and properties below can be extended by the
-[FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions')
-class without
+implements the methods and properties below can be extended by the [FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions') class without
 necessarily having to be a Windows Form per se. NOTE: The methods and
 properties of this interface are not documented here. Please see the
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-class' XML doc comments for the documentation.
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') class' XML doc comments for
+the documentation.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-ProgressBar'></a>
 ### ProgressBar `property`
@@ -637,7 +569,8 @@ Returns a value indicating whether the specified `value` is equal to one of the 
 
 ##### Returns
 
-`true` if `value` is one of the elements of the collection; `false` if not.
+`true` if `value` is one of the elements of
+the collection; `false` if not.
 
 ##### Parameters
 
@@ -662,19 +595,15 @@ Provides methods to help with lists of items.
 
 ##### Summary
 
-Adds an `item` to a `list`, but only
-if the item is not already present in the list. If it is, then this
-method does nothing. If `null` is passed for the
-`list`
-parameter, then this method likewise also does nothing.
+Adds an `item` to a `list`, but
+only if the item is not already present in the list. If it is, then
+this method does nothing. If `null` is passed for the `list` parameter, then this method likewise also does nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| list | [System.Collections.IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') | Reference to an instance of an object that implements the
-[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList')
-interface. |
+| list | [System.Collections.IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') | Reference to an instance of an object that implements the [IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') interface. |
 | item | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | Element to be added to the collection, unless it's in the collection already. |
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0-'></a>
@@ -682,17 +611,15 @@ interface. |
 
 ##### Summary
 
-Adds an `item` to a `list`, but only
-if the item is not already present in the collection. If it is, then
-this method does nothing.
+Adds an `item` to a `list`, but
+only if the item is not already present in the collection. If it is,
+then this method does nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a list that implements the
-[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
-interface for items of
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a list that implements the [IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList') interface for items of
 type `T`. |
 | item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
 
@@ -708,18 +635,14 @@ type `T`. |
 ##### Summary
 
 Adds an `item` to a `collection`,
-but only if the item is not already present in the collection. If the
-`item` is already a member of the
-`collection`
-, then this method does nothing.
+but only if the item is not already present in the collection. If
+the `item` is already a member of the `collection` , then this method does nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a list that implements the
-[ICollection{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{T}')
-interface for
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a list that implements the [ICollection{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{T}') interface for
 items of type `T`. |
 | item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
 
@@ -734,13 +657,12 @@ items of type `T`. |
 
 ##### Summary
 
-Creates a duplicate of the list given to it and returns a reference to
-the clone.
+Creates a duplicate of the list given to it and returns a reference
+to the clone.
 
 ##### Returns
 
-Reference to the duplicate of the collection referenced by
-`source`.
+Reference to the duplicate of the collection referenced by `source`.
 
 ##### Parameters
 
@@ -759,13 +681,12 @@ Reference to the duplicate of the collection referenced by
 
 ##### Summary
 
-Gets a value indicating whether the `value` is among
-the elements of the `valueSet`.
+Gets a value indicating whether the `value` is
+among the elements of the `valueSet`.
 
 ##### Returns
 
-true if `value` is in the `valueSet`
-; false otherwise.
+true if `value` is in the `valueSet` ; false otherwise.
 
 ##### Parameters
 
@@ -779,8 +700,8 @@ true if `value` is in the `valueSet`
 
 ##### Summary
 
-Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.
-Stops past the tenth item.
+Writes a list variable out as a set {1,2,3,4} e.g., as in
+mathematics. Stops past the tenth item.
 
 ##### Returns
 
@@ -800,16 +721,16 @@ The `list`, formatted as a set string.
 
 ##### Remarks
 
-This method is helpful for writing some of the members of a collection
-to a log file.
+This method is helpful for writing some of the members of a
+collection to a log file.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}-'></a>
 ### ToSetString\`\`1(collection) `method`
 
 ##### Summary
 
-Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics.
-Stops past the tenth item.
+Writes a list variable out as a set {1,2,3,4} e.g., as in
+mathematics. Stops past the tenth item.
 
 ##### Returns
 
@@ -829,8 +750,8 @@ The `collection`, formatted as a set string.
 
 ##### Remarks
 
-This method is helpful for writing some of the members of a collection
-to a log file.
+This method is helpful for writing some of the members of a
+collection to a log file.
 
 <a name='T-xyLOGIX-Core-Extensions-Properties-Resources'></a>
 ## Resources `type`
@@ -1926,15 +1847,18 @@ Helper methods to assist in handling runtime type information.
 
 ##### Summary
 
-Ascertains whether the `potentialDescendant` is of the same, or a subclass of, the base class whose [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') is passed.
+Ascertains whether the `potentialDescendant` is of
+the same, or a subclass of, the base class whose [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') is passed.
 
 ##### Returns
 
-True if the type of the `potentialDescendant` is the same as, or a subclass of, the base type.
+True if the type of the `potentialDescendant` is
+the same as, or a subclass of, the base type.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | potentialDescendant | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Type to be examined. |
-| potentialBaseType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Reference to the [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') structure of the class you think might be the `potentialDescendant`'s base. |
+| potentialBaseType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Reference to the [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') structure of the class
+you think might be the `potentialDescendant`'s base. |

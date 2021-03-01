@@ -70,9 +70,6 @@
     <RootNamespace>xyLOGIX.Core.Extensions</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PostSharp, Version=6.8.9.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
-      <HintPath>..\..\MassFileRenamer\packages\PostSharp.Redist.6.8.9\lib\net45\PostSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity.Design" />

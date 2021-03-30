@@ -17,7 +17,7 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) Reference to an instance of an object that implements
         /// the <see cref="T:System.ComponentModel.ISynchronizeInvoke"/> interface.
         /// </param>
-        /// <param name="action">
+        /// <param name="message">
         /// (Required.) Reference to a <see
         /// cref="T:System.Windows.Forms.MethodInvoker"/> delegate that defines
         /// the code to be run.
@@ -32,7 +32,7 @@ namespace xyLOGIX.Core.Extensions
         /// <example>
         /// This example shows how to call the <see
         /// cref="M:xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired"/> method.
-        /// <code>
+        /// <example>
         ///namespace Foo
         ///{
         ///public class Form1
@@ -63,10 +63,9 @@ namespace xyLOGIX.Core.Extensions
         ////* ... other form code ... */
         ///}
         ///}
-        /// </code>
         /// </example>
         public static void InvokeIfRequired(this ISynchronizeInvoke obj,
-            MethodInvoker action)
+            MethodInvoker message)
         {
             if (!(obj is Control control) || control.Parent == null ||
                 control.Parent.IsDisposed)
@@ -76,9 +75,9 @@ namespace xyLOGIX.Core.Extensions
                 Application.DoEvents();
 
             if (obj.InvokeRequired)
-                obj.BeginInvoke(action, new object[0]);
+                obj.BeginInvoke(message, new object[0]);
             else
-                action();
+                message();
         }
     }
 }

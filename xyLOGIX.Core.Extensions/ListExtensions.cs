@@ -61,7 +61,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>
         /// Adds an <paramref name="item"/> to a <paramref name="list"/>, but
         /// only if the item is not already present in the list. If it is, then
-        /// this method does nothing. If <c>null</c> is passed for the <paramref
+        /// this method does nothing. If <see langword="null" /> is passed for the <paramref
         /// name="list"/> parameter, then this method likewise also does nothing.
         /// </summary>
         /// <param name="list">

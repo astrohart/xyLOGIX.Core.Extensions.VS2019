@@ -5,26 +5,30 @@ using System.Windows.Forms;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Extension methods for a <see cref="T:System.Windows.Forms.CheckedListBox"/>.
+    /// Extension methods for a <see cref="T:System.Windows.Forms.CheckedListBox" />.
     /// </summary>
     public static class CheckedListBoxExtensions
     {
         /// <summary>
-        /// Gets a value indicating whether all the items in the <paramref
-        /// name="checkedListBox"/> box are selected.
+        /// Gets a value indicating whether all the items in the
+        /// <paramref
+        ///     name="checkedListBox" />
+        /// box are selected.
         /// </summary>
         /// <param name="checkedListBox">
-        /// (Required.) Reference to the <see
-        /// cref="T:System.Windows.Forms.CheckedListBox"/> the items of which
+        /// (Required.) Reference to the
+        /// <see
+        ///     cref="T:System.Windows.Forms.CheckedListBox" />
+        /// the items of which
         /// are to be checked.
         /// </param>
         /// <returns>
-        /// <c>true</c> if all the items in the checked list box are selected;
-        /// <c>false</c> otherwise, or if the list box contains zero items.
+        /// <see langword="true" /> if all the items in the checked list box are selected;
+        /// <see langword="false" /> otherwise, or if the list box contains zero items.
         /// </returns>
         /// <exception cref="T:ArgumentNullException">
-        /// Thrown if the required parameter, <paramref name="checkedListBox"/>,
-        /// is passed a <c>null</c> value.
+        /// Thrown if the required parameter, <paramref name="checkedListBox" />,
+        /// is passed a <see langword="null" /> value.
         /// </exception>
         public static bool AreAllItemsSelected(
             this CheckedListBox checkedListBox)
@@ -35,24 +39,25 @@ namespace xyLOGIX.Core.Extensions
             if (checkedListBox.Items.Count == 0)
                 return false;
 
-            return Enumerable.Range(0, checkedListBox.Items.Count)
-                .All(checkedListBox.GetItemChecked);
+            return checkedListBox.Items.Count > 0 &&
+                   checkedListBox.CheckedItems.Count ==
+                   checkedListBox.Items.Count;
         }
 
         /// <summary>
         /// Toggles the Checked state of all the items in the specified
-        /// <paramref name="checkedListBox"/>
+        /// <paramref name="checkedListBox" />
         /// </summary>
         /// <param name="checkedListBox">
-        /// (Required.) A <see cref="T:System.Windows.Forms.CheckedListBox"/> to
+        /// (Required.) A <see cref="T:System.Windows.Forms.CheckedListBox" /> to
         /// act upon.
         /// </param>
         /// <param name="isChecked">
         /// (Optional.) Whether to set the Checked state of all the list items
-        /// or not. Default value is <c>true</c>.
+        /// or not. Default value is <see langword="true" />.
         /// </param>
         /// <remarks>
-        /// If the <paramref name="checkedListBox"/> parameter is <c>null</c>,
+        /// If the <paramref name="checkedListBox" /> parameter is <see langword="null" />,
         /// or if the checked list box contains zero items, then this method
         /// does nothing.
         /// </remarks>
@@ -71,10 +76,10 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Sets the Checked state of the check the box whose name is identical
-        /// to the value in the <paramref name="itemName"/> parameter.
+        /// to the value in the <paramref name="itemName" /> parameter.
         /// </summary>
         /// <param name="checkedListBox">
-        /// (Required.) A <see cref="T:System.Windows.Forms.CheckedListBox"/> to
+        /// (Required.) A <see cref="T:System.Windows.Forms.CheckedListBox" /> to
         /// act upon.
         /// </param>
         /// <param name="itemName">
@@ -83,8 +88,10 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="isChecked">
         /// (Optional.) Whether to set the Checked state of the list item whose
-        /// name matches that of the string specified by the <paramref
-        /// name="itemName"/> parameter. Default value is <c>true</c>.
+        /// name matches that of the string specified by the
+        /// <paramref
+        ///     name="itemName" />
+        /// parameter. Default value is <see langword="true" />.
         /// </param>
         public static void CheckByName(this CheckedListBox checkedListBox,
             string itemName, bool isChecked = true)
@@ -99,7 +106,10 @@ namespace xyLOGIX.Core.Extensions
                 return;
 
             foreach (var i in Enumerable.Range(0, checkedListBox.Items.Count))
-                if (itemName.Equals(checkedListBox.Items[i].ToString()))
+                if (itemName.Equals(
+                    checkedListBox.Items[i]
+                                  .ToString()
+                ))
                 {
                     checkedListBox.SetItemChecked(i, isChecked);
                     return;
@@ -107,13 +117,15 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Gets the Checked state ( <c>true</c> for checked, <c>false</c> for
-        /// unchecked) of the <paramref name="checkedListBox"/> item with the
-        /// specified <paramref name="itemName"/>.
+        /// Gets the Checked state ( <see langword="true" /> for checked, <see langword="false" /> for
+        /// unchecked) of the <paramref name="checkedListBox" /> item with the
+        /// specified <paramref name="itemName" />.
         /// </summary>
         /// <param name="checkedListBox">
-        /// (Required.) Reference to the <see
-        /// cref="T:System.Windows.Forms.CheckedListBox"/> containing the items
+        /// (Required.) Reference to the
+        /// <see
+        ///     cref="T:System.Windows.Forms.CheckedListBox" />
+        /// containing the items
         /// to be checked.
         /// </param>
         /// <param name="itemName">
@@ -121,19 +133,23 @@ namespace xyLOGIX.Core.Extensions
         /// state should be ascertained.
         /// </param>
         /// <returns>
-        /// <c>false</c> if the item having a caption of <paramref
-        /// name="itemName"/> does not exist or the <paramref
-        /// name="checkedListBox"/> has zero items, or the checked state --
-        /// <c>true</c> for checked, <c>false</c> for unchecked -- of the item
-        /// whose caption matches the <paramref name="itemName"/> parameter's value.
+        /// <see langword="false" /> if the item having a caption of
+        /// <paramref
+        ///     name="itemName" />
+        /// does not exist or the
+        /// <paramref
+        ///     name="checkedListBox" />
+        /// has zero items, or the checked state --
+        /// <see langword="true" /> for checked, <see langword="false" /> for unchecked -- of the item
+        /// whose caption matches the <paramref name="itemName" /> parameter's value.
         /// </returns>
         /// <exception cref="T:ArgumentNullException">
-        /// Thrown if the required parameter, <paramref name="checkedListBox"/>,
-        /// is passed a <c>null</c> value.
+        /// Thrown if the required parameter, <paramref name="checkedListBox" />,
+        /// is passed a <see langword="null" /> value.
         /// </exception>
         /// <exception cref="T:System.ArgumentException">
-        /// Thrown if the required parameter, <paramref name="itemName"/>, is
-        /// passed a blank or <c>null</c> string for a value.
+        /// Thrown if the required parameter, <paramref name="itemName" />, is
+        /// passed a blank or <see langword="null" /> string for a value.
         /// </exception>
         public static bool GetCheckedByName(this CheckedListBox checkedListBox,
             string itemName)
@@ -149,8 +165,38 @@ namespace xyLOGIX.Core.Extensions
                 return false;
 
             return (from i in Enumerable.Range(0, checkedListBox.Items.Count)
-                    where itemName.Equals(checkedListBox.Items[i].ToString())
-                    select checkedListBox.GetItemChecked(i)).FirstOrDefault();
+                where itemName.Equals(
+                    checkedListBox.Items[i]
+                                  .ToString()
+                )
+                select checkedListBox.GetItemChecked(i)).FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Determines whether none of the checkboxes in a
+        /// <see
+        ///     cref="T:System.Windows.Forms.CheckedListBox" />
+        /// are selected.
+        /// </summary>
+        /// <param name="checkedListBox">
+        /// (Required.) Reference to the
+        /// <see
+        ///     cref="T:System.Windows.Forms.CheckedListBox" />
+        /// the items of which
+        /// are to be checked.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if none of the items in the list are checked or if there
+        /// are zero entries in the list; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool NoItemsAreSelected(
+            this CheckedListBox checkedListBox)
+        {
+            if (checkedListBox == null)
+                throw new ArgumentNullException(nameof(checkedListBox));
+
+            return checkedListBox.Items.Count == 0 ||
+                   checkedListBox.CheckedItems.Count == 0;
         }
     }
 }

@@ -8,6 +8,7 @@
   - [CheckAll(checkedListBox,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckAll(System.Windows.Forms.CheckedListBox,System.Boolean)')
   - [CheckByName(checkedListBox,itemName,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckByName-System-Windows-Forms-CheckedListBox,System-String,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckByName(System.Windows.Forms.CheckedListBox,System.String,System.Boolean)')
   - [GetCheckedByName(checkedListBox,itemName)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.GetCheckedByName(System.Windows.Forms.CheckedListBox,System.String)')
+  - [NoItemsAreSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-NoItemsAreSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.NoItemsAreSelected(System.Windows.Forms.CheckedListBox)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
@@ -19,8 +20,8 @@
 - [FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions')
   - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Form)')
   - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Screen)')
-  - [DoIfDisposed(form,action)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
-  - [DoIfNotDisposed(form,action)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfNotDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
+  - [DoIfDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
+  - [DoIfNotDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfNotDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
   - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
@@ -68,18 +69,30 @@
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
+  - [IsAbsolutePath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePath(System.String)')
   - [IsAcronymOrStateAbbr(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAcronymOrStateAbbr-System-Collections-Generic-IList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsAcronymOrStateAbbr(System.Collections.Generic.IList{System.String},System.Int32)')
   - [IsDecimal(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsDecimal-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsDecimal(System.String)')
+  - [IsFolderPath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsFolderPath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsFolderPath(System.String)')
   - [IsNumeric(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsNumeric-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsNumeric(System.String)')
   - [IsOneOf(value,choices)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsOneOf-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.IsOneOf(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [IsRomanNumerals(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsRomanNumerals-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsRomanNumerals(System.String)')
   - [IsSpecialWordAtBeginningOfPhrase(words,currentWord)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsSpecialWordAtBeginningOfPhrase-System-String[],System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsSpecialWordAtBeginningOfPhrase(System.String[],System.String)')
   - [IsStreetNameComponent(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsStreetNameComponent-System-Collections-Generic-IReadOnlyList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsStreetNameComponent(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)')
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
+  - [MatchesNoCase(stringToSearch,findWhat,replaceWith)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String,System.String)')
+  - [MatchesWithCase(stringToSearch,findWhat,replaceWith)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
   - [PluralizeWord(word)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String)')
+  - [RegexMatchesNoCase(stringToSearch,regex)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexMatchesNoCase(System.String,System.String)')
+  - [RegexMatchesWithCase(stringToSearch,regex)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexMatchesWithCase(System.String,System.String)')
+  - [RegexReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceNoCase(System.String,System.String,System.String)')
+  - [RegexReplaceNoCase(value,search,replacement,options)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceNoCase(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)')
+  - [RegexReplaceWithCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceWithCase(System.String,System.String,System.String)')
+  - [RegexReplaceWithCase(value,search,replacement,options)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceWithCase(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)')
   - [RemoveDigitsAndPunctuation(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveDigitsAndPunctuation(System.String)')
   - [RemoveTrailingBackslashes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveTrailingBackslashes(System.String)')
+  - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
+  - [SplitOn(value,delimiter)](#M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.SplitOn(System.String,System.String)')
   - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [StartsWithNoCase(value,searchText)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithNoCase(System.String,System.String)')
   - [Sub(format,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.Sub(System.String,System.Object[])')
@@ -110,7 +123,9 @@ Extension methods for a [CheckedListBox](http://msdn.microsoft.com/query/dev14.q
 
 ##### Summary
 
-Gets a value indicating whether all the items in the `checkedListBox` box are selected.
+Gets a value indicating whether all the items in the
+`checkedListBox`
+box are selected.
 
 ##### Returns
 
@@ -121,7 +136,9 @@ Gets a value indicating whether all the items in the `checkedListBox` box are se
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') the items of which
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
+the items of which
 are to be checked. |
 
 ##### Exceptions
@@ -171,7 +188,9 @@ act upon. |
 | itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the name of the item whose Checked
 state is to be altered. |
 | isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of the list item whose
-name matches that of the string specified by the `itemName` parameter. Default value is `true`. |
+name matches that of the string specified by the
+`itemName`
+parameter. Default value is `true`. |
 
 <a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String-'></a>
 ### GetCheckedByName(checkedListBox,itemName) `method`
@@ -184,7 +203,11 @@ specified `itemName`.
 
 ##### Returns
 
-`false` if the item having a caption of `itemName` does not exist or the `checkedListBox` has zero items, or the checked state --
+`false` if the item having a caption of
+`itemName`
+does not exist or the
+`checkedListBox`
+has zero items, or the checked state --
 `true` for checked, `false` for unchecked -- of the item
 whose caption matches the `itemName` parameter's value.
 
@@ -192,7 +215,9 @@ whose caption matches the `itemName` parameter's value.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') containing the items
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
+containing the items
 to be checked. |
 | itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the caption of the item whose Checked
 state should be ascertained. |
@@ -205,6 +230,29 @@ state should be ascertained. |
 is passed a `null` value. |
 | [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter, `itemName`, is
 passed a blank or `null` string for a value. |
+
+<a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-NoItemsAreSelected-System-Windows-Forms-CheckedListBox-'></a>
+### NoItemsAreSelected(checkedListBox) `method`
+
+##### Summary
+
+Determines whether none of the checkboxes in a
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
+are selected.
+
+##### Returns
+
+`true` if none of the items in the list are checked or if there
+are zero entries in the list; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
+the items of which
+are to be checked. |
 
 <a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>
 ## ControlExtensions `type`
@@ -433,11 +481,11 @@ Centers the specified `form` to the specific
 that the form is to be centered on. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action-'></a>
-### DoIfDisposed(form,action) `method`
+### DoIfDisposed(form,message) `method`
 
 ##### Summary
 
-Invokes an action on the form unless it's not disposed, in which
+Invokes an message on the form unless it's not disposed, in which
 case nothing is done.
 
 ##### Parameters
@@ -445,16 +493,16 @@ case nothing is done.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to perform the
-`action`. |
-| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
+`message`. |
+| message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
 form is disposed. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action-'></a>
-### DoIfNotDisposed(form,action) `method`
+### DoIfNotDisposed(form,message) `method`
 
 ##### Summary
 
-Invokes an action on the form unless it's disposed, in which case
+Invokes an message on the form unless it's disposed, in which case
 nothing is done.
 
 ##### Parameters
@@ -462,8 +510,8 @@ nothing is done.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to perform the
-`action`. |
-| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
+`message`. |
+| message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
 form is not disposed. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
@@ -876,8 +924,8 @@ of any of the strings in `collection`, ignoring case.
 
 ##### Returns
 
-`true` if the indicated value is in the specified collection,
-regardless of case; `false` otherwise.
+`true` if the indicated value is in the specified
+collection, regardless of case; `false` otherwise.
 
 ##### Parameters
 
@@ -892,8 +940,12 @@ regardless of case; `false` otherwise.
 ##### Summary
 
 Takes a source and a selector function and exports a string that is
-comma-separated according to proper English grammar, i.e. `"dog,
-            cat, and horse"` not just `"dog, cat, horse."`
+comma-separated according to proper English grammar, i.e.
+`
+            "dog,
+            cat, and horse"
+            `
+not just `"dog, cat, horse."`
 
 ##### Returns
 
@@ -916,9 +968,9 @@ collection `source` as a string. |
 
 ##### Remarks
 
-If this method is fed an `null` reference or the empty
-collection for `source`, then the return value is
-the empty string.
+If this method is fed an `null` reference or the
+empty collection for `source`, then the return
+value is the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-BreakTextIntoLines-System-String-'></a>
 ### BreakTextIntoLines(text) `method`
@@ -931,7 +983,8 @@ The result is a collection of strings, one for each line.
 
 ##### Returns
 
-Collection of strings containing one string per line of `text`.
+Collection of strings containing one string per line of
+`text`.
 
 ##### Parameters
 
@@ -971,12 +1024,14 @@ If the empty string is provided as input, then the empty string is returned.
 
 ##### Summary
 
-Returns `true` if the `value` has any of the
-strings in `searchStrings` as a substring.
+Returns `true` if the `value` has
+any of the strings in `searchStrings` as a substring.
 
 ##### Returns
 
-Value indicating whether any of the strings in `searchStrings` are substrings (case-insensitive) of
+Value indicating whether any of the strings in
+`searchStrings`
+are substrings (case-insensitive) of
 `value`.
 
 ##### Parameters
@@ -989,7 +1044,10 @@ of `value`. |
 
 ##### Remarks
 
-If `value` is the empty string or if the `searchStrings` collection is empty or is a `null`
+If `value` is the empty string or if the
+`searchStrings`
+collection is empty or is a
+`null`
 reference, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Char[]-'></a>
@@ -997,13 +1055,16 @@ reference, then this method returns `false`.
 
 ##### Summary
 
-Returns `true` if the `value` contains any of
-the characters in `searchChars` (case-insensitive).
+Returns `true` if the `value`
+contains any of the characters in `searchChars`
+(case-insensitive).
 
 ##### Returns
 
-`true` if the string in `value` contains any
-of the characters (case-insensitive) in the `searchChars` array; `false` otherwise.
+`true` if the string in `value`
+contains any of the characters (case-insensitive) in the
+`searchChars`
+array; `false` otherwise.
 
 ##### Parameters
 
@@ -1014,8 +1075,11 @@ of the characters (case-insensitive) in the `searchChars` array; `false` otherwi
 
 ##### Remarks
 
-If this method is passed the empty string for `value` or a `null` reference or an empty collection for
-`searchChars`, then this method returns `false`.
+If this method is passed the empty string for
+`value`
+or a `null` reference or an empty
+collection for `searchChars`, then this method
+returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-String-'></a>
 ### ContainsNoCase(stringToSearch,value) `method`
@@ -1113,12 +1177,15 @@ Correctly-formatted domain-name matching value.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| match | [System.Text.RegularExpressions.Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') | Reference to an instance of [Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') that resulted from a
+| match | [System.Text.RegularExpressions.Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') | Reference to an instance of
+[Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match')
+that resulted from a
 regex search. |
 
 ##### Remarks
 
-This method also sets the value of the [IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
+This method also sets the value of the
+[IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
 property to `true` in the event that an error occurs.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String-'></a>
@@ -1131,7 +1198,9 @@ to make sure it begins with the character '@'.
 
 ##### Returns
 
-String containing the same value as in `twitterSite`, but one which is guaranteed to start with the
+String containing the same value as in
+`twitterSite`
+, but one which is guaranteed to start with the
 '@' character.
 
 ##### Parameters
@@ -1213,7 +1282,9 @@ the given length.
 
 Gets the first `nChars` characters of the string
 `value` and returns them; returns the entire string
-`value` if the string is smaller than `nChars` characters in length.
+`value` if the string is smaller than
+`nChars`
+characters in length.
 
 ##### Returns
 
@@ -1298,7 +1369,28 @@ instance, this method would read "Nathan de la Montoya" and return
 "de la Montoya," so our way of determining the last name is pretty
 safe, given the above assumptions and input patterns. If the empty
 string is passed as input, then the empty string is returned. If a
-string containing just one word is passed as input, a [InvalidDataException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IO.InvalidDataException 'System.IO.InvalidDataException') is thrown.
+string containing just one word is passed as input, a
+[InvalidDataException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IO.InvalidDataException 'System.IO.InvalidDataException')
+is thrown.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String-'></a>
+### IsAbsolutePath(path) `method`
+
+##### Summary
+
+Determines whether the specified `path` is a
+fully-qualified, absolute path or not.
+
+##### Returns
+
+`true` if the `path` specified is a
+fully-qualified, absolute path; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the path to be checked. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAcronymOrStateAbbr-System-Collections-Generic-IList{System-String},System-Int32-'></a>
 ### IsAcronymOrStateAbbr(array,i) `method`
@@ -1329,16 +1421,55 @@ Determines whether the `value` passed is a
 
 ##### Returns
 
-`true` if the string passed in `value` is the
-string representation of a value that is in the range of the
-`decimal` data type; `false` otherwise. The method also
-returns `false` if it is passed the empty string.
+`true` if the string passed in
+`value`
+is the string representation of a value that is in
+the range of the `decimal` data type; `false`
+otherwise. The method also returns `false` if it is
+passed the empty string.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value or not. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsFolderPath-System-String-'></a>
+### IsFolderPath(path) `method`
+
+##### Summary
+
+Determines whether the specified `path` is the path
+to a folder or not.
+
+##### Returns
+
+`true` if the object at the specified pathname is a
+folder; `false` otherwise. If the specified pathname
+is blank, then this method simply returns `false`.
+If a file-system error occurs during the checking,
+`false`
+is also returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the fully-qualified pathname of the
+file-system entry to be checked. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter, `path`, is passed
+a blank or `null` string for a value. |
+
+##### Remarks
+
+Note the exact words of the Returns statement: "if the object at the
+specified pathname is a folder." So if you pass in the phrase,
+"Hello, world," it will be rejected.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsNumeric-System-String-'></a>
 ### IsNumeric(value) `method`
@@ -1350,10 +1481,14 @@ representation of a 32-bit `int` or not.
 
 ##### Returns
 
-`true` if the string passed in `value` is the
-string representation of a value that is in the range of the 32-bit
-`int` data type; `false` otherwise. The method also
-returns `false` if it is passed the empty string.
+`true` if the string passed in
+`value`
+is the string representation of a value that is in
+the range of the 32-bit `int` data type;
+`false`
+otherwise. The method also returns
+`false`
+if it is passed the empty string.
 
 ##### Parameters
 
@@ -1371,8 +1506,10 @@ Performs a culture-invariant, case-insensitive, OR match of the
 
 ##### Returns
 
-`true` if the string `value` matches one or
-more of the `choices`; `false` otherwise.
+`true` if the string `value`
+matches one or more of the `choices`;
+`false`
+otherwise.
 
 ##### Parameters
 
@@ -1383,7 +1520,10 @@ more of the `choices`; `false` otherwise.
 
 ##### Remarks
 
-If `value` is the empty string, or if `choices` is the empty collection, then this method returns `false`.
+If `value` is the empty string, or if
+`choices`
+is the empty collection, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsRomanNumerals-System-String-'></a>
 ### IsRomanNumerals(value) `method`
@@ -1433,8 +1573,8 @@ common names for US streets.
 
 ##### Returns
 
-`true` if the current word belongs as part of the name of
-common US streets; `false` otherwise.
+`true` if the current word belongs as part of the
+name of common US streets; `false` otherwise.
 
 ##### Parameters
 
@@ -1447,7 +1587,8 @@ word being parsed. |
 ##### Remarks
 
 If this method is provided with the empty collection or an array
-index outside the bounds of the collection, then this method returns `false`.
+index outside the bounds of the collection, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String-'></a>
 ### IsValidEmail(value) `method`
@@ -1466,6 +1607,74 @@ true if the string contains a valid email address value; false otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to be checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String,System-String-'></a>
+### MatchesNoCase(stringToSearch,findWhat,replaceWith) `method`
+
+##### Summary
+
+Determines whether the `stringToSearch` contains
+the `findWhat` value, or, in the case that
+`findWhat` contains the
+`replaceWith`
+value, determines whether
+`stringToSearch`
+does not contain the
+`replaceWith`
+text.
+
+##### Returns
+
+Does a "Contains" search, without regards to case, and returns
+`true`
+if the search was successful, given the values of
+`stringToSearch`, `findWhat`, and
+`replaceWith`. `false` is returned
+otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be searched. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (May be whitespace or non-whitespace.) String containing the pattern
+to be found. |
+| replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (May be whitespace or non-whitespace.) String containing the pattern
+to replace the found text with. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String,System-String-'></a>
+### MatchesWithCase(stringToSearch,findWhat,replaceWith) `method`
+
+##### Summary
+
+Determines whether the `stringToSearch` contains
+the `findWhat` value, or, in the case that
+`findWhat` contains the
+`replaceWith`
+value, determines whether
+`stringToSearch`
+does not contain the
+`replaceWith`
+text.
+
+##### Returns
+
+Does a "Contains" search, with regards to case, and returns
+`true`
+if the search was successful, given the values of
+`stringToSearch`, `findWhat`, and
+`replaceWith`. `false` is returned
+otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be searched. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (May be whitespace or non-whitespace.) String containing the pattern
+to be found. |
+| replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (May be whitespace or non-whitespace.) String containing the pattern
+to replace the found text with. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo-'></a>
 ### PluralizeWord(word,culture) `method`
@@ -1516,6 +1725,215 @@ containing the plural version of the `word`.
 If the empty string is passed for `word`, then this
 method returns the empty string.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String-'></a>
+### RegexMatchesNoCase(stringToSearch,regex) `method`
+
+##### Summary
+
+Determines whether the specified `stringToSearch`
+matches the regular expression specified by the
+`regex`
+parameter's value, without regards to upper- or lower-case.
+
+##### Returns
+
+If even one match is found by the `regex`, returns
+`true`. Otherwise, if one or both of the required
+parameters are blank or `null`, or if no matches are
+found by the `regex`, then this method returns
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be searched for a match. |
+| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that expresses
+the criteria to be used for matching. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesWithCase-System-String,System-String-'></a>
+### RegexMatchesWithCase(stringToSearch,regex) `method`
+
+##### Summary
+
+Determines whether the specified `stringToSearch`
+matches the regular expression specified by the
+`regex`
+parameter's value, respecting case.
+
+##### Returns
+
+If even one match is found by the `regex`, returns
+`true`. Otherwise, if one or both of the required
+parameters are blank or `null`, or if no matches are
+found by the `regex`, then this method returns
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be searched for a match. |
+| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that expresses
+the criteria to be used for matching. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String-'></a>
+### RegexReplaceNoCase(value,search,replacement) `method`
+
+##### Summary
+
+Replaces the string specified by `search` by the
+`replacement` string in the
+`value`
+. The `search` parameter may contain
+a Regular Expression (regex). Case is ignored.
+
+##### Returns
+
+String containing the result.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
+replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string.
+May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
+`search` are to be substituted with. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
+`search`, or `replacement`, are
+passed blank or `null` strings for values. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions-'></a>
+### RegexReplaceNoCase(value,search,replacement,options) `method`
+
+##### Summary
+
+Replaces the string specified by `search` by the
+`replacement` string in the
+`value`
+. The `search` parameter may contain
+a Regular Expression (regex). Case is ignored.
+
+##### Returns
+
+String containing the result.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
+replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string.
+May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
+`search` are to be substituted with. |
+| options | [System.Text.RegularExpressions.RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') | (Required.) A bitwise combination of the
+[RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions')
+enumeration
+values that provide options for matching. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
+`search`, or `replacement`, are
+passed blank or `null` strings for values. |
+
+##### Remarks
+
+This overload allows specification of options in the
+`options`
+parameter.
+
+
+
+The
+[IgnoreCase](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions.IgnoreCase 'System.Text.RegularExpressions.RegexOptions.IgnoreCase')
+enumeration value is combined with whatever else is provided in the
+`options` parameter by default.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String-'></a>
+### RegexReplaceWithCase(value,search,replacement) `method`
+
+##### Summary
+
+Replaces the string specified by `search` by the
+`replacement` string in the
+`value`
+. The `search` parameter may contain
+a Regular Expression (regex).
+
+##### Returns
+
+String containing the result.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
+replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string.
+May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
+`search` are to be substituted with. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
+`search`, or `replacement`, are
+passed blank or `null` strings for values. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions-'></a>
+### RegexReplaceWithCase(value,search,replacement,options) `method`
+
+##### Summary
+
+Replaces the string specified by `search` by the
+`replacement` string in the
+`value`
+. The `search` parameter may contain
+a Regular Expression (regex).
+
+##### Returns
+
+String containing the result.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
+replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string.
+May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
+`search` are to be substituted with. |
+| options | [System.Text.RegularExpressions.RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') | (Required.) A bitwise combination of the
+[RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions')
+enumeration
+values that provide options for matching. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
+`search`, or `replacement`, are
+passed blank or `null` strings for values. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String-'></a>
 ### RemoveDigitsAndPunctuation(value) `method`
 
@@ -1563,6 +1981,69 @@ backslash characters. |
 If this method is passed the empty string, then this method returns
 the empty string.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String-'></a>
+### ReplaceNoCase(value,search,replacement) `method`
+
+##### Summary
+
+Replaces the string specified by `search` by the
+`replacement` string in the
+`value`
+, ignoring case.
+
+##### Returns
+
+String containing the result.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
+replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
+`search` are to be substituted with. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
+`search`, or `replacement`, are
+passed blank or `null` strings for values. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String-'></a>
+### SplitOn(value,delimiter) `method`
+
+##### Summary
+
+Splits a string `value` on a provided
+`delimiter`.
+
+##### Returns
+
+An array whose elements contain the substrings that were split on
+the provided `delimiter`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value to be tokenized. |
+| delimiter | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the delimiter on which the
+`value`
+should be split. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if either of the required parameters,
+`value`
+or `delimiter`, are passed blank or
+`null` strings for values. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### StartsWithAnyOf(text,list) `method`
 
@@ -1586,7 +2067,9 @@ in `list`.
 ##### Remarks
 
 This method performs a case-insensitive search. It returns
-`false` if passed the empty string for `text`
+`false`
+if passed the empty string for
+`text`
 or the empty collection for `list`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String-'></a>
@@ -1599,7 +2082,8 @@ Tells whether the `value` starts with the substring
 
 ##### Returns
 
-`true` if `value` starts with the `searchText`. `false` otherwise.
+`true` if `value` starts with the
+`searchText`. `false` otherwise.
 
 ##### Parameters
 
@@ -1610,14 +2094,18 @@ Tells whether the `value` starts with the substring
 
 ##### Remarks
 
-If `value` is the empty string or if `searchText` is the empty string, then this method returns `false`.
+If `value` is the empty string or if
+`searchText`
+is the empty string, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]-'></a>
 ### Sub(format,args) `method`
 
 ##### Summary
 
-Formats a string using the `format` and `args`.
+Formats a string using the `format` and
+`args`.
 
 ##### Returns
 
@@ -1633,7 +2121,9 @@ the format string. |
 
 ##### Remarks
 
-This method is just an alias for [Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format'). It is here to provide a way to
+This method is just an alias for
+[Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format')
+. It is here to provide a way to
 translate VB to C# code and still use the moniker Sub from VB that
 does the same operation. If this method is passed the empty string
 for `format`, then the return value is the empty string.
@@ -1671,7 +2161,9 @@ If this method is passed the empty or whitespace string for
 
 Turns the specified `phrase` into an all-caps
 acronym, if a corresponding entry is not found in our dictionary
-fields of short, non-acronym terms, i.e., [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms').
+fields of short, non-acronym terms, i.e.,
+[ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
+.
 
 ##### Returns
 
@@ -1795,7 +2287,9 @@ empty collection is returned.
 
 Translates each character of the provided `value`,
 character-by-character, to Unicode encoding. This method performs
-the inverse operation of the [ToASCII](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII') method.
+the inverse operation of the
+[ToASCII](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII')
+method.
 
 ##### Returns
 
@@ -1829,7 +2323,9 @@ Trimmed text.
 
 ##### Remarks
 
-If the empty or whitespace string is provided for `currentLine`, then the empty string is returned by this method.
+If the empty or whitespace string is provided for
+`currentLine`
+, then the empty string is returned by this method.
 
 <a name='T-xyLOGIX-Core-Extensions-TypeExtensions'></a>
 ## TypeExtensions `type`

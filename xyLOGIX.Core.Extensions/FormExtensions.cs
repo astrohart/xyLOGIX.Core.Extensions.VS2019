@@ -65,41 +65,41 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Invokes an action on the form unless it's not disposed, in which
+        /// Invokes an message on the form unless it's not disposed, in which
         /// case nothing is done.
         /// </summary>
         /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form"/> on which to perform the
-        /// <paramref name="action"/>.
+        /// <paramref name="message"/>.
         /// </param>
-        /// <param name="action">
+        /// <param name="message">
         /// An <see cref="T:System.Action"/> specifying code to be run if the
         /// form is disposed.
         /// </param>
-        public static void DoIfDisposed(this IForm form, Action action)
+        public static void DoIfDisposed(this IForm form, Action message)
         {
             if (form != null && !form.IsDisposed) return;
 
-            action?.Invoke();
+            message?.Invoke();
         }
 
         /// <summary>
-        /// Invokes an action on the form unless it's disposed, in which case
+        /// Invokes an message on the form unless it's disposed, in which case
         /// nothing is done.
         /// </summary>
         /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form"/> on which to perform the
-        /// <paramref name="action"/>.
+        /// <paramref name="message"/>.
         /// </param>
-        /// <param name="action">
+        /// <param name="message">
         /// An <see cref="T:System.Action"/> specifying code to be run if the
         /// form is not disposed.
         /// </param>
-        public static void DoIfNotDisposed(this IForm form, Action action)
+        public static void DoIfNotDisposed(this IForm form, Action message)
         {
             if (form == null || form.IsDisposed) return;
 
-            action?.Invoke();
+            message?.Invoke();
         }
 
         /// <summary>

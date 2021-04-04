@@ -100,8 +100,11 @@
     <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="FormExtensions.cs" />
+    <Compile Include="IComboBox.cs" />
+    <Compile Include="IControl.cs" />
     <Compile Include="IForm.cs" />
     <Compile Include="IntExtensions.cs" />
+    <Compile Include="IScrollableControl.cs" />
     <Compile Include="ListExtensions.cs" />
     <Compile Include="Properties\AspMvcActionAttribute.cs" />
     <Compile Include="Properties\AspMvcActionSelectorAttribute.cs" />
@@ -154,6 +157,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

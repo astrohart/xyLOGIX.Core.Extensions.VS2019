@@ -1,515 +1,798 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
-using System.Runtime.Remoting;
+using System.Security.Permissions;
 using System.Windows.Forms;
-using System.Windows.Forms.Layout;
 
 namespace xyLOGIX.Core.Extensions
 {
+  /// <summary>
+  /// Defines the publicly-exposed methods and properties of a form.
+  /// </summary>
+  public interface IForm : IContainerControl, IScrollableControl
+  {
     /// <summary>
-    /// Defines the publicly-exposed methods and properties of an object that
-    /// implements a Windows Form.
+    /// Gets or sets the button on the form that is clicked when the user
+    /// presses the ENTER key.
     /// </summary>
-    /// <remarks>
-    /// This interface is allows any object to serve as a proxy for a Windows
-    /// Form. This interface is here so that any form, in principle, that
-    /// implements the methods and properties below can be extended by the <see
-    /// cref="T:xyLOGIX.Core.Extensions.FormExtensions"/> class without
-    /// necessarily having to be a Windows Form per se. NOTE: The methods and
-    /// properties of this interface are not documented here. Please see the
-    /// <see cref="T:System.Windows.Forms.Form"/> class' XML doc comments for
-    /// the documentation.
-    /// </remarks>
-    public interface IForm : IWin32Window
+    /// <returns>
+    /// An <see cref="T:System.Windows.Forms.IButtonControl" /> that represents
+    /// the button to use as the accept button for the form.
+    /// </returns>
+    IButtonControl AcceptButton { get; set; }
+
+    /// <summary>
+    /// Gets the currently active multiple-document interface (MDI) child window.
+    /// </summary>
+    /// <returns>
+    /// Returns a <see cref="T:System.Windows.Forms.Form" /> that represents the
+    /// currently active MDI child window, or <see langword="null" /> if there
+    /// are currently no child windows present.
+    /// </returns>
+    Form ActiveMdiChild { get; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the opacity of the form can be
+    /// adjusted.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the opacity of the form can be changed;
+    /// otherwise, <see langword="false" />.
+    /// </returns>
+    bool AllowTransparency { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the form adjusts its size to fit
+    /// the height of the font used on the form and scales its controls.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the form will automatically scale itself and
+    /// its controls based on the current font assigned to the form; otherwise,
+    /// <see langword="false" />. The default is <see langword="true" />.
+    /// </returns>
+    bool AutoScale { get; set; }
+
+    /// <summary>
+    /// Gets or sets the base size used for autoscaling of the form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Drawing.Size" /> that represents the base size that
+    /// this form uses for autoscaling.
+    /// </returns>
+    Size AutoScaleBaseSize { get; set; }
+
+    /// <summary>
+    /// Gets or sets the mode by which the form automatically resizes itself.
+    /// </summary>
+    /// <returns>
+    /// An <see cref="T:System.Windows.Forms.AutoSizeMode" /> enumerated value.
+    /// The default is <see cref="F:System.Windows.Forms.AutoSizeMode.GrowOnly" />.
+    /// </returns>
+    /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+    /// The value is not a valid
+    /// <see
+    ///   cref="T:System.Windows.Forms.AutoSizeMode" />
+    /// value.
+    /// </exception>
+    AutoSizeMode AutoSizeMode { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value that indicates whether controls in this container
+    /// will be automatically validated when the focus changes.
+    /// </summary>
+    /// <returns>
+    /// An <see cref="T:System.Windows.Forms.AutoValidate" /> enumerated value
+    /// that indicates whether contained controls are implicitly validated on
+    /// focus change. The default is Inherit.
+    /// </returns>
+    AutoValidate AutoValidate { get; set; }
+
+    /// <summary>
+    /// Gets or sets the background color for the control.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Drawing.Color" /> that represents the background
+    /// color of the control. The default is the value of the
+    /// <see
+    ///   cref="P:System.Windows.Forms.Control.DefaultBackColor" />
+    /// property.
+    /// </returns>
+    /// <summary>
+    /// Gets or sets the button control that is clicked when the user presses
+    /// the ESC key.
+    /// </summary>
+    /// <returns>
+    /// An <see cref="T:System.Windows.Forms.IButtonControl" /> that represents
+    /// the cancel button for the form.
+    /// </returns>
+    IButtonControl CancelButton { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether a control box is displayed in
+    /// the caption bar of the form.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the form displays a control box in the
+    /// upper-right corner of the form; otherwise, <see langword="false" />. The
+    /// default is <see langword="true" />.
+    /// </returns>
+    bool ControlBox { get; set; }
+
+    /// <summary>
+    /// Gets or sets the size and location of the form on the Windows desktop.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Drawing.Rectangle" /> that represents the bounds of
+    /// the form on the Windows desktop using desktop coordinates.
+    /// </returns>
+    Rectangle DesktopBounds { get; set; }
+
+    /// <summary>
+    /// Gets or sets the location of the form on the Windows desktop.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Drawing.Point" /> that represents the location of
+    /// the form on the desktop.
+    /// </returns>
+    Point DesktopLocation { get; set; }
+
+    /// <summary>
+    /// Gets or sets the dialog result for the form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.DialogResult" /> that represents the
+    /// result of the form when used as a dialog box.
+    /// </returns>
+    /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+    /// The value specified is outside the range of valid values.
+    /// </exception>
+    DialogResult DialogResult { get; set; }
+
+    /// <summary>
+    /// Gets or sets the border style of the form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.FormBorderStyle" /> that represents
+    /// the style of border to display for the form. The default is
+    /// <see langword="FormBorderStyle.Sizable" />.
+    /// </returns>
+    /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+    /// The value specified is outside the range of valid values.
+    /// </exception>
+    FormBorderStyle FormBorderStyle { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether a Help button should be
+    /// displayed in the caption box of the form.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> to display a Help button in the form's caption
+    /// bar; otherwise, <see langword="false" />. The default is
+    /// <see langword="false" />.
+    /// </returns>
+    bool HelpButton { get; set; }
+
+    /// <summary>
+    /// Gets or sets the icon for the form.
+    /// </summary>
+    /// <returns>
+    /// An <see cref="T:System.Drawing.Icon" /> that represents the icon for the form.
+    /// </returns>
+    Icon Icon { get; set; }
+
+    /// <summary>
+    /// Gets a value indicating whether the form is a multiple-document
+    /// interface (MDI) child form.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the form is an MDI child form; otherwise,
+    /// <see langword="false" />.
+    /// </returns>
+    bool IsMdiChild { get; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the form is a container for
+    /// multiple-document interface (MDI) child forms.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the form is a container for MDI child forms;
+    /// otherwise, <see langword="false" />. The default is <see langword="false" />.
+    /// </returns>
+    bool IsMdiContainer { get; set; }
+
+    /// <summary>
+    /// Gets a value indicating whether the form can use all windows and user
+    /// input events without restriction.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the form has restrictions; otherwise,
+    /// <see
+    ///   langword="false" />
+    /// . The default is <see langword="true" />.
+    /// </returns>
+    bool IsRestrictedWindow { get; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the form will receive key events
+    /// before the event is passed to the control that has focus.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the form will receive all key events;
+    /// <see
+    ///   langword="false" />
+    /// if the currently selected control on the form
+    /// receives key events. The default is <see langword="false" />.
+    /// </returns>
+    bool KeyPreview { get; set; }
+
+    /// <summary>
+    /// Gets or sets the primary menu container for the form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.MenuStrip" /> that represents the
+    /// container for the menu structure of the form. The default is
+    /// <see langword="null" />.
+    /// </returns>
+    MenuStrip MainMenuStrip { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the Maximize button is displayed
+    /// in the caption bar of the form.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> to display a Maximize button for the form;
+    /// otherwise, <see langword="false" />. The default is <see langword="true" />.
+    /// </returns>
+    bool MaximizeBox { get; set; }
+
+    /// <summary>
+    /// Gets the maximum size the form can be resized to.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Drawing.Size" /> that represents the maximum size
+    /// for the form.
+    /// </returns>
+    /// <exception cref="T:System.ArgumentOutOfRangeException">
+    /// The values of the height or width within the
+    /// <see
+    ///   cref="T:System.Drawing.Size" />
+    /// object are less than zero.
+    /// </exception>
+    /// <summary>
+    /// Gets an array of forms that represent the multiple-document interface
+    /// (MDI) child forms that are parented to this form.
+    /// </summary>
+    /// <returns>
+    /// An array of <see cref="T:System.Windows.Forms.Form" /> objects, each of
+    /// which identifies one of this form's MDI child forms.
+    /// </returns>
+    Form[] MdiChildren { get; }
+
+    /// <summary>
+    /// Gets or sets the current multiple-document interface (MDI) parent form
+    /// of this form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.Form" /> that represents the MDI
+    /// parent form.
+    /// </returns>
+    /// <exception cref="T:System.Exception">
+    /// The <see cref="T:System.Windows.Forms.Form" /> assigned to this property
+    /// is not marked as an MDI container.
+    /// -or- The <see cref="T:System.Windows.Forms.Form" /> assigned to this
+    /// property is both a child and an MDI container form.
+    /// -or- The <see cref="T:System.Windows.Forms.Form" /> assigned to this
+    /// property is located on a different thread.
+    /// </exception>
+    Form MdiParent { get; set; }
+
+    /// <summary>
+    /// Gets or sets the <see cref="T:System.Windows.Forms.MainMenu" /> that is
+    /// displayed in the form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.MainMenu" /> that represents the menu
+    /// to display in the form.
+    /// </returns>
+    MainMenu Menu { get; set; }
+
+    /// <summary>
+    /// Gets the merged menu for the form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.MainMenu" /> that represents the
+    /// merged menu of the form.
+    /// </returns>
+    MainMenu MergedMenu
     {
-#pragma warning disable 1591
-
-        event EventHandler Activated;
-
-        event EventHandler AutoSizeChanged;
-
-        event EventHandler AutoValidateChanged;
-
-        event EventHandler BackColorChanged;
-
-        event EventHandler BackgroundImageChanged;
-
-        event EventHandler BackgroundImageLayoutChanged;
-
-        event EventHandler BindingContextChanged;
-
-        event EventHandler CausesValidationChanged;
-
-        event UICuesEventHandler ChangeUICues;
-
-        event EventHandler Click;
-
-        event EventHandler ClientSizeChanged;
-
-        event EventHandler Closed;
-
-        event CancelEventHandler Closing;
-
-        event EventHandler ContextMenuChanged;
-
-        event EventHandler ContextMenuStripChanged;
-
-        event ControlEventHandler ControlAdded;
-
-        event ControlEventHandler ControlRemoved;
-
-        event EventHandler CursorChanged;
-
-        event EventHandler Deactivate;
-
-        event EventHandler Disposed;
-
-        event EventHandler DockChanged;
-
-        event EventHandler DoubleClick;
-
-        event DpiChangedEventHandler DpiChanged;
-
-        event EventHandler DpiChangedAfterParent;
-
-        event EventHandler DpiChangedBeforeParent;
-
-        event DragEventHandler DragDrop;
-
-        event DragEventHandler DragEnter;
-
-        event EventHandler DragLeave;
-
-        event DragEventHandler DragOver;
-
-        event EventHandler EnabledChanged;
-
-        event EventHandler Enter;
-
-        event EventHandler FontChanged;
-
-        event EventHandler ForeColorChanged;
-
-        event FormClosedEventHandler FormClosed;
-
-        event FormClosingEventHandler FormClosing;
-
-        event GiveFeedbackEventHandler GiveFeedback;
-
-        event EventHandler GotFocus;
-
-        event EventHandler HandleCreated;
-
-        event EventHandler HandleDestroyed;
-
-        event CancelEventHandler HelpButtonClicked;
-
-        event HelpEventHandler HelpRequested;
-
-        event EventHandler ImeModeChanged;
-
-        event InputLanguageChangedEventHandler InputLanguageChanged;
-
-        event InputLanguageChangingEventHandler InputLanguageChanging;
-
-        event InvalidateEventHandler Invalidated;
-
-        event KeyEventHandler KeyDown;
-
-        event KeyPressEventHandler KeyPress;
-
-        event KeyEventHandler KeyUp;
-
-        event LayoutEventHandler Layout;
-
-        event EventHandler Leave;
-
-        event EventHandler Load;
-
-        event EventHandler LocationChanged;
-
-        event EventHandler LostFocus;
-
-        event EventHandler MarginChanged;
-
-        event EventHandler MaximizedBoundsChanged;
-
-        event EventHandler MaximumSizeChanged;
-
-        event EventHandler MdiChildActivate;
-
-        event EventHandler MenuComplete;
-
-        event EventHandler MenuStart;
-
-        event EventHandler MinimumSizeChanged;
-
-        event EventHandler MouseCaptureChanged;
-
-        event MouseEventHandler MouseClick;
-
-        event MouseEventHandler MouseDoubleClick;
-
-        event MouseEventHandler MouseDown;
-
-        event EventHandler MouseEnter;
-
-        event EventHandler MouseHover;
-
-        event EventHandler MouseLeave;
-
-        event MouseEventHandler MouseMove;
-
-        event MouseEventHandler MouseUp;
-
-        event MouseEventHandler MouseWheel;
-
-        event EventHandler Move;
-
-        event EventHandler PaddingChanged;
-
-        event PaintEventHandler Paint;
-
-        event EventHandler ParentChanged;
-
-        event PreviewKeyDownEventHandler PreviewKeyDown;
-
-        event QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
-
-        event QueryContinueDragEventHandler QueryContinueDrag;
-
-        event EventHandler RegionChanged;
-
-        event EventHandler Resize;
-
-        event EventHandler ResizeBegin;
-
-        event EventHandler ResizeEnd;
-
-        event EventHandler RightToLeftChanged;
-
-        event EventHandler RightToLeftLayoutChanged;
-
-        event ScrollEventHandler Scroll;
-
-        event EventHandler Shown;
-
-        event EventHandler SizeChanged;
-
-        event EventHandler StyleChanged;
-
-        event EventHandler SystemColorsChanged;
-
-        event EventHandler TabIndexChanged;
-
-        event EventHandler TabStopChanged;
-
-        event EventHandler TextChanged;
-
-        event EventHandler Validated;
-
-        event CancelEventHandler Validating;
-
-        event EventHandler VisibleChanged;
-
-        IButtonControl AcceptButton { get; set; }
-        AccessibleObject AccessibilityObject { get; }
-        string AccessibleDefaultActionDescription { get; set; }
-        string AccessibleDescription { get; set; }
-        string AccessibleName { get; set; }
-        AccessibleRole AccessibleRole { get; set; }
-        Control ActiveControl { get; set; }
-        Form ActiveMdiChild { get; }
-        bool AllowDrop { get; set; }
-        bool AllowTransparency { get; set; }
-        AnchorStyles Anchor { get; set; }
-        bool AutoScale { get; set; }
-        Size AutoScaleBaseSize { get; set; }
-        SizeF AutoScaleDimensions { get; set; }
-        AutoScaleMode AutoScaleMode { get; set; }
-        bool AutoScroll { get; set; }
-        Size AutoScrollMargin { get; set; }
-        Size AutoScrollMinSize { get; set; }
-        Point AutoScrollOffset { get; set; }
-        Point AutoScrollPosition { get; set; }
-        bool AutoSize { get; set; }
-        AutoSizeMode AutoSizeMode { get; set; }
-        AutoValidate AutoValidate { get; set; }
-        Color BackColor { get; set; }
-        Image BackgroundImage { get; set; }
-        ImageLayout BackgroundImageLayout { get; set; }
-        BindingContext BindingContext { get; set; }
-        int Bottom { get; }
-        Rectangle Bounds { get; set; }
-        IButtonControl CancelButton { get; set; }
-        bool CanFocus { get; }
-        bool CanSelect { get; }
-        bool Capture { get; set; }
-        bool CausesValidation { get; set; }
-        Rectangle ClientRectangle { get; }
-        Size ClientSize { get; set; }
-        string CompanyName { get; }
-        IContainer Container { get; }
-        bool ContainsFocus { get; }
-        ContextMenu ContextMenu { get; set; }
-        ContextMenuStrip ContextMenuStrip { get; set; }
-        bool ControlBox { get; set; }
-        Control.ControlCollection Controls { get; }
-        bool Created { get; }
-        SizeF CurrentAutoScaleDimensions { get; }
-        Cursor Cursor { get; set; }
-        ControlBindingsCollection DataBindings { get; }
-        Rectangle DesktopBounds { get; set; }
-        Point DesktopLocation { get; set; }
-        int DeviceDpi { get; }
-        DialogResult DialogResult { get; set; }
-        Rectangle DisplayRectangle { get; }
-        bool Disposing { get; }
-        DockStyle Dock { get; set; }
-        ScrollableControl.DockPaddingEdges DockPadding { get; }
-        bool Enabled { get; set; }
-        bool Focused { get; }
-        Font Font { get; set; }
-        Color ForeColor { get; set; }
-        FormBorderStyle FormBorderStyle { get; set; }
-        bool HasChildren { get; }
-        int Height { get; set; }
-        bool HelpButton { get; set; }
-        HScrollProperties HorizontalScroll { get; }
-        Icon Icon { get; set; }
-        ImeMode ImeMode { get; set; }
-        bool InvokeRequired { get; }
-        bool IsAccessible { get; set; }
-        bool IsDisposed { get; }
-        bool IsHandleCreated { get; }
-        bool IsMdiChild { get; }
-        bool IsMdiContainer { get; set; }
-        bool IsMirrored { get; }
-        bool IsRestrictedWindow { get; }
-        bool KeyPreview { get; set; }
-        LayoutEngine LayoutEngine { get; }
-        int Left { get; set; }
-        Point Location { get; set; }
-        MenuStrip MainMenuStrip { get; set; }
-        Padding Margin { get; set; }
-        bool MaximizeBox { get; set; }
-        Size MaximumSize { get; set; }
-        Form[] MdiChildren { get; }
-        Form MdiParent { get; set; }
-        MainMenu Menu { get; set; }
-        MainMenu MergedMenu { get; }
-        bool MinimizeBox { get; set; }
-        Size MinimumSize { get; set; }
-        bool Modal { get; }
-        string Name { get; set; }
-        double Opacity { get; set; }
-        Form[] OwnedForms { get; }
-        Form Owner { get; set; }
-        Padding Padding { get; set; }
-        Control Parent { get; set; }
-        Form ParentForm { get; }
-        Size PreferredSize { get; }
-        string ProductName { get; }
-        string ProductVersion { get; }
-
-        /// <summary>
-        /// Gets a reference to the progress bar control.
-        /// </summary>
-        ProgressBar ProgressBar { [DebuggerStepThrough] get; }
-
-        bool RecreatingHandle { get; }
-        Region Region { get; set; }
-        Rectangle RestoreBounds { get; }
-        int Right { get; }
-        RightToLeft RightToLeft { get; set; }
-        bool RightToLeftLayout { get; set; }
-        bool ShowIcon { get; set; }
-        bool ShowInTaskbar { get; set; }
-        ISite Site { get; set; }
-        Size Size { get; set; }
-        SizeGripStyle SizeGripStyle { get; set; }
-        FormStartPosition StartPosition { get; set; }
-
-        int TabIndex { get; set; }
-        bool TabStop { get; set; }
-        object Tag { get; set; }
-        string Text { get; set; }
-        int Top { get; set; }
-        bool TopLevel { get; set; }
-        Control TopLevelControl { get; }
-        bool TopMost { get; set; }
-        Color TransparencyKey { get; set; }
-        bool UseWaitCursor { get; set; }
-        VScrollProperties VerticalScroll { get; }
-        bool Visible { get; set; }
-        int Width { get; set; }
-        FormWindowState WindowState { get; set; }
-        IWindowTarget WindowTarget { get; set; }
-
-        void Activate();
-
-        void AddOwnedForm(Form ownedForm);
-
-        IAsyncResult BeginInvoke(Delegate method);
-
-        IAsyncResult BeginInvoke(Delegate method, params object[] args);
-
-        void BringToFront();
-
-        void Close();
-
-        bool Contains(Control ctl);
-
-        void CreateControl();
-
-        Graphics CreateGraphics();
-
-        ObjRef CreateObjRef(Type requestedType);
-
-        void Dispose();
-
-        DragDropEffects DoDragDrop(object data, DragDropEffects allowedEffects);
-
-        void DrawToBitmap(Bitmap bitmap, Rectangle targetBounds);
-
-        object EndInvoke(IAsyncResult asyncResult);
-
-        Form FindForm();
-
-        bool Focus();
-
-        Control GetChildAtPoint(Point pt, GetChildAtPointSkip skipValue);
-
-        Control GetChildAtPoint(Point pt);
-
-        IContainerControl GetContainerControl();
-
-        object GetLifetimeService();
-
-        Control GetNextControl(Control ctl, bool forward);
-
-        Size GetPreferredSize(Size proposedSize);
-
-        void Hide();
-
-        object InitializeLifetimeService();
-
-        void Invalidate(Region region);
-
-        void Invalidate(Region region, bool invalidateChildren);
-
-        void Invalidate();
-
-        void Invalidate(bool invalidateChildren);
-
-        void Invalidate(Rectangle rc);
-
-        void Invalidate(Rectangle rc, bool invalidateChildren);
-
-        object Invoke(Delegate method);
-
-        object Invoke(Delegate method, params object[] args);
-
-        void LayoutMdi(MdiLayout value);
-
-        int LogicalToDeviceUnits(int value);
-
-        Size LogicalToDeviceUnits(Size value);
-
-        void PerformAutoScale();
-
-        void PerformLayout();
-
-        void PerformLayout(Control affectedControl, string affectedProperty);
-
-        Point PointToClient(Point p);
-
-        Point PointToScreen(Point p);
-
-        PreProcessControlState PreProcessControlMessage(ref Message msg);
-
-        bool PreProcessMessage(ref Message msg);
-
-        Rectangle RectangleToClient(Rectangle r);
-
-        Rectangle RectangleToScreen(Rectangle r);
-
-        void Refresh();
-
-        void RemoveOwnedForm(Form ownedForm);
-
-        void ResetBackColor();
-
-        void ResetBindings();
-
-        void ResetCursor();
-
-        void ResetFont();
-
-        void ResetForeColor();
-
-        void ResetImeMode();
-
-        void ResetRightToLeft();
-
-        void ResetText();
-
-        void ResumeLayout();
-
-        void ResumeLayout(bool performLayout);
-
-        void Scale(float ratio);
-
-        void Scale(float dx, float dy);
-
-        void Scale(SizeF factor);
-
-        void ScaleBitmapLogicalToDevice(ref Bitmap logicalBitmap);
-
-        void ScrollControlIntoView(Control activeControl);
-
-        void Select();
-
-        bool SelectNextControl(Control ctl, bool forward, bool tabStopOnly,
-           bool nested, bool wrap);
-
-        void SendToBack();
-
-        void SetAutoScrollMargin(int x, int y);
-
-        void SetBounds(int x, int y, int width, int height);
-
-        void SetBounds(int x, int y, int width, int height,
-           BoundsSpecified specified);
-
-        void SetDesktopBounds(int x, int y, int width, int height);
-
-        void SetDesktopLocation(int x, int y);
-
-        void Show(IWin32Window owner);
-
-        void Show();
-
-        DialogResult ShowDialog();
-
-        DialogResult ShowDialog(IWin32Window owner);
-
-        void SuspendLayout();
-
-        string ToString();
-
-        void Update();
-
-        bool Validate();
-
-        bool Validate(bool checkAutoValidate);
-
-        bool ValidateChildren();
-
-        bool ValidateChildren(ValidationConstraints validationConstraints);
-
-#pragma warning restore 1591
+      [UIPermission(
+        SecurityAction.Demand, Window = UIPermissionWindow.AllWindows
+      )]
+      get;
     }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the Minimize button is displayed
+    /// in the caption bar of the form.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> to display a Minimize button for the form;
+    /// otherwise, <see langword="false" />. The default is <see langword="true" />.
+    /// </returns>
+    bool MinimizeBox { get; set; }
+
+    /// <summary>
+    /// Gets a value indicating whether this form is displayed modally.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the form is displayed modally; otherwise,
+    /// <see langword="false" />.
+    /// </returns>
+    bool Modal { get; }
+
+    /// <summary>
+    /// Gets or sets the opacity level of the form.
+    /// </summary>
+    /// <returns>
+    /// The level of opacity for the form. The default is 1.00.
+    /// </returns>
+    double Opacity { get; set; }
+
+    /// <summary>
+    /// Gets an array of <see cref="T:System.Windows.Forms.Form" /> objects that
+    /// represent all forms that are owned by this form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.Form" /> array that represents the
+    /// owned forms for this form.
+    /// </returns>
+    Form[] OwnedForms { get; }
+
+    /// <summary>
+    /// Gets or sets the form that owns this form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.Form" /> that represents the form
+    /// that is the owner of this form.
+    /// </returns>
+    /// <exception cref="T:System.Exception">
+    /// A top-level window cannot have an owner.
+    /// </exception>
+    Form Owner { get; set; }
+
+    /// <summary>
+    /// Gets the location and size of the form in its normal window state.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Drawing.Rectangle" /> that contains the location
+    /// and size of the form in the normal window state.
+    /// </returns>
+    Rectangle RestoreBounds { get; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether right-to-left mirror placement
+    /// is turned on.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if right-to-left mirror placement is turned on;
+    /// otherwise, <see langword="false" /> for standard child control placement.
+    /// The default is <see langword="false" />.
+    /// </returns>
+    bool RightToLeftLayout { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether an icon is displayed in the
+    /// caption bar of the form.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if the form displays an icon in the caption bar;
+    /// otherwise, <see langword="false" />. The default is <see langword="true" />.
+    /// </returns>
+    bool ShowIcon { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the form is displayed in the
+    /// Windows taskbar.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> to display the form in the Windows taskbar at run
+    /// time; otherwise, <see langword="false" />. The default is
+    /// <see langword="true" />.
+    /// </returns>
+    bool ShowInTaskbar { get; set; }
+
+    /// <summary>
+    /// Gets or sets the style of the size grip to display in the lower-right
+    /// corner of the form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.SizeGripStyle" /> that represents the
+    /// style of the size grip to display. The default is
+    /// <see cref="F:System.Windows.Forms.SizeGripStyle.Auto" />
+    /// </returns>
+    /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+    /// The value specified is outside the range of valid values.
+    /// </exception>
+    SizeGripStyle SizeGripStyle { get; set; }
+
+    /// <summary>
+    /// Gets or sets the starting position of the form at run time.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.FormStartPosition" /> that represents
+    /// the starting position of the form.
+    /// </returns>
+    /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+    /// The value specified is outside the range of valid values.
+    /// </exception>
+    FormStartPosition StartPosition { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether to display the form as a
+    /// top-level window.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> to display the form as a top-level window;
+    /// otherwise, <see langword="false" />. The default is <see langword="true" />.
+    /// </returns>
+    /// <exception cref="T:System.Exception">
+    /// A Multiple-document interface (MDI) parent form must be a top-level window.
+    /// </exception>
+    bool TopLevel { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the form should be displayed as
+    /// a topmost form.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> to display the form as a topmost form; otherwise,
+    /// <see langword="false" />. The default is <see langword="false" />.
+    /// </returns>
+    bool TopMost { get; set; }
+
+    /// <summary>
+    /// Gets or sets the color that will represent transparent areas of the form.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Drawing.Color" /> that represents the color to
+    /// display transparently on the form.
+    /// </returns>
+    Color TransparencyKey { get; set; }
+
+    /// <summary>
+    /// Gets or sets a value that indicates whether form is minimized,
+    /// maximized, or normal.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="T:System.Windows.Forms.FormWindowState" /> that represents
+    /// whether form is minimized, maximized, or normal. The default is
+    /// <see langword="FormWindowState.Normal" />.
+    /// </returns>
+    /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+    /// The value specified is outside the range of valid values.
+    /// </exception>
+    FormWindowState WindowState { get; set; }
+
+    /// <summary>
+    /// Occurs when the form is activated in code or by the user.
+    /// </summary>
+    event EventHandler Activated;
+
+    /// <summary>
+    /// Occurs when the form is closed.
+    /// </summary>
+    event EventHandler Closed;
+
+    /// <summary>
+    /// Occurs when the form is closing.
+    /// </summary>
+    event CancelEventHandler Closing;
+
+    /// <summary>
+    /// Occurs when the form loses focus and is no longer the active form.
+    /// </summary>
+    event EventHandler Deactivate;
+
+    /// <summary>
+    /// Occurs when the DPI setting changes on the display device where the form
+    /// is currently displayed.
+    /// </summary>
+    event DpiChangedEventHandler DpiChanged;
+
+    /// <summary>
+    /// Occurs after the form is closed.
+    /// </summary>
+    event FormClosedEventHandler FormClosed;
+
+    /// <summary>
+    /// Occurs before the form is closed.
+    /// </summary>
+    event FormClosingEventHandler FormClosing;
+
+    /// <summary>
+    /// Occurs when the Help button is clicked.
+    /// </summary>
+    event CancelEventHandler HelpButtonClicked;
+
+    /// <summary>
+    /// Occurs after the input language of the form has changed.
+    /// </summary>
+    event InputLanguageChangedEventHandler InputLanguageChanged;
+
+    /// <summary>
+    /// Occurs when the user attempts to change the input language for the form.
+    /// </summary>
+    event InputLanguageChangingEventHandler InputLanguageChanging;
+
+    /// <summary>
+    /// Occurs before a form is displayed for the first time.
+    /// </summary>
+    event EventHandler Load;
+
+    /// <summary>
+    /// Occurs when the value of the
+    /// <see
+    ///   cref="P:System.Windows.Forms.Form.MaximizedBounds" />
+    /// property has changed.
+    /// </summary>
+    event EventHandler MaximizedBoundsChanged;
+
+    /// <summary>
+    /// Occurs when the value of the
+    /// <see
+    ///   cref="P:System.Windows.Forms.Form.MaximumSize" />
+    /// property has changed.
+    /// </summary>
+    event EventHandler MaximumSizeChanged;
+
+    /// <summary>
+    /// Occurs when a multiple-document interface (MDI) child form is activated
+    /// or closed within an MDI application.
+    /// </summary>
+    event EventHandler MdiChildActivate;
+
+    /// <summary>
+    /// Occurs when the menu of a form loses focus.
+    /// </summary>
+    event EventHandler MenuComplete;
+
+    /// <summary>
+    /// Occurs when the menu of a form receives focus.
+    /// </summary>
+    event EventHandler MenuStart;
+
+    /// <summary>
+    /// Occurs when the value of the
+    /// <see
+    ///   cref="P:System.Windows.Forms.Form.MinimumSize" />
+    /// property has changed.
+    /// </summary>
+    event EventHandler MinimumSizeChanged;
+
+    /// <summary>
+    /// Occurs when a form enters resizing mode.
+    /// </summary>
+    event EventHandler ResizeBegin;
+
+    /// <summary>
+    /// Occurs when a form exits resizing mode.
+    /// </summary>
+    event EventHandler ResizeEnd;
+
+    /// <summary>
+    /// Occurs after the value of the
+    /// <see
+    ///   cref="P:System.Windows.Forms.Form.RightToLeftLayout" />
+    /// property changes.
+    /// </summary>
+    event EventHandler RightToLeftLayoutChanged;
+
+    /// <summary>
+    /// Occurs whenever the form is first displayed.
+    /// </summary>
+    event EventHandler Shown;
+
+    /// <summary>
+    /// Activates the form and gives it focus.
+    /// </summary>
+    void Activate();
+
+    /// <summary>
+    /// Adds an owned form to this form.
+    /// </summary>
+    /// <param name="ownedForm">
+    /// The <see cref="T:System.Windows.Forms.Form" /> that this form will own.
+    /// </param>
+    void AddOwnedForm(Form ownedForm);
+
+    /// <summary>
+    /// Closes the form.
+    /// </summary>
+    /// <exception cref="T:System.InvalidOperationException">
+    /// The form was closed while a handle was being created.
+    /// </exception>
+    /// <exception cref="T:System.ObjectDisposedException">
+    /// You cannot call this method from the
+    /// <see
+    ///   cref="E:System.Windows.Forms.Form.Activated" />
+    /// event when
+    /// <see
+    ///   cref="P:System.Windows.Forms.Form.WindowState" />
+    /// is set to <see cref="F:System.Windows.Forms.FormWindowState.Maximized" />.
+    /// </exception>
+    void Close();
+
+    /// <summary>
+    /// Arranges the multiple-document interface (MDI) child forms within the
+    /// MDI parent form.
+    /// </summary>
+    /// <param name="value">
+    /// One of the <see cref="T:System.Windows.Forms.MdiLayout" /> values that
+    /// defines the layout of MDI child forms.
+    /// </param>
+    void LayoutMdi(MdiLayout value);
+
+    /// <summary>
+    /// Removes an owned form from this form.
+    /// </summary>
+    /// <param name="ownedForm">
+    /// A <see cref="T:System.Windows.Forms.Form" /> representing the form to
+    /// remove from the list of owned forms for this form.
+    /// </param>
+    void RemoveOwnedForm(Form ownedForm);
+
+    /// <summary>
+    /// Sets the bounds of the form in desktop coordinates.
+    /// </summary>
+    /// <param name="x">
+    /// The x-coordinate of the form's location.
+    /// </param>
+    /// <param name="y">
+    /// The y-coordinate of the form's location.
+    /// </param>
+    /// <param name="width">
+    /// The width of the form.
+    /// </param>
+    /// <param name="height">
+    /// The height of the form.
+    /// </param>
+    void SetDesktopBounds(int x, int y, int width, int height);
+
+    /// <summary>
+    /// Sets the location of the form in desktop coordinates.
+    /// </summary>
+    /// <param name="x">
+    /// The x-coordinate of the form's location.
+    /// </param>
+    /// <param name="y">
+    /// The y-coordinate of the form's location.
+    /// </param>
+    void SetDesktopLocation(int x, int y);
+
+    /// <summary>
+    /// Shows the form with the specified owner to the user.
+    /// </summary>
+    /// <param name="owner">
+    /// Any object that implements
+    /// <see
+    ///   cref="T:System.Windows.Forms.IWin32Window" />
+    /// and represents the
+    /// top-level window that will own this form.
+    /// </param>
+    /// <exception cref="T:System.InvalidOperationException">
+    /// The form being shown is already visible.
+    /// -or- The form specified in the <paramref name="owner" /> parameter is the
+    /// same as the form being shown.
+    /// -or- The form being shown is disabled.
+    /// -or- The form being shown is not a top-level window.
+    /// -or- The form being shown as a dialog box is already a modal form.
+    /// -or- The current process is not running in user interactive mode (for
+    /// more information, see
+    /// <see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />).
+    /// </exception>
+    void Show(IWin32Window owner);
+
+    /// <summary>
+    /// Shows the form as a modal dialog box.
+    /// </summary>
+    /// <returns>
+    /// One of the <see cref="T:System.Windows.Forms.DialogResult" /> values.
+    /// </returns>
+    /// <exception cref="T:System.InvalidOperationException">
+    /// The form being shown is already visible.
+    /// -or- The form being shown is disabled.
+    /// -or- The form being shown is not a top-level window.
+    /// -or- The form being shown as a dialog box is already a modal form.
+    /// -or- The current process is not running in user interactive mode (for
+    /// more information, see
+    /// <see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />).
+    /// </exception>
+    DialogResult ShowDialog();
+
+    /// <summary>
+    /// Shows the form as a modal dialog box with the specified owner.
+    /// </summary>
+    /// <param name="owner">
+    /// Any object that implements
+    /// <see
+    ///   cref="T:System.Windows.Forms.IWin32Window" />
+    /// that represents the
+    /// top-level window that will own the modal dialog box.
+    /// </param>
+    /// <returns>
+    /// One of the <see cref="T:System.Windows.Forms.DialogResult" /> values.
+    /// </returns>
+    /// <exception cref="T:System.ArgumentException">
+    /// The form specified in the <paramref name="owner" /> parameter is the same
+    /// as the form being shown.
+    /// </exception>
+    /// <exception cref="T:System.InvalidOperationException">
+    /// The form being shown is already visible.
+    /// -or- The form being shown is disabled.
+    /// -or- The form being shown is not a top-level window.
+    /// -or- The form being shown as a dialog box is already a modal form.
+    /// -or- The current process is not running in user interactive mode (for
+    /// more information, see
+    /// <see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />).
+    /// </exception>
+    DialogResult ShowDialog(IWin32Window owner);
+
+    /// <summary>
+    /// Gets a string representing the current instance of the form.
+    /// </summary>
+    /// <returns>
+    /// A string consisting of the fully qualified name of the form object's
+    /// class, with the <see cref="P:System.Windows.Forms.Form.Text" /> property
+    /// of the form appended to the end. For example, if the form is derived
+    /// from the class <c>MyForm</c> in the <c>MyNamespace</c> namespace, and
+    /// the <see cref="P:System.Windows.Forms.Form.Text" /> property is set to
+    /// <c>Hello, World</c>, this method will return
+    /// <c>
+    /// MyNamespace.MyForm,
+    /// Text: Hello, World
+    /// </c>
+    /// .
+    /// </returns>
+    string ToString();
+
+    /// <summary>
+    /// Causes all of the child controls within a control that support
+    /// validation to validate their data.
+    /// </summary>
+    /// <returns>
+    /// <see langword="true" /> if all of the children validated successfully;
+    /// otherwise, <see langword="false" />. If called from the
+    /// <see
+    ///   cref="E:System.Windows.Forms.Control.Validating" />
+    /// or
+    /// <see
+    ///   cref="E:System.Windows.Forms.Control.Validated" />
+    /// event handlers, this
+    /// method will always return <see langword="false" />.
+    /// </returns>
+    bool ValidateChildren();
+
+    /// <summary>
+    /// Causes all of the child controls within a control that support
+    /// validation to validate their data.
+    /// </summary>
+    /// <param name="validationConstraints">
+    /// Places restrictions on which controls have their
+    /// <see
+    ///   cref="E:System.Windows.Forms.Control.Validating" />
+    /// event raised.
+    /// </param>
+    /// <returns>
+    /// <see langword="true" /> if all of the children validated successfully;
+    /// otherwise, <see langword="false" />. If called from the
+    /// <see
+    ///   cref="E:System.Windows.Forms.Control.Validating" />
+    /// or
+    /// <see
+    ///   cref="E:System.Windows.Forms.Control.Validated" />
+    /// event handlers, this
+    /// method will always return <see langword="false" />.
+    /// </returns>
+    bool ValidateChildren(ValidationConstraints validationConstraints);
+  }
 }

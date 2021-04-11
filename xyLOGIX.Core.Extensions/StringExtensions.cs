@@ -843,9 +843,7 @@ namespace xyLOGIX.Core.Extensions
         public static bool MatchesNoCase(this string stringToSearch,
             string findWhat, string replaceWith)
             => !string.IsNullOrEmpty(stringToSearch) &&
-               stringToSearch.ContainsNoCase(findWhat) &&
-               (findWhat.ContainsNoCase(replaceWith) ||
-                !stringToSearch.ContainsNoCase(replaceWith));
+               stringToSearch.ContainsNoCase(findWhat);
 
         /// <summary>
         /// Determines whether the <paramref name="stringToSearch" /> contains
@@ -884,9 +882,7 @@ namespace xyLOGIX.Core.Extensions
         public static bool MatchesWithCase(this string stringToSearch,
             string findWhat, string replaceWith)
             => !string.IsNullOrEmpty(stringToSearch) &&
-               stringToSearch.Contains(findWhat) &&
-               (findWhat.Contains(replaceWith) ||
-                !stringToSearch.Contains(replaceWith));
+               stringToSearch.Contains(findWhat);
 
         /// <summary>
         /// Pluralizes the word passed in, applying language rules from the

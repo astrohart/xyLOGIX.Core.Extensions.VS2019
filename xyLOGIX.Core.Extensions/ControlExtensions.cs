@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions
@@ -80,7 +81,10 @@ namespace xyLOGIX.Core.Extensions
         Application.DoEvents();
 
       if (obj.InvokeRequired)
-        obj.BeginInvoke(message, new object[0]);
+        obj.Invoke(
+          message, Enumerable.Empty<object>()
+                             .ToArray()
+        );
       else
         message();
     }

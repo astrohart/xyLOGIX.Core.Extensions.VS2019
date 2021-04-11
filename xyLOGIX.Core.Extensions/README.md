@@ -3,6 +3,8 @@
 
 ## Contents
 
+- [AspMvcActionSelectorAttribute](#T-xyLOGIX-Core-Extensions-Properties-AspMvcActionSelectorAttribute 'xyLOGIX.Core.Extensions.Properties.AspMvcActionSelectorAttribute')
+- [AspMvcAreaAttribute](#T-xyLOGIX-Core-Extensions-Properties-AspMvcAreaAttribute 'xyLOGIX.Core.Extensions.Properties.AspMvcAreaAttribute')
 - [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
   - [AreAllItemsSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.AreAllItemsSelected(System.Windows.Forms.CheckedListBox)')
   - [CheckAll(checkedListBox,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckAll(System.Windows.Forms.CheckedListBox,System.Boolean)')
@@ -17,6 +19,7 @@
   - [ShuffleIterator\`\`1(source,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ShuffleIterator``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ShuffleIterator``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
   - [Shuffle\`\`1(source)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})')
   - [Shuffle\`\`1(source,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
+  - [TakeAllButLast\`\`1(source)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-TakeAllButLast``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.TakeAllButLast``1(System.Collections.Generic.IEnumerable{``0})')
 - [FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions')
   - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Form)')
   - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Screen)')
@@ -25,8 +28,233 @@
   - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
+- [IComboBox](#T-xyLOGIX-Core-Extensions-IComboBox 'xyLOGIX.Core.Extensions.IComboBox')
+  - [AutoCompleteCustomSource](#P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteCustomSource 'xyLOGIX.Core.Extensions.IComboBox.AutoCompleteCustomSource')
+  - [AutoCompleteMode](#P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteMode 'xyLOGIX.Core.Extensions.IComboBox.AutoCompleteMode')
+  - [AutoCompleteSource](#P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteSource 'xyLOGIX.Core.Extensions.IComboBox.AutoCompleteSource')
+  - [DataSource](#P-xyLOGIX-Core-Extensions-IComboBox-DataSource 'xyLOGIX.Core.Extensions.IComboBox.DataSource')
+  - [DrawMode](#P-xyLOGIX-Core-Extensions-IComboBox-DrawMode 'xyLOGIX.Core.Extensions.IComboBox.DrawMode')
+  - [DropDownHeight](#P-xyLOGIX-Core-Extensions-IComboBox-DropDownHeight 'xyLOGIX.Core.Extensions.IComboBox.DropDownHeight')
+  - [DropDownStyle](#P-xyLOGIX-Core-Extensions-IComboBox-DropDownStyle 'xyLOGIX.Core.Extensions.IComboBox.DropDownStyle')
+  - [DropDownWidth](#P-xyLOGIX-Core-Extensions-IComboBox-DropDownWidth 'xyLOGIX.Core.Extensions.IComboBox.DropDownWidth')
+  - [DroppedDown](#P-xyLOGIX-Core-Extensions-IComboBox-DroppedDown 'xyLOGIX.Core.Extensions.IComboBox.DroppedDown')
+  - [FlatStyle](#P-xyLOGIX-Core-Extensions-IComboBox-FlatStyle 'xyLOGIX.Core.Extensions.IComboBox.FlatStyle')
+  - [IntegralHeight](#P-xyLOGIX-Core-Extensions-IComboBox-IntegralHeight 'xyLOGIX.Core.Extensions.IComboBox.IntegralHeight')
+  - [ItemHeight](#P-xyLOGIX-Core-Extensions-IComboBox-ItemHeight 'xyLOGIX.Core.Extensions.IComboBox.ItemHeight')
+  - [Items](#P-xyLOGIX-Core-Extensions-IComboBox-Items 'xyLOGIX.Core.Extensions.IComboBox.Items')
+  - [MaxDropDownItems](#P-xyLOGIX-Core-Extensions-IComboBox-MaxDropDownItems 'xyLOGIX.Core.Extensions.IComboBox.MaxDropDownItems')
+  - [MaxLength](#P-xyLOGIX-Core-Extensions-IComboBox-MaxLength 'xyLOGIX.Core.Extensions.IComboBox.MaxLength')
+  - [PreferredHeight](#P-xyLOGIX-Core-Extensions-IComboBox-PreferredHeight 'xyLOGIX.Core.Extensions.IComboBox.PreferredHeight')
+  - [SelectedIndex](#P-xyLOGIX-Core-Extensions-IComboBox-SelectedIndex 'xyLOGIX.Core.Extensions.IComboBox.SelectedIndex')
+  - [SelectedItem](#P-xyLOGIX-Core-Extensions-IComboBox-SelectedItem 'xyLOGIX.Core.Extensions.IComboBox.SelectedItem')
+  - [SelectedText](#P-xyLOGIX-Core-Extensions-IComboBox-SelectedText 'xyLOGIX.Core.Extensions.IComboBox.SelectedText')
+  - [SelectionLength](#P-xyLOGIX-Core-Extensions-IComboBox-SelectionLength 'xyLOGIX.Core.Extensions.IComboBox.SelectionLength')
+  - [SelectionStart](#P-xyLOGIX-Core-Extensions-IComboBox-SelectionStart 'xyLOGIX.Core.Extensions.IComboBox.SelectionStart')
+  - [Sorted](#P-xyLOGIX-Core-Extensions-IComboBox-Sorted 'xyLOGIX.Core.Extensions.IComboBox.Sorted')
+  - [BeginUpdate()](#M-xyLOGIX-Core-Extensions-IComboBox-BeginUpdate 'xyLOGIX.Core.Extensions.IComboBox.BeginUpdate')
+  - [EndUpdate()](#M-xyLOGIX-Core-Extensions-IComboBox-EndUpdate 'xyLOGIX.Core.Extensions.IComboBox.EndUpdate')
+  - [FindString(s)](#M-xyLOGIX-Core-Extensions-IComboBox-FindString-System-String- 'xyLOGIX.Core.Extensions.IComboBox.FindString(System.String)')
+  - [FindString(s,startIndex)](#M-xyLOGIX-Core-Extensions-IComboBox-FindString-System-String,System-Int32- 'xyLOGIX.Core.Extensions.IComboBox.FindString(System.String,System.Int32)')
+  - [FindStringExact(s)](#M-xyLOGIX-Core-Extensions-IComboBox-FindStringExact-System-String- 'xyLOGIX.Core.Extensions.IComboBox.FindStringExact(System.String)')
+  - [FindStringExact(s,startIndex)](#M-xyLOGIX-Core-Extensions-IComboBox-FindStringExact-System-String,System-Int32- 'xyLOGIX.Core.Extensions.IComboBox.FindStringExact(System.String,System.Int32)')
+  - [GetItemHeight(index)](#M-xyLOGIX-Core-Extensions-IComboBox-GetItemHeight-System-Int32- 'xyLOGIX.Core.Extensions.IComboBox.GetItemHeight(System.Int32)')
+  - [Select(start,length)](#M-xyLOGIX-Core-Extensions-IComboBox-Select-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IComboBox.Select(System.Int32,System.Int32)')
+  - [SelectAll()](#M-xyLOGIX-Core-Extensions-IComboBox-SelectAll 'xyLOGIX.Core.Extensions.IComboBox.SelectAll')
+  - [ToString()](#M-xyLOGIX-Core-Extensions-IComboBox-ToString 'xyLOGIX.Core.Extensions.IComboBox.ToString')
+- [IControl](#T-xyLOGIX-Core-Extensions-IControl 'xyLOGIX.Core.Extensions.IControl')
+  - [AccessibilityObject](#P-xyLOGIX-Core-Extensions-IControl-AccessibilityObject 'xyLOGIX.Core.Extensions.IControl.AccessibilityObject')
+  - [AccessibleDefaultActionDescription](#P-xyLOGIX-Core-Extensions-IControl-AccessibleDefaultActionDescription 'xyLOGIX.Core.Extensions.IControl.AccessibleDefaultActionDescription')
+  - [AccessibleDescription](#P-xyLOGIX-Core-Extensions-IControl-AccessibleDescription 'xyLOGIX.Core.Extensions.IControl.AccessibleDescription')
+  - [AccessibleName](#P-xyLOGIX-Core-Extensions-IControl-AccessibleName 'xyLOGIX.Core.Extensions.IControl.AccessibleName')
+  - [AccessibleRole](#P-xyLOGIX-Core-Extensions-IControl-AccessibleRole 'xyLOGIX.Core.Extensions.IControl.AccessibleRole')
+  - [AllowDrop](#P-xyLOGIX-Core-Extensions-IControl-AllowDrop 'xyLOGIX.Core.Extensions.IControl.AllowDrop')
+  - [Anchor](#P-xyLOGIX-Core-Extensions-IControl-Anchor 'xyLOGIX.Core.Extensions.IControl.Anchor')
+  - [AutoScrollOffset](#P-xyLOGIX-Core-Extensions-IControl-AutoScrollOffset 'xyLOGIX.Core.Extensions.IControl.AutoScrollOffset')
+  - [AutoSize](#P-xyLOGIX-Core-Extensions-IControl-AutoSize 'xyLOGIX.Core.Extensions.IControl.AutoSize')
+  - [BackColor](#P-xyLOGIX-Core-Extensions-IControl-BackColor 'xyLOGIX.Core.Extensions.IControl.BackColor')
+  - [BackgroundImage](#P-xyLOGIX-Core-Extensions-IControl-BackgroundImage 'xyLOGIX.Core.Extensions.IControl.BackgroundImage')
+  - [BackgroundImageLayout](#P-xyLOGIX-Core-Extensions-IControl-BackgroundImageLayout 'xyLOGIX.Core.Extensions.IControl.BackgroundImageLayout')
+  - [BindingContext](#P-xyLOGIX-Core-Extensions-IControl-BindingContext 'xyLOGIX.Core.Extensions.IControl.BindingContext')
+  - [Bottom](#P-xyLOGIX-Core-Extensions-IControl-Bottom 'xyLOGIX.Core.Extensions.IControl.Bottom')
+  - [Bounds](#P-xyLOGIX-Core-Extensions-IControl-Bounds 'xyLOGIX.Core.Extensions.IControl.Bounds')
+  - [CanFocus](#P-xyLOGIX-Core-Extensions-IControl-CanFocus 'xyLOGIX.Core.Extensions.IControl.CanFocus')
+  - [CanSelect](#P-xyLOGIX-Core-Extensions-IControl-CanSelect 'xyLOGIX.Core.Extensions.IControl.CanSelect')
+  - [Capture](#P-xyLOGIX-Core-Extensions-IControl-Capture 'xyLOGIX.Core.Extensions.IControl.Capture')
+  - [CausesValidation](#P-xyLOGIX-Core-Extensions-IControl-CausesValidation 'xyLOGIX.Core.Extensions.IControl.CausesValidation')
+  - [ClientRectangle](#P-xyLOGIX-Core-Extensions-IControl-ClientRectangle 'xyLOGIX.Core.Extensions.IControl.ClientRectangle')
+  - [ClientSize](#P-xyLOGIX-Core-Extensions-IControl-ClientSize 'xyLOGIX.Core.Extensions.IControl.ClientSize')
+  - [CompanyName](#P-xyLOGIX-Core-Extensions-IControl-CompanyName 'xyLOGIX.Core.Extensions.IControl.CompanyName')
+  - [ContainsFocus](#P-xyLOGIX-Core-Extensions-IControl-ContainsFocus 'xyLOGIX.Core.Extensions.IControl.ContainsFocus')
+  - [ContextMenu](#P-xyLOGIX-Core-Extensions-IControl-ContextMenu 'xyLOGIX.Core.Extensions.IControl.ContextMenu')
+  - [ContextMenuStrip](#P-xyLOGIX-Core-Extensions-IControl-ContextMenuStrip 'xyLOGIX.Core.Extensions.IControl.ContextMenuStrip')
+  - [Controls](#P-xyLOGIX-Core-Extensions-IControl-Controls 'xyLOGIX.Core.Extensions.IControl.Controls')
+  - [Created](#P-xyLOGIX-Core-Extensions-IControl-Created 'xyLOGIX.Core.Extensions.IControl.Created')
+  - [Cursor](#P-xyLOGIX-Core-Extensions-IControl-Cursor 'xyLOGIX.Core.Extensions.IControl.Cursor')
+  - [DataBindings](#P-xyLOGIX-Core-Extensions-IControl-DataBindings 'xyLOGIX.Core.Extensions.IControl.DataBindings')
+  - [DeviceDpi](#P-xyLOGIX-Core-Extensions-IControl-DeviceDpi 'xyLOGIX.Core.Extensions.IControl.DeviceDpi')
+  - [DisplayRectangle](#P-xyLOGIX-Core-Extensions-IControl-DisplayRectangle 'xyLOGIX.Core.Extensions.IControl.DisplayRectangle')
+  - [Disposing](#P-xyLOGIX-Core-Extensions-IControl-Disposing 'xyLOGIX.Core.Extensions.IControl.Disposing')
+  - [Dock](#P-xyLOGIX-Core-Extensions-IControl-Dock 'xyLOGIX.Core.Extensions.IControl.Dock')
+  - [Enabled](#P-xyLOGIX-Core-Extensions-IControl-Enabled 'xyLOGIX.Core.Extensions.IControl.Enabled')
+  - [Focused](#P-xyLOGIX-Core-Extensions-IControl-Focused 'xyLOGIX.Core.Extensions.IControl.Focused')
+  - [Font](#P-xyLOGIX-Core-Extensions-IControl-Font 'xyLOGIX.Core.Extensions.IControl.Font')
+  - [ForeColor](#P-xyLOGIX-Core-Extensions-IControl-ForeColor 'xyLOGIX.Core.Extensions.IControl.ForeColor')
+  - [Handle](#P-xyLOGIX-Core-Extensions-IControl-Handle 'xyLOGIX.Core.Extensions.IControl.Handle')
+  - [HasChildren](#P-xyLOGIX-Core-Extensions-IControl-HasChildren 'xyLOGIX.Core.Extensions.IControl.HasChildren')
+  - [Height](#P-xyLOGIX-Core-Extensions-IControl-Height 'xyLOGIX.Core.Extensions.IControl.Height')
+  - [ImeMode](#P-xyLOGIX-Core-Extensions-IControl-ImeMode 'xyLOGIX.Core.Extensions.IControl.ImeMode')
+  - [IsAccessible](#P-xyLOGIX-Core-Extensions-IControl-IsAccessible 'xyLOGIX.Core.Extensions.IControl.IsAccessible')
+  - [IsDisposed](#P-xyLOGIX-Core-Extensions-IControl-IsDisposed 'xyLOGIX.Core.Extensions.IControl.IsDisposed')
+  - [IsHandleCreated](#P-xyLOGIX-Core-Extensions-IControl-IsHandleCreated 'xyLOGIX.Core.Extensions.IControl.IsHandleCreated')
+  - [IsMirrored](#P-xyLOGIX-Core-Extensions-IControl-IsMirrored 'xyLOGIX.Core.Extensions.IControl.IsMirrored')
+  - [LayoutEngine](#P-xyLOGIX-Core-Extensions-IControl-LayoutEngine 'xyLOGIX.Core.Extensions.IControl.LayoutEngine')
+  - [Left](#P-xyLOGIX-Core-Extensions-IControl-Left 'xyLOGIX.Core.Extensions.IControl.Left')
+  - [Location](#P-xyLOGIX-Core-Extensions-IControl-Location 'xyLOGIX.Core.Extensions.IControl.Location')
+  - [Margin](#P-xyLOGIX-Core-Extensions-IControl-Margin 'xyLOGIX.Core.Extensions.IControl.Margin')
+  - [MaximumSize](#P-xyLOGIX-Core-Extensions-IControl-MaximumSize 'xyLOGIX.Core.Extensions.IControl.MaximumSize')
+  - [MinimumSize](#P-xyLOGIX-Core-Extensions-IControl-MinimumSize 'xyLOGIX.Core.Extensions.IControl.MinimumSize')
+  - [Name](#P-xyLOGIX-Core-Extensions-IControl-Name 'xyLOGIX.Core.Extensions.IControl.Name')
+  - [Padding](#P-xyLOGIX-Core-Extensions-IControl-Padding 'xyLOGIX.Core.Extensions.IControl.Padding')
+  - [Parent](#P-xyLOGIX-Core-Extensions-IControl-Parent 'xyLOGIX.Core.Extensions.IControl.Parent')
+  - [PreferredSize](#P-xyLOGIX-Core-Extensions-IControl-PreferredSize 'xyLOGIX.Core.Extensions.IControl.PreferredSize')
+  - [ProductName](#P-xyLOGIX-Core-Extensions-IControl-ProductName 'xyLOGIX.Core.Extensions.IControl.ProductName')
+  - [ProductVersion](#P-xyLOGIX-Core-Extensions-IControl-ProductVersion 'xyLOGIX.Core.Extensions.IControl.ProductVersion')
+  - [RecreatingHandle](#P-xyLOGIX-Core-Extensions-IControl-RecreatingHandle 'xyLOGIX.Core.Extensions.IControl.RecreatingHandle')
+  - [Region](#P-xyLOGIX-Core-Extensions-IControl-Region 'xyLOGIX.Core.Extensions.IControl.Region')
+  - [Right](#P-xyLOGIX-Core-Extensions-IControl-Right 'xyLOGIX.Core.Extensions.IControl.Right')
+  - [RightToLeft](#P-xyLOGIX-Core-Extensions-IControl-RightToLeft 'xyLOGIX.Core.Extensions.IControl.RightToLeft')
+  - [Size](#P-xyLOGIX-Core-Extensions-IControl-Size 'xyLOGIX.Core.Extensions.IControl.Size')
+  - [TabIndex](#P-xyLOGIX-Core-Extensions-IControl-TabIndex 'xyLOGIX.Core.Extensions.IControl.TabIndex')
+  - [TabStop](#P-xyLOGIX-Core-Extensions-IControl-TabStop 'xyLOGIX.Core.Extensions.IControl.TabStop')
+  - [Tag](#P-xyLOGIX-Core-Extensions-IControl-Tag 'xyLOGIX.Core.Extensions.IControl.Tag')
+  - [Text](#P-xyLOGIX-Core-Extensions-IControl-Text 'xyLOGIX.Core.Extensions.IControl.Text')
+  - [Top](#P-xyLOGIX-Core-Extensions-IControl-Top 'xyLOGIX.Core.Extensions.IControl.Top')
+  - [TopLevelControl](#P-xyLOGIX-Core-Extensions-IControl-TopLevelControl 'xyLOGIX.Core.Extensions.IControl.TopLevelControl')
+  - [UseWaitCursor](#P-xyLOGIX-Core-Extensions-IControl-UseWaitCursor 'xyLOGIX.Core.Extensions.IControl.UseWaitCursor')
+  - [Visible](#P-xyLOGIX-Core-Extensions-IControl-Visible 'xyLOGIX.Core.Extensions.IControl.Visible')
+  - [Width](#P-xyLOGIX-Core-Extensions-IControl-Width 'xyLOGIX.Core.Extensions.IControl.Width')
+  - [WindowTarget](#P-xyLOGIX-Core-Extensions-IControl-WindowTarget 'xyLOGIX.Core.Extensions.IControl.WindowTarget')
+  - [BeginInvoke(method)](#M-xyLOGIX-Core-Extensions-IControl-BeginInvoke-System-Delegate- 'xyLOGIX.Core.Extensions.IControl.BeginInvoke(System.Delegate)')
+  - [BringToFront()](#M-xyLOGIX-Core-Extensions-IControl-BringToFront 'xyLOGIX.Core.Extensions.IControl.BringToFront')
+  - [Contains(ctl)](#M-xyLOGIX-Core-Extensions-IControl-Contains-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.IControl.Contains(System.Windows.Forms.Control)')
+  - [CreateControl()](#M-xyLOGIX-Core-Extensions-IControl-CreateControl 'xyLOGIX.Core.Extensions.IControl.CreateControl')
+  - [CreateGraphics()](#M-xyLOGIX-Core-Extensions-IControl-CreateGraphics 'xyLOGIX.Core.Extensions.IControl.CreateGraphics')
+  - [DoDragDrop(data,allowedEffects)](#M-xyLOGIX-Core-Extensions-IControl-DoDragDrop-System-Object,System-Windows-Forms-DragDropEffects- 'xyLOGIX.Core.Extensions.IControl.DoDragDrop(System.Object,System.Windows.Forms.DragDropEffects)')
+  - [DrawToBitmap(bitmap,targetBounds)](#M-xyLOGIX-Core-Extensions-IControl-DrawToBitmap-System-Drawing-Bitmap,System-Drawing-Rectangle- 'xyLOGIX.Core.Extensions.IControl.DrawToBitmap(System.Drawing.Bitmap,System.Drawing.Rectangle)')
+  - [EndInvoke(asyncResult)](#M-xyLOGIX-Core-Extensions-IControl-EndInvoke-System-IAsyncResult- 'xyLOGIX.Core.Extensions.IControl.EndInvoke(System.IAsyncResult)')
+  - [FindForm()](#M-xyLOGIX-Core-Extensions-IControl-FindForm 'xyLOGIX.Core.Extensions.IControl.FindForm')
+  - [Focus()](#M-xyLOGIX-Core-Extensions-IControl-Focus 'xyLOGIX.Core.Extensions.IControl.Focus')
+  - [GetChildAtPoint(pt,skipValue)](#M-xyLOGIX-Core-Extensions-IControl-GetChildAtPoint-System-Drawing-Point,System-Windows-Forms-GetChildAtPointSkip- 'xyLOGIX.Core.Extensions.IControl.GetChildAtPoint(System.Drawing.Point,System.Windows.Forms.GetChildAtPointSkip)')
+  - [GetChildAtPoint(pt)](#M-xyLOGIX-Core-Extensions-IControl-GetChildAtPoint-System-Drawing-Point- 'xyLOGIX.Core.Extensions.IControl.GetChildAtPoint(System.Drawing.Point)')
+  - [GetContainerControl()](#M-xyLOGIX-Core-Extensions-IControl-GetContainerControl 'xyLOGIX.Core.Extensions.IControl.GetContainerControl')
+  - [GetNextControl(ctl,forward)](#M-xyLOGIX-Core-Extensions-IControl-GetNextControl-System-Windows-Forms-Control,System-Boolean- 'xyLOGIX.Core.Extensions.IControl.GetNextControl(System.Windows.Forms.Control,System.Boolean)')
+  - [GetPreferredSize(proposedSize)](#M-xyLOGIX-Core-Extensions-IControl-GetPreferredSize-System-Drawing-Size- 'xyLOGIX.Core.Extensions.IControl.GetPreferredSize(System.Drawing.Size)')
+  - [Hide()](#M-xyLOGIX-Core-Extensions-IControl-Hide 'xyLOGIX.Core.Extensions.IControl.Hide')
+  - [Invalidate(region)](#M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Region- 'xyLOGIX.Core.Extensions.IControl.Invalidate(System.Drawing.Region)')
+  - [Invalidate(region,invalidateChildren)](#M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Region,System-Boolean- 'xyLOGIX.Core.Extensions.IControl.Invalidate(System.Drawing.Region,System.Boolean)')
+  - [Invalidate()](#M-xyLOGIX-Core-Extensions-IControl-Invalidate 'xyLOGIX.Core.Extensions.IControl.Invalidate')
+  - [Invalidate(invalidateChildren)](#M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Boolean- 'xyLOGIX.Core.Extensions.IControl.Invalidate(System.Boolean)')
+  - [Invalidate(rc)](#M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Rectangle- 'xyLOGIX.Core.Extensions.IControl.Invalidate(System.Drawing.Rectangle)')
+  - [Invalidate(rc,invalidateChildren)](#M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Rectangle,System-Boolean- 'xyLOGIX.Core.Extensions.IControl.Invalidate(System.Drawing.Rectangle,System.Boolean)')
+  - [Invoke(method)](#M-xyLOGIX-Core-Extensions-IControl-Invoke-System-Delegate- 'xyLOGIX.Core.Extensions.IControl.Invoke(System.Delegate)')
+  - [Invoke(method,args)](#M-xyLOGIX-Core-Extensions-IControl-Invoke-System-Delegate,System-Object[]- 'xyLOGIX.Core.Extensions.IControl.Invoke(System.Delegate,System.Object[])')
+  - [LogicalToDeviceUnits(value)](#M-xyLOGIX-Core-Extensions-IControl-LogicalToDeviceUnits-System-Int32- 'xyLOGIX.Core.Extensions.IControl.LogicalToDeviceUnits(System.Int32)')
+  - [LogicalToDeviceUnits(value)](#M-xyLOGIX-Core-Extensions-IControl-LogicalToDeviceUnits-System-Drawing-Size- 'xyLOGIX.Core.Extensions.IControl.LogicalToDeviceUnits(System.Drawing.Size)')
+  - [PerformLayout()](#M-xyLOGIX-Core-Extensions-IControl-PerformLayout 'xyLOGIX.Core.Extensions.IControl.PerformLayout')
+  - [PerformLayout(affectedControl,affectedProperty)](#M-xyLOGIX-Core-Extensions-IControl-PerformLayout-System-Windows-Forms-Control,System-String- 'xyLOGIX.Core.Extensions.IControl.PerformLayout(System.Windows.Forms.Control,System.String)')
+  - [PointToClient(p)](#M-xyLOGIX-Core-Extensions-IControl-PointToClient-System-Drawing-Point- 'xyLOGIX.Core.Extensions.IControl.PointToClient(System.Drawing.Point)')
+  - [PointToScreen(p)](#M-xyLOGIX-Core-Extensions-IControl-PointToScreen-System-Drawing-Point- 'xyLOGIX.Core.Extensions.IControl.PointToScreen(System.Drawing.Point)')
+  - [PreProcessControlMessage(msg)](#M-xyLOGIX-Core-Extensions-IControl-PreProcessControlMessage-System-Windows-Forms-Message@- 'xyLOGIX.Core.Extensions.IControl.PreProcessControlMessage(System.Windows.Forms.Message@)')
+  - [PreProcessMessage(msg)](#M-xyLOGIX-Core-Extensions-IControl-PreProcessMessage-System-Windows-Forms-Message@- 'xyLOGIX.Core.Extensions.IControl.PreProcessMessage(System.Windows.Forms.Message@)')
+  - [RectangleToClient(r)](#M-xyLOGIX-Core-Extensions-IControl-RectangleToClient-System-Drawing-Rectangle- 'xyLOGIX.Core.Extensions.IControl.RectangleToClient(System.Drawing.Rectangle)')
+  - [RectangleToScreen(r)](#M-xyLOGIX-Core-Extensions-IControl-RectangleToScreen-System-Drawing-Rectangle- 'xyLOGIX.Core.Extensions.IControl.RectangleToScreen(System.Drawing.Rectangle)')
+  - [Refresh()](#M-xyLOGIX-Core-Extensions-IControl-Refresh 'xyLOGIX.Core.Extensions.IControl.Refresh')
+  - [ResetBackColor()](#M-xyLOGIX-Core-Extensions-IControl-ResetBackColor 'xyLOGIX.Core.Extensions.IControl.ResetBackColor')
+  - [ResetBindings()](#M-xyLOGIX-Core-Extensions-IControl-ResetBindings 'xyLOGIX.Core.Extensions.IControl.ResetBindings')
+  - [ResetCursor()](#M-xyLOGIX-Core-Extensions-IControl-ResetCursor 'xyLOGIX.Core.Extensions.IControl.ResetCursor')
+  - [ResetFont()](#M-xyLOGIX-Core-Extensions-IControl-ResetFont 'xyLOGIX.Core.Extensions.IControl.ResetFont')
+  - [ResetForeColor()](#M-xyLOGIX-Core-Extensions-IControl-ResetForeColor 'xyLOGIX.Core.Extensions.IControl.ResetForeColor')
+  - [ResetImeMode()](#M-xyLOGIX-Core-Extensions-IControl-ResetImeMode 'xyLOGIX.Core.Extensions.IControl.ResetImeMode')
+  - [ResetRightToLeft()](#M-xyLOGIX-Core-Extensions-IControl-ResetRightToLeft 'xyLOGIX.Core.Extensions.IControl.ResetRightToLeft')
+  - [ResetText()](#M-xyLOGIX-Core-Extensions-IControl-ResetText 'xyLOGIX.Core.Extensions.IControl.ResetText')
+  - [ResumeLayout()](#M-xyLOGIX-Core-Extensions-IControl-ResumeLayout 'xyLOGIX.Core.Extensions.IControl.ResumeLayout')
+  - [ResumeLayout(performLayout)](#M-xyLOGIX-Core-Extensions-IControl-ResumeLayout-System-Boolean- 'xyLOGIX.Core.Extensions.IControl.ResumeLayout(System.Boolean)')
+  - [Scale(ratio)](#M-xyLOGIX-Core-Extensions-IControl-Scale-System-Single- 'xyLOGIX.Core.Extensions.IControl.Scale(System.Single)')
+  - [Scale(dx,dy)](#M-xyLOGIX-Core-Extensions-IControl-Scale-System-Single,System-Single- 'xyLOGIX.Core.Extensions.IControl.Scale(System.Single,System.Single)')
+  - [Scale(factor)](#M-xyLOGIX-Core-Extensions-IControl-Scale-System-Drawing-SizeF- 'xyLOGIX.Core.Extensions.IControl.Scale(System.Drawing.SizeF)')
+  - [ScaleBitmapLogicalToDevice(logicalBitmap)](#M-xyLOGIX-Core-Extensions-IControl-ScaleBitmapLogicalToDevice-System-Drawing-Bitmap@- 'xyLOGIX.Core.Extensions.IControl.ScaleBitmapLogicalToDevice(System.Drawing.Bitmap@)')
+  - [Select()](#M-xyLOGIX-Core-Extensions-IControl-Select 'xyLOGIX.Core.Extensions.IControl.Select')
+  - [SelectNextControl(ctl,forward,tabStopOnly,nested,wrap)](#M-xyLOGIX-Core-Extensions-IControl-SelectNextControl-System-Windows-Forms-Control,System-Boolean,System-Boolean,System-Boolean,System-Boolean- 'xyLOGIX.Core.Extensions.IControl.SelectNextControl(System.Windows.Forms.Control,System.Boolean,System.Boolean,System.Boolean,System.Boolean)')
+  - [SendToBack()](#M-xyLOGIX-Core-Extensions-IControl-SendToBack 'xyLOGIX.Core.Extensions.IControl.SendToBack')
+  - [SetBounds(x,y,width,height)](#M-xyLOGIX-Core-Extensions-IControl-SetBounds-System-Int32,System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IControl.SetBounds(System.Int32,System.Int32,System.Int32,System.Int32)')
+  - [SetBounds(x,y,width,height,specified)](#M-xyLOGIX-Core-Extensions-IControl-SetBounds-System-Int32,System-Int32,System-Int32,System-Int32,System-Windows-Forms-BoundsSpecified- 'xyLOGIX.Core.Extensions.IControl.SetBounds(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)')
+  - [Show()](#M-xyLOGIX-Core-Extensions-IControl-Show 'xyLOGIX.Core.Extensions.IControl.Show')
+  - [SuspendLayout()](#M-xyLOGIX-Core-Extensions-IControl-SuspendLayout 'xyLOGIX.Core.Extensions.IControl.SuspendLayout')
+  - [Update()](#M-xyLOGIX-Core-Extensions-IControl-Update 'xyLOGIX.Core.Extensions.IControl.Update')
 - [IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm')
-  - [ProgressBar](#P-xyLOGIX-Core-Extensions-IForm-ProgressBar 'xyLOGIX.Core.Extensions.IForm.ProgressBar')
+  - [AcceptButton](#P-xyLOGIX-Core-Extensions-IForm-AcceptButton 'xyLOGIX.Core.Extensions.IForm.AcceptButton')
+  - [ActiveMdiChild](#P-xyLOGIX-Core-Extensions-IForm-ActiveMdiChild 'xyLOGIX.Core.Extensions.IForm.ActiveMdiChild')
+  - [AllowTransparency](#P-xyLOGIX-Core-Extensions-IForm-AllowTransparency 'xyLOGIX.Core.Extensions.IForm.AllowTransparency')
+  - [AutoScale](#P-xyLOGIX-Core-Extensions-IForm-AutoScale 'xyLOGIX.Core.Extensions.IForm.AutoScale')
+  - [AutoScaleBaseSize](#P-xyLOGIX-Core-Extensions-IForm-AutoScaleBaseSize 'xyLOGIX.Core.Extensions.IForm.AutoScaleBaseSize')
+  - [AutoSizeMode](#P-xyLOGIX-Core-Extensions-IForm-AutoSizeMode 'xyLOGIX.Core.Extensions.IForm.AutoSizeMode')
+  - [AutoValidate](#P-xyLOGIX-Core-Extensions-IForm-AutoValidate 'xyLOGIX.Core.Extensions.IForm.AutoValidate')
+  - [CancelButton](#P-xyLOGIX-Core-Extensions-IForm-CancelButton 'xyLOGIX.Core.Extensions.IForm.CancelButton')
+  - [ControlBox](#P-xyLOGIX-Core-Extensions-IForm-ControlBox 'xyLOGIX.Core.Extensions.IForm.ControlBox')
+  - [DesktopBounds](#P-xyLOGIX-Core-Extensions-IForm-DesktopBounds 'xyLOGIX.Core.Extensions.IForm.DesktopBounds')
+  - [DesktopLocation](#P-xyLOGIX-Core-Extensions-IForm-DesktopLocation 'xyLOGIX.Core.Extensions.IForm.DesktopLocation')
+  - [DialogResult](#P-xyLOGIX-Core-Extensions-IForm-DialogResult 'xyLOGIX.Core.Extensions.IForm.DialogResult')
+  - [FormBorderStyle](#P-xyLOGIX-Core-Extensions-IForm-FormBorderStyle 'xyLOGIX.Core.Extensions.IForm.FormBorderStyle')
+  - [HelpButton](#P-xyLOGIX-Core-Extensions-IForm-HelpButton 'xyLOGIX.Core.Extensions.IForm.HelpButton')
+  - [Icon](#P-xyLOGIX-Core-Extensions-IForm-Icon 'xyLOGIX.Core.Extensions.IForm.Icon')
+  - [IsMdiChild](#P-xyLOGIX-Core-Extensions-IForm-IsMdiChild 'xyLOGIX.Core.Extensions.IForm.IsMdiChild')
+  - [IsMdiContainer](#P-xyLOGIX-Core-Extensions-IForm-IsMdiContainer 'xyLOGIX.Core.Extensions.IForm.IsMdiContainer')
+  - [IsRestrictedWindow](#P-xyLOGIX-Core-Extensions-IForm-IsRestrictedWindow 'xyLOGIX.Core.Extensions.IForm.IsRestrictedWindow')
+  - [KeyPreview](#P-xyLOGIX-Core-Extensions-IForm-KeyPreview 'xyLOGIX.Core.Extensions.IForm.KeyPreview')
+  - [MainMenuStrip](#P-xyLOGIX-Core-Extensions-IForm-MainMenuStrip 'xyLOGIX.Core.Extensions.IForm.MainMenuStrip')
+  - [MaximizeBox](#P-xyLOGIX-Core-Extensions-IForm-MaximizeBox 'xyLOGIX.Core.Extensions.IForm.MaximizeBox')
+  - [MdiChildren](#P-xyLOGIX-Core-Extensions-IForm-MdiChildren 'xyLOGIX.Core.Extensions.IForm.MdiChildren')
+  - [MdiParent](#P-xyLOGIX-Core-Extensions-IForm-MdiParent 'xyLOGIX.Core.Extensions.IForm.MdiParent')
+  - [Menu](#P-xyLOGIX-Core-Extensions-IForm-Menu 'xyLOGIX.Core.Extensions.IForm.Menu')
+  - [MergedMenu](#P-xyLOGIX-Core-Extensions-IForm-MergedMenu 'xyLOGIX.Core.Extensions.IForm.MergedMenu')
+  - [MinimizeBox](#P-xyLOGIX-Core-Extensions-IForm-MinimizeBox 'xyLOGIX.Core.Extensions.IForm.MinimizeBox')
+  - [Modal](#P-xyLOGIX-Core-Extensions-IForm-Modal 'xyLOGIX.Core.Extensions.IForm.Modal')
+  - [Opacity](#P-xyLOGIX-Core-Extensions-IForm-Opacity 'xyLOGIX.Core.Extensions.IForm.Opacity')
+  - [OwnedForms](#P-xyLOGIX-Core-Extensions-IForm-OwnedForms 'xyLOGIX.Core.Extensions.IForm.OwnedForms')
+  - [Owner](#P-xyLOGIX-Core-Extensions-IForm-Owner 'xyLOGIX.Core.Extensions.IForm.Owner')
+  - [RestoreBounds](#P-xyLOGIX-Core-Extensions-IForm-RestoreBounds 'xyLOGIX.Core.Extensions.IForm.RestoreBounds')
+  - [RightToLeftLayout](#P-xyLOGIX-Core-Extensions-IForm-RightToLeftLayout 'xyLOGIX.Core.Extensions.IForm.RightToLeftLayout')
+  - [ShowIcon](#P-xyLOGIX-Core-Extensions-IForm-ShowIcon 'xyLOGIX.Core.Extensions.IForm.ShowIcon')
+  - [ShowInTaskbar](#P-xyLOGIX-Core-Extensions-IForm-ShowInTaskbar 'xyLOGIX.Core.Extensions.IForm.ShowInTaskbar')
+  - [SizeGripStyle](#P-xyLOGIX-Core-Extensions-IForm-SizeGripStyle 'xyLOGIX.Core.Extensions.IForm.SizeGripStyle')
+  - [StartPosition](#P-xyLOGIX-Core-Extensions-IForm-StartPosition 'xyLOGIX.Core.Extensions.IForm.StartPosition')
+  - [TopLevel](#P-xyLOGIX-Core-Extensions-IForm-TopLevel 'xyLOGIX.Core.Extensions.IForm.TopLevel')
+  - [TopMost](#P-xyLOGIX-Core-Extensions-IForm-TopMost 'xyLOGIX.Core.Extensions.IForm.TopMost')
+  - [TransparencyKey](#P-xyLOGIX-Core-Extensions-IForm-TransparencyKey 'xyLOGIX.Core.Extensions.IForm.TransparencyKey')
+  - [WindowState](#P-xyLOGIX-Core-Extensions-IForm-WindowState 'xyLOGIX.Core.Extensions.IForm.WindowState')
+  - [Activate()](#M-xyLOGIX-Core-Extensions-IForm-Activate 'xyLOGIX.Core.Extensions.IForm.Activate')
+  - [AddOwnedForm(ownedForm)](#M-xyLOGIX-Core-Extensions-IForm-AddOwnedForm-System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.IForm.AddOwnedForm(System.Windows.Forms.Form)')
+  - [Close()](#M-xyLOGIX-Core-Extensions-IForm-Close 'xyLOGIX.Core.Extensions.IForm.Close')
+  - [LayoutMdi(value)](#M-xyLOGIX-Core-Extensions-IForm-LayoutMdi-System-Windows-Forms-MdiLayout- 'xyLOGIX.Core.Extensions.IForm.LayoutMdi(System.Windows.Forms.MdiLayout)')
+  - [RemoveOwnedForm(ownedForm)](#M-xyLOGIX-Core-Extensions-IForm-RemoveOwnedForm-System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.IForm.RemoveOwnedForm(System.Windows.Forms.Form)')
+  - [SetDesktopBounds(x,y,width,height)](#M-xyLOGIX-Core-Extensions-IForm-SetDesktopBounds-System-Int32,System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IForm.SetDesktopBounds(System.Int32,System.Int32,System.Int32,System.Int32)')
+  - [SetDesktopLocation(x,y)](#M-xyLOGIX-Core-Extensions-IForm-SetDesktopLocation-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IForm.SetDesktopLocation(System.Int32,System.Int32)')
+  - [Show(owner)](#M-xyLOGIX-Core-Extensions-IForm-Show-System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.IForm.Show(System.Windows.Forms.IWin32Window)')
+  - [ShowDialog()](#M-xyLOGIX-Core-Extensions-IForm-ShowDialog 'xyLOGIX.Core.Extensions.IForm.ShowDialog')
+  - [ShowDialog(owner)](#M-xyLOGIX-Core-Extensions-IForm-ShowDialog-System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.IForm.ShowDialog(System.Windows.Forms.IWin32Window)')
+  - [ToString()](#M-xyLOGIX-Core-Extensions-IForm-ToString 'xyLOGIX.Core.Extensions.IForm.ToString')
+  - [ValidateChildren()](#M-xyLOGIX-Core-Extensions-IForm-ValidateChildren 'xyLOGIX.Core.Extensions.IForm.ValidateChildren')
+  - [ValidateChildren(validationConstraints)](#M-xyLOGIX-Core-Extensions-IForm-ValidateChildren-System-Windows-Forms-ValidationConstraints- 'xyLOGIX.Core.Extensions.IForm.ValidateChildren(System.Windows.Forms.ValidationConstraints)')
+- [IScrollableControl](#T-xyLOGIX-Core-Extensions-IScrollableControl 'xyLOGIX.Core.Extensions.IScrollableControl')
+  - [AutoScroll](#P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScroll 'xyLOGIX.Core.Extensions.IScrollableControl.AutoScroll')
+  - [AutoScrollMargin](#P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollMargin 'xyLOGIX.Core.Extensions.IScrollableControl.AutoScrollMargin')
+  - [AutoScrollMinSize](#P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollMinSize 'xyLOGIX.Core.Extensions.IScrollableControl.AutoScrollMinSize')
+  - [AutoScrollPosition](#P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollPosition 'xyLOGIX.Core.Extensions.IScrollableControl.AutoScrollPosition')
+  - [DockPadding](#P-xyLOGIX-Core-Extensions-IScrollableControl-DockPadding 'xyLOGIX.Core.Extensions.IScrollableControl.DockPadding')
+  - [HorizontalScroll](#P-xyLOGIX-Core-Extensions-IScrollableControl-HorizontalScroll 'xyLOGIX.Core.Extensions.IScrollableControl.HorizontalScroll')
+  - [VerticalScroll](#P-xyLOGIX-Core-Extensions-IScrollableControl-VerticalScroll 'xyLOGIX.Core.Extensions.IScrollableControl.VerticalScroll')
+  - [ScrollControlIntoView(activeControl)](#M-xyLOGIX-Core-Extensions-IScrollableControl-ScrollControlIntoView-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.IScrollableControl.ScrollControlIntoView(System.Windows.Forms.Control)')
+  - [SetAutoScrollMargin(x,y)](#M-xyLOGIX-Core-Extensions-IScrollableControl-SetAutoScrollMargin-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IScrollableControl.SetAutoScrollMargin(System.Int32,System.Int32)')
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
 - [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions')
@@ -105,7 +333,31 @@
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
+  - [CachedActualType](#F-xyLOGIX-Core-Extensions-TypeExtensions-CachedActualType 'xyLOGIX.Core.Extensions.TypeExtensions.CachedActualType')
+  - [GetActualType()](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType(System.Type)')
   - [IsSameOrSubclass(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclass-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclass(System.Type,System.Type)')
+
+<a name='T-xyLOGIX-Core-Extensions-Properties-AspMvcActionSelectorAttribute'></a>
+## AspMvcActionSelectorAttribute `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions.Properties
+
+##### Summary
+
+*Inherit from parent.*
+
+<a name='T-xyLOGIX-Core-Extensions-Properties-AspMvcAreaAttribute'></a>
+## AspMvcAreaAttribute `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions.Properties
+
+##### Summary
+
+*Inherit from parent.*
 
 <a name='T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions'></a>
 ## CheckedListBoxExtensions `type`
@@ -325,7 +577,11 @@ Helper methods for collections.
 
 ##### Summary
 
-Compares the `source` object with the `testObjects` provided, to see if any of the `testObjects` is a match.
+Compares the `source` object with the
+`testObjects`
+provided, to see if any of the
+`testObjects`
+is a match.
 
 ##### Returns
 
@@ -337,7 +593,9 @@ false otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [\`\`0](#T-``0 '``0') | Source object to check. |
-| testObjects | [\`\`0[]](#T-``0[] '``0[]') | Object or objects that should be compared to source with the [Equals](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object.Equals 'System.Object.Equals') method. |
+| testObjects | [\`\`0[]](#T-``0[] '``0[]') | Object or objects that should be compared to source with the
+[Equals](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object.Equals 'System.Object.Equals')
+method. |
 
 ##### Generic Types
 
@@ -352,7 +610,10 @@ false otherwise.
 
 Shuffles the elements of the sequence into a random order, and then
 returns the resulting sequence. From the Fisher-Yates-Durstenfeld
-shuffle. Uses the random-number generator passed in the `rng` parameter. Behaves like the [Shuffle](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle')
+shuffle. Uses the random-number generator passed in the
+`rng`
+parameter. Behaves like the
+[Shuffle](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle')
 method, although this method can be utilized as an iterator.
 
 ##### Returns
@@ -414,7 +675,9 @@ see, e.g.,
 
 Shuffles the elements of the sequence into a random order, and then
 returns the resulting sequence. From the Fisher-Yates-Durstenfeld
-shuffle. Uses the random-number generator passed in the `rng` parameter.
+shuffle. Uses the random-number generator passed in the
+`rng`
+parameter.
 
 ##### Returns
 
@@ -438,6 +701,31 @@ random values for the shuffle operation. |
 ##### Remarks
 
 see, e.g.,
+
+<a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-TakeAllButLast``1-System-Collections-Generic-IEnumerable{``0}-'></a>
+### TakeAllButLast\`\`1(source) `method`
+
+##### Summary
+
+Returns all the elements of the `source` enumerable
+object, except for the last.
+
+##### Returns
+
+Enumerable iterator over the collection that yields every item in
+the collection, except for the last.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Reference to an enumerable collection. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | Name of the type of item in the collection. |
 
 <a name='T-xyLOGIX-Core-Extensions-FormExtensions'></a>
 ## FormExtensions `type`
@@ -568,6 +856,2419 @@ monitor (whatever monitor they have designated as Monitor #1)
 moved to the user's primary monitor. The form is also centered on
 the screen. |
 
+<a name='T-xyLOGIX-Core-Extensions-IComboBox'></a>
+## IComboBox `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of a WinForms combo
+box control.
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteCustomSource'></a>
+### AutoCompleteCustomSource `property`
+
+##### Summary
+
+Gets or sets a custom [StringCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Specialized.StringCollection 'System.Collections.Specialized.StringCollection') to use
+when the [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.AutoCompleteSource 'System.Windows.Forms.ComboBox.AutoCompleteSource') property
+is set to `CustomSource`.
+
+##### Returns
+
+A [StringCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Specialized.StringCollection 'System.Collections.Specialized.StringCollection') to
+use with [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.AutoCompleteSource 'System.Windows.Forms.ComboBox.AutoCompleteSource').
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteMode'></a>
+### AutoCompleteMode `property`
+
+##### Summary
+
+Gets or sets an option that controls how automatic completion works
+for the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+One of the values of [AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode') . The values are
+[Append](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Append 'System.Windows.Forms.AutoCompleteMode.Append'), [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.None 'System.Windows.Forms.AutoCompleteMode.None') , [Suggest](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Suggest 'System.Windows.Forms.AutoCompleteMode.Suggest') , and [SuggestAppend](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.SuggestAppend 'System.Windows.Forms.AutoCompleteMode.SuggestAppend') . The
+default is [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.None 'System.Windows.Forms.AutoCompleteMode.None').
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of [AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode'). |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteSource'></a>
+### AutoCompleteSource `property`
+
+##### Summary
+
+Gets or sets a value specifying the source of complete strings used
+for automatic completion.
+
+##### Returns
+
+One of the values of [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource') . The options are
+`AllSystemSources`, `AllUrl`, `FileSystem` , `HistoryList`, `RecentlyUsedList` , `CustomSource`, and
+`None`. The default is `None`.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource'). |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-DataSource'></a>
+### DataSource `property`
+
+##### Summary
+
+Gets or sets the data source for this [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+An object that implements the [IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') interface or an [Array](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Array 'System.Array') . The default is `null`.
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-DrawMode'></a>
+### DrawMode `property`
+
+##### Summary
+
+Gets or sets a value indicating whether your code or the operating
+system will handle drawing of elements in the list.
+
+##### Returns
+
+One of the [DrawMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DrawMode 'System.Windows.Forms.DrawMode') enumeration
+values. The default is [Normal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DrawMode.Normal 'System.Windows.Forms.DrawMode.Normal').
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value is not a valid [DrawMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DrawMode 'System.Windows.Forms.DrawMode') enumeration value. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownHeight'></a>
+### DropDownHeight `property`
+
+##### Summary
+
+Gets or sets the height in pixels of the drop-down portion of the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+The height, in pixels, of the drop-down box.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The specified value is less than one. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownStyle'></a>
+### DropDownStyle `property`
+
+##### Summary
+
+Gets or sets a value specifying the style of the combo box.
+
+##### Returns
+
+One of the [ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle')
+values. The default is `DropDown`.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the [ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle') values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownWidth'></a>
+### DropDownWidth `property`
+
+##### Summary
+
+Gets or sets the width of the of the drop-down portion of a combo box.
+
+##### Returns
+
+The width, in pixels, of the drop-down box.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The specified value is less than one. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-DroppedDown'></a>
+### DroppedDown `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the combo box is displaying
+its drop-down portion.
+
+##### Returns
+
+`true` if the drop-down portion is displayed;
+otherwise, `false`. The default is false.
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-FlatStyle'></a>
+### FlatStyle `property`
+
+##### Summary
+
+Gets or sets the appearance of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+One of the enumeration values that specifies the appearance of the
+control. The options are `Flat`, `Popup` , `Standard`, and `System` . The default is `Standard`.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of [FlatStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FlatStyle 'System.Windows.Forms.FlatStyle'). |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-IntegralHeight'></a>
+### IntegralHeight `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the control should resize to
+avoid showing partial items.
+
+##### Returns
+
+`true` if the list portion can contain only complete
+items; otherwise, `false`. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-ItemHeight'></a>
+### ItemHeight `property`
+
+##### Summary
+
+Gets or sets the height of an item in the combo box.
+
+##### Returns
+
+The height, in pixels, of an item in the combo box.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The item height value is less than zero. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-Items'></a>
+### Items `property`
+
+##### Summary
+
+Gets an object representing the collection of the items contained in
+this [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+A [ObjectCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.ObjectCollection 'System.Windows.Forms.ComboBox.ObjectCollection')
+representing the items in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-MaxDropDownItems'></a>
+### MaxDropDownItems `property`
+
+##### Summary
+
+Gets or sets the maximum number of items to be shown in the
+drop-down portion of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+The maximum number of items of in the drop-down portion. The minimum
+for this property is 1 and the maximum is 100.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The maximum number is set less than one or greater than 100. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-MaxLength'></a>
+### MaxLength `property`
+
+##### Summary
+
+Gets or sets the number of characters a user can type into the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+The maximum number of characters a user can enter. Values of less
+than zero are reset to zero, which is the default value.
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-PreferredHeight'></a>
+### PreferredHeight `property`
+
+##### Summary
+
+Gets the preferred height of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') .
+
+##### Returns
+
+The preferred height, in pixels, of the item area of the combo box.
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectedIndex'></a>
+### SelectedIndex `property`
+
+##### Summary
+
+Gets or sets the index specifying the currently selected item.
+
+##### Returns
+
+A zero-based index of the currently selected item. A value of
+negative one (-1) is returned if no item is selected.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The specified index is less than or equal to -2.
+-or- The specified index is greater than or equal to the number of
+items in the combo box. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectedItem'></a>
+### SelectedItem `property`
+
+##### Summary
+
+Gets or sets currently selected item in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+The object that is the currently selected item or `null` if there is no currently selected item.
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectedText'></a>
+### SelectedText `property`
+
+##### Summary
+
+Gets or sets the text that is selected in the editable portion of a
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+A string that represents the currently selected text in the combo
+box. If [DropDownStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.DropDownStyle 'System.Windows.Forms.ComboBox.DropDownStyle')
+is set to [DropDownList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle.DropDownList 'System.Windows.Forms.ComboBoxStyle.DropDownList') , the
+return value is an empty string ("").
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectionLength'></a>
+### SelectionLength `property`
+
+##### Summary
+
+Gets or sets the number of characters selected in the editable
+portion of the combo box.
+
+##### Returns
+
+The number of characters selected in the combo box.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The value was less than zero. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectionStart'></a>
+### SelectionStart `property`
+
+##### Summary
+
+Gets or sets the starting index of text selected in the combo box.
+
+##### Returns
+
+The zero-based index of the first character in the string of the
+current text selection.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The value is less than zero. |
+
+<a name='P-xyLOGIX-Core-Extensions-IComboBox-Sorted'></a>
+### Sorted `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the items in the combo box
+are sorted.
+
+##### Returns
+
+`true` if the combo box is sorted; otherwise, `false` . The default is `false`.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | An attempt was made to sort a [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that is attached to a data source. |
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-BeginUpdate'></a>
+### BeginUpdate() `method`
+
+##### Summary
+
+Maintains performance when items are added to the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') one at a time.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-EndUpdate'></a>
+### EndUpdate() `method`
+
+##### Summary
+
+Resumes painting the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+control after painting is suspended by the [BeginUpdate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.BeginUpdate 'System.Windows.Forms.ComboBox.BeginUpdate') method.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-FindString-System-String-'></a>
+### FindString(s) `method`
+
+##### Summary
+
+Returns the index of the first item in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that starts with the
+specified string.
+
+##### Returns
+
+The zero-based index of the first item found; returns -1 if no match
+is found.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| s | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to search for. |
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-FindString-System-String,System-Int32-'></a>
+### FindString(s,startIndex) `method`
+
+##### Summary
+
+Returns the index of the first item in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') beyond the specified index
+that contains the specified string. The search is not case sensitive.
+
+##### Returns
+
+The zero-based index of the first item found; returns -1 if no match
+is found, or 0 if the `s` parameter specifies [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| s | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to search for. |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first item to be
+searched. Set to -1 to search from the beginning of the control. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The `startIndex` is less than -1.
+-or- The `startIndex` is greater than the last
+index in the collection. |
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-FindStringExact-System-String-'></a>
+### FindStringExact(s) `method`
+
+##### Summary
+
+Finds the first item in the combo box that matches the specified string.
+
+##### Returns
+
+The zero-based index of the first item found; returns -1 if no match
+is found, or 0 if the `s` parameter specifies [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| s | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to search for. |
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-FindStringExact-System-String,System-Int32-'></a>
+### FindStringExact(s,startIndex) `method`
+
+##### Summary
+
+Finds the first item after the specified index that matches the
+specified string.
+
+##### Returns
+
+The zero-based index of the first item found; returns -1 if no match
+is found, or 0 if the `s` parameter specifies [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| s | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to search for. |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first item to be
+searched. Set to -1 to search from the beginning of the control. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The `startIndex` is less than -1.
+-or- The `startIndex` is equal to the last index in
+the collection. |
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-GetItemHeight-System-Int32-'></a>
+### GetItemHeight(index) `method`
+
+##### Summary
+
+Returns the height of an item in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Returns
+
+The height, in pixels, of the item at the specified index.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The index of the item to return the height of. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The `index` is less than zero.
+-or- The `index` is greater than count of items in
+the list. |
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-Select-System-Int32,System-Int32-'></a>
+### Select(start,length) `method`
+
+##### Summary
+
+Selects a range of text in the editable portion of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| start | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The position of the first character in the current text selection
+within the text box. |
+| length | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The number of characters to select. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The `start` is less than zero.
+-or- `start` plus `length` is less
+than zero. |
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-SelectAll'></a>
+### SelectAll() `method`
+
+##### Summary
+
+Selects all the text in the editable portion of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IComboBox-ToString'></a>
+### ToString() `method`
+
+##### Summary
+
+Returns a string that represents the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') control.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that represents the current [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') . The string includes the
+type and the number of items in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') control.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='T-xyLOGIX-Core-Extensions-IControl'></a>
+## IControl `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of an object that
+represents a WinForms control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AccessibilityObject'></a>
+### AccessibilityObject `property`
+
+##### Summary
+
+Gets the [AccessibleObject](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleObject 'System.Windows.Forms.AccessibleObject')
+assigned to the control.
+
+##### Returns
+
+The [AccessibleObject](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleObject 'System.Windows.Forms.AccessibleObject') assigned
+to the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AccessibleDefaultActionDescription'></a>
+### AccessibleDefaultActionDescription `property`
+
+##### Summary
+
+Gets or sets the default action description of the control for use
+by accessibility client applications.
+
+##### Returns
+
+The default action description of the control for use by
+accessibility client applications.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AccessibleDescription'></a>
+### AccessibleDescription `property`
+
+##### Summary
+
+Gets or sets the description of the control used by accessibility
+client applications.
+
+##### Returns
+
+The description of the control used by accessibility client
+applications. The default is `null`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AccessibleName'></a>
+### AccessibleName `property`
+
+##### Summary
+
+Gets or sets the name of the control used by accessibility client applications.
+
+##### Returns
+
+The name of the control used by accessibility client applications.
+The default is `null`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AccessibleRole'></a>
+### AccessibleRole `property`
+
+##### Summary
+
+Gets or sets the accessible role of the control
+
+##### Returns
+
+One of the values of [AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole') . The default is `Default`.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value assigned is not one of the [AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole') values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AllowDrop'></a>
+### AllowDrop `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the control can accept data
+that the user drags onto it.
+
+##### Returns
+
+`true` if drag-and-drop operations are allowed in
+the control; otherwise, `false`. The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Anchor'></a>
+### Anchor `property`
+
+##### Summary
+
+Gets or sets the edges of the container to which a control is bound
+and determines how a control is resized with its parent.
+
+##### Returns
+
+A bitwise combination of the [AnchorStyles](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AnchorStyles 'System.Windows.Forms.AnchorStyles') values. The default is
+`Top` and `Left`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AutoScrollOffset'></a>
+### AutoScrollOffset `property`
+
+##### Summary
+
+Gets or sets where this control is scrolled to in [ScrollControlIntoView](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ScrollableControl.ScrollControlIntoView 'System.Windows.Forms.ScrollableControl.ScrollControlIntoView(System.Windows.Forms.Control)') .
+
+##### Returns
+
+A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') specifying the scroll
+location. The default is the upper-left corner of the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AutoSize'></a>
+### AutoSize `property`
+
+##### Summary
+
+This property is not relevant for this class.
+
+##### Returns
+
+`true` if enabled; otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-BackColor'></a>
+### BackColor `property`
+
+##### Summary
+
+Gets or sets the background color for the control.
+
+##### Returns
+
+A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the
+background color of the control. The default is the value of the
+[DefaultBackColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultBackColor 'System.Windows.Forms.Control.DefaultBackColor') property.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-BackgroundImage'></a>
+### BackgroundImage `property`
+
+##### Summary
+
+Gets or sets the background image displayed in the control.
+
+##### Returns
+
+An [Image](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Image 'System.Drawing.Image') that represents the image to
+display in the background of the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-BackgroundImageLayout'></a>
+### BackgroundImageLayout `property`
+
+##### Summary
+
+Gets or sets the background image layout as defined in the [ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout') enumeration.
+
+##### Returns
+
+One of the values of [ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout') ( [Center](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Center 'System.Windows.Forms.ImageLayout.Center') , [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.None 'System.Windows.Forms.ImageLayout.None') , [Stretch](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Stretch 'System.Windows.Forms.ImageLayout.Stretch') , [Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile') , or [Zoom](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Zoom 'System.Windows.Forms.ImageLayout.Zoom') ). [Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile') is the default value.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified enumeration value does not exist. |
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-BindingContext'></a>
+### BindingContext `property`
+
+##### Summary
+
+Gets or sets the [BindingContext](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingContext 'System.Windows.Forms.BindingContext')
+for the control.
+
+##### Returns
+
+A [BindingContext](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingContext 'System.Windows.Forms.BindingContext') for the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Bottom'></a>
+### Bottom `property`
+
+##### Summary
+
+Gets the distance, in pixels, between the bottom edge of the control
+and the top edge of its container's client area.
+
+##### Returns
+
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+pixels, between the bottom edge of the control and the top edge of
+its container's client area.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Bounds'></a>
+### Bounds `property`
+
+##### Summary
+
+Gets or sets the size and location of the control including its
+nonclient elements, in pixels, relative to the parent control.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') in pixels relative to the
+parent control that represents the size and location of the control
+including its nonclient elements.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-CanFocus'></a>
+### CanFocus `property`
+
+##### Summary
+
+Gets a value indicating whether the control can receive focus.
+
+##### Returns
+
+`true` if the control can receive focus; otherwise,
+`false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-CanSelect'></a>
+### CanSelect `property`
+
+##### Summary
+
+Gets a value indicating whether the control can be selected.
+
+##### Returns
+
+`true` if the control can be selected; otherwise,
+`false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Capture'></a>
+### Capture `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the control has captured the mouse.
+
+##### Returns
+
+`true` if the control has captured the mouse;
+otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-CausesValidation'></a>
+### CausesValidation `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the control causes
+validation to be performed on any controls that require validation
+when it receives focus.
+
+##### Returns
+
+`true` if the control causes validation to be
+performed on any controls requiring validation when it receives
+focus; otherwise, `false`. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ClientRectangle'></a>
+### ClientRectangle `property`
+
+##### Summary
+
+Gets the rectangle that represents the client area of the control.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+client area of the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ClientSize'></a>
+### ClientSize `property`
+
+##### Summary
+
+Gets or sets the height and width of the client area of the control.
+
+##### Returns
+
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the dimensions
+of the client area of the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-CompanyName'></a>
+### CompanyName `property`
+
+##### Summary
+
+Gets the name of the company or creator of the application
+containing the control.
+
+##### Returns
+
+The company name or creator of the application containing the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ContainsFocus'></a>
+### ContainsFocus `property`
+
+##### Summary
+
+Gets a value indicating whether the control, or one of its child
+controls, currently has the input focus.
+
+##### Returns
+
+`true` if the control or one of its child controls
+currently has the input focus; otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ContextMenu'></a>
+### ContextMenu `property`
+
+##### Summary
+
+Gets or sets the shortcut menu associated with the control.
+
+##### Returns
+
+A [ContextMenu](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenu 'System.Windows.Forms.ContextMenu') that represents
+the shortcut menu associated with the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ContextMenuStrip'></a>
+### ContextMenuStrip `property`
+
+##### Summary
+
+Gets or sets the [ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') associated with
+this control.
+
+##### Returns
+
+The [ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') for this
+control, or `null` if there is no [ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') . The default is
+`null`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Controls'></a>
+### Controls `property`
+
+##### Summary
+
+Gets the collection of controls contained within the control.
+
+##### Returns
+
+A [ControlCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.ControlCollection 'System.Windows.Forms.Control.ControlCollection')
+representing the collection of controls contained within the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Created'></a>
+### Created `property`
+
+##### Summary
+
+Gets a value indicating whether the control has been created.
+
+##### Returns
+
+`true` if the control has been created; otherwise,
+`false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Cursor'></a>
+### Cursor `property`
+
+##### Summary
+
+Gets or sets the cursor that is displayed when the mouse pointer is
+over the control.
+
+##### Returns
+
+A [Cursor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Cursor 'System.Windows.Forms.Cursor') that represents the
+cursor to display when the mouse pointer is over the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-DataBindings'></a>
+### DataBindings `property`
+
+##### Summary
+
+Gets the data bindings for the control.
+
+##### Returns
+
+A [ControlBindingsCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ControlBindingsCollection 'System.Windows.Forms.ControlBindingsCollection')
+that contains the [Binding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Binding 'System.Windows.Forms.Binding')
+objects for the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-DeviceDpi'></a>
+### DeviceDpi `property`
+
+##### Summary
+
+Gets the DPI value for the display device where the control is
+currently being displayed.
+
+##### Returns
+
+The DPI value of the display device.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-DisplayRectangle'></a>
+### DisplayRectangle `property`
+
+##### Summary
+
+Gets the rectangle that represents the display area of the control.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+display area of the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Disposing'></a>
+### Disposing `property`
+
+##### Summary
+
+Gets a value indicating whether the base [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') class is in the process of disposing.
+
+##### Returns
+
+`true` if the base [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') class is in the process of
+disposing; otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Dock'></a>
+### Dock `property`
+
+##### Summary
+
+Gets or sets which control borders are docked to its parent control
+and determines how a control is resized with its parent.
+
+##### Returns
+
+One of the [DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle') values.
+The default is [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle.None 'System.Windows.Forms.DockStyle.None').
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value assigned is not one of the [DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle') values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Enabled'></a>
+### Enabled `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the control can respond to
+user interaction.
+
+##### Returns
+
+`true` if the control can respond to user
+interaction; otherwise, `false`. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Focused'></a>
+### Focused `property`
+
+##### Summary
+
+Gets a value indicating whether the control has input focus.
+
+##### Returns
+
+`true` if the control has focus; otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Font'></a>
+### Font `property`
+
+##### Summary
+
+Gets or sets the font of the text displayed by the control.
+
+##### Returns
+
+The [Font](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Font 'System.Drawing.Font') to apply to the text
+displayed by the control. The default is the value of the [DefaultFont](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultFont 'System.Windows.Forms.Control.DefaultFont') property.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ForeColor'></a>
+### ForeColor `property`
+
+##### Summary
+
+Gets or sets the foreground color of the control.
+
+##### Returns
+
+The foreground [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') of the control.
+The default is the value of the [DefaultForeColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultForeColor 'System.Windows.Forms.Control.DefaultForeColor') property.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Handle'></a>
+### Handle `property`
+
+##### Summary
+
+Gets the window handle that the control is bound to.
+
+##### Returns
+
+An [IntPtr](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IntPtr 'System.IntPtr') that contains the window handle (
+`HWND`) of the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-HasChildren'></a>
+### HasChildren `property`
+
+##### Summary
+
+Gets a value indicating whether the control contains one or more
+child controls.
+
+##### Returns
+
+`true` if the control contains one or more child
+controls; otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Height'></a>
+### Height `property`
+
+##### Summary
+
+Gets or sets the height of the control.
+
+##### Returns
+
+The height of the control in pixels.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ImeMode'></a>
+### ImeMode `property`
+
+##### Summary
+
+Gets or sets the Input Method Editor (IME) mode of the control.
+
+##### Returns
+
+One of the [ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode 'System.Windows.Forms.ImeMode') values. The
+default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode.Inherit 'System.Windows.Forms.ImeMode.Inherit').
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the [ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode 'System.Windows.Forms.ImeMode') enumeration values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-IsAccessible'></a>
+### IsAccessible `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the control is visible to
+accessibility applications.
+
+##### Returns
+
+`true` if the control is visible to accessibility
+applications; otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-IsDisposed'></a>
+### IsDisposed `property`
+
+##### Summary
+
+Gets a value indicating whether the control has been disposed of.
+
+##### Returns
+
+`true` if the control has been disposed of;
+otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-IsHandleCreated'></a>
+### IsHandleCreated `property`
+
+##### Summary
+
+Gets a value indicating whether the control has a handle associated
+with it.
+
+##### Returns
+
+`true` if a handle has been assigned to the control;
+otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-IsMirrored'></a>
+### IsMirrored `property`
+
+##### Summary
+
+Gets a value indicating whether the control is mirrored.
+
+##### Returns
+
+`true` if the control is mirrored; otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-LayoutEngine'></a>
+### LayoutEngine `property`
+
+##### Summary
+
+Gets a cached instance of the control's layout engine.
+
+##### Returns
+
+The [LayoutEngine](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Layout.LayoutEngine 'System.Windows.Forms.Layout.LayoutEngine') for the
+control's contents.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Left'></a>
+### Left `property`
+
+##### Summary
+
+Gets or sets the distance, in pixels, between the left edge of the
+control and the left edge of its container's client area.
+
+##### Returns
+
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+pixels, between the left edge of the control and the left edge of
+its container's client area.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Location'></a>
+### Location `property`
+
+##### Summary
+
+Gets or sets the coordinates of the upper-left corner of the control
+relative to the upper-left corner of its container.
+
+##### Returns
+
+The [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the
+upper-left corner of the control relative to the upper-left corner
+of its container.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Margin'></a>
+### Margin `property`
+
+##### Summary
+
+Gets or sets the space between controls.
+
+##### Returns
+
+A [Padding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Padding 'System.Windows.Forms.Padding') representing the
+space between controls.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-MaximumSize'></a>
+### MaximumSize `property`
+
+##### Summary
+
+Gets or sets the size that is the upper limit that [GetPreferredSize](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.GetPreferredSize 'System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)')
+can specify.
+
+##### Returns
+
+An ordered pair of type [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size')
+representing the width and height of a rectangle.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-MinimumSize'></a>
+### MinimumSize `property`
+
+##### Summary
+
+Gets or sets the size that is the lower limit that [GetPreferredSize](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.GetPreferredSize 'System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)')
+can specify.
+
+##### Returns
+
+An ordered pair of type [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size')
+representing the width and height of a rectangle.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Name'></a>
+### Name `property`
+
+##### Summary
+
+Gets or sets the name of the control.
+
+##### Returns
+
+The name of the control. The default is an empty string ("").
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Padding'></a>
+### Padding `property`
+
+##### Summary
+
+Gets or sets padding within the control.
+
+##### Returns
+
+A [Padding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Padding 'System.Windows.Forms.Padding') representing the
+control's internal spacing characteristics.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Parent'></a>
+### Parent `property`
+
+##### Summary
+
+Gets or sets the parent container of the control.
+
+##### Returns
+
+A [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that represents the
+parent or container control of the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-PreferredSize'></a>
+### PreferredSize `property`
+
+##### Summary
+
+Gets the size of a rectangular area into which the control can fit.
+
+##### Returns
+
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') containing the height and
+width, in pixels.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ProductName'></a>
+### ProductName `property`
+
+##### Summary
+
+Gets the product name of the assembly containing the control.
+
+##### Returns
+
+The product name of the assembly containing the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-ProductVersion'></a>
+### ProductVersion `property`
+
+##### Summary
+
+Gets the version of the assembly containing the control.
+
+##### Returns
+
+The file version of the assembly containing the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-RecreatingHandle'></a>
+### RecreatingHandle `property`
+
+##### Summary
+
+Gets a value indicating whether the control is currently re-creating
+its handle.
+
+##### Returns
+
+`true` if the control is currently re-creating its
+handle; otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Region'></a>
+### Region `property`
+
+##### Summary
+
+Gets or sets the window region associated with the control.
+
+##### Returns
+
+The window [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') associated with the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Right'></a>
+### Right `property`
+
+##### Summary
+
+Gets the distance, in pixels, between the right edge of the control
+and the left edge of its container's client area.
+
+##### Returns
+
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+pixels, between the right edge of the control and the left edge of
+its container's client area.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-RightToLeft'></a>
+### RightToLeft `property`
+
+##### Summary
+
+Gets or sets a value indicating whether control's elements are
+aligned to support locales using right-to-left fonts.
+
+##### Returns
+
+One of the [RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft') values.
+The default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft.Inherit 'System.Windows.Forms.RightToLeft.Inherit').
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the [RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft') values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Size'></a>
+### Size `property`
+
+##### Summary
+
+Gets or sets the height and width of the control.
+
+##### Returns
+
+The [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the height
+and width of the control in pixels.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-TabIndex'></a>
+### TabIndex `property`
+
+##### Summary
+
+Gets or sets the tab order of the control within its container.
+
+##### Returns
+
+The index value of the control within the set of controls within its
+container. The controls in the container are included in the tab order.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-TabStop'></a>
+### TabStop `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the user can give the focus
+to this control using the TAB key.
+
+##### Returns
+
+`true` if the user can give the focus to the control
+using the TAB key; otherwise, `false`. The default
+is `true`. This property will always return `true` for an instance of the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') class.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Tag'></a>
+### Tag `property`
+
+##### Summary
+
+Gets or sets the object that contains data about the control.
+
+##### Returns
+
+An [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') that contains data about the
+control. The default is `null`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Text'></a>
+### Text `property`
+
+##### Summary
+
+Gets or sets the text associated with this control.
+
+##### Returns
+
+The text associated with this control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Top'></a>
+### Top `property`
+
+##### Summary
+
+Gets or sets the distance, in pixels, between the top edge of the
+control and the top edge of its container's client area.
+
+##### Returns
+
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+pixels, between the bottom edge of the control and the top edge of
+its container's client area.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-TopLevelControl'></a>
+### TopLevelControl `property`
+
+##### Summary
+
+Gets the parent control that is not parented by another Windows
+Forms control. Typically, this is the outermost [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is contained in.
+
+##### Returns
+
+The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that represents the
+top-level control that contains the current control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-UseWaitCursor'></a>
+### UseWaitCursor `property`
+
+##### Summary
+
+Gets or sets a value indicating whether to use the wait cursor for
+the current control and all child controls.
+
+##### Returns
+
+`true` to use the wait cursor for the current
+control and all child controls; otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Visible'></a>
+### Visible `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the control and all its
+child controls are displayed.
+
+##### Returns
+
+`true` if the control and all its child controls are
+displayed; otherwise, `false`. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-Width'></a>
+### Width `property`
+
+##### Summary
+
+Gets or sets the width of the control.
+
+##### Returns
+
+The width of the control in pixels.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-WindowTarget'></a>
+### WindowTarget `property`
+
+##### Summary
+
+This property is not relevant for this class.
+
+##### Returns
+
+The NativeWindow contained within the control.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-BeginInvoke-System-Delegate-'></a>
+### BeginInvoke(method) `method`
+
+##### Summary
+
+Executes the specified delegate asynchronously on the thread that
+the control's underlying handle was created on.
+
+##### Returns
+
+An [IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') that represents the result of
+the [BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)') operation.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| method | [System.Delegate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Delegate 'System.Delegate') | A delegate to a method that takes no parameters. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | No appropriate window handle can be found. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-BringToFront'></a>
+### BringToFront() `method`
+
+##### Summary
+
+Brings the control to the front of the z-order.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Contains-System-Windows-Forms-Control-'></a>
+### Contains(ctl) `method`
+
+##### Summary
+
+Retrieves a value indicating whether the specified control is a
+child of the control.
+
+##### Returns
+
+`true` if the specified control is a child of the
+control; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') to evaluate. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-CreateControl'></a>
+### CreateControl() `method`
+
+##### Summary
+
+Forces the creation of the visible control, including the creation
+of the handle and any visible child controls.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-CreateGraphics'></a>
+### CreateGraphics() `method`
+
+##### Summary
+
+Creates the [Graphics](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Graphics 'System.Drawing.Graphics') for the control.
+
+##### Returns
+
+The [Graphics](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Graphics 'System.Drawing.Graphics') for the control.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-DoDragDrop-System-Object,System-Windows-Forms-DragDropEffects-'></a>
+### DoDragDrop(data,allowedEffects) `method`
+
+##### Summary
+
+Begins a drag-and-drop operation.
+
+##### Returns
+
+A value from the [DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') enumeration that
+represents the final effect that was performed during the
+drag-and-drop operation.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| data | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | The data to drag. |
+| allowedEffects | [System.Windows.Forms.DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') | One of the [DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') values. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-DrawToBitmap-System-Drawing-Bitmap,System-Drawing-Rectangle-'></a>
+### DrawToBitmap(bitmap,targetBounds) `method`
+
+##### Summary
+
+Supports rendering to the specified bitmap.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| bitmap | [System.Drawing.Bitmap](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Bitmap 'System.Drawing.Bitmap') | The bitmap to be drawn to. |
+| targetBounds | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The bounds within which the control is rendered. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-EndInvoke-System-IAsyncResult-'></a>
+### EndInvoke(asyncResult) `method`
+
+##### Summary
+
+Retrieves the return value of the asynchronous operation represented
+by the [IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') passed.
+
+##### Returns
+
+The [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') generated by the asynchronous operation.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| asyncResult | [System.IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') | The [IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') that represents a specific
+invoke asynchronous operation, returned when calling [BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)'). |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentNullException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentNullException 'System.ArgumentNullException') | The `asyncResult` parameter value is `null`. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The `asyncResult` object was not created by a
+preceding call of the [BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)')
+method from the same control. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-FindForm'></a>
+### FindForm() `method`
+
+##### Summary
+
+Retrieves the form that the control is on.
+
+##### Returns
+
+The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is on.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Focus'></a>
+### Focus() `method`
+
+##### Summary
+
+Sets input focus to the control.
+
+##### Returns
+
+`true` if the input focus request was successful;
+otherwise, `false`.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-GetChildAtPoint-System-Drawing-Point,System-Windows-Forms-GetChildAtPointSkip-'></a>
+### GetChildAtPoint(pt,skipValue) `method`
+
+##### Summary
+
+Retrieves the child control that is located at the specified
+coordinates, specifying whether to ignore child controls of a
+certain type.
+
+##### Returns
+
+The child [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') at the
+specified coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that contains the coordinates
+where you want to look for a control. Coordinates are expressed
+relative to the upper-left corner of the control's client area. |
+| skipValue | [System.Windows.Forms.GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip') | One of the values of [GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip') , determining
+whether to ignore child controls of a certain type. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-GetChildAtPoint-System-Drawing-Point-'></a>
+### GetChildAtPoint(pt) `method`
+
+##### Summary
+
+Retrieves the child control that is located at the specified coordinates.
+
+##### Returns
+
+A [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that represents the
+control that is located at the specified point.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that contains the coordinates
+where you want to look for a control. Coordinates are expressed
+relative to the upper-left corner of the control's client area. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-GetContainerControl'></a>
+### GetContainerControl() `method`
+
+##### Summary
+
+Returns the next [ContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContainerControl 'System.Windows.Forms.ContainerControl') up the control's
+chain of parent controls.
+
+##### Returns
+
+An [IContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IContainerControl 'System.Windows.Forms.IContainerControl'), that
+represents the parent of the [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control').
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-GetNextControl-System-Windows-Forms-Control,System-Boolean-'></a>
+### GetNextControl(ctl,forward) `method`
+
+##### Summary
+
+Retrieves the next control forward or back in the tab order of child controls.
+
+##### Returns
+
+The next [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') in the tab order.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') to start the search with. |
+| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to search forward in the tab order; `false` to search backward. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-GetPreferredSize-System-Drawing-Size-'></a>
+### GetPreferredSize(proposedSize) `method`
+
+##### Summary
+
+Retrieves the size of a rectangular area into which a control can be fitted.
+
+##### Returns
+
+An ordered pair of type [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size')
+representing the width and height of a rectangle.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| proposedSize | [System.Drawing.Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') | The custom-sized area for a control. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Hide'></a>
+### Hide() `method`
+
+##### Summary
+
+Conceals the control from the user.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Region-'></a>
+### Invalidate(region) `method`
+
+##### Summary
+
+Invalidates the specified region of the control (adds it to the
+control's update region, which is the area that will be repainted at
+the next paint operation), and causes a paint message to be sent to
+the control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to invalidate. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Region,System-Boolean-'></a>
+### Invalidate(region,invalidateChildren) `method`
+
+##### Summary
+
+Invalidates the specified region of the control (adds it to the
+control's update region, which is the area that will be repainted at
+the next paint operation), and causes a paint message to be sent to
+the control. Optionally, invalidates the child controls assigned to
+the control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to invalidate. |
+| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the control's child controls;
+otherwise, `false`. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate'></a>
+### Invalidate() `method`
+
+##### Summary
+
+Invalidates the entire surface of the control and causes the control
+to be redrawn.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Boolean-'></a>
+### Invalidate(invalidateChildren) `method`
+
+##### Summary
+
+Invalidates a specific region of the control and causes a paint
+message to be sent to the control. Optionally, invalidates the child
+controls assigned to the control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the control's child controls;
+otherwise, `false`. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Rectangle-'></a>
+### Invalidate(rc) `method`
+
+##### Summary
+
+Invalidates the specified region of the control (adds it to the
+control's update region, which is the area that will be repainted at
+the next paint operation), and causes a paint message to be sent to
+the control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| rc | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+region to invalidate. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Rectangle,System-Boolean-'></a>
+### Invalidate(rc,invalidateChildren) `method`
+
+##### Summary
+
+Invalidates the specified region of the control (adds it to the
+control's update region, which is the area that will be repainted at
+the next paint operation), and causes a paint message to be sent to
+the control. Optionally, invalidates the child controls assigned to
+the control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| rc | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+region to invalidate. |
+| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the control's child controls;
+otherwise, `false`. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Invoke-System-Delegate-'></a>
+### Invoke(method) `method`
+
+##### Summary
+
+Executes the specified delegate on the thread that owns the
+control's underlying window handle.
+
+##### Returns
+
+The return value from the delegate being invoked, or `null` if the delegate has no return value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| method | [System.Delegate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Delegate 'System.Delegate') | A delegate that contains a method to be called in the control's
+thread context. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Invoke-System-Delegate,System-Object[]-'></a>
+### Invoke(method,args) `method`
+
+##### Summary
+
+Executes the specified delegate, on the thread that owns the
+control's underlying window handle, with the specified list of arguments.
+
+##### Returns
+
+An [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') that contains the return value from
+the delegate being invoked, or `null` if the
+delegate has no return value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| method | [System.Delegate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Delegate 'System.Delegate') | A delegate to a method that takes parameters of the same number and
+type that are contained in the `args` parameter. |
+| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | An array of objects to pass as arguments to the specified method.
+This parameter can be `null` if the method takes no arguments. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-LogicalToDeviceUnits-System-Int32-'></a>
+### LogicalToDeviceUnits(value) `method`
+
+##### Summary
+
+Converts a Logical DPI value to its equivalent DeviceUnit DPI value.
+
+##### Returns
+
+The resulting DeviceUnit value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The Logical value to convert. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-LogicalToDeviceUnits-System-Drawing-Size-'></a>
+### LogicalToDeviceUnits(value) `method`
+
+##### Summary
+
+Transforms a size from logical to device units by scaling it for the
+current DPI and rounding down to the nearest integer value for width
+and height.
+
+##### Returns
+
+The scaled size.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Drawing.Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') | The size to be scaled. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-PerformLayout'></a>
+### PerformLayout() `method`
+
+##### Summary
+
+Forces the control to apply layout logic to all its child controls.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-PerformLayout-System-Windows-Forms-Control,System-String-'></a>
+### PerformLayout(affectedControl,affectedProperty) `method`
+
+##### Summary
+
+Forces the control to apply layout logic to all its child controls.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| affectedControl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | A [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that represents the
+most recently changed control. |
+| affectedProperty | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of the most recently changed property on the control. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-PointToClient-System-Drawing-Point-'></a>
+### PointToClient(p) `method`
+
+##### Summary
+
+Computes the location of the specified screen point into client coordinates.
+
+##### Returns
+
+A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the converted
+[Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point'), `p`, in
+client coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| p | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | The screen coordinate [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') to convert. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-PointToScreen-System-Drawing-Point-'></a>
+### PointToScreen(p) `method`
+
+##### Summary
+
+Computes the location of the specified client point into screen coordinates.
+
+##### Returns
+
+A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the converted
+[Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point'), `p`, in
+screen coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| p | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | The client coordinate [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') to convert. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-PreProcessControlMessage-System-Windows-Forms-Message@-'></a>
+### PreProcessControlMessage(msg) `method`
+
+##### Summary
+
+Preprocesses keyboard or input messages within the message loop
+before they are dispatched.
+
+##### Returns
+
+One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState') values,
+depending on whether [PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(System.Windows.Forms.Message@)')
+is `true` or `false` and whether
+[IsInputKey](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputKey 'System.Windows.Forms.Control.IsInputKey(System.Windows.Forms.Keys)')
+or [IsInputChar](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputChar 'System.Windows.Forms.Control.IsInputChar(System.Char)') are
+`true` or `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| msg | [System.Windows.Forms.Message@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message@ 'System.Windows.Forms.Message@') | A [Message](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message 'System.Windows.Forms.Message') that represents the
+message to process. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-PreProcessMessage-System-Windows-Forms-Message@-'></a>
+### PreProcessMessage(msg) `method`
+
+##### Summary
+
+Preprocesses keyboard or input messages within the message loop
+before they are dispatched.
+
+##### Returns
+
+`true` if the message was processed by the control;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| msg | [System.Windows.Forms.Message@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message@ 'System.Windows.Forms.Message@') | A [Message](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message 'System.Windows.Forms.Message'), passed by reference,
+that represents the message to process. The possible values are
+WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-RectangleToClient-System-Drawing-Rectangle-'></a>
+### RectangleToClient(r) `method`
+
+##### Summary
+
+Computes the size and location of the specified screen rectangle in
+client coordinates.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'), `r` , in client coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The screen coordinate [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') to convert. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-RectangleToScreen-System-Drawing-Rectangle-'></a>
+### RectangleToScreen(r) `method`
+
+##### Summary
+
+Computes the size and location of the specified client rectangle in
+screen coordinates.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'), `r` , in screen coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The client coordinate [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') to convert. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Refresh'></a>
+### Refresh() `method`
+
+##### Summary
+
+Forces the control to invalidate its client area and immediately
+redraw itself and any child controls.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResetBackColor'></a>
+### ResetBackColor() `method`
+
+##### Summary
+
+Resets the [BackColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BackColor 'System.Windows.Forms.Control.BackColor')
+property to its default value.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResetBindings'></a>
+### ResetBindings() `method`
+
+##### Summary
+
+Causes a control bound to the [BindingSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingSource 'System.Windows.Forms.BindingSource') to reread all the
+items in the list and refresh their displayed values.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResetCursor'></a>
+### ResetCursor() `method`
+
+##### Summary
+
+Resets the [Cursor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Cursor 'System.Windows.Forms.Control.Cursor')
+property to its default value.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResetFont'></a>
+### ResetFont() `method`
+
+##### Summary
+
+Resets the [Font](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Font 'System.Windows.Forms.Control.Font')
+property to its default value.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResetForeColor'></a>
+### ResetForeColor() `method`
+
+##### Summary
+
+Resets the [ForeColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.ForeColor 'System.Windows.Forms.Control.ForeColor')
+property to its default value.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResetImeMode'></a>
+### ResetImeMode() `method`
+
+##### Summary
+
+Resets the [ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.ImeMode 'System.Windows.Forms.Control.ImeMode')
+property to its default value.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResetRightToLeft'></a>
+### ResetRightToLeft() `method`
+
+##### Summary
+
+Resets the [RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.RightToLeft 'System.Windows.Forms.Control.RightToLeft')
+property to its default value.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResetText'></a>
+### ResetText() `method`
+
+##### Summary
+
+Resets the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Text 'System.Windows.Forms.Control.Text')
+property to its default value ( [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')).
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResumeLayout'></a>
+### ResumeLayout() `method`
+
+##### Summary
+
+Resumes usual layout logic.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ResumeLayout-System-Boolean-'></a>
+### ResumeLayout(performLayout) `method`
+
+##### Summary
+
+Resumes usual layout logic, optionally forcing an immediate layout
+of pending layout requests.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| performLayout | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to execute pending layout requests;
+otherwise, `false`. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Scale-System-Single-'></a>
+### Scale(ratio) `method`
+
+##### Summary
+
+Scales the control and any child controls.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ratio | [System.Single](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Single 'System.Single') | The ratio to use for scaling. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Scale-System-Single,System-Single-'></a>
+### Scale(dx,dy) `method`
+
+##### Summary
+
+Scales the entire control and any child controls.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dx | [System.Single](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Single 'System.Single') | The horizontal scaling factor. |
+| dy | [System.Single](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Single 'System.Single') | The vertical scaling factor. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Scale-System-Drawing-SizeF-'></a>
+### Scale(factor) `method`
+
+##### Summary
+
+Scales the control and all child controls by the specified scaling factor.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| factor | [System.Drawing.SizeF](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.SizeF 'System.Drawing.SizeF') | A [SizeF](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.SizeF 'System.Drawing.SizeF') containing the horizontal and
+vertical scaling factors. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-ScaleBitmapLogicalToDevice-System-Drawing-Bitmap@-'></a>
+### ScaleBitmapLogicalToDevice(logicalBitmap) `method`
+
+##### Summary
+
+Scales a logical bitmap value to it's equivalent device unit value
+when a DPI change occurs.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| logicalBitmap | [System.Drawing.Bitmap@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Bitmap@ 'System.Drawing.Bitmap@') | The bitmap to scale. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Select'></a>
+### Select() `method`
+
+##### Summary
+
+Activates the control.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-SelectNextControl-System-Windows-Forms-Control,System-Boolean,System-Boolean,System-Boolean,System-Boolean-'></a>
+### SelectNextControl(ctl,forward,tabStopOnly,nested,wrap) `method`
+
+##### Summary
+
+Activates the next control.
+
+##### Returns
+
+`true` if a control was activated; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') at which to start
+the search. |
+| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to move forward in the tab order; `false` to move backward in the tab order. |
+| tabStopOnly | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to ignore the controls with the [TabStop](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.TabStop 'System.Windows.Forms.Control.TabStop') property set to `false` ; otherwise, `false`. |
+| nested | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to include nested (children of child
+controls) child controls; otherwise, `false`. |
+| wrap | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to continue searching from the first control
+in the tab order after the last control has been reached; otherwise,
+`false`. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-SendToBack'></a>
+### SendToBack() `method`
+
+##### Summary
+
+Sends the control to the back of the z-order.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-SetBounds-System-Int32,System-Int32,System-Int32,System-Int32-'></a>
+### SetBounds(x,y,width,height) `method`
+
+##### Summary
+
+Sets the bounds of the control to the specified location and size.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Left](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Left 'System.Windows.Forms.Control.Left') property
+value of the control. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Top](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Top 'System.Windows.Forms.Control.Top') property
+value of the control. |
+| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width') property
+value of the control. |
+| height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property
+value of the control. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-SetBounds-System-Int32,System-Int32,System-Int32,System-Int32,System-Windows-Forms-BoundsSpecified-'></a>
+### SetBounds(x,y,width,height,specified) `method`
+
+##### Summary
+
+Sets the specified bounds of the control to the specified location
+and size.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Left](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Left 'System.Windows.Forms.Control.Left') property
+value of the control. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Top](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Top 'System.Windows.Forms.Control.Top') property
+value of the control. |
+| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width') property
+value of the control. |
+| height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property
+value of the control. |
+| specified | [System.Windows.Forms.BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') | A bitwise combination of the [BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') values. For any
+parameter not specified, the current value will be used. |
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Show'></a>
+### Show() `method`
+
+##### Summary
+
+Displays the control to the user.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-SuspendLayout'></a>
+### SuspendLayout() `method`
+
+##### Summary
+
+Temporarily suspends the layout logic for the control.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IControl-Update'></a>
+### Update() `method`
+
+##### Summary
+
+Causes the control to redraw the invalidated regions within its
+client area.
+
+##### Parameters
+
+This method has no parameters.
+
 <a name='T-xyLOGIX-Core-Extensions-IForm'></a>
 ## IForm `type`
 
@@ -577,25 +3278,997 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Defines the publicly-exposed methods and properties of an object that
-implements a Windows Form.
+Defines the publicly-exposed methods and properties of a form.
 
-##### Remarks
-
-This interface is allows any object to serve as a proxy for a Windows
-Form. This interface is here so that any form, in principle, that
-implements the methods and properties below can be extended by the [FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions') class without
-necessarily having to be a Windows Form per se. NOTE: The methods and
-properties of this interface are not documented here. Please see the
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') class' XML doc comments for
-the documentation.
-
-<a name='P-xyLOGIX-Core-Extensions-IForm-ProgressBar'></a>
-### ProgressBar `property`
+<a name='P-xyLOGIX-Core-Extensions-IForm-AcceptButton'></a>
+### AcceptButton `property`
 
 ##### Summary
 
-Gets a reference to the progress bar control.
+Gets or sets the button on the form that is clicked when the user
+presses the ENTER key.
+
+##### Returns
+
+An [IButtonControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IButtonControl 'System.Windows.Forms.IButtonControl') that represents
+the button to use as the accept button for the form.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-ActiveMdiChild'></a>
+### ActiveMdiChild `property`
+
+##### Summary
+
+Gets the currently active multiple-document interface (MDI) child window.
+
+##### Returns
+
+Returns a [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the
+currently active MDI child window, or `null` if there
+are currently no child windows present.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-AllowTransparency'></a>
+### AllowTransparency `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the opacity of the form can be
+adjusted.
+
+##### Returns
+
+`true` if the opacity of the form can be changed;
+otherwise, `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-AutoScale'></a>
+### AutoScale `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the form adjusts its size to fit
+the height of the font used on the form and scales its controls.
+
+##### Returns
+
+`true` if the form will automatically scale itself and
+its controls based on the current font assigned to the form; otherwise,
+`false`. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-AutoScaleBaseSize'></a>
+### AutoScaleBaseSize `property`
+
+##### Summary
+
+Gets or sets the base size used for autoscaling of the form.
+
+##### Returns
+
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the base size that
+this form uses for autoscaling.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-AutoSizeMode'></a>
+### AutoSizeMode `property`
+
+##### Summary
+
+Gets or sets the mode by which the form automatically resizes itself.
+
+##### Returns
+
+An [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated value.
+The default is [GrowOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode.GrowOnly 'System.Windows.Forms.AutoSizeMode.GrowOnly').
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value is not a valid
+[AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode')
+value. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-AutoValidate'></a>
+### AutoValidate `property`
+
+##### Summary
+
+Gets or sets a value that indicates whether controls in this container
+will be automatically validated when the focus changes.
+
+##### Returns
+
+An [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated value
+that indicates whether contained controls are implicitly validated on
+focus change. The default is Inherit.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-CancelButton'></a>
+### CancelButton `property`
+
+##### Summary
+
+Gets or sets the background color for the control.
+
+##### Returns
+
+A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the background
+color of the control. The default is the value of the
+[DefaultBackColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultBackColor 'System.Windows.Forms.Control.DefaultBackColor')
+property.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-ControlBox'></a>
+### ControlBox `property`
+
+##### Summary
+
+Gets or sets a value indicating whether a control box is displayed in
+the caption bar of the form.
+
+##### Returns
+
+`true` if the form displays a control box in the
+upper-right corner of the form; otherwise, `false`. The
+default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-DesktopBounds'></a>
+### DesktopBounds `property`
+
+##### Summary
+
+Gets or sets the size and location of the form on the Windows desktop.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the bounds of
+the form on the Windows desktop using desktop coordinates.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-DesktopLocation'></a>
+### DesktopLocation `property`
+
+##### Summary
+
+Gets or sets the location of the form on the Windows desktop.
+
+##### Returns
+
+A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the location of
+the form on the desktop.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-DialogResult'></a>
+### DialogResult `property`
+
+##### Summary
+
+Gets or sets the dialog result for the form.
+
+##### Returns
+
+A [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') that represents the
+result of the form when used as a dialog box.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-FormBorderStyle'></a>
+### FormBorderStyle `property`
+
+##### Summary
+
+Gets or sets the border style of the form.
+
+##### Returns
+
+A [FormBorderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormBorderStyle 'System.Windows.Forms.FormBorderStyle') that represents
+the style of border to display for the form. The default is
+`FormBorderStyle.Sizable`.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-HelpButton'></a>
+### HelpButton `property`
+
+##### Summary
+
+Gets or sets a value indicating whether a Help button should be
+displayed in the caption box of the form.
+
+##### Returns
+
+`true` to display a Help button in the form's caption
+bar; otherwise, `false`. The default is
+`false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-Icon'></a>
+### Icon `property`
+
+##### Summary
+
+Gets or sets the icon for the form.
+
+##### Returns
+
+An [Icon](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Icon 'System.Drawing.Icon') that represents the icon for the form.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-IsMdiChild'></a>
+### IsMdiChild `property`
+
+##### Summary
+
+Gets a value indicating whether the form is a multiple-document
+interface (MDI) child form.
+
+##### Returns
+
+`true` if the form is an MDI child form; otherwise,
+`false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-IsMdiContainer'></a>
+### IsMdiContainer `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the form is a container for
+multiple-document interface (MDI) child forms.
+
+##### Returns
+
+`true` if the form is a container for MDI child forms;
+otherwise, `false`. The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-IsRestrictedWindow'></a>
+### IsRestrictedWindow `property`
+
+##### Summary
+
+Gets a value indicating whether the form can use all windows and user
+input events without restriction.
+
+##### Returns
+
+`true` if the form has restrictions; otherwise,
+`false`
+. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-KeyPreview'></a>
+### KeyPreview `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the form will receive key events
+before the event is passed to the control that has focus.
+
+##### Returns
+
+`true` if the form will receive all key events;
+`false`
+if the currently selected control on the form
+receives key events. The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-MainMenuStrip'></a>
+### MainMenuStrip `property`
+
+##### Summary
+
+Gets or sets the primary menu container for the form.
+
+##### Returns
+
+A [MenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MenuStrip 'System.Windows.Forms.MenuStrip') that represents the
+container for the menu structure of the form. The default is
+`null`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-MaximizeBox'></a>
+### MaximizeBox `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the Maximize button is displayed
+in the caption bar of the form.
+
+##### Returns
+
+`true` to display a Maximize button for the form;
+otherwise, `false`. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-MdiChildren'></a>
+### MdiChildren `property`
+
+##### Summary
+
+Gets the maximum size the form can be resized to.
+
+##### Returns
+
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the maximum size
+for the form.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The values of the height or width within the
+[Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size')
+object are less than zero. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-MdiParent'></a>
+### MdiParent `property`
+
+##### Summary
+
+Gets or sets the current multiple-document interface (MDI) parent form
+of this form.
+
+##### Returns
+
+A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the MDI
+parent form.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') assigned to this property
+is not marked as an MDI container.
+-or- The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') assigned to this
+property is both a child and an MDI container form.
+-or- The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') assigned to this
+property is located on a different thread. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-Menu'></a>
+### Menu `property`
+
+##### Summary
+
+Gets or sets the [MainMenu](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MainMenu 'System.Windows.Forms.MainMenu') that is
+displayed in the form.
+
+##### Returns
+
+A [MainMenu](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MainMenu 'System.Windows.Forms.MainMenu') that represents the menu
+to display in the form.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-MergedMenu'></a>
+### MergedMenu `property`
+
+##### Summary
+
+Gets the merged menu for the form.
+
+##### Returns
+
+A [MainMenu](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MainMenu 'System.Windows.Forms.MainMenu') that represents the
+merged menu of the form.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-MinimizeBox'></a>
+### MinimizeBox `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the Minimize button is displayed
+in the caption bar of the form.
+
+##### Returns
+
+`true` to display a Minimize button for the form;
+otherwise, `false`. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-Modal'></a>
+### Modal `property`
+
+##### Summary
+
+Gets a value indicating whether this form is displayed modally.
+
+##### Returns
+
+`true` if the form is displayed modally; otherwise,
+`false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-Opacity'></a>
+### Opacity `property`
+
+##### Summary
+
+Gets or sets the opacity level of the form.
+
+##### Returns
+
+The level of opacity for the form. The default is 1.00.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-OwnedForms'></a>
+### OwnedForms `property`
+
+##### Summary
+
+Gets an array of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') objects that
+represent all forms that are owned by this form.
+
+##### Returns
+
+A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') array that represents the
+owned forms for this form.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-Owner'></a>
+### Owner `property`
+
+##### Summary
+
+Gets or sets the form that owns this form.
+
+##### Returns
+
+A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form
+that is the owner of this form.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | A top-level window cannot have an owner. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-RestoreBounds'></a>
+### RestoreBounds `property`
+
+##### Summary
+
+Gets the location and size of the form in its normal window state.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that contains the location
+and size of the form in the normal window state.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-RightToLeftLayout'></a>
+### RightToLeftLayout `property`
+
+##### Summary
+
+Gets or sets a value indicating whether right-to-left mirror placement
+is turned on.
+
+##### Returns
+
+`true` if right-to-left mirror placement is turned on;
+otherwise, `false` for standard child control placement.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-ShowIcon'></a>
+### ShowIcon `property`
+
+##### Summary
+
+Gets or sets a value indicating whether an icon is displayed in the
+caption bar of the form.
+
+##### Returns
+
+`true` if the form displays an icon in the caption bar;
+otherwise, `false`. The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-ShowInTaskbar'></a>
+### ShowInTaskbar `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the form is displayed in the
+Windows taskbar.
+
+##### Returns
+
+`true` to display the form in the Windows taskbar at run
+time; otherwise, `false`. The default is
+`true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-SizeGripStyle'></a>
+### SizeGripStyle `property`
+
+##### Summary
+
+Gets or sets the style of the size grip to display in the lower-right
+corner of the form.
+
+##### Returns
+
+A [SizeGripStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SizeGripStyle 'System.Windows.Forms.SizeGripStyle') that represents the
+style of the size grip to display. The default is
+[Auto](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SizeGripStyle.Auto 'System.Windows.Forms.SizeGripStyle.Auto')
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-StartPosition'></a>
+### StartPosition `property`
+
+##### Summary
+
+Gets or sets the starting position of the form at run time.
+
+##### Returns
+
+A [FormStartPosition](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormStartPosition 'System.Windows.Forms.FormStartPosition') that represents
+the starting position of the form.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-TopLevel'></a>
+### TopLevel `property`
+
+##### Summary
+
+Gets or sets a value indicating whether to display the form as a
+top-level window.
+
+##### Returns
+
+`true` to display the form as a top-level window;
+otherwise, `false`. The default is `true`.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | A Multiple-document interface (MDI) parent form must be a top-level window. |
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-TopMost'></a>
+### TopMost `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the form should be displayed as
+a topmost form.
+
+##### Returns
+
+`true` to display the form as a topmost form; otherwise,
+`false`. The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-TransparencyKey'></a>
+### TransparencyKey `property`
+
+##### Summary
+
+Gets or sets the color that will represent transparent areas of the form.
+
+##### Returns
+
+A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the color to
+display transparently on the form.
+
+<a name='P-xyLOGIX-Core-Extensions-IForm-WindowState'></a>
+### WindowState `property`
+
+##### Summary
+
+Gets or sets a value that indicates whether form is minimized,
+maximized, or normal.
+
+##### Returns
+
+A [FormWindowState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormWindowState 'System.Windows.Forms.FormWindowState') that represents
+whether form is minimized, maximized, or normal. The default is
+`FormWindowState.Normal`.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-Activate'></a>
+### Activate() `method`
+
+##### Summary
+
+Activates the form and gives it focus.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-AddOwnedForm-System-Windows-Forms-Form-'></a>
+### AddOwnedForm(ownedForm) `method`
+
+##### Summary
+
+Adds an owned form to this form.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ownedForm | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that this form will own. |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-Close'></a>
+### Close() `method`
+
+##### Summary
+
+Closes the form.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form was closed while a handle was being created. |
+| [System.ObjectDisposedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ObjectDisposedException 'System.ObjectDisposedException') | You cannot call this method from the
+[](#E-System-Windows-Forms-Form-Activated 'System.Windows.Forms.Form.Activated')
+event when
+[WindowState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.WindowState 'System.Windows.Forms.Form.WindowState')
+is set to [Maximized](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormWindowState.Maximized 'System.Windows.Forms.FormWindowState.Maximized'). |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-LayoutMdi-System-Windows-Forms-MdiLayout-'></a>
+### LayoutMdi(value) `method`
+
+##### Summary
+
+Arranges the multiple-document interface (MDI) child forms within the
+MDI parent form.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Windows.Forms.MdiLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MdiLayout 'System.Windows.Forms.MdiLayout') | One of the [MdiLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MdiLayout 'System.Windows.Forms.MdiLayout') values that
+defines the layout of MDI child forms. |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-RemoveOwnedForm-System-Windows-Forms-Form-'></a>
+### RemoveOwnedForm(ownedForm) `method`
+
+##### Summary
+
+Removes an owned form from this form.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ownedForm | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') representing the form to
+remove from the list of owned forms for this form. |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-SetDesktopBounds-System-Int32,System-Int32,System-Int32,System-Int32-'></a>
+### SetDesktopBounds(x,y,width,height) `method`
+
+##### Summary
+
+Sets the bounds of the form in desktop coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The x-coordinate of the form's location. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The y-coordinate of the form's location. |
+| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The width of the form. |
+| height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The height of the form. |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-SetDesktopLocation-System-Int32,System-Int32-'></a>
+### SetDesktopLocation(x,y) `method`
+
+##### Summary
+
+Sets the location of the form in desktop coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The x-coordinate of the form's location. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The y-coordinate of the form's location. |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-Show-System-Windows-Forms-IWin32Window-'></a>
+### Show(owner) `method`
+
+##### Summary
+
+Shows the form with the specified owner to the user.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Any object that implements
+[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window')
+and represents the
+top-level window that will own this form. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is already visible.
+-or- The form specified in the `owner` parameter is the
+same as the form being shown.
+-or- The form being shown is disabled.
+-or- The form being shown is not a top-level window.
+-or- The form being shown as a dialog box is already a modal form.
+-or- The current process is not running in user interactive mode (for
+more information, see
+[UserInteractive](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SystemInformation.UserInteractive 'System.Windows.Forms.SystemInformation.UserInteractive')). |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-ShowDialog'></a>
+### ShowDialog() `method`
+
+##### Summary
+
+Shows the form as a modal dialog box.
+
+##### Returns
+
+One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') values.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is already visible.
+-or- The form being shown is disabled.
+-or- The form being shown is not a top-level window.
+-or- The form being shown as a dialog box is already a modal form.
+-or- The current process is not running in user interactive mode (for
+more information, see
+[UserInteractive](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SystemInformation.UserInteractive 'System.Windows.Forms.SystemInformation.UserInteractive')). |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-ShowDialog-System-Windows-Forms-IWin32Window-'></a>
+### ShowDialog(owner) `method`
+
+##### Summary
+
+Shows the form as a modal dialog box with the specified owner.
+
+##### Returns
+
+One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') values.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Any object that implements
+[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window')
+that represents the
+top-level window that will own the modal dialog box. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The form specified in the `owner` parameter is the same
+as the form being shown. |
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is already visible.
+-or- The form being shown is disabled.
+-or- The form being shown is not a top-level window.
+-or- The form being shown as a dialog box is already a modal form.
+-or- The current process is not running in user interactive mode (for
+more information, see
+[UserInteractive](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SystemInformation.UserInteractive 'System.Windows.Forms.SystemInformation.UserInteractive')). |
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-ToString'></a>
+### ToString() `method`
+
+##### Summary
+
+Gets a string representing the current instance of the form.
+
+##### Returns
+
+A string consisting of the fully qualified name of the form object's
+class, with the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property
+of the form appended to the end. For example, if the form is derived
+from the class `MyForm` in the `MyNamespace` namespace, and
+the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property is set to
+`Hello, World`, this method will return
+`
+            MyNamespace.MyForm,
+            Text: Hello, World
+            `
+.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-ValidateChildren'></a>
+### ValidateChildren() `method`
+
+##### Summary
+
+Causes all of the child controls within a control that support
+validation to validate their data.
+
+##### Returns
+
+`true` if all of the children validated successfully;
+otherwise, `false`. If called from the
+[](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating')
+or
+[](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated')
+event handlers, this
+method will always return `false`.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IForm-ValidateChildren-System-Windows-Forms-ValidationConstraints-'></a>
+### ValidateChildren(validationConstraints) `method`
+
+##### Summary
+
+Causes all of the child controls within a control that support
+validation to validate their data.
+
+##### Returns
+
+`true` if all of the children validated successfully;
+otherwise, `false`. If called from the
+[](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating')
+or
+[](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated')
+event handlers, this
+method will always return `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| validationConstraints | [System.Windows.Forms.ValidationConstraints](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ValidationConstraints 'System.Windows.Forms.ValidationConstraints') | Places restrictions on which controls have their
+[](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating')
+event raised. |
+
+<a name='T-xyLOGIX-Core-Extensions-IScrollableControl'></a>
+## IScrollableControl `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Defines the publicly-exposed methods and properties of controls that
+support auto-scrolling behavior.
+
+<a name='P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScroll'></a>
+### AutoScroll `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the container enables the user
+to scroll to any controls placed outside of its visible boundaries.
+
+##### Returns
+
+`true` if the container enables auto-scrolling;
+otherwise, `false`. The default value is
+`false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollMargin'></a>
+### AutoScrollMargin `property`
+
+##### Summary
+
+Gets or sets the size of the auto-scroll margin.
+
+##### Returns
+
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the height and
+width of the auto-scroll margin in pixels.
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Height 'System.Drawing.Size.Height') or
+[Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Width 'System.Drawing.Size.Width')
+value assigned is less than 0. |
+
+<a name='P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollMinSize'></a>
+### AutoScrollMinSize `property`
+
+##### Summary
+
+Gets or sets the minimum size of the auto-scroll.
+
+##### Returns
+
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that determines the minimum size
+of the virtual area through which the user can scroll.
+
+<a name='P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollPosition'></a>
+### AutoScrollPosition `property`
+
+##### Summary
+
+Gets or sets the location of the auto-scroll position.
+
+##### Returns
+
+A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the auto-scroll
+position in pixels.
+
+<a name='P-xyLOGIX-Core-Extensions-IScrollableControl-DockPadding'></a>
+### DockPadding `property`
+
+##### Summary
+
+Gets the dock padding settings for all edges of the control.
+
+##### Returns
+
+A
+[DockPaddingEdges](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ScrollableControl.DockPaddingEdges 'System.Windows.Forms.ScrollableControl.DockPaddingEdges')
+that
+represents the padding for all the edges of a docked control.
+
+<a name='P-xyLOGIX-Core-Extensions-IScrollableControl-HorizontalScroll'></a>
+### HorizontalScroll `property`
+
+##### Summary
+
+Gets the characteristics associated with the horizontal scroll bar.
+
+##### Returns
+
+A [HScrollProperties](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.HScrollProperties 'System.Windows.Forms.HScrollProperties') that contains
+information about the horizontal scroll bar.
+
+<a name='P-xyLOGIX-Core-Extensions-IScrollableControl-VerticalScroll'></a>
+### VerticalScroll `property`
+
+##### Summary
+
+Gets the characteristics associated with the vertical scroll bar.
+
+##### Returns
+
+A [VScrollProperties](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.VScrollProperties 'System.Windows.Forms.VScrollProperties') that contains
+information about the vertical scroll bar.
+
+<a name='M-xyLOGIX-Core-Extensions-IScrollableControl-ScrollControlIntoView-System-Windows-Forms-Control-'></a>
+### ScrollControlIntoView(activeControl) `method`
+
+##### Summary
+
+Scrolls the specified child control into view on an auto-scroll enabled
+control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| activeControl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The child control to scroll into view. |
+
+<a name='M-xyLOGIX-Core-Extensions-IScrollableControl-SetAutoScrollMargin-System-Int32,System-Int32-'></a>
+### SetAutoScrollMargin(x,y) `method`
+
+##### Summary
+
+Sets the size of the auto-scroll margins.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The [Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Width 'System.Drawing.Size.Width') value. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Height 'System.Drawing.Size.Height') value. |
 
 <a name='T-xyLOGIX-Core-Extensions-IntExtensions'></a>
 ## IntExtensions `type`
@@ -2338,13 +6011,37 @@ xyLOGIX.Core.Extensions
 
 Helper methods to assist in handling runtime type information.
 
+<a name='F-xyLOGIX-Core-Extensions-TypeExtensions-CachedActualType'></a>
+### CachedActualType `constants`
+
+##### Summary
+
+Dictionary that caches the results of the
+[GetActualType](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType')
+method for faster performance.
+
+<a name='M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type-'></a>
+### GetActualType() `method`
+
+##### Summary
+
+Gets the internal type of an IList. When the type is not a list then
+this method will return the same type. if type is List of T then
+this method will return the type of T.
+
+##### Parameters
+
+This method has no parameters.
+
 <a name='M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclass-System-Type,System-Type-'></a>
 ### IsSameOrSubclass(potentialDescendant,potentialBaseType) `method`
 
 ##### Summary
 
 Ascertains whether the `potentialDescendant` is of
-the same, or a subclass of, the base class whose [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') is passed.
+the same, or a subclass of, the base class whose
+[Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type')
+is passed.
 
 ##### Returns
 

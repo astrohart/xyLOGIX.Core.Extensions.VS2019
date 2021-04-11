@@ -11,7 +11,7 @@ namespace xyLOGIX.Core.Extensions
     /// Defines the publicly-exposed methods and properties of an object that
     /// represents a WinForms control.
     /// </summary>
-    public interface IControl : IComponent
+    public interface IControl : IComponent, ISynchronizeInvoke
     {
         /// <summary>
         /// This event is not relevant for this class.
@@ -963,22 +963,6 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a value indicating whether the caller must call an invoke
-        /// method when making method calls to the control because the caller is
-        /// on a different thread than the one the control was created on.
-        /// </summary>
-        /// <returns>
-        /// <see langword="true"/> if the control's <see
-        /// cref="P:System.Windows.Forms.Control.Handle"/> was created on a
-        /// different thread than the calling thread (indicating that you must
-        /// make calls to the control through an invoke method); otherwise, <see langword="false"/>.
-        /// </returns>
-        bool InvokeRequired
-        {
-            get;
-        }
-
-        /// <summary>
         /// Gets or sets a value indicating whether the control is visible to
         /// accessibility applications.
         /// </summary>
@@ -1416,29 +1400,6 @@ namespace xyLOGIX.Core.Extensions
         /// No appropriate window handle can be found.
         /// </exception>
         IAsyncResult BeginInvoke(Delegate method);
-
-        /// <summary>
-        /// Executes the specified delegate asynchronously with the specified
-        /// arguments, on the thread that the control's underlying handle was
-        /// created on.
-        /// </summary>
-        /// <param name="method">
-        /// A delegate to a method that takes parameters of the same number and
-        /// type that are contained in the <paramref name="args"/> parameter.
-        /// </param>
-        /// <param name="args">
-        /// An array of objects to pass as arguments to the given method. This
-        /// can be <see langword="null"/> if no arguments are needed.
-        /// </param>
-        /// <returns>
-        /// An <see cref="T:System.IAsyncResult"/> that represents the result of
-        /// the <see
-        /// cref="M:System.Windows.Forms.Control.BeginInvoke(System.Delegate)"/> operation.
-        /// </returns>
-        /// <exception cref="T:System.InvalidOperationException">
-        /// No appropriate window handle can be found.
-        /// </exception>
-        IAsyncResult BeginInvoke(Delegate method, params object[] args);
 
         /// <summary>
         /// Brings the control to the front of the z-order.

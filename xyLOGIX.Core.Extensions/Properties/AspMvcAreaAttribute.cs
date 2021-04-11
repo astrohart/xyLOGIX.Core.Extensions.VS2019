@@ -2,6 +2,7 @@
 
 namespace xyLOGIX.Core.Extensions.Properties
 {
+    /// <inheritdoc />
     [AttributeUsage(AttributeTargets.Parameter)]
     public sealed class AspMvcAreaAttribute : PathReferenceAttribute
     {

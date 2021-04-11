@@ -54,15 +54,6 @@ namespace xyLOGIX.Core.Extensions
     Point AutoScrollPosition { get; set; }
 
     /// <summary>
-    /// Gets the rectangle that represents the virtual display area of the control.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="T:System.Drawing.Rectangle" /> that represents the display
-    /// area of the control.
-    /// </returns>
-    Rectangle DisplayRectangle { get; }
-
-    /// <summary>
     /// Gets the dock padding settings for all edges of the control.
     /// </summary>
     /// <returns>

@@ -335,7 +335,7 @@
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
   - [CachedActualType](#F-xyLOGIX-Core-Extensions-TypeExtensions-CachedActualType 'xyLOGIX.Core.Extensions.TypeExtensions.CachedActualType')
   - [GetActualType()](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType(System.Type)')
-  - [IsSameOrSubclass(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclass-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclass(System.Type,System.Type)')
+  - [IsSameOrSubclassOf(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclassOf-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclassOf(System.Type,System.Type)')
 
 <a name='T-xyLOGIX-Core-Extensions-Properties-AspMvcActionSelectorAttribute'></a>
 ## AspMvcActionSelectorAttribute `type`
@@ -6033,8 +6033,8 @@ this method will return the type of T.
 
 This method has no parameters.
 
-<a name='M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclass-System-Type,System-Type-'></a>
-### IsSameOrSubclass(potentialDescendant,potentialBaseType) `method`
+<a name='M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclassOf-System-Type,System-Type-'></a>
+### IsSameOrSubclassOf(potentialDescendant,potentialBaseType) `method`
 
 ##### Summary
 

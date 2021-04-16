@@ -187,6 +187,7 @@
         erase /F /Q "$(ProjectDir)README.md"
     )
     copy /Y "$(TargetDir)$(ProjectName).md" "$(ProjectDir)README.md"
+    git add "$(ProjectDir)README.md"
     git commit -m "Update README.md"
     git push -u origin master
 )

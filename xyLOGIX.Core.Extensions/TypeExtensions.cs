@@ -65,7 +65,7 @@ namespace xyLOGIX.Core.Extensions
         /// True if the type of the <paramref name="potentialDescendant" /> is
         /// the same as, or a subclass of, the base type.
         /// </returns>
-        public static bool IsSameOrSubclass(this Type potentialDescendant,
+        public static bool IsSameOrSubclassOf(this Type potentialDescendant,
             Type potentialBaseType)
             => potentialDescendant.IsSubclassOf(potentialBaseType) ||
                potentialDescendant == potentialBaseType;

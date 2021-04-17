@@ -109,7 +109,6 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the indicated value is in the specified
         /// collection, regardless of case; <see langword="false" /> otherwise.
         /// </returns>
-        [UsedImplicitly]
         public static bool AnyContainNoCase(this IEnumerable<string> collection,
             string value)
             => collection.Any(s => s.ContainsNoCase(value));
@@ -142,7 +141,6 @@ namespace xyLOGIX.Core.Extensions
         /// empty collection for <paramref name="source" />, then the return
         /// value is the empty string.
         /// </remarks>
-        [UsedImplicitly]
         public static string AsProseList<TSource>(
             this IEnumerable<TSource> source,
             Func<TSource, string> selectorFunc)
@@ -190,7 +188,6 @@ namespace xyLOGIX.Core.Extensions
         /// If this method is passed the empty string or a blank string as
         /// input, then it returns the empty collection.
         /// </remarks>
-        [UsedImplicitly]
         public static IEnumerable<string> BreakTextIntoLines(string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -259,7 +256,6 @@ namespace xyLOGIX.Core.Extensions
         ///     langword="null" />
         /// reference, then this method returns <see langword="false" />.
         /// </remarks>
-        [UsedImplicitly]
         public static bool ContainsAnyOf(this string value,
             IEnumerable<string> searchStrings)
             => !string.IsNullOrWhiteSpace(value) && searchStrings != null &&
@@ -375,7 +371,6 @@ namespace xyLOGIX.Core.Extensions
         /// If this method is passed the empty string, then the result is the
         /// empty string.
         /// </remarks>
-        [UsedImplicitly]
         public static string EnsureAtIsInFront(string twitterSite)
         {
             if (string.IsNullOrWhiteSpace(twitterSite)) return string.Empty;
@@ -423,7 +418,6 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// Whether the two strings are the same, regardless of case.
         /// </returns>
-        [UsedImplicitly]
         public static bool EqualsNoCase(this string str1, string str2,
             StringComparison comparisonType)
             => string.IsNullOrWhiteSpace(str1) ||
@@ -495,7 +489,6 @@ namespace xyLOGIX.Core.Extensions
         /// Thrown if <paramref name="nChars" /> has a zero or negative number
         /// value. <paramref name="nChars" /> must be a positive number.
         /// </exception>
-        [UsedImplicitly]
         public static string GetFirstNChars(this string value, int nChars)
         {
             if (string.IsNullOrWhiteSpace(value)) return string.Empty;
@@ -528,7 +521,6 @@ namespace xyLOGIX.Core.Extensions
         /// given the above assumptions and input patterns. If the empty string
         /// is passed as input to this method, then the empty string is returned.
         /// </remarks>
-        [UsedImplicitly]
         public static string GetPersonFirstName(string fullName)
         {
             if (string.IsNullOrWhiteSpace(fullName)) return string.Empty;
@@ -566,7 +558,6 @@ namespace xyLOGIX.Core.Extensions
         ///     cref="T:System.IO.InvalidDataException" />
         /// is thrown.
         /// </remarks>
-        [UsedImplicitly]
         public static string GetPersonLastName(string fullName)
         {
             if (string.IsNullOrWhiteSpace(fullName)) return string.Empty;
@@ -641,7 +632,6 @@ namespace xyLOGIX.Core.Extensions
         /// otherwise. The method also returns <see langword="false" /> if it is
         /// passed the empty string.
         /// </returns>
-        [UsedImplicitly]
         public static bool IsDecimal(string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return false;
@@ -734,7 +724,6 @@ namespace xyLOGIX.Core.Extensions
         ///     langword="false" />
         /// if it is passed the empty string.
         /// </returns>
-        [UsedImplicitly]
         public static bool IsNumeric(string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return false;
@@ -930,7 +919,6 @@ namespace xyLOGIX.Core.Extensions
         /// If the empty string is passed for <paramref name="word" />, then this
         /// method returns the empty string.
         /// </remarks>
-        [UsedImplicitly]
         public static string PluralizeWord(this string word)
             => PluralizeWord(word, CultureInfo.CurrentUICulture);
 
@@ -1278,7 +1266,6 @@ namespace xyLOGIX.Core.Extensions
         /// If the empty string is passed to <paramref name="value" />, then the
         /// empty string is returned.
         /// </remarks>
-        [UsedImplicitly]
         public static string RemoveDigitsAndPunctuation(this string value)
             => string.IsNullOrWhiteSpace(value)
                 ? string.Empty
@@ -1304,7 +1291,6 @@ namespace xyLOGIX.Core.Extensions
         /// If this method is passed the empty string, then this method returns
         /// the empty string.
         /// </remarks>
-        [UsedImplicitly]
         public static string RemoveTrailingBackslashes(this string value)
             => string.IsNullOrWhiteSpace(value) ? string.Empty :
                 value.EndsWith(@"\") ? value.Remove(value.Length - 1) : value;
@@ -1417,7 +1403,6 @@ namespace xyLOGIX.Core.Extensions
         ///     name="text" />
         /// or the empty collection for <paramref name="list" />.
         /// </remarks>
-        [UsedImplicitly]
         public static bool StartsWithAnyOf(this string text,
             IEnumerable<string> list)
             => !string.IsNullOrWhiteSpace(text) &&
@@ -1474,7 +1459,6 @@ namespace xyLOGIX.Core.Extensions
         /// does the same operation. If this method is passed the empty string
         /// for <paramref name="format" />, then the return value is the empty string.
         /// </remarks>
-        [UsedImplicitly]
         public static string Sub(this string format, params object[] args)
             => string.IsNullOrWhiteSpace(format)
                 ? string.Empty
@@ -1500,7 +1484,6 @@ namespace xyLOGIX.Core.Extensions
         /// that is short, but not an acronym, then the input is returned with
         /// no alteration.
         /// </remarks>
-        [UsedImplicitly]
         public static string ToAcronym(this string phrase)
         {
             if (string.IsNullOrWhiteSpace(phrase)) return string.Empty;
@@ -1544,7 +1527,6 @@ namespace xyLOGIX.Core.Extensions
         /// If this method is passed the empty or whitespace string for
         /// <paramref name="value" />, then this method returns the empty string.
         /// </remarks>
-        [UsedImplicitly]
         public static string ToASCII(this string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return string.Empty;
@@ -1573,7 +1555,6 @@ namespace xyLOGIX.Core.Extensions
         /// representation, so that the string representation contains only
         /// letters and/or numbers.
         /// </returns>
-        [UsedImplicitly]
         public static string ToGuidWithNoPunctuation(this Guid guid)
             => guid.ToString("N");
 
@@ -1708,7 +1689,6 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" />; or the empty string if the empty string is
         /// provided to this method.
         /// </returns>
-        [UsedImplicitly]
         public static string ToUnicode(this string value)
             => string.IsNullOrWhiteSpace(value)
                 ? string.Empty
@@ -1886,8 +1866,9 @@ namespace xyLOGIX.Core.Extensions
             if (string.IsNullOrWhiteSpace(currentWord)) return false;
 
             return (currentWord.EndsWith(".") &&
-                    EqualsNoCase(currentWord, words.First())
-                   ) // this is most likely someone's title
+                    EqualsNoCase(
+                        currentWord, words.First()
+                    )) // this is most likely someone's title
                    | CapitalizeableAsFirstWords
                        .ContainsNoCase(
                            currentWord

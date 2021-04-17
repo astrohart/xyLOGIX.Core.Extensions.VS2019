@@ -3,8 +3,6 @@
 
 ## Contents
 
-- [AspMvcActionSelectorAttribute](#T-xyLOGIX-Core-Extensions-Properties-AspMvcActionSelectorAttribute 'xyLOGIX.Core.Extensions.Properties.AspMvcActionSelectorAttribute')
-- [AspMvcAreaAttribute](#T-xyLOGIX-Core-Extensions-Properties-AspMvcAreaAttribute 'xyLOGIX.Core.Extensions.Properties.AspMvcAreaAttribute')
 - [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
   - [AreAllItemsSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.AreAllItemsSelected(System.Windows.Forms.CheckedListBox)')
   - [CheckAll(checkedListBox,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckAll(System.Windows.Forms.CheckedListBox,System.Boolean)')
@@ -12,6 +10,7 @@
   - [GetCheckedByName(checkedListBox,itemName)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.GetCheckedByName(System.Windows.Forms.CheckedListBox,System.String)')
   - [NoItemsAreSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-NoItemsAreSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.NoItemsAreSelected(System.Windows.Forms.CheckedListBox)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
+  - [InvokeIfRequired(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
@@ -141,7 +140,6 @@
   - [CreateGraphics()](#M-xyLOGIX-Core-Extensions-IControl-CreateGraphics 'xyLOGIX.Core.Extensions.IControl.CreateGraphics')
   - [DoDragDrop(data,allowedEffects)](#M-xyLOGIX-Core-Extensions-IControl-DoDragDrop-System-Object,System-Windows-Forms-DragDropEffects- 'xyLOGIX.Core.Extensions.IControl.DoDragDrop(System.Object,System.Windows.Forms.DragDropEffects)')
   - [DrawToBitmap(bitmap,targetBounds)](#M-xyLOGIX-Core-Extensions-IControl-DrawToBitmap-System-Drawing-Bitmap,System-Drawing-Rectangle- 'xyLOGIX.Core.Extensions.IControl.DrawToBitmap(System.Drawing.Bitmap,System.Drawing.Rectangle)')
-  - [EndInvoke(asyncResult)](#M-xyLOGIX-Core-Extensions-IControl-EndInvoke-System-IAsyncResult- 'xyLOGIX.Core.Extensions.IControl.EndInvoke(System.IAsyncResult)')
   - [FindForm()](#M-xyLOGIX-Core-Extensions-IControl-FindForm 'xyLOGIX.Core.Extensions.IControl.FindForm')
   - [Focus()](#M-xyLOGIX-Core-Extensions-IControl-Focus 'xyLOGIX.Core.Extensions.IControl.Focus')
   - [GetChildAtPoint(pt,skipValue)](#M-xyLOGIX-Core-Extensions-IControl-GetChildAtPoint-System-Drawing-Point,System-Windows-Forms-GetChildAtPointSkip- 'xyLOGIX.Core.Extensions.IControl.GetChildAtPoint(System.Drawing.Point,System.Windows.Forms.GetChildAtPointSkip)')
@@ -157,7 +155,6 @@
   - [Invalidate(rc)](#M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Rectangle- 'xyLOGIX.Core.Extensions.IControl.Invalidate(System.Drawing.Rectangle)')
   - [Invalidate(rc,invalidateChildren)](#M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Rectangle,System-Boolean- 'xyLOGIX.Core.Extensions.IControl.Invalidate(System.Drawing.Rectangle,System.Boolean)')
   - [Invoke(method)](#M-xyLOGIX-Core-Extensions-IControl-Invoke-System-Delegate- 'xyLOGIX.Core.Extensions.IControl.Invoke(System.Delegate)')
-  - [Invoke(method,args)](#M-xyLOGIX-Core-Extensions-IControl-Invoke-System-Delegate,System-Object[]- 'xyLOGIX.Core.Extensions.IControl.Invoke(System.Delegate,System.Object[])')
   - [LogicalToDeviceUnits(value)](#M-xyLOGIX-Core-Extensions-IControl-LogicalToDeviceUnits-System-Int32- 'xyLOGIX.Core.Extensions.IControl.LogicalToDeviceUnits(System.Int32)')
   - [LogicalToDeviceUnits(value)](#M-xyLOGIX-Core-Extensions-IControl-LogicalToDeviceUnits-System-Drawing-Size- 'xyLOGIX.Core.Extensions.IControl.LogicalToDeviceUnits(System.Drawing.Size)')
   - [PerformLayout()](#M-xyLOGIX-Core-Extensions-IControl-PerformLayout 'xyLOGIX.Core.Extensions.IControl.PerformLayout')
@@ -337,28 +334,6 @@
   - [GetActualType()](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType(System.Type)')
   - [IsSameOrSubclassOf(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclassOf-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclassOf(System.Type,System.Type)')
 
-<a name='T-xyLOGIX-Core-Extensions-Properties-AspMvcActionSelectorAttribute'></a>
-## AspMvcActionSelectorAttribute `type`
-
-##### Namespace
-
-xyLOGIX.Core.Extensions.Properties
-
-##### Summary
-
-*Inherit from parent.*
-
-<a name='T-xyLOGIX-Core-Extensions-Properties-AspMvcAreaAttribute'></a>
-## AspMvcAreaAttribute `type`
-
-##### Namespace
-
-xyLOGIX.Core.Extensions.Properties
-
-##### Summary
-
-*Inherit from parent.*
-
 <a name='T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions'></a>
 ## CheckedListBoxExtensions `type`
 
@@ -517,6 +492,30 @@ xyLOGIX.Core.Extensions
 
 The `ControlExtensions` class provides helper methods for extending
 the functionality of .NET framework controls.
+
+<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker-'></a>
+### InvokeIfRequired(obj,message) `method`
+
+##### Summary
+
+Provides a thread-safe way to run managed code against, e.g., a
+GUI-thread control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | (Required.) Reference to an instance of an object that implements
+the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
+| message | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | (Required.) Reference to a [MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines
+the code to be run. |
+
+##### Remarks
+
+This method should always be called for a child control of a frame
+window; never the window itself (even though, technically, it also
+derives from [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and
+implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface).
 
 <a name='T-xyLOGIX-Core-Extensions-DictionaryExtensions'></a>
 ## DictionaryExtensions `type`
@@ -2464,34 +2463,6 @@ Supports rendering to the specified bitmap.
 | bitmap | [System.Drawing.Bitmap](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Bitmap 'System.Drawing.Bitmap') | The bitmap to be drawn to. |
 | targetBounds | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The bounds within which the control is rendered. |
 
-<a name='M-xyLOGIX-Core-Extensions-IControl-EndInvoke-System-IAsyncResult-'></a>
-### EndInvoke(asyncResult) `method`
-
-##### Summary
-
-Retrieves the return value of the asynchronous operation represented
-by the [IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') passed.
-
-##### Returns
-
-The [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') generated by the asynchronous operation.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| asyncResult | [System.IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') | The [IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') that represents a specific
-invoke asynchronous operation, returned when calling [BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)'). |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.ArgumentNullException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentNullException 'System.ArgumentNullException') | The `asyncResult` parameter value is `null`. |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The `asyncResult` object was not created by a
-preceding call of the [BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)')
-method from the same control. |
-
 <a name='M-xyLOGIX-Core-Extensions-IControl-FindForm'></a>
 ### FindForm() `method`
 
@@ -2749,29 +2720,6 @@ The return value from the delegate being invoked, or `null` if the delegate has 
 | ---- | ---- | ----------- |
 | method | [System.Delegate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Delegate 'System.Delegate') | A delegate that contains a method to be called in the control's
 thread context. |
-
-<a name='M-xyLOGIX-Core-Extensions-IControl-Invoke-System-Delegate,System-Object[]-'></a>
-### Invoke(method,args) `method`
-
-##### Summary
-
-Executes the specified delegate, on the thread that owns the
-control's underlying window handle, with the specified list of arguments.
-
-##### Returns
-
-An [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') that contains the return value from
-the delegate being invoked, or `null` if the
-delegate has no return value.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| method | [System.Delegate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Delegate 'System.Delegate') | A delegate to a method that takes parameters of the same number and
-type that are contained in the `args` parameter. |
-| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | An array of objects to pass as arguments to the specified method.
-This parameter can be `null` if the method takes no arguments. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-LogicalToDeviceUnits-System-Int32-'></a>
 ### LogicalToDeviceUnits(value) `method`

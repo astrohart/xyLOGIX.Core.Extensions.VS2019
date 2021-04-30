@@ -1,10 +1,12 @@
-﻿using System.Linq;
+﻿using PostSharp.Patterns.Diagnostics;
+using System.Linq;
 
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
     /// Provides methods that extend the <see cref="T:System.Int32"/> class.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class IntExtensions
     {
         /// <summary>

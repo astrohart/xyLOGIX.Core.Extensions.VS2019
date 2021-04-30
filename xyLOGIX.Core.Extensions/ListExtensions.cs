@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using PostSharp.Patterns.Diagnostics;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,6 +8,7 @@ namespace xyLOGIX.Core.Extensions
     /// <summary>
     /// Provides methods to help with lists of items.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class ListExtensions
     {
         /// <summary>

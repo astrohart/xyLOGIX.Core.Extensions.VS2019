@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Diagnostics;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -7,6 +8,7 @@ namespace xyLOGIX.Core.Extensions
     /// <summary>
     /// Extension methods for a <see cref="T:System.Windows.Forms.CheckedListBox" />.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class CheckedListBoxExtensions
     {
         /// <summary>

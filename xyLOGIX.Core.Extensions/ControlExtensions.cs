@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using PostSharp.Patterns.Diagnostics;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,6 +9,7 @@ namespace xyLOGIX.Core.Extensions
   /// The <c>ControlExtensions</c> class provides helper methods for extending
   /// the functionality of .NET framework controls.
   /// </summary>
+  [Log(AttributeExclude = true)]
   public static class ControlExtensions
   {
     /// <summary>

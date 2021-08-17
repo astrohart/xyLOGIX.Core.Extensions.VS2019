@@ -598,7 +598,7 @@ namespace xyLOGIX.Core.Extensions
             if (string.IsNullOrWhiteSpace(path))
                 return false; // obviously not the case
 
-            var result = false;
+            bool result;
 
             try
             {
@@ -636,7 +636,7 @@ namespace xyLOGIX.Core.Extensions
         {
             if (string.IsNullOrWhiteSpace(value)) return false;
 
-            var result = false;
+            bool result;
             try
             {
                 result = decimal.TryParse(value, out _);
@@ -728,7 +728,7 @@ namespace xyLOGIX.Core.Extensions
         {
             if (string.IsNullOrWhiteSpace(value)) return false;
 
-            var result = false;
+            bool result;
             try
             {
                 result = int.TryParse(value, out _);
@@ -1010,18 +1010,18 @@ namespace xyLOGIX.Core.Extensions
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(value)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(value)
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
                 );
 
-            var result = value; // no replacement if an error occurred
+            string result; // no replacement if an error occurred
 
             try
             {
@@ -1092,18 +1092,18 @@ namespace xyLOGIX.Core.Extensions
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(value)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(value)
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
                 );
 
-            var result = value; // no replacement if an error occurred
+            string result; // no replacement if an error occurred
 
             try
             {
@@ -1156,18 +1156,18 @@ namespace xyLOGIX.Core.Extensions
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(value)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(value)
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
                 );
 
-            var result = value; // no replacement if an error occurred
+            string result; // no replacement if an error occurred
 
             try
             {
@@ -1224,18 +1224,18 @@ namespace xyLOGIX.Core.Extensions
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(value)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(value)
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
                 );
 
-            var result = value;
+            string result;
 
             try
             {
@@ -1326,15 +1326,15 @@ namespace xyLOGIX.Core.Extensions
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(value)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(value)
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
                 );
 
             return value.RegexReplaceNoCase(search, replacement);
@@ -1368,11 +1368,11 @@ namespace xyLOGIX.Core.Extensions
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(value)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(value)
                 );
             if (string.IsNullOrWhiteSpace(delimiter))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(delimiter)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(delimiter)
                 );
 
             return value.Split(

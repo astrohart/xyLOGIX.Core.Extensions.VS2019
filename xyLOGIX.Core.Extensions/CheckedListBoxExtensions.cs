@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using xyLOGIX.Core.Extensions.Properties;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -160,7 +161,7 @@ namespace xyLOGIX.Core.Extensions
                 throw new ArgumentNullException(nameof(checkedListBox));
             if (string.IsNullOrWhiteSpace(itemName))
                 throw new ArgumentException(
-                    "Value cannot be null or whitespace.", nameof(itemName)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(itemName)
                 );
 
             if (checkedListBox.Items.Count == 0)

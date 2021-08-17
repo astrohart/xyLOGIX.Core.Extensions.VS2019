@@ -37,7 +37,7 @@ namespace xyLOGIX.Core.Extensions
     {
       if (!(obj is Control control) || control.Parent == null ||
           control.Parent.IsDisposed)
-        return;
+          return;
 
       while (!control.Parent.Visible)
         Application.DoEvents();

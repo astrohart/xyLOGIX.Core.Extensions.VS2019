@@ -12,7 +12,7 @@ namespace xyLOGIX.Core.Extensions
     public static class FormExtensions
     {
         /// <summary>
-        /// Centers this form on the specified <paramref name="parent"/> form.
+        /// Centers this form on the specified <paramref name="parent" /> form.
         /// </summary>
         /// <param name="child">
         /// Reference to the form to be centered.
@@ -26,22 +26,26 @@ namespace xyLOGIX.Core.Extensions
 
             child.StartPosition = FormStartPosition.Manual;
             child.Location = new Point(
-               parent.Location.X + (parent.Width - child.Width) / 2,
-               parent.Location.Y + (parent.Height - child.Height) / 2
+                parent.Location.X + (parent.Width - child.Width) / 2,
+                parent.Location.Y + (parent.Height - child.Height) / 2
             );
         }
 
         /// <summary>
-        /// Centers the specified <paramref name="form"/> to the specific
-        /// <paramref name="screen"/> that is passed.
+        /// Centers the specified <paramref name="form" /> to the specific
+        /// <paramref name="screen" /> that is passed.
         /// </summary>
         /// <param name="form">
-        /// Reference to an instance of <see
-        /// cref="T:System.Windows.Forms.Form"/> that specifies the form to be centered.
+        /// Reference to an instance of
+        /// <see
+        ///     cref="T:System.Windows.Forms.Form" />
+        /// that specifies the form to be centered.
         /// </param>
         /// <param name="screen">
-        /// Reference to an instance of <see
-        /// cref="T:System.Windows.Forms.Screen"/> that specifies the screen
+        /// Reference to an instance of
+        /// <see
+        ///     cref="T:System.Windows.Forms.Screen" />
+        /// that specifies the screen
         /// that the form is to be centered on.
         /// </param>
         public static void CenterForm(this IForm form, Screen screen)
@@ -57,8 +61,8 @@ namespace xyLOGIX.Core.Extensions
 
             var bounds = screen.WorkingArea;
             form.SetBounds(
-               (bounds.Width - form.Width) / 2, (bounds.Height - form.Height) / 2,
-               form.Width, form.Height
+                (bounds.Width - form.Width) / 2,
+                (bounds.Height - form.Height) / 2, form.Width, form.Height
             );
 
             form.StartPosition = FormStartPosition.CenterScreen;
@@ -69,11 +73,11 @@ namespace xyLOGIX.Core.Extensions
         /// case nothing is done.
         /// </summary>
         /// <param name="form">
-        /// A <see cref="T:System.Windows.Forms.Form"/> on which to perform the
-        /// <paramref name="message"/>.
+        /// A <see cref="T:System.Windows.Forms.Form" /> on which to perform the
+        /// <paramref name="message" />.
         /// </param>
         /// <param name="message">
-        /// An <see cref="T:System.Action"/> specifying code to be run if the
+        /// An <see cref="T:System.Action" /> specifying code to be run if the
         /// form is disposed.
         /// </param>
         public static void DoIfDisposed(this IForm form, Action message)
@@ -88,11 +92,11 @@ namespace xyLOGIX.Core.Extensions
         /// nothing is done.
         /// </summary>
         /// <param name="form">
-        /// A <see cref="T:System.Windows.Forms.Form"/> on which to perform the
-        /// <paramref name="message"/>.
+        /// A <see cref="T:System.Windows.Forms.Form" /> on which to perform the
+        /// <paramref name="message" />.
         /// </param>
         /// <param name="message">
-        /// An <see cref="T:System.Action"/> specifying code to be run if the
+        /// An <see cref="T:System.Action" /> specifying code to be run if the
         /// form is not disposed.
         /// </param>
         public static void DoIfNotDisposed(this IForm form, Action message)
@@ -103,24 +107,60 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Invokes the specified <paramref name="action" /> on the specified
+        /// <paramref name="form" />.
+        /// </summary>
+        /// <param name="form">
+        /// (Required.) Reference to the
+        /// <see cref="T:System.Windows.Forms.Form" /> for which the action should be
+        /// invoked.
+        /// </param>
+        /// <param name="action">
+        /// (Required.) A
+        /// <see cref="T:System.Windows.Forms.MethodInvoker" /> delegate that specifies the
+        /// action(s) to be performed.
+        /// </param>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// Thrown if either of the
+        /// required parameters, <paramref name="form" /> or <paramref name="action" />,
+        /// are passed a <see langword="null" /> value.
+        /// </exception>
+        public static void InvokeIfRequired(this Form form,
+            MethodInvoker action)
+        {
+            if (form == null) throw new ArgumentNullException(nameof(form));
+            if (action == null) throw new ArgumentNullException(nameof(action));
+
+            if (form.InvokeRequired)
+                form.BeginInvoke(action);
+            else
+                action();
+        }
+
+        /// <summary>
         /// Shows a modal dialog that can be awaited upon while a task completes.
         /// </summary>
         /// <param name="form">
-        /// Reference to an instance of an object that is a child class of <see
-        /// cref="T:System.Windows.Forms.Form"/> that represents the form to be shown.
+        /// Reference to an instance of an object that is a child class of
+        /// <see
+        ///     cref="T:System.Windows.Forms.Form" />
+        /// that represents the form to be shown.
         /// </param>
         /// <param name="owner">
-        /// Reference to an instance of an object that implements the <see
-        /// cref="T:System.Windows.Forms.IWin32Window"/> that represents the
+        /// Reference to an instance of an object that implements the
+        /// <see
+        ///     cref="T:System.Windows.Forms.IWin32Window" />
+        /// that represents the
         /// form's owner window.
         /// </param>
         /// <returns>
-        /// An awaitable <see
-        /// cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}"/>
+        /// An awaitable
+        /// <see
+        ///     cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
         /// that contains the result of the dialog's closure.
         /// </returns>
         public static async Task<DialogResult> ShowDialogAsync(this IForm form,
-           IWin32Window owner)
+            IWin32Window owner)
         {
             await Task.Yield();
             return form.IsDisposed ? DialogResult.OK : form.ShowDialog(owner);
@@ -130,12 +170,15 @@ namespace xyLOGIX.Core.Extensions
         /// Shows a modal dialog that can be awaited upon while a task completes.
         /// </summary>
         /// <param name="form">
-        /// Reference to an instance of an object that is a child class of <see
-        /// cref="T:System.Windows.Forms.Form"/> that represents the form to be shown.
+        /// Reference to an instance of an object that is a child class of
+        /// <see
+        ///     cref="T:System.Windows.Forms.Form" />
+        /// that represents the form to be shown.
         /// </param>
         /// <returns>
-        /// An awaitable <see
-        /// cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}"/>
+        /// An awaitable
+        /// <see
+        ///     cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
         /// that contains the result of the dialog's closure.
         /// </returns>
         public static async Task<DialogResult> ShowDialogAsync(this IForm form)
@@ -145,11 +188,11 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Shows the specified <paramref name="form"/> on the user's primary
+        /// Shows the specified <paramref name="form" /> on the user's primary
         /// monitor (whatever monitor they have designated as Monitor #1)
         /// </summary>
         /// <param name="form">
-        /// Reference to the <see cref="T:System.Windows.Forms.Form"/> to be
+        /// Reference to the <see cref="T:System.Windows.Forms.Form" /> to be
         /// moved to the user's primary monitor. The form is also centered on
         /// the screen.
         /// </param>
@@ -159,11 +202,12 @@ namespace xyLOGIX.Core.Extensions
 
             form.StartPosition = FormStartPosition.Manual;
 
-            var bounds = Screen.AllScreens.First().WorkingArea;
+            var bounds = Screen.AllScreens.First()
+                               .WorkingArea;
 
             form.SetBounds(
-               (bounds.Width - form.Width) / 2, (bounds.Height - form.Height) / 2,
-               form.Width, form.Height
+                (bounds.Width - form.Width) / 2,
+                (bounds.Height - form.Height) / 2, form.Width, form.Height
             );
 
             form.StartPosition = FormStartPosition.CenterScreen;

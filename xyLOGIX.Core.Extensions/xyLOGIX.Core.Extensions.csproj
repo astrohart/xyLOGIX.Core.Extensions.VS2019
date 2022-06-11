@@ -7,8 +7,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <ProjectGuid>{5528D7FB-B88B-4E9D-9BBD-B6B6B893666A}</ProjectGuid>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -160,16 +159,15 @@ if exist "$(TargetDir)$(TargetName).md" (
 exit /b 0</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>exit /b 0
-if "$(ConfigurationName)"=="Release" (
-  erase /F /S /Q "$(TargetDir)*.pdb"
-  erase /F /S /Q "$(TargetDir)*.config"
-  erase /F /S /Q "$(TargetDir)*.vshost.exe"
-  attrib +r "$(TargetDir)$(TargetName).xml"
-  attrib +r "$(TargetDir)$(TargetName).md"
-  erase /F /S /Q "$(TargetDir)*.xml"
-  attrib -r "$(TargetDir)$(TargetName).xml"
-  attrib -r "$(TargetDir)$(TargetName).md"
+    <PostBuildEvent>if "$(ConfigurationName)"=="Release" (
+    erase /F /S /Q "$(TargetDir)*.pdb"
+    erase /F /S /Q "$(TargetDir)*.pspdb"
+    erase /F /S /Q "$(TargetDir)*.vshost.exe"
+    attrib +r "$(TargetDir)$(TargetName).xml"
+    attrib +r "$(TargetDir)$(TargetName).md"
+    erase /F /S /Q "$(TargetDir)*.xml"
+    attrib -r "$(TargetDir)$(TargetName).xml"
+    attrib -r "$(TargetDir)$(TargetName).md"
 )
 exit /b 0</PostBuildEvent>
   </PropertyGroup>

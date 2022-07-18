@@ -1,4 +1,4 @@
-﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

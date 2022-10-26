@@ -24,6 +24,7 @@
   - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Screen)')
   - [DoIfDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
   - [DoIfNotDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfNotDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
+  - [InvokeIfRequired(form,action)](#M-xyLOGIX-Core-Extensions-FormExtensions-InvokeIfRequired-System-Windows-Forms-Form,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.FormExtensions.InvokeIfRequired(System.Windows.Forms.Form,System.Windows.Forms.MethodInvoker)')
   - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
@@ -264,6 +265,7 @@
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
 - [Resources](#T-xyLOGIX-Core-Extensions-Properties-Resources 'xyLOGIX.Core.Extensions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Properties.Resources.Culture')
+  - [Error_ValueCannotBeNullOrWhiteSpace](#P-xyLOGIX-Core-Extensions-Properties-Resources-Error_ValueCannotBeNullOrWhiteSpace 'xyLOGIX.Core.Extensions.Properties.Resources.Error_ValueCannotBeNullOrWhiteSpace')
   - [NCharsMustBePositive](#P-xyLOGIX-Core-Extensions-Properties-Resources-NCharsMustBePositive 'xyLOGIX.Core.Extensions.Properties.Resources.NCharsMustBePositive')
   - [PersonNameEmpty](#P-xyLOGIX-Core-Extensions-Properties-Resources-PersonNameEmpty 'xyLOGIX.Core.Extensions.Properties.Resources.PersonNameEmpty')
   - [PersonNameIncorrectFormat](#P-xyLOGIX-Core-Extensions-Properties-Resources-PersonNameIncorrectFormat 'xyLOGIX.Core.Extensions.Properties.Resources.PersonNameIncorrectFormat')
@@ -763,8 +765,12 @@ Centers the specified `form` to the specific
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that specifies the form to be centered. |
-| screen | [System.Windows.Forms.Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') | Reference to an instance of [Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') that specifies the screen
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+that specifies the form to be centered. |
+| screen | [System.Windows.Forms.Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') | Reference to an instance of
+[Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen')
+that specifies the screen
 that the form is to be centered on. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action-'></a>
@@ -801,6 +807,33 @@ nothing is done.
 | message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
 form is not disposed. |
 
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-InvokeIfRequired-System-Windows-Forms-Form,System-Windows-Forms-MethodInvoker-'></a>
+### InvokeIfRequired(form,action) `method`
+
+##### Summary
+
+Invokes the specified `action` on the specified
+`form`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | (Required.) Reference to the
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') for which the action should be
+invoked. |
+| action | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | (Required.) A
+[MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that specifies the
+action(s) to be performed. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentNullException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentNullException 'System.ArgumentNullException') | Thrown if either of the
+required parameters, `form` or `action`,
+are passed a `null` value. |
+
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
 ### ShowDialogAsync(form,owner) `method`
 
@@ -810,15 +843,20 @@ Shows a modal dialog that can be awaited upon while a task completes.
 
 ##### Returns
 
-An awaitable [DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
+An awaitable
+[DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
 that contains the result of the dialog's closure.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form to be shown. |
-| owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Reference to an instance of an object that implements the [IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') that represents the
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+that represents the form to be shown. |
+| owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Reference to an instance of an object that implements the
+[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window')
+that represents the
 form's owner window. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm-'></a>
@@ -830,14 +868,17 @@ Shows a modal dialog that can be awaited upon while a task completes.
 
 ##### Returns
 
-An awaitable [DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
+An awaitable
+[DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
 that contains the result of the dialog's closure.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form to be shown. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+that represents the form to be shown. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm-'></a>
 ### ShowOnPrimaryMonitor(form) `method`
@@ -4440,6 +4481,13 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
+
+<a name='P-xyLOGIX-Core-Extensions-Properties-Resources-Error_ValueCannotBeNullOrWhiteSpace'></a>
+### Error_ValueCannotBeNullOrWhiteSpace `property`
+
+##### Summary
+
+Looks up a localized string similar to Value cannot be null or whitespace..
 
 <a name='P-xyLOGIX-Core-Extensions-Properties-Resources-NCharsMustBePositive'></a>
 ### NCharsMustBePositive `property`

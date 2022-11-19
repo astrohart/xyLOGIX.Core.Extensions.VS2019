@@ -103,7 +103,10 @@ namespace xyLOGIX.Core.Extensions
         {
             if (form == null || form.IsDisposed) return;
 
-            message?.Invoke();
+            if (form.InvokeRequired)
+                form.BeginInvoke(message);
+            else
+                message?.Invoke();
         }
 
         /// <summary>

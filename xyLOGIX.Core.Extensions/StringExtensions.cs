@@ -353,6 +353,18 @@ namespace xyLOGIX.Core.Extensions
             => collection != null &&
                collection.Any(s => EqualsNoCase(s, value));
 
+        /// <summary>
+        /// Ascertains whether the specified <see cref="T:System.String" />, provided as
+        /// the argument to the <paramref name="value" /> parameter, contains any digits.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> that is to be
+        /// checked.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" />q if the <see cref="T:System.String" /> passed
+        /// contains any digits.
+        /// </returns>
         public static bool ContainsNumbers(this string value)
         {
             var result = false;

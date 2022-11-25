@@ -49,7 +49,7 @@ namespace xyLOGIX.Core.Extensions
         /// Collection of strings that should always be capitalized if they are
         /// the first word of a phrase.
         /// </summary>
-        private static readonly string[] AlwaysCapitalizeIfFirstWord = {"El"};
+        private static readonly string[] AlwaysCapitalizeIfFirstWord = { "El" };
 
         /// <summary>
         /// Collection of strings that are potentially needing to be capitalized
@@ -353,6 +353,26 @@ namespace xyLOGIX.Core.Extensions
             => collection != null &&
                collection.Any(s => EqualsNoCase(s, value));
 
+        public static bool ContainsNumbers(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                return !string.IsNullOrWhiteSpace(value) &&
+                       value.Any(char.IsDigit);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Double-checks a <paramref name="twitterSite" /> (at-mention) string
         /// to make sure it begins with the character '@'.
@@ -564,7 +584,7 @@ namespace xyLOGIX.Core.Extensions
 
             // break the name up into a String[] array based on spaces
             var nameParts = fullName.Split(
-                new[] {' '}, StringSplitOptions.RemoveEmptyEntries
+                new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries
             );
 
             // parse out everything in the name after the first space character
@@ -1014,11 +1034,13 @@ namespace xyLOGIX.Core.Extensions
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(replacement)
                 );
 
             string result; // no replacement if an error occurred
@@ -1096,11 +1118,13 @@ namespace xyLOGIX.Core.Extensions
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(replacement)
                 );
 
             string result; // no replacement if an error occurred
@@ -1160,11 +1184,13 @@ namespace xyLOGIX.Core.Extensions
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(replacement)
                 );
 
             string result; // no replacement if an error occurred
@@ -1228,11 +1254,13 @@ namespace xyLOGIX.Core.Extensions
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(replacement)
                 );
 
             string result;
@@ -1330,11 +1358,13 @@ namespace xyLOGIX.Core.Extensions
                 );
             if (string.IsNullOrWhiteSpace(search))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(search)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(search)
                 );
             if (string.IsNullOrWhiteSpace(replacement))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(replacement)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(replacement)
                 );
 
             return value.RegexReplaceNoCase(search, replacement);
@@ -1372,11 +1402,12 @@ namespace xyLOGIX.Core.Extensions
                 );
             if (string.IsNullOrWhiteSpace(delimiter))
                 throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(delimiter)
+                    Resources.Error_ValueCannotBeNullOrWhiteSpace,
+                    nameof(delimiter)
                 );
 
             return value.Split(
-                new[] {delimiter}, StringSplitOptions.RemoveEmptyEntries
+                new[] { delimiter }, StringSplitOptions.RemoveEmptyEntries
             );
         }
 
@@ -1492,7 +1523,7 @@ namespace xyLOGIX.Core.Extensions
             // phrase or word but is not an acronym, such as the word 'an'.
             var parts = phrase.ToUpperInvariant()
                               .Split(
-                                  new[] {' '},
+                                  new[] { ' ' },
                                   StringSplitOptions.RemoveEmptyEntries
                               )
                               .ToList();
@@ -1534,7 +1565,7 @@ namespace xyLOGIX.Core.Extensions
             var sb = new StringBuilder();
             foreach (var c in value)
                 sb.Append(
-                    c > 127 ? @"\u" + ((int) c).ToString("x4") : c.ToString()
+                    c > 127 ? @"\u" + ((int)c).ToString("x4") : c.ToString()
                 );
 
             return sb.ToString()
@@ -1603,7 +1634,7 @@ namespace xyLOGIX.Core.Extensions
                     array[i] = string.Join("-", parts);
                 }
                 else if (array.Length == 1 || array[i]
-                    .Length == 1)
+                             .Length == 1)
                 {
                     // capitalize always
                     array[i] = DoInitialCaps(array[i]);
@@ -1621,7 +1652,7 @@ namespace xyLOGIX.Core.Extensions
                     array[i] = DoInitialCaps(array[i]);
                 }
                 else if (array[i]
-                    .IsRomanNumerals())
+                         .IsRomanNumerals())
                 {
                     // capitalize the whole word if it's only Roman numerals
                     array[i] = array[i]
@@ -1664,12 +1695,14 @@ namespace xyLOGIX.Core.Extensions
             params string[] separators)
             => !string.IsNullOrWhiteSpace(source) && separators != null &&
                separators.Any()
-                ? string.IsNullOrWhiteSpace(source) ? Enumerable.Empty<string>()
-                    .ToList() : source.Split(
-                                          separators,
-                                          StringSplitOptions.RemoveEmptyEntries
-                                      )
-                                      .ToList()
+                ? string.IsNullOrWhiteSpace(source)
+                    ? Enumerable.Empty<string>()
+                                .ToList()
+                    : source.Split(
+                                separators,
+                                StringSplitOptions.RemoveEmptyEntries
+                            )
+                            .ToList()
                 : Enumerable.Empty<string>()
                             .ToList();
 
@@ -1694,7 +1727,7 @@ namespace xyLOGIX.Core.Extensions
                 ? string.Empty
                 : Regex.Replace(
                     value, @"\\u(?<Value>[a-zA-Z0-9]{4})", m
-                        => ((char) int.Parse(
+                        => ((char)int.Parse(
                             m.Groups["Value"]
                              .Value, NumberStyles.HexNumber
                         )).ToString(CultureInfo.InvariantCulture)
@@ -1817,8 +1850,8 @@ namespace xyLOGIX.Core.Extensions
             }
 
             if (i > 0) /* means we are past the first word of a phrase */
-                return StateAbbrList.Contains(array[i]) && array[i - 1]
-                           .EndsWith(",") ||
+                return (StateAbbrList.Contains(array[i]) && array[i - 1]
+                           .EndsWith(",")) ||
                        !CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
                        AcronymList.ContainsNoCase(array[i]);
 

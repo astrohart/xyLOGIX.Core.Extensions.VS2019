@@ -287,7 +287,6 @@
   - [ContainsNoCase(stringToSearch,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.String,System.String)')
   - [ContainsNoCase(stringToSearch,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-Char- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.String,System.Char)')
   - [ContainsNoCase(collection,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-Collections-Generic-IEnumerable{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.Collections.Generic.IEnumerable{System.String},System.String)')
-  - [ContainsNumbers(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNumbers-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNumbers(System.String)')
   - [DoInitialCaps(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.DoInitialCaps(System.String)')
   - [DomainMapper(match)](#M-xyLOGIX-Core-Extensions-StringExtensions-DomainMapper-System-Text-RegularExpressions-Match- 'xyLOGIX.Core.Extensions.StringExtensions.DomainMapper(System.Text.RegularExpressions.Match)')
   - [EnsureAtIsInFront(twitterSite)](#M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EnsureAtIsInFront(System.String)')
@@ -4807,26 +4806,6 @@ regardless of case; FALSE otherwise.
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | Collection to search. |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Value to compare. |
-
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNumbers-System-String-'></a>
-### ContainsNumbers(value) `method`
-
-##### Summary
-
-Ascertains whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), provided as
-the argument to the `value` parameter, contains any digits.
-
-##### Returns
-
-`true`q if the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') passed
-contains any digits.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
-checked. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String-'></a>
 ### DoInitialCaps(value) `method`

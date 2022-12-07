@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\PostSharp.6.10.16\build\PostSharp.props" Condition="Exists('..\packages\PostSharp.6.10.16\build\PostSharp.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -80,27 +80,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlphaFS, Version=2.2.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">
-      <HintPath>..\..\xyLOGIX.Controls.Lists\packages\AlphaFS.2.2.6\lib\net452\AlphaFS.dll</HintPath>
+      <HintPath>..\packages\AlphaFS.2.2.6\lib\net452\AlphaFS.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\..\xyLOGIX.Controls.Lists\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
     <Reference Include="PostSharp, Version=6.10.16.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
-      <HintPath>..\..\xyLOGIX.Controls.Lists\packages\PostSharp.Redist.6.10.16\lib\net45\PostSharp.dll</HintPath>
+      <HintPath>..\packages\PostSharp.Redist.6.10.16\lib\net45\PostSharp.dll</HintPath>
     </Reference>
     <Reference Include="PostSharp.Patterns.Common, Version=6.10.16.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
-      <HintPath>..\..\xyLOGIX.Controls.Lists\packages\PostSharp.Patterns.Common.Redist.6.10.16\lib\net47\PostSharp.Patterns.Common.dll</HintPath>
+      <HintPath>..\packages\PostSharp.Patterns.Common.Redist.6.10.16\lib\net47\PostSharp.Patterns.Common.dll</HintPath>
     </Reference>
     <Reference Include="PostSharp.Patterns.Diagnostics, Version=6.10.16.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
-      <HintPath>..\..\xyLOGIX.Controls.Lists\packages\PostSharp.Patterns.Diagnostics.Redist.6.10.16\lib\net47\PostSharp.Patterns.Diagnostics.dll</HintPath>
+      <HintPath>..\packages\PostSharp.Patterns.Diagnostics.Redist.6.10.16\lib\net47\PostSharp.Patterns.Diagnostics.dll</HintPath>
     </Reference>
     <Reference Include="PostSharp.Patterns.Diagnostics.Backends.Log4Net, Version=6.10.16.0, Culture=neutral, PublicKeyToken=e7f631e6ce13f078, processorArchitecture=MSIL">
-      <HintPath>..\..\xyLOGIX.Controls.Lists\packages\PostSharp.Patterns.Diagnostics.Log4Net.6.10.16\lib\net45\PostSharp.Patterns.Diagnostics.Backends.Log4Net.dll</HintPath>
+      <HintPath>..\packages\PostSharp.Patterns.Diagnostics.Log4Net.6.10.16\lib\net45\PostSharp.Patterns.Diagnostics.Backends.Log4Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll</HintPath>
     </Reference>

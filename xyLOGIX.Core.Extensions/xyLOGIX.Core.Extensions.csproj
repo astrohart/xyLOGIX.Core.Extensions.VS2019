@@ -7,8 +7,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <ProjectGuid>{5528D7FB-B88B-4E9D-9BBD-B6B6B893666A}</ProjectGuid>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -153,8 +152,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>git config core.longpaths true
-SET "_PROJECT_DIR=$(ProjectDir.TrimEnd('\'))"
+    <PreBuildEvent>SET "_PROJECT_DIR=$(ProjectDir.TrimEnd('\'))"
 SET "_SOLUTION_DIR=$(SolutionDir.TrimEnd('\'))"
 SET "GENERATED_README_FILE_PATH=$(TargetDir)$(TargetName).md"
 SET "PROJECT_README_FILE_PATH=$(ProjectDir)README.md"
@@ -178,8 +176,7 @@ GOTO AFTER_README
 ECHO *** SUCCESS *** The file "%25PROJECT_README_FILE_PATH%25" was found.
 :AFTER_README
 ECHO *** DONE *** with pre-build event for project $(ProjectName).
-SET ERRORLEVEL=0
-</PreBuildEvent>
+SET ERRORLEVEL=0</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>SET "_TARGET_DIR=$(TargetDir)"
@@ -204,8 +201,7 @@ IF EXIST "%25PROJECT_README_FILE_PATH%25" ATTRIB -R "%25PROJECT_README_FILE_PATH
 GOTO FINALIZATION
 :FINALIZATION
 ECHO *** DONE *** with post-build script.
-SET ERRORLEVEL=0
-</PostBuildEvent>
+SET ERRORLEVEL=0</PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

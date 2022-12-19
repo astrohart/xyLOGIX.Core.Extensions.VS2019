@@ -35,12 +35,12 @@ namespace xyLOGIX.Core.Extensions
     public static void InvokeIfRequired(this ISynchronizeInvoke obj,
       MethodInvoker message)
     {
-      if (!(obj is Control control) || control.Parent == null ||
-          control.Parent.IsDisposed)
-          return;
+      if (!(obj is Control control)) return;
 
-      while (!control.Parent.Visible)
-        Application.DoEvents();
+      //if (control.Parent != null &&
+      //    !control.Parent.IsDisposed)
+      //  while (!control.Parent.Visible)
+      //    Application.DoEvents();
 
       if (obj.InvokeRequired)
         obj.Invoke(
@@ -48,7 +48,7 @@ namespace xyLOGIX.Core.Extensions
                              .ToArray()
         );
       else
-        message();
+        message?.Invoke();
     }
   }
 }

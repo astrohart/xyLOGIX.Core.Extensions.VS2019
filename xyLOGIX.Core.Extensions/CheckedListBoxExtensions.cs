@@ -168,11 +168,11 @@ namespace xyLOGIX.Core.Extensions
                 return false;
 
             return (from i in Enumerable.Range(0, checkedListBox.Items.Count)
-                where itemName.Equals(
-                    checkedListBox.Items[i]
-                                  .ToString()
-                )
-                select checkedListBox.GetItemChecked(i)).FirstOrDefault();
+                    where itemName.Equals(
+                        checkedListBox.Items[i]
+                                      .ToString()
+                    )
+                    select checkedListBox.GetItemChecked(i)).FirstOrDefault();
         }
 
         /// <summary>

@@ -54,14 +54,16 @@ namespace xyLOGIX.Core.Extensions.Providers
         {
             try
             {
+                if (control == null || control.Disposing || control.IsDisposed) return;
                 if (ParentFormDictionary == null) return;
-                if (control == null || control.IsDisposed) return;
+                if (ParentFormDictionary.ContainsKey(control)) return;
 
                 var form = control.FindForm();
                 if (form == null || form.IsDisposed) return;
 
                 ParentFormDictionary.Add(control, form);
 
+                CleanupOnControlDestroyed(control);
                 CleanupOnFormClosed(form);
             }
             catch (Exception ex)

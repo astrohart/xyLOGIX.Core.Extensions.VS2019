@@ -1,7 +1,12 @@
+
 using PostSharp.Patterns.Diagnostics;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -12,6 +17,79 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class ControlExtensions
     {
+        
+        /// <summary>
+        /// Gets a reference to the <see cref="T:System.Windows.Forms.Form" /> that
+        /// contains this control.
+        /// </summary>
+        /// <returns>
+        /// Reference to the <see cref="T:System.Windows.Forms.Form" /> that
+        /// contains this control.
+        /// </returns>
+        /// <remarks>
+        /// This method provides the return value of the
+        /// <see cref="M:System.Windows.Forms.Control.FindForm" /> method if the value of
+        /// the <see cref="F:xyLOGIX.UI.Dark.Controls.DarkCheckBox2._parentForm" />
+        /// field is uninitialized.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        public static Form GetParentForm(this Control control)
+        {
+            Form result = default;
+
+            try
+            {
+                if (control == null) return result;
+
+                result = GetFormFor(control) ?? control.FindForm();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = default;
+            }
+
+            return result;
+        }
+
+
+        
+        /// <summary>
+        /// Given a reference to an instance of <see cref="T:System.Windows.Forms.Control"/>, tries to lookup the corresponding parent <see cref="T:System.Windows.Forms.Form"/> that contains the control in our dictionary.
+        /// </summary>
+        /// <param name="control"></param>
+        /// <returns></returns>
+        private static Form GetFormFor(Control control)
+        {
+            Form result = default;
+
+            try
+            {
+                if (control == null) return result;
+                if (_parentFormDictionary == null) return result;
+                if (!_parentFormDictionary.Any()) return result;
+                if (!_parentFormDictionary.ContainsKey(control)) return result;
+
+                result = _parentFormDictionary[control];
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = default;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private static IDictionary<Control, Form> _parentFormDictionary;
+
         /// <summary>
         /// Provides a thread-safe way to run managed code against, e.g., a
         /// GUI-thread control.

@@ -105,6 +105,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetControlFormAssociationProvider.cs" />
     <Compile Include="GlobalAspects.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +128,16 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xyLOGIX.Core.Extensions.Providers.Interfaces\xyLOGIX.Core.Extensions.Providers.Interfaces.csproj">
+      <Project>{1FF580E3-D9C2-48B7-917E-53C340BF16EC}</Project>
+      <Name>xyLOGIX.Core.Extensions.Providers.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xyLOGIX.Core.Extensions.Providers\xyLOGIX.Core.Extensions.Providers.csproj">
+      <Project>{EA03D76A-0A2F-4BDE-9690-92F82AF551D7}</Project>
+      <Name>xyLOGIX.Core.Extensions.Providers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

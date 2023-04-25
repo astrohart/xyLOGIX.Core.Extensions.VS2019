@@ -1,10 +1,11 @@
 using PostSharp.Patterns.Diagnostics;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using xyLOGIX.Core.Debug;
+using xyLOGIX.Core.Extensions.Providers.Factories;
+using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -16,22 +17,14 @@ namespace xyLOGIX.Core.Extensions
     public static class ControlExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.ControlExtensions" /> class.
+        /// Gets a reference to an instance of an object that implements the
+        /// <see
+        ///     cref="T:xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
+        /// interface.
         /// </summary>
-        /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
-        /// </remarks>
-        static ControlExtensions()
-            => ParentFormDictionary = new Dictionary<Control, Form>();
-
-        /// <summary>
-        /// Reference to an instance of a dictionary that maps instances of
-        /// <see cref="T:System.Windows.Forms.Control" />s to the parent
-        /// <see cref="T:System.Windows.Forms.Form" />s that contain them.
-        /// </summary>
-        public static IDictionary<Control, Form> ParentFormDictionary { get; }
+        private static IControlFormAssociationProvider
+            ControlFormAssociationProvider
+            => GetControlFormAssociationProvider.SoleInstance();
 
         /// <summary>
         /// Gets a reference to the <see cref="T:System.Windows.Forms.Form" /> that
@@ -56,7 +49,8 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (control == null) return result;
 
-                result = GetFormFor(control) ?? control.FindForm();
+                result = ControlFormAssociationProvider.GetFormFor(control) ??
+                         control.FindForm();
             }
             catch (Exception ex)
             {
@@ -110,38 +104,6 @@ namespace xyLOGIX.Core.Extensions
                 );
             else
                 message?.Invoke();
-        }
-
-        /// <summary>
-        /// Given a reference to an instance of
-        /// <see cref="T:System.Windows.Forms.Control" />, tries to lookup the
-        /// corresponding parent <see cref="T:System.Windows.Forms.Form" /> that contains
-        /// the control in our dictionary.
-        /// </summary>
-        /// <param name="control"></param>
-        /// <returns></returns>
-        private static Form GetFormFor(Control control)
-        {
-            Form result = default;
-
-            try
-            {
-                if (control == null) return result;
-                if (ParentFormDictionary == null) return result;
-                if (!ParentFormDictionary.Any()) return result;
-                if (!ParentFormDictionary.ContainsKey(control)) return result;
-
-                result = ParentFormDictionary[control];
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = default;
-            }
-
-            return result;
         }
     }
 }

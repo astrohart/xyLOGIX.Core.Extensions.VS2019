@@ -27,6 +27,36 @@ namespace xyLOGIX.Core.Extensions
             => GetControlFormAssociationProvider.SoleInstance();
 
         /// <summary>
+        /// Associates the specified <paramref name="control" /> with its containing (i.e.,
+        /// parent) <see cref="T:System.Windows.Forms.Form" />.
+        /// </summary>
+        /// <param name="control">
+        /// (Required.) Reference to an instance of
+        /// <see cref="T:System.Windows.Forms.Control" /> that is to be associated with its
+        /// containing (i.e., parent) <see cref="T:System.Windows.Forms.Form" />.
+        /// </param>
+        /// <remarks>
+        /// If the <paramref name="control" /> parameter is passed a
+        /// <see langword="null" /> reference as its argument, then this method does
+        /// nothing.
+        /// </remarks>
+        public static void AssociateWithParentForm(this Control control)
+        {
+            try
+            {
+                if (control == null || control.Disposing || control.IsDisposed)
+                    return;
+
+                ControlFormAssociationProvider.Add(control);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+        }
+
+        /// <summary>
         /// Gets a reference to the <see cref="T:System.Windows.Forms.Form" /> that
         /// contains this control.
         /// </summary>
@@ -104,6 +134,42 @@ namespace xyLOGIX.Core.Extensions
                 );
             else
                 message?.Invoke();
+        }
+
+        /// <summary>
+        /// Gets a value that indicates whether the reference to the
+        /// <see cref="T:System.Windows.Forms.Form" /> that contains this control is not
+        /// initialized, or whether that <see cref="T:System.Windows.Forms.Form" /> is
+        /// disposed.
+        /// </summary>
+        /// <returns>
+        /// <see langword="true" /> if the reference to the
+        /// <see cref="T:System.Windows.Forms.Form" /> that contains this control is not
+        /// initialized, or if that <see cref="T:System.Windows.Forms.Form" /> has been
+        /// disposed; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsParentFormNullOrDisposed(this Control control)
+        {
+            var result = false;
+
+            try
+            {
+                if (control == null || control.IsDisposed) return result;
+
+                var parentForm =
+                    ControlFormAssociationProvider.GetFormFor(control);
+                result = parentForm == null || parentForm.Disposing ||
+                         parentForm.IsDisposed;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
         }
     }
 }

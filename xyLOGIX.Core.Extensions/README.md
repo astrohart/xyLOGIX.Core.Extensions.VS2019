@@ -10,7 +10,11 @@
   - [GetCheckedByName(checkedListBox,itemName)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.GetCheckedByName(System.Windows.Forms.CheckedListBox,System.String)')
   - [NoItemsAreSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-NoItemsAreSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.NoItemsAreSelected(System.Windows.Forms.CheckedListBox)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
+  - [ControlFormAssociationProvider](#P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider 'xyLOGIX.Core.Extensions.ControlExtensions.ControlFormAssociationProvider')
+  - [AssociateWithParentForm(control)](#M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.AssociateWithParentForm(System.Windows.Forms.Control)')
+  - [GetParentForm()](#M-xyLOGIX-Core-Extensions-ControlExtensions-GetParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.GetParentForm(System.Windows.Forms.Control)')
   - [InvokeIfRequired(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)')
+  - [IsParentFormNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsParentFormNullOrDisposed(System.Windows.Forms.Control)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
@@ -496,6 +500,61 @@ xyLOGIX.Core.Extensions
 The `ControlExtensions` class provides helper methods for extending
 the functionality of .NET framework controls.
 
+<a name='P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider'></a>
+### ControlFormAssociationProvider `property`
+
+##### Summary
+
+Gets a reference to an instance of an object that implements the
+[IControlFormAssociationProvider](#T-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider 'xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider')
+interface.
+
+<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control-'></a>
+### AssociateWithParentForm(control) `method`
+
+##### Summary
+
+Associates the specified `control` with its containing (i.e.,
+parent) [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| control | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | (Required.) Reference to an instance of
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that is to be associated with its
+containing (i.e., parent) [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form'). |
+
+##### Remarks
+
+If the `control` parameter is passed a
+`null` reference as its argument, then this method does
+nothing.
+
+<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-GetParentForm-System-Windows-Forms-Control-'></a>
+### GetParentForm() `method`
+
+##### Summary
+
+Gets a reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that
+contains this control.
+
+##### Returns
+
+Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that
+contains this control.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This method provides the return value of the
+[FindForm](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.FindForm 'System.Windows.Forms.Control.FindForm') method if the value of
+the [_parentForm](#F-xyLOGIX-UI-Dark-Controls-DarkCheckBox2-_parentForm 'xyLOGIX.UI.Dark.Controls.DarkCheckBox2._parentForm')
+field is uninitialized.
+
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker-'></a>
 ### InvokeIfRequired(obj,message) `method`
 
@@ -510,7 +569,9 @@ GUI-thread control.
 | ---- | ---- | ----------- |
 | obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | (Required.) Reference to an instance of an object that implements
 the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
-| message | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | (Required.) Reference to a [MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines
+| message | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | (Required.) Reference to a
+[MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker')
+delegate that defines
 the code to be run. |
 
 ##### Remarks
@@ -518,7 +579,30 @@ the code to be run. |
 This method should always be called for a child control of a frame
 window; never the window itself (even though, technically, it also
 derives from [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and
-implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface).
+implements the
+[ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke')
+interface).
+
+<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control-'></a>
+### IsParentFormNullOrDisposed() `method`
+
+##### Summary
+
+Gets a value that indicates whether the reference to the
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that contains this control is not
+initialized, or whether that [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') is
+disposed.
+
+##### Returns
+
+`true` if the reference to the
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that contains this control is not
+initialized, or if that [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') has been
+disposed; `false` otherwise.
+
+##### Parameters
+
+This method has no parameters.
 
 <a name='T-xyLOGIX-Core-Extensions-DictionaryExtensions'></a>
 ## DictionaryExtensions `type`

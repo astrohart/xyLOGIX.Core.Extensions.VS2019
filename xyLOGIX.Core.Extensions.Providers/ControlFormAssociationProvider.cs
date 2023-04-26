@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Diagnostics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,6 +11,7 @@ namespace xyLOGIX.Core.Extensions.Providers
     /// <summary>
     /// Defines associations between forms and their contained controls.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public class
         ControlFormAssociationProvider : IControlFormAssociationProvider
     {

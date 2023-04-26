@@ -1,4 +1,5 @@
-﻿using xyLOGIX.Core.Extensions.Providers.Interfaces;
+﻿using PostSharp.Patterns.Diagnostics;
+using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions.Providers.Factories
 {
@@ -8,6 +9,7 @@ namespace xyLOGIX.Core.Extensions.Providers.Factories
     ///     cref="T:xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
     /// interface.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class GetControlFormAssociationProvider
     {
         /// <summary>

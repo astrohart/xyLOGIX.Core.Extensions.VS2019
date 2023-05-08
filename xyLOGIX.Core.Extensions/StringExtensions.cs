@@ -955,6 +955,47 @@ namespace xyLOGIX.Core.Extensions
             => PluralizeWord(word, CultureInfo.CurrentUICulture);
 
         /// <summary>
+        /// More Pythonic version of the <see cref="M:System.String.Format" /> method,
+        /// which you can put after a string literal or <see cref="T:System.String" />
+        /// variable to format a string.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> that contains
+        /// format placeholders.
+        /// </param>
+        /// <param name="args">
+        /// (Optional.) One or more format values to be substituted in
+        /// the corresponding locations in the specified <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> that is the result of the formatting
+        /// operation, or idempotent if the format operation could not be carried out, or
+        /// if no format values were provided in the <paramref name="args" /> parameter.
+        /// </returns>
+        public static string PostfixFormat(this string value,
+            params object[] args)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (args == null || !args.Any()) return result;
+
+                result = string.Format(value, args);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the specified <paramref name="stringToSearch" />
         /// matches the regular expression specified by the
         /// <paramref

@@ -315,6 +315,7 @@
   - [MatchesWithCase(stringToSearch,findWhat,replaceWith)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
   - [PluralizeWord(word)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String)')
+  - [PostfixFormat(value,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-PostfixFormat-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.PostfixFormat(System.String,System.Object[])')
   - [RegexMatchesNoCase(stringToSearch,regex)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexMatchesNoCase(System.String,System.String)')
   - [RegexMatchesWithCase(stringToSearch,regex)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexMatchesWithCase(System.String,System.String)')
   - [RegexReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceNoCase(System.String,System.String,System.String)')
@@ -5498,6 +5499,30 @@ containing the plural version of the `word`.
 
 If the empty string is passed for `word`, then this
 method returns the empty string.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-PostfixFormat-System-String,System-Object[]-'></a>
+### PostfixFormat(value,args) `method`
+
+##### Summary
+
+More Pythonic version of the [Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format') method,
+which you can put after a string literal or [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+variable to format a string.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the result of the formatting
+operation, or idempotent if the format operation could not be carried out, or
+if no format values were provided in the `args` parameter.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+format placeholders. |
+| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) One or more format values to be substituted in
+the corresponding locations in the specified `value`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String-'></a>
 ### RegexMatchesNoCase(stringToSearch,regex) `method`

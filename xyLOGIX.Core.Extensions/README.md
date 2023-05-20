@@ -267,6 +267,13 @@
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
+- [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
+  - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
+  - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
+  - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsPositive(System.Decimal)')
+  - [IsStrictlyInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsStrictlyInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsStrictlyInRange(System.Decimal,System.Decimal,System.Decimal)')
+  - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Decimal)')
+  - [TruncateDecimalPlaces(val,places)](#M-xyLOGIX-Core-Extensions-NumberExtensions-TruncateDecimalPlaces-System-Decimal,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.TruncateDecimalPlaces(System.Decimal,System.Int32)')
 - [Resources](#T-xyLOGIX-Core-Extensions-Properties-Resources 'xyLOGIX.Core.Extensions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Properties.Resources.Culture')
   - [Error_ValueCannotBeNullOrWhiteSpace](#P-xyLOGIX-Core-Extensions-Properties-Resources-Error_ValueCannotBeNullOrWhiteSpace 'xyLOGIX.Core.Extensions.Properties.Resources.Error_ValueCannotBeNullOrWhiteSpace')
@@ -4548,6 +4555,131 @@ The `collection`, formatted as a set string.
 
 This method is helpful for writing some of the members of a
 collection to a log file.
+
+<a name='T-xyLOGIX-Core-Extensions-NumberExtensions'></a>
+## NumberExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Helper functions for doing math.
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal-'></a>
+### IsIncludedInRange(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines if a decimal value is between a pair of values or equal
+to either of them.
+
+##### Returns
+
+True if the value is either within the range specified or equal to
+either of the bounds; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The value to be checked. |
+| lowerBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Lower bound. |
+| upperBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Upper bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal-'></a>
+### IsNegative(value) `method`
+
+##### Summary
+
+Determines if a `value` is negative.
+
+##### Returns
+
+True if the `value` is strictly less than zero;
+false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Value to be compared. Must be of decimal type. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Decimal-'></a>
+### IsPositive(value) `method`
+
+##### Summary
+
+Determines whether a `value` is positive.
+
+##### Returns
+
+True if the `value` is strictly greater than zero;
+false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Value to be compared. Must be of decimal type. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsStrictlyInRange-System-Decimal,System-Decimal,System-Decimal-'></a>
+### IsStrictlyInRange(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines whether a number is strictly between (as in, can't be
+equal to either)
+
+##### Returns
+
+True if `value` is strictly greater than `lowerBound` and strictly less than `upperBound` ; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The value to be checked. |
+| lowerBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Lower bound. |
+| upperBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Upper bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal-'></a>
+### IsZero(value) `method`
+
+##### Summary
+
+Determines whether a `value` is zero.
+
+##### Returns
+
+True if the `value` is zero; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Value to be compared. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-TruncateDecimalPlaces-System-Decimal,System-Int32-'></a>
+### TruncateDecimalPlaces(val,places) `method`
+
+##### Summary
+
+Takes a value of type decimal and truncates it to the specified
+number of places.
+
+##### Returns
+
+New decimal value with all the digits removed except places digits
+following the decimal point.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| val | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Value to be truncated. |
+| places | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Number of digits following the decimal point. |
 
 <a name='T-xyLOGIX-Core-Extensions-Properties-Resources'></a>
 ## Resources `type`

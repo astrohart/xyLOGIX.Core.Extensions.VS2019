@@ -74,7 +74,6 @@
   - [AllowDrop](#P-xyLOGIX-Core-Extensions-IControl-AllowDrop 'xyLOGIX.Core.Extensions.IControl.AllowDrop')
   - [Anchor](#P-xyLOGIX-Core-Extensions-IControl-Anchor 'xyLOGIX.Core.Extensions.IControl.Anchor')
   - [AutoScrollOffset](#P-xyLOGIX-Core-Extensions-IControl-AutoScrollOffset 'xyLOGIX.Core.Extensions.IControl.AutoScrollOffset')
-  - [AutoSize](#P-xyLOGIX-Core-Extensions-IControl-AutoSize 'xyLOGIX.Core.Extensions.IControl.AutoSize')
   - [BackColor](#P-xyLOGIX-Core-Extensions-IControl-BackColor 'xyLOGIX.Core.Extensions.IControl.BackColor')
   - [BackgroundImage](#P-xyLOGIX-Core-Extensions-IControl-BackgroundImage 'xyLOGIX.Core.Extensions.IControl.BackgroundImage')
   - [BackgroundImageLayout](#P-xyLOGIX-Core-Extensions-IControl-BackgroundImageLayout 'xyLOGIX.Core.Extensions.IControl.BackgroundImageLayout')
@@ -1619,13 +1618,17 @@ Gets or sets the accessible role of the control
 
 ##### Returns
 
-One of the values of [AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole') . The default is `Default`.
+One of the values of
+[AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole')
+. The default is `Default`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value assigned is not one of the [AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole') values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value assigned is not one of the
+[AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole')
+values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AllowDrop'></a>
 ### AllowDrop `property`
@@ -1638,7 +1641,8 @@ that the user drags onto it.
 ##### Returns
 
 `true` if drag-and-drop operations are allowed in
-the control; otherwise, `false`. The default is `false`.
+the control; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Anchor'></a>
 ### Anchor `property`
@@ -1650,7 +1654,9 @@ and determines how a control is resized with its parent.
 
 ##### Returns
 
-A bitwise combination of the [AnchorStyles](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AnchorStyles 'System.Windows.Forms.AnchorStyles') values. The default is
+A bitwise combination of the
+[AnchorStyles](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AnchorStyles 'System.Windows.Forms.AnchorStyles')
+values. The default is
 `Top` and `Left`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AutoScrollOffset'></a>
@@ -1658,23 +1664,14 @@ A bitwise combination of the [AnchorStyles](http://msdn.microsoft.com/query/dev1
 
 ##### Summary
 
-Gets or sets where this control is scrolled to in [ScrollControlIntoView](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ScrollableControl.ScrollControlIntoView 'System.Windows.Forms.ScrollableControl.ScrollControlIntoView(System.Windows.Forms.Control)') .
+Gets or sets where this control is scrolled to in
+[ScrollControlIntoView](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ScrollableControl.ScrollControlIntoView 'System.Windows.Forms.ScrollableControl.ScrollControlIntoView(System.Windows.Forms.Control)')
+.
 
 ##### Returns
 
 A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') specifying the scroll
 location. The default is the upper-left corner of the control.
-
-<a name='P-xyLOGIX-Core-Extensions-IControl-AutoSize'></a>
-### AutoSize `property`
-
-##### Summary
-
-This property is not relevant for this class.
-
-##### Returns
-
-`true` if enabled; otherwise, `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-BackColor'></a>
 ### BackColor `property`
@@ -1706,11 +1703,27 @@ display in the background of the control.
 
 ##### Summary
 
-Gets or sets the background image layout as defined in the [ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout') enumeration.
+Gets or sets the background image layout as defined in the
+[ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout')
+enumeration.
 
 ##### Returns
 
-One of the values of [ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout') ( [Center](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Center 'System.Windows.Forms.ImageLayout.Center') , [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.None 'System.Windows.Forms.ImageLayout.None') , [Stretch](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Stretch 'System.Windows.Forms.ImageLayout.Stretch') , [Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile') , or [Zoom](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Zoom 'System.Windows.Forms.ImageLayout.Zoom') ). [Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile') is the default value.
+One of the values of
+[ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout')
+(
+[Center](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Center 'System.Windows.Forms.ImageLayout.Center')
+,
+[None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.None 'System.Windows.Forms.ImageLayout.None')
+,
+[Stretch](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Stretch 'System.Windows.Forms.ImageLayout.Stretch')
+,
+[Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile')
+, or
+[Zoom](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Zoom 'System.Windows.Forms.ImageLayout.Zoom')
+).
+[Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile')
+is the default value.
 
 ##### Exceptions
 
@@ -1807,7 +1820,8 @@ when it receives focus.
 
 `true` if the control causes validation to be
 performed on any controls requiring validation when it receives
-focus; otherwise, `false`. The default is `true`.
+focus; otherwise, `false`. The default is
+`true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-ClientRectangle'></a>
 ### ClientRectangle `property`
@@ -1875,13 +1889,17 @@ the shortcut menu associated with the control.
 
 ##### Summary
 
-Gets or sets the [ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') associated with
+Gets or sets the
+[ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip')
+associated with
 this control.
 
 ##### Returns
 
 The [ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') for this
-control, or `null` if there is no [ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') . The default is
+control, or `null` if there is no
+[ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip')
+. The default is
 `null`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Controls'></a>
@@ -1963,11 +1981,15 @@ display area of the control.
 
 ##### Summary
 
-Gets a value indicating whether the base [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') class is in the process of disposing.
+Gets a value indicating whether the base
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control')
+class is in the process of disposing.
 
 ##### Returns
 
-`true` if the base [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') class is in the process of
+`true` if the base
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control')
+class is in the process of
 disposing; otherwise, `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Dock'></a>
@@ -1987,7 +2009,9 @@ The default is [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDE
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value assigned is not one of the [DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle') values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value assigned is not one of the
+[DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle')
+values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Enabled'></a>
 ### Enabled `property`
@@ -2000,7 +2024,8 @@ user interaction.
 ##### Returns
 
 `true` if the control can respond to user
-interaction; otherwise, `false`. The default is `true`.
+interaction; otherwise, `false`. The default is
+`true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Focused'></a>
 ### Focused `property`
@@ -2011,7 +2036,8 @@ Gets a value indicating whether the control has input focus.
 
 ##### Returns
 
-`true` if the control has focus; otherwise, `false`.
+`true` if the control has focus; otherwise,
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Font'></a>
 ### Font `property`
@@ -2023,7 +2049,9 @@ Gets or sets the font of the text displayed by the control.
 ##### Returns
 
 The [Font](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Font 'System.Drawing.Font') to apply to the text
-displayed by the control. The default is the value of the [DefaultFont](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultFont 'System.Windows.Forms.Control.DefaultFont') property.
+displayed by the control. The default is the value of the
+[DefaultFont](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultFont 'System.Windows.Forms.Control.DefaultFont')
+property.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-ForeColor'></a>
 ### ForeColor `property`
@@ -2035,7 +2063,9 @@ Gets or sets the foreground color of the control.
 ##### Returns
 
 The foreground [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') of the control.
-The default is the value of the [DefaultForeColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultForeColor 'System.Windows.Forms.Control.DefaultForeColor') property.
+The default is the value of the
+[DefaultForeColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultForeColor 'System.Windows.Forms.Control.DefaultForeColor')
+property.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Handle'></a>
 ### Handle `property`
@@ -2089,7 +2119,9 @@ default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the [ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode 'System.Windows.Forms.ImeMode') enumeration values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the
+[ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode 'System.Windows.Forms.ImeMode')
+enumeration values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-IsAccessible'></a>
 ### IsAccessible `property`
@@ -2138,7 +2170,8 @@ Gets a value indicating whether the control is mirrored.
 
 ##### Returns
 
-`true` if the control is mirrored; otherwise, `false`.
+`true` if the control is mirrored; otherwise,
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-LayoutEngine'></a>
 ### LayoutEngine `property`
@@ -2197,7 +2230,8 @@ space between controls.
 
 ##### Summary
 
-Gets or sets the size that is the upper limit that [GetPreferredSize](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.GetPreferredSize 'System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)')
+Gets or sets the size that is the upper limit that
+[GetPreferredSize](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.GetPreferredSize 'System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)')
 can specify.
 
 ##### Returns
@@ -2210,7 +2244,8 @@ representing the width and height of a rectangle.
 
 ##### Summary
 
-Gets or sets the size that is the lower limit that [GetPreferredSize](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.GetPreferredSize 'System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)')
+Gets or sets the size that is the lower limit that
+[GetPreferredSize](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.GetPreferredSize 'System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)')
 can specify.
 
 ##### Returns
@@ -2342,7 +2377,9 @@ The default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the [RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft') values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the
+[RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft')
+values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Size'></a>
 ### Size `property`
@@ -2380,7 +2417,11 @@ to this control using the TAB key.
 
 `true` if the user can give the focus to the control
 using the TAB key; otherwise, `false`. The default
-is `true`. This property will always return `true` for an instance of the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') class.
+is `true`. This property will always return
+`true`
+for an instance of the
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+class.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Tag'></a>
 ### Tag `property`
@@ -2425,7 +2466,9 @@ its container's client area.
 ##### Summary
 
 Gets the parent control that is not parented by another Windows
-Forms control. Typically, this is the outermost [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is contained in.
+Forms control. Typically, this is the outermost
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+that the control is contained in.
 
 ##### Returns
 
@@ -2457,7 +2500,8 @@ child controls are displayed.
 ##### Returns
 
 `true` if the control and all its child controls are
-displayed; otherwise, `false`. The default is `true`.
+displayed; otherwise, `false`. The default is
+`true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Width'></a>
 ### Width `property`
@@ -2492,7 +2536,9 @@ the control's underlying handle was created on.
 ##### Returns
 
 An [IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') that represents the result of
-the [BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)') operation.
+the
+[BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)')
+operation.
 
 ##### Parameters
 
@@ -2572,7 +2618,9 @@ Begins a drag-and-drop operation.
 
 ##### Returns
 
-A value from the [DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') enumeration that
+A value from the
+[DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects')
+enumeration that
 represents the final effect that was performed during the
 drag-and-drop operation.
 
@@ -2649,7 +2697,9 @@ specified coordinates.
 | pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that contains the coordinates
 where you want to look for a control. Coordinates are expressed
 relative to the upper-left corner of the control's client area. |
-| skipValue | [System.Windows.Forms.GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip') | One of the values of [GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip') , determining
+| skipValue | [System.Windows.Forms.GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip') | One of the values of
+[GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip')
+, determining
 whether to ignore child controls of a certain type. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-GetChildAtPoint-System-Drawing-Point-'></a>
@@ -2677,7 +2727,9 @@ relative to the upper-left corner of the control's client area. |
 
 ##### Summary
 
-Returns the next [ContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContainerControl 'System.Windows.Forms.ContainerControl') up the control's
+Returns the next
+[ContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContainerControl 'System.Windows.Forms.ContainerControl')
+up the control's
 chain of parent controls.
 
 ##### Returns
@@ -2705,7 +2757,9 @@ The next [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') to start the search with. |
-| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to search forward in the tab order; `false` to search backward. |
+| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to search forward in the tab order;
+`false`
+to search backward. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-GetPreferredSize-System-Drawing-Size-'></a>
 ### GetPreferredSize(proposedSize) `method`
@@ -2846,7 +2900,9 @@ control's underlying window handle.
 
 ##### Returns
 
-The return value from the delegate being invoked, or `null` if the delegate has no return value.
+The return value from the delegate being invoked, or
+`null`
+if the delegate has no return value.
 
 ##### Parameters
 
@@ -2965,11 +3021,16 @@ before they are dispatched.
 
 ##### Returns
 
-One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState') values,
-depending on whether [PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(System.Windows.Forms.Message@)')
+One of the
+[PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState')
+values,
+depending on whether
+[PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(System.Windows.Forms.Message@)')
 is `true` or `false` and whether
 [IsInputKey](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputKey 'System.Windows.Forms.Control.IsInputKey(System.Windows.Forms.Keys)')
-or [IsInputChar](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputChar 'System.Windows.Forms.Control.IsInputChar(System.Char)') are
+or
+[IsInputChar](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputChar 'System.Windows.Forms.Control.IsInputChar(System.Char)')
+are
 `true` or `false`.
 
 ##### Parameters
@@ -3011,7 +3072,9 @@ client coordinates.
 ##### Returns
 
 A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
-converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'), `r` , in client coordinates.
+converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'),
+`r`
+, in client coordinates.
 
 ##### Parameters
 
@@ -3030,7 +3093,9 @@ screen coordinates.
 ##### Returns
 
 A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
-converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'), `r` , in screen coordinates.
+converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'),
+`r`
+, in screen coordinates.
 
 ##### Parameters
 
@@ -3067,7 +3132,9 @@ This method has no parameters.
 
 ##### Summary
 
-Causes a control bound to the [BindingSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingSource 'System.Windows.Forms.BindingSource') to reread all the
+Causes a control bound to the
+[BindingSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingSource 'System.Windows.Forms.BindingSource')
+to reread all the
 items in the list and refresh their displayed values.
 
 ##### Parameters
@@ -3247,7 +3314,8 @@ Activates the next control.
 
 ##### Returns
 
-`true` if a control was activated; otherwise, `false`.
+`true` if a control was activated; otherwise,
+`false`.
 
 ##### Parameters
 
@@ -3255,8 +3323,14 @@ Activates the next control.
 | ---- | ---- | ----------- |
 | ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') at which to start
 the search. |
-| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to move forward in the tab order; `false` to move backward in the tab order. |
-| tabStopOnly | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to ignore the controls with the [TabStop](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.TabStop 'System.Windows.Forms.Control.TabStop') property set to `false` ; otherwise, `false`. |
+| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to move forward in the tab order;
+`false`
+to move backward in the tab order. |
+| tabStopOnly | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to ignore the controls with the
+[TabStop](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.TabStop 'System.Windows.Forms.Control.TabStop')
+property set to
+`false`
+; otherwise, `false`. |
 | nested | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to include nested (children of child
 controls) child controls; otherwise, `false`. |
 | wrap | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to continue searching from the first control
@@ -3314,7 +3388,9 @@ value of the control. |
 value of the control. |
 | height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property
 value of the control. |
-| specified | [System.Windows.Forms.BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') | A bitwise combination of the [BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') values. For any
+| specified | [System.Windows.Forms.BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') | A bitwise combination of the
+[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified')
+values. For any
 parameter not specified, the current value will be used. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Show'></a>

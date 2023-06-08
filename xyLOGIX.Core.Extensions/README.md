@@ -438,7 +438,8 @@ parameter. Default value is `true`. |
 
 ##### Summary
 
-Gets the Checked state ( `true` for checked, `false` for
+Gets the Checked state ( `true` for checked,
+`false` for
 unchecked) of the `checkedListBox` item with the
 specified `itemName`.
 
@@ -449,7 +450,8 @@ specified `itemName`.
 does not exist or the
 `checkedListBox`
 has zero items, or the checked state --
-`true` for checked, `false` for unchecked -- of the item
+`true` for checked, `false` for unchecked --
+of the item
 whose caption matches the `itemName` parameter's value.
 
 ##### Parameters
@@ -483,8 +485,8 @@ are selected.
 
 ##### Returns
 
-`true` if none of the items in the list are checked or if there
-are zero entries in the list; `false` otherwise.
+`true` if none of the items in the list are checked or if
+there are zero entries in the list; `false` otherwise.
 
 ##### Parameters
 

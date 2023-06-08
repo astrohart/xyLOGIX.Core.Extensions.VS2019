@@ -1,8 +1,7 @@
 using PostSharp.Patterns.Diagnostics;
 using System;
-using System.Linq;
 using System.Windows.Forms;
-using xyLOGIX.Core.Extensions.Properties;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -67,14 +66,21 @@ namespace xyLOGIX.Core.Extensions
         public static void CheckAll(this CheckedListBox checkedListBox,
             bool isChecked = true)
         {
-            if (checkedListBox == null)
-                return;
+            try
+            {
+                if (checkedListBox == null) return;
+                if (checkedListBox.Items.Count == 0) return;
 
-            if (checkedListBox.Items.Count == 0)
-                return;
-
-            foreach (var i in Enumerable.Range(0, checkedListBox.Items.Count))
-                checkedListBox.SetItemChecked(i, isChecked);
+                for (var i = 0; i < checkedListBox.Items.Count; i++)
+                    checkedListBox.SetItemCheckState(
+                        i, isChecked ? CheckState.Checked : CheckState.Unchecked
+                    );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
 
         /// <summary>
@@ -99,28 +105,34 @@ namespace xyLOGIX.Core.Extensions
         public static void CheckByName(this CheckedListBox checkedListBox,
             string itemName, bool isChecked = true)
         {
-            if (checkedListBox == null)
-                return;
+            try
+            {
+                if (checkedListBox == null) return;
+                if (checkedListBox.Items.Count == 0) return;
+                if (string.IsNullOrWhiteSpace(itemName)) return;
 
-            if (checkedListBox.Items.Count == 0)
-                return;
-
-            if (string.IsNullOrWhiteSpace(itemName))
-                return;
-
-            foreach (var i in Enumerable.Range(0, checkedListBox.Items.Count))
-                if (itemName.Equals(
-                    checkedListBox.Items[i]
-                                  .ToString()
-                ))
+                for (var i = 0; i < checkedListBox.Items.Count; i++)
                 {
-                    checkedListBox.SetItemChecked(i, isChecked);
-                    return;
+                    var listItemCaption = checkedListBox.Items[i]
+                        .ToString();
+                    if (string.IsNullOrWhiteSpace(listItemCaption)) continue;
+                    if (!itemName.Equals(listItemCaption)) continue;
+
+                    checkedListBox.SetItemCheckState(
+                        i, isChecked ? CheckState.Checked : CheckState.Unchecked
+                    );
                 }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
 
         /// <summary>
-        /// Gets the Checked state ( <see langword="true" /> for checked, <see langword="false" /> for
+        /// Gets the Checked state ( <see langword="true" /> for checked,
+        /// <see langword="false" /> for
         /// unchecked) of the <paramref name="checkedListBox" /> item with the
         /// specified <paramref name="itemName" />.
         /// </summary>
@@ -143,7 +155,8 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref
         ///     name="checkedListBox" />
         /// has zero items, or the checked state --
-        /// <see langword="true" /> for checked, <see langword="false" /> for unchecked -- of the item
+        /// <see langword="true" /> for checked, <see langword="false" /> for unchecked --
+        /// of the item
         /// whose caption matches the <paramref name="itemName" /> parameter's value.
         /// </returns>
         /// <exception cref="T:ArgumentNullException">
@@ -157,22 +170,35 @@ namespace xyLOGIX.Core.Extensions
         public static bool GetCheckedByName(this CheckedListBox checkedListBox,
             string itemName)
         {
-            if (checkedListBox == null)
-                throw new ArgumentNullException(nameof(checkedListBox));
-            if (string.IsNullOrWhiteSpace(itemName))
-                throw new ArgumentException(
-                    Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(itemName)
-                );
+            var result = false;
 
-            if (checkedListBox.Items.Count == 0)
-                return false;
+            try
+            {
+                if (checkedListBox == null) return result;
+                if (checkedListBox.Items.Count == 0) return result;
+                if (string.IsNullOrWhiteSpace(itemName)) return result;
 
-            return (from i in Enumerable.Range(0, checkedListBox.Items.Count)
-                    where itemName.Equals(
-                        checkedListBox.Items[i]
-                                      .ToString()
-                    )
-                    select checkedListBox.GetItemChecked(i)).FirstOrDefault();
+                for (var i = 0; i < checkedListBox.Items.Count; i++)
+                {
+                    var listItemCaption = checkedListBox.Items[i]
+                        .ToString();
+                    if (!itemName.Equals(listItemCaption)) continue;
+
+                    result = checkedListBox.GetItemCheckState(i) ==
+                             CheckState.Checked;
+
+                    break;  /* no need to keep iterating */
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -189,17 +215,29 @@ namespace xyLOGIX.Core.Extensions
         /// are to be checked.
         /// </param>
         /// <returns>
-        /// <see langword="true" /> if none of the items in the list are checked or if there
-        /// are zero entries in the list; <see langword="false" /> otherwise.
+        /// <see langword="true" /> if none of the items in the list are checked or if
+        /// there are zero entries in the list; <see langword="false" /> otherwise.
         /// </returns>
         public static bool NoItemsAreSelected(
             this CheckedListBox checkedListBox)
         {
-            if (checkedListBox == null)
-                throw new ArgumentNullException(nameof(checkedListBox));
+            bool result;
 
-            return checkedListBox.Items.Count == 0 ||
-                   checkedListBox.CheckedItems.Count == 0;
+            try
+            {
+                result = checkedListBox != null &&
+                         (checkedListBox.Items.Count == 0 ||
+                         checkedListBox.CheckedItems.Count == 0);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
         }
     }
 }

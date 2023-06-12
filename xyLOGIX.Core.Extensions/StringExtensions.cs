@@ -1358,7 +1358,7 @@ namespace xyLOGIX.Core.Extensions
                        .Trim();
 
         /// <summary>
-        /// Removes any trailing '\' characters from the string provided in
+        /// Removes any trailing <c>\</c> characters from the string provided in
         /// <paramref name="value" />.
         /// </summary>
         /// <param name="value">
@@ -1367,10 +1367,14 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// Same as <paramref name="value" />, but with no trailing backslash characters.
+        /// <para />
+        /// If the <paramref name="value" /> parameter's argument has no trailing backslash
+        /// characters to begin with, then this method is idempotent.
         /// </returns>
         /// <remarks>
-        /// If this method is passed the empty string, then this method returns
-        /// the empty string.
+        /// If the argument of the <paramref name="value" /> parameter is blank or
+        /// <see langword="null" />, then the <see cref="F:System.String.Empty" /> value is
+        /// returned.
         /// </remarks>
         public static string RemoveTrailingBackslashes(this string value)
         {

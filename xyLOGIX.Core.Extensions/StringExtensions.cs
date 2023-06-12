@@ -482,7 +482,7 @@ namespace xyLOGIX.Core.Extensions
             if (string.IsNullOrWhiteSpace(stringToCompact)) return string.Empty;
 
             // Copy the string passed in since this string will be modified in
-            // the TextRenderer's MeasureText method
+            // the TextRenderer MeasureText method
             var compactedString = string.Copy(stringToCompact);
             var maxSize = new Size(maxWidth, 0);
 

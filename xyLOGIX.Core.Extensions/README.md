@@ -5971,12 +5971,17 @@ empty string is returned.
 
 ##### Summary
 
-Removes any trailing '\' characters from the string provided in
+Removes any trailing `\` characters from the string provided in
 `value`.
 
 ##### Returns
 
 Same as `value`, but with no trailing backslash characters.
+
+
+
+If the `value` parameter's argument has no trailing backslash
+characters to begin with, then this method is idempotent.
 
 ##### Parameters
 
@@ -5987,8 +5992,9 @@ backslash characters. |
 
 ##### Remarks
 
-If this method is passed the empty string, then this method returns
-the empty string.
+If the argument of the `value` parameter is blank or
+`null`, then the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is
+returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String-'></a>
 ### ReplaceNoCase(value,search,replacement) `method`

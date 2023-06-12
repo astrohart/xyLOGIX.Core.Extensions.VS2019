@@ -1373,8 +1373,25 @@ namespace xyLOGIX.Core.Extensions
         /// the empty string.
         /// </remarks>
         public static string RemoveTrailingBackslashes(this string value)
-            => string.IsNullOrWhiteSpace(value) ? string.Empty :
-                value.EndsWith(@"\") ? value.Remove(value.Length - 1) : value;
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.TrimEnd('\\');
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Replaces the string specified by <paramref name="search" /> by the

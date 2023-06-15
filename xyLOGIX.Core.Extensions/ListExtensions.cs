@@ -1,7 +1,9 @@
 using PostSharp.Patterns.Diagnostics;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -12,14 +14,16 @@ namespace xyLOGIX.Core.Extensions
     public static class ListExtensions
     {
         /// <summary>
-        /// Adds an <paramref name="item"/> to a <paramref name="list"/>, but
+        /// Adds an <paramref name="item" /> to a <paramref name="list" />, but
         /// only if the item is not already present in the collection. If it is,
         /// then this method does nothing.
         /// </summary>
         /// <param name="list">
-        /// Reference to a list that implements the <see
-        /// cref="T:System.Collections.Generic.IList"/> interface for items of
-        /// type <typeparamref name="T"/>.
+        /// Reference to a list that implements the
+        /// <see
+        ///     cref="T:System.Collections.Generic.IList" />
+        /// interface for items of
+        /// type <typeparamref name="T" />.
         /// </param>
         /// <param name="item">
         /// Element to be added to the collection, unless it's in the collection already.
@@ -35,23 +39,30 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Adds an <paramref name="item"/> to a <paramref name="collection"/>,
+        /// Adds an <paramref name="item" /> to a <paramref name="collection" />,
         /// but only if the item is not already present in the collection. If
-        /// the <paramref name="item"/> is already a member of the <paramref
-        /// name="collection"/> , then this method does nothing.
+        /// the <paramref name="item" /> is already a member of the
+        /// <paramref
+        ///     name="collection" />
+        /// , then this method does nothing.
         /// </summary>
         /// <param name="collection">
-        /// Reference to a list that implements the <see
-        /// cref="T:System.Collections.Generic.ICollection{T}"/> interface for
-        /// items of type <typeparamref name="T"/>.
+        /// Reference to a list that implements the
+        /// <see
+        ///     cref="T:System.Collections.Generic.ICollection{T}" />
+        /// interface for
+        /// items of type <typeparamref name="T" />.
         /// </param>
         /// <param name="item">
         /// Element to be added to the collection, unless it's in the collection already.
         /// </param>
         /// <typeparam name="T">
-        /// Type of the elements of the <paramref name="collection"/>.
+        /// Type of the elements of the <paramref name="collection" />.
         /// </typeparam>
-        public static void AddDistinct<T>(this ICollection<T> collection, T item)
+        public static void AddDistinct<T>(
+            this ICollection<T> collection,
+            T item
+        )
         {
             if (collection == null) return;
 
@@ -61,14 +72,18 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Adds an <paramref name="item"/> to a <paramref name="list"/>, but
+        /// Adds an <paramref name="item" /> to a <paramref name="list" />, but
         /// only if the item is not already present in the list. If it is, then
-        /// this method does nothing. If <see langword="null" /> is passed for the <paramref
-        /// name="list"/> parameter, then this method likewise also does nothing.
+        /// this method does nothing. If <see langword="null" /> is passed for the
+        /// <paramref
+        ///     name="list" />
+        /// parameter, then this method likewise also does nothing.
         /// </summary>
         /// <param name="list">
-        /// Reference to an instance of an object that implements the <see
-        /// cref="T:System.Collections.IList"/> interface.
+        /// Reference to an instance of an object that implements the
+        /// <see
+        ///     cref="T:System.Collections.IList" />
+        /// interface.
         /// </param>
         /// <param name="item">
         /// Element to be added to the collection, unless it's in the collection already.
@@ -83,6 +98,52 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Adds a collection of <paramref name="items" /> to the specified
+        /// <paramref name="list" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Name of the type of the individual elements of
+        /// the <paramref name="list" />.
+        /// </typeparam>
+        /// <param name="list">
+        /// (Required.) Collection to which the specified
+        /// <paramref name="items" /> are to be added.
+        /// </param>
+        /// <param name="items">
+        /// (Required.) Collection of <paramref name="items" /> to be
+        /// added to the specified <paramref name="list" />.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="list" /> with the provided
+        /// <paramref name="items" /> added to it.
+        /// </returns>
+        public static IList<T> AddRange<T>(
+            this IList<T> list,
+            IEnumerable<T> items
+        ) where T : class
+        {
+            var result = list;
+
+            try
+            {
+                if (list == null) return result;
+                if (items == null || !items.Any()) return result;
+
+                foreach (var item in items)
+                    list.Add(item);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = list;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Creates a duplicate of the list given to it and returns a reference
         /// to the clone.
         /// </summary>
@@ -93,7 +154,8 @@ namespace xyLOGIX.Core.Extensions
         /// Reference to the collection to make a duplicate of.
         /// </param>
         /// <returns>
-        /// Reference to the duplicate of the collection referenced by <paramref name="source"/>.
+        /// Reference to the duplicate of the collection referenced by
+        /// <paramref name="source" />.
         /// </returns>
         public static List<T> Clone<T>(this ICollection<T> source)
         {
@@ -104,8 +166,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a value indicating whether the <paramref name="value"/> is
-        /// among the elements of the <paramref name="valueSet"/>.
+        /// Gets a value indicating whether the <paramref name="value" /> is
+        /// among the elements of the <paramref name="valueSet" />.
         /// </summary>
         /// <param name="value">
         /// Value to compare.
@@ -114,13 +176,13 @@ namespace xyLOGIX.Core.Extensions
         /// Range of integer values to check.
         /// </param>
         /// <returns>
-        /// true if <paramref name="value"/> is in the <paramref
-        /// name="valueSet"/> ; false otherwise.
+        /// true if <paramref name="value" /> is in the
+        /// <paramref
+        ///     name="valueSet" />
+        /// ; false otherwise.
         /// </returns>
         public static bool IsOneOf(this int value, IEnumerable<int> valueSet)
-        {
-            return valueSet.Any(n => n == value);
-        }
+            => valueSet.Any(n => n == value);
 
         /*
         /// <summary>
@@ -171,7 +233,7 @@ namespace xyLOGIX.Core.Extensions
         /// The type of each element of the list.
         /// </typeparam>
         /// <returns>
-        /// The <paramref name="list"/>, formatted as a set string.
+        /// The <paramref name="list" />, formatted as a set string.
         /// </returns>
         /// <remarks>
         /// This method is helpful for writing some of the members of a
@@ -182,8 +244,9 @@ namespace xyLOGIX.Core.Extensions
             if (list == null || list.Count == 0) return "{}";
 
             var result = "{ ";
-            foreach (var item in list.Cast<object>().Where(item => item != null)
-               .Take(10))
+            foreach (var item in list.Cast<object>()
+                                     .Where(item => item != null)
+                                     .Take(10))
                 if (item is string)
                     result += $@"'{item}'" + ", ";
                 else
@@ -248,7 +311,7 @@ namespace xyLOGIX.Core.Extensions
         /// The type of each element of the list.
         /// </typeparam>
         /// <returns>
-        /// The <paramref name="collection"/>, formatted as a set string.
+        /// The <paramref name="collection" />, formatted as a set string.
         /// </returns>
         /// <remarks>
         /// This method is helpful for writing some of the members of a
@@ -259,8 +322,9 @@ namespace xyLOGIX.Core.Extensions
             if (collection == null || collection.Count == 0) return "{}";
 
             var result = "{ ";
-            foreach (var item in collection.Cast<object>().Where(item => item != null)
-               .Take(10))
+            foreach (var item in collection.Cast<object>()
+                                           .Where(item => item != null)
+                                           .Take(10))
                 if (item is string)
                     result += $@"'{item}'" + ", ";
                 else

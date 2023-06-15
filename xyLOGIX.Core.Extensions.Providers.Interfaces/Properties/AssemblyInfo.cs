@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("xyLOGIX Interfaces Support Library for Core Extension Library's Providers of Control-Form Associations, Among Others Component")]
+[assembly: AssemblyTitle("xyLOGIX.Core.Extensions.Providers.Interfaces")]
 [assembly: AssemblyDescription("Provides objects and functionality to provide access to data and UI element associations.  This particular library holds the C# interfaces for this component.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly: AssemblyProduct("xyLOGIX Support Library for Core Extension Library")]
+[assembly: AssemblyProduct("xyLOGIX Interfaces Support Library for Core Extension Library's Providers of Extension Data Component")]
 [assembly:
     AssemblyCopyright(
         "Copyright © 2019-23 by xyLOGIX, LLC.  All rights reserved.")]

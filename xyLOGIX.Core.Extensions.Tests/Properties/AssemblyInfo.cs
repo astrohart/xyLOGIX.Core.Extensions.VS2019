@@ -4,17 +4,17 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("xyLOGIX Unit Tests Library for xyLOGIX.Core.Extensions.Tests")]
-[assembly: AssemblyDescription("Provides unit tests for ")]
+[assembly: AssemblyTitle("xyLOGIX.Core.Extensions.Tests")]
+[assembly: AssemblyDescription("Provides unit tests for the core set of extension classes that are provided by the xyLOGIX Core Extension Library component.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly: AssemblyProduct("xyLOGIX.Core.Extensions.Tests")]
+[assembly: AssemblyProduct("Unit Tests for the Core Extension Library")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2020 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright © 2020-23 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
-        "This software is a component of xyLOGIX xyLOGIX.Core.Extensions.  xyLOGIX.Core.Extensions is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
+        "This software component is a part of the xyLOGIX Core Extension Library.  xyLOGIX Core Extension Library is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

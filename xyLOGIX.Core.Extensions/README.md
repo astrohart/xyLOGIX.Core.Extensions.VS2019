@@ -262,6 +262,7 @@
   - [AddDistinct(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct-System-Collections-IList,System-Object- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct(System.Collections.IList,System.Object)')
   - [AddDistinct\`\`1(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.IList{``0},``0)')
   - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
+  - [AddRange\`\`1(list,items)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
@@ -4478,13 +4479,17 @@ Provides methods to help with lists of items.
 
 Adds an `item` to a `list`, but
 only if the item is not already present in the list. If it is, then
-this method does nothing. If `null` is passed for the `list` parameter, then this method likewise also does nothing.
+this method does nothing. If `null` is passed for the
+`list`
+parameter, then this method likewise also does nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| list | [System.Collections.IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') | Reference to an instance of an object that implements the [IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') interface. |
+| list | [System.Collections.IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') | Reference to an instance of an object that implements the
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList')
+interface. |
 | item | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | Element to be added to the collection, unless it's in the collection already. |
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0-'></a>
@@ -4500,7 +4505,9 @@ then this method does nothing.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a list that implements the [IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList') interface for items of
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a list that implements the
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
+interface for items of
 type `T`. |
 | item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
 
@@ -4517,13 +4524,17 @@ type `T`. |
 
 Adds an `item` to a `collection`,
 but only if the item is not already present in the collection. If
-the `item` is already a member of the `collection` , then this method does nothing.
+the `item` is already a member of the
+`collection`
+, then this method does nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a list that implements the [ICollection{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{T}') interface for
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a list that implements the
+[ICollection{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{T}')
+interface for
 items of type `T`. |
 | item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
 
@@ -4532,6 +4543,35 @@ items of type `T`. |
 | Name | Description |
 | ---- | ----------- |
 | T | Type of the elements of the `collection`. |
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}-'></a>
+### AddRange\`\`1(list,items) `method`
+
+##### Summary
+
+Adds a collection of `items` to the specified
+`list`.
+
+##### Returns
+
+The specified `list` with the provided
+`items` added to it.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) Collection to which the specified
+`items` are to be added. |
+| items | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Collection of `items` to be
+added to the specified `list`. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Name of the type of the individual elements of
+the `list`. |
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}-'></a>
 ### Clone\`\`1(source) `method`
@@ -4543,7 +4583,8 @@ to the clone.
 
 ##### Returns
 
-Reference to the duplicate of the collection referenced by `source`.
+Reference to the duplicate of the collection referenced by
+`source`.
 
 ##### Parameters
 
@@ -4567,7 +4608,9 @@ among the elements of the `valueSet`.
 
 ##### Returns
 
-true if `value` is in the `valueSet` ; false otherwise.
+true if `value` is in the
+`valueSet`
+; false otherwise.
 
 ##### Parameters
 

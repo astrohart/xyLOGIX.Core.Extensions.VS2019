@@ -115,6 +115,7 @@
     <Compile Include="DictionaryExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="FormExtensions.cs" />
+    <Compile Include="GuidExtensions.cs" />
     <Compile Include="IComboBox.cs" />
     <Compile Include="IControl.cs" />
     <Compile Include="IForm.cs" />

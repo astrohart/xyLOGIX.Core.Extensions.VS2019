@@ -102,6 +102,7 @@ namespace xyLOGIX.Core.Extensions
         public static void DoIfNotDisposed(this IForm form, Action message)
         {
             if (form == null || form.IsDisposed) return;
+            if (message == null) return;
 
             if (form.InvokeRequired)
                 form.BeginInvoke(message);

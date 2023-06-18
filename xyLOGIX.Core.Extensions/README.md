@@ -32,6 +32,9 @@
   - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
+- [GuidExtensions](#T-xyLOGIX-Core-Extensions-GuidExtensions 'xyLOGIX.Core.Extensions.GuidExtensions')
+  - [IsZero(value)](#M-xyLOGIX-Core-Extensions-GuidExtensions-IsZero-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.IsZero(System.Guid)')
+  - [ToUppercaseWithBraces(guid)](#M-xyLOGIX-Core-Extensions-GuidExtensions-ToUppercaseWithBraces-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.ToUppercaseWithBraces(System.Guid)')
 - [IComboBox](#T-xyLOGIX-Core-Extensions-IComboBox 'xyLOGIX.Core.Extensions.IComboBox')
   - [AutoCompleteCustomSource](#P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteCustomSource 'xyLOGIX.Core.Extensions.IComboBox.AutoCompleteCustomSource')
   - [AutoCompleteMode](#P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteMode 'xyLOGIX.Core.Extensions.IComboBox.AutoCompleteMode')
@@ -990,6 +993,62 @@ monitor (whatever monitor they have designated as Monitor #1)
 | form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') to be
 moved to the user's primary monitor. The form is also centered on
 the screen. |
+
+<a name='T-xyLOGIX-Core-Extensions-GuidExtensions'></a>
+## GuidExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension methods for the [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') class.
+
+<a name='M-xyLOGIX-Core-Extensions-GuidExtensions-IsZero-System-Guid-'></a>
+### IsZero(value) `method`
+
+##### Summary
+
+Determines whether the specified [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') value is the Zero
+GUID or not.
+
+##### Returns
+
+`true` if the specified `value` is
+equal to the Zero GUID; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | (Required.) The [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') that should be
+checked whether it's the Zero GUID. |
+
+<a name='M-xyLOGIX-Core-Extensions-GuidExtensions-ToUppercaseWithBraces-System-Guid-'></a>
+### ToUppercaseWithBraces(guid) `method`
+
+##### Summary
+
+Represents the specified `guid` as a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is surrounded by curly braces and is in
+uppercase.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| guid | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | (Required.) A [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') value that is to
+be represented as a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'). |
+
+##### Remarks
+
+If this method is passed the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid.Empty 'System.Guid.Empty') value, then
+this method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='T-xyLOGIX-Core-Extensions-IComboBox'></a>
 ## IComboBox `type`

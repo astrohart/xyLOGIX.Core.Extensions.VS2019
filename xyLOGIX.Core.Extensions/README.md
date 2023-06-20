@@ -18,6 +18,7 @@
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
+  - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})')
   - [IsAnyOf\`\`1(source,testObjects)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]- 'xyLOGIX.Core.Extensions.EnumerableExtensions.IsAnyOf``1(``0,``0[])')
   - [ShuffleIterator\`\`1(source,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ShuffleIterator``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ShuffleIterator``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
   - [Shuffle\`\`1(source)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})')
@@ -671,6 +672,38 @@ xyLOGIX.Core.Extensions
 
 Helper methods for collections.
 
+<a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}-'></a>
+### ForEach\`\`1(collection,action) `method`
+
+##### Summary
+
+Runs the specified `action` for each element of the specified
+`collection`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Reference to an instance of a collection
+of elements, each of which are of type `T`. |
+| action | [System.Action{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{``0}') | (Required.) Reference to an instance of a
+[Action{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{T}')`delegate` that is executed
+for each of the elements in the collection, with the corresponding element
+passed as its input. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Name of the type of each element of the
+`collection`. |
+
+##### Remarks
+
+If the `collection` is empty, or if the
+`action` is `null`, then this method does
+nothing.
+
 <a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]-'></a>
 ### IsAnyOf\`\`1(source,testObjects) `method`
 
@@ -1067,8 +1100,12 @@ box control.
 
 ##### Summary
 
-Gets or sets a custom [StringCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Specialized.StringCollection 'System.Collections.Specialized.StringCollection') to use
-when the [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.AutoCompleteSource 'System.Windows.Forms.ComboBox.AutoCompleteSource') property
+Gets or sets a custom
+[StringCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Specialized.StringCollection 'System.Collections.Specialized.StringCollection')
+to use
+when the
+[AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.AutoCompleteSource 'System.Windows.Forms.ComboBox.AutoCompleteSource')
+property
 is set to `CustomSource`.
 
 ##### Returns
@@ -1086,15 +1123,24 @@ for the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&
 
 ##### Returns
 
-One of the values of [AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode') . The values are
-[Append](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Append 'System.Windows.Forms.AutoCompleteMode.Append'), [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.None 'System.Windows.Forms.AutoCompleteMode.None') , [Suggest](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Suggest 'System.Windows.Forms.AutoCompleteMode.Suggest') , and [SuggestAppend](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.SuggestAppend 'System.Windows.Forms.AutoCompleteMode.SuggestAppend') . The
+One of the values of
+[AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode')
+. The values are
+[Append](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Append 'System.Windows.Forms.AutoCompleteMode.Append'),
+[None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.None 'System.Windows.Forms.AutoCompleteMode.None')
+,
+[Suggest](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Suggest 'System.Windows.Forms.AutoCompleteMode.Suggest')
+, and
+[SuggestAppend](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.SuggestAppend 'System.Windows.Forms.AutoCompleteMode.SuggestAppend')
+. The
 default is [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.None 'System.Windows.Forms.AutoCompleteMode.None').
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of [AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode'). |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of
+[AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode'). |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteSource'></a>
 ### AutoCompleteSource `property`
@@ -1106,26 +1152,38 @@ for automatic completion.
 
 ##### Returns
 
-One of the values of [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource') . The options are
-`AllSystemSources`, `AllUrl`, `FileSystem` , `HistoryList`, `RecentlyUsedList` , `CustomSource`, and
+One of the values of
+[AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource')
+. The options are
+`AllSystemSources`, `AllUrl`,
+`FileSystem`
+, `HistoryList`,
+`RecentlyUsedList`
+, `CustomSource`, and
 `None`. The default is `None`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource'). |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of
+[AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource'). |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DataSource'></a>
 ### DataSource `property`
 
 ##### Summary
 
-Gets or sets the data source for this [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Gets or sets the data source for this
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Returns
 
-An object that implements the [IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') interface or an [Array](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Array 'System.Array') . The default is `null`.
+An object that implements the
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList')
+interface or an
+[Array](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Array 'System.Array')
+. The default is `null`.
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DrawMode'></a>
 ### DrawMode `property`
@@ -1144,7 +1202,9 @@ values. The default is [Normal](http://msdn.microsoft.com/query/dev14.query?appI
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value is not a valid [DrawMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DrawMode 'System.Windows.Forms.DrawMode') enumeration value. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value is not a valid
+[DrawMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DrawMode 'System.Windows.Forms.DrawMode')
+enumeration value. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownHeight'></a>
 ### DropDownHeight `property`
@@ -1180,7 +1240,9 @@ values. The default is `DropDown`.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the [ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle') values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the
+[ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle')
+values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownWidth'></a>
 ### DropDownWidth `property`
@@ -1217,18 +1279,24 @@ otherwise, `false`. The default is false.
 
 ##### Summary
 
-Gets or sets the appearance of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Gets or sets the appearance of the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Returns
 
 One of the enumeration values that specifies the appearance of the
-control. The options are `Flat`, `Popup` , `Standard`, and `System` . The default is `Standard`.
+control. The options are `Flat`,
+`Popup`
+, `Standard`, and
+`System`
+. The default is `Standard`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of [FlatStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FlatStyle 'System.Windows.Forms.FlatStyle'). |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of
+[FlatStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FlatStyle 'System.Windows.Forms.FlatStyle'). |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-IntegralHeight'></a>
 ### IntegralHeight `property`
@@ -1241,7 +1309,8 @@ avoid showing partial items.
 ##### Returns
 
 `true` if the list portion can contain only complete
-items; otherwise, `false`. The default is `true`.
+items; otherwise, `false`. The default is
+`true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-ItemHeight'></a>
 ### ItemHeight `property`
@@ -1297,7 +1366,8 @@ for this property is 1 and the maximum is 100.
 
 ##### Summary
 
-Gets or sets the number of characters a user can type into the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Gets or sets the number of characters a user can type into the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Returns
 
@@ -1309,7 +1379,9 @@ than zero are reset to zero, which is the default value.
 
 ##### Summary
 
-Gets the preferred height of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') .
+Gets the preferred height of the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+.
 
 ##### Returns
 
@@ -1340,11 +1412,14 @@ items in the combo box. |
 
 ##### Summary
 
-Gets or sets currently selected item in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Gets or sets currently selected item in the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Returns
 
-The object that is the currently selected item or `null` if there is no currently selected item.
+The object that is the currently selected item or
+`null`
+if there is no currently selected item.
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectedText'></a>
 ### SelectedText `property`
@@ -1358,7 +1433,9 @@ Gets or sets the text that is selected in the editable portion of a
 
 A string that represents the currently selected text in the combo
 box. If [DropDownStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.DropDownStyle 'System.Windows.Forms.ComboBox.DropDownStyle')
-is set to [DropDownList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle.DropDownList 'System.Windows.Forms.ComboBoxStyle.DropDownList') , the
+is set to
+[DropDownList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle.DropDownList 'System.Windows.Forms.ComboBoxStyle.DropDownList')
+, the
 return value is an empty string ("").
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectionLength'></a>
@@ -1407,20 +1484,26 @@ are sorted.
 
 ##### Returns
 
-`true` if the combo box is sorted; otherwise, `false` . The default is `false`.
+`true` if the combo box is sorted; otherwise,
+`false`
+. The default is `false`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | An attempt was made to sort a [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that is attached to a data source. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | An attempt was made to sort a
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+that is attached to a data source. |
 
 <a name='M-xyLOGIX-Core-Extensions-IComboBox-BeginUpdate'></a>
 ### BeginUpdate() `method`
 
 ##### Summary
 
-Maintains performance when items are added to the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') one at a time.
+Maintains performance when items are added to the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+one at a time.
 
 ##### Parameters
 
@@ -1432,7 +1515,9 @@ This method has no parameters.
 ##### Summary
 
 Resumes painting the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
-control after painting is suspended by the [BeginUpdate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.BeginUpdate 'System.Windows.Forms.ComboBox.BeginUpdate') method.
+control after painting is suspended by the
+[BeginUpdate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.BeginUpdate 'System.Windows.Forms.ComboBox.BeginUpdate')
+method.
 
 ##### Parameters
 
@@ -1443,7 +1528,9 @@ This method has no parameters.
 
 ##### Summary
 
-Returns the index of the first item in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that starts with the
+Returns the index of the first item in the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+that starts with the
 specified string.
 
 ##### Returns
@@ -1462,13 +1549,16 @@ is found.
 
 ##### Summary
 
-Returns the index of the first item in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') beyond the specified index
+Returns the index of the first item in the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+beyond the specified index
 that contains the specified string. The search is not case sensitive.
 
 ##### Returns
 
 The zero-based index of the first item found; returns -1 if no match
-is found, or 0 if the `s` parameter specifies [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
+is found, or 0 if the `s` parameter specifies
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
 
 ##### Parameters
 
@@ -1496,7 +1586,8 @@ Finds the first item in the combo box that matches the specified string.
 ##### Returns
 
 The zero-based index of the first item found; returns -1 if no match
-is found, or 0 if the `s` parameter specifies [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
+is found, or 0 if the `s` parameter specifies
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
 
 ##### Parameters
 
@@ -1515,7 +1606,8 @@ specified string.
 ##### Returns
 
 The zero-based index of the first item found; returns -1 if no match
-is found, or 0 if the `s` parameter specifies [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
+is found, or 0 if the `s` parameter specifies
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
 
 ##### Parameters
 
@@ -1538,7 +1630,8 @@ the collection. |
 
 ##### Summary
 
-Returns the height of an item in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Returns the height of an item in the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Returns
 
@@ -1563,7 +1656,8 @@ the list. |
 
 ##### Summary
 
-Selects a range of text in the editable portion of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Selects a range of text in the editable portion of the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Parameters
 
@@ -1586,7 +1680,8 @@ than zero. |
 
 ##### Summary
 
-Selects all the text in the editable portion of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Selects all the text in the editable portion of the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Parameters
 
@@ -1597,12 +1692,18 @@ This method has no parameters.
 
 ##### Summary
 
-Returns a string that represents the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') control.
+Returns a string that represents the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+control.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that represents the current [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') . The string includes the
-type and the number of items in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') control.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that represents the current
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+. The string includes the
+type and the number of items in the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+control.
 
 ##### Parameters
 

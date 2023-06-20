@@ -10,6 +10,42 @@ namespace xyLOGIX.Core.Extensions
     public static class EnumerableExtensions
     {
         /// <summary>
+        /// Runs the specified <paramref name="action" /> for each element of the specified
+        /// <paramref name="collection" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Name of the type of each element of the
+        /// <paramref name="collection" />.
+        /// </typeparam>
+        /// <param name="collection">
+        /// (Required.) Reference to an instance of a collection
+        /// of elements, each of which are of type <typeparamref name="T" />.
+        /// </param>
+        /// <param name="action">
+        /// (Required.) Reference to an instance of a
+        /// <see cref="T:System.Action{T}" /> <see langword="delegate" /> that is executed
+        /// for each of the elements in the collection, with the corresponding element
+        /// passed as its input.
+        /// </param>
+        /// <remarks>
+        /// If the <paramref name="collection" /> is empty, or if the
+        /// <paramref name="action" /> is <see langword="null" />, then this method does
+        /// nothing.
+        /// </remarks>
+        public static void ForEach<T>(
+            this IEnumerable<T> collection,
+            Action<T> action
+        )
+        {
+            if (collection == null) return;
+            if (action == null) return;
+            if (!collection.Any()) return;
+
+            foreach (var item in collection)
+                action(item);
+        }
+
+        /// <summary>
         /// Compares the <paramref name="source" /> object with the
         /// <paramref
         ///     name="testObjects" />
@@ -80,7 +116,8 @@ namespace xyLOGIX.Core.Extensions
         /// the collection, except for the last.
         /// </returns>
         public static IEnumerable<T> TakeAllButLast<T>(
-            this IEnumerable<T> source)
+            this IEnumerable<T> source
+        )
         {
             if (source == null) throw new ArgumentNullException(nameof(source));
             using (var it = source.GetEnumerator())
@@ -130,8 +167,10 @@ namespace xyLOGIX.Core.Extensions
         /// StackOverflow article.
         /// </a>
         /// </remarks>
-        private static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source,
-            Random rng)
+        private static IEnumerable<T> Shuffle<T>(
+            this IEnumerable<T> source,
+            Random rng
+        )
         {
             if (source == null) throw new ArgumentNullException(nameof(source));
             if (rng == null) throw new ArgumentNullException(nameof(rng));
@@ -173,7 +212,9 @@ namespace xyLOGIX.Core.Extensions
         /// </a>
         /// </remarks>
         private static IEnumerable<T> ShuffleIterator<T>(
-            this IEnumerable<T> source, Random rng)
+            this IEnumerable<T> source,
+            Random rng
+        )
         {
             var buffer = source.ToList();
 

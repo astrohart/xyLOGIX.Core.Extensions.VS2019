@@ -1,3 +1,4 @@
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,8 +71,9 @@ namespace xyLOGIX.Core.Extensions
         /// True if any of the <paramref name="testObjects" /> equals the source;
         /// false otherwise.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public static bool IsAnyOf<T>(this T source, params T[] testObjects)
-            => testObjects.Any(o => o.Equals(source));
+            => testObjects.Contains(source);
 
         /// <summary>
         /// Shuffles the elements of the sequence into a random order, and then

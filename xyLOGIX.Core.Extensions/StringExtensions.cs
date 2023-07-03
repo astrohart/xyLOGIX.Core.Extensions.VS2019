@@ -109,9 +109,83 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the indicated value is in the specified
         /// collection, regardless of case; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool AnyContainNoCase(this IEnumerable<string> collection,
-            string value)
+        public static bool AnyContainNoCase(
+            this IEnumerable<string> collection,
+            string value
+        )
             => collection.Any(s => s.ContainsNoCase(value));
+
+        /// <summary>
+        /// Attempts to express the provided <see cref="T:System.String" />
+        /// <paramref name="value" /> as a <see cref="T:System.Decimal" /> value.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the ASCII
+        /// representation of a <see cref="T:System.Decimal" /> value.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.Decimal" /> value that corresponds to what is
+        /// represented by the ASCII <paramref name="value" /> specified; or
+        /// <see cref="F:System.Decimal.MinValue" /> if an issue occurred in formatting the
+        /// value.
+        /// </returns>
+        public static decimal AsDecimal(this string value)
+        {
+            var result = decimal.MinValue;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    return result;
+
+                result = Convert.ToDecimal(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = decimal.MinValue;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Attempts to express the provided <see cref="T:System.String" />
+        /// <paramref name="value" /> as a <see cref="T:System.Double" /> value.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the ASCII
+        /// representation of a <see cref="T:System.Double" /> value.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.Double" /> value that corresponds to what is
+        /// represented by the ASCII <paramref name="value" /> specified; or
+        /// <see cref="F:System.Double.MinValue" /> if an issue occurred in formatting the
+        /// value.
+        /// </returns>
+        public static double AsDouble(this string value)
+        {
+            var result = double.MinValue;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    return result;
+
+                result = Convert.ToDouble(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = double.MinValue;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Takes a source and a selector function and exports a string that is
@@ -143,7 +217,8 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         public static string AsProseList<TSource>(
             this IEnumerable<TSource> source,
-            Func<TSource, string> selectorFunc)
+            Func<TSource, string> selectorFunc
+        )
         {
             if (source == null) return string.Empty;
 
@@ -256,8 +331,10 @@ namespace xyLOGIX.Core.Extensions
         ///     langword="null" />
         /// reference, then this method returns <see langword="false" />.
         /// </remarks>
-        public static bool ContainsAnyOf(this string value,
-            IEnumerable<string> searchStrings)
+        public static bool ContainsAnyOf(
+            this string value,
+            IEnumerable<string> searchStrings
+        )
             => !string.IsNullOrWhiteSpace(value) && searchStrings != null &&
                searchStrings.Any(item => ContainsNoCase(value, item));
 
@@ -304,8 +381,10 @@ namespace xyLOGIX.Core.Extensions
         /// Returns true if the stringToSearch contains the substring value,
         /// regardless of case; false otherwise.
         /// </returns>
-        public static bool ContainsNoCase(this string stringToSearch,
-            string value)
+        public static bool ContainsNoCase(
+            this string stringToSearch,
+            string value
+        )
             => !string.IsNullOrWhiteSpace(stringToSearch) &&
                !string.IsNullOrWhiteSpace(value) && stringToSearch
                                                     .ToLowerInvariant()
@@ -326,8 +405,10 @@ namespace xyLOGIX.Core.Extensions
         /// Returns true if the stringToSearch contains the substring value,
         /// regardless of case; false otherwise.
         /// </returns>
-        public static bool ContainsNoCase(this string stringToSearch,
-            char value)
+        public static bool ContainsNoCase(
+            this string stringToSearch,
+            char value
+        )
             => !string.IsNullOrWhiteSpace(stringToSearch) && stringToSearch
                 .ToLowerInvariant()
                 .Contains(
@@ -348,8 +429,10 @@ namespace xyLOGIX.Core.Extensions
         /// TRUE if the indicated value is in the specified collection,
         /// regardless of case; FALSE otherwise.
         /// </returns>
-        public static bool ContainsNoCase(this IEnumerable<string> collection,
-            string value)
+        public static bool ContainsNoCase(
+            this IEnumerable<string> collection,
+            string value
+        )
             => collection != null &&
                collection.Any(s => EqualsNoCase(s, value));
 
@@ -450,8 +533,11 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// Whether the two strings are the same, regardless of case.
         /// </returns>
-        public static bool EqualsNoCase(this string str1, string str2,
-            StringComparison comparisonType)
+        public static bool EqualsNoCase(
+            this string str1,
+            string str2,
+            StringComparison comparisonType
+        )
             => string.IsNullOrWhiteSpace(str1) ||
                string.IsNullOrWhiteSpace(str2)
                 ? string.IsNullOrWhiteSpace(str1) &&
@@ -476,10 +562,14 @@ namespace xyLOGIX.Core.Extensions
         /// Version of the string that has ellipsis (...) so as to fit within
         /// the given length.
         /// </returns>
-        public static string GetCompactedString(this string stringToCompact,
-            Font font, int maxWidth)
+        public static string GetCompactedString(
+            this string stringToCompact,
+            Font font,
+            int maxWidth
+        )
         {
-            if (string.IsNullOrWhiteSpace(stringToCompact)) return string.Empty;
+            if (string.IsNullOrWhiteSpace(stringToCompact))
+                return string.Empty;
 
             // Copy the string passed in since this string will be modified in
             // the TextRenderer MeasureText method
@@ -798,8 +888,10 @@ namespace xyLOGIX.Core.Extensions
         /// is the empty collection, then this method returns
         /// <see langword="false" />.
         /// </remarks>
-        public static bool IsOneOf(this string value,
-            IEnumerable<string> choices)
+        public static bool IsOneOf(
+            this string value,
+            IEnumerable<string> choices
+        )
             => !string.IsNullOrWhiteSpace(value) && choices != null &&
                choices.Any(value.EqualsNoCase);
 
@@ -864,8 +956,11 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="replaceWith" />. <see langword="false" /> is returned
         /// otherwise.
         /// </returns>
-        public static bool MatchesNoCase(this string stringToSearch,
-            string findWhat, string replaceWith)
+        public static bool MatchesNoCase(
+            this string stringToSearch,
+            string findWhat, 
+            string replaceWith
+        )
             => !string.IsNullOrEmpty(stringToSearch) &&
                stringToSearch.ContainsNoCase(findWhat);
 
@@ -903,8 +998,11 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="replaceWith" />. <see langword="false" /> is returned
         /// otherwise.
         /// </returns>
-        public static bool MatchesWithCase(this string stringToSearch,
-            string findWhat, string replaceWith)
+        public static bool MatchesWithCase(
+            this string stringToSearch,
+            string findWhat,
+            string replaceWith
+        )
             => !string.IsNullOrEmpty(stringToSearch) &&
                stringToSearch.Contains(findWhat);
 
@@ -927,8 +1025,10 @@ namespace xyLOGIX.Core.Extensions
         /// If the empty string is passed for <paramref name="word" />, then this
         /// method returns the empty string.
         /// </remarks>
-        public static string PluralizeWord(this string word,
-            CultureInfo culture)
+        public static string PluralizeWord(
+            this string word,
+            CultureInfo culture
+        )
         {
             // If we are given blank input, then send blank output.
             if (string.IsNullOrWhiteSpace(word)) return string.Empty;
@@ -972,8 +1072,10 @@ namespace xyLOGIX.Core.Extensions
         /// operation, or idempotent if the format operation could not be carried out, or
         /// if no format values were provided in the <paramref name="args" /> parameter.
         /// </returns>
-        public static string PostfixFormat(this string value,
-            params object[] args)
+        public static string PostfixFormat(
+            this string value,
+            params object[] args
+        )
         {
             var result = value;
 
@@ -1016,8 +1118,10 @@ namespace xyLOGIX.Core.Extensions
         /// found by the <paramref name="regex" />, then this method returns
         /// <see langword="false" />.
         /// </returns>
-        public static bool RegexMatchesNoCase(this string stringToSearch,
-            string regex)
+        public static bool RegexMatchesNoCase(
+            this string stringToSearch,
+            string regex
+        )
             => !string.IsNullOrEmpty(regex) &&
                !string.IsNullOrEmpty(stringToSearch) && Regex.IsMatch(
                    stringToSearch, regex, RegexOptions.IgnoreCase
@@ -1044,8 +1148,10 @@ namespace xyLOGIX.Core.Extensions
         /// found by the <paramref name="regex" />, then this method returns
         /// <see langword="false" />.
         /// </returns>
-        public static bool RegexMatchesWithCase(this string stringToSearch,
-            string regex)
+        public static bool RegexMatchesWithCase(
+            this string stringToSearch,
+            string regex
+        )
             => !string.IsNullOrEmpty(regex) &&
                !string.IsNullOrEmpty(stringToSearch) &&
                Regex.IsMatch(stringToSearch, regex);
@@ -1078,8 +1184,11 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="search" />, or <paramref name="replacement" />, are
         /// passed blank or <see langword="null" /> strings for values.
         /// </exception>
-        public static string RegexReplaceNoCase(this string value,
-            string search, string replacement)
+        public static string RegexReplaceNoCase(
+            this string value,
+            string search,
+            string replacement
+        )
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
@@ -1162,8 +1271,12 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="search" />, or <paramref name="replacement" />, are
         /// passed blank or <see langword="null" /> strings for values.
         /// </exception>
-        public static string RegexReplaceNoCase(this string value,
-            string search, string replacement, RegexOptions options)
+        public static string RegexReplaceNoCase(
+            this string value,
+            string search,
+            string replacement,
+            RegexOptions options
+        )
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
@@ -1228,8 +1341,11 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="search" />, or <paramref name="replacement" />, are
         /// passed blank or <see langword="null" /> strings for values.
         /// </exception>
-        public static string RegexReplaceWithCase(this string value,
-            string search, string replacement)
+        public static string RegexReplaceWithCase(
+            this string value,
+            string search,
+            string replacement
+        )
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
@@ -1298,8 +1414,12 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="search" />, or <paramref name="replacement" />, are
         /// passed blank or <see langword="null" /> strings for values.
         /// </exception>
-        public static string RegexReplaceWithCase(this string value,
-            string search, string replacement, RegexOptions options)
+        public static string RegexReplaceWithCase(
+            this string value,
+            string search,
+            string replacement,
+            RegexOptions options
+        )
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
@@ -1423,8 +1543,11 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="search" />, or <paramref name="replacement" />, are
         /// passed blank or <see langword="null" /> strings for values.
         /// </exception>
-        public static string ReplaceNoCase(this string value, string search,
-            string replacement)
+        public static string ReplaceNoCase(
+            this string value,
+            string search,
+            string replacement
+        )
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException(
@@ -1508,8 +1631,10 @@ namespace xyLOGIX.Core.Extensions
         ///     name="text" />
         /// or the empty collection for <paramref name="list" />.
         /// </remarks>
-        public static bool StartsWithAnyOf(this string text,
-            IEnumerable<string> list)
+        public static bool StartsWithAnyOf(
+            this string text,
+            IEnumerable<string> list
+        )
             => !string.IsNullOrWhiteSpace(text) &&
                list.Any(text.StartsWithNoCase);
 
@@ -1534,8 +1659,10 @@ namespace xyLOGIX.Core.Extensions
         /// is the empty string, then this method returns
         /// <see langword="false" />.
         /// </remarks>
-        public static bool StartsWithNoCase(this string value,
-            string searchText)
+        public static bool StartsWithNoCase(
+            this string value,
+            string searchText
+        )
             => !string.IsNullOrWhiteSpace(value) &&
                !string.IsNullOrWhiteSpace(searchText) && value
                    .ToLowerInvariant()
@@ -1765,8 +1892,10 @@ namespace xyLOGIX.Core.Extensions
         /// returns the empty string. If no separators are specified, then the
         /// empty collection is returned.
         /// </remarks>
-        public static IEnumerable<string> ToList(this string source,
-            params string[] separators)
+        public static IEnumerable<string> ToList(
+            this string source,
+            params string[] separators
+        )
             => !string.IsNullOrWhiteSpace(source) && separators != null &&
                separators.Any()
                 ? string.IsNullOrWhiteSpace(source)
@@ -1965,17 +2094,18 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// </returns>
-        private static bool IsSpecialWordAtBeginningOfPhrase(string[] words,
-            string currentWord)
+        private static bool IsSpecialWordAtBeginningOfPhrase(
+            string[] words,
+            string currentWord
+        )
         {
             if (words == null || !words.Any()) return false;
 
             if (string.IsNullOrWhiteSpace(currentWord)) return false;
 
-            return (currentWord.EndsWith(".") &&
-                    EqualsNoCase(
-                        currentWord, words.First()
-                    )) // this is most likely someone's title
+            return (currentWord.EndsWith(".") && EqualsNoCase(
+                       currentWord, words.First()
+                   )) // this is most likely someone's title
                    | CapitalizeableAsFirstWords
                        .ContainsNoCase(
                            currentWord
@@ -2004,8 +2134,10 @@ namespace xyLOGIX.Core.Extensions
         /// index outside the bounds of the collection, then this method returns
         /// <see langword="false" />.
         /// </remarks>
-        private static bool IsStreetNameComponent(IReadOnlyList<string> array,
-            int i)
+        private static bool IsStreetNameComponent(
+            IReadOnlyList<string> array,
+            int i
+        )
             => array != null && array.Any() && i < array.Count &&
                (i + 1 >= array.Count
                    ? NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(

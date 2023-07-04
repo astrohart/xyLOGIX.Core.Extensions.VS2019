@@ -274,10 +274,14 @@
 - [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
+  - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonzero(System.Decimal)')
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsPositive(System.Decimal)')
   - [IsStrictlyInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsStrictlyInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsStrictlyInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Decimal)')
   - [TruncateDecimalPlaces(val,places)](#M-xyLOGIX-Core-Extensions-NumberExtensions-TruncateDecimalPlaces-System-Decimal,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.TruncateDecimalPlaces(System.Decimal,System.Int32)')
+  - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Int32)')
+  - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Double)')
+  - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Decimal)')
 - [Resources](#T-xyLOGIX-Core-Extensions-Properties-Resources 'xyLOGIX.Core.Extensions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Properties.Resources.Culture')
   - [Error_ValueCannotBeNullOrWhiteSpace](#P-xyLOGIX-Core-Extensions-Properties-Resources-Error_ValueCannotBeNullOrWhiteSpace 'xyLOGIX.Core.Extensions.Properties.Resources.Error_ValueCannotBeNullOrWhiteSpace')
@@ -4860,8 +4864,9 @@ to either of them.
 
 ##### Returns
 
-True if the value is either within the range specified or equal to
-either of the bounds; false otherwise.
+`true` if the value is either within the range specified or
+equal to
+either of the bounds; `false` otherwise.
 
 ##### Parameters
 
@@ -4880,14 +4885,36 @@ Determines if a `value` is negative.
 
 ##### Returns
 
-True if the `value` is strictly less than zero;
-false otherwise.
+`true` if the `value` is strictly less than
+zero;
+`false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Value to be compared. Must be of decimal type. |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal')
+type. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Decimal-'></a>
+### IsNonzero(value) `method`
+
+##### Summary
+
+Determines whether a `value` is nonzero.
+
+##### Returns
+
+`true` if the specified `value` is
+strictly nonzero; `false` if the `value` is
+identically equal to [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.Zero 'System.Decimal.Zero').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared.  Must be of
+[Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Decimal-'></a>
 ### IsPositive(value) `method`
@@ -4898,14 +4925,16 @@ Determines whether a `value` is positive.
 
 ##### Returns
 
-True if the `value` is strictly greater than zero;
-false otherwise.
+`true` if the `value` is strictly greater
+than zero;
+`false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Value to be compared. Must be of decimal type. |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.)  Value to be compared. Must be of [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal')
+type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsStrictlyInRange-System-Decimal,System-Decimal,System-Decimal-'></a>
 ### IsStrictlyInRange(value,lowerBound,upperBound) `method`
@@ -4917,7 +4946,11 @@ equal to either)
 
 ##### Returns
 
-True if `value` is strictly greater than `lowerBound` and strictly less than `upperBound` ; false otherwise.
+True if `value` is strictly greater than
+`lowerBound`
+and strictly less than
+`upperBound`
+; false otherwise.
 
 ##### Parameters
 
@@ -4963,6 +4996,81 @@ following the decimal point.
 | ---- | ---- | ----------- |
 | val | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Value to be truncated. |
 | places | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Number of digits following the decimal point. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Int32-'></a>
+### ZeroFloor(value) `method`
+
+##### Summary
+
+Computes the zero floor.  Meaning, if the specified `value`
+is negative, then this method returns zero.
+
+
+
+If the specified `value` is zero or greater, then this method
+is the identity.
+
+##### Returns
+
+Zero if the specified `value` is negative;
+otherwise, if the specified `value` is zero or greater, then
+the method is the identity map.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Input value. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Double-'></a>
+### ZeroFloor(value) `method`
+
+##### Summary
+
+Computes the zero floor.  Meaning, if the specified `value`
+is negative, then this method returns zero.
+
+
+
+If the specified `value` is zero or greater, then this method
+is the identity.
+
+##### Returns
+
+Zero if the specified `value` is negative;
+otherwise, if the specified `value` is zero or greater, then
+the method is the identity map.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.) Input value. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Decimal-'></a>
+### ZeroFloor(value) `method`
+
+##### Summary
+
+Computes the zero floor.  Meaning, if the specified `value`
+is negative, then this method returns zero.
+
+
+
+If the specified `value` is zero or greater, then this method
+is the identity.
+
+##### Returns
+
+Zero if the specified `value` is negative;
+otherwise, if the specified `value` is zero or greater, then
+the method is the identity map.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Input value. |
 
 <a name='T-xyLOGIX-Core-Extensions-Properties-Resources'></a>
 ## Resources `type`

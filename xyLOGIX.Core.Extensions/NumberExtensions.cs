@@ -21,35 +21,58 @@ namespace xyLOGIX.Core.Extensions
         /// Upper bound.
         /// </param>
         /// <returns>
-        /// True if the value is either within the range specified or equal to
-        /// either of the bounds; false otherwise.
+        /// <see langword="true" /> if the value is either within the range specified or
+        /// equal to
+        /// either of the bounds; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool IsIncludedInRange(this decimal value,
-            decimal lowerBound, decimal upperBound)
+        public static bool IsIncludedInRange(
+            this decimal value,
+            decimal lowerBound,
+            decimal upperBound
+        )
             => upperBound >= value && value >= lowerBound;
 
         /// <summary>
-        /// Determines if a <paramref name="value"/> is negative.
+        /// Determines if a <paramref name="value" /> is negative.
         /// </summary>
         /// <param name="value">
-        /// Value to be compared. Must be of decimal type.
+        /// (Required.) Value to be compared. Must be of <see cref="T:System.Decimal" />
+        /// type.
         /// </param>
         /// <returns>
-        /// True if the <paramref name="value"/> is strictly less than zero;
-        /// false otherwise.
+        /// <see langword="true" /> if the <paramref name="value" /> is strictly less than
+        /// zero;
+        /// <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsNegative(this decimal value)
             => value < decimal.Zero;
 
         /// <summary>
-        /// Determines whether a <paramref name="value"/> is positive.
+        /// Determines whether a <paramref name="value" /> is nonzero.
         /// </summary>
         /// <param name="value">
-        /// Value to be compared. Must be of decimal type.
+        /// (Required.) Value to be compared.  Must be of
+        /// <see cref="T:System.Decimal" /> type.
         /// </param>
         /// <returns>
-        /// True if the <paramref name="value"/> is strictly greater than zero;
-        /// false otherwise.
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// strictly nonzero; <see langword="false" /> if the <paramref name="value" /> is
+        /// identically equal to <see cref="F:System.Decimal.Zero" />.
+        /// </returns>
+        public static bool IsNonzero(this decimal value)
+            => value != decimal.Zero;
+
+        /// <summary>
+        /// Determines whether a <paramref name="value" /> is positive.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.)  Value to be compared. Must be of <see cref="T:System.Decimal" />
+        /// type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the <paramref name="value" /> is strictly greater
+        /// than zero;
+        /// <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsPositive(this decimal value)
             => value > decimal.Zero;
@@ -68,23 +91,29 @@ namespace xyLOGIX.Core.Extensions
         /// Upper bound.
         /// </param>
         /// <returns>
-        /// True if <paramref name="value"/> is strictly greater than <paramref
-        /// name="lowerBound"/> and strictly less than <paramref
-        /// name="upperBound"/> ; false otherwise.
+        /// True if <paramref name="value" /> is strictly greater than
+        /// <paramref
+        ///     name="lowerBound" />
+        /// and strictly less than
+        /// <paramref
+        ///     name="upperBound" />
+        /// ; false otherwise.
         /// </returns>
-        public static bool IsStrictlyInRange(this decimal value,
+        public static bool IsStrictlyInRange(
+            this decimal value,
             decimal lowerBound,
-            decimal upperBound)
+            decimal upperBound
+        )
             => upperBound > value && value > lowerBound;
 
         /// <summary>
-        /// Determines whether a <paramref name="value"/> is zero.
+        /// Determines whether a <paramref name="value" /> is zero.
         /// </summary>
         /// <param name="value">
         /// Value to be compared.
         /// </param>
         /// <returns>
-        /// True if the <paramref name="value"/> is zero; false otherwise.
+        /// True if the <paramref name="value" /> is zero; false otherwise.
         /// </returns>
         public static bool IsZero(this decimal value)
             => value == decimal.Zero;
@@ -103,13 +132,64 @@ namespace xyLOGIX.Core.Extensions
         /// New decimal value with all the digits removed except places digits
         /// following the decimal point.
         /// </returns>
-        public static decimal TruncateDecimalPlaces(this decimal val,
-            int places)
+        public static decimal TruncateDecimalPlaces(
+            this decimal val,
+            int places
+        )
         {
             if (places < 0) throw new ArgumentException("places");
 
             return Math.Round(
-                val - Convert.ToDecimal(0.5 / Math.Pow(10, places)), places);
+                val - Convert.ToDecimal(0.5 / Math.Pow(10, places)), places
+            );
         }
+
+        /// <summary>
+        /// Computes the zero floor.  Meaning, if the specified <paramref name="value" />
+        /// is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
+        /// <param name="value">(Required.) Input value.</param>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
+        public static int ZeroFloor(this int value)
+            => value < 0 ? 0 : value;
+
+        /// <summary>
+        /// Computes the zero floor.  Meaning, if the specified <paramref name="value" />
+        /// is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
+        /// <param name="value">(Required.) Input value.</param>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
+        public static double ZeroFloor(this double value)
+            => value < 0.00D ? 0.00D : value;
+
+        /// <summary>
+        /// Computes the zero floor.  Meaning, if the specified <paramref name="value" />
+        /// is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
+        /// <param name="value">(Required.) Input value.</param>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
+        public static decimal ZeroFloor(this decimal value)
+            => value < decimal.Zero ? decimal.Zero : value;
     }
 }

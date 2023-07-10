@@ -1,3 +1,4 @@
+using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Core.Debug;
 
@@ -6,6 +7,7 @@ namespace xyLOGIX.Core.Extensions
     /// <summary>
     /// Exposes static extension methods for the <see cref="T:System.Guid" /> class.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class GuidExtensions
     {
         /// <summary>

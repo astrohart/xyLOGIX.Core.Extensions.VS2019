@@ -121,7 +121,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="action">
         /// (Required.) A
-        /// <see cref="T:System.Windows.Forms.MethodInvoker" /> delegate that specifies the
+        /// <see cref="T:System.Action" /> delegate that specifies the
         /// action(s) to be performed.
         /// </param>
         /// <exception cref="T:System.ArgumentNullException">
@@ -130,7 +130,7 @@ namespace xyLOGIX.Core.Extensions
         /// are passed a <see langword="null" /> value.
         /// </exception>
         public static void InvokeIfRequired(this Form form,
-            MethodInvoker action)
+            Action action)
         {
             if (form == null) throw new ArgumentNullException(nameof(form));
             if (action == null) throw new ArgumentNullException(nameof(action));

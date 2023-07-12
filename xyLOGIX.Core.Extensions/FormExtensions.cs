@@ -111,37 +111,6 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Invokes the specified <paramref name="action" /> on the specified
-        /// <paramref name="form" />.
-        /// </summary>
-        /// <param name="form">
-        /// (Required.) Reference to the
-        /// <see cref="T:System.Windows.Forms.Form" /> for which the action should be
-        /// invoked.
-        /// </param>
-        /// <param name="action">
-        /// (Required.) A
-        /// <see cref="T:System.Action" /> delegate that specifies the
-        /// action(s) to be performed.
-        /// </param>
-        /// <exception cref="T:System.ArgumentNullException">
-        /// Thrown if either of the
-        /// required parameters, <paramref name="form" /> or <paramref name="action" />,
-        /// are passed a <see langword="null" /> value.
-        /// </exception>
-        public static void InvokeIfRequired(this Form form,
-            Action action)
-        {
-            if (form == null) throw new ArgumentNullException(nameof(form));
-            if (action == null) throw new ArgumentNullException(nameof(action));
-
-            if (form.InvokeRequired)
-                form.BeginInvoke(action);
-            else
-                action();
-        }
-
-        /// <summary>
         /// Shows a modal dialog that can be awaited upon while a task completes.
         /// </summary>
         /// <param name="form">

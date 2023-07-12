@@ -30,7 +30,6 @@
   - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Screen)')
   - [DoIfDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
   - [DoIfNotDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfNotDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
-  - [InvokeIfRequired(form,action)](#M-xyLOGIX-Core-Extensions-FormExtensions-InvokeIfRequired-System-Windows-Forms-Form,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.InvokeIfRequired(System.Windows.Forms.Form,System.Action)')
   - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
@@ -984,33 +983,6 @@ nothing is done.
 `message`. |
 | message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
 form is not disposed. |
-
-<a name='M-xyLOGIX-Core-Extensions-FormExtensions-InvokeIfRequired-System-Windows-Forms-Form,System-Action-'></a>
-### InvokeIfRequired(form,action) `method`
-
-##### Summary
-
-Invokes the specified `action` on the specified
-`form`.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| form | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | (Required.) Reference to the
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') for which the action should be
-invoked. |
-| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | (Required.) A
-[Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') delegate that specifies the
-action(s) to be performed. |
-
-##### Exceptions
-
-| Name | Description |
-| ---- | ----------- |
-| [System.ArgumentNullException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentNullException 'System.ArgumentNullException') | Thrown if either of the
-required parameters, `form` or `action`,
-are passed a `null` value. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
 ### ShowDialogAsync(form,owner) `method`

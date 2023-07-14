@@ -1,4 +1,5 @@
 using System;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -7,6 +8,71 @@ namespace xyLOGIX.Core.Extensions
     /// </summary>
     public static class NumberExtensions
     {
+        public static decimal AsDecimal(this double value)
+        {
+            var result = decimal.Zero;
+
+            try
+            {
+                if (0D == value) return result;
+
+                result = Convert.ToDecimal(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = decimal.Zero;
+            }
+
+            return result;
+        }
+
+        public static decimal AsDecimal(this double? value)
+        {
+            var result = decimal.Zero;
+
+            try
+            {
+                if (value == null) return result;
+                if (!value.HasValue) return result;
+
+                result = Convert.ToDecimal(value.Value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = decimal.Zero;
+            }
+
+            return result;
+        }
+
+        public static decimal AsDecimal(this long? value)
+        {
+            var result = decimal.Zero;
+
+            try
+            {
+                if (value == null) return result;
+                if (!value.HasValue) return result;
+
+                result = Convert.ToDecimal(value.Value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = decimal.Zero;
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Determines if a decimal value is between a pair of values or equal
         /// to either of them.
@@ -61,6 +127,21 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool IsNonzero(this decimal value)
             => value != decimal.Zero;
+
+        /// <summary>
+        /// Determines whether a <paramref name="value" /> is nonzero.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) Value to be compared.  Must be of
+        /// <see cref="T:System.Decimal" /> type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// strictly nonzero; <see langword="false" /> if the <paramref name="value" /> is
+        /// identically equal to <see cref="F:System.Decimal.Zero" />.
+        /// </returns>
+        public static bool IsNonzero(this double value)
+            => value != 0D;
 
         /// <summary>
         /// Determines whether a <paramref name="value" /> is positive.

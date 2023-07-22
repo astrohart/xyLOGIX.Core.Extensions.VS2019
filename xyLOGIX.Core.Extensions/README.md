@@ -19,6 +19,7 @@
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
+  - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})')
   - [IsAnyOf\`\`1(source,testObjects)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]- 'xyLOGIX.Core.Extensions.EnumerableExtensions.IsAnyOf``1(``0,``0[])')
   - [ShuffleIterator\`\`1(source,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ShuffleIterator``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ShuffleIterator``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
@@ -718,6 +719,38 @@ xyLOGIX.Core.Extensions
 ##### Summary
 
 Helper methods for collections.
+
+<a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}-'></a>
+### ForEach\`\`1(collection,action) `method`
+
+##### Summary
+
+Runs the specified `action` for each element of the specified
+`collection`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) Reference to an instance of a collection
+of elements, each of which are of type `T`. |
+| action | [System.Action{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{``0}') | (Required.) Reference to an instance of a
+[Action{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{T}')`delegate` that is executed
+for each of the elements in the collection, with the corresponding element
+passed as its input. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Name of the type of each element of the
+`collection`. |
+
+##### Remarks
+
+If the `collection` is empty, or if the
+`action` is `null`, then this method does
+nothing.
 
 <a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}-'></a>
 ### ForEach\`\`1(collection,action) `method`

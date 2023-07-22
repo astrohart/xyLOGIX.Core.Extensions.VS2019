@@ -34,6 +34,42 @@ namespace xyLOGIX.Core.Extensions
         /// nothing.
         /// </remarks>
         public static void ForEach<T>(
+            this IList<T> collection,
+            Action<T> action
+        )
+        {
+            if (collection == null) return;
+            if (action == null) return;
+            if (!collection.Any()) return;
+
+            foreach (var item in collection)
+                action(item);
+        }
+
+        /// <summary>
+        /// Runs the specified <paramref name="action" /> for each element of the specified
+        /// <paramref name="collection" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Name of the type of each element of the
+        /// <paramref name="collection" />.
+        /// </typeparam>
+        /// <param name="collection">
+        /// (Required.) Reference to an instance of a collection
+        /// of elements, each of which are of type <typeparamref name="T" />.
+        /// </param>
+        /// <param name="action">
+        /// (Required.) Reference to an instance of a
+        /// <see cref="T:System.Action{T}" /> <see langword="delegate" /> that is executed
+        /// for each of the elements in the collection, with the corresponding element
+        /// passed as its input.
+        /// </param>
+        /// <remarks>
+        /// If the <paramref name="collection" /> is empty, or if the
+        /// <paramref name="action" /> is <see langword="null" />, then this method does
+        /// nothing.
+        /// </remarks>
+        public static void ForEach<T>(
             this IEnumerable<T> collection,
             Action<T> action
         )

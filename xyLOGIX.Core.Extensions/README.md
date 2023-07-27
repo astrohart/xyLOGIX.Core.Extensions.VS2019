@@ -305,7 +305,11 @@
   - [AsProseList\`\`1(source,selectorFunc)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsProseList``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.AsProseList``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})')
   - [BreakTextIntoLines(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-BreakTextIntoLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.BreakTextIntoLines(System.String)')
   - [CleanLine(line)](#M-xyLOGIX-Core-Extensions-StringExtensions-CleanLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.CleanLine(System.String)')
+  - [ContainsAny(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.String[])')
+  - [ContainsAny(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.Collections.Generic.IEnumerable{System.String})')
+  - [ContainsAny(value,searchChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Char[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.Char[])')
   - [ContainsAnyOf(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAnyOf(System.String,System.Collections.Generic.IEnumerable{System.String})')
+  - [ContainsAnyOf(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAnyOf(System.String,System.String[])')
   - [ContainsAnyOf(value,searchChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Char[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAnyOf(System.String,System.Char[])')
   - [ContainsNoCase(stringToSearch,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.String,System.String)')
   - [ContainsNoCase(stringToSearch,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-Char- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.String,System.Char)')
@@ -330,8 +334,8 @@
   - [IsSpecialWordAtBeginningOfPhrase(words,currentWord)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsSpecialWordAtBeginningOfPhrase-System-String[],System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsSpecialWordAtBeginningOfPhrase(System.String[],System.String)')
   - [IsStreetNameComponent(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsStreetNameComponent-System-Collections-Generic-IReadOnlyList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsStreetNameComponent(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)')
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
-  - [MatchesNoCase(stringToSearch,findWhat,replaceWith)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String,System.String)')
-  - [MatchesWithCase(stringToSearch,findWhat,replaceWith)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String,System.String)')
+  - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
+  - [MatchesWithCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
   - [PluralizeWord(word)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String)')
   - [PostfixFormat(value,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-PostfixFormat-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.PostfixFormat(System.String,System.Object[])')
@@ -5406,6 +5410,99 @@ Same as input, except all newline characters and whitespace has been removed.
 
 If the empty string is provided as input, then the empty string is returned.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]-'></a>
+### ContainsAny(value,searchStrings) `method`
+
+##### Summary
+
+Returns `true` if the `value` has
+any of the strings in `searchStrings` as a substring.
+
+##### Returns
+
+Value indicating whether any of the strings in
+`searchStrings`
+are substrings (case-insensitive) of
+`value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
+| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which might be substrings
+of `value`. |
+
+##### Remarks
+
+If `value` is the empty string or if the
+`searchStrings`
+collection is empty or is a
+`null`
+reference, then this method returns `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
+### ContainsAny(value,searchStrings) `method`
+
+##### Summary
+
+Returns `true` if the `value` has
+any of the strings in `searchStrings` as a substring.
+
+##### Returns
+
+Value indicating whether any of the strings in
+`searchStrings`
+are substrings (case-insensitive) of
+`value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
+| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which might be substrings
+of `value`. |
+
+##### Remarks
+
+If `value` is the empty string or if the
+`searchStrings`
+collection is empty or is a
+`null`
+reference, then this method returns `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Char[]-'></a>
+### ContainsAny(value,searchChars) `method`
+
+##### Summary
+
+Returns `true` if the `value`
+contains any of the characters in `searchChars`
+(case-insensitive).
+
+##### Returns
+
+`true` if the string in `value`
+contains any of the characters (case-insensitive) in the
+`searchChars`
+array; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String to be searched. |
+| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the `value`. |
+
+##### Remarks
+
+If this method is passed the empty string for
+`value`
+or a `null` reference or an empty
+collection for `searchChars`, then this method
+returns `false`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### ContainsAnyOf(value,searchStrings) `method`
 
@@ -5427,6 +5524,37 @@ are substrings (case-insensitive) of
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
 | searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which might be substrings
+of `value`. |
+
+##### Remarks
+
+If `value` is the empty string or if the
+`searchStrings`
+collection is empty or is a
+`null`
+reference, then this method returns `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-String[]-'></a>
+### ContainsAnyOf(value,searchStrings) `method`
+
+##### Summary
+
+Returns `true` if the `value` has
+any of the strings in `searchStrings` as a substring.
+
+##### Returns
+
+Value indicating whether any of the strings in
+`searchStrings`
+are substrings (case-insensitive) of
+`value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
+| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which might be substrings
 of `value`. |
 
 ##### Remarks
@@ -6015,73 +6143,51 @@ true if the string contains a valid email address value; false otherwise.
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to be checked. |
 
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String,System-String-'></a>
-### MatchesNoCase(stringToSearch,findWhat,replaceWith) `method`
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String-'></a>
+### MatchesNoCase(stringToSearch,findWhat) `method`
 
 ##### Summary
 
-Determines whether the `stringToSearch` contains
-the `findWhat` value, or, in the case that
-`findWhat` contains the
-`replaceWith`
-value, determines whether
-`stringToSearch`
-does not contain the
-`replaceWith`
-text.
+Determines whether the `stringToSearch` contains the text in
+the `findWhat` parameter, in a case-insensitive fashion.
 
 ##### Returns
 
-Does a "Contains" search, without regards to case, and returns
-`true`
-if the search was successful, given the values of
-`stringToSearch`, `findWhat`, and
-`replaceWith`. `false` is returned
-otherwise.
+`true` if the case-insensitive search determines that the
+`stringToSearch` values contains one or more instances of the
+`findWhat` text; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be searched. |
-| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (May be whitespace or non-whitespace.) String containing the pattern
-to be found. |
-| replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (May be whitespace or non-whitespace.) String containing the pattern
-to replace the found text with. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value containing the text that is
+to be searched. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
+located within the `stringToSearch`. |
 
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String,System-String-'></a>
-### MatchesWithCase(stringToSearch,findWhat,replaceWith) `method`
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String-'></a>
+### MatchesWithCase(stringToSearch,findWhat) `method`
 
 ##### Summary
 
-Determines whether the `stringToSearch` contains
-the `findWhat` value, or, in the case that
-`findWhat` contains the
-`replaceWith`
-value, determines whether
-`stringToSearch`
-does not contain the
-`replaceWith`
-text.
+Determines whether the `stringToSearch` contains the text in
+the `findWhat` parameter, in a case-sensitive fashion.
 
 ##### Returns
 
-Does a "Contains" search, with regards to case, and returns
-`true`
-if the search was successful, given the values of
-`stringToSearch`, `findWhat`, and
-`replaceWith`. `false` is returned
-otherwise.
+`true` if the case-sensitive search determines that
+the `stringToSearch` values contains instances of the
+`findWhat` text; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be searched. |
-| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (May be whitespace or non-whitespace.) String containing the pattern
-to be found. |
-| replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (May be whitespace or non-whitespace.) String containing the pattern
-to replace the found text with. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value
+containing the text that is to be searched. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the text that is to be located within the `stringToSearch`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo-'></a>
 ### PluralizeWord(word,culture) `method`

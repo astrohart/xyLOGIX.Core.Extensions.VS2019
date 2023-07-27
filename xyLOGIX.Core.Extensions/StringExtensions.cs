@@ -331,12 +331,162 @@ namespace xyLOGIX.Core.Extensions
         ///     langword="null" />
         /// reference, then this method returns <see langword="false" />.
         /// </remarks>
+        public static bool ContainsAny(
+            this string value,
+            params string[] searchStrings
+        )
+            => ContainsAnyOf(value, searchStrings);
+
+        /// <summary>
+        /// Returns <see langword="true" /> if the <paramref name="value" /> has
+        /// any of the strings in <paramref name="searchStrings" /> as a substring.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) The value to be used as a filter.
+        /// </param>
+        /// <param name="searchStrings">
+        /// (Required.) Collection of strings, any of which might be substrings
+        /// of <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// Value indicating whether any of the strings in
+        /// <paramref
+        ///     name="searchStrings" />
+        /// are substrings (case-insensitive) of
+        /// <paramref name="value" />.
+        /// </returns>
+        /// <remarks>
+        /// If <paramref name="value" /> is the empty string or if the
+        /// <paramref
+        ///     name="searchStrings" />
+        /// collection is empty or is a
+        /// <see
+        ///     langword="null" />
+        /// reference, then this method returns <see langword="false" />.
+        /// </remarks>
+        public static bool ContainsAny(
+            this string value,
+            IEnumerable<string> searchStrings
+        )
+            => ContainsAnyOf(value, searchStrings);
+
+        /// <summary>
+        /// Returns <see langword="true" /> if the <paramref name="value" />
+        /// contains any of the characters in <paramref name="searchChars" />
+        /// (case-insensitive).
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) String to be searched.
+        /// </param>
+        /// <param name="searchChars">
+        /// (Required.) Array of characters to look for in the <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the string in <paramref name="value" />
+        /// contains any of the characters (case-insensitive) in the
+        /// <paramref
+        ///     name="searchChars" />
+        /// array; <see langword="false" /> otherwise.
+        /// </returns>
+        /// <remarks>
+        /// If this method is passed the empty string for
+        /// <paramref
+        ///     name="value" />
+        /// or a <see langword="null" /> reference or an empty
+        /// collection for <paramref name="searchChars" />, then this method
+        /// returns <see langword="false" />.
+        /// </remarks>
+        public static bool ContainsAny(this string value, char[] searchChars)
+            => ContainsAnyOf(value, searchChars);
+
+        /// <summary>
+        /// Returns <see langword="true" /> if the <paramref name="value" /> has
+        /// any of the strings in <paramref name="searchStrings" /> as a substring.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) The value to be used as a filter.
+        /// </param>
+        /// <param name="searchStrings">
+        /// (Required.) Collection of strings, any of which might be substrings
+        /// of <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// Value indicating whether any of the strings in
+        /// <paramref
+        ///     name="searchStrings" />
+        /// are substrings (case-insensitive) of
+        /// <paramref name="value" />.
+        /// </returns>
+        /// <remarks>
+        /// If <paramref name="value" /> is the empty string or if the
+        /// <paramref
+        ///     name="searchStrings" />
+        /// collection is empty or is a
+        /// <see
+        ///     langword="null" />
+        /// reference, then this method returns <see langword="false" />.
+        /// </remarks>
         public static bool ContainsAnyOf(
             this string value,
             IEnumerable<string> searchStrings
         )
             => !string.IsNullOrWhiteSpace(value) && searchStrings != null &&
                searchStrings.Any(item => ContainsNoCase(value, item));
+
+        /// <summary>
+        /// Returns <see langword="true" /> if the <paramref name="value" /> has
+        /// any of the strings in <paramref name="searchStrings" /> as a substring.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) The value to be used as a filter.
+        /// </param>
+        /// <param name="searchStrings">
+        /// (Required.) Collection of strings, any of which might be substrings
+        /// of <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// Value indicating whether any of the strings in
+        /// <paramref
+        ///     name="searchStrings" />
+        /// are substrings (case-insensitive) of
+        /// <paramref name="value" />.
+        /// </returns>
+        /// <remarks>
+        /// If <paramref name="value" /> is the empty string or if the
+        /// <paramref
+        ///     name="searchStrings" />
+        /// collection is empty or is a
+        /// <see
+        ///     langword="null" />
+        /// reference, then this method returns <see langword="false" />.
+        /// </remarks>
+        public static bool ContainsAnyOf(
+            this string value,
+            params string[] searchStrings
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (searchStrings == null || !searchStrings.Any())
+                    return result;
+
+                result = ContainsAnyOf(
+                    value, (IEnumerable<string>)searchStrings
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Returns <see langword="true" /> if the <paramref name="value" />
@@ -958,7 +1108,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool MatchesNoCase(
             this string stringToSearch,
-            string findWhat, 
+            string findWhat,
             string replaceWith
         )
             => !string.IsNullOrEmpty(stringToSearch) &&

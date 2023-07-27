@@ -1073,88 +1073,84 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines whether the <paramref name="stringToSearch" /> contains
-        /// the <paramref name="findWhat" /> value, or, in the case that
-        /// <paramref name="findWhat" /> contains the
-        /// <paramref
-        ///     name="replaceWith" />
-        /// value, determines whether
-        /// <paramref
-        ///     name="stringToSearch" />
-        /// does not contain the
-        /// <paramref
-        ///     name="replaceWith" />
-        /// text.
+        /// Determines whether the <paramref name="stringToSearch" /> contains the text in
+        /// the <paramref name="findWhat" /> parameter, in a case-insensitive fashion.
         /// </summary>
         /// <param name="stringToSearch">
-        /// (Required.) String containing the text to be searched.
+        /// (Required.) A <see cref="T:System.String" /> value containing the text that is
+        /// to be searched.
         /// </param>
         /// <param name="findWhat">
-        /// (May be whitespace or non-whitespace.) String containing the pattern
-        /// to be found.
-        /// </param>
-        /// <param name="replaceWith">
-        /// (May be whitespace or non-whitespace.) String containing the pattern
-        /// to replace the found text with.
+        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
+        /// located within the <paramref name="stringToSearch" />.
         /// </param>
         /// <returns>
-        /// Does a "Contains" search, without regards to case, and returns
-        /// <see
-        ///     langword="true" />
-        /// if the search was successful, given the values of
-        /// <paramref name="stringToSearch" />, <paramref name="findWhat" />, and
-        /// <paramref name="replaceWith" />. <see langword="false" /> is returned
-        /// otherwise.
+        /// <see langword="true" /> if the case-insensitive search determines that the
+        /// <paramref name="stringToSearch" /> values contains one or more instances of the
+        /// <paramref name="findWhat" /> text; <see langword="false" /> otherwise.
         /// </returns>
         public static bool MatchesNoCase(
             this string stringToSearch,
-            string findWhat,
-            string replaceWith
+            string findWhat
         )
-            => !string.IsNullOrEmpty(stringToSearch) &&
-               stringToSearch.ContainsNoCase(findWhat);
+        {
+            bool result;
+
+            try
+            {
+                result = !string.IsNullOrEmpty(stringToSearch) &&
+                         stringToSearch.ContainsNoCase(findWhat);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary>
-        /// Determines whether the <paramref name="stringToSearch" /> contains
-        /// the <paramref name="findWhat" /> value, or, in the case that
-        /// <paramref name="findWhat" /> contains the
-        /// <paramref
-        ///     name="replaceWith" />
-        /// value, determines whether
-        /// <paramref
-        ///     name="stringToSearch" />
-        /// does not contain the
-        /// <paramref
-        ///     name="replaceWith" />
-        /// text.
+        /// Determines whether the <paramref name="stringToSearch" /> contains the text in
+        /// the <paramref name="findWhat" /> parameter, in a case-sensitive fashion.
         /// </summary>
         /// <param name="stringToSearch">
-        /// (Required.) String containing the text to be searched.
+        /// (Required.) A <see cref="T:System.String" /> value
+        /// containing the text that is to be searched.
         /// </param>
         /// <param name="findWhat">
-        /// (May be whitespace or non-whitespace.) String containing the pattern
-        /// to be found.
-        /// </param>
-        /// <param name="replaceWith">
-        /// (May be whitespace or non-whitespace.) String containing the pattern
-        /// to replace the found text with.
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the text that is to be located within the <paramref name="stringToSearch" />.
         /// </param>
         /// <returns>
-        /// Does a "Contains" search, with regards to case, and returns
-        /// <see
-        ///     langword="true" />
-        /// if the search was successful, given the values of
-        /// <paramref name="stringToSearch" />, <paramref name="findWhat" />, and
-        /// <paramref name="replaceWith" />. <see langword="false" /> is returned
-        /// otherwise.
+        /// <see langword="true" /> if the case-sensitive search determines that
+        /// the <paramref name="stringToSearch" /> values contains instances of the
+        /// <paramref name="findWhat" /> text; <see langword="false" /> otherwise.
         /// </returns>
         public static bool MatchesWithCase(
             this string stringToSearch,
-            string findWhat,
-            string replaceWith
+            string findWhat
         )
-            => !string.IsNullOrEmpty(stringToSearch) &&
-               stringToSearch.Contains(findWhat);
+        {
+            bool result;
+
+            try
+            {
+                result = !string.IsNullOrWhiteSpace(stringToSearch) &&
+                         stringToSearch.Contains(findWhat);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Pluralizes the word passed in, applying language rules from the

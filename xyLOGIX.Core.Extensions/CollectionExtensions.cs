@@ -58,6 +58,24 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether the specified <paramref name="collection" /> is a
+        /// <see langword="null" /> reference or the empty collection (i.e., the collection
+        /// containing zero elements).
+        /// </summary>
+        /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
+        /// <param name="collection">
+        /// (Required.) Reference to an instance of an object that implements the
+        /// <see cref="ICollection{T}" /> interface.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified
+        /// <paramref name="collection" /> is a <see langword="null" /> reference or if it
+        /// contains zero elements; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsNullOrEmpty<T>(this ICollection<T> collection)
+            => collection == null || !collection.Any();
+
+        /// <summary>
         /// Determines if the specified <c>object</c> is of one of the types in the
         /// specified tuple of types.
         /// </summary>

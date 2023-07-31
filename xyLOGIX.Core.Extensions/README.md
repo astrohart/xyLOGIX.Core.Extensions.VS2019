@@ -9,6 +9,11 @@
   - [CheckByName(checkedListBox,itemName,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckByName-System-Windows-Forms-CheckedListBox,System-String,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckByName(System.Windows.Forms.CheckedListBox,System.String,System.Boolean)')
   - [GetCheckedByName(checkedListBox,itemName)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.GetCheckedByName(System.Windows.Forms.CheckedListBox,System.String)')
   - [NoItemsAreSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-NoItemsAreSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.NoItemsAreSelected(System.Windows.Forms.CheckedListBox)')
+- [CollectionExtensions](#T-xyLOGIX-Core-Extensions-CollectionExtensions 'xyLOGIX.Core.Extensions.CollectionExtensions')
+  - [AddMultiple\`\`1(collection,items)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-AddMultiple``1-System-Collections-Generic-ICollection{``0},``0[]- 'xyLOGIX.Core.Extensions.CollectionExtensions.AddMultiple``1(System.Collections.Generic.ICollection{``0},``0[])')
+  - [IsEmpty\`\`1(collection)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsEmpty``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsEmpty``1(System.Collections.Generic.ICollection{``0})')
+  - [IsNullOrEmpty\`\`1(collection)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsNullOrEmpty``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})')
+  - [IsOneOf\`\`1(obj)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsOneOf``1-System-Object- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsOneOf``1(System.Object)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
   - [ControlFormAssociationProvider](#P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider 'xyLOGIX.Core.Extensions.ControlExtensions.ControlFormAssociationProvider')
   - [AssociateWithParentForm(control)](#M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.AssociateWithParentForm(System.Windows.Forms.Control)')
@@ -513,6 +518,170 @@ there are zero entries in the list; `false` otherwise.
 [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
 the items of which
 are to be checked. |
+
+<a name='T-xyLOGIX-Core-Extensions-CollectionExtensions'></a>
+## CollectionExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension methods for collection types.
+
+<a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-AddMultiple``1-System-Collections-Generic-ICollection{``0},``0[]-'></a>
+### AddMultiple\`\`1(collection,items) `method`
+
+##### Summary
+
+Adds multiple items to a collection without the need to call `AddRange`
+and allocate up a whole new collection object instance just to be used once.
+
+
+
+It seemed like the `AddRange` way was a waste of system resources.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that implements the
+[ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
+| items | [\`\`0[]](#T-``0[] '``0[]') | (Required.) One or more instances of
+`T` that are to be added to the collection. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Name of the data type of the elements of the
+specified `collection`. |
+
+##### Remarks
+
+If the `collection` parameter has been passed a
+`null` reference, then this method does nothing.
+
+
+
+If zero items are passed for the `items` parameter, then this
+method does nothing.
+
+
+
+If an individual element of the `items` parameter is a
+`null` reference, then it is not added.
+
+
+
+If an individual element of the `items` parameter is already
+a member of the specified `collection`, then it is not added
+again.
+
+<a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-IsEmpty``1-System-Collections-Generic-ICollection{``0}-'></a>
+### IsEmpty\`\`1(collection) `method`
+
+##### Summary
+
+Determines whether the specified `collection` contains zero
+elements.
+
+##### Returns
+
+`true` if the specified `collection`
+contains zero elements; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that implements the
+[ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of the collection's elements. |
+
+##### Remarks
+
+If this method is passed a `null` reference, then the method
+also returns `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-IsNullOrEmpty``1-System-Collections-Generic-ICollection{``0}-'></a>
+### IsNullOrEmpty\`\`1(collection) `method`
+
+##### Summary
+
+Determines whether the specified `collection` is a
+`null` reference or the empty collection (i.e., the collection
+containing zero elements).
+
+##### Returns
+
+`true` if the specified
+`collection` is a `null` reference or if it
+contains zero elements; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that implements the
+[ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of the collection's elements. |
+
+<a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-IsOneOf``1-System-Object-'></a>
+### IsOneOf\`\`1(obj) `method`
+
+##### Summary
+
+Determines if the specified `object` is of one of the types in the
+specified tuple of types.
+
+##### Returns
+
+`true` if the specified `object` is one of the
+types specified; otherwise, `false` is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| obj | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') instance whose type is to be
+checked. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TTypes | Tuple of types that the `obj` could
+be. |
+
+##### Remarks
+
+If a `null` reference is passed to this method, then this
+method returns `false`.
+
+
+
+This method is useful for checking, say, if a
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') is a
+[Button](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Button 'System.Windows.Forms.Button'), a
+[CheckBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckBox 'System.Windows.Forms.CheckBox'), or a
+[Label](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Label 'System.Windows.Forms.Label').
+
+
+
+To perform that check, you would pass
+`Tuple<Button, CheckBox, Label>` as this method's type parameter.
 
 <a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>
 ## ControlExtensions `type`

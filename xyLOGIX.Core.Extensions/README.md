@@ -856,18 +856,27 @@ Provides methods for extending any dictionary.
 
 ##### Summary
 
-Adds the specified `key` and `value` to the specified `dictionary`, but only if the specified `key` is not already in the dictionary.
+Adds the specified `key` and `value` to the
+specified `dictionary`, but only if the specified
+`key` is not already in the dictionary.
 
 
 
-Otherwise, the entry having the specified `key` will have its value updated to be `value`.
+Otherwise, the entry having the specified `key` will have its
+value updated to be `value`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| dictionary | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) Dictionary to which the new `key` and `value` are to be added. |
-| key | [\`\`0](#T-``0 '``0') | (Required.) Key to be added/updated in the dictionary. |
+| dictionary | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) Dictionary to which the new
+`key` and `value` are to be added. |
+| key | [\`\`0](#T-``0 '``0') | (Required.) Key to be added/updated in the dictionary.
+
+
+
+If this is the `null` or otherwise the default value of the
+key's data type, then this method will do nothing. |
 | value | [\`\`1](#T-``1 '``1') | (Required.) Value to be added/updated in the dictionary. |
 
 ##### Generic Types
@@ -882,7 +891,8 @@ Otherwise, the entry having the specified `key` will have its value updated to b
 
 ##### Summary
 
-Transforms an instance of an object of type [String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
+Transforms an instance of an object of type
+[String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
 into an object by mapping the dictionary elements onto the object's
 properties that have the same name.
 
@@ -895,7 +905,8 @@ filled in with the values from the `source`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') | Reference to an instance of an object of type [String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
+| source | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') | Reference to an instance of an object of type
+[String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
 , whose key-value pairs identify what properties to fill with what information. |
 
 ##### Generic Types

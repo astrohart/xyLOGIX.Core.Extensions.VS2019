@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -7,6 +9,45 @@ namespace xyLOGIX.Core.Extensions
     /// </summary>
     public static class DictionaryExtensions
     {
+        /// <summary>
+        /// Adds the specified <paramref name="key"/> and <paramref name="value"/> to the specified <paramref name="dictionary"/>, but only if the specified <paramref name="key"/> is not already in the dictionary.<para/>Otherwise, the entry having the specified <paramref name="key"/> will have its value updated to be <paramref name="value"/>.
+        /// </summary>
+        /// <typeparam name="K">(Required.) Data type of the key.</typeparam>
+        /// <typeparam name="V">(Required.) Data type of the value.</typeparam>
+        /// <param name="dictionary">(Required.) Dictionary to which the new <paramref name="key"/> and <paramref name="value"/> are to be added.</param>
+        /// <param name="key">(Required.) Key to be added/updated in the dictionary.</param>
+        /// <param name="value">(Required.) Value to be added/updated in the dictionary.</param>
+        public static void AddDistinct<K, V>(
+            this IDictionary<K, V> dictionary,
+            K key,
+            V value
+        )
+        {
+            if (dictionary == null) return;
+            if (!dictionary.Any())
+            {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $"*** INFO: Dictionary has no existing entries.  Adding the new key-value pair."
+                );
+
+                dictionary.Add(key, value);
+                return;
+            }
+
+            if (dictionary.ContainsKey(key))
+            {
+                DebugUtils.WriteLine(
+                    DebugLevel.Warning,
+                    $"*** WARNING: The dictionary already contains the keu '{key}'.  Updating the corresponding value to '{value}'."
+                );
+                dictionary[key] = value;
+                return;
+            }
+
+            dictionary.Add(key, value);
+        }
+
         /// <summary>
         /// Transforms an instance of an object of type <see
         /// cref="T:System.Collections.Generic.Dictionary{System.String,System.String}"/>

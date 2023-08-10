@@ -22,6 +22,7 @@
   - [InvokeIfRequired\`\`1(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired``1-System-ComponentModel-ISynchronizeInvoke,System-Func{``0}- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired``1(System.ComponentModel.ISynchronizeInvoke,System.Func{``0})')
   - [IsParentFormNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsParentFormNullOrDisposed(System.Windows.Forms.Control)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
+  - [AddDistinct\`\`2(dictionary,key,value)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1- 'xyLOGIX.Core.Extensions.DictionaryExtensions.AddDistinct``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})')
@@ -849,6 +850,32 @@ xyLOGIX.Core.Extensions
 ##### Summary
 
 Provides methods for extending any dictionary.
+
+<a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1-'></a>
+### AddDistinct\`\`2(dictionary,key,value) `method`
+
+##### Summary
+
+Adds the specified `key` and `value` to the specified `dictionary`, but only if the specified `key` is not already in the dictionary.
+
+
+
+Otherwise, the entry having the specified `key` will have its value updated to be `value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dictionary | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) Dictionary to which the new `key` and `value` are to be added. |
+| key | [\`\`0](#T-``0 '``0') | (Required.) Key to be added/updated in the dictionary. |
+| value | [\`\`1](#T-``1 '``1') | (Required.) Value to be added/updated in the dictionary. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| K | (Required.) Data type of the key. |
+| V | (Required.) Data type of the value. |
 
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}-'></a>
 ### ToObject\`\`1(source) `method`

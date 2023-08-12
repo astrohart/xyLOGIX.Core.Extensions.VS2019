@@ -23,6 +23,7 @@
   - [IsParentFormNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsParentFormNullOrDisposed(System.Windows.Forms.Control)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [AddDistinct\`\`2(dictionary,key,value)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1- 'xyLOGIX.Core.Extensions.DictionaryExtensions.AddDistinct``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)')
+  - [MergeWith\`\`2(target,source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})')
@@ -885,6 +886,43 @@ key's data type, then this method will do nothing. |
 | ---- | ----------- |
 | K | (Required.) Data type of the key. |
 | V | (Required.) Data type of the value. |
+
+<a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}-'></a>
+### MergeWith\`\`2(target,source) `method`
+
+##### Summary
+
+Adds all the elements of the `source` dictionary to the
+`target` dictionary.
+
+
+
+Dupes are ignored.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| target | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) The dictionary that is to be the target of the merge. |
+| source | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) A dictionary that has the items to be merged in.
+
+
+
+If this is the `null` or otherwise the default value of the
+key's data type, then this method will do nothing. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| K | (Required.) Data type of the key. |
+| V | (Required.) Data type of the value. |
+
+##### Remarks
+
+If a key in the `source` dictionary matches a key in
+the `target` dictionary, then the corresponding value is
+overwritten.
 
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}-'></a>
 ### ToObject\`\`1(source) `method`

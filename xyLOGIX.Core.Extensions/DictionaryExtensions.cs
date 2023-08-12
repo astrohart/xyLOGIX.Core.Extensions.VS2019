@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using xyLOGIX.Core.Debug;
@@ -61,6 +62,48 @@ namespace xyLOGIX.Core.Extensions
             }
 
             dictionary.Add(key, value);
+        }
+
+        /// <summary>
+        /// Adds all the elements of the <paramref name="source" /> dictionary to the
+        /// <paramref name="target" /> dictionary.
+        /// <para />
+        /// Dupes are ignored.
+        /// </summary>
+        /// <typeparam name="K">(Required.) Data type of the key.</typeparam>
+        /// <typeparam name="V">(Required.) Data type of the value.</typeparam>
+        /// <param name="target">
+        /// (Required.) The dictionary that is to be the target of the merge.
+        /// </param>
+        /// <param name="source">
+        /// (Required.) A dictionary that has the items to be merged in.
+        /// <para />
+        /// If this is the <see langword="null" /> or otherwise the default value of the
+        /// key's data type, then this method will do nothing.
+        /// </param>
+        /// <remarks>
+        /// If a key in the <paramref name="source" /> dictionary matches a key in
+        /// the <paramref name="target" /> dictionary, then the corresponding value is
+        /// overwritten.
+        /// </remarks>
+        public static void MergeWith<K, V>(
+            this IDictionary<K, V> target,
+            IDictionary<K, V> source
+        )
+        {
+            try
+            {
+                if (target == null) return;
+                if (source == null || !source.Any()) return;
+
+                foreach (var kvp in source)
+                    target.AddDistinct(kvp.Key, kvp.Value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
 
         /// <summary>

@@ -1,13 +1,31 @@
+using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Helper functions for doing math.
+    /// Helper functions for doing operations on, or making decisions about, numerical data.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class NumberExtensions
     {
+        /// <summary>
+        /// Converts the specified <see langword="double" /> value to
+        /// <see langword="decimal" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) The <see langword="double" /> value to be
+        /// converted to <see langword="decimal" />.
+        /// </param>
+        /// <remarks>
+        /// This method returns zero if the conversion was not successful, or if
+        /// zero is passed for <paramref name="value" />.
+        /// </remarks>
+        /// <returns>
+        /// The specified <paramref name="value" />, converted to type
+        /// <see langword="decimal" />.
+        /// </returns>
         public static decimal AsDecimal(this double value)
         {
             var result = decimal.Zero;
@@ -29,6 +47,22 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Converts the specified <see langword="double" /> value to
+        /// <see langword="decimal" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) The <see langword="double" /> value to be
+        /// converted to <see langword="decimal" />.
+        /// </param>
+        /// <remarks>
+        /// This method returns zero if the conversion was not successful, or if
+        /// zero is passed for <paramref name="value" />.
+        /// </remarks>
+        /// <returns>
+        /// The specified <paramref name="value" />, converted to type
+        /// <see langword="decimal" />.
+        /// </returns>
         public static decimal AsDecimal(this double? value)
         {
             var result = decimal.Zero;
@@ -51,6 +85,22 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Converts the specified <see langword="long" /> value to
+        /// <see langword="decimal" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) The <see langword="long" /> value to be
+        /// converted to <see langword="decimal" />.
+        /// </param>
+        /// <remarks>
+        /// This method returns zero if the conversion was not successful, or if
+        /// zero is passed for <paramref name="value" />.
+        /// </remarks>
+        /// <returns>
+        /// The specified <paramref name="value" />, converted to type
+        /// <see langword="decimal" />.
+        /// </returns>
         public static decimal AsDecimal(this long? value)
         {
             var result = decimal.Zero;

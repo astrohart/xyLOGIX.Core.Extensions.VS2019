@@ -280,6 +280,9 @@
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
 - [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
+  - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Double)')
+  - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Double})')
+  - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Int64})')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonzero(System.Decimal)')
@@ -5148,7 +5151,82 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Helper functions for doing math.
+Helper functions for doing operations on, or making decisions about, numerical data.
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double-'></a>
+### AsDecimal(value) `method`
+
+##### Summary
+
+Converts the specified `double` value to
+`decimal`.
+
+##### Returns
+
+The specified `value`, converted to type
+`decimal`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.) The `double` value to be
+converted to `decimal`. |
+
+##### Remarks
+
+This method returns zero if the conversion was not successful, or if
+zero is passed for `value`.
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Double}-'></a>
+### AsDecimal(value) `method`
+
+##### Summary
+
+Converts the specified `double` value to
+`decimal`.
+
+##### Returns
+
+The specified `value`, converted to type
+`decimal`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Double}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Double}') | (Required.) The `double` value to be
+converted to `decimal`. |
+
+##### Remarks
+
+This method returns zero if the conversion was not successful, or if
+zero is passed for `value`.
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Int64}-'></a>
+### AsDecimal(value) `method`
+
+##### Summary
+
+Converts the specified `long` value to
+`decimal`.
+
+##### Returns
+
+The specified `value`, converted to type
+`decimal`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') | (Required.) The `long` value to be
+converted to `decimal`. |
+
+##### Remarks
+
+This method returns zero if the conversion was not successful, or if
+zero is passed for `value`.
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal-'></a>
 ### IsIncludedInRange(value,lowerBound,upperBound) `method`

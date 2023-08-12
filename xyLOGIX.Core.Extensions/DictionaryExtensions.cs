@@ -55,7 +55,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 DebugUtils.WriteLine(
                     DebugLevel.Warning,
-                    $"*** WARNING: The dictionary already contains the keu '{key}'.  Updating the corresponding value to '{value}'."
+                    $"*** WARNING: The dictionary already contains the key '{key}'.  Updating the corresponding value to '{value}'."
                 );
                 dictionary[key] = value;
                 return;

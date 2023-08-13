@@ -5,7 +5,8 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Helper functions for doing operations on, or making decisions about, numerical data.
+    /// Helper functions for doing operations on, or making decisions about, numerical
+    /// data.
     /// </summary>
     [Log(AttributeExclude = true)]
     public static class NumberExtensions
@@ -162,6 +163,22 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool IsNegative(this decimal value)
             => value < decimal.Zero;
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is non-positive;
+        /// i.e., zero, or a negative number.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) Value to be compared.  Must be of
+        /// <see cref="T:System.Decimal" /> type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// nonpositive; <see langword="false" /> if the <paramref name="value" /> is
+        /// identically equal to <see cref="F:System.Decimal.Zero" />.
+        /// </returns>
+        public static bool IsNonPositive(this decimal value)
+            => value <= decimal.Zero;
 
         /// <summary>
         /// Determines whether a <paramref name="value" /> is nonzero.

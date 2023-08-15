@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -32,18 +31,22 @@ namespace xyLOGIX.Core.Extensions
 
             if (type.GetTypeInfo()
                     .IsArray)
-                CachedActualType.AddOrUpdate(type, type.GetElementType());
+                CachedActualType[type] = type.GetElementType();
             else if (type.GenericTypeArguments.Any())
-                CachedActualType.AddOrUpdate(
-                    type, type.GenericTypeArguments.First()
-                ); // this is almost always find the right type of an IList but if it fail then do the below. Don't really remember why this fail sometimes.
+            {
+                // this is almost always find the right type of an IList
+                // but if it fail then do the below. Don't really
+                // remember why this fails sometimes.
+
+                CachedActualType[type] = type.GenericTypeArguments.First();
+            }
             else if (type.FullName?.Contains("List`1") ?? false)
-                CachedActualType.Add(
-                    type, type.GetRuntimeProperty("Item")
-                              .PropertyType
-                );
+            {
+                CachedActualType[type] = type.GetRuntimeProperty("Item")
+                                             .PropertyType;
+            }
             else
-                CachedActualType.Add(type, type);
+                CachedActualType[type] = type;
 
             return CachedActualType[type];
         }

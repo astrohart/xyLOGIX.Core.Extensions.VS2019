@@ -1,5 +1,6 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -24,7 +25,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// Empty, protected constructor to prohibit direct allocation of this class.
         /// </summary>
         protected ControlFormAssociationProvider()
-            => ParentFormDictionary = new Dictionary<Control, Form>();
+            => ParentFormDictionary = new ConcurrentDictionary<Control, Form>();
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the

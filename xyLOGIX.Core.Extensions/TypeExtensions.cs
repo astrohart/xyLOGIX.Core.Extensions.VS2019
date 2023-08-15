@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -16,8 +17,8 @@ namespace xyLOGIX.Core.Extensions
         ///     cref="M:xyLOGIX.Core.Extensions.TypeExtensions.GetActualType" />
         /// method for faster performance.
         /// </summary>
-        private static readonly Dictionary<Type, Type> CachedActualType =
-            new Dictionary<Type, Type>();
+        private static readonly ConcurrentDictionary<Type, Type> CachedActualType =
+            new ConcurrentDictionary<Type, Type>();
 
         /// <summary>
         /// Gets the internal type of an IList. When the type is not a list then
@@ -26,14 +27,14 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         public static Type GetActualType(this Type type)
         {
-            if (CachedActualType.ContainsKey(type))
-                return CachedActualType[type];
+            if (CachedActualType.TryGetValue(type, out var actualType))
+                return actualType;
 
             if (type.GetTypeInfo()
                     .IsArray)
-                CachedActualType.Add(type, type.GetElementType());
+                CachedActualType.AddOrUpdate(type, type.GetElementType());
             else if (type.GenericTypeArguments.Any())
-                CachedActualType.Add(
+                CachedActualType.AddOrUpdate(
                     type, type.GenericTypeArguments.First()
                 ); // this is almost always find the right type of an IList but if it fail then do the below. Don't really remember why this fail sometimes.
             else if (type.FullName?.Contains("List`1") ?? false)

@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("xyLOGIX Factories Support Library for Core Extension Library's Providers of Extension Data Component")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2019-23 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright ? 2019-23 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
         "This software is a component of xyLOGIX Core Extension Library.  xyLOGIX Core Extension Library is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]

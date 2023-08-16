@@ -1,4 +1,4 @@
-﻿<a name='assembly'></a>
+<a name='assembly'></a>
 # xyLOGIX.Core.Extensions
 
 ## Contents
@@ -6195,7 +6195,7 @@ value. `nChars` must be a positive number. |
 
 ##### Summary
 
-Very naïve determination of person first name 99.9% of the time,
+Very na?ve determination of person first name 99.9% of the time,
 persons' names are // given as <First Name> <Rest>.
 
 ##### Returns
@@ -6225,7 +6225,7 @@ is passed as input to this method, then the empty string is returned.
 
 ##### Summary
 
-Very naïve determination of person last name. In our software
+Very na?ve determination of person last name. In our software
 consulting and tutoring practice, new clients tend to given their
 first and last name only when signing up --- about 99.9% of the time.
 

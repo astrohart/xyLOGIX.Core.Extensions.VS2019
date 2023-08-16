@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Design.PluralizationServices;
 using System.Drawing;
@@ -773,7 +773,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Very naïve determination of person first name 99.9% of the time,
+        /// Very na?ve determination of person first name 99.9% of the time,
         /// persons' names are // given as &lt;First Name&gt; &lt;Rest&gt;.
         /// </summary>
         /// <param name="fullName">
@@ -805,7 +805,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Very naïve determination of person last name. In our software
+        /// Very na?ve determination of person last name. In our software
         /// consulting and tutoring practice, new clients tend to given their
         /// first and last name only when signing up --- about 99.9% of the time.
         /// </summary>
@@ -1916,7 +1916,7 @@ namespace xyLOGIX.Core.Extensions
                 );
 
             return sb.ToString()
-                     .Replace("%F1", "ñ");
+                     .Replace("%F1", "?");
         }
 
         /// <summary>

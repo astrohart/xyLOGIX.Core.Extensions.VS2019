@@ -285,6 +285,7 @@
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Int64})')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
+  - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Decimal)')
   - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonPositive(System.Decimal)')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonzero(System.Decimal)')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonzero(System.Double)')
@@ -5272,6 +5273,27 @@ zero;
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal')
 type. |
 
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal-'></a>
+### IsNonNegative(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is non-positive;
+i.e., zero, or a negative number.
+
+##### Returns
+
+`true` if the specified `value` is
+nonnegative; `false` if the `value` is
+strictly less than [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.Zero 'System.Decimal.Zero').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared.  Must be of
+[Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') type. |
+
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Decimal-'></a>
 ### IsNonPositive(value) `method`
 
@@ -5284,7 +5306,7 @@ i.e., zero, or a negative number.
 
 `true` if the specified `value` is
 nonpositive; `false` if the `value` is
-identically equal to [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.Zero 'System.Decimal.Zero').
+strictly greater than[Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.Zero 'System.Decimal.Zero').
 
 ##### Parameters
 

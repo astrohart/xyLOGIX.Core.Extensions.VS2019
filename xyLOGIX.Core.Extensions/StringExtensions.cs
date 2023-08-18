@@ -889,6 +889,21 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Gets a value that indicates whether the specified <paramref name="value" /> is
+        /// blank, only consists of whitespace, or a <see langword="null" /> reference.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> value that
+        /// should be checked.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// blank, only consists of whitespace, or a <see langword="null" /> reference.
+        /// </returns>
+        public static bool IsBlankOrNull(this string value)
+            => string.IsNullOrWhiteSpace(value);
+
+        /// <summary>
         /// Determines whether the <paramref name="value" /> passed is a
         /// <c>decimal</c> number or not.
         /// </summary>
@@ -977,6 +992,46 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is a
+        /// <see cref="T:System.String" /> that consists solely of lowercase letters.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
+        /// </param>
+        /// <remarks>
+        /// If a blank <see cref="T:System.String" /> or a <see langword="null" />
+        /// reference is passed to this method, then this method returns
+        /// <see langword="false" />.
+        /// <para />
+        /// If an error occurs during the check, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// consists solely of lowercase letters; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsLowercase(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.All(char.IsLower);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the <paramref name="value" /> passed is the string
         /// representation of a 32-bit <c>int</c> or not.
         /// </summary>
@@ -1044,6 +1099,46 @@ namespace xyLOGIX.Core.Extensions
         )
             => !string.IsNullOrWhiteSpace(value) && choices != null &&
                choices.Any(value.EqualsNoCase);
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is a
+        /// <see cref="T:System.String" /> that consists solely of uppercase letters.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
+        /// </param>
+        /// <remarks>
+        /// If a blank <see cref="T:System.String" /> or a <see langword="null" />
+        /// reference is passed to this method, then this method returns
+        /// <see langword="false" />.
+        /// <para />
+        /// If an error occurs during the check, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// consists solely of uppercase letters; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsUppercase(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.All(char.IsUpper);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Validates whether <paramref name="value" /> is a valid email address
@@ -1980,8 +2075,7 @@ namespace xyLOGIX.Core.Extensions
                         parts[j] = ToInitialCaps(parts[j]);
                     array[i] = string.Join("-", parts);
                 }
-                else if (array.Length == 1 || array[i]
-                             .Length == 1)
+                else if (array.Length == 1 || array[i].Length == 1)
                 {
                     // capitalize always
                     array[i] = DoInitialCaps(array[i]);
@@ -2075,11 +2169,10 @@ namespace xyLOGIX.Core.Extensions
             => string.IsNullOrWhiteSpace(value)
                 ? string.Empty
                 : Regex.Replace(
-                    value, @"\\u(?<Value>[a-zA-Z0-9]{4})", m
-                        => ((char)int.Parse(
-                            m.Groups["Value"]
-                             .Value, NumberStyles.HexNumber
-                        )).ToString(CultureInfo.InvariantCulture)
+                    value, @"\\u(?<Value>[a-zA-Z0-9]{4})",
+                    m => ((char)int.Parse(
+                        m.Groups["Value"].Value, NumberStyles.HexNumber
+                    )).ToString(CultureInfo.InvariantCulture)
                 );
 
         /// <summary>
@@ -2149,8 +2242,7 @@ namespace xyLOGIX.Core.Extensions
         {
             // IdnMapping class with default property values.
 
-            var domainName = match.Groups[2]
-                                  .Value;
+            var domainName = match.Groups[2].Value;
             try
             {
                 domainName = new IdnMapping().GetAscii(domainName);
@@ -2160,8 +2252,7 @@ namespace xyLOGIX.Core.Extensions
                 IsEmailAddressInvalid = true;
             }
 
-            return match.Groups[1]
-                        .Value + domainName;
+            return match.Groups[1].Value + domainName;
         }
 
         /// <summary>

@@ -279,6 +279,7 @@
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
+  - [TrimExcess\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-TrimExcess``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.TrimExcess``1(System.Collections.Generic.IList{``0})')
 - [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Double)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Double})')
@@ -5146,6 +5147,28 @@ The `collection`, formatted as a set string.
 
 This method is helpful for writing some of the members of a
 collection to a log file.
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-TrimExcess``1-System-Collections-Generic-IList{``0}-'></a>
+### TrimExcess\`\`1(list) `method`
+
+##### Summary
+
+Provides a [TrimExcess](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.List 'System.Collections.Generic.List{T}.TrimExcess')
+method that can be called on objects implementing
+[IList{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{T}').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) A `List` to be trimmed. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of each element of the specified
+`list`. |
 
 <a name='T-xyLOGIX-Core-Extensions-NumberExtensions'></a>
 ## NumberExtensions `type`

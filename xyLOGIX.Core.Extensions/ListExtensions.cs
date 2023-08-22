@@ -184,44 +184,6 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsOneOf(this int value, IEnumerable<int> valueSet)
             => valueSet.Any(n => n == value);
 
-        /*
-        /// <summary>
-        /// Writes a list variable out as a set {1,2,3,4} e.g., as in
-        /// mathematics. Stops past the tenth item.
-        /// </summary>
-        /// <param name="list">
-        /// List to be written.
-        /// </param>
-        /// <returns>
-        /// The <paramref name="list"/>, formatted as a set string.
-        /// </returns>
-        /// <remarks>
-        /// This method is helpful for writing some of the members of a
-        /// collection to a log file.
-        /// </remarks>
-        public static string ToSetString(this IList list)
-        {
-           if (list == null || list.Count == 0) return "{}";
-
-           var result = "{ ";
-           foreach (var item in list.Cast<object>().Where(item => item != null)
-              .Take(10))
-              if (item is string)
-                 result += $@"'{item}'" + ", ";
-              else
-                 result += item + ", ";
-
-           if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
-              result = result.Remove(result.Length - 2);
-
-           if (list.Count > 10) result += ", ...";
-
-           result += " }";
-
-           return result;
-        }
-        */
-
         /// <summary>
         /// Writes a list variable out as a set {1,2,3,4} e.g., as in
         /// mathematics. Stops past the tenth item.
@@ -262,44 +224,6 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /*
-        /// <summary>
-        /// Writes a list variable out as a set {1,2,3,4} e.g., as in
-        /// mathematics. Stops past the tenth item.
-        /// </summary>
-        /// <param name="collection">
-        /// Collection to be written.
-        /// </param>
-        /// <returns>
-        /// The <paramref name="collection"/>, formatted as a set string.
-        /// </returns>
-        /// <remarks>
-        /// This method is helpful for writing some of the members of a
-        /// collection to a log file.
-        /// </remarks>
-        public static string ToSetString(this ICollection collection)
-        {
-           if (collection == null || collection.Count == 0) return "{}";
-
-           var result = "{ ";
-           foreach (var item in collection.Cast<object>().Where(item => item != null)
-              .Take(10))
-              if (item is string)
-                 result += $@"'{item}'" + ", ";
-              else
-                 result += item + ", ";
-
-           if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
-              result = result.Remove(result.Length - 2);
-
-           if (collection.Count > 10) result += ", ...";
-
-           result += " }";
-
-           return result;
-        }
-        */
-
         /// <summary>
         /// Writes a list variable out as a set {1,2,3,4} e.g., as in
         /// mathematics. Stops past the tenth item.
@@ -339,5 +263,105 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
+
+        /// <summary>
+        /// Provides a <see cref="M:System.Collections.Generic.List{T}.TrimExcess" />
+        /// method that can be called on objects implementing
+        /// <see cref="T:System.Collections.Generic.IList{T}" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Data type of each element of the specified
+        /// <paramref name="list" />.
+        /// </typeparam>
+        /// <param name="list">(Required.) A <c>List</c> to be trimmed.</param>
+        public static void TrimExcess<T>(this IList<T> list)
+        {
+            try
+            {
+                if (list == null) return;
+
+                ((List<T>)list).TrimExcess();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+        }
+
+        /*
+        /// <summary>
+        /// Writes a list variable out as a set {1,2,3,4} e.g., as in
+        /// mathematics. Stops past the tenth item.
+        /// </summary>
+        /// <param name="list">
+        /// List to be written.
+        /// </param>
+        /// <returns>
+        /// The <paramref name="list"/>, formatted as a set string.
+        /// </returns>
+        /// <remarks>
+        /// This method is helpful for writing some of the members of a
+        /// collection to a log file.
+        /// </remarks>
+        public static string ToSetString(this IList list)
+        {
+           if (list == null || list.Count == 0) return "{}";
+
+           var result = "{ ";
+           foreach (var item in list.Cast<object>().Where(item => item != null)
+              .Take(10))
+              if (item is string)
+                 result += $@"'{item}'" + ", ";
+              else
+                 result += item + ", ";
+
+           if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
+              result = result.Remove(result.Length - 2);
+
+           if (list.Count > 10) result += ", ...";
+
+           result += " }";
+
+           return result;
+        }
+        */
+        /*
+        /// <summary>
+        /// Writes a list variable out as a set {1,2,3,4} e.g., as in
+        /// mathematics. Stops past the tenth item.
+        /// </summary>
+        /// <param name="collection">
+        /// Collection to be written.
+        /// </param>
+        /// <returns>
+        /// The <paramref name="collection"/>, formatted as a set string.
+        /// </returns>
+        /// <remarks>
+        /// This method is helpful for writing some of the members of a
+        /// collection to a log file.
+        /// </remarks>
+        public static string ToSetString(this ICollection collection)
+        {
+           if (collection == null || collection.Count == 0) return "{}";
+
+           var result = "{ ";
+           foreach (var item in collection.Cast<object>().Where(item => item != null)
+              .Take(10))
+              if (item is string)
+                 result += $@"'{item}'" + ", ";
+              else
+                 result += item + ", ";
+
+           if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
+              result = result.Remove(result.Length - 2);
+
+           if (collection.Count > 10) result += ", ...";
+
+           result += " }";
+
+           return result;
+        }
+        */
     }
 }

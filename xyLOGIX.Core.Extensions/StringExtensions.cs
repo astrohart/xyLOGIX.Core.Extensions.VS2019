@@ -895,9 +895,9 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is an alphanumeric
-        /// <see cref="T:System.String" /> that consists solely of digits or uppercase
-        /// letters.
+        /// Determines whether the specified <paramref name="value" /> is an
+        /// alphanumeric <see cref="T:System.String" /> that consists solely of digits or
+        /// lowercase letters (excluding whitespace).
         /// </summary>
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
@@ -911,62 +911,9 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="false" />.
         /// </remarks>
         /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" /> consists
-        /// solely of either digits or uppercase letters; <see langword="false" />
-        /// otherwise.
-        /// </returns>
-        public static bool IsAlphaNumericUppercase(this string value)
-        {
-            var result = false;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-                var valueExcludingWhiteSpace = value.ExcludingWhitespace();
-                if (string.IsNullOrWhiteSpace(valueExcludingWhiteSpace))
-                    return result;
-
-                /*
-                 * This method must return TRUE even if the
-                 * string contains whitespace characters, yet it
-                 * still fits the criteria otherwise.
-                 */
-
-                result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit) &&
-                         valueExcludingWhiteSpace.Where(char.IsLetter)
-                                                 .All(char.IsUpper);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = false;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is an alphanumeric
-        /// <see cref="T:System.String" /> that consists solely of digits or uppercase
-        /// letters.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
-        /// </param>
-        /// <remarks>
-        /// If a blank <see cref="T:System.String" /> or a <see langword="null" />
-        /// reference is passed to this method, then this method returns
-        /// <see langword="false" />.
-        /// <para />
-        /// If an error occurs during the check, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" /> consists
-        /// solely of either digits or uppercase letters; <see langword="false" />
-        /// otherwise.
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// consists solely of either digits or lowercase letters (excluding whitespace);
+        /// <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsAlphaNumericLowercase(this string value)
         {
@@ -988,6 +935,59 @@ namespace xyLOGIX.Core.Extensions
                 result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit) &&
                          valueExcludingWhiteSpace.Where(char.IsLetter)
                                                  .All(char.IsLower);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is an alphanumeric
+        /// <see cref="T:System.String" /> that consists solely of digits or uppercase
+        /// letters (excluding whitespace).
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
+        /// </param>
+        /// <remarks>
+        /// If a blank <see cref="T:System.String" /> or a <see langword="null" />
+        /// reference is passed to this method, then this method returns
+        /// <see langword="false" />.
+        /// <para />
+        /// If an error occurs during the check, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// consists solely of either digits or uppercase letters (excluding whitespace);
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsAlphaNumericUppercase(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                var valueExcludingWhiteSpace = value.ExcludingWhitespace();
+                if (string.IsNullOrWhiteSpace(valueExcludingWhiteSpace))
+                    return result;
+
+                /*
+                 * This method must return TRUE even if the
+                 * string contains whitespace characters, yet it
+                 * still fits the criteria otherwise.
+                 */
+
+                result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit) &&
+                         valueExcludingWhiteSpace.Where(char.IsLetter)
+                                                 .All(char.IsUpper);
             }
             catch (Exception ex)
             {
@@ -1105,7 +1105,8 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> is a
-        /// <see cref="T:System.String" /> that consists solely of lowercase letters.
+        /// <see cref="T:System.String" /> that consists solely of lowercase letters
+        /// (excluding whitespace).
         /// </summary>
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
@@ -1119,8 +1120,9 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="false" />.
         /// </remarks>
         /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// consists solely of lowercase letters; <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the specified <paramref name="value" /> consists
+        /// solely of lowercase letters (excluding whitespace); <see langword="false" />
+        /// otherwise.
         /// </returns>
         public static bool IsLowercase(this string value)
         {
@@ -1223,7 +1225,8 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> is a
-        /// <see cref="T:System.String" /> that consists solely of uppercase letters.
+        /// <see cref="T:System.String" /> that consists solely of uppercase letters
+        /// (excluding whitespace).
         /// </summary>
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
@@ -1238,7 +1241,8 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" />
-        /// consists solely of uppercase letters; <see langword="false" /> otherwise.
+        /// consists solely of uppercase letters (excluding whitespace);
+        /// <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsUppercase(this string value)
         {

@@ -889,6 +889,50 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is an alphanumeric
+        /// <see cref="T:System.String" /> that consists solely of digits or uppercase
+        /// letters.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
+        /// </param>
+        /// <remarks>
+        /// If a blank <see cref="T:System.String" /> or a <see langword="null" />
+        /// reference is passed to this method, then this method returns
+        /// <see langword="false" />.
+        /// <para />
+        /// If an error occurs during the check, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> consists
+        /// solely of either digits or uppercase letters; <see langword="false" />
+        /// otherwise.
+        /// </returns>
+        public static bool IsAlphaNumericUppercase(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.All(char.IsLetterOrDigit) && value
+                    .Where(char.IsLetter)
+                    .All(char.IsUpper);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Gets a value that indicates whether the specified <paramref name="value" /> is
         /// blank, only consists of whitespace, or a <see langword="null" /> reference.
         /// </summary>

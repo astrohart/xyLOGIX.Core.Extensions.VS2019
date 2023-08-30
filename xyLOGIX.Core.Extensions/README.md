@@ -313,6 +313,7 @@
   - [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
   - [StateAbbrList](#F-xyLOGIX-Core-Extensions-StringExtensions-StateAbbrList 'xyLOGIX.Core.Extensions.StringExtensions.StateAbbrList')
   - [IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
+  - [WhiteSpaceRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex 'xyLOGIX.Core.Extensions.StringExtensions.WhiteSpaceRegex')
   - [AnyContainNoCase(collection,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AnyContainNoCase(System.Collections.Generic.IEnumerable{System.String},System.String)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsDecimal-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsDecimal(System.String)')
   - [AsDouble(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsDouble-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsDouble(System.String)')
@@ -334,12 +335,15 @@
   - [EnsureAtIsInFront(twitterSite)](#M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EnsureAtIsInFront(System.String)')
   - [EqualsNoCase(str1,str2)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String)')
   - [EqualsNoCase(str1,str2,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String,System.StringComparison)')
+  - [ExcludingWhitespace(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ExcludingWhitespace(System.String)')
   - [GetCompactedString(stringToCompact,font,maxWidth)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetCompactedString(System.String,System.Drawing.Font,System.Int32)')
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
   - [IsAbsolutePath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePath(System.String)')
   - [IsAcronymOrStateAbbr(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAcronymOrStateAbbr-System-Collections-Generic-IList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsAcronymOrStateAbbr(System.Collections.Generic.IList{System.String},System.Int32)')
+  - [IsAlphaNumericLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericLowercase(System.String)')
+  - [IsAlphaNumericUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericUppercase(System.String)')
   - [IsBlankOrNull(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsBlankOrNull-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsBlankOrNull(System.String)')
   - [IsDecimal(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsDecimal-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsDecimal(System.String)')
   - [IsFolderPath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsFolderPath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsFolderPath(System.String)')
@@ -5705,6 +5709,14 @@ Gets or sets a value that indicates whether the string most recently
 checked for whether it contains a valid email address, does in fact
 contain such a valid address.
 
+<a name='P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex'></a>
+### WhiteSpaceRegex `property`
+
+##### Summary
+
+Gets a [Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that matches all
+whitespace characters.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String-'></a>
 ### AnyContainNoCase(collection,value) `method`
 
@@ -6231,6 +6243,30 @@ Whether the two strings are the same, regardless of case.
 | comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values saying how
 the strings are to be compared. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String-'></a>
+### ExcludingWhitespace(value) `method`
+
+##### Summary
+
+Excludes whitespace characters from the specified `value`.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that matches
+`value`, but with all whitespace characters removed.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') from which to
+exclude all whitespace characters. |
+
+##### Remarks
+
+This method is useful for conducting whitespace-insensitive testing of
+strings.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32-'></a>
 ### GetCompactedString(stringToCompact,font,maxWidth) `method`
 
@@ -6388,6 +6424,70 @@ character-casing operation is
 | array | [System.Collections.Generic.IList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{System.String}') |  |
 | i | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String-'></a>
+### IsAlphaNumericLowercase(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is an
+alphanumeric [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of digits or
+lowercase letters (excluding whitespace).
+
+##### Returns
+
+`true` if the specified `value`
+consists solely of either digits or lowercase letters (excluding whitespace);
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
+
+##### Remarks
+
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null`
+reference is passed to this method, then this method returns
+`false`.
+
+
+
+If an error occurs during the check, then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericUppercase-System-String-'></a>
+### IsAlphaNumericUppercase(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is an alphanumeric
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of digits or uppercase
+letters (excluding whitespace).
+
+##### Returns
+
+`true` if the specified `value`
+consists solely of either digits or uppercase letters (excluding whitespace);
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
+
+##### Remarks
+
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null`
+reference is passed to this method, then this method returns
+`false`.
+
+
+
+If an error occurs during the check, then this method returns
+`false`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsBlankOrNull-System-String-'></a>
 ### IsBlankOrNull(value) `method`
 
@@ -6474,12 +6574,14 @@ specified pathname is a folder." So if you pass in the phrase,
 ##### Summary
 
 Determines whether the specified `value` is a
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of lowercase letters.
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of lowercase letters
+(excluding whitespace).
 
 ##### Returns
 
-`true` if the specified `value`
-consists solely of lowercase letters; `false` otherwise.
+`true` if the specified `value` consists
+solely of lowercase letters (excluding whitespace); `false`
+otherwise.
 
 ##### Parameters
 
@@ -6623,12 +6725,14 @@ index outside the bounds of the collection, then this method returns
 ##### Summary
 
 Determines whether the specified `value` is a
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of uppercase letters.
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of uppercase letters
+(excluding whitespace).
 
 ##### Returns
 
 `true` if the specified `value`
-consists solely of uppercase letters; `false` otherwise.
+consists solely of uppercase letters (excluding whitespace);
+`false` otherwise.
 
 ##### Parameters
 

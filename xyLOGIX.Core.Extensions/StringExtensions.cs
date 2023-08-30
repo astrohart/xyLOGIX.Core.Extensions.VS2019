@@ -96,6 +96,12 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsEmailAddressInvalid { get; private set; }
 
         /// <summary>
+        /// Gets a <see cref="T:System.Text.RegularExpressions.Regex" /> that matches all
+        /// whitespace characters.
+        /// </summary>
+        private static Regex WhiteSpaceRegex { get; } = new Regex(@"\s+");
+
+        /// <summary>
         /// Asks if the search text, in <paramref name="value" />, is a substring
         /// of any of the strings in <paramref name="collection" />, ignoring case.
         /// </summary>
@@ -916,10 +922,72 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
+                var valueExcludingWhiteSpace = value.ExcludingWhitespace();
+                if (string.IsNullOrWhiteSpace(valueExcludingWhiteSpace))
+                    return result;
 
-                result = value.All(char.IsLetterOrDigit) && value
-                    .Where(char.IsLetter)
-                    .All(char.IsUpper);
+                /*
+                 * This method must return TRUE even if the
+                 * string contains whitespace characters, yet it
+                 * still fits the criteria otherwise.
+                 */
+
+                result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit) &&
+                         valueExcludingWhiteSpace.Where(char.IsLetter)
+                                                 .All(char.IsUpper);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is an alphanumeric
+        /// <see cref="T:System.String" /> that consists solely of digits or uppercase
+        /// letters.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be checked.
+        /// </param>
+        /// <remarks>
+        /// If a blank <see cref="T:System.String" /> or a <see langword="null" />
+        /// reference is passed to this method, then this method returns
+        /// <see langword="false" />.
+        /// <para />
+        /// If an error occurs during the check, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> consists
+        /// solely of either digits or uppercase letters; <see langword="false" />
+        /// otherwise.
+        /// </returns>
+        public static bool IsAlphaNumericLowercase(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                var valueExcludingWhiteSpace = value.ExcludingWhitespace();
+                if (string.IsNullOrWhiteSpace(valueExcludingWhiteSpace))
+                    return result;
+
+                /*
+                 * This method must return TRUE even if the
+                 * string contains whitespace characters, yet it
+                 * still fits the criteria otherwise.
+                 */
+
+                result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit) &&
+                         valueExcludingWhiteSpace.Where(char.IsLetter)
+                                                 .All(char.IsLower);
             }
             catch (Exception ex)
             {
@@ -1061,6 +1129,15 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
+                var valueExcludingWhiteSpace = value.ExcludingWhitespace();
+                if (string.IsNullOrWhiteSpace(valueExcludingWhiteSpace))
+                    return result;
+
+                /*
+                 * This method must return TRUE even if the
+                 * string contains whitespace characters, yet it
+                 * still fits the criteria otherwise.
+                 */
 
                 result = value.All(char.IsLower);
             }
@@ -1170,8 +1247,17 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
+                var valueExcludingWhiteSpace = value.ExcludingWhitespace();
+                if (string.IsNullOrWhiteSpace(valueExcludingWhiteSpace))
+                    return result;
 
-                result = value.All(char.IsUpper);
+                /*
+                 * This method must return TRUE even if the
+                 * string contains whitespace characters, yet it
+                 * still fits the criteria otherwise.
+                 */
+
+                result = valueExcludingWhiteSpace.All(char.IsUpper);
             }
             catch (Exception ex)
             {
@@ -2298,6 +2384,24 @@ namespace xyLOGIX.Core.Extensions
 
             return match.Groups[1].Value + domainName;
         }
+
+        /// <summary>
+        /// Excludes whitespace characters from the specified <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> from which to
+        /// exclude all whitespace characters.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> that matches
+        /// <paramref name="value" />, but with all whitespace characters removed.
+        /// </returns>
+        /// <remarks>
+        /// This method is useful for conducting whitespace-insensitive testing of
+        /// strings.
+        /// </remarks>
+        private static string ExcludingWhitespace(this string value)
+            => WhiteSpaceRegex.Replace(value, "");
 
         /// <summary>
         /// Determines whether the current word in the text being parsed for a

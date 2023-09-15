@@ -1,22 +1,23 @@
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Exposes static extension methods for the <see cref="T:System.Guid" /> class.
+    /// Exposes static extension methods for the <see cref="T:System.Guid" />
+    /// class.
     /// </summary>
     [Log(AttributeExclude = true)]
     public static class GuidExtensions
     {
         /// <summary>
-        /// Determines whether the specified <see cref="T:System.Guid" /> value is the Zero
-        /// GUID or not.
+        /// Determines whether the specified <see cref="T:System.Guid" /> value
+        /// is the Zero GUID or not.
         /// </summary>
         /// <param name="value">
-        /// (Required.) The <see cref="T:System.Guid" /> that should be
-        /// checked whether it's the Zero GUID.
+        /// (Required.) The <see cref="T:System.Guid" /> that should
+        /// be checked whether it's the Zero GUID.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
@@ -52,8 +53,8 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns></returns>
         /// <remarks>
-        /// If this method is passed the <see cref="F:System.Guid.Empty" /> value, then
-        /// this method returns the <see cref="F:System.String.Empty" /> value.
+        /// If this method is passed the <see cref="F:System.Guid.Empty" />
+        /// value, then this method returns the <see cref="F:System.String.Empty" /> value.
         /// </remarks>
         public static string ToUppercaseWithBraces(this Guid guid)
         {

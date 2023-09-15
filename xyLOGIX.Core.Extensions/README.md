@@ -395,7 +395,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Extension methods for a [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox').
+Extension methods for a
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox').
 
 <a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox-'></a>
 ### AreAllItemsSelected(checkedListBox) `method`
@@ -403,29 +404,28 @@ Extension methods for a [CheckedListBox](http://msdn.microsoft.com/query/dev14.q
 ##### Summary
 
 Gets a value indicating whether all the items in the
-`checkedListBox`
-box are selected.
+`checkedListBox` box are selected.
 
 ##### Returns
 
-`true` if all the items in the checked list box are selected;
-`false` otherwise, or if the list box contains zero items.
+`true` if all the items in the checked list box are
+selected; `false` otherwise, or if the list box contains zero
+items.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
-[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
-the items of which
-are to be checked. |
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') the items of which are to
+be checked. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [ArgumentNullException](#T-ArgumentNullException 'ArgumentNullException') | Thrown if the required parameter, `checkedListBox`,
-is passed a `null` value. |
+| [ArgumentNullException](#T-ArgumentNullException 'ArgumentNullException') | Thrown if the required parameter,
+`checkedListBox`, is passed a `null` value. |
 
 <a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean-'></a>
 ### CheckAll(checkedListBox,isChecked) `method`
@@ -439,16 +439,16 @@ Toggles the Checked state of all the items in the specified
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) A [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') to
-act upon. |
-| isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of all the list items
-or not. Default value is `true`. |
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) A
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') to act upon. |
+| isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of all
+the list items or not. Default value is `true`. |
 
 ##### Remarks
 
-If the `checkedListBox` parameter is `null`,
-or if the checked list box contains zero items, then this method
-does nothing.
+If the `checkedListBox` parameter is
+`null`, or if the checked list box contains zero items, then
+this method does nothing.
 
 <a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckByName-System-Windows-Forms-CheckedListBox,System-String,System-Boolean-'></a>
 ### CheckByName(checkedListBox,itemName,isChecked) `method`
@@ -462,14 +462,14 @@ to the value in the `itemName` parameter.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) A [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') to
-act upon. |
-| itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the name of the item whose Checked
-state is to be altered. |
-| isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of the list item whose
-name matches that of the string specified by the
-`itemName`
-parameter. Default value is `true`. |
+| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) A
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') to act upon. |
+| itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the name of the item
+whose Checked state is to be altered. |
+| isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of the
+list item whose name matches that of the string specified by the
+`itemName` parameter. Default value is
+`true`. |
 
 <a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String-'></a>
 ### GetCheckedByName(checkedListBox,itemName) `method`
@@ -477,40 +477,38 @@ parameter. Default value is `true`. |
 ##### Summary
 
 Gets the Checked state ( `true` for checked,
-`false` for
-unchecked) of the `checkedListBox` item with the
-specified `itemName`.
+`false` for unchecked) of the
+`checkedListBox` item with the specified
+`itemName`.
 
 ##### Returns
 
 `false` if the item having a caption of
-`itemName`
-does not exist or the
-`checkedListBox`
-has zero items, or the checked state --
+`itemName` does not exist or the
+`checkedListBox` has zero items, or the checked state --
 `true` for checked, `false` for unchecked --
-of the item
-whose caption matches the `itemName` parameter's value.
+of the item whose caption matches the `itemName` parameter's
+value.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
-[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
-containing the items
-to be checked. |
-| itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the caption of the item whose Checked
-state should be ascertained. |
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') containing the items to be
+checked. |
+| itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the caption of the item
+whose Checked state should be ascertained. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [ArgumentNullException](#T-ArgumentNullException 'ArgumentNullException') | Thrown if the required parameter, `checkedListBox`,
-is passed a `null` value. |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter, `itemName`, is
-passed a blank or `null` string for a value. |
+| [ArgumentNullException](#T-ArgumentNullException 'ArgumentNullException') | Thrown if the required parameter,
+`checkedListBox`, is passed a `null` value. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter,
+`itemName`, is passed a blank or `null`
+string for a value. |
 
 <a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-NoItemsAreSelected-System-Windows-Forms-CheckedListBox-'></a>
 ### NoItemsAreSelected(checkedListBox) `method`
@@ -518,22 +516,20 @@ passed a blank or `null` string for a value. |
 ##### Summary
 
 Determines whether none of the checkboxes in a
-[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
-are selected.
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') are selected.
 
 ##### Returns
 
-`true` if none of the items in the list are checked or if
-there are zero entries in the list; `false` otherwise.
+`true` if none of the items in the list are checked
+or if there are zero entries in the list; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) Reference to the
-[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox')
-the items of which
-are to be checked. |
+[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') the items of which are to
+be checked. |
 
 <a name='T-xyLOGIX-Core-Extensions-CollectionExtensions'></a>
 ## CollectionExtensions `type`
@@ -551,8 +547,9 @@ Exposes static extension methods for collection types.
 
 ##### Summary
 
-Adds multiple items to a collection without the need to call `AddRange`
-and allocate up a whole new collection object instance just to be used once.
+Adds multiple items to a collection without the need to call
+`AddRange` and allocate up a whole new collection object instance just to
+be used once.
 
 
 
@@ -562,8 +559,8 @@ It seemed like the `AddRange` way was a waste of system resources.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that implements the
-[ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object
+that implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
 | items | [\`\`0[]](#T-``0[] '``0[]') | (Required.) One or more instances of
 `T` that are to be added to the collection. |
 
@@ -600,20 +597,21 @@ again.
 
 ##### Summary
 
-Determines whether the specified `collection` contains zero
-elements.
+Determines whether the specified `collection`
+contains zero elements.
 
 ##### Returns
 
-`true` if the specified `collection`
-contains zero elements; `false` otherwise.
+`true` if the specified
+`collection` contains zero elements; `false`
+otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that implements the
-[ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object
+that implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
 
 ##### Generic Types
 
@@ -623,8 +621,8 @@ contains zero elements; `false` otherwise.
 
 ##### Remarks
 
-If this method is passed a `null` reference, then the method
-also returns `false`.
+If this method is passed a `null` reference, then
+the method also returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-IsNullOrEmpty``1-System-Collections-Generic-ICollection{``0}-'></a>
 ### IsNullOrEmpty\`\`1(collection) `method`
@@ -645,8 +643,8 @@ contains zero elements; `false` otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that implements the
-[ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object
+that implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
 
 ##### Generic Types
 
@@ -659,8 +657,8 @@ contains zero elements; `false` otherwise.
 
 ##### Summary
 
-Determines if the specified `object` is of one of the types in the
-specified tuple of types.
+Determines if the specified `object` is of one of the types in
+the specified tuple of types.
 
 ##### Returns
 
@@ -671,8 +669,8 @@ types specified; otherwise, `false` is returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| obj | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') instance whose type is to be
-checked. |
+| obj | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') instance whose type is to
+be checked. |
 
 ##### Generic Types
 
@@ -683,8 +681,8 @@ be. |
 
 ##### Remarks
 
-If a `null` reference is passed to this method, then this
-method returns `false`.
+If a `null` reference is passed to this method, then
+this method returns `false`.
 
 
 
@@ -708,8 +706,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-The `ControlExtensions` class provides helper methods for extending
-the functionality of .NET framework controls.
+The `ControlExtensions` class provides helper methods for
+extending the functionality of .NET framework controls.
 
 <a name='P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider'></a>
 ### ControlFormAssociationProvider `property`
@@ -725,8 +723,8 @@ interface.
 
 ##### Summary
 
-Associates the specified `control` with its containing (i.e.,
-parent) [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
+Associates the specified `control` with its
+containing (i.e., parent) [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
 
 ##### Parameters
 
@@ -747,8 +745,8 @@ nothing.
 
 ##### Summary
 
-Gets a reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that
-contains this control.
+Gets a reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+that contains this control.
 
 ##### Returns
 
@@ -763,8 +761,8 @@ This method has no parameters.
 
 This method provides the return value of the
 [FindForm](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.FindForm 'System.Windows.Forms.Control.FindForm') method if the value of
-the [_parentForm](#F-xyLOGIX-UI-Dark-Controls-DarkCheckBox2-_parentForm 'xyLOGIX.UI.Dark.Controls.DarkCheckBox2._parentForm')
-field is uninitialized.
+the [_parentForm](#F-xyLOGIX-UI-Dark-Controls-DarkCheckBox2-_parentForm 'xyLOGIX.UI.Dark.Controls.DarkCheckBox2._parentForm') field
+is uninitialized.
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker-'></a>
 ### InvokeIfRequired(obj,message) `method`
@@ -778,21 +776,19 @@ GUI-thread control.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | (Required.) Reference to an instance of an object that implements
-the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
+| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | (Required.) Reference to an instance of an object that
+implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke')
+interface. |
 | message | [System.Windows.Forms.MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') | (Required.) Reference to a
-[MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker')
-delegate that defines
-the code to be run. |
+[MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines the
+code to be run. |
 
 ##### Remarks
 
 This method should always be called for a child control of a frame
-window; never the window itself (even though, technically, it also
-derives from [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and
-implements the
-[ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke')
-interface).
+window; never the window itself (even though, technically, it also derives from
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and implements the
+[ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface).
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired``1-System-ComponentModel-ISynchronizeInvoke,System-Func{``0}-'></a>
 ### InvokeIfRequired\`\`1(obj,message) `method`
@@ -811,12 +807,12 @@ Reference to an instance of the return type of the specified
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | (Required.) Reference to an instance of an object that implements
-the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface. |
+| obj | [System.ComponentModel.ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') | (Required.) Reference to an instance of an object that
+implements the [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke')
+interface. |
 | message | [System.Func{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0}') | (Required.) Reference to a
-[MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker')
-delegate that defines
-the code to be run. |
+[MethodInvoker](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MethodInvoker 'System.Windows.Forms.MethodInvoker') delegate that defines the
+code to be run. |
 
 ##### Generic Types
 
@@ -828,11 +824,9 @@ the code to be run. |
 ##### Remarks
 
 This method should always be called for a child control of a frame
-window; never the window itself (even though, technically, it also
-derives from [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and
-implements the
-[ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke')
-interface).
+window; never the window itself (even though, technically, it also derives from
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and implements the
+[ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface).
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control-'></a>
 ### IsParentFormNullOrDisposed() `method`
@@ -871,9 +865,9 @@ Provides methods for extending any dictionary.
 
 ##### Summary
 
-Adds the specified `key` and `value` to the
-specified `dictionary`, but only if the specified
-`key` is not already in the dictionary.
+Adds the specified `key` and
+`value` to the specified `dictionary`, but
+only if the specified `key` is not already in the dictionary.
 
 
 
@@ -906,8 +900,8 @@ key's data type, then this method will do nothing. |
 
 ##### Summary
 
-Adds all the elements of the `source` dictionary to the
-`target` dictionary.
+Adds all the elements of the `source` dictionary to
+the `target` dictionary.
 
 
 
@@ -917,8 +911,10 @@ Dupes are ignored.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| target | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) The dictionary that is to be the target of the merge. |
-| source | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) A dictionary that has the items to be merged in.
+| target | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) The dictionary that is to be the target of
+the merge. |
+| source | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) A dictionary that has the items to be merged
+in.
 
 
 
@@ -934,8 +930,8 @@ key's data type, then this method will do nothing. |
 
 ##### Remarks
 
-If a key in the `source` dictionary matches a key in
-the `target` dictionary, then the corresponding value is
+If a key in the `source` dictionary matches a key
+in the `target` dictionary, then the corresponding value is
 overwritten.
 
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}-'></a>
@@ -943,9 +939,10 @@ overwritten.
 
 ##### Summary
 
-Crates a [ConcurrentDictionary\`2](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Concurrent.ConcurrentDictionary`2 'System.Collections.Concurrent.ConcurrentDictionary`2')
-from an [IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1') according to
-the specified `keySelector` and
+Crates a
+[ConcurrentDictionary\`2](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Concurrent.ConcurrentDictionary`2 'System.Collections.Concurrent.ConcurrentDictionary`2') from an
+[IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1') according to the
+specified `keySelector` and
 `elementSelector` functions.
 
 ##### Returns
@@ -980,10 +977,10 @@ result element value from each element of `source`. |
 
 ##### Remarks
 
-If any of the inputs are invalid values, i.e., `null`
-reference and the like, or if an issue occurs during the generation of the
-requested `Dictionary` object, then the method returns the empty
-collection.
+If any of the inputs are invalid values, i.e.,
+`null` reference and the like, or if an issue occurs during
+the generation of the requested `Dictionary` object, then the method
+returns the empty collection.
 
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}-'></a>
 ### ToObject\`\`1(source) `method`
@@ -992,8 +989,8 @@ collection.
 
 Transforms an instance of an object of type
 [String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
-into an object by mapping the dictionary elements onto the object's
-properties that have the same name.
+into an object by mapping the dictionary elements onto the object's properties
+that have the same name.
 
 ##### Returns
 
@@ -1012,7 +1009,8 @@ filled in with the values from the `source`.
 
 | Name | Description |
 | ---- | ----------- |
-| T | Type parameter identifying the object to receive the dictionary's information. |
+| T | Type parameter identifying the object to receive the
+dictionary's information. |
 
 ##### Remarks
 
@@ -1035,8 +1033,8 @@ Helper methods for collections.
 
 ##### Summary
 
-Runs the specified `action` for each element of the specified
-`collection`.
+Runs the specified `action` for each element of the
+specified `collection`.
 
 ##### Parameters
 
@@ -1067,8 +1065,8 @@ nothing.
 
 ##### Summary
 
-Runs the specified `action` for each element of the specified
-`collection`.
+Runs the specified `action` for each element of the
+specified `collection`.
 
 ##### Parameters
 
@@ -1100,10 +1098,8 @@ nothing.
 ##### Summary
 
 Compares the `source` object with the
-`testObjects`
-provided, to see if any of the
-`testObjects`
-is a match.
+`testObjects` provided, to see if any of the
+`testObjects` is a match.
 
 ##### Returns
 
@@ -1115,9 +1111,8 @@ false otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [\`\`0](#T-``0 '``0') | Source object to check. |
-| testObjects | [\`\`0[]](#T-``0[] '``0[]') | Object or objects that should be compared to source with the
-[Equals](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object.Equals 'System.Object.Equals')
-method. |
+| testObjects | [\`\`0[]](#T-``0[] '``0[]') | Object or objects that should be compared to source
+with the [Equals](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object.Equals 'System.Object.Equals') method. |
 
 ##### Generic Types
 
@@ -1131,12 +1126,11 @@ method. |
 ##### Summary
 
 Shuffles the elements of the sequence into a random order, and then
-returns the resulting sequence. From the Fisher-Yates-Durstenfeld
-shuffle. Uses the random-number generator passed in the
-`rng`
-parameter. Behaves like the
-[Shuffle](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle')
-method, although this method can be utilized as an iterator.
+returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle. Uses
+the random-number generator passed in the `rng` parameter.
+Behaves like the
+[Shuffle](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle') method,
+although this method can be utilized as an iterator.
 
 ##### Returns
 
@@ -1148,8 +1142,8 @@ to the Fisher-Yates-Durstenfeld shuffle.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Sequence to be shuffled. |
-| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to generate new
-random values for the shuffle operation. |
+| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to
+generate new random values for the shuffle operation. |
 
 ##### Generic Types
 
@@ -1196,10 +1190,8 @@ see, e.g.,
 ##### Summary
 
 Shuffles the elements of the sequence into a random order, and then
-returns the resulting sequence. From the Fisher-Yates-Durstenfeld
-shuffle. Uses the random-number generator passed in the
-`rng`
-parameter.
+returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle. Uses
+the random-number generator passed in the `rng` parameter.
 
 ##### Returns
 
@@ -1211,8 +1203,8 @@ to the Fisher-Yates-Durstenfeld shuffle.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Sequence to be shuffled. |
-| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to generate new
-random values for the shuffle operation. |
+| rng | [System.Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') | A [Random](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Random 'System.Random') instance with which to
+generate new random values for the shuffle operation. |
 
 ##### Generic Types
 
@@ -1234,8 +1226,8 @@ object, except for the last.
 
 ##### Returns
 
-Enumerable iterator over the collection that yields every item in
-the collection, except for the last.
+Enumerable iterator over the collection that yields every item in the
+collection, except for the last.
 
 ##### Parameters
 
@@ -1287,12 +1279,11 @@ Centers the specified `form` to the specific
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-that specifies the form to be centered. |
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that specifies the form to be
+centered. |
 | screen | [System.Windows.Forms.Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') | Reference to an instance of
-[Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen')
-that specifies the screen
-that the form is to be centered on. |
+[Screen](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Screen 'System.Windows.Forms.Screen') that specifies the screen that the
+form is to be centered on. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action-'></a>
 ### DoIfDisposed(form,message) `method`
@@ -1306,10 +1297,10 @@ case nothing is done.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to perform the
-`message`. |
-| message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
-form is disposed. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to
+perform the `message`. |
+| message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be
+run if the form is disposed. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action-'></a>
 ### DoIfNotDisposed(form,message) `method`
@@ -1323,10 +1314,10 @@ nothing is done.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to perform the
-`message`. |
-| message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be run if the
-form is not disposed. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to
+perform the `message`. |
+| message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be
+run if the form is not disposed. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
 ### ShowDialogAsync(form,owner) `method`
@@ -1345,13 +1336,12 @@ that contains the result of the dialog's closure.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-that represents the form to be shown. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class
+of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form to be
+shown. |
 | owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Reference to an instance of an object that implements the
-[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window')
-that represents the
-form's owner window. |
+[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') that represents the form's
+owner window. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm-'></a>
 ### ShowDialogAsync(form) `method`
@@ -1370,9 +1360,9 @@ that contains the result of the dialog's closure.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class of
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-that represents the form to be shown. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to an instance of an object that is a child class
+of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the form to be
+shown. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm-'></a>
 ### ShowOnPrimaryMonitor(form) `method`
@@ -1386,9 +1376,9 @@ monitor (whatever monitor they have designated as Monitor #1)
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') to be
-moved to the user's primary monitor. The form is also centered on
-the screen. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+to be moved to the user's primary monitor. The form is also centered on the
+screen. |
 
 <a name='T-xyLOGIX-Core-Extensions-GuidExtensions'></a>
 ## GuidExtensions `type`
@@ -1399,15 +1389,16 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Exposes static extension methods for the [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') class.
+Exposes static extension methods for the [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid')
+class.
 
 <a name='M-xyLOGIX-Core-Extensions-GuidExtensions-IsZero-System-Guid-'></a>
 ### IsZero(value) `method`
 
 ##### Summary
 
-Determines whether the specified [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') value is the Zero
-GUID or not.
+Determines whether the specified [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') value
+is the Zero GUID or not.
 
 ##### Returns
 
@@ -1418,8 +1409,8 @@ equal to the Zero GUID; `false` otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | (Required.) The [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') that should be
-checked whether it's the Zero GUID. |
+| value | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | (Required.) The [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') that should
+be checked whether it's the Zero GUID. |
 
 <a name='M-xyLOGIX-Core-Extensions-GuidExtensions-ToUppercaseWithBraces-System-Guid-'></a>
 ### ToUppercaseWithBraces(guid) `method`
@@ -1443,8 +1434,8 @@ be represented as a [String](http://msdn.microsoft.com/query/dev14.query?appId=D
 
 ##### Remarks
 
-If this method is passed the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid.Empty 'System.Guid.Empty') value, then
-this method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+If this method is passed the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid.Empty 'System.Guid.Empty')
+value, then this method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='T-xyLOGIX-Core-Extensions-IComboBox'></a>
 ## IComboBox `type`
@@ -1455,8 +1446,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Defines the publicly-exposed methods and properties of a WinForms combo
-box control.
+Defines the publicly-exposed methods and properties of a WinForms
+combo box control.
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteCustomSource'></a>
 ### AutoCompleteCustomSource `property`
@@ -1464,11 +1455,8 @@ box control.
 ##### Summary
 
 Gets or sets a custom
-[StringCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Specialized.StringCollection 'System.Collections.Specialized.StringCollection')
-to use
-when the
-[AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.AutoCompleteSource 'System.Windows.Forms.ComboBox.AutoCompleteSource')
-property
+[StringCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Specialized.StringCollection 'System.Collections.Specialized.StringCollection') to use when
+the [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.AutoCompleteSource 'System.Windows.Forms.ComboBox.AutoCompleteSource') property
 is set to `CustomSource`.
 
 ##### Returns
@@ -1487,22 +1475,19 @@ for the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&
 ##### Returns
 
 One of the values of
-[AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode')
-. The values are
+[AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode') . The values are
 [Append](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Append 'System.Windows.Forms.AutoCompleteMode.Append'),
-[None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.None 'System.Windows.Forms.AutoCompleteMode.None')
-,
-[Suggest](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Suggest 'System.Windows.Forms.AutoCompleteMode.Suggest')
-, and
-[SuggestAppend](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.SuggestAppend 'System.Windows.Forms.AutoCompleteMode.SuggestAppend')
-. The
+[None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.None 'System.Windows.Forms.AutoCompleteMode.None') ,
+[Suggest](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.Suggest 'System.Windows.Forms.AutoCompleteMode.Suggest') , and
+[SuggestAppend](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.SuggestAppend 'System.Windows.Forms.AutoCompleteMode.SuggestAppend') . The
 default is [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode.None 'System.Windows.Forms.AutoCompleteMode.None').
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+specified value is not one of the values of
 [AutoCompleteMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteMode 'System.Windows.Forms.AutoCompleteMode'). |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteSource'></a>
@@ -1516,20 +1501,18 @@ for automatic completion.
 ##### Returns
 
 One of the values of
-[AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource')
-. The options are
+[AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource') . The options are
 `AllSystemSources`, `AllUrl`,
-`FileSystem`
-, `HistoryList`,
-`RecentlyUsedList`
-, `CustomSource`, and
+`FileSystem` , `HistoryList`,
+`RecentlyUsedList` , `CustomSource`, and
 `None`. The default is `None`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+specified value is not one of the values of
 [AutoCompleteSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoCompleteSource 'System.Windows.Forms.AutoCompleteSource'). |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DataSource'></a>
@@ -1543,10 +1526,8 @@ Gets or sets the data source for this
 ##### Returns
 
 An object that implements the
-[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList')
-interface or an
-[Array](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Array 'System.Array')
-. The default is `null`.
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') interface or an
+[Array](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Array 'System.Array') . The default is `null`.
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DrawMode'></a>
 ### DrawMode `property`
@@ -1565,9 +1546,9 @@ values. The default is [Normal](http://msdn.microsoft.com/query/dev14.query?appI
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value is not a valid
-[DrawMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DrawMode 'System.Windows.Forms.DrawMode')
-enumeration value. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value is not a valid [DrawMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DrawMode 'System.Windows.Forms.DrawMode') enumeration
+value. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownHeight'></a>
 ### DropDownHeight `property`
@@ -1585,7 +1566,8 @@ The height, in pixels, of the drop-down box.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The specified value is less than one. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The specified value is less than
+one. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownStyle'></a>
 ### DropDownStyle `property`
@@ -1603,16 +1585,17 @@ values. The default is `DropDown`.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the
-[ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle')
-values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+assigned value is not one of the
+[ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle') values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownWidth'></a>
 ### DropDownWidth `property`
 
 ##### Summary
 
-Gets or sets the width of the of the drop-down portion of a combo box.
+Gets or sets the width of the of the drop-down portion of a combo
+box.
 
 ##### Returns
 
@@ -1622,7 +1605,8 @@ The width, in pixels, of the drop-down box.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The specified value is less than one. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The specified value is less than
+one. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DroppedDown'></a>
 ### DroppedDown `property`
@@ -1648,17 +1632,16 @@ Gets or sets the appearance of the
 ##### Returns
 
 One of the enumeration values that specifies the appearance of the
-control. The options are `Flat`,
-`Popup`
-, `Standard`, and
-`System`
-. The default is `Standard`.
+control. The options are `Flat`, `Popup` ,
+`Standard`, and `System` . The default is
+`Standard`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified value is not one of the values of
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+specified value is not one of the values of
 [FlatStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FlatStyle 'System.Windows.Forms.FlatStyle'). |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-IntegralHeight'></a>
@@ -1690,7 +1673,8 @@ The height, in pixels, of an item in the combo box.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The item height value is less than zero. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The item height value is less
+than zero. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-Items'></a>
 ### Items `property`
@@ -1710,8 +1694,8 @@ representing the items in the [ComboBox](http://msdn.microsoft.com/query/dev14.q
 
 ##### Summary
 
-Gets or sets the maximum number of items to be shown in the
-drop-down portion of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Gets or sets the maximum number of items to be shown in the drop-down
+portion of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Returns
 
@@ -1722,7 +1706,8 @@ for this property is 1 and the maximum is 100.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The maximum number is set less than one or greater than 100. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The maximum number is set less
+than one or greater than 100. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-MaxLength'></a>
 ### MaxLength `property`
@@ -1743,8 +1728,7 @@ than zero are reset to zero, which is the default value.
 ##### Summary
 
 Gets the preferred height of the
-[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
-.
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') .
 
 ##### Returns
 
@@ -1766,9 +1750,9 @@ negative one (-1) is returned if no item is selected.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The specified index is less than or equal to -2.
--or- The specified index is greater than or equal to the number of
-items in the combo box. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The specified index is
+less than or equal to -2. -or- The specified index is greater than or equal to
+the number of items in the combo box. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectedItem'></a>
 ### SelectedItem `property`
@@ -1781,8 +1765,7 @@ Gets or sets currently selected item in the
 ##### Returns
 
 The object that is the currently selected item or
-`null`
-if there is no currently selected item.
+`null` if there is no currently selected item.
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectedText'></a>
 ### SelectedText `property`
@@ -1795,11 +1778,9 @@ Gets or sets the text that is selected in the editable portion of a
 ##### Returns
 
 A string that represents the currently selected text in the combo
-box. If [DropDownStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.DropDownStyle 'System.Windows.Forms.ComboBox.DropDownStyle')
-is set to
-[DropDownList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle.DropDownList 'System.Windows.Forms.ComboBoxStyle.DropDownList')
-, the
-return value is an empty string ("").
+box. If [DropDownStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.DropDownStyle 'System.Windows.Forms.ComboBox.DropDownStyle') is set to
+[DropDownList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle.DropDownList 'System.Windows.Forms.ComboBoxStyle.DropDownList') , the return
+value is an empty string ("").
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-SelectionLength'></a>
 ### SelectionLength `property`
@@ -1848,16 +1829,15 @@ are sorted.
 ##### Returns
 
 `true` if the combo box is sorted; otherwise,
-`false`
-. The default is `false`.
+`false` . The default is `false`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
 | [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | An attempt was made to sort a
-[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
-that is attached to a data source. |
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that is attached to a data
+source. |
 
 <a name='M-xyLOGIX-Core-Extensions-IComboBox-BeginUpdate'></a>
 ### BeginUpdate() `method`
@@ -1865,8 +1845,7 @@ that is attached to a data source. |
 ##### Summary
 
 Maintains performance when items are added to the
-[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
-one at a time.
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') one at a time.
 
 ##### Parameters
 
@@ -1879,8 +1858,7 @@ This method has no parameters.
 
 Resumes painting the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
 control after painting is suspended by the
-[BeginUpdate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.BeginUpdate 'System.Windows.Forms.ComboBox.BeginUpdate')
-method.
+[BeginUpdate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.BeginUpdate 'System.Windows.Forms.ComboBox.BeginUpdate') method.
 
 ##### Parameters
 
@@ -1892,9 +1870,8 @@ This method has no parameters.
 ##### Summary
 
 Returns the index of the first item in the
-[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
-that starts with the
-specified string.
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that starts with the specified
+string.
 
 ##### Returns
 
@@ -1913,9 +1890,8 @@ is found.
 ##### Summary
 
 Returns the index of the first item in the
-[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
-beyond the specified index
-that contains the specified string. The search is not case sensitive.
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') beyond the specified index that
+contains the specified string. The search is not case sensitive.
 
 ##### Returns
 
@@ -1928,23 +1904,25 @@ is found, or 0 if the `s` parameter specifies
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | s | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to search for. |
-| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first item to be
-searched. Set to -1 to search from the beginning of the control. |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first
+item to be searched. Set to -1 to search from the beginning of the control. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The `startIndex` is less than -1.
--or- The `startIndex` is greater than the last
-index in the collection. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The
+`startIndex` is less than -1. -or- The
+`startIndex` is greater than the last index in the
+collection. |
 
 <a name='M-xyLOGIX-Core-Extensions-IComboBox-FindStringExact-System-String-'></a>
 ### FindStringExact(s) `method`
 
 ##### Summary
 
-Finds the first item in the combo box that matches the specified string.
+Finds the first item in the combo box that matches the specified
+string.
 
 ##### Returns
 
@@ -1977,16 +1955,16 @@ is found, or 0 if the `s` parameter specifies
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | s | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to search for. |
-| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first item to be
-searched. Set to -1 to search from the beginning of the control. |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first
+item to be searched. Set to -1 to search from the beginning of the control. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The `startIndex` is less than -1.
--or- The `startIndex` is equal to the last index in
-the collection. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The
+`startIndex` is less than -1. -or- The
+`startIndex` is equal to the last index in the collection. |
 
 <a name='M-xyLOGIX-Core-Extensions-IComboBox-GetItemHeight-System-Int32-'></a>
 ### GetItemHeight(index) `method`
@@ -2010,9 +1988,9 @@ The height, in pixels, of the item at the specified index.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The `index` is less than zero.
--or- The `index` is greater than count of items in
-the list. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The
+`index` is less than zero. -or- The `index`
+is greater than count of items in the list. |
 
 <a name='M-xyLOGIX-Core-Extensions-IComboBox-Select-System-Int32,System-Int32-'></a>
 ### Select(start,length) `method`
@@ -2026,17 +2004,17 @@ Selects a range of text in the editable portion of the
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| start | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The position of the first character in the current text selection
-within the text box. |
+| start | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The position of the first character in the current text
+selection within the text box. |
 | length | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The number of characters to select. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The `start` is less than zero.
--or- `start` plus `length` is less
-than zero. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The `start` is
+less than zero. -or- `start` plus `length`
+is less than zero. |
 
 <a name='M-xyLOGIX-Core-Extensions-IComboBox-SelectAll'></a>
 ### SelectAll() `method`
@@ -2056,16 +2034,13 @@ This method has no parameters.
 ##### Summary
 
 Returns a string that represents the
-[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
-control.
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') control.
 
 ##### Returns
 
 A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that represents the current
-[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
-. The string includes the
-type and the number of items in the
-[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') . The string includes the type
+and the number of items in the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox')
 control.
 
 ##### Parameters
@@ -2102,8 +2077,8 @@ to the control.
 
 ##### Summary
 
-Gets or sets the default action description of the control for use
-by accessibility client applications.
+Gets or sets the default action description of the control for use by
+accessibility client applications.
 
 ##### Returns
 
@@ -2128,7 +2103,8 @@ applications. The default is `null`.
 
 ##### Summary
 
-Gets or sets the name of the control used by accessibility client applications.
+Gets or sets the name of the control used by accessibility client
+applications.
 
 ##### Returns
 
@@ -2145,16 +2121,16 @@ Gets or sets the accessible role of the control
 ##### Returns
 
 One of the values of
-[AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole')
-. The default is `Default`.
+[AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole') . The default is
+`Default`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value assigned is not one of the
-[AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole')
-values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value assigned is not one of the
+[AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole') values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AllowDrop'></a>
 ### AllowDrop `property`
@@ -2181,8 +2157,7 @@ and determines how a control is resized with its parent.
 ##### Returns
 
 A bitwise combination of the
-[AnchorStyles](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AnchorStyles 'System.Windows.Forms.AnchorStyles')
-values. The default is
+[AnchorStyles](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AnchorStyles 'System.Windows.Forms.AnchorStyles') values. The default is
 `Top` and `Left`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AutoScrollOffset'></a>
@@ -2230,32 +2205,25 @@ display in the background of the control.
 ##### Summary
 
 Gets or sets the background image layout as defined in the
-[ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout')
-enumeration.
+[ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout') enumeration.
 
 ##### Returns
 
 One of the values of
-[ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout')
-(
-[Center](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Center 'System.Windows.Forms.ImageLayout.Center')
-,
-[None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.None 'System.Windows.Forms.ImageLayout.None')
-,
-[Stretch](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Stretch 'System.Windows.Forms.ImageLayout.Stretch')
-,
-[Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile')
-, or
-[Zoom](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Zoom 'System.Windows.Forms.ImageLayout.Zoom')
-).
-[Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile')
-is the default value.
+[ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout') (
+[Center](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Center 'System.Windows.Forms.ImageLayout.Center') ,
+[None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.None 'System.Windows.Forms.ImageLayout.None') ,
+[Stretch](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Stretch 'System.Windows.Forms.ImageLayout.Stretch') ,
+[Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile') , or
+[Zoom](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Zoom 'System.Windows.Forms.ImageLayout.Zoom') ).
+[Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile') is the default value.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The specified enumeration value does not exist. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+specified enumeration value does not exist. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-BindingContext'></a>
 ### BindingContext `property`
@@ -2267,7 +2235,8 @@ for the control.
 
 ##### Returns
 
-A [BindingContext](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingContext 'System.Windows.Forms.BindingContext') for the control.
+A [BindingContext](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingContext 'System.Windows.Forms.BindingContext') for the
+control.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Bottom'></a>
 ### Bottom `property`
@@ -2280,8 +2249,8 @@ and the top edge of its container's client area.
 ##### Returns
 
 An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
-pixels, between the bottom edge of the control and the top edge of
-its container's client area.
+pixels, between the bottom edge of the control and the top edge of its
+container's client area.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Bounds'></a>
 ### Bounds `property`
@@ -2294,8 +2263,8 @@ nonclient elements, in pixels, relative to the parent control.
 ##### Returns
 
 A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') in pixels relative to the
-parent control that represents the size and location of the control
-including its nonclient elements.
+parent control that represents the size and location of the control including
+its nonclient elements.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-CanFocus'></a>
 ### CanFocus `property`
@@ -2326,7 +2295,8 @@ Gets a value indicating whether the control can be selected.
 
 ##### Summary
 
-Gets or sets a value indicating whether the control has captured the mouse.
+Gets or sets a value indicating whether the control has captured the
+mouse.
 
 ##### Returns
 
@@ -2338,16 +2308,14 @@ otherwise, `false`.
 
 ##### Summary
 
-Gets or sets a value indicating whether the control causes
-validation to be performed on any controls that require validation
-when it receives focus.
+Gets or sets a value indicating whether the control causes validation
+to be performed on any controls that require validation when it receives focus.
 
 ##### Returns
 
 `true` if the control causes validation to be
-performed on any controls requiring validation when it receives
-focus; otherwise, `false`. The default is
-`true`.
+performed on any controls requiring validation when it receives focus;
+otherwise, `false`. The default is `true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-ClientRectangle'></a>
 ### ClientRectangle `property`
@@ -2378,12 +2346,13 @@ of the client area of the control.
 
 ##### Summary
 
-Gets the name of the company or creator of the application
-containing the control.
+Gets the name of the company or creator of the application containing
+the control.
 
 ##### Returns
 
-The company name or creator of the application containing the control.
+The company name or creator of the application containing the
+control.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-ContainsFocus'></a>
 ### ContainsFocus `property`
@@ -2416,16 +2385,14 @@ the shortcut menu associated with the control.
 ##### Summary
 
 Gets or sets the
-[ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip')
-associated with
-this control.
+[ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') associated with this
+control.
 
 ##### Returns
 
 The [ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') for this
 control, or `null` if there is no
-[ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip')
-. The default is
+[ContextMenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContextMenuStrip 'System.Windows.Forms.ContextMenuStrip') . The default is
 `null`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Controls'></a>
@@ -2475,8 +2442,8 @@ Gets the data bindings for the control.
 ##### Returns
 
 A [ControlBindingsCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ControlBindingsCollection 'System.Windows.Forms.ControlBindingsCollection')
-that contains the [Binding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Binding 'System.Windows.Forms.Binding')
-objects for the control.
+that contains the [Binding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Binding 'System.Windows.Forms.Binding') objects for the
+control.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-DeviceDpi'></a>
 ### DeviceDpi `property`
@@ -2508,14 +2475,13 @@ display area of the control.
 ##### Summary
 
 Gets a value indicating whether the base
-[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control')
-class is in the process of disposing.
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') class is in the process of
+disposing.
 
 ##### Returns
 
 `true` if the base
-[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control')
-class is in the process of
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') class is in the process of
 disposing; otherwise, `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Dock'></a>
@@ -2535,9 +2501,9 @@ The default is [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDE
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value assigned is not one of the
-[DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle')
-values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value assigned is not one of the
+[DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle') values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Enabled'></a>
 ### Enabled `property`
@@ -2576,8 +2542,7 @@ Gets or sets the font of the text displayed by the control.
 
 The [Font](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Font 'System.Drawing.Font') to apply to the text
 displayed by the control. The default is the value of the
-[DefaultFont](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultFont 'System.Windows.Forms.Control.DefaultFont')
-property.
+[DefaultFont](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultFont 'System.Windows.Forms.Control.DefaultFont') property.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-ForeColor'></a>
 ### ForeColor `property`
@@ -2590,8 +2555,7 @@ Gets or sets the foreground color of the control.
 
 The foreground [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') of the control.
 The default is the value of the
-[DefaultForeColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultForeColor 'System.Windows.Forms.Control.DefaultForeColor')
-property.
+[DefaultForeColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultForeColor 'System.Windows.Forms.Control.DefaultForeColor') property.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Handle'></a>
 ### Handle `property`
@@ -2645,8 +2609,8 @@ default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the
-[ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode 'System.Windows.Forms.ImeMode')
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+assigned value is not one of the [ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode 'System.Windows.Forms.ImeMode')
 enumeration values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-IsAccessible'></a>
@@ -2722,8 +2686,8 @@ control and the left edge of its container's client area.
 ##### Returns
 
 An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
-pixels, between the left edge of the control and the left edge of
-its container's client area.
+pixels, between the left edge of the control and the left edge of its
+container's client area.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Location'></a>
 ### Location `property`
@@ -2736,8 +2700,8 @@ relative to the upper-left corner of its container.
 ##### Returns
 
 The [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the
-upper-left corner of the control relative to the upper-left corner
-of its container.
+upper-left corner of the control relative to the upper-left corner of its
+container.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Margin'></a>
 ### Margin `property`
@@ -2870,7 +2834,8 @@ Gets or sets the window region associated with the control.
 
 ##### Returns
 
-The window [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') associated with the control.
+The window [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') associated with the
+control.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Right'></a>
 ### Right `property`
@@ -2883,8 +2848,8 @@ and the left edge of its container's client area.
 ##### Returns
 
 An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
-pixels, between the right edge of the control and the left edge of
-its container's client area.
+pixels, between the right edge of the control and the left edge of its
+container's client area.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-RightToLeft'></a>
 ### RightToLeft `property`
@@ -2903,9 +2868,9 @@ The default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The assigned value is not one of the
-[RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft')
-values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+assigned value is not one of the
+[RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft') values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Size'></a>
 ### Size `property`
@@ -2942,12 +2907,10 @@ to this control using the TAB key.
 ##### Returns
 
 `true` if the user can give the focus to the control
-using the TAB key; otherwise, `false`. The default
-is `true`. This property will always return
-`true`
-for an instance of the
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-class.
+using the TAB key; otherwise, `false`. The default is
+`true`. This property will always return
+`true` for an instance of the
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') class.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Tag'></a>
 ### Tag `property`
@@ -2983,18 +2946,17 @@ control and the top edge of its container's client area.
 ##### Returns
 
 An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
-pixels, between the bottom edge of the control and the top edge of
-its container's client area.
+pixels, between the bottom edge of the control and the top edge of its
+container's client area.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-TopLevelControl'></a>
 ### TopLevelControl `property`
 
 ##### Summary
 
-Gets the parent control that is not parented by another Windows
-Forms control. Typically, this is the outermost
-[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
-that the control is contained in.
+Gets the parent control that is not parented by another Windows Forms
+control. Typically, this is the outermost
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is contained in.
 
 ##### Returns
 
@@ -3012,16 +2974,16 @@ the current control and all child controls.
 ##### Returns
 
 `true` to use the wait cursor for the current
-control and all child controls; otherwise, `false`.
-The default is `false`.
+control and all child controls; otherwise, `false`. The
+default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Visible'></a>
 ### Visible `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the control and all its
-child controls are displayed.
+Gets or sets a value indicating whether the control and all its child
+controls are displayed.
 
 ##### Returns
 
@@ -3056,14 +3018,13 @@ The NativeWindow contained within the control.
 
 ##### Summary
 
-Executes the specified delegate asynchronously on the thread that
-the control's underlying handle was created on.
+Executes the specified delegate asynchronously on the thread that the
+control's underlying handle was created on.
 
 ##### Returns
 
 An [IAsyncResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IAsyncResult 'System.IAsyncResult') that represents the result of
-the
-[BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)')
+the [BeginInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.BeginInvoke 'System.Windows.Forms.Control.BeginInvoke(System.Delegate)')
 operation.
 
 ##### Parameters
@@ -3076,7 +3037,8 @@ operation.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | No appropriate window handle can be found. |
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | No appropriate window
+handle can be found. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-BringToFront'></a>
 ### BringToFront() `method`
@@ -3094,8 +3056,8 @@ This method has no parameters.
 
 ##### Summary
 
-Retrieves a value indicating whether the specified control is a
-child of the control.
+Retrieves a value indicating whether the specified control is a child
+of the control.
 
 ##### Returns
 
@@ -3106,15 +3068,16 @@ control; otherwise, `false`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') to evaluate. |
+| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') to
+evaluate. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-CreateControl'></a>
 ### CreateControl() `method`
 
 ##### Summary
 
-Forces the creation of the visible control, including the creation
-of the handle and any visible child controls.
+Forces the creation of the visible control, including the creation of
+the handle and any visible child controls.
 
 ##### Parameters
 
@@ -3145,17 +3108,17 @@ Begins a drag-and-drop operation.
 ##### Returns
 
 A value from the
-[DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects')
-enumeration that
-represents the final effect that was performed during the
-drag-and-drop operation.
+[DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') enumeration that
+represents the final effect that was performed during the drag-and-drop
+operation.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | data | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | The data to drag. |
-| allowedEffects | [System.Windows.Forms.DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') | One of the [DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') values. |
+| allowedEffects | [System.Windows.Forms.DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') | One of the
+[DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') values. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-DrawToBitmap-System-Drawing-Bitmap,System-Drawing-Rectangle-'></a>
 ### DrawToBitmap(bitmap,targetBounds) `method`
@@ -3180,7 +3143,8 @@ Retrieves the form that the control is on.
 
 ##### Returns
 
-The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is on.
+The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is
+on.
 
 ##### Parameters
 
@@ -3208,8 +3172,7 @@ This method has no parameters.
 ##### Summary
 
 Retrieves the child control that is located at the specified
-coordinates, specifying whether to ignore child controls of a
-certain type.
+coordinates, specifying whether to ignore child controls of a certain type.
 
 ##### Returns
 
@@ -3220,20 +3183,20 @@ specified coordinates.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that contains the coordinates
-where you want to look for a control. Coordinates are expressed
+| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that contains the
+coordinates where you want to look for a control. Coordinates are expressed
 relative to the upper-left corner of the control's client area. |
 | skipValue | [System.Windows.Forms.GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip') | One of the values of
-[GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip')
-, determining
-whether to ignore child controls of a certain type. |
+[GetChildAtPointSkip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.GetChildAtPointSkip 'System.Windows.Forms.GetChildAtPointSkip') , determining whether
+to ignore child controls of a certain type. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-GetChildAtPoint-System-Drawing-Point-'></a>
 ### GetChildAtPoint(pt) `method`
 
 ##### Summary
 
-Retrieves the child control that is located at the specified coordinates.
+Retrieves the child control that is located at the specified
+coordinates.
 
 ##### Returns
 
@@ -3244,8 +3207,8 @@ control that is located at the specified point.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that contains the coordinates
-where you want to look for a control. Coordinates are expressed
+| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that contains the
+coordinates where you want to look for a control. Coordinates are expressed
 relative to the upper-left corner of the control's client area. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-GetContainerControl'></a>
@@ -3254,9 +3217,8 @@ relative to the upper-left corner of the control's client area. |
 ##### Summary
 
 Returns the next
-[ContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContainerControl 'System.Windows.Forms.ContainerControl')
-up the control's
-chain of parent controls.
+[ContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ContainerControl 'System.Windows.Forms.ContainerControl') up the control's chain
+of parent controls.
 
 ##### Returns
 
@@ -3272,27 +3234,30 @@ This method has no parameters.
 
 ##### Summary
 
-Retrieves the next control forward or back in the tab order of child controls.
+Retrieves the next control forward or back in the tab order of child
+controls.
 
 ##### Returns
 
-The next [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') in the tab order.
+The next [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') in the tab
+order.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') to start the search with. |
-| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to search forward in the tab order;
-`false`
-to search backward. |
+| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') to start
+the search with. |
+| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to search forward in the tab
+order; `false` to search backward. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-GetPreferredSize-System-Drawing-Size-'></a>
 ### GetPreferredSize(proposedSize) `method`
 
 ##### Summary
 
-Retrieves the size of a rectangular area into which a control can be fitted.
+Retrieves the size of a rectangular area into which a control can be
+fitted.
 
 ##### Returns
 
@@ -3322,9 +3287,8 @@ This method has no parameters.
 ##### Summary
 
 Invalidates the specified region of the control (adds it to the
-control's update region, which is the area that will be repainted at
-the next paint operation), and causes a paint message to be sent to
-the control.
+control's update region, which is the area that will be repainted at the next
+paint operation), and causes a paint message to be sent to the control.
 
 ##### Parameters
 
@@ -3338,18 +3302,17 @@ the control.
 ##### Summary
 
 Invalidates the specified region of the control (adds it to the
-control's update region, which is the area that will be repainted at
-the next paint operation), and causes a paint message to be sent to
-the control. Optionally, invalidates the child controls assigned to
-the control.
+control's update region, which is the area that will be repainted at the next
+paint operation), and causes a paint message to be sent to the control.
+Optionally, invalidates the child controls assigned to the control.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to invalidate. |
-| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the control's child controls;
-otherwise, `false`. |
+| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the
+control's child controls; otherwise, `false`. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate'></a>
 ### Invalidate() `method`
@@ -3369,15 +3332,15 @@ This method has no parameters.
 ##### Summary
 
 Invalidates a specific region of the control and causes a paint
-message to be sent to the control. Optionally, invalidates the child
-controls assigned to the control.
+message to be sent to the control. Optionally, invalidates the child controls
+assigned to the control.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the control's child controls;
-otherwise, `false`. |
+| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the
+control's child controls; otherwise, `false`. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Rectangle-'></a>
 ### Invalidate(rc) `method`
@@ -3385,16 +3348,15 @@ otherwise, `false`. |
 ##### Summary
 
 Invalidates the specified region of the control (adds it to the
-control's update region, which is the area that will be repainted at
-the next paint operation), and causes a paint message to be sent to
-the control.
+control's update region, which is the area that will be repainted at the next
+paint operation), and causes a paint message to be sent to the control.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| rc | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
-region to invalidate. |
+| rc | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents
+the region to invalidate. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Rectangle,System-Boolean-'></a>
 ### Invalidate(rc,invalidateChildren) `method`
@@ -3402,40 +3364,38 @@ region to invalidate. |
 ##### Summary
 
 Invalidates the specified region of the control (adds it to the
-control's update region, which is the area that will be repainted at
-the next paint operation), and causes a paint message to be sent to
-the control. Optionally, invalidates the child controls assigned to
-the control.
+control's update region, which is the area that will be repainted at the next
+paint operation), and causes a paint message to be sent to the control.
+Optionally, invalidates the child controls assigned to the control.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| rc | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
-region to invalidate. |
-| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the control's child controls;
-otherwise, `false`. |
+| rc | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents
+the region to invalidate. |
+| invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the
+control's child controls; otherwise, `false`. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Invoke-System-Delegate-'></a>
 ### Invoke(method) `method`
 
 ##### Summary
 
-Executes the specified delegate on the thread that owns the
-control's underlying window handle.
+Executes the specified delegate on the thread that owns the control's
+underlying window handle.
 
 ##### Returns
 
 The return value from the delegate being invoked, or
-`null`
-if the delegate has no return value.
+`null` if the delegate has no return value.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| method | [System.Delegate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Delegate 'System.Delegate') | A delegate that contains a method to be called in the control's
-thread context. |
+| method | [System.Delegate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Delegate 'System.Delegate') | A delegate that contains a method to be called in the
+control's thread context. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-LogicalToDeviceUnits-System-Int32-'></a>
 ### LogicalToDeviceUnits(value) `method`
@@ -3460,8 +3420,8 @@ The resulting DeviceUnit value.
 ##### Summary
 
 Transforms a size from logical to device units by scaling it for the
-current DPI and rounding down to the nearest integer value for width
-and height.
+current DPI and rounding down to the nearest integer value for width and
+height.
 
 ##### Returns
 
@@ -3495,47 +3455,52 @@ Forces the control to apply layout logic to all its child controls.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| affectedControl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | A [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that represents the
-most recently changed control. |
-| affectedProperty | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of the most recently changed property on the control. |
+| affectedControl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | A [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control')
+that represents the most recently changed control. |
+| affectedProperty | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The name of the most recently changed property
+on the control. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-PointToClient-System-Drawing-Point-'></a>
 ### PointToClient(p) `method`
 
 ##### Summary
 
-Computes the location of the specified screen point into client coordinates.
+Computes the location of the specified screen point into client
+coordinates.
 
 ##### Returns
 
 A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the converted
-[Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point'), `p`, in
-client coordinates.
+[Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point'), `p`, in client
+coordinates.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| p | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | The screen coordinate [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') to convert. |
+| p | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | The screen coordinate [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') to
+convert. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-PointToScreen-System-Drawing-Point-'></a>
 ### PointToScreen(p) `method`
 
 ##### Summary
 
-Computes the location of the specified client point into screen coordinates.
+Computes the location of the specified client point into screen
+coordinates.
 
 ##### Returns
 
 A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the converted
-[Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point'), `p`, in
-screen coordinates.
+[Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point'), `p`, in screen
+coordinates.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| p | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | The client coordinate [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') to convert. |
+| p | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | The client coordinate [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') to
+convert. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-PreProcessControlMessage-System-Windows-Forms-Message@-'></a>
 ### PreProcessControlMessage(msg) `method`
@@ -3547,24 +3512,20 @@ before they are dispatched.
 
 ##### Returns
 
-One of the
-[PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState')
-values,
+One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState') values,
 depending on whether
 [PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(System.Windows.Forms.Message@)')
 is `true` or `false` and whether
 [IsInputKey](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputKey 'System.Windows.Forms.Control.IsInputKey(System.Windows.Forms.Keys)')
-or
-[IsInputChar](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputChar 'System.Windows.Forms.Control.IsInputChar(System.Char)')
-are
+or [IsInputChar](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputChar 'System.Windows.Forms.Control.IsInputChar(System.Char)') are
 `true` or `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| msg | [System.Windows.Forms.Message@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message@ 'System.Windows.Forms.Message@') | A [Message](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message 'System.Windows.Forms.Message') that represents the
-message to process. |
+| msg | [System.Windows.Forms.Message@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message@ 'System.Windows.Forms.Message@') | A [Message](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message 'System.Windows.Forms.Message') that
+represents the message to process. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-PreProcessMessage-System-Windows-Forms-Message@-'></a>
 ### PreProcessMessage(msg) `method`
@@ -3583,8 +3544,8 @@ otherwise, `false`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| msg | [System.Windows.Forms.Message@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message@ 'System.Windows.Forms.Message@') | A [Message](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message 'System.Windows.Forms.Message'), passed by reference,
-that represents the message to process. The possible values are
+| msg | [System.Windows.Forms.Message@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message@ 'System.Windows.Forms.Message@') | A [Message](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Message 'System.Windows.Forms.Message'), passed by
+reference, that represents the message to process. The possible values are
 WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-RectangleToClient-System-Drawing-Rectangle-'></a>
@@ -3598,15 +3559,15 @@ client coordinates.
 ##### Returns
 
 A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
-converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'),
-`r`
-, in client coordinates.
+converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'), `r` , in
+client coordinates.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The screen coordinate [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') to convert. |
+| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The screen coordinate
+[Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') to convert. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-RectangleToScreen-System-Drawing-Rectangle-'></a>
 ### RectangleToScreen(r) `method`
@@ -3619,15 +3580,15 @@ screen coordinates.
 ##### Returns
 
 A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
-converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'),
-`r`
-, in screen coordinates.
+converted [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle'), `r` , in
+screen coordinates.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The client coordinate [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') to convert. |
+| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The client coordinate
+[Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') to convert. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Refresh'></a>
 ### Refresh() `method`
@@ -3659,9 +3620,8 @@ This method has no parameters.
 ##### Summary
 
 Causes a control bound to the
-[BindingSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingSource 'System.Windows.Forms.BindingSource')
-to reread all the
-items in the list and refresh their displayed values.
+[BindingSource](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BindingSource 'System.Windows.Forms.BindingSource') to reread all the items in
+the list and refresh their displayed values.
 
 ##### Parameters
 
@@ -3755,15 +3715,15 @@ This method has no parameters.
 
 ##### Summary
 
-Resumes usual layout logic, optionally forcing an immediate layout
-of pending layout requests.
+Resumes usual layout logic, optionally forcing an immediate layout of
+pending layout requests.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| performLayout | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to execute pending layout requests;
-otherwise, `false`. |
+| performLayout | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to execute pending layout
+requests; otherwise, `false`. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Scale-System-Single-'></a>
 ### Scale(ratio) `method`
@@ -3797,14 +3757,15 @@ Scales the entire control and any child controls.
 
 ##### Summary
 
-Scales the control and all child controls by the specified scaling factor.
+Scales the control and all child controls by the specified scaling
+factor.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| factor | [System.Drawing.SizeF](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.SizeF 'System.Drawing.SizeF') | A [SizeF](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.SizeF 'System.Drawing.SizeF') containing the horizontal and
-vertical scaling factors. |
+| factor | [System.Drawing.SizeF](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.SizeF 'System.Drawing.SizeF') | A [SizeF](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.SizeF 'System.Drawing.SizeF') containing the
+horizontal and vertical scaling factors. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-ScaleBitmapLogicalToDevice-System-Drawing-Bitmap@-'></a>
 ### ScaleBitmapLogicalToDevice(logicalBitmap) `method`
@@ -3847,21 +3808,18 @@ Activates the next control.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') at which to start
-the search. |
-| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to move forward in the tab order;
-`false`
-to move backward in the tab order. |
-| tabStopOnly | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to ignore the controls with the
-[TabStop](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.TabStop 'System.Windows.Forms.Control.TabStop')
-property set to
-`false`
-; otherwise, `false`. |
-| nested | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to include nested (children of child
-controls) child controls; otherwise, `false`. |
-| wrap | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to continue searching from the first control
-in the tab order after the last control has been reached; otherwise,
-`false`. |
+| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') at which
+to start the search. |
+| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to move forward in the tab
+order; `false` to move backward in the tab order. |
+| tabStopOnly | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to ignore the controls with
+the [TabStop](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.TabStop 'System.Windows.Forms.Control.TabStop') property set to
+`false` ; otherwise, `false`. |
+| nested | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to include nested (children of
+child controls) child controls; otherwise, `false`. |
+| wrap | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to continue searching from the
+first control in the tab order after the last control has been reached;
+otherwise, `false`. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-SendToBack'></a>
 ### SendToBack() `method`
@@ -3885,14 +3843,16 @@ Sets the bounds of the control to the specified location and size.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Left](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Left 'System.Windows.Forms.Control.Left') property
-value of the control. |
-| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Top](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Top 'System.Windows.Forms.Control.Top') property
-value of the control. |
-| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width') property
-value of the control. |
-| height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property
-value of the control. |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Left](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Left 'System.Windows.Forms.Control.Left')
+property value of the control. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Top](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Top 'System.Windows.Forms.Control.Top')
+property value of the control. |
+| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new
+[Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width') property value of the
+control. |
+| height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new
+[Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property value of the
+control. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-SetBounds-System-Int32,System-Int32,System-Int32,System-Int32,System-Windows-Forms-BoundsSpecified-'></a>
 ### SetBounds(x,y,width,height,specified) `method`
@@ -3906,18 +3866,19 @@ and size.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Left](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Left 'System.Windows.Forms.Control.Left') property
-value of the control. |
-| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Top](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Top 'System.Windows.Forms.Control.Top') property
-value of the control. |
-| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width') property
-value of the control. |
-| height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property
-value of the control. |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Left](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Left 'System.Windows.Forms.Control.Left')
+property value of the control. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Top](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Top 'System.Windows.Forms.Control.Top')
+property value of the control. |
+| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new
+[Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width') property value of the
+control. |
+| height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new
+[Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property value of the
+control. |
 | specified | [System.Windows.Forms.BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') | A bitwise combination of the
-[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified')
-values. For any
-parameter not specified, the current value will be used. |
+[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') values. For any parameter
+not specified, the current value will be used. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Show'></a>
 ### Show() `method`
@@ -3974,29 +3935,30 @@ presses the ENTER key.
 
 ##### Returns
 
-An [IButtonControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IButtonControl 'System.Windows.Forms.IButtonControl') that represents
-the button to use as the accept button for the form.
+An [IButtonControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IButtonControl 'System.Windows.Forms.IButtonControl') that
+represents the button to use as the accept button for the form.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-ActiveMdiChild'></a>
 ### ActiveMdiChild `property`
 
 ##### Summary
 
-Gets the currently active multiple-document interface (MDI) child window.
+Gets the currently active multiple-document interface (MDI) child
+window.
 
 ##### Returns
 
-Returns a [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents the
-currently active MDI child window, or `null` if there
-are currently no child windows present.
+Returns a [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that represents
+the currently active MDI child window, or `null` if there are
+currently no child windows present.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-AllowTransparency'></a>
 ### AllowTransparency `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the opacity of the form can be
-adjusted.
+Gets or sets a value indicating whether the opacity of the form can
+be adjusted.
 
 ##### Returns
 
@@ -4008,13 +3970,13 @@ otherwise, `false`.
 
 ##### Summary
 
-Gets or sets a value indicating whether the form adjusts its size to fit
-the height of the font used on the form and scales its controls.
+Gets or sets a value indicating whether the form adjusts its size to
+fit the height of the font used on the form and scales its controls.
 
 ##### Returns
 
-`true` if the form will automatically scale itself and
-its controls based on the current font assigned to the form; otherwise,
+`true` if the form will automatically scale itself
+and its controls based on the current font assigned to the form; otherwise,
 `false`. The default is `true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-AutoScaleBaseSize'></a>
@@ -4026,8 +3988,8 @@ Gets or sets the base size used for autoscaling of the form.
 
 ##### Returns
 
-A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the base size that
-this form uses for autoscaling.
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the base size
+that this form uses for autoscaling.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-AutoSizeMode'></a>
 ### AutoSizeMode `property`
@@ -4038,29 +4000,29 @@ Gets or sets the mode by which the form automatically resizes itself.
 
 ##### Returns
 
-An [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated value.
-The default is [GrowOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode.GrowOnly 'System.Windows.Forms.AutoSizeMode.GrowOnly').
+An [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated
+value. The default is
+[GrowOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode.GrowOnly 'System.Windows.Forms.AutoSizeMode.GrowOnly').
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value is not a valid
-[AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode')
-value. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value is not a valid [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') value. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-AutoValidate'></a>
 ### AutoValidate `property`
 
 ##### Summary
 
-Gets or sets a value that indicates whether controls in this container
-will be automatically validated when the focus changes.
+Gets or sets a value that indicates whether controls in this
+container will be automatically validated when the focus changes.
 
 ##### Returns
 
-An [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated value
-that indicates whether contained controls are implicitly validated on
+An [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated
+value that indicates whether contained controls are implicitly validated on
 focus change. The default is Inherit.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-CancelButton'></a>
@@ -4072,10 +4034,9 @@ Gets or sets the background color for the control.
 
 ##### Returns
 
-A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the background
-color of the control. The default is the value of the
-[DefaultBackColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultBackColor 'System.Windows.Forms.Control.DefaultBackColor')
-property.
+A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the
+background color of the control. The default is the value of the
+[DefaultBackColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultBackColor 'System.Windows.Forms.Control.DefaultBackColor') property.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-ControlBox'></a>
 ### ControlBox `property`
@@ -4096,12 +4057,13 @@ default is `true`.
 
 ##### Summary
 
-Gets or sets the size and location of the form on the Windows desktop.
+Gets or sets the size and location of the form on the Windows
+desktop.
 
 ##### Returns
 
-A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the bounds of
-the form on the Windows desktop using desktop coordinates.
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+bounds of the form on the Windows desktop using desktop coordinates.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-DesktopLocation'></a>
 ### DesktopLocation `property`
@@ -4112,8 +4074,8 @@ Gets or sets the location of the form on the Windows desktop.
 
 ##### Returns
 
-A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the location of
-the form on the desktop.
+A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the location
+of the form on the desktop.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-DialogResult'></a>
 ### DialogResult `property`
@@ -4124,14 +4086,15 @@ Gets or sets the dialog result for the form.
 
 ##### Returns
 
-A [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') that represents the
-result of the form when used as a dialog box.
+A [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') that represents
+the result of the form when used as a dialog box.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value specified is outside the range of valid values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-FormBorderStyle'></a>
 ### FormBorderStyle `property`
@@ -4142,15 +4105,16 @@ Gets or sets the border style of the form.
 
 ##### Returns
 
-A [FormBorderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormBorderStyle 'System.Windows.Forms.FormBorderStyle') that represents
-the style of border to display for the form. The default is
+A [FormBorderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormBorderStyle 'System.Windows.Forms.FormBorderStyle') that
+represents the style of border to display for the form. The default is
 `FormBorderStyle.Sizable`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value specified is outside the range of valid values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-HelpButton'></a>
 ### HelpButton `property`
@@ -4162,8 +4126,8 @@ displayed in the caption box of the form.
 
 ##### Returns
 
-`true` to display a Help button in the form's caption
-bar; otherwise, `false`. The default is
+`true` to display a Help button in the form's
+caption bar; otherwise, `false`. The default is
 `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-Icon'></a>
@@ -4175,7 +4139,8 @@ Gets or sets the icon for the form.
 
 ##### Returns
 
-An [Icon](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Icon 'System.Drawing.Icon') that represents the icon for the form.
+An [Icon](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Icon 'System.Drawing.Icon') that represents the icon for
+the form.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-IsMdiChild'></a>
 ### IsMdiChild `property`
@@ -4200,8 +4165,9 @@ multiple-document interface (MDI) child forms.
 
 ##### Returns
 
-`true` if the form is a container for MDI child forms;
-otherwise, `false`. The default is `false`.
+`true` if the form is a container for MDI child
+forms; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-IsRestrictedWindow'></a>
 ### IsRestrictedWindow `property`
@@ -4214,23 +4180,21 @@ input events without restriction.
 ##### Returns
 
 `true` if the form has restrictions; otherwise,
-`false`
-. The default is `true`.
+`false` . The default is `true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-KeyPreview'></a>
 ### KeyPreview `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the form will receive key events
-before the event is passed to the control that has focus.
+Gets or sets a value indicating whether the form will receive key
+events before the event is passed to the control that has focus.
 
 ##### Returns
 
 `true` if the form will receive all key events;
-`false`
-if the currently selected control on the form
-receives key events. The default is `false`.
+`false` if the currently selected control on the form receives
+key events. The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-MainMenuStrip'></a>
 ### MainMenuStrip `property`
@@ -4250,8 +4214,8 @@ container for the menu structure of the form. The default is
 
 ##### Summary
 
-Gets or sets a value indicating whether the Maximize button is displayed
-in the caption bar of the form.
+Gets or sets a value indicating whether the Maximize button is
+displayed in the caption bar of the form.
 
 ##### Returns
 
@@ -4267,24 +4231,24 @@ Gets the maximum size the form can be resized to.
 
 ##### Returns
 
-A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the maximum size
-for the form.
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the maximum
+size for the form.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The values of the height or width within the
-[Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size')
-object are less than zero. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The values of the
+height or width within the [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') object are less
+than zero. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-MdiParent'></a>
 ### MdiParent `property`
 
 ##### Summary
 
-Gets or sets the current multiple-document interface (MDI) parent form
-of this form.
+Gets or sets the current multiple-document interface (MDI) parent
+form of this form.
 
 ##### Returns
 
@@ -4295,25 +4259,25 @@ parent form.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') assigned to this property
-is not marked as an MDI container.
--or- The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') assigned to this
-property is both a child and an MDI container form.
--or- The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') assigned to this
-property is located on a different thread. |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | The
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') assigned to this property is not
+marked as an MDI container. -or- The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+assigned to this property is both a child and an MDI container form. -or- The
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') assigned to this property is located
+on a different thread. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-Menu'></a>
 ### Menu `property`
 
 ##### Summary
 
-Gets or sets the [MainMenu](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MainMenu 'System.Windows.Forms.MainMenu') that is
-displayed in the form.
+Gets or sets the [MainMenu](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MainMenu 'System.Windows.Forms.MainMenu') that
+is displayed in the form.
 
 ##### Returns
 
-A [MainMenu](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MainMenu 'System.Windows.Forms.MainMenu') that represents the menu
-to display in the form.
+A [MainMenu](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MainMenu 'System.Windows.Forms.MainMenu') that represents the
+menu to display in the form.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-MergedMenu'></a>
 ### MergedMenu `property`
@@ -4332,8 +4296,8 @@ merged menu of the form.
 
 ##### Summary
 
-Gets or sets a value indicating whether the Minimize button is displayed
-in the caption bar of the form.
+Gets or sets a value indicating whether the Minimize button is
+displayed in the caption bar of the form.
 
 ##### Returns
 
@@ -4368,13 +4332,13 @@ The level of opacity for the form. The default is 1.00.
 
 ##### Summary
 
-Gets an array of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') objects that
-represent all forms that are owned by this form.
+Gets an array of [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') objects
+that represent all forms that are owned by this form.
 
 ##### Returns
 
-A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') array that represents the
-owned forms for this form.
+A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') array that represents
+the owned forms for this form.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-Owner'></a>
 ### Owner `property`
@@ -4403,21 +4367,21 @@ Gets the location and size of the form in its normal window state.
 
 ##### Returns
 
-A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that contains the location
-and size of the form in the normal window state.
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that contains the
+location and size of the form in the normal window state.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-RightToLeftLayout'></a>
 ### RightToLeftLayout `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether right-to-left mirror placement
-is turned on.
+Gets or sets a value indicating whether right-to-left mirror
+placement is turned on.
 
 ##### Returns
 
-`true` if right-to-left mirror placement is turned on;
-otherwise, `false` for standard child control placement.
+`true` if right-to-left mirror placement is turned
+on; otherwise, `false` for standard child control placement.
 The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-ShowIcon'></a>
@@ -4430,8 +4394,9 @@ caption bar of the form.
 
 ##### Returns
 
-`true` if the form displays an icon in the caption bar;
-otherwise, `false`. The default is `true`.
+`true` if the form displays an icon in the caption
+bar; otherwise, `false`. The default is
+`true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-ShowInTaskbar'></a>
 ### ShowInTaskbar `property`
@@ -4443,8 +4408,8 @@ Windows taskbar.
 
 ##### Returns
 
-`true` to display the form in the Windows taskbar at run
-time; otherwise, `false`. The default is
+`true` to display the form in the Windows taskbar at
+run time; otherwise, `false`. The default is
 `true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-SizeGripStyle'></a>
@@ -4457,15 +4422,16 @@ corner of the form.
 
 ##### Returns
 
-A [SizeGripStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SizeGripStyle 'System.Windows.Forms.SizeGripStyle') that represents the
-style of the size grip to display. The default is
+A [SizeGripStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SizeGripStyle 'System.Windows.Forms.SizeGripStyle') that represents
+the style of the size grip to display. The default is
 [Auto](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SizeGripStyle.Auto 'System.Windows.Forms.SizeGripStyle.Auto')
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value specified is outside the range of valid values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-StartPosition'></a>
 ### StartPosition `property`
@@ -4476,14 +4442,15 @@ Gets or sets the starting position of the form at run time.
 
 ##### Returns
 
-A [FormStartPosition](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormStartPosition 'System.Windows.Forms.FormStartPosition') that represents
-the starting position of the form.
+A [FormStartPosition](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormStartPosition 'System.Windows.Forms.FormStartPosition') that
+represents the starting position of the form.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value specified is outside the range of valid values. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-TopLevel'></a>
 ### TopLevel `property`
@@ -4502,27 +4469,29 @@ otherwise, `false`. The default is `true`.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | A Multiple-document interface (MDI) parent form must be a top-level window. |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | A Multiple-document interface (MDI)
+parent form must be a top-level window. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-TopMost'></a>
 ### TopMost `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the form should be displayed as
-a topmost form.
+Gets or sets a value indicating whether the form should be displayed
+as a topmost form.
 
 ##### Returns
 
-`true` to display the form as a topmost form; otherwise,
-`false`. The default is `false`.
+`true` to display the form as a topmost form;
+otherwise, `false`. The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-TransparencyKey'></a>
 ### TransparencyKey `property`
 
 ##### Summary
 
-Gets or sets the color that will represent transparent areas of the form.
+Gets or sets the color that will represent transparent areas of the
+form.
 
 ##### Returns
 
@@ -4539,15 +4508,16 @@ maximized, or normal.
 
 ##### Returns
 
-A [FormWindowState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormWindowState 'System.Windows.Forms.FormWindowState') that represents
-whether form is minimized, maximized, or normal. The default is
+A [FormWindowState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormWindowState 'System.Windows.Forms.FormWindowState') that
+represents whether form is minimized, maximized, or normal. The default is
 `FormWindowState.Normal`.
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The value specified is outside the range of valid values. |
+| [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
+value specified is outside the range of valid values. |
 
 <a name='M-xyLOGIX-Core-Extensions-IForm-Activate'></a>
 ### Activate() `method`
@@ -4571,7 +4541,8 @@ Adds an owned form to this form.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| ownedForm | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that this form will own. |
+| ownedForm | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that
+this form will own. |
 
 <a name='M-xyLOGIX-Core-Extensions-IForm-Close'></a>
 ### Close() `method`
@@ -4588,12 +4559,12 @@ This method has no parameters.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form was closed while a handle was being created. |
-| [System.ObjectDisposedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ObjectDisposedException 'System.ObjectDisposedException') | You cannot call this method from the
-[](#E-System-Windows-Forms-Form-Activated 'System.Windows.Forms.Form.Activated')
-event when
-[WindowState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.WindowState 'System.Windows.Forms.Form.WindowState')
-is set to [Maximized](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormWindowState.Maximized 'System.Windows.Forms.FormWindowState.Maximized'). |
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form was closed while
+a handle was being created. |
+| [System.ObjectDisposedException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ObjectDisposedException 'System.ObjectDisposedException') | You cannot call this method
+from the [](#E-System-Windows-Forms-Form-Activated 'System.Windows.Forms.Form.Activated') event when
+[WindowState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.WindowState 'System.Windows.Forms.Form.WindowState') is set to
+[Maximized](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.FormWindowState.Maximized 'System.Windows.Forms.FormWindowState.Maximized'). |
 
 <a name='M-xyLOGIX-Core-Extensions-IForm-LayoutMdi-System-Windows-Forms-MdiLayout-'></a>
 ### LayoutMdi(value) `method`
@@ -4607,8 +4578,8 @@ MDI parent form.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Windows.Forms.MdiLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MdiLayout 'System.Windows.Forms.MdiLayout') | One of the [MdiLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MdiLayout 'System.Windows.Forms.MdiLayout') values that
-defines the layout of MDI child forms. |
+| value | [System.Windows.Forms.MdiLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MdiLayout 'System.Windows.Forms.MdiLayout') | One of the [MdiLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MdiLayout 'System.Windows.Forms.MdiLayout')
+values that defines the layout of MDI child forms. |
 
 <a name='M-xyLOGIX-Core-Extensions-IForm-RemoveOwnedForm-System-Windows-Forms-Form-'></a>
 ### RemoveOwnedForm(ownedForm) `method`
@@ -4621,8 +4592,8 @@ Removes an owned form from this form.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| ownedForm | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') representing the form to
-remove from the list of owned forms for this form. |
+| ownedForm | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
+representing the form to remove from the list of owned forms for this form. |
 
 <a name='M-xyLOGIX-Core-Extensions-IForm-SetDesktopBounds-System-Int32,System-Int32,System-Int32,System-Int32-'></a>
 ### SetDesktopBounds(x,y,width,height) `method`
@@ -4666,22 +4637,19 @@ Shows the form with the specified owner to the user.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Any object that implements
-[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window')
-and represents the
-top-level window that will own this form. |
+[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') and represents the top-level
+window that will own this form. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is already visible.
--or- The form specified in the `owner` parameter is the
-same as the form being shown.
--or- The form being shown is disabled.
--or- The form being shown is not a top-level window.
--or- The form being shown as a dialog box is already a modal form.
--or- The current process is not running in user interactive mode (for
-more information, see
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is
+already visible. -or- The form specified in the `owner`
+parameter is the same as the form being shown. -or- The form being shown is
+disabled. -or- The form being shown is not a top-level window. -or- The form
+being shown as a dialog box is already a modal form. -or- The current process
+is not running in user interactive mode (for more information, see
 [UserInteractive](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SystemInformation.UserInteractive 'System.Windows.Forms.SystemInformation.UserInteractive')). |
 
 <a name='M-xyLOGIX-Core-Extensions-IForm-ShowDialog'></a>
@@ -4703,12 +4671,11 @@ This method has no parameters.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is already visible.
--or- The form being shown is disabled.
--or- The form being shown is not a top-level window.
--or- The form being shown as a dialog box is already a modal form.
--or- The current process is not running in user interactive mode (for
-more information, see
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is
+already visible. -or- The form being shown is disabled. -or- The form being
+shown is not a top-level window. -or- The form being shown as a dialog box is
+already a modal form. -or- The current process is not running in user
+interactive mode (for more information, see
 [UserInteractive](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SystemInformation.UserInteractive 'System.Windows.Forms.SystemInformation.UserInteractive')). |
 
 <a name='M-xyLOGIX-Core-Extensions-IForm-ShowDialog-System-Windows-Forms-IWin32Window-'></a>
@@ -4727,22 +4694,20 @@ One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev1
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | owner | [System.Windows.Forms.IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') | Any object that implements
-[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window')
-that represents the
+[IWin32Window](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IWin32Window 'System.Windows.Forms.IWin32Window') that represents the
 top-level window that will own the modal dialog box. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The form specified in the `owner` parameter is the same
-as the form being shown. |
-| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is already visible.
--or- The form being shown is disabled.
--or- The form being shown is not a top-level window.
--or- The form being shown as a dialog box is already a modal form.
--or- The current process is not running in user interactive mode (for
-more information, see
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The form specified in the
+`owner` parameter is the same as the form being shown. |
+| [System.InvalidOperationException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.InvalidOperationException 'System.InvalidOperationException') | The form being shown is
+already visible. -or- The form being shown is disabled. -or- The form being
+shown is not a top-level window. -or- The form being shown as a dialog box is
+already a modal form. -or- The current process is not running in user
+interactive mode (for more information, see
 [UserInteractive](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SystemInformation.UserInteractive 'System.Windows.Forms.SystemInformation.UserInteractive')). |
 
 <a name='M-xyLOGIX-Core-Extensions-IForm-ToString'></a>
@@ -4755,16 +4720,12 @@ Gets a string representing the current instance of the form.
 ##### Returns
 
 A string consisting of the fully qualified name of the form object's
-class, with the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property
-of the form appended to the end. For example, if the form is derived
-from the class `MyForm` in the `MyNamespace` namespace, and
-the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property is set to
+class, with the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property of the
+form appended to the end. For example, if the form is derived from the class
+`MyForm` in the `MyNamespace` namespace, and the
+[Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property is set to
 `Hello, World`, this method will return
-`
-            MyNamespace.MyForm,
-            Text: Hello, World
-            `
-.
+` MyNamespace.MyForm, Text: Hello, World ` .
 
 ##### Parameters
 
@@ -4780,12 +4741,10 @@ validation to validate their data.
 
 ##### Returns
 
-`true` if all of the children validated successfully;
-otherwise, `false`. If called from the
-[](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating')
-or
-[](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated')
-event handlers, this
+`true` if all of the children validated
+successfully; otherwise, `false`. If called from the
+[](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') or
+[](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated') event handlers, this
 method will always return `false`.
 
 ##### Parameters
@@ -4802,21 +4761,18 @@ validation to validate their data.
 
 ##### Returns
 
-`true` if all of the children validated successfully;
-otherwise, `false`. If called from the
-[](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating')
-or
-[](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated')
-event handlers, this
+`true` if all of the children validated
+successfully; otherwise, `false`. If called from the
+[](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') or
+[](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated') event handlers, this
 method will always return `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| validationConstraints | [System.Windows.Forms.ValidationConstraints](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ValidationConstraints 'System.Windows.Forms.ValidationConstraints') | Places restrictions on which controls have their
-[](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating')
-event raised. |
+| validationConstraints | [System.Windows.Forms.ValidationConstraints](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ValidationConstraints 'System.Windows.Forms.ValidationConstraints') | Places restrictions on which controls have
+their [](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') event raised. |
 
 <a name='T-xyLOGIX-Core-Extensions-IScrollableControl'></a>
 ## IScrollableControl `type`
@@ -4835,8 +4791,8 @@ support auto-scrolling behavior.
 
 ##### Summary
 
-Gets or sets a value indicating whether the container enables the user
-to scroll to any controls placed outside of its visible boundaries.
+Gets or sets a value indicating whether the container enables the
+user to scroll to any controls placed outside of its visible boundaries.
 
 ##### Returns
 
@@ -4860,9 +4816,9 @@ width of the auto-scroll margin in pixels.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Height 'System.Drawing.Size.Height') or
-[Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Width 'System.Drawing.Size.Width')
-value assigned is less than 0. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The
+[Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Height 'System.Drawing.Size.Height') or
+[Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Width 'System.Drawing.Size.Width') value assigned is less than 0. |
 
 <a name='P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollMinSize'></a>
 ### AutoScrollMinSize `property`
@@ -4873,8 +4829,8 @@ Gets or sets the minimum size of the auto-scroll.
 
 ##### Returns
 
-A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that determines the minimum size
-of the virtual area through which the user can scroll.
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that determines the minimum
+size of the virtual area through which the user can scroll.
 
 <a name='P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollPosition'></a>
 ### AutoScrollPosition `property`
@@ -4885,8 +4841,8 @@ Gets or sets the location of the auto-scroll position.
 
 ##### Returns
 
-A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the auto-scroll
-position in pixels.
+A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that represents the
+auto-scroll position in pixels.
 
 <a name='P-xyLOGIX-Core-Extensions-IScrollableControl-DockPadding'></a>
 ### DockPadding `property`
@@ -4898,8 +4854,7 @@ Gets the dock padding settings for all edges of the control.
 ##### Returns
 
 A
-[DockPaddingEdges](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ScrollableControl.DockPaddingEdges 'System.Windows.Forms.ScrollableControl.DockPaddingEdges')
-that
+[DockPaddingEdges](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ScrollableControl.DockPaddingEdges 'System.Windows.Forms.ScrollableControl.DockPaddingEdges') that
 represents the padding for all the edges of a docked control.
 
 <a name='P-xyLOGIX-Core-Extensions-IScrollableControl-HorizontalScroll'></a>
@@ -4911,8 +4866,8 @@ Gets the characteristics associated with the horizontal scroll bar.
 
 ##### Returns
 
-A [HScrollProperties](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.HScrollProperties 'System.Windows.Forms.HScrollProperties') that contains
-information about the horizontal scroll bar.
+A [HScrollProperties](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.HScrollProperties 'System.Windows.Forms.HScrollProperties') that
+contains information about the horizontal scroll bar.
 
 <a name='P-xyLOGIX-Core-Extensions-IScrollableControl-VerticalScroll'></a>
 ### VerticalScroll `property`
@@ -4923,16 +4878,16 @@ Gets the characteristics associated with the vertical scroll bar.
 
 ##### Returns
 
-A [VScrollProperties](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.VScrollProperties 'System.Windows.Forms.VScrollProperties') that contains
-information about the vertical scroll bar.
+A [VScrollProperties](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.VScrollProperties 'System.Windows.Forms.VScrollProperties') that
+contains information about the vertical scroll bar.
 
 <a name='M-xyLOGIX-Core-Extensions-IScrollableControl-ScrollControlIntoView-System-Windows-Forms-Control-'></a>
 ### ScrollControlIntoView(activeControl) `method`
 
 ##### Summary
 
-Scrolls the specified child control into view on an auto-scroll enabled
-control.
+Scrolls the specified child control into view on an auto-scroll
+enabled control.
 
 ##### Parameters
 
@@ -4970,19 +4925,22 @@ Provides methods that extend the [Int32](http://msdn.microsoft.com/query/dev14.q
 
 ##### Summary
 
-Returns a value indicating whether the specified `value` is equal to one of the items in a collection of integers.
+Returns a value indicating whether the specified
+`value` is equal to one of the items in a collection of
+integers.
 
 ##### Returns
 
-`true` if `value` is one of the elements of
-the collection; `false` if not.
+`true` if `value` is one of the
+elements of the collection; `false` if not.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Integer to be compared to the members of the list. |
-| list | [System.Int32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32[] 'System.Int32[]') | Collection of integers that should be searched for the `value`. |
+| list | [System.Int32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32[] 'System.Int32[]') | Collection of integers that should be searched for the
+`value`. |
 
 <a name='T-xyLOGIX-Core-Extensions-ListExtensions'></a>
 ## ListExtensions `type`
@@ -5001,19 +4959,19 @@ Provides methods to help with lists of items.
 ##### Summary
 
 Adds an `item` to a `list`, but
-only if the item is not already present in the list. If it is, then
-this method does nothing. If `null` is passed for the
-`list`
-parameter, then this method likewise also does nothing.
+only if the item is not already present in the list. If it is, then this method
+does nothing. If `null` is passed for the
+`list` parameter, then this method likewise also does
+nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | list | [System.Collections.IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') | Reference to an instance of an object that implements the
-[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList')
-interface. |
-| item | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | Element to be added to the collection, unless it's in the collection already. |
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IList 'System.Collections.IList') interface. |
+| item | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | Element to be added to the collection, unless it's in the
+collection already. |
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0-'></a>
 ### AddDistinct\`\`1(list,item) `method`
@@ -5021,18 +4979,18 @@ interface. |
 ##### Summary
 
 Adds an `item` to a `list`, but
-only if the item is not already present in the collection. If it is,
-then this method does nothing.
+only if the item is not already present in the collection. If it is, then this
+method does nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a list that implements the
-[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList')
-interface for items of
-type `T`. |
-| item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
+[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList') interface for items of type
+`T`. |
+| item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the
+collection already. |
 
 ##### Generic Types
 
@@ -5046,26 +5004,26 @@ type `T`. |
 ##### Summary
 
 Adds an `item` to a `collection`,
-but only if the item is not already present in the collection. If
-the `item` is already a member of the
-`collection`
-, then this method does nothing.
+but only if the item is not already present in the collection. If the
+`item` is already a member of the
+`collection` , then this method does nothing.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a list that implements the
-[ICollection{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{T}')
-interface for
-items of type `T`. |
-| item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the collection already. |
+[ICollection{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{T}') interface for items
+of type `T`. |
+| item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the
+collection already. |
 
 ##### Generic Types
 
 | Name | Description |
 | ---- | ----------- |
-| T | Type of the elements of the `collection`. |
+| T | Type of the elements of the `collection`
+. |
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}-'></a>
 ### AddRange\`\`1(list,items) `method`
@@ -5132,8 +5090,7 @@ among the elements of the `valueSet`.
 ##### Returns
 
 true if `value` is in the
-`valueSet`
-; false otherwise.
+`valueSet` ; false otherwise.
 
 ##### Parameters
 
@@ -5205,8 +5162,9 @@ collection to a log file.
 
 ##### Summary
 
-Provides a [TrimExcess](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.List 'System.Collections.Generic.List{T}.TrimExcess')
-method that can be called on objects implementing
+Provides a
+[TrimExcess](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.List 'System.Collections.Generic.List{T}.TrimExcess') method that can
+be called on objects implementing
 [IList{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{T}').
 
 ##### Parameters
@@ -5231,8 +5189,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Helper functions for doing operations on, or making decisions about, numerical
-data.
+Helper functions for doing operations on, or making decisions about,
+numerical data.
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double-'></a>
 ### AsDecimal(value) `method`
@@ -5314,14 +5272,13 @@ zero is passed for `value`.
 
 ##### Summary
 
-Determines if a decimal value is between a pair of values or equal
-to either of them.
+Determines if a decimal value is between a pair of values or equal to
+either of them.
 
 ##### Returns
 
-`true` if the value is either within the range specified or
-equal to
-either of the bounds; `false` otherwise.
+`true` if the value is either within the range
+specified or equal to either of the bounds; `false` otherwise.
 
 ##### Parameters
 
@@ -5340,24 +5297,23 @@ Determines if a `value` is negative.
 
 ##### Returns
 
-`true` if the `value` is strictly less than
-zero;
-`false` otherwise.
+`true` if the `value` is strictly
+less than zero; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal')
-type. |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of
+[Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal-'></a>
 ### IsNonNegative(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` is non-positive;
-i.e., zero, or a negative number.
+Determines whether the specified `value` is
+non-positive; i.e., zero, or a negative number.
 
 ##### Returns
 
@@ -5377,8 +5333,8 @@ strictly less than [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev1
 
 ##### Summary
 
-Determines whether the specified `value` is non-positive;
-i.e., zero, or a negative number.
+Determines whether the specified `value` is
+non-positive; i.e., zero, or a negative number.
 
 ##### Returns
 
@@ -5442,16 +5398,15 @@ Determines whether a `value` is positive.
 
 ##### Returns
 
-`true` if the `value` is strictly greater
-than zero;
-`false` otherwise.
+`true` if the `value` is strictly
+greater than zero; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.)  Value to be compared. Must be of [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal')
-type. |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.)  Value to be compared. Must be of
+[Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsStrictlyInRange-System-Decimal,System-Decimal,System-Decimal-'></a>
 ### IsStrictlyInRange(value,lowerBound,upperBound) `method`
@@ -5464,10 +5419,8 @@ equal to either)
 ##### Returns
 
 True if `value` is strictly greater than
-`lowerBound`
-and strictly less than
-`upperBound`
-; false otherwise.
+`lowerBound` and strictly less than
+`upperBound` ; false otherwise.
 
 ##### Parameters
 
@@ -5519,8 +5472,8 @@ following the decimal point.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified `value`
-is negative, then this method returns zero.
+Computes the zero floor.  Meaning, if the specified
+`value` is negative, then this method returns zero.
 
 
 
@@ -5544,8 +5497,8 @@ the method is the identity map.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified `value`
-is negative, then this method returns zero.
+Computes the zero floor.  Meaning, if the specified
+`value` is negative, then this method returns zero.
 
 
 
@@ -5569,8 +5522,8 @@ the method is the identity map.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified `value`
-is negative, then this method returns zero.
+Computes the zero floor.  Meaning, if the specified
+`value` is negative, then this method returns zero.
 
 
 
@@ -5605,8 +5558,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
 
 <a name='P-xyLOGIX-Core-Extensions-Properties-Resources-Error_ValueCannotBeNullOrWhiteSpace'></a>
 ### Error_ValueCannotBeNullOrWhiteSpace `property`
@@ -5652,7 +5604,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Provides methods and properties to assist with manipulating strings of text.
+Provides methods and properties to assist with manipulating strings
+of text.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList'></a>
 ### AcronymList `constants`
@@ -5690,15 +5643,16 @@ of a street, and that need to be capitalized.
 
 ##### Summary
 
-Collection of strings which are short words but are not acronyms per se.
+Collection of strings which are short words but are not acronyms per
+se.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-StateAbbrList'></a>
 ### StateAbbrList `constants`
 
 ##### Summary
 
-Collection of strings that are the two-letter abbreviations of the
-50 U.S. states.
+Collection of strings that are the two-letter abbreviations of the 50
+U.S. states.
 
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid'></a>
 ### IsEmailAddressInvalid `property`
@@ -5706,16 +5660,16 @@ Collection of strings that are the two-letter abbreviations of the
 ##### Summary
 
 Gets or sets a value that indicates whether the string most recently
-checked for whether it contains a valid email address, does in fact
-contain such a valid address.
+checked for whether it contains a valid email address, does in fact contain
+such a valid address.
 
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex'></a>
 ### WhiteSpaceRegex `property`
 
 ##### Summary
 
-Gets a [Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that matches all
-whitespace characters.
+Gets a [Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that
+matches all whitespace characters.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String-'></a>
 ### AnyContainNoCase(collection,value) `method`
@@ -5755,8 +5709,8 @@ value.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the ASCII
-representation of a [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the ASCII representation of a [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AsDouble-System-String-'></a>
 ### AsDouble(value) `method`
@@ -5776,8 +5730,8 @@ value.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the ASCII
-representation of a [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the ASCII representation of a [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AsProseList``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-String}-'></a>
 ### AsProseList\`\`1(source,selectorFunc) `method`
@@ -5786,11 +5740,7 @@ representation of a [Double](http://msdn.microsoft.com/query/dev14.query?appId=D
 
 Takes a source and a selector function and exports a string that is
 comma-separated according to proper English grammar, i.e.
-`
-            "dog,
-            cat, and horse"
-            `
-not just `"dog, cat, horse."`
+` "dog, cat, and horse" ` not just `"dog, cat, horse."`
 
 ##### Returns
 
@@ -5801,9 +5751,10 @@ illustrated above.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection of `TSource` to iterate over. |
-| selectorFunc | [System.Func{\`\`0,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,System.String}') | Delegate specifying the way to represent each element of the
-collection `source` as a string. |
+| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection of `TSource` to iterate
+over. |
+| selectorFunc | [System.Func{\`\`0,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,System.String}') | Delegate specifying the way to represent each
+element of the collection `source` as a string. |
 
 ##### Generic Types
 
@@ -5814,8 +5765,8 @@ collection `source` as a string. |
 ##### Remarks
 
 If this method is fed an `null` reference or the
-empty collection for `source`, then the return
-value is the empty string.
+empty collection for `source`, then the return value is the
+empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-BreakTextIntoLines-System-String-'></a>
 ### BreakTextIntoLines(text) `method`
@@ -5823,8 +5774,8 @@ value is the empty string.
 ##### Summary
 
 Breaks a large body of `text` into individual
-lines, on the newline character for the particular operating system.
-The result is a collection of strings, one for each line.
+lines, on the newline character for the particular operating system. The result
+is a collection of strings, one for each line.
 
 ##### Returns
 
@@ -5839,8 +5790,8 @@ Collection of strings containing one string per line of
 
 ##### Remarks
 
-If this method is passed the empty string or a blank string as
-input, then it returns the empty collection.
+If this method is passed the empty string or a blank string as input,
+then it returns the empty collection.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-CleanLine-System-String-'></a>
 ### CleanLine(line) `method`
@@ -5852,7 +5803,8 @@ calls [Trim](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-U
 
 ##### Returns
 
-Same as input, except all newline characters and whitespace has been removed.
+Same as input, except all newline characters and whitespace has been
+removed.
 
 ##### Parameters
 
@@ -5862,7 +5814,8 @@ Same as input, except all newline characters and whitespace has been removed.
 
 ##### Remarks
 
-If the empty string is provided as input, then the empty string is returned.
+If the empty string is provided as input, then the empty string is
+returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]-'></a>
 ### ContainsAny(value,searchStrings) `method`
@@ -5875,8 +5828,7 @@ any of the strings in `searchStrings` as a substring.
 ##### Returns
 
 Value indicating whether any of the strings in
-`searchStrings`
-are substrings (case-insensitive) of
+`searchStrings` are substrings (case-insensitive) of
 `value`.
 
 ##### Parameters
@@ -5884,16 +5836,15 @@ are substrings (case-insensitive) of
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
-| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which might be substrings
-of `value`. |
+| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which
+might be substrings of `value`. |
 
 ##### Remarks
 
 If `value` is the empty string or if the
-`searchStrings`
-collection is empty or is a
-`null`
-reference, then this method returns `false`.
+`searchStrings` collection is empty or is a
+`null` reference, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### ContainsAny(value,searchStrings) `method`
@@ -5906,8 +5857,7 @@ any of the strings in `searchStrings` as a substring.
 ##### Returns
 
 Value indicating whether any of the strings in
-`searchStrings`
-are substrings (case-insensitive) of
+`searchStrings` are substrings (case-insensitive) of
 `value`.
 
 ##### Parameters
@@ -5915,16 +5865,15 @@ are substrings (case-insensitive) of
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
-| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which might be substrings
-of `value`. |
+| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which
+might be substrings of `value`. |
 
 ##### Remarks
 
 If `value` is the empty string or if the
-`searchStrings`
-collection is empty or is a
-`null`
-reference, then this method returns `false`.
+`searchStrings` collection is empty or is a
+`null` reference, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Char[]-'></a>
 ### ContainsAny(value,searchChars) `method`
@@ -5939,23 +5888,22 @@ contains any of the characters in `searchChars`
 
 `true` if the string in `value`
 contains any of the characters (case-insensitive) in the
-`searchChars`
-array; `false` otherwise.
+`searchChars` array; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String to be searched. |
-| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the `value`. |
+| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the
+`value`. |
 
 ##### Remarks
 
 If this method is passed the empty string for
-`value`
-or a `null` reference or an empty
-collection for `searchChars`, then this method
-returns `false`.
+`value` or a `null` reference or an empty
+collection for `searchChars`, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### ContainsAnyOf(value,searchStrings) `method`
@@ -5968,8 +5916,7 @@ any of the strings in `searchStrings` as a substring.
 ##### Returns
 
 Value indicating whether any of the strings in
-`searchStrings`
-are substrings (case-insensitive) of
+`searchStrings` are substrings (case-insensitive) of
 `value`.
 
 ##### Parameters
@@ -5977,16 +5924,15 @@ are substrings (case-insensitive) of
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
-| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which might be substrings
-of `value`. |
+| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which
+might be substrings of `value`. |
 
 ##### Remarks
 
 If `value` is the empty string or if the
-`searchStrings`
-collection is empty or is a
-`null`
-reference, then this method returns `false`.
+`searchStrings` collection is empty or is a
+`null` reference, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-String[]-'></a>
 ### ContainsAnyOf(value,searchStrings) `method`
@@ -5999,8 +5945,7 @@ any of the strings in `searchStrings` as a substring.
 ##### Returns
 
 Value indicating whether any of the strings in
-`searchStrings`
-are substrings (case-insensitive) of
+`searchStrings` are substrings (case-insensitive) of
 `value`.
 
 ##### Parameters
@@ -6008,16 +5953,15 @@ are substrings (case-insensitive) of
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
-| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which might be substrings
-of `value`. |
+| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which
+might be substrings of `value`. |
 
 ##### Remarks
 
 If `value` is the empty string or if the
-`searchStrings`
-collection is empty or is a
-`null`
-reference, then this method returns `false`.
+`searchStrings` collection is empty or is a
+`null` reference, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Char[]-'></a>
 ### ContainsAnyOf(value,searchChars) `method`
@@ -6032,23 +5976,22 @@ contains any of the characters in `searchChars`
 
 `true` if the string in `value`
 contains any of the characters (case-insensitive) in the
-`searchChars`
-array; `false` otherwise.
+`searchChars` array; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String to be searched. |
-| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the `value`. |
+| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the
+`value`. |
 
 ##### Remarks
 
 If this method is passed the empty string for
-`value`
-or a `null` reference or an empty
-collection for `searchChars`, then this method
-returns `false`.
+`value` or a `null` reference or an empty
+collection for `searchChars`, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-String-'></a>
 ### ContainsNoCase(stringToSearch,value) `method`
@@ -6112,8 +6055,9 @@ regardless of case; FALSE otherwise.
 
 ##### Summary
 
-Ascertains whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), provided as
-the argument to the `value` parameter, contains any digits.
+Ascertains whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'),
+provided as the argument to the `value` parameter, contains
+any digits.
 
 ##### Returns
 
@@ -6144,7 +6088,8 @@ replaced with a capital letter and all the remaining letters as lowercase.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the word that needs to be initial-capitalized. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the word that needs to be
+initial-capitalized. |
 
 ##### Remarks
 
@@ -6167,8 +6112,7 @@ Correctly-formatted domain-name matching value.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | match | [System.Text.RegularExpressions.Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') | Reference to an instance of
-[Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match')
-that resulted from a
+[Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') that resulted from a
 regex search. |
 
 ##### Remarks
@@ -6188,8 +6132,7 @@ to make sure it begins with the character '@'.
 ##### Returns
 
 String containing the same value as in
-`twitterSite`
-, but one which is guaranteed to start with the
+`twitterSite` , but one which is guaranteed to start with the
 '@' character.
 
 ##### Parameters
@@ -6208,8 +6151,8 @@ empty string.
 
 ##### Summary
 
-A case-insensitive equality comparer for strings. Basically,
-converts each of its operands to lowercase before comparing.
+A case-insensitive equality comparer for strings. Basically, converts
+each of its operands to lowercase before comparing.
 
 ##### Returns
 
@@ -6227,8 +6170,8 @@ Whether the two strings are the same, regardless of case.
 
 ##### Summary
 
-A case-insensitive equality comparer for strings. Basically,
-converts each of its operands to lowercase before comparing.
+A case-insensitive equality comparer for strings. Basically, converts
+each of its operands to lowercase before comparing.
 
 ##### Returns
 
@@ -6240,15 +6183,17 @@ Whether the two strings are the same, regardless of case.
 | ---- | ---- | ----------- |
 | str1 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | First string to compare. |
 | str2 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Second string to compare. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values saying how
-the strings are to be compared. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | One of the
+[StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values saying how the strings are to
+be compared. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String-'></a>
 ### ExcludingWhitespace(value) `method`
 
 ##### Summary
 
-Excludes whitespace characters from the specified `value`.
+Excludes whitespace characters from the specified
+`value`.
 
 ##### Returns
 
@@ -6264,8 +6209,8 @@ exclude all whitespace characters. |
 
 ##### Remarks
 
-This method is useful for conducting whitespace-insensitive testing of
-strings.
+This method is useful for conducting whitespace-insensitive testing
+of strings.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32-'></a>
 ### GetCompactedString(stringToCompact,font,maxWidth) `method`
@@ -6277,8 +6222,8 @@ certain length.
 
 ##### Returns
 
-Version of the string that has ellipsis (...) so as to fit within
-the given length.
+Version of the string that has ellipsis (...) so as to fit within the
+given length.
 
 ##### Parameters
 
@@ -6296,31 +6241,32 @@ the given length.
 Gets the first `nChars` characters of the string
 `value` and returns them; returns the entire string
 `value` if the string is smaller than
-`nChars`
-characters in length.
+`nChars` characters in length.
 
 ##### Returns
 
 First `nChars` characters of the string in
-`value`; or, if `value` is shorter
-than `nChars` characters, the entire string that is
-passed in `value` is returned. If a problem
-occurred, the empty string is returned.
+`value`; or, if `value` is shorter than
+`nChars` characters, the entire string that is passed in
+`value` is returned. If a problem occurred, the empty string
+is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to pull the first `nChars` characters from. |
-| nChars | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Must be a positive number.) Number of characters from the start of
-the string to get. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to pull the first `nChars`
+characters from. |
+| nChars | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Must be a positive number.) Number of characters from
+the start of the string to get. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown if `nChars` has a zero or negative number
-value. `nChars` must be a positive number. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown if
+`nChars` has a zero or negative number value.
+`nChars` must be a positive number. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String-'></a>
 ### GetPersonFirstName(fullName) `method`
@@ -6339,18 +6285,18 @@ method is passed the empty string as input.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| fullName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String value containing the full name of the person. |
+| fullName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String value containing the full name of
+the person. |
 
 ##### Remarks
 
 Therefore, we can assume that, if we break the name field up by
-spaces, then everything before the first space is word of the first name.
-
-This should even catch 'fancy' last name, such as "de la Haye." For
-instance, this method would read "Nathan de la Montoya" and return
-"Nathan," so our way of determining the last name is pretty safe,
-given the above assumptions and input patterns. If the empty string
-is passed as input to this method, then the empty string is returned.
+spaces, then everything before the first space is word of the first name. 
+This should even catch 'fancy' last name, such as "de la Haye." For instance,
+this method would read "Nathan de la Montoya" and return "Nathan," so our way
+of determining the last name is pretty safe, given the above assumptions and
+input patterns. If the empty string is passed as input to this method, then the
+empty string is returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String-'></a>
 ### GetPersonLastName(fullName) `method`
@@ -6358,8 +6304,8 @@ is passed as input to this method, then the empty string is returned.
 ##### Summary
 
 Very na?ve determination of person last name. In our software
-consulting and tutoring practice, new clients tend to given their
-first and last name only when signing up --- about 99.9% of the time.
+consulting and tutoring practice, new clients tend to given their first and
+last name only when signing up --- about 99.9% of the time.
 
 ##### Returns
 
@@ -6370,21 +6316,19 @@ method is passed the empty string as input.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| fullName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String value containing the full name of the person. |
+| fullName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String value containing the full name of
+the person. |
 
 ##### Remarks
 
 Therefore, we can assume that, if we break the name field up by
-spaces, then everything after the first space is word of the last name.
-
-This should even catch 'fancy' last name, such as "de la Haye." For
-instance, this method would read "Nathan de la Montoya" and return
-"de la Montoya," so our way of determining the last name is pretty
-safe, given the above assumptions and input patterns. If the empty
-string is passed as input, then the empty string is returned. If a
-string containing just one word is passed as input, a
-[InvalidDataException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IO.InvalidDataException 'System.IO.InvalidDataException')
-is thrown.
+spaces, then everything after the first space is word of the last name. 
+This should even catch 'fancy' last name, such as "de la Haye." For instance,
+this method would read "Nathan de la Montoya" and return "de la Montoya," so
+our way of determining the last name is pretty safe, given the above
+assumptions and input patterns. If the empty string is passed as input, then
+the empty string is returned. If a string containing just one word is passed as
+input, a [InvalidDataException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IO.InvalidDataException 'System.IO.InvalidDataException') is thrown.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String-'></a>
 ### IsAbsolutePath(path) `method`
@@ -6396,8 +6340,8 @@ fully-qualified, absolute path or not.
 
 ##### Returns
 
-`true` if the `path` specified is a
-fully-qualified, absolute path; `false` otherwise.
+`true` if the `path` specified is
+a fully-qualified, absolute path; `false` otherwise.
 
 ##### Parameters
 
@@ -6443,13 +6387,14 @@ consists solely of either digits or lowercase letters (excluding whitespace);
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the text to be checked. |
 
 ##### Remarks
 
-If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null`
-reference is passed to this method, then this method returns
-`false`.
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a
+`null` reference is passed to this method, then this method
+returns `false`.
 
 
 
@@ -6461,9 +6406,9 @@ If an error occurs during the check, then this method returns
 
 ##### Summary
 
-Determines whether the specified `value` is an alphanumeric
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of digits or uppercase
-letters (excluding whitespace).
+Determines whether the specified `value` is an
+alphanumeric [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of digits or
+uppercase letters (excluding whitespace).
 
 ##### Returns
 
@@ -6475,13 +6420,14 @@ consists solely of either digits or uppercase letters (excluding whitespace);
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the text to be checked. |
 
 ##### Remarks
 
-If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null`
-reference is passed to this method, then this method returns
-`false`.
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a
+`null` reference is passed to this method, then this method
+returns `false`.
 
 
 
@@ -6493,8 +6439,9 @@ If an error occurs during the check, then this method returns
 
 ##### Summary
 
-Gets a value that indicates whether the specified `value` is
-blank, only consists of whitespace, or a `null` reference.
+Gets a value that indicates whether the specified
+`value` is blank, only consists of whitespace, or a
+`null` reference.
 
 ##### Returns
 
@@ -6519,11 +6466,10 @@ Determines whether the `value` passed is a
 ##### Returns
 
 `true` if the string passed in
-`value`
-is the string representation of a value that is in
-the range of the `decimal` data type; `false`
-otherwise. The method also returns `false` if it is
-passed the empty string.
+`value` is the string representation of a value that is in
+the range of the `decimal` data type; `false` otherwise.
+The method also returns `false` if it is passed the empty
+string.
 
 ##### Parameters
 
@@ -6542,31 +6488,30 @@ to a folder or not.
 ##### Returns
 
 `true` if the object at the specified pathname is a
-folder; `false` otherwise. If the specified pathname
-is blank, then this method simply returns `false`.
-If a file-system error occurs during the checking,
-`false`
-is also returned.
+folder; `false` otherwise. If the specified pathname is blank,
+then this method simply returns `false`. If a file-system
+error occurs during the checking, `false` is also returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the fully-qualified pathname of the
-file-system entry to be checked. |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the fully-qualified pathname
+of the file-system entry to be checked. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter, `path`, is passed
-a blank or `null` string for a value. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter,
+`path`, is passed a blank or `null` string
+for a value. |
 
 ##### Remarks
 
 Note the exact words of the Returns statement: "if the object at the
-specified pathname is a folder." So if you pass in the phrase,
-"Hello, world," it will be rejected.
+specified pathname is a folder." So if you pass in the phrase, "Hello, world,"
+it will be rejected.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsLowercase-System-String-'></a>
 ### IsLowercase(value) `method`
@@ -6579,21 +6524,22 @@ Determines whether the specified `value` is a
 
 ##### Returns
 
-`true` if the specified `value` consists
-solely of lowercase letters (excluding whitespace); `false`
-otherwise.
+`true` if the specified `value`
+consists solely of lowercase letters (excluding whitespace);
+`false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the text to be checked. |
 
 ##### Remarks
 
-If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null`
-reference is passed to this method, then this method returns
-`false`.
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a
+`null` reference is passed to this method, then this method
+returns `false`.
 
 
 
@@ -6611,13 +6557,10 @@ representation of a 32-bit `int` or not.
 ##### Returns
 
 `true` if the string passed in
-`value`
-is the string representation of a value that is in
-the range of the 32-bit `int` data type;
-`false`
-otherwise. The method also returns
-`false`
-if it is passed the empty string.
+`value` is the string representation of a value that is in
+the range of the 32-bit `int` data type; `false`
+otherwise. The method also returns `false` if it is passed the
+empty string.
 
 ##### Parameters
 
@@ -6637,8 +6580,7 @@ Performs a culture-invariant, case-insensitive, OR match of the
 
 `true` if the string `value`
 matches one or more of the `choices`;
-`false`
-otherwise.
+`false` otherwise.
 
 ##### Parameters
 
@@ -6650,8 +6592,7 @@ otherwise.
 ##### Remarks
 
 If `value` is the empty string, or if
-`choices`
-is the empty collection, then this method returns
+`choices` is the empty collection, then this method returns
 `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsRomanNumerals-System-String-'></a>
@@ -6659,7 +6600,8 @@ is the empty collection, then this method returns
 
 ##### Summary
 
-Determines whether the passed [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') contains Roman numerals.
+Determines whether the passed [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') contains Roman
+numerals.
 
 ##### Returns
 
@@ -6677,8 +6619,8 @@ TRUE if the value contains Roman numerals; FALSE otherwise.
 ##### Summary
 
 Gets a value indicating whether a special word, such as 'The' or
-'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and
-still needs to be initial-capitalized.
+'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and still needs
+to be initial-capitalized.
 
 ##### Returns
 
@@ -6697,8 +6639,8 @@ still needs to be initial-capitalized.
 ##### Summary
 
 Determines whether the current element in the list of words being
-parsed (as part of a character-casing operation) is the component of
-common names for US streets.
+parsed (as part of a character-casing operation) is the component of common
+names for US streets.
 
 ##### Returns
 
@@ -6709,9 +6651,10 @@ name of common US streets; `false` otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| array | [System.Collections.Generic.IReadOnlyList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IReadOnlyList 'System.Collections.Generic.IReadOnlyList{System.String}') | (Required.) Collection of words from the text being parsed. |
-| i | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Index into the `array` of the current
-word being parsed. |
+| array | [System.Collections.Generic.IReadOnlyList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IReadOnlyList 'System.Collections.Generic.IReadOnlyList{System.String}') | (Required.) Collection of words from the text being
+parsed. |
+| i | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Index into the `array` of the
+current word being parsed. |
 
 ##### Remarks
 
@@ -6738,13 +6681,14 @@ consists solely of uppercase letters (excluding whitespace);
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the text to be checked. |
 
 ##### Remarks
 
-If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null`
-reference is passed to this method, then this method returns
-`false`.
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a
+`null` reference is passed to this method, then this method
+returns `false`.
 
 
 
@@ -6761,7 +6705,8 @@ or not.
 
 ##### Returns
 
-true if the string contains a valid email address value; false otherwise.
+true if the string contains a valid email address value; false
+otherwise.
 
 ##### Parameters
 
@@ -6774,31 +6719,34 @@ true if the string contains a valid email address value; false otherwise.
 
 ##### Summary
 
-Determines whether the `stringToSearch` contains the text in
-the `findWhat` parameter, in a case-insensitive fashion.
+Determines whether the `stringToSearch` contains
+the text in the `findWhat` parameter, in a case-insensitive
+fashion.
 
 ##### Returns
 
-`true` if the case-insensitive search determines that the
-`stringToSearch` values contains one or more instances of the
-`findWhat` text; `false` otherwise.
+`true` if the case-insensitive search determines
+that the `stringToSearch` values contains one or more
+instances of the `findWhat` text; `false`
+otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value containing the text that is
-to be searched. |
-| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
-located within the `stringToSearch`. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+value containing the text that is to be searched. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the text that is to be located within the `stringToSearch`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String-'></a>
 ### MatchesWithCase(stringToSearch,findWhat) `method`
 
 ##### Summary
 
-Determines whether the `stringToSearch` contains the text in
-the `findWhat` parameter, in a case-sensitive fashion.
+Determines whether the `stringToSearch` contains
+the text in the `findWhat` parameter, in a case-sensitive
+fashion.
 
 ##### Returns
 
@@ -6810,8 +6758,8 @@ the `stringToSearch` values contains instances of the
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value
-containing the text that is to be searched. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+value containing the text that is to be searched. |
 | findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
 the text that is to be located within the `stringToSearch`. |
 
@@ -6833,8 +6781,9 @@ containing the plural version of the `word`.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | word | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Word to be pluralized. |
-| culture | [System.Globalization.CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') | Specifies the [CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') value
-to use when applying language rules. |
+| culture | [System.Globalization.CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') | Specifies the
+[CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') value to use when applying
+language rules. |
 
 ##### Remarks
 
@@ -6869,9 +6818,9 @@ method returns the empty string.
 
 ##### Summary
 
-More Pythonic version of the [Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format') method,
-which you can put after a string literal or [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-variable to format a string.
+More Pythonic version of the [Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format')
+method, which you can put after a string literal or
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variable to format a string.
 
 ##### Returns
 
@@ -6894,25 +6843,24 @@ the corresponding locations in the specified `value`. |
 ##### Summary
 
 Determines whether the specified `stringToSearch`
-matches the regular expression specified by the
-`regex`
+matches the regular expression specified by the `regex`
 parameter's value, without regards to upper- or lower-case.
 
 ##### Returns
 
 If even one match is found by the `regex`, returns
-`true`. Otherwise, if one or both of the required
-parameters are blank or `null`, or if no matches are
-found by the `regex`, then this method returns
-`false`.
+`true`. Otherwise, if one or both of the required parameters
+are blank or `null`, or if no matches are found by the
+`regex`, then this method returns `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be searched for a match. |
-| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that expresses
-the criteria to be used for matching. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be
+searched for a match. |
+| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that
+expresses the criteria to be used for matching. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesWithCase-System-String,System-String-'></a>
 ### RegexMatchesWithCase(stringToSearch,regex) `method`
@@ -6920,25 +6868,24 @@ the criteria to be used for matching. |
 ##### Summary
 
 Determines whether the specified `stringToSearch`
-matches the regular expression specified by the
-`regex`
+matches the regular expression specified by the `regex`
 parameter's value, respecting case.
 
 ##### Returns
 
 If even one match is found by the `regex`, returns
-`true`. Otherwise, if one or both of the required
-parameters are blank or `null`, or if no matches are
-found by the `regex`, then this method returns
-`false`.
+`true`. Otherwise, if one or both of the required parameters
+are blank or `null`, or if no matches are found by the
+`regex`, then this method returns `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be searched for a match. |
-| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that expresses
-the criteria to be used for matching. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be
+searched for a match. |
+| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that
+expresses the criteria to be used for matching. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String-'></a>
 ### RegexReplaceNoCase(value,search,replacement) `method`
@@ -6946,10 +6893,9 @@ the criteria to be used for matching. |
 ##### Summary
 
 Replaces the string specified by `search` by the
-`replacement` string in the
-`value`
-. The `search` parameter may contain
-a Regular Expression (regex). Case is ignored.
+`replacement` string in the `value` . The
+`search` parameter may contain a Regular Expression (regex).
+Case is ignored.
 
 ##### Returns
 
@@ -6959,20 +6905,21 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
-replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string.
-May contain a regular expression. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
-`search` are to be substituted with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
+and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
+string. May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
+found occurrences of `search` are to be substituted with. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
-`search`, or `replacement`, are
-passed blank or `null` strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
+parameters, `value`, `search`, or
+`replacement`, are passed blank or `null`
+strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions-'></a>
 ### RegexReplaceNoCase(value,search,replacement,options) `method`
@@ -6980,10 +6927,9 @@ passed blank or `null` strings for values. |
 ##### Summary
 
 Replaces the string specified by `search` by the
-`replacement` string in the
-`value`
-. The `search` parameter may contain
-a Regular Expression (regex). Case is ignored.
+`replacement` string in the `value` . The
+`search` parameter may contain a Regular Expression (regex).
+Case is ignored.
 
 ##### Returns
 
@@ -6993,30 +6939,29 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
-replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string.
-May contain a regular expression. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
-`search` are to be substituted with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
+and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
+string. May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
+found occurrences of `search` are to be substituted with. |
 | options | [System.Text.RegularExpressions.RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') | (Required.) A bitwise combination of the
-[RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions')
-enumeration
-values that provide options for matching. |
+[RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') enumeration values
+that provide options for matching. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
-`search`, or `replacement`, are
-passed blank or `null` strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
+parameters, `value`, `search`, or
+`replacement`, are passed blank or `null`
+strings for values. |
 
 ##### Remarks
 
 This overload allows specification of options in the
-`options`
-parameter.
+`options` parameter.
 
 
 
@@ -7031,10 +6976,8 @@ enumeration value is combined with whatever else is provided in the
 ##### Summary
 
 Replaces the string specified by `search` by the
-`replacement` string in the
-`value`
-. The `search` parameter may contain
-a Regular Expression (regex).
+`replacement` string in the `value` . The
+`search` parameter may contain a Regular Expression (regex).
 
 ##### Returns
 
@@ -7044,20 +6987,21 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
-replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string.
-May contain a regular expression. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
-`search` are to be substituted with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
+and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
+string. May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
+found occurrences of `search` are to be substituted with. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
-`search`, or `replacement`, are
-passed blank or `null` strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
+parameters, `value`, `search`, or
+`replacement`, are passed blank or `null`
+strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions-'></a>
 ### RegexReplaceWithCase(value,search,replacement,options) `method`
@@ -7065,10 +7009,8 @@ passed blank or `null` strings for values. |
 ##### Summary
 
 Replaces the string specified by `search` by the
-`replacement` string in the
-`value`
-. The `search` parameter may contain
-a Regular Expression (regex).
+`replacement` string in the `value` . The
+`search` parameter may contain a Regular Expression (regex).
 
 ##### Returns
 
@@ -7078,32 +7020,32 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
-replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string.
-May contain a regular expression. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
-`search` are to be substituted with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
+and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
+string. May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
+found occurrences of `search` are to be substituted with. |
 | options | [System.Text.RegularExpressions.RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') | (Required.) A bitwise combination of the
-[RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions')
-enumeration
-values that provide options for matching. |
+[RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') enumeration values
+that provide options for matching. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
-`search`, or `replacement`, are
-passed blank or `null` strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
+parameters, `value`, `search`, or
+`replacement`, are passed blank or `null`
+strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String-'></a>
 ### RemoveDigitsAndPunctuation(value) `method`
 
 ##### Summary
 
-Strips all punctuation and numeric digits from a string and trims
-the result.
+Strips all punctuation and numeric digits from a string and trims the
+result.
 
 ##### Returns
 
@@ -7130,7 +7072,8 @@ Removes any trailing `\` characters from the string provided in
 
 ##### Returns
 
-Same as `value`, but with no trailing backslash characters.
+Same as `value`, but with no trailing backslash
+characters.
 
 
 
@@ -7141,14 +7084,14 @@ characters to begin with, then this method is idempotent.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value to be stripped of trailing
-backslash characters. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value to be stripped of
+trailing backslash characters. |
 
 ##### Remarks
 
-If the argument of the `value` parameter is blank or
-`null`, then the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is
-returned.
+If the argument of the `value` parameter is blank
+or `null`, then the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value
+is returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String-'></a>
 ### ReplaceNoCase(value,search,replacement) `method`
@@ -7156,9 +7099,8 @@ returned.
 ##### Summary
 
 Replaces the string specified by `search` by the
-`replacement` string in the
-`value`
-, ignoring case.
+`replacement` string in the `value` ,
+ignoring case.
 
 ##### Returns
 
@@ -7168,19 +7110,21 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and
-replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of
-`search` are to be substituted with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
+and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
+string. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
+found occurrences of `search` are to be substituted with. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`,
-`search`, or `replacement`, are
-passed blank or `null` strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
+parameters, `value`, `search`, or
+`replacement`, are passed blank or `null`
+strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String-'></a>
 ### SplitOn(value,delimiter) `method`
@@ -7192,26 +7136,24 @@ Splits a string `value` on a provided
 
 ##### Returns
 
-An array whose elements contain the substrings that were split on
-the provided `delimiter`.
+An array whose elements contain the substrings that were split on the
+provided `delimiter`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value to be tokenized. |
-| delimiter | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the delimiter on which the
-`value`
-should be split. |
+| delimiter | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the delimiter on which
+the `value` should be split. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if either of the required parameters,
-`value`
-or `delimiter`, are passed blank or
-`null` strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if either of the required
+parameters, `value` or `delimiter`, are
+passed blank or `null` strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### StartsWithAnyOf(text,list) `method`
@@ -7236,10 +7178,8 @@ in `list`.
 ##### Remarks
 
 This method performs a case-insensitive search. It returns
-`false`
-if passed the empty string for
-`text`
-or the empty collection for `list`.
+`false` if passed the empty string for
+`text` or the empty collection for `list`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String-'></a>
 ### StartsWithNoCase(value,searchText) `method`
@@ -7264,8 +7204,7 @@ Tells whether the `value` starts with the substring
 ##### Remarks
 
 If `value` is the empty string or if
-`searchText`
-is the empty string, then this method returns
+`searchText` is the empty string, then this method returns
 `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]-'></a>
@@ -7285,17 +7224,16 @@ A string with the format placeholders replaced by the args.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | format | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the format. |
-| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) Collection of args whose values are to be replaced in
-the format string. |
+| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) Collection of args whose values are to be
+replaced in the format string. |
 
 ##### Remarks
 
 This method is just an alias for
-[Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format')
-. It is here to provide a way to
-translate VB to C# code and still use the moniker Sub from VB that
-does the same operation. If this method is passed the empty string
-for `format`, then the return value is the empty string.
+[Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format') . It is here to provide a way to
+translate VB to C# code and still use the moniker Sub from VB that does the
+same operation. If this method is passed the empty string for
+`format`, then the return value is the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII-System-String-'></a>
 ### ToASCII(value) `method`
@@ -7303,9 +7241,9 @@ for `format`, then the return value is the empty string.
 ##### Summary
 
 Forces all characters in the input string, `value`,
-to be ASCII-encoded characters only. If any Unicode characters are
-found in `value`, then they are mapped back into
-the range of ASCII-encoded values.
+to be ASCII-encoded characters only. If any Unicode characters are found in
+`value`, then they are mapped back into the range of
+ASCII-encoded values.
 
 ##### Returns
 
@@ -7316,7 +7254,8 @@ are now ASCII-encoded.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the characters to be processed. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the characters to be
+processed. |
 
 ##### Remarks
 
@@ -7328,9 +7267,9 @@ If this method is passed the empty or whitespace string for
 
 ##### Summary
 
-Turns the specified `phrase` into an all-caps
-acronym, if a corresponding entry is not found in our dictionary
-fields of short, non-acronym terms, i.e.,
+Turns the specified `phrase` into an all-caps acronym, if a
+corresponding entry is not found in our dictionary fields of short, non-acronym
+terms, i.e.,
 [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
 .
 
@@ -7342,14 +7281,14 @@ Acronym converted from `phrase`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| phrase | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the phrase to turn into an acronym. |
+| phrase | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the phrase to turn into an
+acronym. |
 
 ##### Remarks
 
 If this method is passed the empty or whitespace string, then it
-returns the empty string. If this method is passed a word or phrase
-that is short, but not an acronym, then the input is returned with
-no alteration.
+returns the empty string. If this method is passed a word or phrase that is
+short, but not an acronym, then the input is returned with no alteration.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToAcronymLetter-System-String-'></a>
 ### ToAcronymLetter(word) `method`
@@ -7357,10 +7296,10 @@ no alteration.
 ##### Summary
 
 Uses the first letter (turned into being uppercase, if necessary) of
-the `word` provided to be one of the letters of an
-acronym that is being built, e.g., from a phrase, using the first
-letter of each of the words of the phrase as each of the
-corresponding letters of the resulting acronym.
+the `word` provided to be one of the letters of an acronym
+that is being built, e.g., from a phrase, using the first letter of each of the
+words of the phrase as each of the corresponding letters of the resulting
+acronym.
 
 ##### Returns
 
@@ -7370,8 +7309,8 @@ String containing the letter(s) to be utilized in the acronym.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| word | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the word whose first letter should be
-made into an corresponding acronym letter. |
+| word | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the word whose first letter
+should be made into an corresponding acronym letter. |
 
 ##### Remarks
 
@@ -7384,21 +7323,21 @@ this method returns the empty string.
 ##### Summary
 
 Turns a GUID into a string representation but removes all the '{',
-'}' and '-' from the string representation, so that the string
-representation contains only letters and/or numbers.
+'}' and '-' from the string representation, so that the string representation
+contains only letters and/or numbers.
 
 ##### Returns
 
 String representation with no '{', '}' and '-' in the string
-representation, so that the string representation contains only
-letters and/or numbers.
+representation, so that the string representation contains only letters and/or
+numbers.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| guid | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | Reference to a [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') to turn into a string of
-letters and numbers. |
+| guid | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | Reference to a [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') to turn into a
+string of letters and numbers. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToInitialCaps-System-String-'></a>
 ### ToInitialCaps(value) `method`
@@ -7440,14 +7379,15 @@ Collection of strings containing the delimited entries.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be transformed. |
-| separators | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Collection of strings specifying the delimiter(s) to split upon. |
+| separators | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Collection of strings specifying the delimiter(s) to
+split upon. |
 
 ##### Remarks
 
 Any empty entries in the resultant collection are removed. If the
-empty string is provided as input to this method, then the method
-returns the empty string. If no separators are specified, then the
-empty collection is returned.
+empty string is provided as input to this method, then the method returns the
+empty string. If no separators are specified, then the empty collection is
+returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String-'></a>
 ### ToUnicode(value) `method`
@@ -7455,16 +7395,15 @@ empty collection is returned.
 ##### Summary
 
 Translates each character of the provided `value`,
-character-by-character, to Unicode encoding. This method performs
-the inverse operation of the
-[ToASCII](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII')
-method.
+character-by-character, to Unicode encoding. This method performs the inverse
+operation of the
+[ToASCII](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII') method.
 
 ##### Returns
 
 String containing the re-encoded corresponding text to that in
-`value`; or the empty string if the empty string is
-provided to this method.
+`value`; or the empty string if the empty string is provided
+to this method.
 
 ##### Parameters
 
@@ -7493,8 +7432,8 @@ Trimmed text.
 ##### Remarks
 
 If the empty or whitespace string is provided for
-`currentLine`
-, then the empty string is returned by this method.
+`currentLine` , then the empty string is returned by this
+method.
 
 <a name='T-xyLOGIX-Core-Extensions-TypeExtensions'></a>
 ## TypeExtensions `type`
@@ -7513,8 +7452,8 @@ Helper methods to assist in handling runtime type information.
 ##### Summary
 
 Dictionary that caches the results of the
-[GetActualType](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType')
-method for faster performance.
+[GetActualType](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType') method
+for faster performance.
 
 <a name='M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type-'></a>
 ### GetActualType() `method`
@@ -7522,8 +7461,8 @@ method for faster performance.
 ##### Summary
 
 Gets the internal type of an IList. When the type is not a list then
-this method will return the same type. if type is List of T then
-this method will return the type of T.
+this method will return the same type. if type is List of T then this method
+will return the type of T.
 
 ##### Parameters
 
@@ -7535,8 +7474,7 @@ This method has no parameters.
 ##### Summary
 
 Ascertains whether the `potentialDescendant` is of
-the same, or a subclass of, the base class whose
-[Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type')
+the same, or a subclass of, the base class whose [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type')
 is passed.
 
 ##### Returns
@@ -7549,5 +7487,6 @@ the same as, or a subclass of, the base type.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | potentialDescendant | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Type to be examined. |
-| potentialBaseType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Reference to the [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') structure of the class
-you think might be the `potentialDescendant`'s base. |
+| potentialBaseType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Reference to the [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type')
+structure of the class you think might be the
+`potentialDescendant`'s base. |

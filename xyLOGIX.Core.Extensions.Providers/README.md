@@ -36,7 +36,8 @@ Defines associations between forms and their contained controls.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this class.
+Empty, protected constructor to prohibit direct allocation of this
+class.
 
 ##### Parameters
 
@@ -65,7 +66,8 @@ Reference to an instance of a dictionary that maps instances of
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, static constructor to prohibit direct allocation of this
+class.
 
 ##### Parameters
 
@@ -76,8 +78,8 @@ This method has no parameters.
 
 ##### Summary
 
-Adds an association between the specified `control` and the
-specified `form`.
+Adds an association between the specified `control`
+and the specified `form`.
 
 ##### Parameters
 
@@ -93,9 +95,10 @@ created between it and its containing
 
 ##### Summary
 
-Subscribes the [](#E-System-Windows-Forms-Control-HandleDestroyed 'System.Windows.Forms.Control.HandleDestroyed')
-event of the specified `control` to remove all the mappings
-for it from our internal dictionary.
+Subscribes the
+[](#E-System-Windows-Forms-Control-HandleDestroyed 'System.Windows.Forms.Control.HandleDestroyed') event of the
+specified `control` to remove all the mappings for it from
+our internal dictionary.
 
 ##### Parameters
 
@@ -110,8 +113,8 @@ be removed to its parent form(s) in our internal dictionary. |
 
 ##### Summary
 
-Subscribes the [](#E-System-Windows-Forms-Form-FormClosed 'System.Windows.Forms.Form.FormClosed') event of
-the specified `form` to un-associate it with all its
+Subscribes the [](#E-System-Windows-Forms-Form-FormClosed 'System.Windows.Forms.Form.FormClosed')
+event of the specified `form` to un-associate it with all its
 contained controls in our internal dictionary.
 
 ##### Parameters
@@ -124,8 +127,8 @@ dictionary. |
 
 ##### Remarks
 
-If the specified `form` is `null` or
-disposed, or if the internal dictionary has not been initialized, or if the
+If the specified `form` is `null`
+or disposed, or if the internal dictionary has not been initialized, or if the
 internal dictionary contains no mappings for the specified
 `form`, then this method does nothing.
 
@@ -134,8 +137,8 @@ internal dictionary contains no mappings for the specified
 
 ##### Summary
 
-Removes the association(s) between the specified `control`
-and its containing form(s).
+Removes the association(s) between the specified
+`control` and its containing form(s).
 
 ##### Parameters
 
@@ -167,9 +170,9 @@ removed. |
 
 ##### Remarks
 
-This method is usually closed as part of the implementation of a handler for
-the [](#E-System-Windows-Forms-Form-FormClosed 'System.Windows.Forms.Form.FormClosed') event for the
-specified `form`.
+This method is usually closed as part of the implementation of a
+handler for the [](#E-System-Windows-Forms-Form-FormClosed 'System.Windows.Forms.Form.FormClosed') event for
+the specified `form`.
 
 <a name='M-xyLOGIX-Core-Extensions-Providers-ControlFormAssociationProvider-GetFormFor-System-Windows-Forms-Control-'></a>
 ### GetFormFor(control) `method`
@@ -201,9 +204,9 @@ to be obtained. |
 
 ##### Summary
 
-Handles the [](#E-System-Windows-Forms-Control-HandleDestroyed 'System.Windows.Forms.Control.HandleDestroyed') event
-raised by a [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') in our internal
-collection.
+Handles the
+[](#E-System-Windows-Forms-Control-HandleDestroyed 'System.Windows.Forms.Control.HandleDestroyed') event raised by a
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') in our internal collection.
 
 ##### Parameters
 
@@ -226,8 +229,8 @@ This method responds by removing the mapping between the
 
 ##### Summary
 
-Handles the [](#E-System-Windows-Forms-Form-FormClosed 'System.Windows.Forms.Form.FormClosed') event raised
-by a form that has been associated with one or more control(s).
+Handles the [](#E-System-Windows-Forms-Form-FormClosed 'System.Windows.Forms.Form.FormClosed')
+event raised by a form that has been associated with one or more control(s).
 
 ##### Parameters
 
@@ -259,8 +262,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
 
 <a name='P-xyLOGIX-Core-Extensions-Providers-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`

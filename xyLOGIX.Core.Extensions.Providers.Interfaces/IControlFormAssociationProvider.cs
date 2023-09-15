@@ -1,4 +1,4 @@
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions.Providers.Interfaces
 {
@@ -9,8 +9,8 @@ namespace xyLOGIX.Core.Extensions.Providers.Interfaces
     public interface IControlFormAssociationProvider
     {
         /// <summary>
-        /// Adds an association between the specified <paramref name="control" /> and the
-        /// specified <paramref name="form" />.
+        /// Adds an association between the specified <paramref name="control" />
+        /// and the specified <paramref name="form" />.
         /// </summary>
         /// <param name="control">
         /// (Required.) A

@@ -1,4 +1,4 @@
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.ComponentModel;
 using System.Linq;
@@ -10,8 +10,8 @@ using xyLOGIX.Core.Extensions.Providers.Interfaces;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// The <c>ControlExtensions</c> class provides helper methods for extending
-    /// the functionality of .NET framework controls.
+    /// The <c>ControlExtensions</c> class provides helper methods for
+    /// extending the functionality of .NET framework controls.
     /// </summary>
     [Log(AttributeExclude = true)]
     public static class ControlExtensions
@@ -27,8 +27,8 @@ namespace xyLOGIX.Core.Extensions
             => GetControlFormAssociationProvider.SoleInstance();
 
         /// <summary>
-        /// Associates the specified <paramref name="control" /> with its containing (i.e.,
-        /// parent) <see cref="T:System.Windows.Forms.Form" />.
+        /// Associates the specified <paramref name="control" /> with its
+        /// containing (i.e., parent) <see cref="T:System.Windows.Forms.Form" />.
         /// </summary>
         /// <param name="control">
         /// (Required.) Reference to an instance of
@@ -57,8 +57,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a reference to the <see cref="T:System.Windows.Forms.Form" /> that
-        /// contains this control.
+        /// Gets a reference to the <see cref="T:System.Windows.Forms.Form" />
+        /// that contains this control.
         /// </summary>
         /// <returns>
         /// Reference to the <see cref="T:System.Windows.Forms.Form" /> that
@@ -67,8 +67,8 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// This method provides the return value of the
         /// <see cref="M:System.Windows.Forms.Control.FindForm" /> method if the value of
-        /// the <see cref="F:xyLOGIX.UI.Dark.Controls.DarkCheckBox2._parentForm" />
-        /// field is uninitialized.
+        /// the <see cref="F:xyLOGIX.UI.Dark.Controls.DarkCheckBox2._parentForm" /> field
+        /// is uninitialized.
         /// </remarks>
         [Log(AttributeExclude = true)]
         public static Form GetParentForm(this Control control)
@@ -102,15 +102,14 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="message" />.
         /// </typeparam>
         /// <param name="obj">
-        /// (Required.) Reference to an instance of an object that implements
-        /// the <see cref="T:System.ComponentModel.ISynchronizeInvoke" /> interface.
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:System.ComponentModel.ISynchronizeInvoke" />
+        /// interface.
         /// </param>
         /// <param name="message">
         /// (Required.) Reference to a
-        /// <see
-        ///     cref="T:System.Windows.Forms.MethodInvoker" />
-        /// delegate that defines
-        /// the code to be run.
+        /// <see cref="T:System.Windows.Forms.MethodInvoker" /> delegate that defines the
+        /// code to be run.
         /// </param>
         /// <returns>
         /// Reference to an instance of the return type of the specified
@@ -118,12 +117,9 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// This method should always be called for a child control of a frame
-        /// window; never the window itself (even though, technically, it also
-        /// derives from <see cref="T:System.Windows.Forms.Control" /> and
-        /// implements the
-        /// <see
-        ///     cref="T:System.ComponentModel.ISynchronizeInvoke" />
-        /// interface).
+        /// window; never the window itself (even though, technically, it also derives from
+        /// <see cref="T:System.Windows.Forms.Control" /> and implements the
+        /// <see cref="T:System.ComponentModel.ISynchronizeInvoke" /> interface).
         /// </remarks>
         public static T InvokeIfRequired<T>(
             this ISynchronizeInvoke obj,
@@ -150,24 +146,20 @@ namespace xyLOGIX.Core.Extensions
         /// GUI-thread control.
         /// </summary>
         /// <param name="obj">
-        /// (Required.) Reference to an instance of an object that implements
-        /// the <see cref="T:System.ComponentModel.ISynchronizeInvoke" /> interface.
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:System.ComponentModel.ISynchronizeInvoke" />
+        /// interface.
         /// </param>
         /// <param name="message">
         /// (Required.) Reference to a
-        /// <see
-        ///     cref="T:System.Windows.Forms.MethodInvoker" />
-        /// delegate that defines
-        /// the code to be run.
+        /// <see cref="T:System.Windows.Forms.MethodInvoker" /> delegate that defines the
+        /// code to be run.
         /// </param>
         /// <remarks>
         /// This method should always be called for a child control of a frame
-        /// window; never the window itself (even though, technically, it also
-        /// derives from <see cref="T:System.Windows.Forms.Control" /> and
-        /// implements the
-        /// <see
-        ///     cref="T:System.ComponentModel.ISynchronizeInvoke" />
-        /// interface).
+        /// window; never the window itself (even though, technically, it also derives from
+        /// <see cref="T:System.Windows.Forms.Control" /> and implements the
+        /// <see cref="T:System.ComponentModel.ISynchronizeInvoke" /> interface).
         /// </remarks>
         public static void InvokeIfRequired(
             this ISynchronizeInvoke obj,

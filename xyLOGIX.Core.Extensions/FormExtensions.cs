@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,20 +6,12 @@ using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Helper methods for manipulating windows forms.
-    /// </summary>
+    /// <summary> Helper methods for manipulating windows forms. </summary>
     public static class FormExtensions
     {
-        /// <summary>
-        /// Centers this form on the specified <paramref name="parent" /> form.
-        /// </summary>
-        /// <param name="child">
-        /// Reference to the form to be centered.
-        /// </param>
-        /// <param name="parent">
-        /// Reference to the parent form.
-        /// </param>
+        /// <summary> Centers this form on the specified <paramref name="parent" /> form. </summary>
+        /// <param name="child"> Reference to the form to be centered. </param>
+        /// <param name="parent"> Reference to the parent form. </param>
         public static void CenterForm(this IForm child, Form parent)
         {
             if (child == null || child.IsDisposed) return;
@@ -37,16 +29,13 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="form">
         /// Reference to an instance of
-        /// <see
-        ///     cref="T:System.Windows.Forms.Form" />
-        /// that specifies the form to be centered.
+        /// <see cref="T:System.Windows.Forms.Form" /> that specifies the form to be
+        /// centered.
         /// </param>
         /// <param name="screen">
         /// Reference to an instance of
-        /// <see
-        ///     cref="T:System.Windows.Forms.Screen" />
-        /// that specifies the screen
-        /// that the form is to be centered on.
+        /// <see cref="T:System.Windows.Forms.Screen" /> that specifies the screen that the
+        /// form is to be centered on.
         /// </param>
         public static void CenterForm(this IForm form, Screen screen)
         {
@@ -73,12 +62,12 @@ namespace xyLOGIX.Core.Extensions
         /// case nothing is done.
         /// </summary>
         /// <param name="form">
-        /// A <see cref="T:System.Windows.Forms.Form" /> on which to perform the
-        /// <paramref name="message" />.
+        /// A <see cref="T:System.Windows.Forms.Form" /> on which to
+        /// perform the <paramref name="message" />.
         /// </param>
         /// <param name="message">
-        /// An <see cref="T:System.Action" /> specifying code to be run if the
-        /// form is disposed.
+        /// An <see cref="T:System.Action" /> specifying code to be
+        /// run if the form is disposed.
         /// </param>
         public static void DoIfDisposed(this IForm form, Action message)
         {
@@ -92,12 +81,12 @@ namespace xyLOGIX.Core.Extensions
         /// nothing is done.
         /// </summary>
         /// <param name="form">
-        /// A <see cref="T:System.Windows.Forms.Form" /> on which to perform the
-        /// <paramref name="message" />.
+        /// A <see cref="T:System.Windows.Forms.Form" /> on which to
+        /// perform the <paramref name="message" />.
         /// </param>
         /// <param name="message">
-        /// An <see cref="T:System.Action" /> specifying code to be run if the
-        /// form is not disposed.
+        /// An <see cref="T:System.Action" /> specifying code to be
+        /// run if the form is not disposed.
         /// </param>
         public static void DoIfNotDisposed(this IForm form, Action message)
         {
@@ -110,48 +99,40 @@ namespace xyLOGIX.Core.Extensions
                 message?.Invoke();
         }
 
-        /// <summary>
-        /// Shows a modal dialog that can be awaited upon while a task completes.
-        /// </summary>
+        /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>
         /// <param name="form">
-        /// Reference to an instance of an object that is a child class of
-        /// <see
-        ///     cref="T:System.Windows.Forms.Form" />
-        /// that represents the form to be shown.
+        /// Reference to an instance of an object that is a child class
+        /// of <see cref="T:System.Windows.Forms.Form" /> that represents the form to be
+        /// shown.
         /// </param>
         /// <param name="owner">
         /// Reference to an instance of an object that implements the
-        /// <see
-        ///     cref="T:System.Windows.Forms.IWin32Window" />
-        /// that represents the
-        /// form's owner window.
+        /// <see cref="T:System.Windows.Forms.IWin32Window" /> that represents the form's
+        /// owner window.
         /// </param>
         /// <returns>
         /// An awaitable
-        /// <see
-        ///     cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
+        /// <see cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
         /// that contains the result of the dialog's closure.
         /// </returns>
-        public static async Task<DialogResult> ShowDialogAsync(this IForm form,
-            IWin32Window owner)
+        public static async Task<DialogResult> ShowDialogAsync(
+            this IForm form,
+            IWin32Window owner
+        )
         {
             await Task.Yield();
             return form.IsDisposed ? DialogResult.OK : form.ShowDialog(owner);
         }
 
-        /// <summary>
-        /// Shows a modal dialog that can be awaited upon while a task completes.
-        /// </summary>
+        /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>
         /// <param name="form">
-        /// Reference to an instance of an object that is a child class of
-        /// <see
-        ///     cref="T:System.Windows.Forms.Form" />
-        /// that represents the form to be shown.
+        /// Reference to an instance of an object that is a child class
+        /// of <see cref="T:System.Windows.Forms.Form" /> that represents the form to be
+        /// shown.
         /// </param>
         /// <returns>
         /// An awaitable
-        /// <see
-        ///     cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
+        /// <see cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
         /// that contains the result of the dialog's closure.
         /// </returns>
         public static async Task<DialogResult> ShowDialogAsync(this IForm form)
@@ -165,9 +146,9 @@ namespace xyLOGIX.Core.Extensions
         /// monitor (whatever monitor they have designated as Monitor #1)
         /// </summary>
         /// <param name="form">
-        /// Reference to the <see cref="T:System.Windows.Forms.Form" /> to be
-        /// moved to the user's primary monitor. The form is also centered on
-        /// the screen.
+        /// Reference to the <see cref="T:System.Windows.Forms.Form" />
+        /// to be moved to the user's primary monitor. The form is also centered on the
+        /// screen.
         /// </param>
         public static void ShowOnPrimaryMonitor(this IForm form)
         {

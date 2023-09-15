@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,15 +6,13 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Provides methods for extending any dictionary.
-    /// </summary>
+    /// <summary> Provides methods for extending any dictionary. </summary>
     public static class DictionaryExtensions
     {
         /// <summary>
-        /// Adds the specified <paramref name="key" /> and <paramref name="value" /> to the
-        /// specified <paramref name="dictionary" />, but only if the specified
-        /// <paramref name="key" /> is not already in the dictionary.
+        /// Adds the specified <paramref name="key" /> and
+        /// <paramref name="value" /> to the specified <paramref name="dictionary" />, but
+        /// only if the specified <paramref name="key" /> is not already in the dictionary.
         /// <para />
         /// Otherwise, the entry having the specified <paramref name="key" /> will have its
         /// value updated to be <paramref name="value" />.
@@ -66,25 +64,27 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Adds all the elements of the <paramref name="source" /> dictionary to the
-        /// <paramref name="target" /> dictionary.
+        /// Adds all the elements of the <paramref name="source" /> dictionary to
+        /// the <paramref name="target" /> dictionary.
         /// <para />
         /// Dupes are ignored.
         /// </summary>
         /// <typeparam name="K">(Required.) Data type of the key.</typeparam>
         /// <typeparam name="V">(Required.) Data type of the value.</typeparam>
         /// <param name="target">
-        /// (Required.) The dictionary that is to be the target of the merge.
+        /// (Required.) The dictionary that is to be the target of
+        /// the merge.
         /// </param>
         /// <param name="source">
-        /// (Required.) A dictionary that has the items to be merged in.
+        /// (Required.) A dictionary that has the items to be merged
+        /// in.
         /// <para />
         /// If this is the <see langword="null" /> or otherwise the default value of the
         /// key's data type, then this method will do nothing.
         /// </param>
         /// <remarks>
-        /// If a key in the <paramref name="source" /> dictionary matches a key in
-        /// the <paramref name="target" /> dictionary, then the corresponding value is
+        /// If a key in the <paramref name="source" /> dictionary matches a key
+        /// in the <paramref name="target" /> dictionary, then the corresponding value is
         /// overwritten.
         /// </remarks>
         public static void MergeWith<K, V>(
@@ -108,9 +108,10 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Crates a <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" />
-        /// from an <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to
-        /// the specified <paramref name="keySelector" /> and
+        /// Crates a
+        /// <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from an
+        /// <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to the
+        /// specified <paramref name="keySelector" /> and
         /// <paramref name="elementSelector" /> functions.
         /// </summary>
         /// <typeparam name="TSource">
@@ -139,10 +140,10 @@ namespace xyLOGIX.Core.Extensions
         /// result element value from each element of <paramref name="source" />.
         /// </param>
         /// <remarks>
-        /// If any of the inputs are invalid values, i.e., <see langword="null" />
-        /// reference and the like, or if an issue occurs during the generation of the
-        /// requested <c>Dictionary</c> object, then the method returns the empty
-        /// collection.
+        /// If any of the inputs are invalid values, i.e.,
+        /// <see langword="null" /> reference and the like, or if an issue occurs during
+        /// the generation of the requested <c>Dictionary</c> object, then the method
+        /// returns the empty collection.
         /// </remarks>
         /// <returns>
         /// A
@@ -184,11 +185,12 @@ namespace xyLOGIX.Core.Extensions
         /// Transforms an instance of an object of type
         /// <see
         ///     cref="T:System.Collections.Generic.Dictionary{System.String,System.String}" />
-        /// into an object by mapping the dictionary elements onto the object's
-        /// properties that have the same name.
+        /// into an object by mapping the dictionary elements onto the object's properties
+        /// that have the same name.
         /// </summary>
         /// <typeparam name="T">
-        /// Type parameter identifying the object to receive the dictionary's information.
+        /// Type parameter identifying the object to receive the
+        /// dictionary's information.
         /// </typeparam>
         /// <param name="source">
         /// Reference to an instance of an object of type
@@ -206,16 +208,13 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// Basically, this method flattens the dictionary provided into a POCO.
-        /// The dictionary must be a list of key-value pairs and it is assumed
-        /// that the key is the name of a property, and the value is a string
-        /// that is the property's value. Therefore, the destination object is
-        /// assumed to have all its properties be of type
-        /// <see
-        ///     cref="T:System.String" />
-        /// and the name of each property should match
-        /// each key. Each corresponding property named the same as a key will
-        /// have its value set to the value in the dictionary that corresponds
-        /// to the key with the same name.
+        /// The dictionary must be a list of key-value pairs and it is assumed that the key
+        /// is the name of a property, and the value is a string that is the property's
+        /// value. Therefore, the destination object is assumed to have all its properties
+        /// be of type <see cref="T:System.String" /> and the name of each property should
+        /// match each key. Each corresponding property named the same as a key will have
+        /// its value set to the value in the dictionary that corresponds to the key with
+        /// the same name.
         /// </remarks>
         public static T ToObject<T>(this Dictionary<string, string> source)
             where T : class, new()

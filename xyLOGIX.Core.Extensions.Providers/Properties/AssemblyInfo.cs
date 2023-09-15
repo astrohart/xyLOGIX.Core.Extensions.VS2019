@@ -1,20 +1,26 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("xyLOGIX.Core.Extensions.Providers")]
-[assembly: AssemblyDescription("Provides objects and functionality to provide access to data and UI element associations.  This particular library holds the concrete classes and implementations of the component.")]
+[assembly:
+    AssemblyDescription(
+        "Provides objects and functionality to provide access to data and UI element associations.  This particular library holds the concrete classes and implementations of the component."
+    )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly: AssemblyProduct("xyLOGIX Support Library for Providers of Extension Data")]
+[assembly:
+    AssemblyProduct("xyLOGIX Support Library for Providers of Extension Data")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2019-23 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright © 2019-23 by xyLOGIX, LLC.  All rights reserved."
+    )]
 [assembly:
     AssemblyTrademark(
-        "This software is a component of the xyLOGIX Core Extension Library.  xyLOGIX Core Extension Library is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
+        "This software is a component of the xyLOGIX Core Extension Library.  xyLOGIX Core Extension Library is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties."
+    )]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

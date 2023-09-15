@@ -1,4 +1,4 @@
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -9,20 +9,20 @@ using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions.Providers
 {
-    /// <summary>
-    /// Defines associations between forms and their contained controls.
-    /// </summary>
+    /// <summary> Defines associations between forms and their contained controls. </summary>
     [Log(AttributeExclude = true)]
     public class
         ControlFormAssociationProvider : IControlFormAssociationProvider
     {
         /// <summary>
-        /// Empty, static constructor to prohibit direct allocation of this class.
+        /// Empty, static constructor to prohibit direct allocation of this
+        /// class.
         /// </summary>
         static ControlFormAssociationProvider() { }
 
         /// <summary>
-        /// Empty, protected constructor to prohibit direct allocation of this class.
+        /// Empty, protected constructor to prohibit direct allocation of this
+        /// class.
         /// </summary>
         protected ControlFormAssociationProvider()
             => ParentFormDictionary = new ConcurrentDictionary<Control, Form>();
@@ -44,8 +44,8 @@ namespace xyLOGIX.Core.Extensions.Providers
         protected IDictionary<Control, Form> ParentFormDictionary { get; }
 
         /// <summary>
-        /// Adds an association between the specified <paramref name="control" /> and the
-        /// specified <paramref name="form" />.
+        /// Adds an association between the specified <paramref name="control" />
+        /// and the specified <paramref name="form" />.
         /// </summary>
         /// <param name="control">
         /// (Required.) A
@@ -57,7 +57,8 @@ namespace xyLOGIX.Core.Extensions.Providers
         {
             try
             {
-                if (control == null || control.Disposing || control.IsDisposed) return;
+                if (control == null || control.Disposing || control.IsDisposed)
+                    return;
                 if (ParentFormDictionary == null) return;
                 if (ParentFormDictionary.ContainsKey(control)) return;
 
@@ -118,9 +119,10 @@ namespace xyLOGIX.Core.Extensions.Providers
         }
 
         /// <summary>
-        /// Subscribes the <see cref="E:System.Windows.Forms.Control.HandleDestroyed" />
-        /// event of the specified <paramref name="control" /> to remove all the mappings
-        /// for it from our internal dictionary.
+        /// Subscribes the
+        /// <see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> event of the
+        /// specified <paramref name="control" /> to remove all the mappings for it from
+        /// our internal dictionary.
         /// </summary>
         /// <param name="control">
         /// (Required.) A
@@ -153,8 +155,8 @@ namespace xyLOGIX.Core.Extensions.Providers
         }
 
         /// <summary>
-        /// Subscribes the <see cref="E:System.Windows.Forms.Form.FormClosed" /> event of
-        /// the specified <paramref name="form" /> to un-associate it with all its
+        /// Subscribes the <see cref="E:System.Windows.Forms.Form.FormClosed" />
+        /// event of the specified <paramref name="form" /> to un-associate it with all its
         /// contained controls in our internal dictionary.
         /// </summary>
         /// <param name="form">
@@ -163,8 +165,8 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// dictionary.
         /// </param>
         /// <remarks>
-        /// If the specified <paramref name="form" /> is <see langword="null" /> or
-        /// disposed, or if the internal dictionary has not been initialized, or if the
+        /// If the specified <paramref name="form" /> is <see langword="null" />
+        /// or disposed, or if the internal dictionary has not been initialized, or if the
         /// internal dictionary contains no mappings for the specified
         /// <paramref name="form" />, then this method does nothing.
         /// </remarks>
@@ -194,8 +196,8 @@ namespace xyLOGIX.Core.Extensions.Providers
         }
 
         /// <summary>
-        /// Removes the association(s) between the specified <paramref name="control" />
-        /// and its containing form(s).
+        /// Removes the association(s) between the specified
+        /// <paramref name="control" /> and its containing form(s).
         /// </summary>
         /// <param name="control">
         /// A <see cref="T:System.Windows.Forms.Control" /> that is
@@ -229,18 +231,16 @@ namespace xyLOGIX.Core.Extensions.Providers
             }
         }
 
-        /// <summary>
-        /// Called to remove all the key-value pairs that
-        /// </summary>
+        /// <summary> Called to remove all the key-value pairs that </summary>
         /// <param name="form">
         /// (Required.) Reference to the instance of
         /// <see cref="T:System.Windows.Forms.Form" /> whose associated controls are to be
         /// removed.
         /// </param>
         /// <remarks>
-        /// This method is usually closed as part of the implementation of a handler for
-        /// the <see cref="E:System.Windows.Forms.Form.FormClosed" /> event for the
-        /// specified <paramref name="form" />.
+        /// This method is usually closed as part of the implementation of a
+        /// handler for the <see cref="E:System.Windows.Forms.Form.FormClosed" /> event for
+        /// the specified <paramref name="form" />.
         /// </remarks>
         private void DetachForm(Form form)
         {
@@ -272,9 +272,9 @@ namespace xyLOGIX.Core.Extensions.Providers
         }
 
         /// <summary>
-        /// Handles the <see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> event
-        /// raised by a <see cref="T:System.Windows.Forms.Control" /> in our internal
-        /// collection.
+        /// Handles the
+        /// <see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> event raised by a
+        /// <see cref="T:System.Windows.Forms.Control" /> in our internal collection.
         /// </summary>
         /// <param name="sender">
         /// Reference to an instance of the object that raised the
@@ -298,8 +298,8 @@ namespace xyLOGIX.Core.Extensions.Providers
         }
 
         /// <summary>
-        /// Handles the <see cref="E:System.Windows.Forms.Form.FormClosed" /> event raised
-        /// by a form that has been associated with one or more control(s).
+        /// Handles the <see cref="E:System.Windows.Forms.Form.FormClosed" />
+        /// event raised by a form that has been associated with one or more control(s).
         /// </summary>
         /// <param name="sender">
         /// Reference to an instance of the object that raised the

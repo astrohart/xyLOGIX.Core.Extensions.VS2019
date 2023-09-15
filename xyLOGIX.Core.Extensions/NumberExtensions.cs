@@ -1,12 +1,12 @@
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Helper functions for doing operations on, or making decisions about, numerical
-    /// data.
+    /// Helper functions for doing operations on, or making decisions about,
+    /// numerical data.
     /// </summary>
     [Log(AttributeExclude = true)]
     public static class NumberExtensions
@@ -125,22 +125,15 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines if a decimal value is between a pair of values or equal
-        /// to either of them.
+        /// Determines if a decimal value is between a pair of values or equal to
+        /// either of them.
         /// </summary>
-        /// <param name="value">
-        /// The value to be checked.
-        /// </param>
-        /// <param name="lowerBound">
-        /// Lower bound.
-        /// </param>
-        /// <param name="upperBound">
-        /// Upper bound.
-        /// </param>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
         /// <returns>
-        /// <see langword="true" /> if the value is either within the range specified or
-        /// equal to
-        /// either of the bounds; <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to either of the bounds; <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsIncludedInRange(
             this decimal value,
@@ -149,24 +142,21 @@ namespace xyLOGIX.Core.Extensions
         )
             => upperBound >= value && value >= lowerBound;
 
-        /// <summary>
-        /// Determines if a <paramref name="value" /> is negative.
-        /// </summary>
+        /// <summary> Determines if a <paramref name="value" /> is negative. </summary>
         /// <param name="value">
-        /// (Required.) Value to be compared. Must be of <see cref="T:System.Decimal" />
-        /// type.
+        /// (Required.) Value to be compared. Must be of
+        /// <see cref="T:System.Decimal" /> type.
         /// </param>
         /// <returns>
-        /// <see langword="true" /> if the <paramref name="value" /> is strictly less than
-        /// zero;
-        /// <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the <paramref name="value" /> is strictly
+        /// less than zero; <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsNegative(this decimal value)
             => value < decimal.Zero;
 
         /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is non-positive;
-        /// i.e., zero, or a negative number.
+        /// Determines whether the specified <paramref name="value" /> is
+        /// non-positive; i.e., zero, or a negative number.
         /// </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
@@ -181,8 +171,8 @@ namespace xyLOGIX.Core.Extensions
             => value >= decimal.Zero;
 
         /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is non-positive;
-        /// i.e., zero, or a negative number.
+        /// Determines whether the specified <paramref name="value" /> is
+        /// non-positive; i.e., zero, or a negative number.
         /// </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
@@ -196,9 +186,7 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsNonPositive(this decimal value)
             => value <= decimal.Zero;
 
-        /// <summary>
-        /// Determines whether a <paramref name="value" /> is nonzero.
-        /// </summary>
+        /// <summary> Determines whether a <paramref name="value" /> is nonzero. </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
         /// <see cref="T:System.Decimal" /> type.
@@ -211,9 +199,7 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsNonzero(this decimal value)
             => value != decimal.Zero;
 
-        /// <summary>
-        /// Determines whether a <paramref name="value" /> is nonzero.
-        /// </summary>
+        /// <summary> Determines whether a <paramref name="value" /> is nonzero. </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
         /// <see cref="T:System.Decimal" /> type.
@@ -226,17 +212,14 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsNonzero(this double value)
             => value != 0D;
 
-        /// <summary>
-        /// Determines whether a <paramref name="value" /> is positive.
-        /// </summary>
+        /// <summary> Determines whether a <paramref name="value" /> is positive. </summary>
         /// <param name="value">
-        /// (Required.)  Value to be compared. Must be of <see cref="T:System.Decimal" />
-        /// type.
+        /// (Required.)  Value to be compared. Must be of
+        /// <see cref="T:System.Decimal" /> type.
         /// </param>
         /// <returns>
-        /// <see langword="true" /> if the <paramref name="value" /> is strictly greater
-        /// than zero;
-        /// <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the <paramref name="value" /> is strictly
+        /// greater than zero; <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsPositive(this decimal value)
             => value > decimal.Zero;
@@ -245,23 +228,13 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether a number is strictly between (as in, can't be
         /// equal to either)
         /// </summary>
-        /// <param name="value">
-        /// The value to be checked.
-        /// </param>
-        /// <param name="lowerBound">
-        /// Lower bound.
-        /// </param>
-        /// <param name="upperBound">
-        /// Upper bound.
-        /// </param>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
         /// <returns>
         /// True if <paramref name="value" /> is strictly greater than
-        /// <paramref
-        ///     name="lowerBound" />
-        /// and strictly less than
-        /// <paramref
-        ///     name="upperBound" />
-        /// ; false otherwise.
+        /// <paramref name="lowerBound" /> and strictly less than
+        /// <paramref name="upperBound" /> ; false otherwise.
         /// </returns>
         public static bool IsStrictlyInRange(
             this decimal value,
@@ -270,15 +243,9 @@ namespace xyLOGIX.Core.Extensions
         )
             => upperBound > value && value > lowerBound;
 
-        /// <summary>
-        /// Determines whether a <paramref name="value" /> is zero.
-        /// </summary>
-        /// <param name="value">
-        /// Value to be compared.
-        /// </param>
-        /// <returns>
-        /// True if the <paramref name="value" /> is zero; false otherwise.
-        /// </returns>
+        /// <summary> Determines whether a <paramref name="value" /> is zero. </summary>
+        /// <param name="value"> Value to be compared. </param>
+        /// <returns> True if the <paramref name="value" /> is zero; false otherwise. </returns>
         public static bool IsZero(this decimal value)
             => value == decimal.Zero;
 
@@ -286,12 +253,8 @@ namespace xyLOGIX.Core.Extensions
         /// Takes a value of type decimal and truncates it to the specified
         /// number of places.
         /// </summary>
-        /// <param name="val">
-        /// Value to be truncated.
-        /// </param>
-        /// <param name="places">
-        /// Number of digits following the decimal point.
-        /// </param>
+        /// <param name="val"> Value to be truncated. </param>
+        /// <param name="places"> Number of digits following the decimal point. </param>
         /// <returns>
         /// New decimal value with all the digits removed except places digits
         /// following the decimal point.
@@ -309,8 +272,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Computes the zero floor.  Meaning, if the specified <paramref name="value" />
-        /// is negative, then this method returns zero.
+        /// Computes the zero floor.  Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
         /// <para />
         /// If the specified <paramref name="value" /> is zero or greater, then this method
         /// is the identity.
@@ -325,8 +288,8 @@ namespace xyLOGIX.Core.Extensions
             => value < 0 ? 0 : value;
 
         /// <summary>
-        /// Computes the zero floor.  Meaning, if the specified <paramref name="value" />
-        /// is negative, then this method returns zero.
+        /// Computes the zero floor.  Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
         /// <para />
         /// If the specified <paramref name="value" /> is zero or greater, then this method
         /// is the identity.
@@ -341,8 +304,8 @@ namespace xyLOGIX.Core.Extensions
             => value < 0.00D ? 0.00D : value;
 
         /// <summary>
-        /// Computes the zero floor.  Meaning, if the specified <paramref name="value" />
-        /// is negative, then this method returns zero.
+        /// Computes the zero floor.  Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
         /// <para />
         /// If the specified <paramref name="value" /> is zero or greater, then this method
         /// is the identity.

@@ -1,17 +1,16 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Exposes static extension methods for collection types.
-    /// </summary>
+    /// <summary> Exposes static extension methods for collection types. </summary>
     public static class CollectionExtensions
     {
         /// <summary>
-        /// Adds multiple items to a collection without the need to call <c>AddRange</c>
-        /// and allocate up a whole new collection object instance just to be used once.
+        /// Adds multiple items to a collection without the need to call
+        /// <c>AddRange</c> and allocate up a whole new collection object instance just to
+        /// be used once.
         /// <para />
         /// It seemed like the <c>AddRange</c> way was a waste of system resources.
         /// </summary>
@@ -20,8 +19,8 @@ namespace xyLOGIX.Core.Extensions
         /// specified <paramref name="collection" />.
         /// </typeparam>
         /// <param name="collection">
-        /// (Required.) Reference to an instance of an object that implements the
-        /// <see cref="ICollection{T}" /> interface.
+        /// (Required.) Reference to an instance of an object
+        /// that implements the <see cref="ICollection{T}" /> interface.
         /// </param>
         /// <param name="items">
         /// (Required.) One or more instances of
@@ -58,21 +57,22 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines whether the specified <paramref name="collection" /> contains zero
-        /// elements.
+        /// Determines whether the specified <paramref name="collection" />
+        /// contains zero elements.
         /// </summary>
         /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
         /// <param name="collection">
-        /// (Required.) Reference to an instance of an object that implements the
-        /// <see cref="ICollection{T}" /> interface.
+        /// (Required.) Reference to an instance of an object
+        /// that implements the <see cref="ICollection{T}" /> interface.
         /// </param>
         /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="collection" />
-        /// contains zero elements; <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the specified
+        /// <paramref name="collection" /> contains zero elements; <see langword="false" />
+        /// otherwise.
         /// </returns>
         /// <remarks>
-        /// If this method is passed a <see langword="null" /> reference, then the method
-        /// also returns <see langword="false" />.
+        /// If this method is passed a <see langword="null" /> reference, then
+        /// the method also returns <see langword="false" />.
         /// </remarks>
         public static bool IsEmpty<T>(this ICollection<T> collection)
             => collection != null && !collection.Any();
@@ -84,8 +84,8 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
         /// <param name="collection">
-        /// (Required.) Reference to an instance of an object that implements the
-        /// <see cref="ICollection{T}" /> interface.
+        /// (Required.) Reference to an instance of an object
+        /// that implements the <see cref="ICollection{T}" /> interface.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified
@@ -96,24 +96,24 @@ namespace xyLOGIX.Core.Extensions
             => collection == null || !collection.Any();
 
         /// <summary>
-        /// Determines if the specified <c>object</c> is of one of the types in the
-        /// specified tuple of types.
+        /// Determines if the specified <c>object</c> is of one of the types in
+        /// the specified tuple of types.
         /// </summary>
         /// <typeparam name="TTypes">
         /// Tuple of types that the <paramref name="obj" /> could
         /// be.
         /// </typeparam>
         /// <param name="obj">
-        /// A <see cref="T:System.Object" /> instance whose type is to be
-        /// checked.
+        /// A <see cref="T:System.Object" /> instance whose type is to
+        /// be checked.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <c>object</c> is one of the
         /// types specified; otherwise, <see langword="false" /> is returned.
         /// </returns>
         /// <remarks>
-        /// If a <see langword="null" /> reference is passed to this method, then this
-        /// method returns <see langword="false" />.
+        /// If a <see langword="null" /> reference is passed to this method, then
+        /// this method returns <see langword="false" />.
         /// <para />
         /// This method is useful for checking, say, if a
         /// <see cref="T:System.Windows.Forms.Control" /> is a

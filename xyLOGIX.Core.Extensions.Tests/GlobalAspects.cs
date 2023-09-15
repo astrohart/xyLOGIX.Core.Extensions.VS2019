@@ -15,7 +15,23 @@ using PostSharp.Patterns.Diagnostics;
                                           MulticastAttributes.Public |
                                           MulticastAttributes.UserGenerated
     )]
-[assembly: Log(AttributePriority = 2, AttributeExclude = true, AttributeTargetMembers = "get_*" )]
-[assembly: Log(AttributePriority = 3, AttributeExclude = true, AttributeTargetMembers = "set_*" )]
-[assembly: Log(AttributePriority = 4, AttributeExclude = true, AttributeTargetMembers = "add_*" )]
-[assembly: Log(AttributePriority = 5, AttributeExclude = true, AttributeTargetMembers = "remove_*" )]
+[assembly:
+    Log(
+        AttributePriority = 2, AttributeExclude = true,
+        AttributeTargetMembers = "get_*"
+    )]
+[assembly:
+    Log(
+        AttributePriority = 3, AttributeExclude = true,
+        AttributeTargetMembers = "set_*"
+    )]
+[assembly:
+    Log(
+        AttributePriority = 4, AttributeExclude = true,
+        AttributeTargetMembers = "add_*"
+    )]
+[assembly:
+    Log(
+        AttributePriority = 5, AttributeExclude = true,
+        AttributeTargetMembers = "remove_*"
+    )]

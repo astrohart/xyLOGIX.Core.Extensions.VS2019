@@ -3294,7 +3294,8 @@ paint operation), and causes a paint message to be sent to the control.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to invalidate. |
+| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to
+invalidate. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Region,System-Boolean-'></a>
 ### Invalidate(region,invalidateChildren) `method`
@@ -3310,7 +3311,8 @@ Optionally, invalidates the child controls assigned to the control.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to invalidate. |
+| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to
+invalidate. |
 | invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the
 control's child controls; otherwise, `false`. |
 
@@ -7378,7 +7380,8 @@ Collection of strings containing the delimited entries.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be transformed. |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be
+transformed. |
 | separators | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Collection of strings specifying the delimiter(s) to
 split upon. |
 

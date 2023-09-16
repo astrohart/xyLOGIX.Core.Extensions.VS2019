@@ -1,4 +1,4 @@
-﻿<a name='assembly'></a>
+<a name='assembly'></a>
 # xyLOGIX.Core.Extensions.Tests
 
 ## Contents
@@ -56,8 +56,8 @@ This method has no parameters.
 
 ##### Summary
 
-Asserts that `100` is NOT in the range `(1,100)`, where the rounded
-parentheses denote exclusive bounds.
+Asserts that `100` is NOT in the range `(1,100)`, where the
+rounded parentheses denote exclusive bounds.
 
 ##### Parameters
 
@@ -157,8 +157,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
 
 <a name='P-xyLOGIX-Core-Extensions-Tests-Properties-Resources-ResourceManager'></a>
 ### ResourceManager `property`

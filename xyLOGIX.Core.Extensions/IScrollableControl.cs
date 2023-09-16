@@ -25,7 +25,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Drawing.Size" /> that represents the height and
         /// width of the auto-scroll margin in pixels.
         /// </returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">
+        /// <exception cref="T:System.ArgumentOutOfRangeException" >
         /// The
         /// <see cref="P:System.Drawing.Size.Height" /> or
         /// <see cref="P:System.Drawing.Size.Width" /> value assigned is less than 0.
@@ -75,12 +75,12 @@ namespace xyLOGIX.Core.Extensions
         /// Scrolls the specified child control into view on an auto-scroll
         /// enabled control.
         /// </summary>
-        /// <param name="activeControl"> The child control to scroll into view. </param>
+        /// <param name="activeControl" > The child control to scroll into view. </param>
         void ScrollControlIntoView(Control activeControl);
 
         /// <summary> Sets the size of the auto-scroll margins. </summary>
-        /// <param name="x"> The <see cref="P:System.Drawing.Size.Width" /> value. </param>
-        /// <param name="y"> The <see cref="P:System.Drawing.Size.Height" /> value. </param>
+        /// <param name="x" > The <see cref="P:System.Drawing.Size.Width" /> value. </param>
+        /// <param name="y" > The <see cref="P:System.Drawing.Size.Height" /> value. </param>
         void SetAutoScrollMargin(int x, int y);
     }
 }

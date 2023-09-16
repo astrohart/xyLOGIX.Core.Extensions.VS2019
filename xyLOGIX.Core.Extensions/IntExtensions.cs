@@ -12,8 +12,8 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> is equal to one of the items in a collection of
         /// integers.
         /// </summary>
-        /// <param name="value"> Integer to be compared to the members of the list. </param>
-        /// <param name="list">
+        /// <param name="value" > Integer to be compared to the members of the list. </param>
+        /// <param name="list" >
         /// Collection of integers that should be searched for the
         /// <paramref name="value" />.
         /// </param>

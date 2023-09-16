@@ -16,16 +16,16 @@ namespace xyLOGIX.Core.Extensions
         /// only if the item is not already present in the collection. If it is, then this
         /// method does nothing.
         /// </summary>
-        /// <param name="list">
+        /// <param name="list" >
         /// Reference to a list that implements the
         /// <see cref="T:System.Collections.Generic.IList" /> interface for items of type
         /// <typeparamref name="T" />.
         /// </param>
-        /// <param name="item">
+        /// <param name="item" >
         /// Element to be added to the collection, unless it's in the
         /// collection already.
         /// </param>
-        /// <typeparam name="T"> Type of the new element. </typeparam>
+        /// <typeparam name="T" > Type of the new element. </typeparam>
         public static void AddDistinct<T>(this IList<T> list, T item)
         {
             if (list.Contains(item)) return;
@@ -39,16 +39,16 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="item" /> is already a member of the
         /// <paramref name="collection" /> , then this method does nothing.
         /// </summary>
-        /// <param name="collection">
+        /// <param name="collection" >
         /// Reference to a list that implements the
         /// <see cref="T:System.Collections.Generic.ICollection{T}" /> interface for items
         /// of type <typeparamref name="T" />.
         /// </param>
-        /// <param name="item">
+        /// <param name="item" >
         /// Element to be added to the collection, unless it's in the
         /// collection already.
         /// </param>
-        /// <typeparam name="T">
+        /// <typeparam name="T" >
         /// Type of the elements of the <paramref name="collection" />
         /// .
         /// </typeparam>
@@ -71,11 +71,11 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="list" /> parameter, then this method likewise also does
         /// nothing.
         /// </summary>
-        /// <param name="list">
+        /// <param name="list" >
         /// Reference to an instance of an object that implements the
         /// <see cref="T:System.Collections.IList" /> interface.
         /// </param>
-        /// <param name="item">
+        /// <param name="item" >
         /// Element to be added to the collection, unless it's in the
         /// collection already.
         /// </param>
@@ -92,15 +92,15 @@ namespace xyLOGIX.Core.Extensions
         /// Adds a collection of <paramref name="items" /> to the specified
         /// <paramref name="list" />.
         /// </summary>
-        /// <typeparam name="T">
+        /// <typeparam name="T" >
         /// (Required.) Name of the type of the individual elements of
         /// the <paramref name="list" />.
         /// </typeparam>
-        /// <param name="list">
+        /// <param name="list" >
         /// (Required.) Collection to which the specified
         /// <paramref name="items" /> are to be added.
         /// </param>
-        /// <param name="items">
+        /// <param name="items" >
         /// (Required.) Collection of <paramref name="items" /> to be
         /// added to the specified <paramref name="list" />.
         /// </param>
@@ -138,8 +138,8 @@ namespace xyLOGIX.Core.Extensions
         /// Creates a duplicate of the list given to it and returns a reference
         /// to the clone.
         /// </summary>
-        /// <typeparam name="T"> Type of object in the list. </typeparam>
-        /// <param name="source"> Reference to the collection to make a duplicate of. </param>
+        /// <typeparam name="T" > Type of object in the list. </typeparam>
+        /// <param name="source" > Reference to the collection to make a duplicate of. </param>
         /// <returns>
         /// Reference to the duplicate of the collection referenced by
         /// <paramref name="source" />.
@@ -156,8 +156,8 @@ namespace xyLOGIX.Core.Extensions
         /// Gets a value indicating whether the <paramref name="value" /> is
         /// among the elements of the <paramref name="valueSet" />.
         /// </summary>
-        /// <param name="value"> Value to compare. </param>
-        /// <param name="valueSet"> Range of integer values to check. </param>
+        /// <param name="value" > Value to compare. </param>
+        /// <param name="valueSet" > Range of integer values to check. </param>
         /// <returns>
         /// true if <paramref name="value" /> is in the
         /// <paramref name="valueSet" /> ; false otherwise.
@@ -169,8 +169,8 @@ namespace xyLOGIX.Core.Extensions
         /// Writes a list variable out as a set {1,2,3,4} e.g., as in
         /// mathematics. Stops past the tenth item.
         /// </summary>
-        /// <param name="list"> List to be written. </param>
-        /// <typeparam name="T"> The type of each element of the list. </typeparam>
+        /// <param name="list" > List to be written. </param>
+        /// <typeparam name="T" > The type of each element of the list. </typeparam>
         /// <returns> The <paramref name="list" />, formatted as a set string. </returns>
         /// <remarks>
         /// This method is helpful for writing some of the members of a
@@ -203,8 +203,8 @@ namespace xyLOGIX.Core.Extensions
         /// Writes a list variable out as a set {1,2,3,4} e.g., as in
         /// mathematics. Stops past the tenth item.
         /// </summary>
-        /// <param name="collection"> Collection to be written. </param>
-        /// <typeparam name="T"> The type of each element of the list. </typeparam>
+        /// <param name="collection" > Collection to be written. </param>
+        /// <typeparam name="T" > The type of each element of the list. </typeparam>
         /// <returns> The <paramref name="collection" />, formatted as a set string. </returns>
         /// <remarks>
         /// This method is helpful for writing some of the members of a
@@ -239,11 +239,11 @@ namespace xyLOGIX.Core.Extensions
         /// be called on objects implementing
         /// <see cref="T:System.Collections.Generic.IList{T}" />.
         /// </summary>
-        /// <typeparam name="T">
+        /// <typeparam name="T" >
         /// (Required.) Data type of each element of the specified
         /// <paramref name="list" />.
         /// </typeparam>
-        /// <param name="list">(Required.) A <c>List</c> to be trimmed.</param>
+        /// <param name="list" >(Required.) A <c>List</c> to be trimmed.</param>
         public static void TrimExcess<T>(this IList<T> list)
         {
             try

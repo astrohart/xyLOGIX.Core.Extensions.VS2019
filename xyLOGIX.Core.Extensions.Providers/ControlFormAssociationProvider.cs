@@ -47,7 +47,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// Adds an association between the specified <paramref name="control" />
         /// and the specified <paramref name="form" />.
         /// </summary>
-        /// <param name="control">
+        /// <param name="control" >
         /// (Required.) A
         /// <see cref="T:System.Windows.Forms.Control" /> for whom an association should be
         /// created between it and its containing
@@ -83,7 +83,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// corresponding parent <see cref="T:System.Windows.Forms.Form" /> that contains
         /// the control in our dictionary.
         /// </summary>
-        /// <param name="control">
+        /// <param name="control" >
         /// (Required.) An instance of
         /// <see cref="T:System.Windows.Forms.Control" /> for whom the containing form is
         /// to be obtained.
@@ -124,7 +124,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// specified <paramref name="control" /> to remove all the mappings for it from
         /// our internal dictionary.
         /// </summary>
-        /// <param name="control">
+        /// <param name="control" >
         /// (Required.) A
         /// <see cref="T:System.Windows.Forms.Control" /> for whom all the mappings should
         /// be removed to its parent form(s) in our internal dictionary.
@@ -159,7 +159,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// event of the specified <paramref name="form" /> to un-associate it with all its
         /// contained controls in our internal dictionary.
         /// </summary>
-        /// <param name="form">
+        /// <param name="form" >
         /// (Required.) A <see cref="T:System.Windows.Forms.Form" />
         /// that should be un-associated with its contained controls in our internal
         /// dictionary.
@@ -199,7 +199,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// Removes the association(s) between the specified
         /// <paramref name="control" /> and its containing form(s).
         /// </summary>
-        /// <param name="control">
+        /// <param name="control" >
         /// A <see cref="T:System.Windows.Forms.Control" /> that is
         /// to be removed from our internal dictionary.
         /// </param>
@@ -232,7 +232,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         }
 
         /// <summary> Called to remove all the key-value pairs that </summary>
-        /// <param name="form">
+        /// <param name="form" >
         /// (Required.) Reference to the instance of
         /// <see cref="T:System.Windows.Forms.Form" /> whose associated controls are to be
         /// removed.
@@ -276,11 +276,11 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// <see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> event raised by a
         /// <see cref="T:System.Windows.Forms.Control" /> in our internal collection.
         /// </summary>
-        /// <param name="sender">
+        /// <param name="sender" >
         /// Reference to an instance of the object that raised the
         /// event.
         /// </param>
-        /// <param name="e">
+        /// <param name="e" >
         /// A <see cref="T:System.EventArgs" /> that contains the event
         /// data.
         /// </param>
@@ -301,11 +301,11 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// Handles the <see cref="E:System.Windows.Forms.Form.FormClosed" />
         /// event raised by a form that has been associated with one or more control(s).
         /// </summary>
-        /// <param name="sender">
+        /// <param name="sender" >
         /// Reference to an instance of the object that raised the
         /// event.
         /// </param>
-        /// <param name="e">
+        /// <param name="e" >
         /// A <see cref="T:System.EventArgs" /> that contains the event
         /// data.
         /// </param>

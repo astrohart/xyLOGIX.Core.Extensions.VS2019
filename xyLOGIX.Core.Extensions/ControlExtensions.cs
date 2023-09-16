@@ -30,7 +30,7 @@ namespace xyLOGIX.Core.Extensions
         /// Associates the specified <paramref name="control" /> with its
         /// containing (i.e., parent) <see cref="T:System.Windows.Forms.Form" />.
         /// </summary>
-        /// <param name="control">
+        /// <param name="control" >
         /// (Required.) Reference to an instance of
         /// <see cref="T:System.Windows.Forms.Control" /> that is to be associated with its
         /// containing (i.e., parent) <see cref="T:System.Windows.Forms.Form" />.
@@ -97,16 +97,16 @@ namespace xyLOGIX.Core.Extensions
         /// Provides a thread-safe way to run managed code against, e.g., a
         /// GUI-thread control.
         /// </summary>
-        /// <typeparam name="T">
+        /// <typeparam name="T" >
         /// (Required.) Name of the return type of the specified
         /// <paramref name="message" />.
         /// </typeparam>
-        /// <param name="obj">
+        /// <param name="obj" >
         /// (Required.) Reference to an instance of an object that
         /// implements the <see cref="T:System.ComponentModel.ISynchronizeInvoke" />
         /// interface.
         /// </param>
-        /// <param name="message">
+        /// <param name="message" >
         /// (Required.) Reference to a
         /// <see cref="T:System.Windows.Forms.MethodInvoker" /> delegate that defines the
         /// code to be run.
@@ -145,12 +145,12 @@ namespace xyLOGIX.Core.Extensions
         /// Provides a thread-safe way to run managed code against, e.g., a
         /// GUI-thread control.
         /// </summary>
-        /// <param name="obj">
+        /// <param name="obj" >
         /// (Required.) Reference to an instance of an object that
         /// implements the <see cref="T:System.ComponentModel.ISynchronizeInvoke" />
         /// interface.
         /// </param>
-        /// <param name="message">
+        /// <param name="message" >
         /// (Required.) Reference to a
         /// <see cref="T:System.Windows.Forms.MethodInvoker" /> delegate that defines the
         /// code to be run.

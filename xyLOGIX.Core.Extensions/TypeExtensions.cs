@@ -49,8 +49,8 @@ namespace xyLOGIX.Core.Extensions
         /// the same, or a subclass of, the base class whose <see cref="T:System.Type" />
         /// is passed.
         /// </summary>
-        /// <param name="potentialDescendant"> Type to be examined. </param>
-        /// <param name="potentialBaseType">
+        /// <param name="potentialDescendant" > Type to be examined. </param>
+        /// <param name="potentialBaseType" >
         /// Reference to the <see cref="T:System.Type" />
         /// structure of the class you think might be the
         /// <paramref name="potentialDescendant" />'s base.

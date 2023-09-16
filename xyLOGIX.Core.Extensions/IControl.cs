@@ -59,7 +59,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.AccessibleRole" /> . The default is
         /// <see langword="Default" />.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
         /// The
         /// value assigned is not one of the
         /// <see cref="T:System.Windows.Forms.AccessibleRole" /> values.
@@ -129,7 +129,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="F:System.Windows.Forms.ImageLayout.Zoom" /> ).
         /// <see cref="F:System.Windows.Forms.ImageLayout.Tile" /> is the default value.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
         /// The
         /// specified enumeration value does not exist.
         /// </exception>
@@ -322,7 +322,7 @@ namespace xyLOGIX.Core.Extensions
         /// One of the <see cref="T:System.Windows.Forms.DockStyle" /> values.
         /// The default is <see cref="F:System.Windows.Forms.DockStyle.None" />.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
         /// The
         /// value assigned is not one of the
         /// <see cref="T:System.Windows.Forms.DockStyle" /> values.
@@ -389,7 +389,7 @@ namespace xyLOGIX.Core.Extensions
         /// One of the <see cref="T:System.Windows.Forms.ImeMode" /> values. The
         /// default is <see cref="F:System.Windows.Forms.ImeMode.Inherit" />.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
         /// The
         /// assigned value is not one of the <see cref="T:System.Windows.Forms.ImeMode" />
         /// enumeration values.
@@ -559,7 +559,7 @@ namespace xyLOGIX.Core.Extensions
         /// One of the <see cref="T:System.Windows.Forms.RightToLeft" /> values.
         /// The default is <see cref="F:System.Windows.Forms.RightToLeft.Inherit" />.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
         /// The
         /// assigned value is not one of the
         /// <see cref="T:System.Windows.Forms.RightToLeft" /> values.
@@ -990,13 +990,13 @@ namespace xyLOGIX.Core.Extensions
         /// Executes the specified delegate asynchronously on the thread that the
         /// control's underlying handle was created on.
         /// </summary>
-        /// <param name="method"> A delegate to a method that takes no parameters. </param>
+        /// <param name="method" > A delegate to a method that takes no parameters. </param>
         /// <returns>
         /// An <see cref="T:System.IAsyncResult" /> that represents the result of
         /// the <see cref="M:System.Windows.Forms.Control.BeginInvoke(System.Delegate)" />
         /// operation.
         /// </returns>
-        /// <exception cref="T:System.InvalidOperationException">
+        /// <exception cref="T:System.InvalidOperationException" >
         /// No appropriate window
         /// handle can be found.
         /// </exception>
@@ -1009,7 +1009,7 @@ namespace xyLOGIX.Core.Extensions
         /// Retrieves a value indicating whether the specified control is a child
         /// of the control.
         /// </summary>
-        /// <param name="ctl">
+        /// <param name="ctl" >
         /// The <see cref="T:System.Windows.Forms.Control" /> to
         /// evaluate.
         /// </param>
@@ -1030,8 +1030,8 @@ namespace xyLOGIX.Core.Extensions
         Graphics CreateGraphics();
 
         /// <summary> Begins a drag-and-drop operation. </summary>
-        /// <param name="data"> The data to drag. </param>
-        /// <param name="allowedEffects">
+        /// <param name="data" > The data to drag. </param>
+        /// <param name="allowedEffects" >
         /// One of the
         /// <see cref="T:System.Windows.Forms.DragDropEffects" /> values.
         /// </param>
@@ -1044,8 +1044,8 @@ namespace xyLOGIX.Core.Extensions
         DragDropEffects DoDragDrop(object data, DragDropEffects allowedEffects);
 
         /// <summary> Supports rendering to the specified bitmap. </summary>
-        /// <param name="bitmap"> The bitmap to be drawn to. </param>
-        /// <param name="targetBounds"> The bounds within which the control is rendered. </param>
+        /// <param name="bitmap" > The bitmap to be drawn to. </param>
+        /// <param name="targetBounds" > The bounds within which the control is rendered. </param>
         void DrawToBitmap(Bitmap bitmap, Rectangle targetBounds);
 
         /// <summary> Retrieves the form that the control is on. </summary>
@@ -1066,12 +1066,12 @@ namespace xyLOGIX.Core.Extensions
         /// Retrieves the child control that is located at the specified
         /// coordinates, specifying whether to ignore child controls of a certain type.
         /// </summary>
-        /// <param name="pt">
+        /// <param name="pt" >
         /// A <see cref="T:System.Drawing.Point" /> that contains the
         /// coordinates where you want to look for a control. Coordinates are expressed
         /// relative to the upper-left corner of the control's client area.
         /// </param>
-        /// <param name="skipValue">
+        /// <param name="skipValue" >
         /// One of the values of
         /// <see cref="T:System.Windows.Forms.GetChildAtPointSkip" /> , determining whether
         /// to ignore child controls of a certain type.
@@ -1086,7 +1086,7 @@ namespace xyLOGIX.Core.Extensions
         /// Retrieves the child control that is located at the specified
         /// coordinates.
         /// </summary>
-        /// <param name="pt">
+        /// <param name="pt" >
         /// A <see cref="T:System.Drawing.Point" /> that contains the
         /// coordinates where you want to look for a control. Coordinates are expressed
         /// relative to the upper-left corner of the control's client area.
@@ -1112,11 +1112,11 @@ namespace xyLOGIX.Core.Extensions
         /// Retrieves the next control forward or back in the tab order of child
         /// controls.
         /// </summary>
-        /// <param name="ctl">
+        /// <param name="ctl" >
         /// The <see cref="T:System.Windows.Forms.Control" /> to start
         /// the search with.
         /// </param>
-        /// <param name="forward">
+        /// <param name="forward" >
         /// <see langword="true" /> to search forward in the tab
         /// order; <see langword="false" /> to search backward.
         /// </param>
@@ -1130,7 +1130,7 @@ namespace xyLOGIX.Core.Extensions
         /// Retrieves the size of a rectangular area into which a control can be
         /// fitted.
         /// </summary>
-        /// <param name="proposedSize"> The custom-sized area for a control. </param>
+        /// <param name="proposedSize" > The custom-sized area for a control. </param>
         /// <returns>
         /// An ordered pair of type <see cref="T:System.Drawing.Size" />
         /// representing the width and height of a rectangle.
@@ -1145,7 +1145,10 @@ namespace xyLOGIX.Core.Extensions
         /// control's update region, which is the area that will be repainted at the next
         /// paint operation), and causes a paint message to be sent to the control.
         /// </summary>
-        /// <param name="region"> The <see cref="T:System.Drawing.Region" /> to invalidate. </param>
+        /// <param name="region" >
+        /// The <see cref="T:System.Drawing.Region" /> to
+        /// invalidate.
+        /// </param>
         void Invalidate(Region region);
 
         /// <summary>
@@ -1154,8 +1157,11 @@ namespace xyLOGIX.Core.Extensions
         /// paint operation), and causes a paint message to be sent to the control.
         /// Optionally, invalidates the child controls assigned to the control.
         /// </summary>
-        /// <param name="region"> The <see cref="T:System.Drawing.Region" /> to invalidate. </param>
-        /// <param name="invalidateChildren">
+        /// <param name="region" >
+        /// The <see cref="T:System.Drawing.Region" /> to
+        /// invalidate.
+        /// </param>
+        /// <param name="invalidateChildren" >
         /// <see langword="true" /> to invalidate the
         /// control's child controls; otherwise, <see langword="false" />.
         /// </param>
@@ -1172,7 +1178,7 @@ namespace xyLOGIX.Core.Extensions
         /// message to be sent to the control. Optionally, invalidates the child controls
         /// assigned to the control.
         /// </summary>
-        /// <param name="invalidateChildren">
+        /// <param name="invalidateChildren" >
         /// <see langword="true" /> to invalidate the
         /// control's child controls; otherwise, <see langword="false" />.
         /// </param>
@@ -1183,7 +1189,7 @@ namespace xyLOGIX.Core.Extensions
         /// control's update region, which is the area that will be repainted at the next
         /// paint operation), and causes a paint message to be sent to the control.
         /// </summary>
-        /// <param name="rc">
+        /// <param name="rc" >
         /// A <see cref="T:System.Drawing.Rectangle" /> that represents
         /// the region to invalidate.
         /// </param>
@@ -1195,11 +1201,11 @@ namespace xyLOGIX.Core.Extensions
         /// paint operation), and causes a paint message to be sent to the control.
         /// Optionally, invalidates the child controls assigned to the control.
         /// </summary>
-        /// <param name="rc">
+        /// <param name="rc" >
         /// A <see cref="T:System.Drawing.Rectangle" /> that represents
         /// the region to invalidate.
         /// </param>
-        /// <param name="invalidateChildren">
+        /// <param name="invalidateChildren" >
         /// <see langword="true" /> to invalidate the
         /// control's child controls; otherwise, <see langword="false" />.
         /// </param>
@@ -1209,7 +1215,7 @@ namespace xyLOGIX.Core.Extensions
         /// Executes the specified delegate on the thread that owns the control's
         /// underlying window handle.
         /// </summary>
-        /// <param name="method">
+        /// <param name="method" >
         /// A delegate that contains a method to be called in the
         /// control's thread context.
         /// </param>
@@ -1220,7 +1226,7 @@ namespace xyLOGIX.Core.Extensions
         object Invoke(Delegate method);
 
         /// <summary> Converts a Logical DPI value to its equivalent DeviceUnit DPI value. </summary>
-        /// <param name="value"> The Logical value to convert. </param>
+        /// <param name="value" > The Logical value to convert. </param>
         /// <returns> The resulting DeviceUnit value. </returns>
         int LogicalToDeviceUnits(int value);
 
@@ -1229,7 +1235,7 @@ namespace xyLOGIX.Core.Extensions
         /// current DPI and rounding down to the nearest integer value for width and
         /// height.
         /// </summary>
-        /// <param name="value"> The size to be scaled. </param>
+        /// <param name="value" > The size to be scaled. </param>
         /// <returns> The scaled size. </returns>
         Size LogicalToDeviceUnits(Size value);
 
@@ -1237,11 +1243,11 @@ namespace xyLOGIX.Core.Extensions
         void PerformLayout();
 
         /// <summary> Forces the control to apply layout logic to all its child controls. </summary>
-        /// <param name="affectedControl">
+        /// <param name="affectedControl" >
         /// A <see cref="T:System.Windows.Forms.Control" />
         /// that represents the most recently changed control.
         /// </param>
-        /// <param name="affectedProperty">
+        /// <param name="affectedProperty" >
         /// The name of the most recently changed property
         /// on the control.
         /// </param>
@@ -1251,7 +1257,7 @@ namespace xyLOGIX.Core.Extensions
         /// Computes the location of the specified screen point into client
         /// coordinates.
         /// </summary>
-        /// <param name="p">
+        /// <param name="p" >
         /// The screen coordinate <see cref="T:System.Drawing.Point" /> to
         /// convert.
         /// </param>
@@ -1266,7 +1272,7 @@ namespace xyLOGIX.Core.Extensions
         /// Computes the location of the specified client point into screen
         /// coordinates.
         /// </summary>
-        /// <param name="p">
+        /// <param name="p" >
         /// The client coordinate <see cref="T:System.Drawing.Point" /> to
         /// convert.
         /// </param>
@@ -1281,7 +1287,7 @@ namespace xyLOGIX.Core.Extensions
         /// Preprocesses keyboard or input messages within the message loop
         /// before they are dispatched.
         /// </summary>
-        /// <param name="msg">
+        /// <param name="msg" >
         /// A <see cref="T:System.Windows.Forms.Message" /> that
         /// represents the message to process.
         /// </param>
@@ -1302,7 +1308,7 @@ namespace xyLOGIX.Core.Extensions
         /// Preprocesses keyboard or input messages within the message loop
         /// before they are dispatched.
         /// </summary>
-        /// <param name="msg">
+        /// <param name="msg" >
         /// A <see cref="T:System.Windows.Forms.Message" />, passed by
         /// reference, that represents the message to process. The possible values are
         /// WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
@@ -1317,7 +1323,7 @@ namespace xyLOGIX.Core.Extensions
         /// Computes the size and location of the specified screen rectangle in
         /// client coordinates.
         /// </summary>
-        /// <param name="r">
+        /// <param name="r" >
         /// The screen coordinate
         /// <see cref="T:System.Drawing.Rectangle" /> to convert.
         /// </param>
@@ -1332,7 +1338,7 @@ namespace xyLOGIX.Core.Extensions
         /// Computes the size and location of the specified client rectangle in
         /// screen coordinates.
         /// </summary>
-        /// <param name="r">
+        /// <param name="r" >
         /// The client coordinate
         /// <see cref="T:System.Drawing.Rectangle" /> to convert.
         /// </param>
@@ -1405,26 +1411,26 @@ namespace xyLOGIX.Core.Extensions
         /// Resumes usual layout logic, optionally forcing an immediate layout of
         /// pending layout requests.
         /// </summary>
-        /// <param name="performLayout">
+        /// <param name="performLayout" >
         /// <see langword="true" /> to execute pending layout
         /// requests; otherwise, <see langword="false" />.
         /// </param>
         void ResumeLayout(bool performLayout);
 
         /// <summary> Scales the control and any child controls. </summary>
-        /// <param name="ratio"> The ratio to use for scaling. </param>
+        /// <param name="ratio" > The ratio to use for scaling. </param>
         void Scale(float ratio);
 
         /// <summary> Scales the entire control and any child controls. </summary>
-        /// <param name="dx"> The horizontal scaling factor. </param>
-        /// <param name="dy"> The vertical scaling factor. </param>
+        /// <param name="dx" > The horizontal scaling factor. </param>
+        /// <param name="dy" > The vertical scaling factor. </param>
         void Scale(float dx, float dy);
 
         /// <summary>
         /// Scales the control and all child controls by the specified scaling
         /// factor.
         /// </summary>
-        /// <param name="factor">
+        /// <param name="factor" >
         /// A <see cref="T:System.Drawing.SizeF" /> containing the
         /// horizontal and vertical scaling factors.
         /// </param>
@@ -1434,31 +1440,31 @@ namespace xyLOGIX.Core.Extensions
         /// Scales a logical bitmap value to it's equivalent device unit value
         /// when a DPI change occurs.
         /// </summary>
-        /// <param name="logicalBitmap"> The bitmap to scale. </param>
+        /// <param name="logicalBitmap" > The bitmap to scale. </param>
         void ScaleBitmapLogicalToDevice(ref Bitmap logicalBitmap);
 
         /// <summary> Activates the control. </summary>
         void Select();
 
         /// <summary> Activates the next control. </summary>
-        /// <param name="ctl">
+        /// <param name="ctl" >
         /// The <see cref="T:System.Windows.Forms.Control" /> at which
         /// to start the search.
         /// </param>
-        /// <param name="forward">
+        /// <param name="forward" >
         /// <see langword="true" /> to move forward in the tab
         /// order; <see langword="false" /> to move backward in the tab order.
         /// </param>
-        /// <param name="tabStopOnly">
+        /// <param name="tabStopOnly" >
         /// <see langword="true" /> to ignore the controls with
         /// the <see cref="P:System.Windows.Forms.Control.TabStop" /> property set to
         /// <see langword="false" /> ; otherwise, <see langword="false" />.
         /// </param>
-        /// <param name="nested">
+        /// <param name="nested" >
         /// <see langword="true" /> to include nested (children of
         /// child controls) child controls; otherwise, <see langword="false" />.
         /// </param>
-        /// <param name="wrap">
+        /// <param name="wrap" >
         /// <see langword="true" /> to continue searching from the
         /// first control in the tab order after the last control has been reached;
         /// otherwise, <see langword="false" />.
@@ -1479,20 +1485,20 @@ namespace xyLOGIX.Core.Extensions
         void SendToBack();
 
         /// <summary> Sets the bounds of the control to the specified location and size. </summary>
-        /// <param name="x">
+        /// <param name="x" >
         /// The new <see cref="P:System.Windows.Forms.Control.Left" />
         /// property value of the control.
         /// </param>
-        /// <param name="y">
+        /// <param name="y" >
         /// The new <see cref="P:System.Windows.Forms.Control.Top" />
         /// property value of the control.
         /// </param>
-        /// <param name="width">
+        /// <param name="width" >
         /// The new
         /// <see cref="P:System.Windows.Forms.Control.Width" /> property value of the
         /// control.
         /// </param>
-        /// <param name="height">
+        /// <param name="height" >
         /// The new
         /// <see cref="P:System.Windows.Forms.Control.Height" /> property value of the
         /// control.
@@ -1503,25 +1509,25 @@ namespace xyLOGIX.Core.Extensions
         /// Sets the specified bounds of the control to the specified location
         /// and size.
         /// </summary>
-        /// <param name="x">
+        /// <param name="x" >
         /// The new <see cref="P:System.Windows.Forms.Control.Left" />
         /// property value of the control.
         /// </param>
-        /// <param name="y">
+        /// <param name="y" >
         /// The new <see cref="P:System.Windows.Forms.Control.Top" />
         /// property value of the control.
         /// </param>
-        /// <param name="width">
+        /// <param name="width" >
         /// The new
         /// <see cref="P:System.Windows.Forms.Control.Width" /> property value of the
         /// control.
         /// </param>
-        /// <param name="height">
+        /// <param name="height" >
         /// The new
         /// <see cref="P:System.Windows.Forms.Control.Height" /> property value of the
         /// control.
         /// </param>
-        /// <param name="specified">
+        /// <param name="specified" >
         /// A bitwise combination of the
         /// <see cref="T:System.Windows.Forms.BoundsSpecified" /> values. For any parameter
         /// not specified, the current value will be used.

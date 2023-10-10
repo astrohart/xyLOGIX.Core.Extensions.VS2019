@@ -17,19 +17,19 @@ namespace xyLOGIX.Core.Extensions
         /// Otherwise, the entry having the specified <paramref name="key" /> will have its
         /// value updated to be <paramref name="value" />.
         /// </summary>
-        /// <typeparam name="K" >(Required.) Data type of the key.</typeparam>
-        /// <typeparam name="V" >(Required.) Data type of the value.</typeparam>
-        /// <param name="dictionary" >
+        /// <typeparam name="K">(Required.) Data type of the key.</typeparam>
+        /// <typeparam name="V">(Required.) Data type of the value.</typeparam>
+        /// <param name="dictionary">
         /// (Required.) Dictionary to which the new
         /// <paramref name="key" /> and <paramref name="value" /> are to be added.
         /// </param>
-        /// <param name="key" >
+        /// <param name="key">
         /// (Required.) Key to be added/updated in the dictionary.
         /// <para />
         /// If this is the <see langword="null" /> or otherwise the default value of the
         /// key's data type, then this method will do nothing.
         /// </param>
-        /// <param name="value" >(Required.) Value to be added/updated in the dictionary.</param>
+        /// <param name="value">(Required.) Value to be added/updated in the dictionary.</param>
         public static void AddDistinct<K, V>(
             this IDictionary<K, V> dictionary,
             K key,
@@ -69,13 +69,13 @@ namespace xyLOGIX.Core.Extensions
         /// <para />
         /// Dupes are ignored.
         /// </summary>
-        /// <typeparam name="K" >(Required.) Data type of the key.</typeparam>
-        /// <typeparam name="V" >(Required.) Data type of the value.</typeparam>
-        /// <param name="target" >
+        /// <typeparam name="K">(Required.) Data type of the key.</typeparam>
+        /// <typeparam name="V">(Required.) Data type of the value.</typeparam>
+        /// <param name="target">
         /// (Required.) The dictionary that is to be the target of
         /// the merge.
         /// </param>
-        /// <param name="source" >
+        /// <param name="source">
         /// (Required.) A dictionary that has the items to be merged
         /// in.
         /// <para />
@@ -114,28 +114,28 @@ namespace xyLOGIX.Core.Extensions
         /// specified <paramref name="keySelector" /> and
         /// <paramref name="elementSelector" /> functions.
         /// </summary>
-        /// <typeparam name="TSource" >
+        /// <typeparam name="TSource">
         /// (Required.) The type of the elements of
         /// <paramref name="source" />.
         /// </typeparam>
-        /// <typeparam name="TKey" >
+        /// <typeparam name="TKey">
         /// (Required.) The type of the key returned by
         /// <paramref name="keySelector" />.
         /// </typeparam>
-        /// <typeparam name="TElement" >
+        /// <typeparam name="TElement">
         /// (Required.) The type of the value returned by
         /// <paramref name="elementSelector" />.
         /// </typeparam>
-        /// <param name="source" >
+        /// <param name="source">
         /// (Required.) An
         /// <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create a
         /// <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from.
         /// </param>
-        /// <param name="keySelector" >
+        /// <param name="keySelector">
         /// (Required.) A function to extract a key from each
         /// element of <paramref name="source" />.
         /// </param>
-        /// <param name="elementSelector" >
+        /// <param name="elementSelector">
         /// (Required.) A transform function to produce a
         /// result element value from each element of <paramref name="source" />.
         /// </param>
@@ -188,11 +188,11 @@ namespace xyLOGIX.Core.Extensions
         /// into an object by mapping the dictionary elements onto the object's properties
         /// that have the same name.
         /// </summary>
-        /// <typeparam name="T" >
+        /// <typeparam name="T">
         /// Type parameter identifying the object to receive the
         /// dictionary's information.
         /// </typeparam>
-        /// <param name="source" >
+        /// <param name="source">
         /// Reference to an instance of an object of type
         /// <see
         ///     cref="T:System.Collections.Generic.Dictionary{System.String,System.String}" />

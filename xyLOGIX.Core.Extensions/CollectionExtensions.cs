@@ -14,15 +14,15 @@ namespace xyLOGIX.Core.Extensions
         /// <para />
         /// It seemed like the <c>AddRange</c> way was a waste of system resources.
         /// </summary>
-        /// <typeparam name="T" >
+        /// <typeparam name="T">
         /// (Required.) Name of the data type of the elements of the
         /// specified <paramref name="collection" />.
         /// </typeparam>
-        /// <param name="collection" >
+        /// <param name="collection">
         /// (Required.) Reference to an instance of an object
         /// that implements the <see cref="ICollection{T}" /> interface.
         /// </param>
-        /// <param name="items" >
+        /// <param name="items">
         /// (Required.) One or more instances of
         /// <typeparamref name="T" /> that are to be added to the collection.
         /// </param>
@@ -60,8 +60,8 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the specified <paramref name="collection" />
         /// contains zero elements.
         /// </summary>
-        /// <typeparam name="T" >(Required.) Data type of the collection's elements.</typeparam>
-        /// <param name="collection" >
+        /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
+        /// <param name="collection">
         /// (Required.) Reference to an instance of an object
         /// that implements the <see cref="ICollection{T}" /> interface.
         /// </param>
@@ -82,8 +82,8 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="null" /> reference or the empty collection (i.e., the collection
         /// containing zero elements).
         /// </summary>
-        /// <typeparam name="T" >(Required.) Data type of the collection's elements.</typeparam>
-        /// <param name="collection" >
+        /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
+        /// <param name="collection">
         /// (Required.) Reference to an instance of an object
         /// that implements the <see cref="ICollection{T}" /> interface.
         /// </param>
@@ -99,11 +99,11 @@ namespace xyLOGIX.Core.Extensions
         /// Determines if the specified <c>object</c> is of one of the types in
         /// the specified tuple of types.
         /// </summary>
-        /// <typeparam name="TTypes" >
+        /// <typeparam name="TTypes">
         /// Tuple of types that the <paramref name="obj" /> could
         /// be.
         /// </typeparam>
-        /// <param name="obj" >
+        /// <param name="obj">
         /// A <see cref="T:System.Object" /> instance whose type is to
         /// be checked.
         /// </param>

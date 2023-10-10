@@ -64,7 +64,7 @@ namespace xyLOGIX.Core.Extensions
         /// value. The default is
         /// <see cref="F:System.Windows.Forms.AutoSizeMode.GrowOnly" />.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// value is not a valid <see cref="T:System.Windows.Forms.AutoSizeMode" /> value.
         /// </exception>
@@ -130,7 +130,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.DialogResult" /> that represents
         /// the result of the form when used as a dialog box.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
@@ -142,7 +142,7 @@ namespace xyLOGIX.Core.Extensions
         /// represents the style of border to display for the form. The default is
         /// <see langword="FormBorderStyle.Sizable" />.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
@@ -231,7 +231,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Drawing.Size" /> that represents the maximum
         /// size for the form.
         /// </returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException" >
+        /// <exception cref="T:System.ArgumentOutOfRangeException">
         /// The values of the
         /// height or width within the <see cref="T:System.Drawing.Size" /> object are less
         /// than zero.
@@ -254,7 +254,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.Form" /> that represents the MDI
         /// parent form.
         /// </returns>
-        /// <exception cref="T:System.Exception" >
+        /// <exception cref="T:System.Exception">
         /// The
         /// <see cref="T:System.Windows.Forms.Form" /> assigned to this property is not
         /// marked as an MDI container. -or- The <see cref="T:System.Windows.Forms.Form" />
@@ -323,7 +323,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.Form" /> that represents the form
         /// that is the owner of this form.
         /// </returns>
-        /// <exception cref="T:System.Exception" > A top-level window cannot have an owner. </exception>
+        /// <exception cref="T:System.Exception"> A top-level window cannot have an owner. </exception>
         Form Owner { get; set; }
 
         /// <summary> Gets the location and size of the form in its normal window state. </summary>
@@ -375,7 +375,7 @@ namespace xyLOGIX.Core.Extensions
         /// the style of the size grip to display. The default is
         /// <see cref="F:System.Windows.Forms.SizeGripStyle.Auto" />
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
@@ -386,7 +386,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.FormStartPosition" /> that
         /// represents the starting position of the form.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
@@ -400,7 +400,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> to display the form as a top-level window;
         /// otherwise, <see langword="false" />. The default is <see langword="true" />.
         /// </returns>
-        /// <exception cref="T:System.Exception" >
+        /// <exception cref="T:System.Exception">
         /// A Multiple-document interface (MDI)
         /// parent form must be a top-level window.
         /// </exception>
@@ -435,7 +435,7 @@ namespace xyLOGIX.Core.Extensions
         /// represents whether form is minimized, maximized, or normal. The default is
         /// <see langword="FormWindowState.Normal" />.
         /// </returns>
-        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException" >
+        /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
@@ -530,18 +530,18 @@ namespace xyLOGIX.Core.Extensions
         void Activate();
 
         /// <summary> Adds an owned form to this form. </summary>
-        /// <param name="ownedForm" >
+        /// <param name="ownedForm">
         /// The <see cref="T:System.Windows.Forms.Form" /> that
         /// this form will own.
         /// </param>
         void AddOwnedForm(Form ownedForm);
 
         /// <summary> Closes the form. </summary>
-        /// <exception cref="T:System.InvalidOperationException" >
+        /// <exception cref="T:System.InvalidOperationException">
         /// The form was closed while
         /// a handle was being created.
         /// </exception>
-        /// <exception cref="T:System.ObjectDisposedException" >
+        /// <exception cref="T:System.ObjectDisposedException">
         /// You cannot call this method
         /// from the <see cref="E:System.Windows.Forms.Form.Activated" /> event when
         /// <see cref="P:System.Windows.Forms.Form.WindowState" /> is set to
@@ -553,38 +553,38 @@ namespace xyLOGIX.Core.Extensions
         /// Arranges the multiple-document interface (MDI) child forms within the
         /// MDI parent form.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// One of the <see cref="T:System.Windows.Forms.MdiLayout" />
         /// values that defines the layout of MDI child forms.
         /// </param>
         void LayoutMdi(MdiLayout value);
 
         /// <summary> Removes an owned form from this form. </summary>
-        /// <param name="ownedForm" >
+        /// <param name="ownedForm">
         /// A <see cref="T:System.Windows.Forms.Form" />
         /// representing the form to remove from the list of owned forms for this form.
         /// </param>
         void RemoveOwnedForm(Form ownedForm);
 
         /// <summary> Sets the bounds of the form in desktop coordinates. </summary>
-        /// <param name="x" > The x-coordinate of the form's location. </param>
-        /// <param name="y" > The y-coordinate of the form's location. </param>
-        /// <param name="width" > The width of the form. </param>
-        /// <param name="height" > The height of the form. </param>
+        /// <param name="x"> The x-coordinate of the form's location. </param>
+        /// <param name="y"> The y-coordinate of the form's location. </param>
+        /// <param name="width"> The width of the form. </param>
+        /// <param name="height"> The height of the form. </param>
         void SetDesktopBounds(int x, int y, int width, int height);
 
         /// <summary> Sets the location of the form in desktop coordinates. </summary>
-        /// <param name="x" > The x-coordinate of the form's location. </param>
-        /// <param name="y" > The y-coordinate of the form's location. </param>
+        /// <param name="x"> The x-coordinate of the form's location. </param>
+        /// <param name="y"> The y-coordinate of the form's location. </param>
         void SetDesktopLocation(int x, int y);
 
         /// <summary> Shows the form with the specified owner to the user. </summary>
-        /// <param name="owner" >
+        /// <param name="owner">
         /// Any object that implements
         /// <see cref="T:System.Windows.Forms.IWin32Window" /> and represents the top-level
         /// window that will own this form.
         /// </param>
-        /// <exception cref="T:System.InvalidOperationException" >
+        /// <exception cref="T:System.InvalidOperationException">
         /// The form being shown is
         /// already visible. -or- The form specified in the <paramref name="owner" />
         /// parameter is the same as the form being shown. -or- The form being shown is
@@ -597,7 +597,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary> Shows the form as a modal dialog box. </summary>
         /// <returns> One of the <see cref="T:System.Windows.Forms.DialogResult" /> values. </returns>
-        /// <exception cref="T:System.InvalidOperationException" >
+        /// <exception cref="T:System.InvalidOperationException">
         /// The form being shown is
         /// already visible. -or- The form being shown is disabled. -or- The form being
         /// shown is not a top-level window. -or- The form being shown as a dialog box is
@@ -608,17 +608,17 @@ namespace xyLOGIX.Core.Extensions
         DialogResult ShowDialog();
 
         /// <summary> Shows the form as a modal dialog box with the specified owner. </summary>
-        /// <param name="owner" >
+        /// <param name="owner">
         /// Any object that implements
         /// <see cref="T:System.Windows.Forms.IWin32Window" /> that represents the
         /// top-level window that will own the modal dialog box.
         /// </param>
         /// <returns> One of the <see cref="T:System.Windows.Forms.DialogResult" /> values. </returns>
-        /// <exception cref="T:System.ArgumentException" >
+        /// <exception cref="T:System.ArgumentException">
         /// The form specified in the
         /// <paramref name="owner" /> parameter is the same as the form being shown.
         /// </exception>
-        /// <exception cref="T:System.InvalidOperationException" >
+        /// <exception cref="T:System.InvalidOperationException">
         /// The form being shown is
         /// already visible. -or- The form being shown is disabled. -or- The form being
         /// shown is not a top-level window. -or- The form being shown as a dialog box is
@@ -657,7 +657,7 @@ namespace xyLOGIX.Core.Extensions
         /// Causes all of the child controls within a control that support
         /// validation to validate their data.
         /// </summary>
-        /// <param name="validationConstraints" >
+        /// <param name="validationConstraints">
         /// Places restrictions on which controls have
         /// their <see cref="E:System.Windows.Forms.Control.Validating" /> event raised.
         /// </param>

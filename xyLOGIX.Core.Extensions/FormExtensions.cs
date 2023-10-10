@@ -10,8 +10,8 @@ namespace xyLOGIX.Core.Extensions
     public static class FormExtensions
     {
         /// <summary> Centers this form on the specified <paramref name="parent" /> form. </summary>
-        /// <param name="child" > Reference to the form to be centered. </param>
-        /// <param name="parent" > Reference to the parent form. </param>
+        /// <param name="child"> Reference to the form to be centered. </param>
+        /// <param name="parent"> Reference to the parent form. </param>
         public static void CenterForm(this IForm child, Form parent)
         {
             if (child == null || child.IsDisposed) return;
@@ -27,12 +27,12 @@ namespace xyLOGIX.Core.Extensions
         /// Centers the specified <paramref name="form" /> to the specific
         /// <paramref name="screen" /> that is passed.
         /// </summary>
-        /// <param name="form" >
+        /// <param name="form">
         /// Reference to an instance of
         /// <see cref="T:System.Windows.Forms.Form" /> that specifies the form to be
         /// centered.
         /// </param>
-        /// <param name="screen" >
+        /// <param name="screen">
         /// Reference to an instance of
         /// <see cref="T:System.Windows.Forms.Screen" /> that specifies the screen that the
         /// form is to be centered on.
@@ -61,11 +61,11 @@ namespace xyLOGIX.Core.Extensions
         /// Invokes an message on the form unless it's not disposed, in which
         /// case nothing is done.
         /// </summary>
-        /// <param name="form" >
+        /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form" /> on which to
         /// perform the <paramref name="message" />.
         /// </param>
-        /// <param name="message" >
+        /// <param name="message">
         /// An <see cref="T:System.Action" /> specifying code to be
         /// run if the form is disposed.
         /// </param>
@@ -80,11 +80,11 @@ namespace xyLOGIX.Core.Extensions
         /// Invokes an message on the form unless it's disposed, in which case
         /// nothing is done.
         /// </summary>
-        /// <param name="form" >
+        /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form" /> on which to
         /// perform the <paramref name="message" />.
         /// </param>
-        /// <param name="message" >
+        /// <param name="message">
         /// An <see cref="T:System.Action" /> specifying code to be
         /// run if the form is not disposed.
         /// </param>
@@ -100,12 +100,12 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>
-        /// <param name="form" >
+        /// <param name="form">
         /// Reference to an instance of an object that is a child class
         /// of <see cref="T:System.Windows.Forms.Form" /> that represents the form to be
         /// shown.
         /// </param>
-        /// <param name="owner" >
+        /// <param name="owner">
         /// Reference to an instance of an object that implements the
         /// <see cref="T:System.Windows.Forms.IWin32Window" /> that represents the form's
         /// owner window.
@@ -125,7 +125,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>
-        /// <param name="form" >
+        /// <param name="form">
         /// Reference to an instance of an object that is a child class
         /// of <see cref="T:System.Windows.Forms.Form" /> that represents the form to be
         /// shown.
@@ -145,7 +145,7 @@ namespace xyLOGIX.Core.Extensions
         /// Shows the specified <paramref name="form" /> on the user's primary
         /// monitor (whatever monitor they have designated as Monitor #1)
         /// </summary>
-        /// <param name="form" >
+        /// <param name="form">
         /// Reference to the <see cref="T:System.Windows.Forms.Form" />
         /// to be moved to the user's primary monitor. The form is also centered on the
         /// screen.

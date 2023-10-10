@@ -12,15 +12,15 @@ namespace xyLOGIX.Core.Extensions
         /// Runs the specified <paramref name="action" /> for each element of the
         /// specified <paramref name="collection" />.
         /// </summary>
-        /// <typeparam name="T" >
+        /// <typeparam name="T">
         /// (Required.) Name of the type of each element of the
         /// <paramref name="collection" />.
         /// </typeparam>
-        /// <param name="collection" >
+        /// <param name="collection">
         /// (Required.) Reference to an instance of a collection
         /// of elements, each of which are of type <typeparamref name="T" />.
         /// </param>
-        /// <param name="action" >
+        /// <param name="action">
         /// (Required.) Reference to an instance of a
         /// <see cref="T:System.Action{T}" /> <see langword="delegate" /> that is executed
         /// for each of the elements in the collection, with the corresponding element
@@ -48,15 +48,15 @@ namespace xyLOGIX.Core.Extensions
         /// Runs the specified <paramref name="action" /> for each element of the
         /// specified <paramref name="collection" />.
         /// </summary>
-        /// <typeparam name="T" >
+        /// <typeparam name="T">
         /// (Required.) Name of the type of each element of the
         /// <paramref name="collection" />.
         /// </typeparam>
-        /// <param name="collection" >
+        /// <param name="collection">
         /// (Required.) Reference to an instance of a collection
         /// of elements, each of which are of type <typeparamref name="T" />.
         /// </param>
-        /// <param name="action" >
+        /// <param name="action">
         /// (Required.) Reference to an instance of a
         /// <see cref="T:System.Action{T}" /> <see langword="delegate" /> that is executed
         /// for each of the elements in the collection, with the corresponding element
@@ -85,9 +85,9 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="testObjects" /> provided, to see if any of the
         /// <paramref name="testObjects" /> is a match.
         /// </summary>
-        /// <typeparam name="T" > Type of the object to be tested. </typeparam>
-        /// <param name="source" > Source object to check. </param>
-        /// <param name="testObjects" >
+        /// <typeparam name="T"> Type of the object to be tested. </typeparam>
+        /// <param name="source"> Source object to check. </param>
+        /// <param name="testObjects">
         /// Object or objects that should be compared to source
         /// with the <see cref="M:System.Object.Equals" /> method.
         /// </param>
@@ -103,8 +103,8 @@ namespace xyLOGIX.Core.Extensions
         /// Shuffles the elements of the sequence into a random order, and then
         /// returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.
         /// </summary>
-        /// <typeparam name="T" > Type of the elements of the sequence. </typeparam>
-        /// <param name="source" > Sequence to be shuffled. </param>
+        /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
+        /// <param name="source"> Sequence to be shuffled. </param>
         /// <returns>
         /// A new sequence, with the order of the elements randomized, according
         /// to the Fisher-Yates-Durstenfeld shuffle.
@@ -112,7 +112,7 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// see, e.g.,
         /// <a
-        ///     href="http://stackoverflow.com/questions/5807128/an-extension-method-on-ienumerable-needed-for-shuffling" >
+        ///     href="http://stackoverflow.com/questions/5807128/an-extension-method-on-ienumerable-needed-for-shuffling">
         /// this
         /// StackOverflow article.
         /// </a>
@@ -127,8 +127,8 @@ namespace xyLOGIX.Core.Extensions
         /// Returns all the elements of the <paramref name="source" /> enumerable
         /// object, except for the last.
         /// </summary>
-        /// <typeparam name="T" > Name of the type of item in the collection. </typeparam>
-        /// <param name="source" > Reference to an enumerable collection. </param>
+        /// <typeparam name="T"> Name of the type of item in the collection. </typeparam>
+        /// <param name="source"> Reference to an enumerable collection. </param>
         /// <returns>
         /// Enumerable iterator over the collection that yields every item in the
         /// collection, except for the last.
@@ -160,9 +160,9 @@ namespace xyLOGIX.Core.Extensions
         /// returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle. Uses
         /// the random-number generator passed in the <paramref name="rng" /> parameter.
         /// </summary>
-        /// <typeparam name="T" > Type of the elements of the sequence. </typeparam>
-        /// <param name="source" > Sequence to be shuffled. </param>
-        /// <param name="rng" >
+        /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
+        /// <param name="source"> Sequence to be shuffled. </param>
+        /// <param name="rng">
         /// A <see cref="T:System.Random" /> instance with which to
         /// generate new random values for the shuffle operation.
         /// </param>
@@ -173,7 +173,7 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// see, e.g.,
         /// <a
-        ///     href="http://stackoverflow.com/questions/5807128/an-extension-method-on-ienumerable-needed-for-shuffling" >
+        ///     href="http://stackoverflow.com/questions/5807128/an-extension-method-on-ienumerable-needed-for-shuffling">
         /// this
         /// StackOverflow article.
         /// </a>
@@ -197,9 +197,9 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="M:xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle" /> method,
         /// although this method can be utilized as an iterator.
         /// </summary>
-        /// <typeparam name="T" > Type of the elements of the sequence. </typeparam>
-        /// <param name="source" > Sequence to be shuffled. </param>
-        /// <param name="rng" >
+        /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
+        /// <param name="source"> Sequence to be shuffled. </param>
+        /// <param name="rng">
         /// A <see cref="T:System.Random" /> instance with which to
         /// generate new random values for the shuffle operation.
         /// </param>
@@ -210,7 +210,7 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// see, e.g.,
         /// <a
-        ///     href="http://stackoverflow.com/questions/5807128/an-extension-method-on-ienumerable-needed-for-shuffling" >
+        ///     href="http://stackoverflow.com/questions/5807128/an-extension-method-on-ienumerable-needed-for-shuffling">
         /// this
         /// StackOverflow article.
         /// </a>

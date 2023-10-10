@@ -15,7 +15,7 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the specified <see cref="T:System.Guid" /> value
         /// is the Zero GUID or not.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) The <see cref="T:System.Guid" /> that should
         /// be checked whether it's the Zero GUID.
         /// </param>
@@ -47,7 +47,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.String" /> that is surrounded by curly braces and is in
         /// uppercase.
         /// </summary>
-        /// <param name="guid" >
+        /// <param name="guid">
         /// (Required.) A <see cref="T:System.Guid" /> value that is to
         /// be represented as a <see cref="T:System.String" />.
         /// </param>

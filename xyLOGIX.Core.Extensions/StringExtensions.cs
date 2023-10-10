@@ -105,8 +105,8 @@ namespace xyLOGIX.Core.Extensions
         /// Asks if the search text, in <paramref name="value" />, is a substring
         /// of any of the strings in <paramref name="collection" />, ignoring case.
         /// </summary>
-        /// <param name="collection" > Collection to search. </param>
-        /// <param name="value" > Value to compare. </param>
+        /// <param name="collection"> Collection to search. </param>
+        /// <param name="value"> Value to compare. </param>
         /// <returns>
         /// <see langword="true" /> if the indicated value is in the specified
         /// collection, regardless of case; <see langword="false" /> otherwise.
@@ -121,7 +121,7 @@ namespace xyLOGIX.Core.Extensions
         /// Attempts to express the provided <see cref="T:System.String" />
         /// <paramref name="value" /> as a <see cref="T:System.Decimal" /> value.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing
         /// the ASCII representation of a <see cref="T:System.Decimal" /> value.
         /// </param>
@@ -157,7 +157,7 @@ namespace xyLOGIX.Core.Extensions
         /// Attempts to express the provided <see cref="T:System.String" />
         /// <paramref name="value" /> as a <see cref="T:System.Double" /> value.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing
         /// the ASCII representation of a <see cref="T:System.Double" /> value.
         /// </param>
@@ -194,12 +194,12 @@ namespace xyLOGIX.Core.Extensions
         /// comma-separated according to proper English grammar, i.e.
         /// <c> "dog, cat, and horse" </c> not just <c>"dog, cat, horse."</c>
         /// </summary>
-        /// <typeparam name="TSource" > Type of each item in the source collection. </typeparam>
-        /// <param name="source" >
+        /// <typeparam name="TSource"> Type of each item in the source collection. </typeparam>
+        /// <param name="source">
         /// Collection of <typeparamref name="TSource" /> to iterate
         /// over.
         /// </param>
-        /// <param name="selectorFunc" >
+        /// <param name="selectorFunc">
         /// Delegate specifying the way to represent each
         /// element of the collection <paramref name="source" /> as a string.
         /// </param>
@@ -249,7 +249,7 @@ namespace xyLOGIX.Core.Extensions
         /// lines, on the newline character for the particular operating system. The result
         /// is a collection of strings, one for each line.
         /// </summary>
-        /// <param name="text" > (Required.) String containing the text to be split. </param>
+        /// <param name="text"> (Required.) String containing the text to be split. </param>
         /// <returns>
         /// Collection of strings containing one string per line of
         /// <paramref name="text" />.
@@ -277,7 +277,7 @@ namespace xyLOGIX.Core.Extensions
         /// Strips newlines from the text in <paramref name="line" />, and then
         /// calls <see cref="T:System.String.Trim" /> on the results.
         /// </summary>
-        /// <param name="line" > Text to clean. </param>
+        /// <param name="line"> Text to clean. </param>
         /// <returns>
         /// Same as input, except all newline characters and whitespace has been
         /// removed.
@@ -303,8 +303,8 @@ namespace xyLOGIX.Core.Extensions
         /// Returns <see langword="true" /> if the <paramref name="value" /> has
         /// any of the strings in <paramref name="searchStrings" /> as a substring.
         /// </summary>
-        /// <param name="value" > (Required.) The value to be used as a filter. </param>
-        /// <param name="searchStrings" >
+        /// <param name="value"> (Required.) The value to be used as a filter. </param>
+        /// <param name="searchStrings">
         /// (Required.) Collection of strings, any of which
         /// might be substrings of <paramref name="value" />.
         /// </param>
@@ -329,8 +329,8 @@ namespace xyLOGIX.Core.Extensions
         /// Returns <see langword="true" /> if the <paramref name="value" /> has
         /// any of the strings in <paramref name="searchStrings" /> as a substring.
         /// </summary>
-        /// <param name="value" > (Required.) The value to be used as a filter. </param>
-        /// <param name="searchStrings" >
+        /// <param name="value"> (Required.) The value to be used as a filter. </param>
+        /// <param name="searchStrings">
         /// (Required.) Collection of strings, any of which
         /// might be substrings of <paramref name="value" />.
         /// </param>
@@ -356,8 +356,8 @@ namespace xyLOGIX.Core.Extensions
         /// contains any of the characters in <paramref name="searchChars" />
         /// (case-insensitive).
         /// </summary>
-        /// <param name="value" > (Required.) String to be searched. </param>
-        /// <param name="searchChars" >
+        /// <param name="value"> (Required.) String to be searched. </param>
+        /// <param name="searchChars">
         /// (Required.) Array of characters to look for in the
         /// <paramref name="value" />.
         /// </param>
@@ -379,8 +379,8 @@ namespace xyLOGIX.Core.Extensions
         /// Returns <see langword="true" /> if the <paramref name="value" /> has
         /// any of the strings in <paramref name="searchStrings" /> as a substring.
         /// </summary>
-        /// <param name="value" > (Required.) The value to be used as a filter. </param>
-        /// <param name="searchStrings" >
+        /// <param name="value"> (Required.) The value to be used as a filter. </param>
+        /// <param name="searchStrings">
         /// (Required.) Collection of strings, any of which
         /// might be substrings of <paramref name="value" />.
         /// </param>
@@ -406,8 +406,8 @@ namespace xyLOGIX.Core.Extensions
         /// Returns <see langword="true" /> if the <paramref name="value" /> has
         /// any of the strings in <paramref name="searchStrings" /> as a substring.
         /// </summary>
-        /// <param name="value" > (Required.) The value to be used as a filter. </param>
-        /// <param name="searchStrings" >
+        /// <param name="value"> (Required.) The value to be used as a filter. </param>
+        /// <param name="searchStrings">
         /// (Required.) Collection of strings, any of which
         /// might be substrings of <paramref name="value" />.
         /// </param>
@@ -455,8 +455,8 @@ namespace xyLOGIX.Core.Extensions
         /// contains any of the characters in <paramref name="searchChars" />
         /// (case-insensitive).
         /// </summary>
-        /// <param name="value" > (Required.) String to be searched. </param>
-        /// <param name="searchChars" >
+        /// <param name="value"> (Required.) String to be searched. </param>
+        /// <param name="searchChars">
         /// (Required.) Array of characters to look for in the
         /// <paramref name="value" />.
         /// </param>
@@ -476,8 +476,8 @@ namespace xyLOGIX.Core.Extensions
                searchChars.Any(item => ContainsNoCase(value, item));
 
         /// <summary> Searches one string for another. Case-insensitive. </summary>
-        /// <param name="stringToSearch" > The string to be searched. </param>
-        /// <param name="value" > Value to search for. </param>
+        /// <param name="stringToSearch"> The string to be searched. </param>
+        /// <param name="value"> Value to search for. </param>
         /// <returns>
         /// Returns true if the stringToSearch contains the substring value,
         /// regardless of case; false otherwise.
@@ -494,8 +494,8 @@ namespace xyLOGIX.Core.Extensions
                                                     );
 
         /// <summary> Searches one string for another. Case-insensitive. </summary>
-        /// <param name="stringToSearch" > The string to be searched. </param>
-        /// <param name="value" > Value to search for. </param>
+        /// <param name="stringToSearch"> The string to be searched. </param>
+        /// <param name="value"> Value to search for. </param>
         /// <returns>
         /// Returns true if the stringToSearch contains the substring value,
         /// regardless of case; false otherwise.
@@ -512,8 +512,8 @@ namespace xyLOGIX.Core.Extensions
                 );
 
         /// <summary> Case-insensitive version of the collection Contains method. </summary>
-        /// <param name="collection" > Collection to search. </param>
-        /// <param name="value" > Value to compare. </param>
+        /// <param name="collection"> Collection to search. </param>
+        /// <param name="value"> Value to compare. </param>
         /// <returns>
         /// TRUE if the indicated value is in the specified collection,
         /// regardless of case; FALSE otherwise.
@@ -530,7 +530,7 @@ namespace xyLOGIX.Core.Extensions
         /// provided as the argument to the <paramref name="value" /> parameter, contains
         /// any digits.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> that is to be
         /// checked.
         /// </param>
@@ -562,7 +562,7 @@ namespace xyLOGIX.Core.Extensions
         /// Double-checks a <paramref name="twitterSite" /> (at-mention) string
         /// to make sure it begins with the character '@'.
         /// </summary>
-        /// <param name="twitterSite" > (Required.) Twitter handle to at-mention. </param>
+        /// <param name="twitterSite"> (Required.) Twitter handle to at-mention. </param>
         /// <returns>
         /// String containing the same value as in
         /// <paramref name="twitterSite" /> , but one which is guaranteed to start with the
@@ -585,8 +585,8 @@ namespace xyLOGIX.Core.Extensions
         /// A case-insensitive equality comparer for strings. Basically, converts
         /// each of its operands to lowercase before comparing.
         /// </summary>
-        /// <param name="str1" > First string to compare. </param>
-        /// <param name="str2" > Second string to compare. </param>
+        /// <param name="str1"> First string to compare. </param>
+        /// <param name="str2"> Second string to compare. </param>
         /// <returns> Whether the two strings are the same, regardless of case. </returns>
         public static bool EqualsNoCase(this string str1, string str2)
             => string.IsNullOrWhiteSpace(str1) ||
@@ -600,9 +600,9 @@ namespace xyLOGIX.Core.Extensions
         /// A case-insensitive equality comparer for strings. Basically, converts
         /// each of its operands to lowercase before comparing.
         /// </summary>
-        /// <param name="str1" > First string to compare. </param>
-        /// <param name="str2" > Second string to compare. </param>
-        /// <param name="comparisonType" >
+        /// <param name="str1"> First string to compare. </param>
+        /// <param name="str2"> Second string to compare. </param>
+        /// <param name="comparisonType">
         /// One of the
         /// <see cref="T:System.StringComparison" /> values saying how the strings are to
         /// be compared.
@@ -624,9 +624,9 @@ namespace xyLOGIX.Core.Extensions
         /// Re-expresses strings with ellipsis (...) if they are longer than a
         /// certain length.
         /// </summary>
-        /// <param name="stringToCompact" > The text to be compacted. </param>
-        /// <param name="font" > Font the text is in. </param>
-        /// <param name="maxWidth" > The maximum length of the string. </param>
+        /// <param name="stringToCompact"> The text to be compacted. </param>
+        /// <param name="font"> Font the text is in. </param>
+        /// <param name="maxWidth"> The maximum length of the string. </param>
         /// <returns>
         /// Version of the string that has ellipsis (...) so as to fit within the
         /// given length.
@@ -660,11 +660,11 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> if the string is smaller than
         /// <paramref name="nChars" /> characters in length.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// String to pull the first <paramref name="nChars" />
         /// characters from.
         /// </param>
-        /// <param name="nChars" >
+        /// <param name="nChars">
         /// (Must be a positive number.) Number of characters from
         /// the start of the string to get.
         /// </param>
@@ -675,7 +675,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> is returned. If a problem occurred, the empty string
         /// is returned.
         /// </returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException" >
+        /// <exception cref="T:System.ArgumentOutOfRangeException">
         /// Thrown if
         /// <paramref name="nChars" /> has a zero or negative number value.
         /// <paramref name="nChars" /> must be a positive number.
@@ -695,7 +695,7 @@ namespace xyLOGIX.Core.Extensions
         /// Very na?ve determination of person first name 99.9% of the time,
         /// persons' names are // given as &lt;First Name&gt; &lt;Rest&gt;.
         /// </summary>
-        /// <param name="fullName" >
+        /// <param name="fullName">
         /// (Required.) String value containing the full name of
         /// the person.
         /// </param>
@@ -728,7 +728,7 @@ namespace xyLOGIX.Core.Extensions
         /// consulting and tutoring practice, new clients tend to given their first and
         /// last name only when signing up --- about 99.9% of the time.
         /// </summary>
-        /// <param name="fullName" >
+        /// <param name="fullName">
         /// (Required.) String value containing the full name of
         /// the person.
         /// </param>
@@ -774,7 +774,7 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the specified <paramref name="path" /> is a
         /// fully-qualified, absolute path or not.
         /// </summary>
-        /// <param name="path" > (Required.) String containing the path to be checked. </param>
+        /// <param name="path"> (Required.) String containing the path to be checked. </param>
         /// <returns>
         /// <see langword="true" /> if the <paramref name="path" /> specified is
         /// a fully-qualified, absolute path; <see langword="false" /> otherwise.
@@ -807,7 +807,7 @@ namespace xyLOGIX.Core.Extensions
         /// alphanumeric <see cref="T:System.String" /> that consists solely of digits or
         /// lowercase letters (excluding whitespace).
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing
         /// the text to be checked.
         /// </param>
@@ -861,7 +861,7 @@ namespace xyLOGIX.Core.Extensions
         /// alphanumeric <see cref="T:System.String" /> that consists solely of digits or
         /// uppercase letters (excluding whitespace).
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing
         /// the text to be checked.
         /// </param>
@@ -915,7 +915,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> is blank, only consists of whitespace, or a
         /// <see langword="null" /> reference.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> value that
         /// should be checked.
         /// </param>
@@ -930,7 +930,7 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the <paramref name="value" /> passed is a
         /// <c>decimal</c> number or not.
         /// </summary>
-        /// <param name="value" > (Required.) String containing the value or not. </param>
+        /// <param name="value"> (Required.) String containing the value or not. </param>
         /// <returns>
         /// <see langword="true" /> if the string passed in
         /// <paramref name="value" /> is the string representation of a value that is in
@@ -960,7 +960,7 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the specified <paramref name="path" /> is the path
         /// to a folder or not.
         /// </summary>
-        /// <param name="path" >
+        /// <param name="path">
         /// (Required.) String containing the fully-qualified pathname
         /// of the file-system entry to be checked.
         /// </param>
@@ -970,7 +970,7 @@ namespace xyLOGIX.Core.Extensions
         /// then this method simply returns <see langword="false" />. If a file-system
         /// error occurs during the checking, <see langword="false" /> is also returned.
         /// </returns>
-        /// <exception cref="T:System.ArgumentException" >
+        /// <exception cref="T:System.ArgumentException">
         /// Thrown if the required parameter,
         /// <paramref name="path" />, is passed a blank or <see langword="null" /> string
         /// for a value.
@@ -1013,7 +1013,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.String" /> that consists solely of lowercase letters
         /// (excluding whitespace).
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing
         /// the text to be checked.
         /// </param>
@@ -1064,7 +1064,7 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the <paramref name="value" /> passed is the string
         /// representation of a 32-bit <c>int</c> or not.
         /// </summary>
-        /// <param name="value" > (Required.) String containing the value or not. </param>
+        /// <param name="value"> (Required.) String containing the value or not. </param>
         /// <returns>
         /// <see langword="true" /> if the string passed in
         /// <paramref name="value" /> is the string representation of a value that is in
@@ -1094,8 +1094,8 @@ namespace xyLOGIX.Core.Extensions
         /// Performs a culture-invariant, case-insensitive, OR match of the
         /// <paramref name="value" /> against the <paramref name="choices" /> provided.
         /// </summary>
-        /// <param name="value" > Value to match. </param>
-        /// <param name="choices" > Choices to match against. </param>
+        /// <param name="value"> Value to match. </param>
+        /// <param name="choices"> Choices to match against. </param>
         /// <returns>
         /// <see langword="true" /> if the string <paramref name="value" />
         /// matches one or more of the <paramref name="choices" />;
@@ -1118,7 +1118,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.String" /> that consists solely of uppercase letters
         /// (excluding whitespace).
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing
         /// the text to be checked.
         /// </param>
@@ -1169,7 +1169,7 @@ namespace xyLOGIX.Core.Extensions
         /// Validates whether <paramref name="value" /> is a valid email address
         /// or not.
         /// </summary>
-        /// <param name="value" > String to be checked. </param>
+        /// <param name="value"> String to be checked. </param>
         /// <returns>
         /// true if the string contains a valid email address value; false
         /// otherwise.
@@ -1196,11 +1196,11 @@ namespace xyLOGIX.Core.Extensions
         /// the text in the <paramref name="findWhat" /> parameter, in a case-insensitive
         /// fashion.
         /// </summary>
-        /// <param name="stringToSearch" >
+        /// <param name="stringToSearch">
         /// (Required.) A <see cref="T:System.String" />
         /// value containing the text that is to be searched.
         /// </param>
-        /// <param name="findWhat" >
+        /// <param name="findWhat">
         /// (Required.) A <see cref="T:System.String" /> containing
         /// the text that is to be located within the <paramref name="stringToSearch" />.
         /// </param>
@@ -1238,11 +1238,11 @@ namespace xyLOGIX.Core.Extensions
         /// the text in the <paramref name="findWhat" /> parameter, in a case-sensitive
         /// fashion.
         /// </summary>
-        /// <param name="stringToSearch" >
+        /// <param name="stringToSearch">
         /// (Required.) A <see cref="T:System.String" />
         /// value containing the text that is to be searched.
         /// </param>
-        /// <param name="findWhat" >
+        /// <param name="findWhat">
         /// (Required.) A <see cref="T:System.String" /> containing
         /// the text that is to be located within the <paramref name="stringToSearch" />.
         /// </param>
@@ -1278,8 +1278,8 @@ namespace xyLOGIX.Core.Extensions
         /// Pluralizes the word passed in, applying language rules from the
         /// specified <paramref name="culture" />.
         /// </summary>
-        /// <param name="word" > Word to be pluralized. </param>
-        /// <param name="culture" >
+        /// <param name="word"> Word to be pluralized. </param>
+        /// <param name="culture">
         /// Specifies the
         /// <see cref="T:System.Globalization.CultureInfo" /> value to use when applying
         /// language rules.
@@ -1305,7 +1305,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary> Pluralizes the word passed in, using the current UI culture. </summary>
-        /// <param name="word" > String containing the word to be pluralized. </param>
+        /// <param name="word"> String containing the word to be pluralized. </param>
         /// <returns>
         /// The <paramref name="word" /> if it is not plural; otherwise, a string
         /// containing the plural version of the <paramref name="word" />.
@@ -1322,11 +1322,11 @@ namespace xyLOGIX.Core.Extensions
         /// method, which you can put after a string literal or
         /// <see cref="T:System.String" /> variable to format a string.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> that contains
         /// format placeholders.
         /// </param>
-        /// <param name="args" >
+        /// <param name="args">
         /// (Optional.) One or more format values to be substituted in
         /// the corresponding locations in the specified <paramref name="value" />.
         /// </param>
@@ -1365,11 +1365,11 @@ namespace xyLOGIX.Core.Extensions
         /// matches the regular expression specified by the <paramref name="regex" />
         /// parameter's value, without regards to upper- or lower-case.
         /// </summary>
-        /// <param name="stringToSearch" >
+        /// <param name="stringToSearch">
         /// (Required.) String containing the data to be
         /// searched for a match.
         /// </param>
-        /// <param name="regex" >
+        /// <param name="regex">
         /// (Required.) String containing the regular expression that
         /// expresses the criteria to be used for matching.
         /// </param>
@@ -1393,11 +1393,11 @@ namespace xyLOGIX.Core.Extensions
         /// matches the regular expression specified by the <paramref name="regex" />
         /// parameter's value, respecting case.
         /// </summary>
-        /// <param name="stringToSearch" >
+        /// <param name="stringToSearch">
         /// (Required.) String containing the data to be
         /// searched for a match.
         /// </param>
-        /// <param name="regex" >
+        /// <param name="regex">
         /// (Required.) String containing the regular expression that
         /// expresses the criteria to be used for matching.
         /// </param>
@@ -1421,20 +1421,20 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="search" /> parameter may contain a Regular Expression (regex).
         /// Case is ignored.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) String containing the data in which the search
         /// and replace operation is to be performed.
         /// </param>
-        /// <param name="search" >
+        /// <param name="search">
         /// (Required.) String containing the data to be found in the
         /// string. May contain a regular expression.
         /// </param>
-        /// <param name="replacement" >
+        /// <param name="replacement">
         /// (Required.) String containing the data that any
         /// found occurrences of <paramref name="search" /> are to be substituted with.
         /// </param>
         /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException" >
+        /// <exception cref="T:System.ArgumentException">
         /// Thrown if any of the required
         /// parameters, <paramref name="value" />, <paramref name="search" />, or
         /// <paramref name="replacement" />, are passed blank or <see langword="null" />
@@ -1486,19 +1486,19 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="search" /> parameter may contain a Regular Expression (regex).
         /// Case is ignored.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) String containing the data in which the search
         /// and replace operation is to be performed.
         /// </param>
-        /// <param name="search" >
+        /// <param name="search">
         /// (Required.) String containing the data to be found in the
         /// string. May contain a regular expression.
         /// </param>
-        /// <param name="replacement" >
+        /// <param name="replacement">
         /// (Required.) String containing the data that any
         /// found occurrences of <paramref name="search" /> are to be substituted with.
         /// </param>
-        /// <param name="options" >
+        /// <param name="options">
         /// (Required.) A bitwise combination of the
         /// <see cref="T:System.Text.RegularExpressions.RegexOptions" /> enumeration values
         /// that provide options for matching.
@@ -1513,7 +1513,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="options" /> parameter by default.
         /// </remarks>
         /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException" >
+        /// <exception cref="T:System.ArgumentException">
         /// Thrown if any of the required
         /// parameters, <paramref name="value" />, <paramref name="search" />, or
         /// <paramref name="replacement" />, are passed blank or <see langword="null" />
@@ -1566,20 +1566,20 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="replacement" /> string in the <paramref name="value" /> . The
         /// <paramref name="search" /> parameter may contain a Regular Expression (regex).
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) String containing the data in which the search
         /// and replace operation is to be performed.
         /// </param>
-        /// <param name="search" >
+        /// <param name="search">
         /// (Required.) String containing the data to be found in the
         /// string. May contain a regular expression.
         /// </param>
-        /// <param name="replacement" >
+        /// <param name="replacement">
         /// (Required.) String containing the data that any
         /// found occurrences of <paramref name="search" /> are to be substituted with.
         /// </param>
         /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException" >
+        /// <exception cref="T:System.ArgumentException">
         /// Thrown if any of the required
         /// parameters, <paramref name="value" />, <paramref name="search" />, or
         /// <paramref name="replacement" />, are passed blank or <see langword="null" />
@@ -1628,25 +1628,25 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="replacement" /> string in the <paramref name="value" /> . The
         /// <paramref name="search" /> parameter may contain a Regular Expression (regex).
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) String containing the data in which the search
         /// and replace operation is to be performed.
         /// </param>
-        /// <param name="search" >
+        /// <param name="search">
         /// (Required.) String containing the data to be found in the
         /// string. May contain a regular expression.
         /// </param>
-        /// <param name="replacement" >
+        /// <param name="replacement">
         /// (Required.) String containing the data that any
         /// found occurrences of <paramref name="search" /> are to be substituted with.
         /// </param>
-        /// <param name="options" >
+        /// <param name="options">
         /// (Required.) A bitwise combination of the
         /// <see cref="T:System.Text.RegularExpressions.RegexOptions" /> enumeration values
         /// that provide options for matching.
         /// </param>
         /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException" >
+        /// <exception cref="T:System.ArgumentException">
         /// Thrown if any of the required
         /// parameters, <paramref name="value" />, <paramref name="search" />, or
         /// <paramref name="replacement" />, are passed blank or <see langword="null" />
@@ -1695,7 +1695,7 @@ namespace xyLOGIX.Core.Extensions
         /// Strips all punctuation and numeric digits from a string and trims the
         /// result.
         /// </summary>
-        /// <param name="value" > String to have punctuation and numbers stripped. </param>
+        /// <param name="value"> String to have punctuation and numbers stripped. </param>
         /// <returns> String after transformation. </returns>
         /// <remarks>
         /// If the empty string is passed to <paramref name="value" />, then the
@@ -1715,7 +1715,7 @@ namespace xyLOGIX.Core.Extensions
         /// Removes any trailing <c>\</c> characters from the string provided in
         /// <paramref name="value" />.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) String containing the value to be stripped of
         /// trailing backslash characters.
         /// </param>
@@ -1757,20 +1757,20 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="replacement" /> string in the <paramref name="value" /> ,
         /// ignoring case.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) String containing the data in which the search
         /// and replace operation is to be performed.
         /// </param>
-        /// <param name="search" >
+        /// <param name="search">
         /// (Required.) String containing the data to be found in the
         /// string.
         /// </param>
-        /// <param name="replacement" >
+        /// <param name="replacement">
         /// (Required.) String containing the data that any
         /// found occurrences of <paramref name="search" /> are to be substituted with.
         /// </param>
         /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException" >
+        /// <exception cref="T:System.ArgumentException">
         /// Thrown if any of the required
         /// parameters, <paramref name="value" />, <paramref name="search" />, or
         /// <paramref name="replacement" />, are passed blank or <see langword="null" />
@@ -1804,8 +1804,8 @@ namespace xyLOGIX.Core.Extensions
         /// Splits a string <paramref name="value" /> on a provided
         /// <paramref name="delimiter" />.
         /// </summary>
-        /// <param name="value" > (Required.) String containing the value to be tokenized. </param>
-        /// <param name="delimiter" >
+        /// <param name="value"> (Required.) String containing the value to be tokenized. </param>
+        /// <param name="delimiter">
         /// (Required.) String containing the delimiter on which
         /// the <paramref name="value" /> should be split.
         /// </param>
@@ -1813,7 +1813,7 @@ namespace xyLOGIX.Core.Extensions
         /// An array whose elements contain the substrings that were split on the
         /// provided <paramref name="delimiter" />.
         /// </returns>
-        /// <exception cref="T:System.ArgumentException" >
+        /// <exception cref="T:System.ArgumentException">
         /// Thrown if either of the required
         /// parameters, <paramref name="value" /> or <paramref name="delimiter" />, are
         /// passed blank or <see langword="null" /> strings for values.
@@ -1839,8 +1839,8 @@ namespace xyLOGIX.Core.Extensions
         /// Gets a value indicating whether <paramref name="text" /> starts with
         /// any of the values in the <paramref name="list" />.
         /// </summary>
-        /// <param name="text" > String to be checked. </param>
-        /// <param name="list" > List of entries. </param>
+        /// <param name="text"> String to be checked. </param>
+        /// <param name="list"> List of entries. </param>
         /// <returns>
         /// true if the <paramref name="text" /> starts with any of the entries
         /// in <paramref name="list" />.
@@ -1861,8 +1861,8 @@ namespace xyLOGIX.Core.Extensions
         /// Tells whether the <paramref name="value" /> starts with the substring
         /// <paramref name="searchText" />, ignoring case.
         /// </summary>
-        /// <param name="value" > Value to search. </param>
-        /// <param name="searchText" > Suspected starting substring. </param>
+        /// <param name="value"> Value to search. </param>
+        /// <param name="searchText"> Suspected starting substring. </param>
         /// <returns>
         /// <see langword="true" /> if <paramref name="value" /> starts with the
         /// <paramref name="searchText" />. <see langword="false" /> otherwise.
@@ -1885,8 +1885,8 @@ namespace xyLOGIX.Core.Extensions
         /// Formats a string using the <paramref name="format" /> and
         /// <paramref name="args" />.
         /// </summary>
-        /// <param name="format" > (Required.) String containing the format. </param>
-        /// <param name="args" >
+        /// <param name="format"> (Required.) String containing the format. </param>
+        /// <param name="args">
         /// (Optional.) Collection of args whose values are to be
         /// replaced in the format string.
         /// </param>
@@ -1911,7 +1911,7 @@ namespace xyLOGIX.Core.Extensions
         ///     cref="F:xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms" />
         /// .
         /// </summary>
-        /// <param name="phrase" >
+        /// <param name="phrase">
         /// (Required.) String containing the phrase to turn into an
         /// acronym.
         /// </param>
@@ -1953,7 +1953,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" />, then they are mapped back into the range of
         /// ASCII-encoded values.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) String containing the characters to be
         /// processed.
         /// </param>
@@ -1984,7 +1984,7 @@ namespace xyLOGIX.Core.Extensions
         /// '}' and '-' from the string representation, so that the string representation
         /// contains only letters and/or numbers.
         /// </summary>
-        /// <param name="guid" >
+        /// <param name="guid">
         /// Reference to a <see cref="T:System.Guid" /> to turn into a
         /// string of letters and numbers.
         /// </param>
@@ -2000,7 +2000,7 @@ namespace xyLOGIX.Core.Extensions
         /// Returns a value that is the same as the string specified, but in
         /// Initial Caps format.
         /// </summary>
-        /// <param name="value" > Value whose case should be changed. </param>
+        /// <param name="value"> Value whose case should be changed. </param>
         /// <returns> String with the casing changed to InitialCaps. </returns>
         /// <remarks>
         /// If this method is passed the empty or whitespace string, then it
@@ -2078,11 +2078,11 @@ namespace xyLOGIX.Core.Extensions
         /// Turns a delimited <see cref="T:System.String" /> into a collection of
         /// strings with one delimited entry per element.
         /// </summary>
-        /// <param name="source" >
+        /// <param name="source">
         /// (Required.) String containing the text to be
         /// transformed.
         /// </param>
-        /// <param name="separators" >
+        /// <param name="separators">
         /// Collection of strings specifying the delimiter(s) to
         /// split upon.
         /// </param>
@@ -2116,7 +2116,7 @@ namespace xyLOGIX.Core.Extensions
         /// operation of the
         /// <see cref="M:xyLOGIX.Core.Extensions.StringExtensions.ToASCII" /> method.
         /// </summary>
-        /// <param name="value" > (Required.) String containing the text to be re-encoded. </param>
+        /// <param name="value"> (Required.) String containing the text to be re-encoded. </param>
         /// <returns>
         /// String containing the re-encoded corresponding text to that in
         /// <paramref name="value" />; or the empty string if the empty string is provided
@@ -2136,7 +2136,7 @@ namespace xyLOGIX.Core.Extensions
         /// Trims the <paramref name="currentLine" /> of text; i.e., removes
         /// whitespace both before and after the text.
         /// </summary>
-        /// <param name="currentLine" > (Required.) Text to trim. </param>
+        /// <param name="currentLine"> (Required.) Text to trim. </param>
         /// <returns> Trimmed text. </returns>
         /// <remarks>
         /// If the empty or whitespace string is provided for
@@ -2152,7 +2152,7 @@ namespace xyLOGIX.Core.Extensions
         /// Helper method to aid in transforming text casing of a string to
         /// Initial Caps.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) String containing the word that needs to be
         /// initial-capitalized.
         /// </param>
@@ -2173,7 +2173,7 @@ namespace xyLOGIX.Core.Extensions
                                     .Substring(1, value.Length - 1);
 
         /// <summary> Helper for determining whether strings contain valid email addresses. </summary>
-        /// <param name="match" >
+        /// <param name="match">
         /// Reference to an instance of
         /// <see cref="T:System.Text.RegularExpressions.Match" /> that resulted from a
         /// regex search.
@@ -2205,7 +2205,7 @@ namespace xyLOGIX.Core.Extensions
         /// Excludes whitespace characters from the specified
         /// <paramref name="value" />.
         /// </summary>
-        /// <param name="value" >
+        /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> from which to
         /// exclude all whitespace characters.
         /// </param>
@@ -2224,8 +2224,8 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the current word in the text being parsed for a
         /// character-casing operation is
         /// </summary>
-        /// <param name="array" > </param>
-        /// <param name="i" > </param>
+        /// <param name="array"> </param>
+        /// <param name="i"> </param>
         /// <returns> </returns>
         private static bool IsAcronymOrStateAbbr(IList<string> array, int i)
         {
@@ -2264,7 +2264,7 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the passed <see cref="string" /> contains Roman
         /// numerals.
         /// </summary>
-        /// <param name="value" > Value to be checked. </param>
+        /// <param name="value"> Value to be checked. </param>
         /// <returns> TRUE if the value contains Roman numerals; FALSE otherwise. </returns>
         private static bool IsRomanNumerals(this string value)
         {
@@ -2282,8 +2282,8 @@ namespace xyLOGIX.Core.Extensions
         /// 'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and still needs
         /// to be initial-capitalized.
         /// </summary>
-        /// <param name="words" > Array of words (a phrase split on spaces, etc.) </param>
-        /// <param name="currentWord" > Current word being checked. </param>
+        /// <param name="words"> Array of words (a phrase split on spaces, etc.) </param>
+        /// <param name="currentWord"> Current word being checked. </param>
         /// <returns> </returns>
         private static bool IsSpecialWordAtBeginningOfPhrase(
             string[] words,
@@ -2309,11 +2309,11 @@ namespace xyLOGIX.Core.Extensions
         /// parsed (as part of a character-casing operation) is the component of common
         /// names for US streets.
         /// </summary>
-        /// <param name="array" >
+        /// <param name="array">
         /// (Required.) Collection of words from the text being
         /// parsed.
         /// </param>
-        /// <param name="i" >
+        /// <param name="i">
         /// (Required.) Index into the <paramref name="array" /> of the
         /// current word being parsed.
         /// </param>
@@ -2348,7 +2348,7 @@ namespace xyLOGIX.Core.Extensions
         /// words of the phrase as each of the corresponding letters of the resulting
         /// acronym.
         /// </summary>
-        /// <param name="word" >
+        /// <param name="word">
         /// (Required.) String containing the word whose first letter
         /// should be made into an corresponding acronym letter.
         /// </param>

@@ -12,7 +12,7 @@ namespace xyLOGIX.Core.Extensions.Providers.Interfaces
         /// Adds an association between the specified <paramref name="control" />
         /// and the specified <paramref name="form" />.
         /// </summary>
-        /// <param name="control" >
+        /// <param name="control">
         /// (Required.) A
         /// <see cref="T:System.Windows.Forms.Control" /> for whom an association should be
         /// created between it and its containing
@@ -26,7 +26,7 @@ namespace xyLOGIX.Core.Extensions.Providers.Interfaces
         /// corresponding parent <see cref="T:System.Windows.Forms.Form" /> that contains
         /// the control in our dictionary.
         /// </summary>
-        /// <param name="control" >
+        /// <param name="control">
         /// (Required.) An instance of
         /// <see cref="T:System.Windows.Forms.Control" /> for whom the containing form is
         /// to be obtained.

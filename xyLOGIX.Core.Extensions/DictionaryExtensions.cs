@@ -39,28 +39,7 @@ namespace xyLOGIX.Core.Extensions
             if (dictionary == null) return;
             if (EqualityComparer<K>.Default.Equals(key, default)) return;
 
-            if (!dictionary.Any())
-            {
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** INFO: Dictionary has no existing entries.  Adding the new key-value pair."
-                );
-
-                dictionary.Add(key, value);
-                return;
-            }
-
-            if (dictionary.ContainsKey(key))
-            {
-                DebugUtils.WriteLine(
-                    DebugLevel.Warning,
-                    $"*** WARNING: The dictionary already contains the key '{key}'.  Updating the corresponding value to '{value}'."
-                );
-                dictionary[key] = value;
-                return;
-            }
-
-            dictionary.Add(key, value);
+            dictionary[key] = value;
         }
 
         /// <summary>

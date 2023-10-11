@@ -108,17 +108,15 @@ namespace xyLOGIX.Core.Extensions
         /// The specified <paramref name="list" /> with the provided
         /// <paramref name="items" /> added to it.
         /// </returns>
-        public static IList<T> AddRange<T>(
+        public static void AddRange<T>(
             this IList<T> list,
             IEnumerable<T> items
         ) where T : class
         {
-            var result = list;
-
             try
             {
-                if (list == null) return result;
-                if (items == null || !items.Any()) return result;
+                if (list == null) return;
+                if (items == null || !items.Any()) return;
 
                 foreach (var item in items)
                     list.Add(item);
@@ -127,11 +125,9 @@ namespace xyLOGIX.Core.Extensions
             {
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
-
-                result = list;
             }
 
-            return result;
+            return;
         }
 
         /// <summary>

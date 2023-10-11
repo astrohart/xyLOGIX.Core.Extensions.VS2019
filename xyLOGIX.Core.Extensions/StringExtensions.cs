@@ -22,6 +22,28 @@ namespace xyLOGIX.Core.Extensions
     /// </summary>
     public static class StringExtensions
     {
+        public static string Concat(this string initialString, params string[] parts)
+        {
+            var result = initialString;
+
+            try
+            {
+                if (parts == null) return result;
+                if (!parts.Any()) return result;
+                
+                result = parts.Aggregate(result, (current, part) => current + part);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = initialString;
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Collection of strings which are short words but are not acronyms per
         /// se.

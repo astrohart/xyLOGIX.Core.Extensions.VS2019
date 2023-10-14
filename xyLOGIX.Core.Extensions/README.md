@@ -275,7 +275,6 @@
   - [AddDistinct(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct-System-Collections-IList,System-Object- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct(System.Collections.IList,System.Object)')
   - [AddDistinct\`\`1(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.IList{``0},``0)')
   - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
-  - [AddRange\`\`1(collection,items)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-xyLOGIX-Collections-Synchronized-OptimizedSynchronizedCollection{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.AddRange``1(xyLOGIX.Collections.Synchronized.OptimizedSynchronizedCollection{``0},System.Collections.Generic.IEnumerable{``0})')
   - [AddRange\`\`1(list,items)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
@@ -5027,35 +5026,6 @@ collection already. |
 | ---- | ----------- |
 | T | Type of the elements of the `collection`
 . |
-
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-xyLOGIX-Collections-Synchronized-OptimizedSynchronizedCollection{``0},System-Collections-Generic-IEnumerable{``0}-'></a>
-### AddRange\`\`1(collection,items) `method`
-
-##### Summary
-
-Adds a collection of `items` to the specified
-`collection`.
-
-##### Returns
-
-The specified `collection` with the provided
-`items` added to it.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| collection | [xyLOGIX.Collections.Synchronized.OptimizedSynchronizedCollection{\`\`0}](#T-xyLOGIX-Collections-Synchronized-OptimizedSynchronizedCollection{``0} 'xyLOGIX.Collections.Synchronized.OptimizedSynchronizedCollection{``0}') | (Required.) Collection to which the specified
-`items` are to be added. |
-| items | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Collection of `items` to be
-added to the specified `collection`. |
-
-##### Generic Types
-
-| Name | Description |
-| ---- | ----------- |
-| T | (Required.) Name of the type of the individual elements of
-the `collection`. |
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}-'></a>
 ### AddRange\`\`1(list,items) `method`

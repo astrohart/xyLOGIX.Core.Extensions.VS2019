@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using xyLOGIX.Collections.Synchronized;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
@@ -109,7 +110,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="items" /> added to it.
         /// </returns>
         public static void AddRange<T>(
-            this SynchronizedCollection<T> collection,
+            this OptimizedSynchronizedCollection<T> collection,
             IEnumerable<T> items
         )
         {

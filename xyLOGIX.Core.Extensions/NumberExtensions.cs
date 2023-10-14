@@ -140,7 +140,25 @@ namespace xyLOGIX.Core.Extensions
             decimal lowerBound,
             decimal upperBound
         )
-            => upperBound >= value && value >= lowerBound;
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound >= value && value >= lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary> Determines if a <paramref name="value" /> is negative. </summary>
         /// <param name="value">
@@ -241,7 +259,25 @@ namespace xyLOGIX.Core.Extensions
             decimal lowerBound,
             decimal upperBound
         )
-            => upperBound > value && value > lowerBound;
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound > value && value > lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary> Determines whether a <paramref name="value" /> is zero. </summary>
         /// <param name="value"> Value to be compared. </param>

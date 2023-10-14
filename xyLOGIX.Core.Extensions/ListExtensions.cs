@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using xyLOGIX.Collections.Synchronized;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
@@ -87,47 +86,6 @@ namespace xyLOGIX.Core.Extensions
             if (list.Contains(item)) return;
 
             list.Add(item);
-        }
-
-        /// <summary>
-        /// Adds a collection of <paramref name="items" /> to the specified
-        /// <paramref name="collection" />.
-        /// </summary>
-        /// <typeparam name="T">
-        /// (Required.) Name of the type of the individual elements of
-        /// the <paramref name="collection" />.
-        /// </typeparam>
-        /// <param name="collection">
-        /// (Required.) Collection to which the specified
-        /// <paramref name="items" /> are to be added.
-        /// </param>
-        /// <param name="items">
-        /// (Required.) Collection of <paramref name="items" /> to be
-        /// added to the specified <paramref name="collection" />.
-        /// </param>
-        /// <returns>
-        /// The specified <paramref name="collection" /> with the provided
-        /// <paramref name="items" /> added to it.
-        /// </returns>
-        public static void AddRange<T>(
-            this OptimizedSynchronizedCollection<T> collection,
-            IEnumerable<T> items
-        )
-        {
-            try
-            {
-                if (collection == null) return;
-                if (items == null) return;
-                if (!items.Any()) return;
-
-                foreach (var element in items)
-                    collection.Add(element);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-            }
         }
 
         /// <summary>

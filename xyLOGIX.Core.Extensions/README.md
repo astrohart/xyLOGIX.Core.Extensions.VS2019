@@ -285,14 +285,18 @@
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Double)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Double})')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Int64})')
+  - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Decimal,System.Decimal,System.Decimal)')
+  - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Int32,System.Int32,System.Int32)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
+  - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Int32,System.Int32,System.Int32)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Decimal)')
+  - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Int32)')
   - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonPositive(System.Decimal)')
+  - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonPositive(System.Int32)')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonzero(System.Decimal)')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonzero(System.Double)')
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsPositive(System.Decimal)')
-  - [IsStrictlyInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsStrictlyInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsStrictlyInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Decimal)')
   - [TruncateDecimalPlaces(val,places)](#M-xyLOGIX-Core-Extensions-NumberExtensions-TruncateDecimalPlaces-System-Decimal,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.TruncateDecimalPlaces(System.Decimal,System.Int32)')
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Int32)')
@@ -5269,6 +5273,50 @@ converted to `decimal`. |
 This method returns zero if the conversion was not successful, or if
 zero is passed for `value`.
 
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Decimal,System-Decimal,System-Decimal-'></a>
+### IsBetween(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines whether a number is strictly between (as in, can't be
+equal to either).
+
+##### Returns
+
+True if `value` is strictly greater than
+`lowerBound` and strictly less than
+`upperBound` ; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The value to be checked. |
+| lowerBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Lower bound. |
+| upperBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Upper bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int32,System-Int32,System-Int32-'></a>
+### IsBetween(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines whether a number is strictly between (as in, can't be
+equal to either).
+
+##### Returns
+
+True if `value` is strictly greater than
+`lowerBound` and strictly less than
+`upperBound` ; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The value to be checked. |
+| lowerBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound. |
+| upperBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound. |
+
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal-'></a>
 ### IsIncludedInRange(value,lowerBound,upperBound) `method`
 
@@ -5289,6 +5337,27 @@ specified or equal to either of the bounds; `false` otherwise.
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The value to be checked. |
 | lowerBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Lower bound. |
 | upperBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Upper bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32-'></a>
+### IsIncludedInRange(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines if an integer value is between a pair of values or equal to
+either of them.
+
+##### Returns
+
+`true` if the value is either within the range
+specified or equal to either of the bounds; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The value to be checked. |
+| lowerBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound. |
+| upperBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal-'></a>
 ### IsNegative(value) `method`
@@ -5330,6 +5399,27 @@ strictly less than [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev1
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared.  Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') type. |
 
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Int32-'></a>
+### IsNonNegative(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is
+non-positive; i.e., zero, or a negative number.
+
+##### Returns
+
+`true` if the specified `value` is
+nonnegative; `false` if the `value` is
+strictly less than [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32.Zero 'System.Int32.Zero').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared.  Must be of
+[Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') type. |
+
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Decimal-'></a>
 ### IsNonPositive(value) `method`
 
@@ -5350,6 +5440,27 @@ strictly greater than[Zero](http://msdn.microsoft.com/query/dev14.query?appId=De
 | ---- | ---- | ----------- |
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared.  Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') type. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Int32-'></a>
+### IsNonPositive(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is
+non-positive; i.e., zero, or a negative number.
+
+##### Returns
+
+`true` if the specified `value` is
+nonpositive; `false` if the `value` is
+strictly greater than[Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32.Zero 'System.Int32.Zero').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared.  Must be of
+[Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Decimal-'></a>
 ### IsNonzero(value) `method`
@@ -5409,28 +5520,6 @@ greater than zero; `false` otherwise.
 | ---- | ---- | ----------- |
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.)  Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') type. |
-
-<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsStrictlyInRange-System-Decimal,System-Decimal,System-Decimal-'></a>
-### IsStrictlyInRange(value,lowerBound,upperBound) `method`
-
-##### Summary
-
-Determines whether a number is strictly between (as in, can't be
-equal to either)
-
-##### Returns
-
-True if `value` is strictly greater than
-`lowerBound` and strictly less than
-`upperBound` ; false otherwise.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The value to be checked. |
-| lowerBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Lower bound. |
-| upperBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Upper bound. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal-'></a>
 ### IsZero(value) `method`

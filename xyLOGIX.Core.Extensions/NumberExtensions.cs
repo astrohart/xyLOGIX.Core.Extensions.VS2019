@@ -125,6 +125,80 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether a number is strictly between (as in, can't be
+        /// equal to either).
+        /// </summary>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
+        /// <returns>
+        /// True if <paramref name="value" /> is strictly greater than
+        /// <paramref name="lowerBound" /> and strictly less than
+        /// <paramref name="upperBound" /> ; false otherwise.
+        /// </returns>
+        public static bool IsBetween(
+            this decimal value,
+            decimal lowerBound,
+            decimal upperBound
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound > value && value > lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether a number is strictly between (as in, can't be
+        /// equal to either).
+        /// </summary>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
+        /// <returns>
+        /// True if <paramref name="value" /> is strictly greater than
+        /// <paramref name="lowerBound" /> and strictly less than
+        /// <paramref name="upperBound" /> ; false otherwise.
+        /// </returns>
+        public static bool IsBetween(
+            this int value,
+            int lowerBound,
+            int upperBound
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound > value && value > lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines if a decimal value is between a pair of values or equal to
         /// either of them.
         /// </summary>
@@ -139,6 +213,42 @@ namespace xyLOGIX.Core.Extensions
             this decimal value,
             decimal lowerBound,
             decimal upperBound
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound >= value && value >= lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if an integer value is between a pair of values or equal to
+        /// either of them.
+        /// </summary>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to either of the bounds; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsIncludedInRange(
+            this int value,
+            int lowerBound,
+            int upperBound
         )
         {
             var result = false;
@@ -194,6 +304,22 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
+        /// <see cref="T:System.Int32" /> type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// nonnegative; <see langword="false" /> if the <paramref name="value" /> is
+        /// strictly less than <see cref="F:System.Int32.Zero" />.
+        /// </returns>
+        public static bool IsNonNegative(this int value)
+            => value >= 0;
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is
+        /// non-positive; i.e., zero, or a negative number.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) Value to be compared.  Must be of
         /// <see cref="T:System.Decimal" /> type.
         /// </param>
         /// <returns>
@@ -203,6 +329,22 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool IsNonPositive(this decimal value)
             => value <= decimal.Zero;
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is
+        /// non-positive; i.e., zero, or a negative number.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) Value to be compared.  Must be of
+        /// <see cref="T:System.Int32" /> type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// nonpositive; <see langword="false" /> if the <paramref name="value" /> is
+        /// strictly greater than<see cref="F:System.Int32.Zero" />.
+        /// </returns>
+        public static bool IsNonPositive(this int value)
+            => value <= 0;
 
         /// <summary> Determines whether a <paramref name="value" /> is nonzero. </summary>
         /// <param name="value">
@@ -241,43 +383,6 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool IsPositive(this decimal value)
             => value > decimal.Zero;
-
-        /// <summary>
-        /// Determines whether a number is strictly between (as in, can't be
-        /// equal to either)
-        /// </summary>
-        /// <param name="value"> The value to be checked. </param>
-        /// <param name="lowerBound"> Lower bound. </param>
-        /// <param name="upperBound"> Upper bound. </param>
-        /// <returns>
-        /// True if <paramref name="value" /> is strictly greater than
-        /// <paramref name="lowerBound" /> and strictly less than
-        /// <paramref name="upperBound" /> ; false otherwise.
-        /// </returns>
-        public static bool IsStrictlyInRange(
-            this decimal value,
-            decimal lowerBound,
-            decimal upperBound
-        )
-        {
-            var result = false;
-
-            try
-            {
-                if ((upperBound - lowerBound).IsNonPositive()) return result;
-
-                result = upperBound > value && value > lowerBound;
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = false;
-            }
-
-            return result;
-        }
 
         /// <summary> Determines whether a <paramref name="value" /> is zero. </summary>
         /// <param name="value"> Value to be compared. </param>

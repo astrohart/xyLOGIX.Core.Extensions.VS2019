@@ -66,12 +66,12 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// <summary> Asserts that <c>1</c> is NOT in the range <c>(1,100)</c>. </summary>
         [Test]
         public void TestIsStrictlyInRangeWithLowerBound()
-            => Assert.IsFalse(1M.IsStrictlyInRange(1M, 100M));
+            => Assert.IsFalse(1M.IsBetween(1M, 100M));
 
         /// <summary> Asserts that <c>10</c> is in the range <c>(1,100)</c>. </summary>
         [Test]
         public void TestIsStrictlyInRangeWithMiddleValue()
-            => Assert.IsTrue(10M.IsStrictlyInRange(1M, 100M));
+            => Assert.IsTrue(10M.IsBetween(1M, 100M));
 
         /// <summary>
         /// Asserts that <c>100</c> is NOT in the range <c>(1,100)</c>, where the
@@ -79,6 +79,6 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// </summary>
         [Test]
         public void TestIsStrictlyInRangeWithUpperBound()
-            => Assert.IsFalse(100M.IsStrictlyInRange(1M, 100M));
+            => Assert.IsFalse(100M.IsBetween(1M, 100M));
     }
 }

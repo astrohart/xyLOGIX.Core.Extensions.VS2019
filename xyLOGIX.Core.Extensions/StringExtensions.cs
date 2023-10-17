@@ -22,28 +22,6 @@ namespace xyLOGIX.Core.Extensions
     /// </summary>
     public static class StringExtensions
     {
-        public static string Concat(this string initialString, params string[] parts)
-        {
-            var result = initialString;
-
-            try
-            {
-                if (parts == null) return result;
-                if (!parts.Any()) return result;
-                
-                result = parts.Aggregate(result, (current, part) => current + part);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = initialString;
-            }
-
-            return result;
-        }
-
         /// <summary>
         /// Collection of strings which are short words but are not acronyms per
         /// se.
@@ -317,6 +295,59 @@ namespace xyLOGIX.Core.Extensions
             result = line.Replace("\r", string.Empty);
             result = result.Replace("\n", string.Empty);
             result = result.Trim();
+
+            return result;
+        }
+
+        /// <summary>
+        /// Takes the specified <paramref name="initialString" /> and joins the provided
+        /// <see cref="T:System.String" /> <paramref name="parts" /> array of strings onto
+        /// it, in the order specified.
+        /// </summary>
+        /// <param name="initialString">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// specifies the initial value to have other <see cref="T:System.String" /> values
+        /// concatenated to it.
+        /// </param>
+        /// <param name="parts">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// values that are to be concatenated, in the order specified, to the
+        /// <paramref name="initialString" />.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> consisting of the
+        /// <paramref name="initialString" /> with the <paramref name="parts" />
+        /// concatenated to it.
+        /// </returns>
+        /// <remarks>
+        /// This method does nothing if the <paramref name="initialString" /> is
+        /// blank or <see langword="null" />, or if there are zero values in the
+        /// <paramref name="parts" />.
+        /// </remarks>
+        public static string Concat(
+            this string initialString,
+            params string[] parts
+        )
+        {
+            var result = initialString;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(initialString)) return result;
+                if (parts == null) return result;
+                if (parts.Length == 0) return result;
+
+                result = parts.Aggregate(
+                    result, (current, part) => current + part
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = initialString;
+            }
 
             return result;
         }
@@ -2153,6 +2184,60 @@ namespace xyLOGIX.Core.Extensions
                         m.Groups["Value"].Value, NumberStyles.HexNumber
                     )).ToString(CultureInfo.InvariantCulture)
                 );
+
+        public static string ToLowercase(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                value = value.ToLowerInvariant();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts the provided <see cref="T:System.String" /> <paramref name="value" />
+        /// to all uppercase, ignoring culture.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be
+        /// converted to uppercase.
+        /// </param>
+        /// <returns>
+        /// If successful, the <paramref name="value" /> specified, but converted
+        /// to uppercase; otherwise, this method is idempotent.
+        /// </returns>
+        public static string ToUppercase(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                value = value.ToUpperInvariant();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Trims the <paramref name="currentLine" /> of text; i.e., removes

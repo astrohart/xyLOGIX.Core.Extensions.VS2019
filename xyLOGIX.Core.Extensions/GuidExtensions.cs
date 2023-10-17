@@ -12,6 +12,43 @@ namespace xyLOGIX.Core.Extensions
     public static class GuidExtensions
     {
         /// <summary>
+        /// Expresses the provided <paramref name="guid" /> as a
+        /// <see cref="T:System.String" /> containing only the <see cref="T:System.Guid" />
+        /// digits, including hyphens.
+        /// </summary>
+        /// <param name="guid">
+        /// (Required.) A <see cref="T:System.Guid" /> that is to be
+        /// expressed as a <see cref="T:System.String" /> with braces.
+        /// </param>
+        /// <returns>
+        /// If successful, the <paramref name="guid" /> is expressed a
+        /// <see cref="T:System.String" /> containing only the <see cref="T:System.Guid" />
+        /// digits, including hyphens.  Otherwise, and including the case where the Zero
+        /// GUID is passed, the method returns the <see cref="F:System.String.Empty" />
+        /// value.
+        /// </returns>
+        public static string AsDigitsWithHyphens(this Guid guid)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (guid.IsZero()) return result;
+
+                result = guid.ToString("D");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the specified <see cref="T:System.Guid" /> value
         /// is the Zero GUID or not.
         /// </summary>
@@ -66,6 +103,42 @@ namespace xyLOGIX.Core.Extensions
 
                 result = guid.ToString("B")
                              .ToUpperInvariant();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Expresses the provided <paramref name="guid" /> as a
+        /// <see cref="T:System.String" />, surrounded by braces (as in the system
+        /// Registry, for instance).
+        /// </summary>
+        /// <param name="guid">
+        /// (Required.) A <see cref="T:System.Guid" /> that is to be
+        /// expressed as a <see cref="T:System.String" /> with braces.
+        /// </param>
+        /// <returns>
+        /// If successful, the <paramref name="guid" /> is expressed as a
+        /// <see cref="T:System.String" />, surrounded by braces (as in the system
+        /// Registry, for instance).  Otherwise, and including the case where the Zero GUID
+        /// is passed, the method returns the <see cref="F:System.String.Empty" /> value.
+        /// </returns>
+        public static string WithBraces(this Guid guid)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (guid.IsZero()) return result;
+
+                result = guid.ToString("B");
             }
             catch (Exception ex)
             {

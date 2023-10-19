@@ -43,8 +43,10 @@
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
 - [GuidExtensions](#T-xyLOGIX-Core-Extensions-GuidExtensions 'xyLOGIX.Core.Extensions.GuidExtensions')
+  - [AsDigitsWithHyphens(guid)](#M-xyLOGIX-Core-Extensions-GuidExtensions-AsDigitsWithHyphens-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.AsDigitsWithHyphens(System.Guid)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-GuidExtensions-IsZero-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.IsZero(System.Guid)')
   - [ToUppercaseWithBraces(guid)](#M-xyLOGIX-Core-Extensions-GuidExtensions-ToUppercaseWithBraces-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.ToUppercaseWithBraces(System.Guid)')
+  - [WithBraces(guid)](#M-xyLOGIX-Core-Extensions-GuidExtensions-WithBraces-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.WithBraces(System.Guid)')
 - [IComboBox](#T-xyLOGIX-Core-Extensions-IComboBox 'xyLOGIX.Core.Extensions.IComboBox')
   - [AutoCompleteCustomSource](#P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteCustomSource 'xyLOGIX.Core.Extensions.IComboBox.AutoCompleteCustomSource')
   - [AutoCompleteMode](#P-xyLOGIX-Core-Extensions-IComboBox-AutoCompleteMode 'xyLOGIX.Core.Extensions.IComboBox.AutoCompleteMode')
@@ -324,6 +326,7 @@
   - [AsProseList\`\`1(source,selectorFunc)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsProseList``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.AsProseList``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})')
   - [BreakTextIntoLines(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-BreakTextIntoLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.BreakTextIntoLines(System.String)')
   - [CleanLine(line)](#M-xyLOGIX-Core-Extensions-StringExtensions-CleanLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.CleanLine(System.String)')
+  - [Concat(initialString,parts)](#M-xyLOGIX-Core-Extensions-StringExtensions-Concat-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.Concat(System.String,System.String[])')
   - [ContainsAny(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.String[])')
   - [ContainsAny(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [ContainsAny(value,searchChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Char[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.Char[])')
@@ -384,6 +387,7 @@
   - [ToInitialCaps(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToInitialCaps-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToInitialCaps(System.String)')
   - [ToList(source,separators)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToList-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ToList(System.String,System.String[])')
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
+  - [ToUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUppercase(System.String)')
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
   - [CachedActualType](#F-xyLOGIX-Core-Extensions-TypeExtensions-CachedActualType 'xyLOGIX.Core.Extensions.TypeExtensions.CachedActualType')
@@ -1396,6 +1400,30 @@ xyLOGIX.Core.Extensions
 Exposes static extension methods for the [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid')
 class.
 
+<a name='M-xyLOGIX-Core-Extensions-GuidExtensions-AsDigitsWithHyphens-System-Guid-'></a>
+### AsDigitsWithHyphens(guid) `method`
+
+##### Summary
+
+Expresses the provided `guid` as a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing only the [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid')
+digits, including hyphens.
+
+##### Returns
+
+If successful, the `guid` is expressed a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing only the [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid')
+digits, including hyphens.  Otherwise, and including the case where the Zero
+GUID is passed, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
+value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| guid | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | (Required.) A [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') that is to be
+expressed as a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with braces. |
+
 <a name='M-xyLOGIX-Core-Extensions-GuidExtensions-IsZero-System-Guid-'></a>
 ### IsZero(value) `method`
 
@@ -1440,6 +1468,29 @@ be represented as a [String](http://msdn.microsoft.com/query/dev14.query?appId=D
 
 If this method is passed the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid.Empty 'System.Guid.Empty')
 value, then this method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+<a name='M-xyLOGIX-Core-Extensions-GuidExtensions-WithBraces-System-Guid-'></a>
+### WithBraces(guid) `method`
+
+##### Summary
+
+Expresses the provided `guid` as a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), surrounded by braces (as in the system
+Registry, for instance).
+
+##### Returns
+
+If successful, the `guid` is expressed as a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), surrounded by braces (as in the system
+Registry, for instance).  Otherwise, and including the case where the Zero GUID
+is passed, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| guid | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | (Required.) A [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') that is to be
+expressed as a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with braces. |
 
 <a name='T-xyLOGIX-Core-Extensions-IComboBox'></a>
 ## IComboBox `type`
@@ -5908,6 +5959,38 @@ removed.
 If the empty string is provided as input, then the empty string is
 returned.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-Concat-System-String,System-String[]-'></a>
+### Concat(initialString,parts) `method`
+
+##### Summary
+
+Takes the specified `initialString` and joins the provided
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`parts` array of strings onto
+it, in the order specified.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') consisting of the
+`initialString` with the `parts`
+concatenated to it.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| initialString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+specifies the initial value to have other [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values
+concatenated to it. |
+| parts | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+values that are to be concatenated, in the order specified, to the
+`initialString`. |
+
+##### Remarks
+
+This method does nothing if the `initialString` is
+blank or `null`, or if there are zero values in the
+`parts`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]-'></a>
 ### ContainsAny(value,searchStrings) `method`
 
@@ -7502,6 +7585,26 @@ to this method.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be re-encoded. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String-'></a>
+### ToUppercase(value) `method`
+
+##### Summary
+
+Converts the provided [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value`
+to all uppercase, ignoring culture.
+
+##### Returns
+
+If successful, the `value` specified, but converted
+to uppercase; otherwise, this method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
+converted to uppercase. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String-'></a>
 ### TrimLine(currentLine) `method`

@@ -449,7 +449,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> is negative, then this method returns zero.
         /// <para />
         /// If the specified <paramref name="value" /> is zero or greater, then this method
-        /// is the identity.
+        /// is idempotent.
         /// </summary>
         /// <param name="value">(Required.) Input value.</param>
         /// <returns>

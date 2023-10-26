@@ -5670,7 +5670,7 @@ Computes the zero floor.  Meaning, if the specified
 
 
 If the specified `value` is zero or greater, then this method
-is the identity.
+is idempotent.
 
 ##### Returns
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using xyLOGIX.Collections.Synchronized;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
@@ -28,6 +29,7 @@ namespace xyLOGIX.Core.Extensions
         /// <typeparam name="T"> Type of the new element. </typeparam>
         public static void AddDistinct<T>(this IList<T> list, T item)
         {
+            if (list == null) return;
             if (list.Contains(item)) return;
 
             list.Add(item);
@@ -147,6 +149,64 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Searches the provided <paramref name="list" />, trying to locate the element
+        /// that satisfies the Boolean conditions imposed by the specified
+        /// <paramref name="predicate" />.
+        /// <para />
+        /// The zero-based index into the list at which the first matching element exists
+        /// is returned, or <c>-1</c> if no matching element can be found.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Data type of each <paramref name="list" />
+        /// element.
+        /// </typeparam>
+        /// <param name="list">
+        /// (Required.) Reference to an instance of the collection of
+        /// items that is to be searched.
+        /// </param>
+        /// <param name="predicate">
+        /// (Required.) A predicate that evaluates to
+        /// <see langword="true" /> or <see langword="false" /> for each element of the
+        /// specified <paramref name="list" />, specifying the conditions by which a match
+        /// is to be identified.
+        /// </param>
+        /// <returns>
+        /// Zero-based index of the first element of the specified
+        /// <paramref name="list" /> for which the specified <paramref name="predicate" />
+        /// evaluates to <see langword="true" />; or <c>-1</c> if no such element can be
+        /// located.
+        /// </returns>
+        public static int FindIndex<T>(
+            this IList<T> list,
+            Predicate<T> predicate
+        )
+        {
+            var result = -1;
+
+            try
+            {
+                if (list == null) return result;
+                if (list.Count == 0) return result;
+                if (predicate == null) return result;
+
+                for (var i = 0; i < list.Count; i++)
+                {
+                    if (!predicate(list[i])) continue;
+
+                    result = i;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Gets a value indicating whether the <paramref name="value" /> is
         /// among the elements of the <paramref name="valueSet" />.
         /// </summary>
@@ -158,6 +218,116 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool IsOneOf(this int value, IEnumerable<int> valueSet)
             => valueSet.Any(n => n == value);
+
+        /// <summary>
+        /// Removes <paramref name="count" /> items from the specified
+        /// <paramref name="list" />, starting at the specified zero-based
+        /// <paramref name="index" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Data type of each of the elements of
+        /// <paramref name="list" />.
+        /// </typeparam>
+        /// <param name="list">
+        /// (Required.) Collection of items from which certain elements
+        /// are to be removed.
+        /// </param>
+        /// <param name="index">
+        /// (Required.) Must be zero or greater.  Starting zero-based
+        /// index of the first element to be removed from the specified
+        /// <paramref name="list" />.
+        /// </param>
+        /// <param name="count">
+        /// (Required.) A number that is 1 or greater, indicating how
+        /// many items are to be removed from the specified <paramref name="list" />.
+        /// </param>
+        /// <remarks>
+        /// If the input <paramref name="list" /> is <see langword="null" /> or
+        /// contains zero elements, then this method does nothing.
+        /// <para />
+        /// This method also does nothing in the event that <paramref name="index" /> is
+        /// less than zero, or <paramref name="count" />  is less than or equal to zero.
+        /// </remarks>
+        public static void RemoveRange<T>(
+            this IList<T> list,
+            int index,
+            int count
+        )
+        {
+            try
+            {
+                if (list == null) return;
+                if (list.Count == 0) return;
+                if (index < 0) return;
+                if (index >= list.Count) return;
+                if (count <= 0) return;
+
+                /*
+                 * Iterate through the list backwards,
+                 * starting at index + count and ending on
+                 * index.
+                 */
+
+                for (var i = index + count; i >= index; i--) list.RemoveAt(i);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Adds the specified <paramref name="items" /> to an instance of
+        /// <see cref="xyLOGIX.Collections.Synchronized.ConcurrentList{T}" />.
+        /// </summary>
+        /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
+        /// <param name="items">
+        /// (Required.) Enumerable collection of items to be added to
+        /// the new list.
+        /// </param>
+        /// <remarks>
+        /// If no <paramref name="items" /> are supplied, or the
+        /// <paramref name="items" /> parameter is set to a <see langword="null" />
+        /// reference, then this method returns the empty collection.
+        /// <para />
+        /// The collection to be returned has its excess memory storage reduced to match
+        /// the actual number of items in the collection, and the garbage collector is run,
+        /// prior to being returned by this method.
+        /// </remarks>
+        /// <returns>
+        /// Adds the provided <paramref name="items" /> to a new instance of
+        /// <see cref="xyLOGIX.Collections.Synchronized.ConcurrentList{T}" />, and returns
+        /// a reference to it.
+        /// </returns>
+        public static IList<T> ToConcurrentList<T>(this IEnumerable<T> items)
+        {
+            IList<T> result = new ConcurrentList<T>();
+
+            try
+            {
+                if (items == null) return result;
+
+                foreach (var element in items) result.Add(element);
+
+                /*
+                 * NOTE: We must pierce the IList<T> interface and
+                 * call the TrimExcess() method of the concrete class
+                 * here, in order to avoid an exception.
+                 */
+
+                ((ConcurrentList<T>)result).TrimExcess();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = new ConcurrentList<T>();
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Writes a list variable out as a set {1,2,3,4} e.g., as in

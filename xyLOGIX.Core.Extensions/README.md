@@ -279,7 +279,10 @@
   - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
   - [AddRange\`\`1(list,items)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
+  - [FindIndex\`\`1(list,predicate)](#M-xyLOGIX-Core-Extensions-ListExtensions-FindIndex``1-System-Collections-Generic-IList{``0},System-Predicate{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.FindIndex``1(System.Collections.Generic.IList{``0},System.Predicate{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
+  - [RemoveRange\`\`1(list,index,count)](#M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.RemoveRange``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)')
+  - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
   - [TrimExcess\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-TrimExcess``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.TrimExcess``1(System.Collections.Generic.IList{``0})')
@@ -5136,6 +5139,45 @@ Reference to the duplicate of the collection referenced by
 | ---- | ----------- |
 | T | Type of object in the list. |
 
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-FindIndex``1-System-Collections-Generic-IList{``0},System-Predicate{``0}-'></a>
+### FindIndex\`\`1(list,predicate) `method`
+
+##### Summary
+
+Searches the provided `list`, trying to locate the element
+that satisfies the Boolean conditions imposed by the specified
+`predicate`.
+
+
+
+The zero-based index into the list at which the first matching element exists
+is returned, or `-1` if no matching element can be found.
+
+##### Returns
+
+Zero-based index of the first element of the specified
+`list` for which the specified `predicate`
+evaluates to `true`; or `-1` if no such element can be
+located.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) Reference to an instance of the collection of
+items that is to be searched. |
+| predicate | [System.Predicate{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Predicate 'System.Predicate{``0}') | (Required.) A predicate that evaluates to
+`true` or `false` for each element of the
+specified `list`, specifying the conditions by which a match
+is to be identified. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of each `list`
+element. |
+
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}-'></a>
 ### IsOneOf(value,valueSet) `method`
 
@@ -5155,6 +5197,83 @@ true if `value` is in the
 | ---- | ---- | ----------- |
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to compare. |
 | valueSet | [System.Collections.Generic.IEnumerable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.Int32}') | Range of integer values to check. |
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32-'></a>
+### RemoveRange\`\`1(list,index,count) `method`
+
+##### Summary
+
+Removes `count` items from the specified
+`list`, starting at the specified zero-based
+`index`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) Collection of items from which certain elements
+are to be removed. |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Must be zero or greater.  Starting zero-based
+index of the first element to be removed from the specified
+`list`. |
+| count | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A number that is 1 or greater, indicating how
+many items are to be removed from the specified `list`. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of each of the elements of
+`list`. |
+
+##### Remarks
+
+If the input `list` is `null` or
+contains zero elements, then this method does nothing.
+
+
+
+This method also does nothing in the event that `index` is
+less than zero, or `count` is less than or equal to zero.
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}-'></a>
+### ToConcurrentList\`\`1(items) `method`
+
+##### Summary
+
+Adds the specified `items` to an instance of
+[ConcurrentList\`1](#T-xyLOGIX-Collections-Synchronized-ConcurrentList`1 'xyLOGIX.Collections.Synchronized.ConcurrentList`1').
+
+##### Returns
+
+Adds the provided `items` to a new instance of
+[ConcurrentList\`1](#T-xyLOGIX-Collections-Synchronized-ConcurrentList`1 'xyLOGIX.Collections.Synchronized.ConcurrentList`1'), and returns
+a reference to it.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| items | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Enumerable collection of items to be added to
+the new list. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of each element. |
+
+##### Remarks
+
+If no `items` are supplied, or the
+`items` parameter is set to a `null`
+reference, then this method returns the empty collection.
+
+
+
+The collection to be returned has its excess memory storage reduced to match
+the actual number of items in the collection, and the garbage collector is run,
+prior to being returned by this method.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}-'></a>
 ### ToSetString\`\`1(list) `method`

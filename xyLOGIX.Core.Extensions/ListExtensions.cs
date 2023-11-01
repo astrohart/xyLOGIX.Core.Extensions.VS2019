@@ -140,12 +140,28 @@ namespace xyLOGIX.Core.Extensions
         /// Reference to the duplicate of the collection referenced by
         /// <paramref name="source" />.
         /// </returns>
-        public static List<T> Clone<T>(this ICollection<T> source)
+        public static IList<T> Clone<T>(this ICollection<T> source)
         {
-            if (source == null || !source.Any())
-                return new List<T>();
+            IList<T> result = new ConcurrentList<T>();
 
-            return new List<T>(source);
+            try
+            {
+                if (source == null) return result;
+                if (source.Count == 0) return result;
+
+                foreach (var element in source) result.Add(element);
+
+                ((ConcurrentList<T>)result).TrimExcess();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = new ConcurrentList<T>();
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -201,6 +217,8 @@ namespace xyLOGIX.Core.Extensions
             {
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
+
+                result = -1;
             }
 
             return result;
@@ -217,7 +235,33 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="valueSet" /> ; false otherwise.
         /// </returns>
         public static bool IsOneOf(this int value, IEnumerable<int> valueSet)
-            => valueSet.Any(n => n == value);
+        {
+            var result = false;
+
+            try
+            {
+                if (valueSet == null) return result;
+                if (!valueSet.Any()) return result;
+
+                // ReSharper disable once LoopCanBeConvertedToQuery
+                foreach (var element in valueSet)
+                {
+                    if (!element.Equals(value)) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Removes <paramref name="count" /> items from the specified

@@ -112,6 +112,7 @@
   <ItemGroup>
     <Compile Include="CollectionExtensions.cs" />
     <Compile Include="BindingManagerBaseExtensions.cs" />
+    <Compile Include="EnumExtensions.cs" />
     <Compile Include="GlobalAspects.cs" />
     <Compile Include="CheckedListBoxExtensions.cs" />
     <Compile Include="ControlExtensions.cs" />

@@ -14,7 +14,6 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="enumerationValue"> Value of the enumeration. </param>
         /// <returns> String containing the enumeration value expressed as a string. </returns>
         public static string AsString<T>(this T enumerationValue)
-            where T : struct
         {
             var type = enumerationValue.GetType();
             if (!type.IsEnum)

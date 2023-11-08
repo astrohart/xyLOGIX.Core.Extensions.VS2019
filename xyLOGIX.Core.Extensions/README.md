@@ -14,6 +14,8 @@
   - [IsEmpty\`\`1(collection)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsEmpty``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsEmpty``1(System.Collections.Generic.ICollection{``0})')
   - [IsNullOrEmpty\`\`1(collection)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsNullOrEmpty``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})')
   - [IsOneOf\`\`1(obj)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsOneOf``1-System-Object- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsOneOf``1(System.Object)')
+- [ComboBoxExtensions](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions 'xyLOGIX.Core.Extensions.ComboBoxExtensions')
+  - [BindEnum\`\`1(comboBox,defaultSelection)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindEnum``1-System-Windows-Forms-ComboBox,``0- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.BindEnum``1(System.Windows.Forms.ComboBox,``0)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
   - [ControlFormAssociationProvider](#P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider 'xyLOGIX.Core.Extensions.ControlExtensions.ControlFormAssociationProvider')
   - [AssociateWithParentForm(control)](#M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.AssociateWithParentForm(System.Windows.Forms.Control)')
@@ -709,6 +711,37 @@ This method is useful for checking, say, if a
 
 To perform that check, you would pass
 `Tuple<Button, CheckBox, Label>` as this method's type parameter.
+
+<a name='T-xyLOGIX-Core-Extensions-ComboBoxExtensions'></a>
+## ComboBoxExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension methods for instances of [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+<a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindEnum``1-System-Windows-Forms-ComboBox,``0-'></a>
+### BindEnum\`\`1(comboBox,defaultSelection) `method`
+
+##### Summary
+
+Data-binds an enumeration in code to a [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| comboBox | [System.Windows.Forms.ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') | (Required.) Reference to an instance of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that is to be data-bound. |
+| defaultSelection | [\`\`0](#T-``0 '``0') | (Required.) Default value to be selected when the form is first displayed. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) The name of the C# enumeration to be data-bound. |
 
 <a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>
 ## ControlExtensions `type`

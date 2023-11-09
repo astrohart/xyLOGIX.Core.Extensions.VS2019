@@ -110,6 +110,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoundComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CollectionExtensions.cs" />
     <Compile Include="BindingManagerBaseExtensions.cs" />
     <Compile Include="ComboBoxExtensions.cs" />

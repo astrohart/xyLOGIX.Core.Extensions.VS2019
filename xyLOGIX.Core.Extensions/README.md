@@ -3,6 +3,8 @@
 
 ## Contents
 
+- [BoundComboBox](#T-xyLOGIX-Core-Extensions-BoundComboBox 'xyLOGIX.Core.Extensions.BoundComboBox')
+  - [OnSelectedIndexChanged(e)](#M-xyLOGIX-Core-Extensions-BoundComboBox-OnSelectedIndexChanged-System-EventArgs- 'xyLOGIX.Core.Extensions.BoundComboBox.OnSelectedIndexChanged(System.EventArgs)')
 - [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
   - [AreAllItemsSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.AreAllItemsSelected(System.Windows.Forms.CheckedListBox)')
   - [CheckAll(checkedListBox,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckAll(System.Windows.Forms.CheckedListBox,System.Boolean)')
@@ -15,7 +17,8 @@
   - [IsNullOrEmpty\`\`1(collection)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsNullOrEmpty``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})')
   - [IsOneOf\`\`1(obj)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsOneOf``1-System-Object- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsOneOf``1(System.Object)')
 - [ComboBoxExtensions](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions 'xyLOGIX.Core.Extensions.ComboBoxExtensions')
-  - [BindEnum\`\`1(comboBox,defaultSelection)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindEnum``1-System-Windows-Forms-ComboBox,``0- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.BindEnum``1(System.Windows.Forms.ComboBox,``0)')
+  - [BindToEnum\`\`1(comboBox,defaultSelection)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindToEnum``1-System-Windows-Forms-ComboBox,``0- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.BindToEnum``1(System.Windows.Forms.ComboBox,``0)')
+  - [GetComboBoxItems\`\`1()](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-GetComboBoxItems``1 'xyLOGIX.Core.Extensions.ComboBoxExtensions.GetComboBoxItems``1')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
   - [ControlFormAssociationProvider](#P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider 'xyLOGIX.Core.Extensions.ControlExtensions.ControlFormAssociationProvider')
   - [AssociateWithParentForm(control)](#M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.AssociateWithParentForm(System.Windows.Forms.Control)')
@@ -28,6 +31,10 @@
   - [MergeWith\`\`2(target,source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})')
   - [ToConcurrentDictionary\`\`3(source,keySelector,elementSelector)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToConcurrentDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
+- [EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem`1')
+  - [Description](#P-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-Description 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem`1.Description')
+  - [Value](#P-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-Value 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem`1.Value')
+  - [ForEnumValue(value)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-ForEnumValue-`0- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem`1.ForEnumValue(`0)')
 - [EnumExtensions](#T-xyLOGIX-Core-Extensions-EnumExtensions 'xyLOGIX.Core.Extensions.EnumExtensions')
   - [AsString\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-AsString``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.AsString``1(``0)')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
@@ -401,6 +408,34 @@
   - [GetActualType()](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType(System.Type)')
   - [IsSameOrSubclassOf(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclassOf-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclassOf(System.Type,System.Type)')
 
+<a name='T-xyLOGIX-Core-Extensions-BoundComboBox'></a>
+## BoundComboBox `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+A [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that writes values when the
+value of the [SelectedIndex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.SelectedIndex 'System.Windows.Forms.ComboBox.SelectedIndex')
+property is changed.
+
+<a name='M-xyLOGIX-Core-Extensions-BoundComboBox-OnSelectedIndexChanged-System-EventArgs-'></a>
+### OnSelectedIndexChanged(e) `method`
+
+##### Summary
+
+Raises the
+[](#E-System-Windows-Forms-ComboBox-SelectedIndexChanged 'System.Windows.Forms.ComboBox.SelectedIndexChanged') event.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| e | [System.EventArgs](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.EventArgs 'System.EventArgs') | An [EventArgs](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.EventArgs 'System.EventArgs') that contains the event
+data. |
+
 <a name='T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions'></a>
 ## CheckedListBoxExtensions `type`
 
@@ -721,27 +756,57 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Exposes static extension methods for instances of [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Exposes static extension methods for instances of
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
-<a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindEnum``1-System-Windows-Forms-ComboBox,``0-'></a>
-### BindEnum\`\`1(comboBox,defaultSelection) `method`
+<a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindToEnum``1-System-Windows-Forms-ComboBox,``0-'></a>
+### BindToEnum\`\`1(comboBox,defaultSelection) `method`
 
 ##### Summary
 
-Data-binds an enumeration in code to a [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+Data-binds an enumeration in code to a
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| comboBox | [System.Windows.Forms.ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') | (Required.) Reference to an instance of the [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that is to be data-bound. |
-| defaultSelection | [\`\`0](#T-``0 '``0') | (Required.) Default value to be selected when the form is first displayed. |
+| comboBox | [System.Windows.Forms.ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') | (Required.) Reference to an instance of the
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that is to be data-bound. |
+| defaultSelection | [\`\`0](#T-``0 '``0') | (Required.) Default value to be selected when
+the form is first displayed. |
 
 ##### Generic Types
 
 | Name | Description |
 | ---- | ----------- |
-| T | (Required.) The name of the C# enumeration to be data-bound. |
+| T | (Required.) The name of the C# enumeration to be
+data-bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-GetComboBoxItems``1'></a>
+### GetComboBoxItems\`\`1() `method`
+
+##### Summary
+
+Attempts to gather a collection of combo box items for the specified C#
+enumeration.
+
+##### Returns
+
+A collection of instances of
+[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+, each of which represent an item to be added to a
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
+
+##### Parameters
+
+This method has no parameters.
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Name of the enumeration. |
 
 <a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>
 ## ControlExtensions `type`
@@ -1062,6 +1127,61 @@ dictionary's information. |
 
 In order for this method to work, the object and the dictionary must
 have the same schema.
+
+<a name='T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1'></a>
+## EnumBoundComboBoxItem\`1 `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions.ComboBoxExtensions
+
+##### Summary
+
+Represents a C# `enum` value together with a user-friendly
+display name, i.e., description.
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+
+<a name='P-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-Description'></a>
+### Description `property`
+
+##### Summary
+
+Gets or sets a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a user-friendly
+display name, or description, for the specific enumeration value.
+
+<a name='P-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-Value'></a>
+### Value `property`
+
+##### Summary
+
+Gets or sets the enumeration value that is "behind" the combo box selection.
+
+<a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-ForEnumValue-`0-'></a>
+### ForEnumValue(value) `method`
+
+##### Summary
+
+Creates a new instance of
+[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+and initializes it with the specified `value`.
+
+##### Returns
+
+Reference to an instance of
+[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+that contains the required data.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [\`0](#T-`0 '`0') | (Required.) The C# enumeration value to use for
+initialization. |
 
 <a name='T-xyLOGIX-Core-Extensions-EnumExtensions'></a>
 ## EnumExtensions `type`

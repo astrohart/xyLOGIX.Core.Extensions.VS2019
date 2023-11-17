@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Threading;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -69,6 +70,7 @@ namespace xyLOGIX.Core.Extensions
         /// An <see cref="T:System.Action" /> specifying code to be
         /// run if the form is disposed.
         /// </param>
+        [Yielder]
         public static void DoIfDisposed(this IForm form, Action message)
         {
             if (form != null && !form.IsDisposed) return;
@@ -88,6 +90,7 @@ namespace xyLOGIX.Core.Extensions
         /// An <see cref="T:System.Action" /> specifying code to be
         /// run if the form is not disposed.
         /// </param>
+        [Yielder]
         public static void DoIfNotDisposed(this IForm form, Action message)
         {
             if (form == null || form.IsDisposed) return;

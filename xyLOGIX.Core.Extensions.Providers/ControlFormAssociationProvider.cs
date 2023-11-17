@@ -1,4 +1,5 @@
 ﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -290,6 +291,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// <paramref name="sender" /> of this event and the associated parent
         /// <see cref="T:System.Windows.Forms.Form" />.
         /// </remarks>
+        [EntryPoint]        
         private void OnMemberControlHandleDestroyed(object sender, EventArgs e)
         {
             if (!(sender is Control control)) return;
@@ -313,6 +315,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// This method responds by removing all the entries from our internal
         /// dictionary that correspond to the specified form.
         /// </remarks>
+        [EntryPoint]        
         private void OnMemberFormClosed(object sender, FormClosedEventArgs e)
         {
             if (!(sender is Form form)) return;

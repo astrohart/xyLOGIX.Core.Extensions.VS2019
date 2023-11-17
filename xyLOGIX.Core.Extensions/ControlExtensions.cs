@@ -1,4 +1,5 @@
 ﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using System.ComponentModel;
 using System.Linq;
@@ -161,6 +162,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.Control" /> and implements the
         /// <see cref="T:System.ComponentModel.ISynchronizeInvoke" /> interface).
         /// </remarks>
+        [Yielder]
         public static void InvokeIfRequired(
             this ISynchronizeInvoke obj,
             MethodInvoker message

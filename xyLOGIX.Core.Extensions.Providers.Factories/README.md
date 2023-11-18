@@ -4,6 +4,7 @@
 ## Contents
 
 - [GetControlFormAssociationProvider](#T-xyLOGIX-Core-Extensions-Providers-Factories-GetControlFormAssociationProvider 'xyLOGIX.Core.Extensions.Providers.Factories.GetControlFormAssociationProvider')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-Providers-Factories-GetControlFormAssociationProvider-#cctor 'xyLOGIX.Core.Extensions.Providers.Factories.GetControlFormAssociationProvider.#cctor')
   - [SoleInstance()](#M-xyLOGIX-Core-Extensions-Providers-Factories-GetControlFormAssociationProvider-SoleInstance 'xyLOGIX.Core.Extensions.Providers.Factories.GetControlFormAssociationProvider.SoleInstance')
 - [Resources](#T-xyLOGIX-Core-Extensions-Providers-Factories-Properties-Resources 'xyLOGIX.Core.Extensions.Providers.Factories.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Providers-Factories-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Providers.Factories.Properties.Resources.Culture')
@@ -21,6 +22,25 @@ xyLOGIX.Core.Extensions.Providers.Factories
 Provides access to the one and only instance of the object that implements the
 [IControlFormAssociationProvider](#T-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider 'xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider')
 interface.
+
+<a name='M-xyLOGIX-Core-Extensions-Providers-Factories-GetControlFormAssociationProvider-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the
+[GetControlFormAssociationProvider](#T-xyLOGIX-Core-Extensions-Providers-Factories-GetControlFormAssociationProvider 'xyLOGIX.Core.Extensions.Providers.Factories.GetControlFormAssociationProvider')
+class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
 
 <a name='M-xyLOGIX-Core-Extensions-Providers-Factories-GetControlFormAssociationProvider-SoleInstance'></a>
 ### SoleInstance() `method`

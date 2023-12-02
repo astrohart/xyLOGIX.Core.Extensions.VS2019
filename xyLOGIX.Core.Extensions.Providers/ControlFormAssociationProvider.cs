@@ -11,7 +11,7 @@ using xyLOGIX.Core.Extensions.Providers.Interfaces;
 namespace xyLOGIX.Core.Extensions.Providers
 {
     /// <summary> Defines associations between forms and their contained controls. </summary>
-    [Log(AttributeExclude = true)]
+    [Log(AttributeExclude = true), ExplicitlySynchronized]
     public class
         ControlFormAssociationProvider : IControlFormAssociationProvider
     {

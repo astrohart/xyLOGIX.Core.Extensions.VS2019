@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Threading;
+using System;
 using System.Windows.Forms;
 using xyLOGIX.Core.Debug;
 
@@ -9,6 +10,7 @@ namespace xyLOGIX.Core.Extensions
     /// value of the <see cref="P:System.Windows.Forms.ComboBox.SelectedIndex" />
     /// property is changed.
     /// </summary>
+    [ExplicitlySynchronized]
     public class BoundComboBox : ComboBox
     {
         /// <summary>

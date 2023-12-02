@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using PostSharp.Patterns.Collections;
+using System;
 using System.Linq;
 using System.Reflection;
 
@@ -13,8 +13,8 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="M:xyLOGIX.Core.Extensions.TypeExtensions.GetActualType" /> method
         /// for faster performance.
         /// </summary>
-        private static readonly ConcurrentDictionary<Type, Type>
-            CachedActualType = new ConcurrentDictionary<Type, Type>();
+        private static readonly AdvisableDictionary<Type, Type>
+            CachedActualType = new AdvisableDictionary<Type, Type>();
 
         /// <summary>
         /// Gets the internal type of an IList. When the type is not a list then

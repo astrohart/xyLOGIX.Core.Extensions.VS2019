@@ -31,10 +31,10 @@
   - [MergeWith\`\`2(target,source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})')
   - [ToConcurrentDictionary\`\`3(source,keySelector,elementSelector)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToConcurrentDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
-- [EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem`1')
-  - [Description](#P-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-Description 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem`1.Description')
-  - [Value](#P-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-Value 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem`1.Value')
-  - [ForEnumValue(value)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-ForEnumValue-`0- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem`1.ForEnumValue(`0)')
+- [EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
+  - [Description](#P-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-Description 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1.Description')
+  - [Value](#P-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-Value 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1.Value')
+  - [ForEnumValue(value)](#M-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-ForEnumValue-`0- 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1.ForEnumValue(`0)')
 - [EnumExtensions](#T-xyLOGIX-Core-Extensions-EnumExtensions 'xyLOGIX.Core.Extensions.EnumExtensions')
   - [AsString\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-AsString``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.AsString``1(``0)')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
@@ -1128,12 +1128,12 @@ dictionary's information. |
 In order for this method to work, the object and the dictionary must
 have the same schema.
 
-<a name='T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1'></a>
+<a name='T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1'></a>
 ## EnumBoundComboBoxItem\`1 `type`
 
 ##### Namespace
 
-xyLOGIX.Core.Extensions.ComboBoxExtensions
+xyLOGIX.Core.Extensions
 
 ##### Summary
 
@@ -1146,7 +1146,7 @@ display name, i.e., description.
 | ---- | ----------- |
 | T |  |
 
-<a name='P-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-Description'></a>
+<a name='P-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-Description'></a>
 ### Description `property`
 
 ##### Summary
@@ -1154,14 +1154,14 @@ display name, i.e., description.
 Gets or sets a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a user-friendly
 display name, or description, for the specific enumeration value.
 
-<a name='P-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-Value'></a>
+<a name='P-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-Value'></a>
 ### Value `property`
 
 ##### Summary
 
 Gets or sets the enumeration value that is "behind" the combo box selection.
 
-<a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem`1-ForEnumValue-`0-'></a>
+<a name='M-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-ForEnumValue-`0-'></a>
 ### ForEnumValue(value) `method`
 
 ##### Summary

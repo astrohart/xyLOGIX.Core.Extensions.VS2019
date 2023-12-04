@@ -145,7 +145,6 @@ namespace xyLOGIX.Core.Extensions.Providers
                 // Unsubscribe the event first, in case we already subscribed the handler to
                 // the control's HandleDestroyed event.
 
-                control.HandleDestroyed -= OnMemberControlHandleDestroyed;
                 control.HandleDestroyed += OnMemberControlHandleDestroyed;
             }
             catch (Exception ex)
@@ -186,7 +185,6 @@ namespace xyLOGIX.Core.Extensions.Providers
                 // Unsubscribe the event first, in case we already subscribed the handler to
                 // the form's FormClosed event.
 
-                form.FormClosed -= OnMemberFormClosed;
                 form.FormClosed += OnMemberFormClosed;
             }
             catch (Exception ex)

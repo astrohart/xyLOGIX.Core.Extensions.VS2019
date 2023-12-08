@@ -384,6 +384,7 @@ namespace xyLOGIX.Core.Extensions
         /// This method is helpful for writing some of the members of a
         /// collection to a log file.
         /// </remarks>
+        [Log(AttributeExclude = true)]
         public static string ToSetString<T>(this IList<T> list)
         {
             if (list == null || list.Count == 0) return "{}";

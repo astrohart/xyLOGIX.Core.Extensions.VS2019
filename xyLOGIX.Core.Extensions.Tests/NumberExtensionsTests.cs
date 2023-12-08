@@ -7,7 +7,7 @@ namespace xyLOGIX.Core.Extensions.Tests
     /// Unit tests for the methods and properties of the
     /// <see cref="T:xyLOGIX.Core.Extensions.NumberExtensions" /> class.
     /// </summary>
-    [TextFixture, ExplicitlySynchronized]
+    [TestFixture, ExplicitlySynchronized]
     public class NumberExtensionsTests
     {
         /// <summary>

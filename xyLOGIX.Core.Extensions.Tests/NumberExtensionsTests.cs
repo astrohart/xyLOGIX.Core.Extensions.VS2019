@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+using PostSharp.Patterns.Threading;
+using NUnit.Framework;
 
 namespace xyLOGIX.Core.Extensions.Tests
 {
@@ -6,7 +7,7 @@ namespace xyLOGIX.Core.Extensions.Tests
     /// Unit tests for the methods and properties of the
     /// <see cref="T:xyLOGIX.Core.Extensions.NumberExtensions" /> class.
     /// </summary>
-    [TestFixture]
+    [TextFixture, ExplicitlySynchronized]
     public class NumberExtensionsTests
     {
         /// <summary>

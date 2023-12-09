@@ -1,7 +1,9 @@
 ﻿using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Linq;
 using System.Reflection;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -9,39 +11,65 @@ namespace xyLOGIX.Core.Extensions
     public static class TypeExtensions
     {
         /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.TypeExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static TypeExtensions() { }
+
+        /// <summary>
         /// Dictionary that caches the results of the
         /// <see cref="M:xyLOGIX.Core.Extensions.TypeExtensions.GetActualType" /> method
         /// for faster performance.
         /// </summary>
-        private static readonly AdvisableDictionary<Type, Type>
-            CachedActualType = new AdvisableDictionary<Type, Type>();
+        public static AdvisableDictionary<Type, Type>
+            CachedActualType
+        { get; } = new AdvisableDictionary<Type, Type>();
 
         /// <summary>
-        /// Gets the internal type of an IList. When the type is not a list then
+        /// Gets the internal type of IList. When the type is not a list then
         /// this method will return the same type. if type is List of T then this method
         /// will return the type of T.
         /// </summary>
         public static Type GetActualType(this Type type)
         {
-            if (CachedActualType.TryGetValue(type, out var actualType))
-                return actualType;
+            Type result = default;
 
-            if (type.GetTypeInfo()
-                    .IsArray)
-                CachedActualType[type] = type.GetElementType();
-            else if (type.GenericTypeArguments.Any())
+            try
+            {
+                if (CachedActualType.TryGetValue(type, out var actualType))
+                    return result = actualType;
 
-                // this is almost always find the right type of an IList
-                // but if it fail then do the below. Don't really
-                // remember why this fails sometimes.
-                CachedActualType[type] = type.GenericTypeArguments.First();
-            else if (type.FullName?.Contains("List`1") ?? false)
-                CachedActualType[type] = type.GetRuntimeProperty("Item")
-                                             .PropertyType;
-            else
-                CachedActualType[type] = type;
+                if (type.GetTypeInfo()
+                        .IsArray)
+                    CachedActualType[type] = type.GetElementType();
+                else if (type.GenericTypeArguments.Any())
 
-            return CachedActualType[type];
+                    // this almost always finds the right type of IList
+                    // but if it fails then do the below. Don't really
+                    // remember why this fails sometimes.
+                    CachedActualType[type] = type.GenericTypeArguments.First();
+                else if (type.FullName?.Contains("List`1") ?? false)
+                    CachedActualType[type] = type.GetRuntimeProperty("Item")
+                                                 .PropertyType;
+                else
+                    CachedActualType[type] = type;
+
+                result = CachedActualType[type];
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = default;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -63,7 +91,26 @@ namespace xyLOGIX.Core.Extensions
             this Type potentialDescendant,
             Type potentialBaseType
         )
-            => potentialDescendant.IsSubclassOf(potentialBaseType) ||
-               potentialDescendant == potentialBaseType;
+        {
+            var result = false;
+
+            try
+            {
+                if (potentialDescendant == null) return result;
+                if (potentialBaseType == null) return result;
+
+                result = potentialDescendant.IsSubclassOf(potentialBaseType) ||
+                         potentialDescendant == potentialBaseType;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
     }
 }

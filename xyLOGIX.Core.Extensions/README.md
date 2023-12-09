@@ -7982,7 +7982,7 @@ created or before any static members are referenced.
 
 ##### Summary
 
-Gets the internal type of an IList. When the type is not a list then
+Gets the internal type of IList. When the type is not a list then
 this method will return the same type. if type is List of T then this method
 will return the type of T.
 

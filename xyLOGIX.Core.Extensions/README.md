@@ -405,6 +405,7 @@
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
   - [CachedActualType](#F-xyLOGIX-Core-Extensions-TypeExtensions-CachedActualType 'xyLOGIX.Core.Extensions.TypeExtensions.CachedActualType')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-TypeExtensions-#cctor 'xyLOGIX.Core.Extensions.TypeExtensions.#cctor')
   - [GetActualType()](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType(System.Type)')
   - [IsSameOrSubclassOf(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclassOf-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclassOf(System.Type,System.Type)')
 
@@ -7958,6 +7959,23 @@ Helper methods to assist in handling runtime type information.
 Dictionary that caches the results of the
 [GetActualType](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType') method
 for faster performance.
+
+<a name='M-xyLOGIX-Core-Extensions-TypeExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
 
 <a name='M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type-'></a>
 ### GetActualType() `method`

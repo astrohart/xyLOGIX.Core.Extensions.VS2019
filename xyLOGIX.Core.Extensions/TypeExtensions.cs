@@ -37,7 +37,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         public static Type GetActualType(this Type type)
         {
-            Type result = default;
+            Type result;
 
             try
             {

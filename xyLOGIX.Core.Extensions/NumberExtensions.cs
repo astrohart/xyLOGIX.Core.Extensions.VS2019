@@ -283,6 +283,21 @@ namespace xyLOGIX.Core.Extensions
             => value < decimal.Zero;
 
         /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is negative; i.e.,
+        /// strictly less than zero.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) Value to be compared.  Must be of <see cref="T:System.Int32" />
+        /// type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is negative;
+        /// <see langword="false" /> if the <paramref name="value" /> is zero or greater.
+        /// </returns>
+        public static bool IsNegative(this int value)
+            => value < 0;
+
+        /// <summary>
         /// Determines whether the specified <paramref name="value" /> is
         /// non-positive; i.e., zero, or a negative number.
         /// </summary>
@@ -300,7 +315,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> is
-        /// non-positive; i.e., zero, or a negative number.
+        /// non-negative; i.e., zero, or a positive number.
         /// </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of

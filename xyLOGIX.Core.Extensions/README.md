@@ -306,6 +306,7 @@
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Int32,System.Int32,System.Int32)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
+  - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Int32)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Decimal)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Int32)')
   - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonPositive(System.Decimal)')
@@ -5739,6 +5740,26 @@ less than zero; `false` otherwise.
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') type. |
 
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Int32-'></a>
+### IsNegative(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is negative; i.e.,
+strictly less than zero.
+
+##### Returns
+
+`true` if the specified `value` is negative;
+`false` if the `value` is zero or greater.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared.  Must be of [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32')
+type. |
+
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal-'></a>
 ### IsNonNegative(value) `method`
 
@@ -5766,7 +5787,7 @@ strictly less than [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev1
 ##### Summary
 
 Determines whether the specified `value` is
-non-positive; i.e., zero, or a negative number.
+non-negative; i.e., zero, or a positive number.
 
 ##### Returns
 

@@ -273,7 +273,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Determines if a <paramref name="value" /> is negative. </summary>
         /// <param name="value">
         /// (Required.) Value to be compared. Must be of
-        /// <see cref="T:System.Decimal" /> type.
+        /// <see cref="T:System.Decimal" /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the <paramref name="value" /> is strictly
@@ -303,7 +303,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
-        /// <see cref="T:System.Decimal" /> type.
+        /// <see cref="T:System.Decimal" /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
@@ -319,7 +319,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
-        /// <see cref="T:System.Int32" /> type.
+        /// <see cref="T:System.Int32" /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
@@ -335,7 +335,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
-        /// <see cref="T:System.Decimal" /> type.
+        /// <see cref="T:System.Decimal" /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
@@ -351,7 +351,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
-        /// <see cref="T:System.Int32" /> type.
+        /// <see cref="T:System.Int32" /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
@@ -364,7 +364,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Determines whether a <paramref name="value" /> is nonzero. </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
-        /// <see cref="T:System.Decimal" /> type.
+        /// <see cref="T:System.Decimal" /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
@@ -377,7 +377,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Determines whether a <paramref name="value" /> is nonzero. </summary>
         /// <param name="value">
         /// (Required.) Value to be compared.  Must be of
-        /// <see cref="T:System.Decimal" /> type.
+        /// <see cref="T:System.Decimal" /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
@@ -387,10 +387,22 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsNonzero(this double value)
             => value != 0D;
 
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" />  is a positive
+        /// integer; i.e., the <paramref name="value" /> is strictly greater than zero.
+        /// </summary>
+        /// <param name="value">
+        /// Value to be compared.  Must be of
+        /// <see cref="T:System.Int32" /> data type.
+        /// </param>
+        /// <returns></returns>
+        public static bool IsPositive(this int value)
+            => value > 0;
+
         /// <summary> Determines whether a <paramref name="value" /> is positive. </summary>
         /// <param name="value">
         /// (Required.)  Value to be compared. Must be of
-        /// <see cref="T:System.Decimal" /> type.
+        /// <see cref="T:System.Decimal" /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the <paramref name="value" /> is strictly

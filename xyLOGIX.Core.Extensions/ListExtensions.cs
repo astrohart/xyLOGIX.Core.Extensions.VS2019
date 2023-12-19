@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -319,6 +320,60 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
             }
+        }
+
+        /// <summary>
+        /// Adds the specified <paramref name="items" /> to an instance of
+        /// <see cref="xyLOGIX.Collections.Synchronized.ConcurrentList{T}" />.
+        /// </summary>
+        /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
+        /// <param name="items">
+        /// (Required.) Enumerable collection of items to be added to
+        /// the new list.
+        /// </param>
+        /// <remarks>
+        /// If no <paramref name="items" /> are supplied, or the
+        /// <paramref name="items" /> parameter is set to a <see langword="null" />
+        /// reference, then this method returns the empty collection.
+        /// <para />
+        /// The collection to be returned has its excess memory storage reduced to match
+        /// the actual number of items in the collection, and the garbage collector is run,
+        /// prior to being returned by this method.
+        /// </remarks>
+        /// <returns>
+        /// Adds the provided <paramref name="items" /> to a new instance of
+        /// <see cref="xyLOGIX.Collections.Synchronized.ConcurrentList{T}" />, and returns
+        /// a reference to it.
+        /// </returns>
+        public static IList<T> ToAdvisableCollection<T>(
+            this IEnumerable<T> items
+        )
+        {
+            IList<T> result = new AdvisableCollection<T>();
+
+            try
+            {
+                if (items == null) return result;
+
+                foreach (var element in items) result.Add(element);
+
+                /*
+                 * NOTE: We must pierce the IList<T> interface and
+                 * call the TrimExcess() method of the concrete class
+                 * here, in order to avoid an exception.
+                 */
+
+                ((AdvisableCollection<T>)result).TrimExcess();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = new AdvisableCollection<T>();
+            }
+
+            return result;
         }
 
         /// <summary>

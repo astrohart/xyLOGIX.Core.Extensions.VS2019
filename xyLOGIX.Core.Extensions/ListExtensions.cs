@@ -324,7 +324,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Adds the specified <paramref name="items" /> to an instance of
-        /// <see cref="xyLOGIX.Collections.Synchronized.ConcurrentList{T}" />.
+        /// <see cref="T:PostSharp.Patterns.Collections.AdvisableCollection`1" />.
         /// </summary>
         /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
         /// <param name="items">
@@ -342,7 +342,8 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         /// <returns>
         /// Adds the provided <paramref name="items" /> to a new instance of
-        /// <see cref="xyLOGIX.Collections.Synchronized.ConcurrentList{T}" />, and returns
+        /// <see cref="T:PostSharp.Patterns.Collections.AdvisableCollection`1" />, and
+        /// returns
         /// a reference to it.
         /// </returns>
         public static IList<T> ToAdvisableCollection<T>(
@@ -378,7 +379,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Adds the specified <paramref name="items" /> to an instance of
-        /// <see cref="xyLOGIX.Collections.Synchronized.ConcurrentList{T}" />.
+        /// <see cref="T:xyLOGIX.Collections.Synchronized.ConcurrentList`1" />.
         /// </summary>
         /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
         /// <param name="items">
@@ -396,7 +397,7 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         /// <returns>
         /// Adds the provided <paramref name="items" /> to a new instance of
-        /// <see cref="xyLOGIX.Collections.Synchronized.ConcurrentList{T}" />, and returns
+        /// <see cref="T:xyLOGIX.Collections.Synchronized.ConcurrentList`1" />, and returns
         /// a reference to it.
         /// </returns>
         public static IList<T> ToConcurrentList<T>(this IEnumerable<T> items)

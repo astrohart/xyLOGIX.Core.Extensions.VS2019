@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Collections;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Design.PluralizationServices;
 using System.Drawing;
@@ -219,7 +220,7 @@ namespace xyLOGIX.Core.Extensions
         {
             if (source == null) return string.Empty;
 
-            if (!(source is IList<TSource> items)) items = source.ToList();
+            if (!(source is IList<TSource> items)) items = source.ToAdvisableCollection();
 
             // If we are passed the empty collection, then return the empty
             // string as the result.
@@ -227,7 +228,7 @@ namespace xyLOGIX.Core.Extensions
 
             var itemStrings = items.Select(selectorFunc)
                                    .Distinct()
-                                   .ToList();
+                                   .ToAdvisableCollection();
             var result = string.Join(
                 items.Count > 2 ? ", " : " and ", itemStrings
             );
@@ -265,10 +266,10 @@ namespace xyLOGIX.Core.Extensions
 
             text = text.Replace("\r\n", "\n");
             var result = text.Split('\n')
-                             .ToList();
+                             .ToAdvisableCollection();
             if (result.Any())
                 result = result.Select(TrimLine)
-                               .ToList();
+                               .ToAdvisableCollection();
 
             return result;
         }
@@ -1985,14 +1986,24 @@ namespace xyLOGIX.Core.Extensions
                                   new[] { ' ' },
                                   StringSplitOptions.RemoveEmptyEntries
                               )
-                              .ToList();
+                              .ToAdvisableCollection();
 
-            if (parts.Any())
-                parts.RemoveAll(s => s.IsOneOf(ShortWordsThatAreNotAcronyms));
+            if (parts.Count > 0)
+            {
+                for (var i = parts.Count - 1; i >= 0; i--)
+                {
+                    var part = parts[i];
+                    if (part == null) continue;
+
+                    if (!part.IsOneOf(ShortWordsThatAreNotAcronyms)) continue;
+
+                    parts.RemoveAt(i);
+                }
+            }
 
             // If we ended up removing all parts from the list, then return the
             // empty string
-            return !parts.Any()
+            return parts.Count == 0
                 ? string.Empty
                 : parts.Aggregate(
                     string.Empty,
@@ -2154,14 +2165,14 @@ namespace xyLOGIX.Core.Extensions
                separators.Any()
                 ? string.IsNullOrWhiteSpace(source)
                     ? Enumerable.Empty<string>()
-                                .ToList()
+                                .ToAdvisableCollection()
                     : source.Split(
                                 separators,
                                 StringSplitOptions.RemoveEmptyEntries
                             )
-                            .ToList()
+                            .ToAdvisableCollection()
                 : Enumerable.Empty<string>()
-                            .ToList();
+                            .ToAdvisableCollection();
 
         /// <summary>
         /// Translates each character of the provided <paramref name="value" />,

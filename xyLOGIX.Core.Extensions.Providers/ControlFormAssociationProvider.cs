@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Diagnostics;
 using PostSharp.Patterns.Threading;
 using System;
 using System.Collections.Concurrent;
@@ -26,7 +27,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// class.
         /// </summary>
         protected ControlFormAssociationProvider()
-            => ParentFormDictionary = new ConcurrentDictionary<Control, Form>();
+            => ParentFormDictionary = new AdvisableDictionary<Control, Form>();
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that implements the
@@ -218,7 +219,7 @@ namespace xyLOGIX.Core.Extensions.Providers
 
                 var keysToRemove = ParentFormDictionary.Keys
                     .Where(k => k.Equals(control))
-                    .ToList();
+                    .ToAdvisableCollection();
 
                 foreach (var key in keysToRemove)
                     ParentFormDictionary.Remove(key);
@@ -257,7 +258,7 @@ namespace xyLOGIX.Core.Extensions.Providers
                  */
                 var itemsToRemove = ParentFormDictionary
                                     .Where(kvp => kvp.Value.Equals(form))
-                                    .ToList();
+                                    .ToAdvisableCollection();
                 if (!itemsToRemove.Any()) return;
 
                 foreach (var item in itemsToRemove)

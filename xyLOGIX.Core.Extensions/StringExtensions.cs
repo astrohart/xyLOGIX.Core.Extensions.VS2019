@@ -856,6 +856,36 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
+        public static bool IsAlphaNumeric(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                var valueExcludingWhiteSpace = value.ExcludingWhitespace();
+                if (string.IsNullOrWhiteSpace(valueExcludingWhiteSpace))
+                    return result;
+
+                /*
+                 * This method must return TRUE even if the
+                 * string contains whitespace characters, yet it
+                 * still fits the criteria otherwise.
+                 */
+
+                result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> is an
         /// alphanumeric <see cref="T:System.String" /> that consists solely of digits or

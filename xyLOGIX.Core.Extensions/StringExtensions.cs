@@ -24,6 +24,14 @@ namespace xyLOGIX.Core.Extensions
     public static class StringExtensions
     {
         /// <summary>
+        /// A <see cref="T:System.String" /> containing a regular expression to match a
+        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
+        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
+        /// </summary>
+        private const string GuidRegexLowercaseNoBraces =
+            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
+
+        /// <summary>
         /// Collection of strings which are short words but are not acronyms per
         /// se.
         /// </summary>
@@ -220,7 +228,8 @@ namespace xyLOGIX.Core.Extensions
         {
             if (source == null) return string.Empty;
 
-            if (!(source is IList<TSource> items)) items = source.ToAdvisableCollection();
+            if (!(source is IList<TSource> items))
+                items = source.ToAdvisableCollection();
 
             // If we are passed the empty collection, then return the empty
             // string as the result.
@@ -1276,6 +1285,48 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines if the specified <paramref name="value" /> is a string that contains
+        /// a globally-unique identifier (GUID) that is in all lowercase with no
+        /// surrounding curly braces; e.g., for example,
+        /// <c>b68d770b-8e37-4a20-b2cc-6cbc2ef4f136</c>.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// data to be validated.
+        /// </param>
+        /// <remarks>
+        /// This method returns <see langword="false" /> if the argument of the
+        /// <paramref name="value" /> parameter is a <see langword="null" /> reference or
+        /// consists of only whitespace characters, or is the
+        /// <see cref="F:System.String.Empty" /> value.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the contents of <paramref name="value" />
+        /// consists of a single GUID that is in all lowercase with no surrounding curly
+        /// braces; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsValidLowercaseGuidWithNoBraces(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = Regex.IsMatch(value, GuidRegexLowercaseNoBraces);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the <paramref name="stringToSearch" /> contains
         /// the text in the <paramref name="findWhat" /> parameter, in a case-insensitive
         /// fashion.
@@ -2019,7 +2070,6 @@ namespace xyLOGIX.Core.Extensions
                               .ToAdvisableCollection();
 
             if (parts.Count > 0)
-            {
                 for (var i = parts.Count - 1; i >= 0; i--)
                 {
                     var part = parts[i];
@@ -2029,7 +2079,6 @@ namespace xyLOGIX.Core.Extensions
 
                     parts.RemoveAt(i);
                 }
-            }
 
             // If we ended up removing all parts from the list, then return the
             // empty string
@@ -2204,6 +2253,27 @@ namespace xyLOGIX.Core.Extensions
                 : Enumerable.Empty<string>()
                             .ToAdvisableCollection();
 
+        public static string ToLowercase(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                value = value.ToLowerInvariant();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Translates each character of the provided <paramref name="value" />,
         /// character-by-character, to Unicode encoding. This method performs the inverse
@@ -2225,27 +2295,6 @@ namespace xyLOGIX.Core.Extensions
                         m.Groups["Value"].Value, NumberStyles.HexNumber
                     )).ToString(CultureInfo.InvariantCulture)
                 );
-
-        public static string ToLowercase(this string value)
-        {
-            var result = value;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-
-                value = value.ToLowerInvariant();
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = value;
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Converts the provided <see cref="T:System.String" /> <paramref name="value" />

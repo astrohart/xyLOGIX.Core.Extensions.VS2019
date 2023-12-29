@@ -924,7 +924,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Occurs during a drag-and-drop operation and enables the drag source
-        /// to determine whether the drag-and-drop operation should be canceled.
+        /// to determine whether the drag-and-drop operation should be Cancelled.
         /// </summary>
         event QueryContinueDragEventHandler QueryContinueDrag;
 

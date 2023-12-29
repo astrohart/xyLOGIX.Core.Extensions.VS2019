@@ -388,9 +388,18 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static string ToSetString<T>(this IList<T> list)
         {
-            if (list == null || list.Count == 0) return "{}";
+            /*
+             * NOTE: This code was adapted to spit out '<null>'
+             * if this method's input is a null reference, and
+             * be otherwise Pythonic in the formatting of the
+             * list data (instead of earlier, where the notation was
+             * more JSON-ic).
+             */
 
-            var result = "{ ";
+            if (list == null) return "<null>";
+            if (list.Count == 0) return "[]";
+
+            var result = "[ ";
             foreach (var item in list.Cast<object>()
                                      .Where(item => item != null)
                                      .Take(10))
@@ -404,7 +413,7 @@ namespace xyLOGIX.Core.Extensions
 
             if (list.Count > 10) result += ", ...";
 
-            result += " }";
+            result += " ]";
 
             return result;
         }

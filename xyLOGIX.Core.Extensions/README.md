@@ -331,6 +331,7 @@
   - [AcronymList](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList 'xyLOGIX.Core.Extensions.StringExtensions.AcronymList')
   - [AlwaysCapitalizeIfFirstWord](#F-xyLOGIX-Core-Extensions-StringExtensions-AlwaysCapitalizeIfFirstWord 'xyLOGIX.Core.Extensions.StringExtensions.AlwaysCapitalizeIfFirstWord')
   - [CapitalizeableAsFirstWords](#F-xyLOGIX-Core-Extensions-StringExtensions-CapitalizeableAsFirstWords 'xyLOGIX.Core.Extensions.StringExtensions.CapitalizeableAsFirstWords')
+  - [GuidRegexLowercaseNoBraces](#F-xyLOGIX-Core-Extensions-StringExtensions-GuidRegexLowercaseNoBraces 'xyLOGIX.Core.Extensions.StringExtensions.GuidRegexLowercaseNoBraces')
   - [NamesOfStreetsThatShouldBeCapitalized](#F-xyLOGIX-Core-Extensions-StringExtensions-NamesOfStreetsThatShouldBeCapitalized 'xyLOGIX.Core.Extensions.StringExtensions.NamesOfStreetsThatShouldBeCapitalized')
   - [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
   - [StateAbbrList](#F-xyLOGIX-Core-Extensions-StringExtensions-StateAbbrList 'xyLOGIX.Core.Extensions.StringExtensions.StateAbbrList')
@@ -378,6 +379,7 @@
   - [IsStreetNameComponent(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsStreetNameComponent-System-Collections-Generic-IReadOnlyList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsStreetNameComponent(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)')
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsUppercase(System.String)')
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
+  - [IsValidLowercaseGuidWithNoBraces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidLowercaseGuidWithNoBraces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidLowercaseGuidWithNoBraces(System.String)')
   - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
   - [MatchesWithCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
@@ -6123,6 +6125,15 @@ the first word of a phrase.
 Collection of strings that are potentially needing to be capitalized
 if they are the first word of a phrase or a name.
 
+<a name='F-xyLOGIX-Core-Extensions-StringExtensions-GuidRegexLowercaseNoBraces'></a>
+### GuidRegexLowercaseNoBraces `constants`
+
+##### Summary
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a regular expression to match a
+GUID that is in all lowercase with no surrounding braces; e.g., for example,
+`b8f967ce-911d-4184-a0ba-b37e443b4541`.
+
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-NamesOfStreetsThatShouldBeCapitalized'></a>
 ### NamesOfStreetsThatShouldBeCapitalized `constants`
 
@@ -7238,6 +7249,36 @@ otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to be checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsValidLowercaseGuidWithNoBraces-System-String-'></a>
+### IsValidLowercaseGuidWithNoBraces(value) `method`
+
+##### Summary
+
+Determines if the specified `value` is a string that contains
+a globally-unique identifier (GUID) that is in all lowercase with no
+surrounding curly braces; e.g., for example,
+`b68d770b-8e37-4a20-b2cc-6cbc2ef4f136`.
+
+##### Returns
+
+`true` if the contents of `value`
+consists of a single GUID that is in all lowercase with no surrounding curly
+braces; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+data to be validated. |
+
+##### Remarks
+
+This method returns `false` if the argument of the
+`value` parameter is a `null` reference or
+consists of only whitespace characters, or is the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String-'></a>
 ### MatchesNoCase(stringToSearch,findWhat) `method`

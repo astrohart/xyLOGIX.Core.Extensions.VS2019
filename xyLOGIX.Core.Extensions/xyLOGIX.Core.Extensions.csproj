@@ -125,6 +125,7 @@
     <Compile Include="CollectionExtensions.cs" />
     <Compile Include="BindingManagerBaseExtensions.cs" />
     <Compile Include="ComboBoxExtensions.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="EnumBoundComboBoxItem.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="GlobalAspects.cs" />

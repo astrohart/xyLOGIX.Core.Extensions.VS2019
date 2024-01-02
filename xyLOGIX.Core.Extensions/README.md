@@ -39,6 +39,7 @@
   - [ForEnumValue(value)](#M-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-ForEnumValue-`0- 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1.ForEnumValue(`0)')
 - [EnumExtensions](#T-xyLOGIX-Core-Extensions-EnumExtensions 'xyLOGIX.Core.Extensions.EnumExtensions')
   - [AsString\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-AsString``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.AsString``1(``0)')
+  - [IsUndefined\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-IsUndefined``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.IsUndefined``1(``0)')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})')
@@ -1262,6 +1263,33 @@ String containing the enumeration value expressed as a string.
 | Name | Description |
 | ---- | ----------- |
 | T | Type of the enumeration. |
+
+<a name='M-xyLOGIX-Core-Extensions-EnumExtensions-IsUndefined``1-``0-'></a>
+### IsUndefined\`\`1(enumerationValue) `method`
+
+##### Summary
+
+Determines whether the specified `enumerationValue` is not
+within the value set of its defining `enum`.
+
+##### Returns
+
+`true` if the specified
+`enumerationValue` is not within the value set of its
+defining `enum`; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| enumerationValue | [\`\`0](#T-``0 '``0') | (Required.) Enumeration value to be checked. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Name of the `enum` from which
+the specified `enumerationValue` comes. |
 
 <a name='T-xyLOGIX-Core-Extensions-EnumerableExtensions'></a>
 ## EnumerableExtensions `type`

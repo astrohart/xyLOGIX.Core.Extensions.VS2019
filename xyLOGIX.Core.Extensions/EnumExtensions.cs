@@ -14,7 +14,7 @@ namespace xyLOGIX.Core.Extensions
         /// <typeparam name="T"> Type of the enumeration. </typeparam>
         /// <param name="enumerationValue"> Value of the enumeration. </param>
         /// <returns> String containing the enumeration value expressed as a string. </returns>
-        public static string AsString<T>(this T enumerationValue)
+        public static string AsString<T>(this T enumerationValue) where T : Enum
         {
             var result = enumerationValue.ToString();
 
@@ -42,6 +42,40 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = enumerationValue.ToString();
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="enumerationValue" /> is not
+        /// within the value set of its defining <see langword="enum" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Name of the <see langword="enum" /> from which
+        /// the specified <paramref name="enumerationValue" /> comes.
+        /// </typeparam>
+        /// <param name="enumerationValue">(Required.) Enumeration value to be checked.</param>
+        /// <returns>
+        /// <see langword="true" /> if the specified
+        /// <paramref name="enumerationValue" /> is not within the value set of its
+        /// defining <see langword="enum" />; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsUndefined<T>(this T enumerationValue)
+            where T : Enum
+        {
+            var result = false;
+
+            try
+            {
+                result = !Enum.IsDefined(typeof(T), enumerationValue);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = true;
             }
 
             return result;

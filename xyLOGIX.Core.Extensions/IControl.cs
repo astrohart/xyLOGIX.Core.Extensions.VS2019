@@ -150,7 +150,7 @@ namespace xyLOGIX.Core.Extensions
         /// and the top edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Int32" /> representing the distance, in
+        /// A <see cref="T:System.Int32" /> representing the distance, in
         /// pixels, between the bottom edge of the control and the top edge of its
         /// container's client area.
         /// </returns>
@@ -442,7 +442,7 @@ namespace xyLOGIX.Core.Extensions
         /// control and the left edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Int32" /> representing the distance, in
+        /// A <see cref="T:System.Int32" /> representing the distance, in
         /// pixels, between the left edge of the control and the left edge of its
         /// container's client area.
         /// </returns>
@@ -545,7 +545,7 @@ namespace xyLOGIX.Core.Extensions
         /// and the left edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Int32" /> representing the distance, in
+        /// A <see cref="T:System.Int32" /> representing the distance, in
         /// pixels, between the right edge of the control and the left edge of its
         /// container's client area.
         /// </returns>
@@ -609,7 +609,7 @@ namespace xyLOGIX.Core.Extensions
         /// control and the top edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Int32" /> representing the distance, in
+        /// A <see cref="T:System.Int32" /> representing the distance, in
         /// pixels, between the bottom edge of the control and the top edge of its
         /// container's client area.
         /// </returns>
@@ -864,7 +864,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Occurs when the control is clicked by the mouse. </summary>
         event MouseEventHandler MouseClick;
 
-        /// <summary> Occurs when the control is double clicked by the mouse. </summary>
+        /// <summary> Occurs when the control is double-clicked by the mouse. </summary>
         event MouseEventHandler MouseDoubleClick;
 
         /// <summary>
@@ -1103,7 +1103,7 @@ namespace xyLOGIX.Core.Extensions
         /// of parent controls.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Windows.Forms.IContainerControl" />, that
+        /// A <see cref="T:System.Windows.Forms.IContainerControl" />, that
         /// represents the parent of the <see cref="T:System.Windows.Forms.Control" />.
         /// </returns>
         IContainerControl GetContainerControl();

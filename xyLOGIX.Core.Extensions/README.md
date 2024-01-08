@@ -2569,7 +2569,7 @@ and the top edge of its container's client area.
 
 ##### Returns
 
-An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+A [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
 pixels, between the bottom edge of the control and the top edge of its
 container's client area.
 
@@ -3006,7 +3006,7 @@ control and the left edge of its container's client area.
 
 ##### Returns
 
-An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+A [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
 pixels, between the left edge of the control and the left edge of its
 container's client area.
 
@@ -3168,7 +3168,7 @@ and the left edge of its container's client area.
 
 ##### Returns
 
-An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+A [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
 pixels, between the right edge of the control and the left edge of its
 container's client area.
 
@@ -3266,7 +3266,7 @@ control and the top edge of its container's client area.
 
 ##### Returns
 
-An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+A [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
 pixels, between the bottom edge of the control and the top edge of its
 container's client area.
 
@@ -3543,7 +3543,7 @@ of parent controls.
 
 ##### Returns
 
-An [IContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IContainerControl 'System.Windows.Forms.IContainerControl'), that
+A [IContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IContainerControl 'System.Windows.Forms.IContainerControl'), that
 represents the parent of the [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control').
 
 ##### Parameters

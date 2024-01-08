@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
     AssemblyProduct("xyLOGIX Support Library for Providers of Extension Data")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2019-23 by xyLOGIX, LLC.  All rights reserved."
+        "Copyright © 2019-24 by xyLOGIX, LLC.  All rights reserved."
     )]
 [assembly:
     AssemblyTrademark(

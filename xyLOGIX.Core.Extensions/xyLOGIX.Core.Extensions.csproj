@@ -36,7 +36,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\x64\Release\xyLOGIX.Core.Extensions.xml</DocumentationFile>
     <NoWarn>CS1591;CS1587</NoWarn>
-    <SkipPostSharp>True</SkipPostSharp>
+    <SkipPostSharp>False</SkipPostSharp>
     <IntermediateOutputPath>C:\Users\BRIANH~1\AppData\Local\Temp\vs925D.tmp\x64\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -66,7 +66,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\x86\Release\xyLOGIX.Core.Extensions.xml</DocumentationFile>
     <NoWarn>CS1591;CS1587</NoWarn>
-    <SkipPostSharp>True</SkipPostSharp>
+    <SkipPostSharp>False</SkipPostSharp>
     <IntermediateOutputPath>C:\Users\BRIANH~1\AppData\Local\Temp\vs925D.tmp\x86\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>

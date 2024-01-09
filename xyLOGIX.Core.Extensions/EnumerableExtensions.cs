@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -32,16 +33,24 @@ namespace xyLOGIX.Core.Extensions
         /// nothing.
         /// </remarks>
         public static void ForEach<T>(
-            this IList<T> collection,
-            Action<T> action
+            [NotLogged] this IList<T> collection,
+            [NotLogged] Action<T> action
         )
         {
-            if (collection == null) return;
-            if (action == null) return;
-            if (!collection.Any()) return;
+            try
+            {
+                if (collection == null) return;
+                if (action == null) return;
+                if (!collection.Any()) return;
 
-            foreach (var item in collection)
-                action(item);
+                foreach (var item in collection)
+                    action(item);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
 
         /// <summary>
@@ -68,16 +77,24 @@ namespace xyLOGIX.Core.Extensions
         /// nothing.
         /// </remarks>
         public static void ForEach<T>(
-            this IEnumerable<T> collection,
-            Action<T> action
+            [NotLogged] this IEnumerable<T> collection,
+            [NotLogged] Action<T> action
         )
         {
-            if (collection == null) return;
-            if (action == null) return;
-            if (!collection.Any()) return;
+            try
+            {
+                if (collection == null) return;
+                if (action == null) return;
+                if (!collection.Any()) return;
 
-            foreach (var item in collection)
-                action(item);
+                foreach (var item in collection)
+                    action(item);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
 
         /// <summary>

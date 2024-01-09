@@ -1,9 +1,11 @@
-﻿using PostSharp.Patterns.Threading;
+﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -59,7 +61,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Invokes an message on the form unless it's not disposed, in which
+        /// Invokes an action on the form unless it's not disposed, in which
         /// case nothing is done.
         /// </summary>
         /// <param name="form">
@@ -79,27 +81,36 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Invokes an message on the form unless it's disposed, in which case
+        /// Invokes an <paramref name="action" /> on the form unless it's disposed, in
+        /// which case
         /// nothing is done.
         /// </summary>
         /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form" /> on which to
-        /// perform the <paramref name="message" />.
+        /// perform the <paramref name="action" />.
         /// </param>
-        /// <param name="message">
-        /// An <see cref="T:System.Action" /> specifying code to be
+        /// <param name="action">
+        /// A <see cref="T:System.Action" /> specifying code to be
         /// run if the form is not disposed.
         /// </param>
-        [Yielder]
-        public static void DoIfNotDisposed(this IForm form, Action message)
+        [Yielder, Log(AttributeExclude = true)]
+        public static void DoIfNotDisposed(this IForm form, Action action)
         {
-            if (form == null || form.IsDisposed) return;
-            if (message == null) return;
+            try
+            {
+                if (form == null || form.IsDisposed) return;
+                if (action == null) return;
 
-            if (form.InvokeRequired)
-                form.BeginInvoke(message);
-            else
-                message?.Invoke();
+                if (form.InvokeRequired)
+                    form.BeginInvoke(action);
+                else
+                    action();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
 
         /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>

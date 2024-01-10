@@ -294,6 +294,7 @@
   - [AddRange\`\`1(list,items)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
   - [FindIndex\`\`1(list,predicate)](#M-xyLOGIX-Core-Extensions-ListExtensions-FindIndex``1-System-Collections-Generic-IList{``0},System-Predicate{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.FindIndex``1(System.Collections.Generic.IList{``0},System.Predicate{``0})')
+  - [IsIdenticalTo\`\`1(left,right)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsIdenticalTo``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.IsIdenticalTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
   - [RemoveRange\`\`1(list,index,count)](#M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.RemoveRange``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)')
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
@@ -5441,6 +5442,41 @@ is to be identified. |
 | ---- | ----------- |
 | T | (Required.) Data type of each `list`
 element. |
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-IsIdenticalTo``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IList{``0}-'></a>
+### IsIdenticalTo\`\`1(left,right) `method`
+
+##### Summary
+
+Compares a `left` and `right` list.
+
+##### Returns
+
+`true` if both the `left` and
+`right` lists are identical; otherwise,
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| left | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) A collection of objects to check against. |
+| right | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) A collection of objects that serves as the
+right-hand side of the comparison. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of each element. |
+
+##### Remarks
+
+Returns `true` if either both the `left` and
+`right` lists are set to a `null` reference;
+otherwise, they must both be non-`null`, have the same count
+of elements, and all elements must be identical, otherwise this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}-'></a>
 ### IsOneOf(value,valueSet) `method`

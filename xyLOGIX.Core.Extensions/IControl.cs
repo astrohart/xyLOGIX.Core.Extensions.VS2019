@@ -11,7 +11,7 @@ namespace xyLOGIX.Core.Extensions
     /// Defines the publicly-exposed methods and properties of an object that
     /// represents a WinForms control.
     /// </summary>
-    public interface IControl : IComponent, ISynchronizeInvoke
+    public interface IControl : IComponent, ISynchronizeInvoke, IWin32Window
     {
         /// <summary>
         /// Gets the <see cref="T:System.Windows.Forms.AccessibleObject" />
@@ -362,13 +362,6 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="P:System.Windows.Forms.Control.DefaultForeColor" /> property.
         /// </returns>
         Color ForeColor { get; set; }
-
-        /// <summary> Gets the window handle that the control is bound to. </summary>
-        /// <returns>
-        /// An <see cref="T:System.IntPtr" /> that contains the window handle (
-        /// <see langword="HWND" />) of the control.
-        /// </returns>
-        IntPtr Handle { get; }
 
         /// <summary>
         /// Gets a value indicating whether the control contains one or more

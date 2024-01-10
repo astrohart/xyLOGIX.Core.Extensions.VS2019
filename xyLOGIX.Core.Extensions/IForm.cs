@@ -60,8 +60,8 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary> Gets or sets the mode by which the form automatically resizes itself. </summary>
         /// <returns>
-        /// An <see cref="T:System.Windows.Forms.AutoSizeMode" /> enumerated
-        /// value. The default is
+        /// One of the <see cref="T:System.Windows.Forms.AutoSizeMode" /> enumerated
+        /// values. The default is
         /// <see cref="F:System.Windows.Forms.AutoSizeMode.GrowOnly" />.
         /// </returns>
         /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
@@ -75,8 +75,8 @@ namespace xyLOGIX.Core.Extensions
         /// container will be automatically validated when the focus changes.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Windows.Forms.AutoValidate" /> enumerated
-        /// value that indicates whether contained controls are implicitly validated on
+        /// One of the <see cref="T:System.Windows.Forms.AutoValidate" /> enumerated
+        /// values that indicates whether contained controls are implicitly validated on
         /// focus change. The default is Inherit.
         /// </returns>
         AutoValidate AutoValidate { get; set; }
@@ -641,11 +641,11 @@ namespace xyLOGIX.Core.Extensions
         string ToString();
 
         /// <summary>
-        /// Causes all of the child controls within a control that support
+        /// Causes all the child controls within a control that support
         /// validation to validate their data.
         /// </summary>
         /// <returns>
-        /// <see langword="true" /> if all of the children validated
+        /// <see langword="true" /> if all the children validated
         /// successfully; otherwise, <see langword="false" />. If called from the
         /// <see cref="E:System.Windows.Forms.Control.Validating" /> or
         /// <see cref="E:System.Windows.Forms.Control.Validated" /> event handlers, this
@@ -654,7 +654,7 @@ namespace xyLOGIX.Core.Extensions
         bool ValidateChildren();
 
         /// <summary>
-        /// Causes all of the child controls within a control that support
+        /// Causes all the child controls within a control that support
         /// validation to validate their data.
         /// </summary>
         /// <param name="validationConstraints">
@@ -662,7 +662,7 @@ namespace xyLOGIX.Core.Extensions
         /// their <see cref="E:System.Windows.Forms.Control.Validating" /> event raised.
         /// </param>
         /// <returns>
-        /// <see langword="true" /> if all of the children validated
+        /// <see langword="true" /> if all the children validated
         /// successfully; otherwise, <see langword="false" />. If called from the
         /// <see cref="E:System.Windows.Forms.Control.Validating" /> or
         /// <see cref="E:System.Windows.Forms.Control.Validated" /> event handlers, this

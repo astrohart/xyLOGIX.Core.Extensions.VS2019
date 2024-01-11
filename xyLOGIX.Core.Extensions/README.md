@@ -131,7 +131,6 @@
   - [Focused](#P-xyLOGIX-Core-Extensions-IControl-Focused 'xyLOGIX.Core.Extensions.IControl.Focused')
   - [Font](#P-xyLOGIX-Core-Extensions-IControl-Font 'xyLOGIX.Core.Extensions.IControl.Font')
   - [ForeColor](#P-xyLOGIX-Core-Extensions-IControl-ForeColor 'xyLOGIX.Core.Extensions.IControl.ForeColor')
-  - [Handle](#P-xyLOGIX-Core-Extensions-IControl-Handle 'xyLOGIX.Core.Extensions.IControl.Handle')
   - [HasChildren](#P-xyLOGIX-Core-Extensions-IControl-HasChildren 'xyLOGIX.Core.Extensions.IControl.HasChildren')
   - [Height](#P-xyLOGIX-Core-Extensions-IControl-Height 'xyLOGIX.Core.Extensions.IControl.Height')
   - [ImeMode](#P-xyLOGIX-Core-Extensions-IControl-ImeMode 'xyLOGIX.Core.Extensions.IControl.ImeMode')
@@ -2880,18 +2879,6 @@ The foreground [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14ID
 The default is the value of the
 [DefaultForeColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultForeColor 'System.Windows.Forms.Control.DefaultForeColor') property.
 
-<a name='P-xyLOGIX-Core-Extensions-IControl-Handle'></a>
-### Handle `property`
-
-##### Summary
-
-Gets the window handle that the control is bound to.
-
-##### Returns
-
-An [IntPtr](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IntPtr 'System.IntPtr') that contains the window handle (
-`HWND`) of the control.
-
 <a name='P-xyLOGIX-Core-Extensions-IControl-HasChildren'></a>
 ### HasChildren `property`
 
@@ -4325,8 +4312,8 @@ Gets or sets the mode by which the form automatically resizes itself.
 
 ##### Returns
 
-An [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated
-value. The default is
+One of the [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated
+values. The default is
 [GrowOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode.GrowOnly 'System.Windows.Forms.AutoSizeMode.GrowOnly').
 
 ##### Exceptions
@@ -4346,8 +4333,8 @@ container will be automatically validated when the focus changes.
 
 ##### Returns
 
-An [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated
-value that indicates whether contained controls are implicitly validated on
+One of the [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated
+values that indicates whether contained controls are implicitly validated on
 focus change. The default is Inherit.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-CancelButton'></a>
@@ -5061,12 +5048,12 @@ This method has no parameters.
 
 ##### Summary
 
-Causes all of the child controls within a control that support
+Causes all the child controls within a control that support
 validation to validate their data.
 
 ##### Returns
 
-`true` if all of the children validated
+`true` if all the children validated
 successfully; otherwise, `false`. If called from the
 [](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') or
 [](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated') event handlers, this
@@ -5081,12 +5068,12 @@ This method has no parameters.
 
 ##### Summary
 
-Causes all of the child controls within a control that support
+Causes all the child controls within a control that support
 validation to validate their data.
 
 ##### Returns
 
-`true` if all of the children validated
+`true` if all the children validated
 successfully; otherwise, `false`. If called from the
 [](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') or
 [](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated') event handlers, this

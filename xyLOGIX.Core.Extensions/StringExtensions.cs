@@ -865,6 +865,19 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Determines whether the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> is alphanumeric.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> that is to  be
+        /// examined.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if every character of the specified
+        /// <paramref name="value" /> is a letter or a digit, excluding any whitespace
+        /// characters; <see langword="false" /> otherwise.
+        /// </returns>
         public static bool IsAlphaNumeric(this string value)
         {
             var result = false;

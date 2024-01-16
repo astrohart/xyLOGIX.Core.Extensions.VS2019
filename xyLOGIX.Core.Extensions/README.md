@@ -369,6 +369,7 @@
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
   - [IsAbsolutePath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePath(System.String)')
   - [IsAcronymOrStateAbbr(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAcronymOrStateAbbr-System-Collections-Generic-IList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsAcronymOrStateAbbr(System.Collections.Generic.IList{System.String},System.Int32)')
+  - [IsAlphaNumeric(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumeric-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumeric(System.String)')
   - [IsAlphaNumericLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericLowercase(System.String)')
   - [IsAlphaNumericUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericUppercase(System.String)')
   - [IsBlankOrNull(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsBlankOrNull-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsBlankOrNull(System.String)')
@@ -6995,6 +6996,26 @@ character-casing operation is
 | ---- | ---- | ----------- |
 | array | [System.Collections.Generic.IList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{System.String}') |  |
 | i | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumeric-System-String-'></a>
+### IsAlphaNumeric(value) `method`
+
+##### Summary
+
+Determines whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` is alphanumeric.
+
+##### Returns
+
+`true` if every character of the specified
+`value` is a letter or a digit, excluding any whitespace
+characters; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to  be
+examined. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String-'></a>
 ### IsAlphaNumericLowercase(value) `method`

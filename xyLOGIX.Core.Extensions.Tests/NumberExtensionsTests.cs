@@ -1,5 +1,4 @@
 using PostSharp.Patterns.Threading;
-using NUnit.Framework;
 
 namespace xyLOGIX.Core.Extensions.Tests
 {

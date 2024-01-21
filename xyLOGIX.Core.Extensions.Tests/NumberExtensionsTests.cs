@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using PostSharp.Patterns.Threading;
 
 namespace xyLOGIX.Core.Extensions.Tests
@@ -16,7 +17,7 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// </summary>
         [Test]
         public void Test_IsNegative_ReturnsFalse_WhenPassed_PositiveQuantity()
-            => Assert.IsFalse(10M.IsNegative());
+            => Assert.That(!10M.IsNegative());
 
         /// <summary>
         /// Asserts that the
@@ -25,7 +26,7 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// </summary>
         [Test]
         public void Test_IsNegative_ReturnsFalse_WhenPassed_Zero()
-            => Assert.IsFalse(decimal.Zero.IsNegative());
+            => Assert.That(!decimal.Zero.IsNegative());
 
         /// <summary>
         /// Asserts that the
@@ -34,7 +35,7 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// </summary>
         [Test]
         public void Test_IsNegative_ReturnsTrue_WhenPassed_NegativeQuantity()
-            => Assert.IsTrue(decimal.MinusOne.IsNegative());
+            => Assert.That(decimal.MinusOne.IsNegative());
 
         /// <summary>
         /// Asserts that the
@@ -43,7 +44,7 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// </summary>
         [Test]
         public void Test_IsPositive_ReturnsFalse_WhenPassed_NegativeQuantity()
-            => Assert.IsFalse(decimal.MinusOne.IsPositive());
+            => Assert.That(!decimal.MinusOne.IsPositive());
 
         /// <summary>
         /// Asserts that the
@@ -52,7 +53,7 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// </summary>
         [Test]
         public void Test_IsPositive_ReturnsFalse_WhenPassed_Zero()
-            => Assert.IsFalse(decimal.Zero.IsPositive());
+            => Assert.That(!decimal.Zero.IsPositive());
 
         /// <summary>
         /// Asserts that the
@@ -61,17 +62,17 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// </summary>
         [Test]
         public void Test_IsPositive_ReturnsTrue_WhenPassed_PositiveQuantity()
-            => Assert.IsTrue(10M.IsPositive());
+            => Assert.That(10M.IsPositive());
 
         /// <summary> Asserts that <c>1</c> is NOT in the range <c>(1,100)</c>. </summary>
         [Test]
         public void TestIsStrictlyInRangeWithLowerBound()
-            => Assert.IsFalse(1M.IsBetween(1M, 100M));
+            => Assert.That(!1M.IsBetween(1M, 100M));
 
         /// <summary> Asserts that <c>10</c> is in the range <c>(1,100)</c>. </summary>
         [Test]
         public void TestIsStrictlyInRangeWithMiddleValue()
-            => Assert.IsTrue(10M.IsBetween(1M, 100M));
+            => Assert.That(10M.IsBetween(1M, 100M));
 
         /// <summary>
         /// Asserts that <c>100</c> is NOT in the range <c>(1,100)</c>, where the
@@ -79,6 +80,6 @@ namespace xyLOGIX.Core.Extensions.Tests
         /// </summary>
         [Test]
         public void TestIsStrictlyInRangeWithUpperBound()
-            => Assert.IsFalse(100M.IsBetween(1M, 100M));
+            => Assert.That(!100M.IsBetween(1M, 100M));
     }
 }

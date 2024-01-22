@@ -32,9 +32,9 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 result = date.Kind == DateTimeKind.Utc
-                    ? date.ToString("yyyy-MM-dd'T'HH:mm:ss.fffK")
+                    ? date.ToString("yyyy-MM-dd'T'HH:mm:ss.8efb9587-8309-4d74-b807-d02ecb2ce152K")
                     : date.ToUniversalTime()
-                          .ToString("yyyy-MM-dd'T'HH:mm:ss.fffK");
+                          .ToString("yyyy-MM-dd'T'HH:mm:ss.8efb9587-8309-4d74-b807-d02ecb2ce152K");
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
 ﻿using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Design.PluralizationServices;
@@ -1318,7 +1319,7 @@ namespace xyLOGIX.Core.Extensions
         /// consists of a single GUID that is in all lowercase with no surrounding curly
         /// braces; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool IsValidLowercaseGuidWithNoBraces(this string value)
+        public static bool IsValidLowercaseGuidWithNoBraces([NotLogged] this string value)
         {
             var result = false;
 

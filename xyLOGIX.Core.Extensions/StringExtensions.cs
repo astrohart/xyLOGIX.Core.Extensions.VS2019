@@ -1,4 +1,3 @@
-using xyLOGIX.Core.Debug;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Design.PluralizationServices;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using xyLOGIX.Core.Debug;
 using xyLOGIX.Core.Extensions.Properties;
 using Directory = Alphaleonis.Win32.Filesystem.Directory;
 using File = Alphaleonis.Win32.Filesystem.File;
@@ -2163,6 +2163,27 @@ namespace xyLOGIX.Core.Extensions
                 : Enumerable.Empty<string>()
                             .ToList();
 
+        public static string ToLowercase(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                value = value.ToLowerInvariant();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Translates each character of the provided <paramref name="value" />,
         /// character-by-character, to Unicode encoding. This method performs the inverse
@@ -2184,27 +2205,6 @@ namespace xyLOGIX.Core.Extensions
                         m.Groups["Value"].Value, NumberStyles.HexNumber
                     )).ToString(CultureInfo.InvariantCulture)
                 );
-
-        public static string ToLowercase(this string value)
-        {
-            var result = value;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-
-                value = value.ToLowerInvariant();
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = value;
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Converts the provided <see cref="T:System.String" /> <paramref name="value" />

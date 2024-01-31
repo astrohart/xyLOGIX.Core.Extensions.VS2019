@@ -30,7 +30,8 @@ namespace xyLOGIX.Core.Extensions
                 if (DataBindings.Count == 0) return;
                 if (DataBindings["SelectedItem"] == null) return;
 
-                DataBindings["SelectedItem"].WriteValue();
+                DataBindings["SelectedItem"]
+                    .WriteValue();
             }
             catch (Exception ex)
             {

@@ -1,4 +1,3 @@
-using xyLOGIX.Core.Debug;
 using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;

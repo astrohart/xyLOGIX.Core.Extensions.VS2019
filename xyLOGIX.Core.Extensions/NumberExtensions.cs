@@ -1,6 +1,6 @@
-using xyLOGIX.Core.Debug;
 using PostSharp.Patterns.Diagnostics;
 using System;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {

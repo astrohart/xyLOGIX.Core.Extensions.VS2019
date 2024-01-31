@@ -1,9 +1,9 @@
-using xyLOGIX.Core.Debug;
 using PostSharp.Patterns.Collections;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {

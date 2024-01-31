@@ -1,4 +1,3 @@
-using xyLOGIX.Core.Debug;
 using System;
 using System.ComponentModel;
 using System.Drawing;

@@ -1,4 +1,3 @@
-using xyLOGIX.Core.Debug;
 using PostSharp.Patterns.Threading;
 using System;
 using System.Drawing;

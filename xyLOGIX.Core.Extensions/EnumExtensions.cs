@@ -1,6 +1,6 @@
-using xyLOGIX.Core.Debug;
 using System;
 using System.ComponentModel;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {

@@ -1,10 +1,9 @@
-﻿using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using xyLOGIX.Collections.Synchronized;
-using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -142,7 +141,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static IList<T> Clone<T>(this ICollection<T> source)
         {
-            IList<T> result = new ConcurrentList<T>();
+            IList<T> result = new AdvisableCollection<T>();
 
             try
             {
@@ -151,14 +150,14 @@ namespace xyLOGIX.Core.Extensions
 
                 foreach (var element in source) result.Add(element);
 
-                ((ConcurrentList<T>)result).TrimExcess();
+                ((AdvisableCollection<T>)result).TrimExcess();
             }
             catch (Exception ex)
             {
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
-                result = new ConcurrentList<T>();
+                result = new AdvisableCollection<T>();
             }
 
             return result;
@@ -219,65 +218,6 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = -1;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Compares a <paramref name="left" /> and <paramref name="right" /> list.
-        /// </summary>
-        /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
-        /// <param name="left">(Required.) A collection of objects to check against.</param>
-        /// <param name="right">
-        /// (Required.) A collection of objects that serves as the
-        /// right-hand side of the comparison.
-        /// </param>
-        /// <remarks>
-        /// Returns <see langword="true" /> if either both the <paramref name="left" /> and
-        /// <paramref name="right" /> lists are set to a <see langword="null" /> reference;
-        /// otherwise, they must both be non-<see langword="null" />, have the same count
-        /// of elements, and all elements must be identical, otherwise this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if both the <paramref name="left" /> and
-        /// <paramref name="right" /> lists are identical; otherwise,
-        /// <see langword="false" />.
-        /// </returns>
-        public static bool IsIdenticalTo<T>(this IList<T> left, IList<T> right)
-            where T : class
-        {
-            var result = true;
-
-            try
-            {
-                if (left == null && right == null) return result;
-                if (left == null && right != null) return false;
-                if (left != null && right == null) return false;
-
-                if (left.Count != right.Count) return false;
-
-                // ReSharper disable once LoopCanBeConvertedToQuery
-                for (var i = 0; i < left.Count; i++)
-                {
-                    if (typeof(T) != typeof(string) && left[i]
-                            .Equals(right[i])) continue;
-                    if (typeof(T) == typeof(string) && string.Equals(
-                            (string)(object)left[i], (string)(object)right[i],
-                            StringComparison.InvariantCulture
-                        )) continue;
-
-                    result = false;
-                    break;
-                }
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = false;
             }
 
             return result;
@@ -382,6 +322,61 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Adds the specified <paramref name="items" /> to an instance of
+        /// <see cref="T:PostSharp.Patterns.Collections.AdvisableCollection`1" />.
+        /// </summary>
+        /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
+        /// <param name="items">
+        /// (Required.) Enumerable collection of items to be added to
+        /// the new list.
+        /// </param>
+        /// <remarks>
+        /// If no <paramref name="items" /> are supplied, or the
+        /// <paramref name="items" /> parameter is set to a <see langword="null" />
+        /// reference, then this method returns the empty collection.
+        /// <para />
+        /// The collection to be returned has its excess memory storage reduced to match
+        /// the actual number of items in the collection, and the garbage collector is run,
+        /// prior to being returned by this method.
+        /// </remarks>
+        /// <returns>
+        /// Adds the provided <paramref name="items" /> to a new instance of
+        /// <see cref="T:PostSharp.Patterns.Collections.AdvisableCollection`1" />, and
+        /// returns
+        /// a reference to it.
+        /// </returns>
+        public static IList<T> ToAdvisableCollection<T>(
+            this IEnumerable<T> items
+        )
+        {
+            IList<T> result = new AdvisableCollection<T>();
+
+            try
+            {
+                if (items == null) return result;
+
+                foreach (var element in items) result.Add(element);
+
+                /*
+                 * NOTE: We must pierce the IList<T> interface and
+                 * call the TrimExcess() method of the concrete class
+                 * here, in order to avoid an exception.
+                 */
+
+                ((AdvisableCollection<T>)result).TrimExcess();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = new AdvisableCollection<T>();
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Adds the specified <paramref name="items" /> to an instance of
         /// <see cref="T:xyLOGIX.Collections.Synchronized.ConcurrentList`1" />.
         /// </summary>
         /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
@@ -446,18 +441,9 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static string ToSetString<T>(this IList<T> list)
         {
-            /*
-             * NOTE: This code was adapted to spit out '<null>'
-             * if this method's input is a null reference, and
-             * be otherwise Pythonic in the formatting of the
-             * list data (instead of earlier, where the notation was
-             * more JSON-ic).
-             */
+            if (list == null || list.Count == 0) return "{}";
 
-            if (list == null) return "<null>";
-            if (list.Count == 0) return "[]";
-
-            var result = "[ ";
+            var result = "{ ";
             foreach (var item in list.Cast<object>()
                                      .Where(item => item != null)
                                      .Take(10))
@@ -471,7 +457,7 @@ namespace xyLOGIX.Core.Extensions
 
             if (list.Count > 10) result += ", ...";
 
-            result += " ]";
+            result += " }";
 
             return result;
         }

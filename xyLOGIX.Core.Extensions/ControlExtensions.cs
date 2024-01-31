@@ -4,9 +4,6 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using xyLOGIX.Core.Debug;
-using xyLOGIX.Core.Extensions.Providers.Factories;
-using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -20,7 +17,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
         /// <see
-        ///     cref="T:xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
+        ///     cref="T:Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
         /// interface.
         /// </summary>
         private static IControlFormAssociationProvider

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -85,6 +84,80 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
             }
+        }
+
+        /// <summary>
+        /// Crates a
+        /// <see cref="T:PostSharp.Patterns.Collections.AdvisableDictionary`2" /> from an
+        /// <see cref="T:System.Collections.Generic.IEnumerable`1" /> according to the
+        /// specified <paramref name="keySelector" /> and
+        /// <paramref name="elementSelector" /> functions.
+        /// </summary>
+        /// <typeparam name="TSource">
+        /// (Required.) The type of the elements of
+        /// <paramref name="source" />.
+        /// </typeparam>
+        /// <typeparam name="TKey">
+        /// (Required.) The type of the key returned by
+        /// <paramref name="keySelector" />.
+        /// </typeparam>
+        /// <typeparam name="TElement">
+        /// (Required.) The type of the value returned by
+        /// <paramref name="elementSelector" />.
+        /// </typeparam>
+        /// <param name="source">
+        /// (Required.) A
+        /// <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create a
+        /// <see cref="T:PostSharp.Patterns.Collections.AdvisableDictionary`2" /> from.
+        /// </param>
+        /// <param name="keySelector">
+        /// (Required.) A function to extract a key from each
+        /// element of <paramref name="source" />.
+        /// </param>
+        /// <param name="elementSelector">
+        /// (Required.) A transform function to produce a
+        /// result element value from each element of <paramref name="source" />.
+        /// </param>
+        /// <remarks>
+        /// If any of the inputs are invalid values, i.e.,
+        /// <see langword="null" /> reference and the like, or if an issue occurs during
+        /// the generation of the requested <c>Dictionary</c> object, then the method
+        /// returns the empty collection.
+        /// </remarks>
+        /// <returns>
+        /// A
+        /// <see cref="T:PostSharp.Patterns.Collections.AdvisableDictionary`2" /> that
+        /// contains values of type <typeparamref name="TElement" /> selected from the
+        /// input sequence.
+        /// </returns>
+        public static IDictionary<TKey, TElement>
+            ToAdvisableDictionary<TSource, TKey, TElement>(
+                this IEnumerable<TSource> source,
+                Func<TSource, TKey> keySelector,
+                Func<TSource, TElement> elementSelector
+            )
+        {
+            IDictionary<TKey, TElement> result =
+                new AdvisableDictionary<TKey, TElement>();
+
+            try
+            {
+                if (source == null || !source.Any()) return result;
+                if (keySelector == null) return result;
+                if (elementSelector == null) return result;
+
+                foreach (var value in source)
+                    result[keySelector(value)] = elementSelector(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result.Clear();
+            }
+
+            return result;
         }
 
         /// <summary>

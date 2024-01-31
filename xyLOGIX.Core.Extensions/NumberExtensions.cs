@@ -1,6 +1,5 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
-using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -265,6 +264,76 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if an <see cref="T:System.Int32" /> value is between a pair of
+        /// values or equal to the lower bound of the given range.
+        /// </summary>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range specified or
+        /// equal to the <paramref name="lowerBound" />; <see langword="false" />
+        /// otherwise.
+        /// </returns>
+        public static bool IsInRangeWithLowerBound(
+            this int value,
+            int lowerBound,
+            int upperBound
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound > value && value >= lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if an <see cref="T:System.Int32" /> value is either strictly between
+        /// a pair of values or equal to the upper bound of the given range.
+        /// </summary>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range specified or
+        /// equal to the <paramref name="upperBound" />; <see langword="false" />
+        /// otherwise.
+        /// </returns>
+        public static bool IsInRangeWithUpperBound(
+            this int value,
+            int lowerBound,
+            int upperBound
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound >= value && value > lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
             }
 
             return result;

@@ -11,7 +11,7 @@ namespace xyLOGIX.Core.Extensions
     /// Defines the publicly-exposed methods and properties of an object that
     /// represents a WinForms control.
     /// </summary>
-    public interface IControl : IComponent, ISynchronizeInvoke, IWin32Window
+    public interface IControl : IComponent, ISynchronizeInvoke
     {
         /// <summary>
         /// Gets the <see cref="T:System.Windows.Forms.AccessibleObject" />
@@ -150,7 +150,7 @@ namespace xyLOGIX.Core.Extensions
         /// and the top edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.Int32" /> representing the distance, in
+        /// An <see cref="T:System.Int32" /> representing the distance, in
         /// pixels, between the bottom edge of the control and the top edge of its
         /// container's client area.
         /// </returns>
@@ -363,6 +363,13 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         Color ForeColor { get; set; }
 
+        /// <summary> Gets the window handle that the control is bound to. </summary>
+        /// <returns>
+        /// An <see cref="T:System.IntPtr" /> that contains the window handle (
+        /// <see langword="HWND" />) of the control.
+        /// </returns>
+        IntPtr Handle { get; }
+
         /// <summary>
         /// Gets a value indicating whether the control contains one or more
         /// child controls.
@@ -435,7 +442,7 @@ namespace xyLOGIX.Core.Extensions
         /// control and the left edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.Int32" /> representing the distance, in
+        /// An <see cref="T:System.Int32" /> representing the distance, in
         /// pixels, between the left edge of the control and the left edge of its
         /// container's client area.
         /// </returns>
@@ -538,7 +545,7 @@ namespace xyLOGIX.Core.Extensions
         /// and the left edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.Int32" /> representing the distance, in
+        /// An <see cref="T:System.Int32" /> representing the distance, in
         /// pixels, between the right edge of the control and the left edge of its
         /// container's client area.
         /// </returns>
@@ -602,7 +609,7 @@ namespace xyLOGIX.Core.Extensions
         /// control and the top edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.Int32" /> representing the distance, in
+        /// An <see cref="T:System.Int32" /> representing the distance, in
         /// pixels, between the bottom edge of the control and the top edge of its
         /// container's client area.
         /// </returns>
@@ -857,7 +864,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Occurs when the control is clicked by the mouse. </summary>
         event MouseEventHandler MouseClick;
 
-        /// <summary> Occurs when the control is double-clicked by the mouse. </summary>
+        /// <summary> Occurs when the control is double clicked by the mouse. </summary>
         event MouseEventHandler MouseDoubleClick;
 
         /// <summary>
@@ -917,7 +924,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Occurs during a drag-and-drop operation and enables the drag source
-        /// to determine whether the drag-and-drop operation should be Cancelled.
+        /// to determine whether the drag-and-drop operation should be canceled.
         /// </summary>
         event QueryContinueDragEventHandler QueryContinueDrag;
 
@@ -1096,7 +1103,7 @@ namespace xyLOGIX.Core.Extensions
         /// of parent controls.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.Windows.Forms.IContainerControl" />, that
+        /// An <see cref="T:System.Windows.Forms.IContainerControl" />, that
         /// represents the parent of the <see cref="T:System.Windows.Forms.Control" />.
         /// </returns>
         IContainerControl GetContainerControl();

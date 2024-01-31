@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -33,24 +32,16 @@ namespace xyLOGIX.Core.Extensions
         /// nothing.
         /// </remarks>
         public static void ForEach<T>(
-            [NotLogged] this IList<T> collection,
-            [NotLogged] Action<T> action
+            this IList<T> collection,
+            Action<T> action
         )
         {
-            try
-            {
-                if (collection == null) return;
-                if (action == null) return;
-                if (!collection.Any()) return;
+            if (collection == null) return;
+            if (action == null) return;
+            if (!collection.Any()) return;
 
-                foreach (var item in collection)
-                    action(item);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-            }
+            foreach (var item in collection)
+                action(item);
         }
 
         /// <summary>
@@ -77,24 +68,16 @@ namespace xyLOGIX.Core.Extensions
         /// nothing.
         /// </remarks>
         public static void ForEach<T>(
-            [NotLogged] this IEnumerable<T> collection,
-            [NotLogged] Action<T> action
+            this IEnumerable<T> collection,
+            Action<T> action
         )
         {
-            try
-            {
-                if (collection == null) return;
-                if (action == null) return;
-                if (!collection.Any()) return;
+            if (collection == null) return;
+            if (action == null) return;
+            if (!collection.Any()) return;
 
-                foreach (var item in collection)
-                    action(item);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-            }
+            foreach (var item in collection)
+                action(item);
         }
 
         /// <summary>

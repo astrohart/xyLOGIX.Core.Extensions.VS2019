@@ -1,6 +1,4 @@
-﻿using PostSharp.Patterns.Collections;
-using PostSharp.Patterns.Diagnostics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Design.PluralizationServices;
 using System.Drawing;
@@ -10,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using xyLOGIX.Core.Debug;
-using xyLOGIX.Core.Extensions.Properties;
 using Directory = Alphaleonis.Win32.Filesystem.Directory;
 using File = Alphaleonis.Win32.Filesystem.File;
 using Path = Alphaleonis.Win32.Filesystem.Path;
@@ -24,14 +20,6 @@ namespace xyLOGIX.Core.Extensions
     /// </summary>
     public static class StringExtensions
     {
-        /// <summary>
-        /// A <see cref="T:System.String" /> containing a regular expression to match a
-        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
-        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
-        /// </summary>
-        private const string GuidRegexLowercaseNoBraces =
-            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
-
         /// <summary>
         /// Collection of strings which are short words but are not acronyms per
         /// se.
@@ -229,8 +217,7 @@ namespace xyLOGIX.Core.Extensions
         {
             if (source == null) return string.Empty;
 
-            if (!(source is IList<TSource> items))
-                items = source.ToAdvisableCollection();
+            if (!(source is IList<TSource> items)) items = source.ToList();
 
             // If we are passed the empty collection, then return the empty
             // string as the result.
@@ -238,7 +225,7 @@ namespace xyLOGIX.Core.Extensions
 
             var itemStrings = items.Select(selectorFunc)
                                    .Distinct()
-                                   .ToAdvisableCollection();
+                                   .ToList();
             var result = string.Join(
                 items.Count > 2 ? ", " : " and ", itemStrings
             );
@@ -276,10 +263,10 @@ namespace xyLOGIX.Core.Extensions
 
             text = text.Replace("\r\n", "\n");
             var result = text.Split('\n')
-                             .ToAdvisableCollection();
+                             .ToList();
             if (result.Any())
                 result = result.Select(TrimLine)
-                               .ToAdvisableCollection();
+                               .ToList();
 
             return result;
         }
@@ -867,49 +854,6 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> is alphanumeric.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that is to  be
-        /// examined.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if every character of the specified
-        /// <paramref name="value" /> is a letter or a digit, excluding any whitespace
-        /// characters; <see langword="false" /> otherwise.
-        /// </returns>
-        public static bool IsAlphaNumeric(this string value)
-        {
-            var result = false;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-                var valueExcludingWhiteSpace = value.ExcludingWhitespace();
-                if (string.IsNullOrWhiteSpace(valueExcludingWhiteSpace))
-                    return result;
-
-                /*
-                 * This method must return TRUE even if the
-                 * string contains whitespace characters, yet it
-                 * still fits the criteria otherwise.
-                 */
-
-                result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = false;
-            }
-
-            return result;
-        }
-
-        /// <summary>
         /// Determines whether the specified <paramref name="value" /> is an
         /// alphanumeric <see cref="T:System.String" /> that consists solely of digits or
         /// lowercase letters (excluding whitespace).
@@ -1296,48 +1240,6 @@ namespace xyLOGIX.Core.Extensions
                 @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$",
                 RegexOptions.IgnoreCase
             );
-        }
-
-        /// <summary>
-        /// Determines if the specified <paramref name="value" /> is a string that contains
-        /// a globally-unique identifier (GUID) that is in all lowercase with no
-        /// surrounding curly braces; e.g., for example,
-        /// <c>b68d770b-8e37-4a20-b2cc-6cbc2ef4f136</c>.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// data to be validated.
-        /// </param>
-        /// <remarks>
-        /// This method returns <see langword="false" /> if the argument of the
-        /// <paramref name="value" /> parameter is a <see langword="null" /> reference or
-        /// consists of only whitespace characters, or is the
-        /// <see cref="F:System.String.Empty" /> value.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the contents of <paramref name="value" />
-        /// consists of a single GUID that is in all lowercase with no surrounding curly
-        /// braces; <see langword="false" /> otherwise.
-        /// </returns>
-        public static bool IsValidLowercaseGuidWithNoBraces([NotLogged] this string value)
-        {
-            var result = false;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-
-                result = Regex.IsMatch(value, GuidRegexLowercaseNoBraces);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = false;
-            }
-
-            return result;
         }
 
         /// <summary>
@@ -2081,22 +1983,14 @@ namespace xyLOGIX.Core.Extensions
                                   new[] { ' ' },
                                   StringSplitOptions.RemoveEmptyEntries
                               )
-                              .ToAdvisableCollection();
+                              .ToList();
 
-            if (parts.Count > 0)
-                for (var i = parts.Count - 1; i >= 0; i--)
-                {
-                    var part = parts[i];
-                    if (part == null) continue;
-
-                    if (!part.IsOneOf(ShortWordsThatAreNotAcronyms)) continue;
-
-                    parts.RemoveAt(i);
-                }
+            if (parts.Any())
+                parts.RemoveAll(s => s.IsOneOf(ShortWordsThatAreNotAcronyms));
 
             // If we ended up removing all parts from the list, then return the
             // empty string
-            return parts.Count == 0
+            return !parts.Any()
                 ? string.Empty
                 : parts.Aggregate(
                     string.Empty,
@@ -2258,35 +2152,14 @@ namespace xyLOGIX.Core.Extensions
                separators.Any()
                 ? string.IsNullOrWhiteSpace(source)
                     ? Enumerable.Empty<string>()
-                                .ToAdvisableCollection()
+                                .ToList()
                     : source.Split(
                                 separators,
                                 StringSplitOptions.RemoveEmptyEntries
                             )
-                            .ToAdvisableCollection()
+                            .ToList()
                 : Enumerable.Empty<string>()
-                            .ToAdvisableCollection();
-
-        public static string ToLowercase(this string value)
-        {
-            var result = value;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-
-                value = value.ToLowerInvariant();
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = value;
-            }
-
-            return result;
-        }
+                            .ToList();
 
         /// <summary>
         /// Translates each character of the provided <paramref name="value" />,
@@ -2309,6 +2182,27 @@ namespace xyLOGIX.Core.Extensions
                         m.Groups["Value"].Value, NumberStyles.HexNumber
                     )).ToString(CultureInfo.InvariantCulture)
                 );
+
+        public static string ToLowercase(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                value = value.ToLowerInvariant();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Converts the provided <see cref="T:System.String" /> <paramref name="value" />

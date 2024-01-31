@@ -37,8 +37,8 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="null" /> reference, then it is not added.
         /// <para />
         /// If an individual element of the <paramref name="items" /> parameter is already
-        /// a member of the specified <paramref name="collection" />, then it is not added
-        /// again.
+        /// a member of the specified <paramref name="collection" />, it is still added.
+        /// Typical use of this method is for, e.g., generating script files.
         /// </remarks>
         public static void AddMultiple<T>(
             this ICollection<T> collection,
@@ -51,7 +51,6 @@ namespace xyLOGIX.Core.Extensions
             foreach (var item in items)
             {
                 if (item == null) continue;
-                if (collection.Contains(item)) continue; // do not add again
                 collection.Add(item);
             }
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {

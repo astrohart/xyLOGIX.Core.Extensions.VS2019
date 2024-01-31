@@ -31,6 +31,7 @@
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [AddDistinct\`\`2(dictionary,key,value)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1- 'xyLOGIX.Core.Extensions.DictionaryExtensions.AddDistinct``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)')
   - [MergeWith\`\`2(target,source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})')
+  - [ToAdvisableDictionary\`\`3(source,keySelector,elementSelector)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToAdvisableDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToAdvisableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})')
   - [ToConcurrentDictionary\`\`3(source,keySelector,elementSelector)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToConcurrentDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
@@ -39,7 +40,6 @@
   - [ForEnumValue(value)](#M-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-ForEnumValue-`0- 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1.ForEnumValue(`0)')
 - [EnumExtensions](#T-xyLOGIX-Core-Extensions-EnumExtensions 'xyLOGIX.Core.Extensions.EnumExtensions')
   - [AsString\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-AsString``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.AsString``1(``0)')
-  - [IsUndefined\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-IsUndefined``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.IsUndefined``1(``0)')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})')
@@ -52,7 +52,7 @@
   - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Form)')
   - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Screen)')
   - [DoIfDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
-  - [DoIfNotDisposed(form,action)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfNotDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
+  - [DoIfNotDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfNotDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
   - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
@@ -131,6 +131,7 @@
   - [Focused](#P-xyLOGIX-Core-Extensions-IControl-Focused 'xyLOGIX.Core.Extensions.IControl.Focused')
   - [Font](#P-xyLOGIX-Core-Extensions-IControl-Font 'xyLOGIX.Core.Extensions.IControl.Font')
   - [ForeColor](#P-xyLOGIX-Core-Extensions-IControl-ForeColor 'xyLOGIX.Core.Extensions.IControl.ForeColor')
+  - [Handle](#P-xyLOGIX-Core-Extensions-IControl-Handle 'xyLOGIX.Core.Extensions.IControl.Handle')
   - [HasChildren](#P-xyLOGIX-Core-Extensions-IControl-HasChildren 'xyLOGIX.Core.Extensions.IControl.HasChildren')
   - [Height](#P-xyLOGIX-Core-Extensions-IControl-Height 'xyLOGIX.Core.Extensions.IControl.Height')
   - [ImeMode](#P-xyLOGIX-Core-Extensions-IControl-ImeMode 'xyLOGIX.Core.Extensions.IControl.ImeMode')
@@ -293,9 +294,9 @@
   - [AddRange\`\`1(list,items)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
   - [FindIndex\`\`1(list,predicate)](#M-xyLOGIX-Core-Extensions-ListExtensions-FindIndex``1-System-Collections-Generic-IList{``0},System-Predicate{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.FindIndex``1(System.Collections.Generic.IList{``0},System.Predicate{``0})')
-  - [IsIdenticalTo\`\`1(left,right)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsIdenticalTo``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.IsIdenticalTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
   - [RemoveRange\`\`1(list,index,count)](#M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.RemoveRange``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)')
+  - [ToAdvisableCollection\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToAdvisableCollection``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToAdvisableCollection``1(System.Collections.Generic.IEnumerable{``0})')
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
@@ -306,6 +307,8 @@
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Int64})')
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Decimal,System.Decimal,System.Decimal)')
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Int32,System.Int32,System.Int32)')
+  - [IsInRangeWithLowerBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithLowerBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithLowerBound(System.Int32,System.Int32,System.Int32)')
+  - [IsInRangeWithUpperBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithUpperBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithUpperBound(System.Int32,System.Int32,System.Int32)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Int32,System.Int32,System.Int32)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
@@ -334,7 +337,6 @@
   - [AcronymList](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList 'xyLOGIX.Core.Extensions.StringExtensions.AcronymList')
   - [AlwaysCapitalizeIfFirstWord](#F-xyLOGIX-Core-Extensions-StringExtensions-AlwaysCapitalizeIfFirstWord 'xyLOGIX.Core.Extensions.StringExtensions.AlwaysCapitalizeIfFirstWord')
   - [CapitalizeableAsFirstWords](#F-xyLOGIX-Core-Extensions-StringExtensions-CapitalizeableAsFirstWords 'xyLOGIX.Core.Extensions.StringExtensions.CapitalizeableAsFirstWords')
-  - [GuidRegexLowercaseNoBraces](#F-xyLOGIX-Core-Extensions-StringExtensions-GuidRegexLowercaseNoBraces 'xyLOGIX.Core.Extensions.StringExtensions.GuidRegexLowercaseNoBraces')
   - [NamesOfStreetsThatShouldBeCapitalized](#F-xyLOGIX-Core-Extensions-StringExtensions-NamesOfStreetsThatShouldBeCapitalized 'xyLOGIX.Core.Extensions.StringExtensions.NamesOfStreetsThatShouldBeCapitalized')
   - [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
   - [StateAbbrList](#F-xyLOGIX-Core-Extensions-StringExtensions-StateAbbrList 'xyLOGIX.Core.Extensions.StringExtensions.StateAbbrList')
@@ -369,7 +371,6 @@
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
   - [IsAbsolutePath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePath(System.String)')
   - [IsAcronymOrStateAbbr(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAcronymOrStateAbbr-System-Collections-Generic-IList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsAcronymOrStateAbbr(System.Collections.Generic.IList{System.String},System.Int32)')
-  - [IsAlphaNumeric(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumeric-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumeric(System.String)')
   - [IsAlphaNumericLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericLowercase(System.String)')
   - [IsAlphaNumericUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericUppercase(System.String)')
   - [IsBlankOrNull(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsBlankOrNull-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsBlankOrNull(System.String)')
@@ -383,7 +384,6 @@
   - [IsStreetNameComponent(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsStreetNameComponent-System-Collections-Generic-IReadOnlyList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsStreetNameComponent(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)')
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsUppercase(System.String)')
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
-  - [IsValidLowercaseGuidWithNoBraces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidLowercaseGuidWithNoBraces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidLowercaseGuidWithNoBraces(System.String)')
   - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
   - [MatchesWithCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
@@ -648,8 +648,8 @@ If an individual element of the `items` parameter is a
 
 
 If an individual element of the `items` parameter is already
-a member of the specified `collection`, then it is not added
-again.
+a member of the specified `collection`, it is still added.
+Typical use of this method is for, e.g., generating script files.
 
 <a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-IsEmpty``1-System-Collections-Generic-ICollection{``0}-'></a>
 ### IsEmpty\`\`1(collection) `method`
@@ -803,7 +803,7 @@ enumeration.
 ##### Returns
 
 A collection of instances of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
 , each of which represent an item to be added to a
 [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
@@ -835,7 +835,7 @@ extending the functionality of .NET framework controls.
 ##### Summary
 
 Gets a reference to an instance of an object that implements the
-[IControlFormAssociationProvider](#T-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider 'xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider')
+[IControlFormAssociationProvider](#T-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider 'Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider')
 interface.
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control-'></a>
@@ -1092,6 +1092,54 @@ If a key in the `source` dictionary matches a key
 in the `target` dictionary, then the corresponding value is
 overwritten.
 
+<a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToAdvisableDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}-'></a>
+### ToAdvisableDictionary\`\`3(source,keySelector,elementSelector) `method`
+
+##### Summary
+
+Crates a
+[AdvisableDictionary\`2](#T-PostSharp-Patterns-Collections-AdvisableDictionary`2 'PostSharp.Patterns.Collections.AdvisableDictionary`2') from an
+[IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1') according to the
+specified `keySelector` and
+`elementSelector` functions.
+
+##### Returns
+
+A
+[AdvisableDictionary\`2](#T-PostSharp-Patterns-Collections-AdvisableDictionary`2 'PostSharp.Patterns.Collections.AdvisableDictionary`2') that
+contains values of type `TElement` selected from the
+input sequence.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) A
+[IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1') to create a
+[AdvisableDictionary\`2](#T-PostSharp-Patterns-Collections-AdvisableDictionary`2 'PostSharp.Patterns.Collections.AdvisableDictionary`2') from. |
+| keySelector | [System.Func{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,``1}') | (Required.) A function to extract a key from each
+element of `source`. |
+| elementSelector | [System.Func{\`\`0,\`\`2}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,``2}') | (Required.) A transform function to produce a
+result element value from each element of `source`. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TSource | (Required.) The type of the elements of
+`source`. |
+| TKey | (Required.) The type of the key returned by
+`keySelector`. |
+| TElement | (Required.) The type of the value returned by
+`elementSelector`. |
+
+##### Remarks
+
+If any of the inputs are invalid values, i.e.,
+`null` reference and the like, or if an issue occurs during
+the generation of the requested `Dictionary` object, then the method
+returns the empty collection.
+
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}-'></a>
 ### ToConcurrentDictionary\`\`3(source,keySelector,elementSelector) `method`
 
@@ -1214,13 +1262,13 @@ Gets or sets the enumeration value that is "behind" the combo box selection.
 ##### Summary
 
 Creates a new instance of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
 and initializes it with the specified `value`.
 
 ##### Returns
 
 Reference to an instance of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
 that contains the required data.
 
 ##### Parameters
@@ -1264,33 +1312,6 @@ String containing the enumeration value expressed as a string.
 | Name | Description |
 | ---- | ----------- |
 | T | Type of the enumeration. |
-
-<a name='M-xyLOGIX-Core-Extensions-EnumExtensions-IsUndefined``1-``0-'></a>
-### IsUndefined\`\`1(enumerationValue) `method`
-
-##### Summary
-
-Determines whether the specified `enumerationValue` is not
-within the value set of its defining `enum`.
-
-##### Returns
-
-`true` if the specified
-`enumerationValue` is not within the value set of its
-defining `enum`; `false` otherwise.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| enumerationValue | [\`\`0](#T-``0 '``0') | (Required.) Enumeration value to be checked. |
-
-##### Generic Types
-
-| Name | Description |
-| ---- | ----------- |
-| T | (Required.) Name of the `enum` from which
-the specified `enumerationValue` comes. |
 
 <a name='T-xyLOGIX-Core-Extensions-EnumerableExtensions'></a>
 ## EnumerableExtensions `type`
@@ -1565,7 +1586,7 @@ form is to be centered on. |
 
 ##### Summary
 
-Invokes an action on the form unless it's not disposed, in which
+Invokes an message on the form unless it's not disposed, in which
 case nothing is done.
 
 ##### Parameters
@@ -1578,12 +1599,11 @@ perform the `message`. |
 run if the form is disposed. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action-'></a>
-### DoIfNotDisposed(form,action) `method`
+### DoIfNotDisposed(form,message) `method`
 
 ##### Summary
 
-Invokes an `action` on the form unless it's disposed, in
-which case
+Invokes an message on the form unless it's disposed, in which case
 nothing is done.
 
 ##### Parameters
@@ -1591,8 +1611,8 @@ nothing is done.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') on which to
-perform the `action`. |
-| action | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | A [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be
+perform the `message`. |
+| message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be
 run if the form is not disposed. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
@@ -2571,7 +2591,7 @@ and the top edge of its container's client area.
 
 ##### Returns
 
-A [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
 pixels, between the bottom edge of the control and the top edge of its
 container's client area.
 
@@ -2880,6 +2900,18 @@ The foreground [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14ID
 The default is the value of the
 [DefaultForeColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultForeColor 'System.Windows.Forms.Control.DefaultForeColor') property.
 
+<a name='P-xyLOGIX-Core-Extensions-IControl-Handle'></a>
+### Handle `property`
+
+##### Summary
+
+Gets the window handle that the control is bound to.
+
+##### Returns
+
+An [IntPtr](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IntPtr 'System.IntPtr') that contains the window handle (
+`HWND`) of the control.
+
 <a name='P-xyLOGIX-Core-Extensions-IControl-HasChildren'></a>
 ### HasChildren `property`
 
@@ -2996,7 +3028,7 @@ control and the left edge of its container's client area.
 
 ##### Returns
 
-A [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
 pixels, between the left edge of the control and the left edge of its
 container's client area.
 
@@ -3158,7 +3190,7 @@ and the left edge of its container's client area.
 
 ##### Returns
 
-A [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
 pixels, between the right edge of the control and the left edge of its
 container's client area.
 
@@ -3256,7 +3288,7 @@ control and the top edge of its container's client area.
 
 ##### Returns
 
-A [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
 pixels, between the bottom edge of the control and the top edge of its
 container's client area.
 
@@ -3533,7 +3565,7 @@ of parent controls.
 
 ##### Returns
 
-A [IContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IContainerControl 'System.Windows.Forms.IContainerControl'), that
+An [IContainerControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.IContainerControl 'System.Windows.Forms.IContainerControl'), that
 represents the parent of the [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control').
 
 ##### Parameters
@@ -4313,8 +4345,8 @@ Gets or sets the mode by which the form automatically resizes itself.
 
 ##### Returns
 
-One of the [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated
-values. The default is
+An [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated
+value. The default is
 [GrowOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode.GrowOnly 'System.Windows.Forms.AutoSizeMode.GrowOnly').
 
 ##### Exceptions
@@ -4334,8 +4366,8 @@ container will be automatically validated when the focus changes.
 
 ##### Returns
 
-One of the [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated
-values that indicates whether contained controls are implicitly validated on
+An [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated
+value that indicates whether contained controls are implicitly validated on
 focus change. The default is Inherit.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-CancelButton'></a>
@@ -5049,12 +5081,12 @@ This method has no parameters.
 
 ##### Summary
 
-Causes all the child controls within a control that support
+Causes all of the child controls within a control that support
 validation to validate their data.
 
 ##### Returns
 
-`true` if all the children validated
+`true` if all of the children validated
 successfully; otherwise, `false`. If called from the
 [](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') or
 [](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated') event handlers, this
@@ -5069,12 +5101,12 @@ This method has no parameters.
 
 ##### Summary
 
-Causes all the child controls within a control that support
+Causes all of the child controls within a control that support
 validation to validate their data.
 
 ##### Returns
 
-`true` if all the children validated
+`true` if all of the children validated
 successfully; otherwise, `false`. If called from the
 [](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') or
 [](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated') event handlers, this
@@ -5431,41 +5463,6 @@ is to be identified. |
 | T | (Required.) Data type of each `list`
 element. |
 
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-IsIdenticalTo``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IList{``0}-'></a>
-### IsIdenticalTo\`\`1(left,right) `method`
-
-##### Summary
-
-Compares a `left` and `right` list.
-
-##### Returns
-
-`true` if both the `left` and
-`right` lists are identical; otherwise,
-`false`.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| left | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) A collection of objects to check against. |
-| right | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) A collection of objects that serves as the
-right-hand side of the comparison. |
-
-##### Generic Types
-
-| Name | Description |
-| ---- | ----------- |
-| T | (Required.) Data type of each element. |
-
-##### Remarks
-
-Returns `true` if either both the `left` and
-`right` lists are set to a `null` reference;
-otherwise, they must both be non-`null`, have the same count
-of elements, and all elements must be identical, otherwise this method returns
-`false`.
-
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}-'></a>
 ### IsOneOf(value,valueSet) `method`
 
@@ -5523,6 +5520,46 @@ contains zero elements, then this method does nothing.
 
 This method also does nothing in the event that `index` is
 less than zero, or `count` is less than or equal to zero.
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToAdvisableCollection``1-System-Collections-Generic-IEnumerable{``0}-'></a>
+### ToAdvisableCollection\`\`1(items) `method`
+
+##### Summary
+
+Adds the specified `items` to an instance of
+[AdvisableCollection\`1](#T-PostSharp-Patterns-Collections-AdvisableCollection`1 'PostSharp.Patterns.Collections.AdvisableCollection`1').
+
+##### Returns
+
+Adds the provided `items` to a new instance of
+[AdvisableCollection\`1](#T-PostSharp-Patterns-Collections-AdvisableCollection`1 'PostSharp.Patterns.Collections.AdvisableCollection`1'), and
+returns
+a reference to it.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| items | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Enumerable collection of items to be added to
+the new list. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of each element. |
+
+##### Remarks
+
+If no `items` are supplied, or the
+`items` parameter is set to a `null`
+reference, then this method returns the empty collection.
+
+
+
+The collection to be returned has its excess memory storage reduced to match
+the actual number of items in the collection, and the garbage collector is run,
+prior to being returned by this method.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}-'></a>
 ### ToConcurrentList\`\`1(items) `method`
@@ -5766,6 +5803,50 @@ equal to either).
 True if `value` is strictly greater than
 `lowerBound` and strictly less than
 `upperBound` ; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The value to be checked. |
+| lowerBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound. |
+| upperBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithLowerBound-System-Int32,System-Int32,System-Int32-'></a>
+### IsInRangeWithLowerBound(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines if an [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value is between a pair of
+values or equal to the lower bound of the given range.
+
+##### Returns
+
+`true` if the value is either within the range specified or
+equal to the `lowerBound`; `false`
+otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The value to be checked. |
+| lowerBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound. |
+| upperBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithUpperBound-System-Int32,System-Int32,System-Int32-'></a>
+### IsInRangeWithUpperBound(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines if an [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value is either strictly between
+a pair of values or equal to the upper bound of the given range.
+
+##### Returns
+
+`true` if the value is either within the range specified or
+equal to the `upperBound`; `false`
+otherwise.
 
 ##### Parameters
 
@@ -6217,15 +6298,6 @@ the first word of a phrase.
 
 Collection of strings that are potentially needing to be capitalized
 if they are the first word of a phrase or a name.
-
-<a name='F-xyLOGIX-Core-Extensions-StringExtensions-GuidRegexLowercaseNoBraces'></a>
-### GuidRegexLowercaseNoBraces `constants`
-
-##### Summary
-
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a regular expression to match a
-GUID that is in all lowercase with no surrounding braces; e.g., for example,
-`b8f967ce-911d-4184-a0ba-b37e443b4541`.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-NamesOfStreetsThatShouldBeCapitalized'></a>
 ### NamesOfStreetsThatShouldBeCapitalized `constants`
@@ -6997,26 +7069,6 @@ character-casing operation is
 | array | [System.Collections.Generic.IList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{System.String}') |  |
 | i | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') |  |
 
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumeric-System-String-'></a>
-### IsAlphaNumeric(value) `method`
-
-##### Summary
-
-Determines whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` is alphanumeric.
-
-##### Returns
-
-`true` if every character of the specified
-`value` is a letter or a digit, excluding any whitespace
-characters; `false` otherwise.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to  be
-examined. |
-
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String-'></a>
 ### IsAlphaNumericLowercase(value) `method`
 
@@ -7362,36 +7414,6 @@ otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to be checked. |
-
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsValidLowercaseGuidWithNoBraces-System-String-'></a>
-### IsValidLowercaseGuidWithNoBraces(value) `method`
-
-##### Summary
-
-Determines if the specified `value` is a string that contains
-a globally-unique identifier (GUID) that is in all lowercase with no
-surrounding curly braces; e.g., for example,
-`b68d770b-8e37-4a20-b2cc-6cbc2ef4f136`.
-
-##### Returns
-
-`true` if the contents of `value`
-consists of a single GUID that is in all lowercase with no surrounding curly
-braces; `false` otherwise.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-data to be validated. |
-
-##### Remarks
-
-This method returns `false` if the argument of the
-`value` parameter is a `null` reference or
-consists of only whitespace characters, or is the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String-'></a>
 ### MatchesNoCase(stringToSearch,findWhat) `method`

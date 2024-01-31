@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Diagnostics;
+using xyLOGIX.Core.Debug;
+using PostSharp.Patterns.Diagnostics;
 using System.Linq;
 
 namespace xyLOGIX.Core.Extensions

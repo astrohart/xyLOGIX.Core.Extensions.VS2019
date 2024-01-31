@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using xyLOGIX.Core.Debug;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 

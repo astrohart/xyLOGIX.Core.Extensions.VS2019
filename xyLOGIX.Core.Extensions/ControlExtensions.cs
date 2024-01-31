@@ -4,6 +4,9 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using xyLOGIX.Core.Debug;
+using xyLOGIX.Core.Extensions.Providers.Factories;
+using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions
 {

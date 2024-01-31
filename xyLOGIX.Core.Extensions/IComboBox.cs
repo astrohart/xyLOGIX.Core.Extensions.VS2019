@@ -1,4 +1,5 @@
-﻿using System;
+using xyLOGIX.Core.Debug;
+using System;
 using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions

@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Threading;
+using xyLOGIX.Core.Debug;
+using PostSharp.Patterns.Threading;
 using System;
 
 namespace xyLOGIX.Core.Extensions

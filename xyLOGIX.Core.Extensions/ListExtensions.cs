@@ -527,54 +527,5 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
             }
         }
-
-        /*
-///  <summary> Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics. Stops past the tenth item. </summary> <param name="list"> List to be written. </param> <returns> The <paramref name="list"/>, formatted as a set string. </returns> <remarks> This method is helpful for writing some of the members of a collection to a log file. </remarks>
-        public static string ToSetString(this IList list)
-        {
-           if (list == null || list.Count == 0) return "{}";
-
-           var result = "{ ";
-           foreach (var item in list.Cast<object>().Where(item => item != null)
-              .Take(10))
-              if (item is string)
-                 result += $@"'{item}'" + ", ";
-              else
-                 result += item + ", ";
-
-           if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
-              result = result.Remove(result.Length - 2);
-
-           if (list.Count > 10) result += ", ...";
-
-           result += " }";
-
-           return result;
-        }
-        */
-        /*
-///  <summary> Writes a list variable out as a set {1,2,3,4} e.g., as in mathematics. Stops past the tenth item. </summary> <param name="collection"> Collection to be written. </param> <returns> The <paramref name="collection"/>, formatted as a set string. </returns> <remarks> This method is helpful for writing some of the members of a collection to a log file. </remarks>
-        public static string ToSetString(this ICollection collection)
-        {
-           if (collection == null || collection.Count == 0) return "{}";
-
-           var result = "{ ";
-           foreach (var item in collection.Cast<object>().Where(item => item != null)
-              .Take(10))
-              if (item is string)
-                 result += $@"'{item}'" + ", ";
-              else
-                 result += item + ", ";
-
-           if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
-              result = result.Remove(result.Length - 2);
-
-           if (collection.Count > 10) result += ", ...";
-
-           result += " }";
-
-           return result;
-        }
-        */
     }
 }

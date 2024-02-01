@@ -226,6 +226,65 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Compares a <paramref name="left" /> and <paramref name="right" /> list.
+        /// </summary>
+        /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
+        /// <param name="left">(Required.) A collection of objects to check against.</param>
+        /// <param name="right">
+        /// (Required.) A collection of objects that serves as the
+        /// right-hand side of the comparison.
+        /// </param>
+        /// <remarks>
+        /// Returns <see langword="true" /> if either both the <paramref name="left" /> and
+        /// <paramref name="right" /> lists are set to a <see langword="null" /> reference;
+        /// otherwise, they must both be non-<see langword="null" />, have the same count
+        /// of elements, and all elements must be identical, otherwise this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if both the <paramref name="left" /> and
+        /// <paramref name="right" /> lists are identical; otherwise,
+        /// <see langword="false" />.
+        /// </returns>
+        public static bool IsIdenticalTo<T>(this IList<T> left, IList<T> right)
+            where T : class
+        {
+            var result = true;
+
+            try
+            {
+                if (left == null && right == null) return result;
+                if (left == null && right != null) return false;
+                if (left != null && right == null) return false;
+
+                if (left.Count != right.Count) return false;
+
+                // ReSharper disable once LoopCanBeConvertedToQuery
+                for (var i = 0; i < left.Count; i++)
+                {
+                    if (typeof(T) != typeof(string) && left[i]
+                            .Equals(right[i])) continue;
+                    if (typeof(T) == typeof(string) && string.Equals(
+                            (string)(object)left[i], (string)(object)right[i],
+                            StringComparison.InvariantCulture
+                        )) continue;
+
+                    result = false;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Gets a value indicating whether the <paramref name="value" /> is
         /// among the elements of the <paramref name="valueSet" />.
         /// </summary>

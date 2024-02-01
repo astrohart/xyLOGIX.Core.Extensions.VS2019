@@ -60,7 +60,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary> Gets or sets the mode by which the form automatically resizes itself. </summary>
         /// <returns>
-        /// An <see cref="T:System.Windows.Forms.AutoSizeMode" /> enumerated
+        /// A <see cref="T:System.Windows.Forms.AutoSizeMode" /> enumerated
         /// value. The default is
         /// <see cref="F:System.Windows.Forms.AutoSizeMode.GrowOnly" />.
         /// </returns>
@@ -75,7 +75,7 @@ namespace xyLOGIX.Core.Extensions
         /// container will be automatically validated when the focus changes.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Windows.Forms.AutoValidate" /> enumerated
+        /// A <see cref="T:System.Windows.Forms.AutoValidate" /> enumerated
         /// value that indicates whether contained controls are implicitly validated on
         /// focus change. The default is Inherit.
         /// </returns>

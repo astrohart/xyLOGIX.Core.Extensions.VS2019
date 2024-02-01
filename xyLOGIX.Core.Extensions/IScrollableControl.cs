@@ -11,7 +11,7 @@ namespace xyLOGIX.Core.Extensions
     {
         /// <summary>
         /// Gets or sets a value indicating whether the container enables the
-        /// user to scroll to any controls placed outside of its visible boundaries.
+        /// user to scroll to any controls placed outside its visible boundaries.
         /// </summary>
         /// <returns>
         /// <see langword="true" /> if the container enables auto-scrolling;

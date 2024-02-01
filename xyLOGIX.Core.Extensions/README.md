@@ -326,6 +326,9 @@
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Int32)')
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Double)')
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Decimal)')
+- [PathnameExtensions](#T-xyLOGIX-Core-Extensions-PathnameExtensions 'xyLOGIX.Core.Extensions.PathnameExtensions')
+  - [FileExists(pathname)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.FileExists(System.String)')
+  - [HasExtension(pathname,extension)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasExtension-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasExtension(System.String,System.String)')
 - [Resources](#T-xyLOGIX-Core-Extensions-Properties-Resources 'xyLOGIX.Core.Extensions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Properties.Resources.Culture')
   - [Error_ValueCannotBeNullOrWhiteSpace](#P-xyLOGIX-Core-Extensions-Properties-Resources-Error_ValueCannotBeNullOrWhiteSpace 'xyLOGIX.Core.Extensions.Properties.Resources.Error_ValueCannotBeNullOrWhiteSpace')
@@ -6210,6 +6213,90 @@ the method is the identity map.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Input value. |
+
+<a name='T-xyLOGIX-Core-Extensions-PathnameExtensions'></a>
+## PathnameExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static methods to extend the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') class in
+order to help a caller in using [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variables known
+or suspected to contain the fully-qualified pathname of a folder or a file.
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String-'></a>
+### FileExists(pathname) `method`
+
+##### Summary
+
+Determines whether the file having the specified
+`pathname` exists on the disk or not.
+
+##### Returns
+
+`true` if the specified `pathname`
+is not blank, and if it contains the fully-qualified pathname of a file that
+currently exists on the disk, or `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the fully-qualified pathname of the file to check for existence. |
+
+##### Remarks
+
+This method is superior to calling the
+[Exists](#M-Alphaleonis-Win32-Filesystem-File-Exists 'Alphaleonis.Win32.Filesystem.File.Exists') method.  This is due
+to the fact that the other method throws an exception if it is passed a blank
+string, whereas this method simply returns `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-HasExtension-System-String,System-String-'></a>
+### HasExtension(pathname,extension) `method`
+
+##### Summary
+
+Extension method that can be used with all
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variables to determine whether a particular
+file's `pathname` has a given filename
+`extension`.
+
+##### Returns
+
+`true` if the specified `pathname`
+has the specified filename `extension`;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the fully-qualified pathname whose filename extension is to be tested. |
+| extension | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing the filename extension that the specified
+`pathname` should have. |
+
+##### Remarks
+
+If the `pathname` or `extension`
+have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values as
+their arguments, then this method returns `false`.
+
+
+
+`false` is also returned if the argument of the
+`pathname` parameter refers to a file that does not exist on
+the disk.
+
+
+
+This method is meant to be used as an extension method of type
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String').
 
 <a name='T-xyLOGIX-Core-Extensions-Properties-Resources'></a>
 ## Resources `type`

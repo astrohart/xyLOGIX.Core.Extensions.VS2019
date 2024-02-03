@@ -1,4 +1,5 @@
 using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Design.PluralizationServices;
@@ -21,6 +22,7 @@ namespace xyLOGIX.Core.Extensions
     /// Provides methods and properties to assist with manipulating strings
     /// of text.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class StringExtensions
     {
         /// <summary>

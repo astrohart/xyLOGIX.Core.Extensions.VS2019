@@ -38,7 +38,7 @@ namespace xyLOGIX.Core.Extensions
         /// <para />
         /// <see langword="false" /> is also returned if the argument of the
         /// <paramref name="pathname" /> parameter refers to a file that does not exist on
-        /// the disk.
+        /// the filesystem.
         /// <para />
         /// <b>NOTE:</b> This method is meant to be used as an extension method of type
         /// <see cref="T:System.String" />.
@@ -67,7 +67,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Determines whether the file having the specified
-        /// <paramref name="pathname" /> exists on the disk or not.
+        /// <paramref name="pathname" /> exists on the filesystem or not.
         /// </summary>
         /// <param name="pathname">
         /// (Required.) A <see cref="T:System.String" /> containing
@@ -76,7 +76,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="pathname" />
         /// is not blank, and if it contains the fully-qualified pathname of a file that
-        /// currently exists on the disk, or <see langword="false" /> otherwise.
+        /// currently exists on the filesystem, or <see langword="false" /> otherwise.
         /// </returns>
         /// <remarks>
         /// This method is superior to calling the

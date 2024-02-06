@@ -6259,13 +6259,13 @@ or suspected to contain the fully-qualified pathname of a folder or a file.
 ##### Summary
 
 Determines whether the file having the specified
-`pathname` exists on the disk or not.
+`pathname` exists on the filesystem or not.
 
 ##### Returns
 
 `true` if the specified `pathname`
 is not blank, and if it contains the fully-qualified pathname of a file that
-currently exists on the disk, or `false` otherwise.
+currently exists on the filesystem, or `false` otherwise.
 
 ##### Parameters
 
@@ -6317,7 +6317,7 @@ their arguments, then this method returns `false`.
 
 `false` is also returned if the argument of the
 `pathname` parameter refers to a file that does not exist on
-the disk.
+the filesystem.
 
 
 

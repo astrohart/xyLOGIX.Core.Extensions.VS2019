@@ -31,7 +31,6 @@
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [AddDistinct\`\`2(dictionary,key,value)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1- 'xyLOGIX.Core.Extensions.DictionaryExtensions.AddDistinct``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)')
   - [MergeWith\`\`2(target,source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})')
-  - [ToAdvisableDictionary\`\`3(source,keySelector,elementSelector)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToAdvisableDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToAdvisableDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})')
   - [ToConcurrentDictionary\`\`3(source,keySelector,elementSelector)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToConcurrentDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})')
   - [ToObject\`\`1(source)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToObject``1(System.Collections.Generic.Dictionary{System.String,System.String})')
 - [EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
@@ -1098,54 +1097,6 @@ key's data type, then this method will do nothing. |
 If a key in the `source` dictionary matches a key
 in the `target` dictionary, then the corresponding value is
 overwritten.
-
-<a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToAdvisableDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}-'></a>
-### ToAdvisableDictionary\`\`3(source,keySelector,elementSelector) `method`
-
-##### Summary
-
-Crates a
-[AdvisableDictionary\`2](#T-PostSharp-Patterns-Collections-AdvisableDictionary`2 'PostSharp.Patterns.Collections.AdvisableDictionary`2') from an
-[IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1') according to the
-specified `keySelector` and
-`elementSelector` functions.
-
-##### Returns
-
-A
-[AdvisableDictionary\`2](#T-PostSharp-Patterns-Collections-AdvisableDictionary`2 'PostSharp.Patterns.Collections.AdvisableDictionary`2') that
-contains values of type `TElement` selected from the
-input sequence.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) A
-[IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1') to create a
-[AdvisableDictionary\`2](#T-PostSharp-Patterns-Collections-AdvisableDictionary`2 'PostSharp.Patterns.Collections.AdvisableDictionary`2') from. |
-| keySelector | [System.Func{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,``1}') | (Required.) A function to extract a key from each
-element of `source`. |
-| elementSelector | [System.Func{\`\`0,\`\`2}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,``2}') | (Required.) A transform function to produce a
-result element value from each element of `source`. |
-
-##### Generic Types
-
-| Name | Description |
-| ---- | ----------- |
-| TSource | (Required.) The type of the elements of
-`source`. |
-| TKey | (Required.) The type of the key returned by
-`keySelector`. |
-| TElement | (Required.) The type of the value returned by
-`elementSelector`. |
-
-##### Remarks
-
-If any of the inputs are invalid values, i.e.,
-`null` reference and the like, or if an issue occurs during
-the generation of the requested `Dictionary` object, then the method
-returns the empty collection.
 
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}-'></a>
 ### ToConcurrentDictionary\`\`3(source,keySelector,elementSelector) `method`

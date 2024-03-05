@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary> Defines the publicly-exposed methods and properties of a form. </summary>
-    public interface IForm : IContainerControl, IScrollableControl
+    public interface IForm : IContainerControl, IScrollableControl, IWin32Window
     {
         /// <summary>
         /// Gets or sets the button on the form that is clicked when the user

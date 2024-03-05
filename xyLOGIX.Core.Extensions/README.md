@@ -301,6 +301,22 @@
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
   - [TrimExcess\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-TrimExcess``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.TrimExcess``1(System.Collections.Generic.IList{``0})')
+- [NullableDoubleExtensions](#T-xyLOGIX-Core-Extensions-NullableDoubleExtensions 'xyLOGIX.Core.Extensions.NullableDoubleExtensions')
+  - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsNegative-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NullableDoubleExtensions.IsNegative(System.Nullable{System.Double})')
+  - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsNonzero-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NullableDoubleExtensions.IsNonzero(System.Nullable{System.Double})')
+  - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsPositive-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NullableDoubleExtensions.IsPositive(System.Nullable{System.Double})')
+  - [IsValid(value)](#M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsValid-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NullableDoubleExtensions.IsValid(System.Nullable{System.Double})')
+- [NullableIntExtensions](#T-xyLOGIX-Core-Extensions-NullableIntExtensions 'xyLOGIX.Core.Extensions.NullableIntExtensions')
+  - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableIntExtensions-IsNegative-System-Nullable{System-Int32}- 'xyLOGIX.Core.Extensions.NullableIntExtensions.IsNegative(System.Nullable{System.Int32})')
+  - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableIntExtensions-IsNonzero-System-Nullable{System-Int32}- 'xyLOGIX.Core.Extensions.NullableIntExtensions.IsNonzero(System.Nullable{System.Int32})')
+  - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableIntExtensions-IsPositive-System-Nullable{System-Int32}- 'xyLOGIX.Core.Extensions.NullableIntExtensions.IsPositive(System.Nullable{System.Int32})')
+  - [IsValid(value)](#M-xyLOGIX-Core-Extensions-NullableIntExtensions-IsValid-System-Nullable{System-Int32}- 'xyLOGIX.Core.Extensions.NullableIntExtensions.IsValid(System.Nullable{System.Int32})')
+- [NullableLongExtensions](#T-xyLOGIX-Core-Extensions-NullableLongExtensions 'xyLOGIX.Core.Extensions.NullableLongExtensions')
+  - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsNegative-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsNegative(System.Nullable{System.Int64})')
+  - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsNonzero-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsNonzero(System.Nullable{System.Int64})')
+  - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsPositive-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsPositive(System.Nullable{System.Int64})')
+  - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsPositive-System-Int64- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsPositive(System.Int64)')
+  - [IsValid(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsValid-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsValid(System.Nullable{System.Int64})')
 - [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Double)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Double})')
@@ -5660,6 +5676,337 @@ be called on objects implementing
 | ---- | ----------- |
 | T | (Required.) Data type of each element of the specified
 `list`. |
+
+<a name='T-xyLOGIX-Core-Extensions-NullableDoubleExtensions'></a>
+## NullableDoubleExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Extension methods for a `double?` value.
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsNegative-System-Nullable{System-Double}-'></a>
+### IsNegative(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly negative (i.e., less than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly less than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Double}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Double}') | A nullable [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsNonzero-System-Nullable{System-Double}-'></a>
+### IsNonzero(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a numerical value that is strictly not equal to
+zero.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly not equal
+zero; `false` if the `value` is identically
+equal to zero
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Double}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Double}') | A nullable [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value to be
+checked. |
+
+##### Remarks
+
+Callers must remember that this method returns
+`falsedoc` only in the case where the numeric value of
+`value` is identically equal to `0D`.
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsPositive-System-Nullable{System-Double}-'></a>
+### IsPositive(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly positive (i.e., greater than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly greater than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Double}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Double}') | A nullable [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsValid-System-Nullable{System-Double}-'></a>
+### IsValid(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null`.
+
+##### Returns
+
+`true` if the `value` is non-
+`null`; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Double}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Double}') | A nullable [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value to be
+checked. |
+
+<a name='T-xyLOGIX-Core-Extensions-NullableIntExtensions'></a>
+## NullableIntExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Extension methods for a `int?` value.
+
+<a name='M-xyLOGIX-Core-Extensions-NullableIntExtensions-IsNegative-System-Nullable{System-Int32}-'></a>
+### IsNegative(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly negative (i.e., less than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly less than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') | A nullable [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableIntExtensions-IsNonzero-System-Nullable{System-Int32}-'></a>
+### IsNonzero(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a numerical value that is strictly not equal to
+zero.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly not equal
+zero; `false` if the `value` is identically
+equal to zero
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') | A nullable [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value to be
+checked. |
+
+##### Remarks
+
+Callers must remember that this method returns
+`falsedoc` only in the case where the numeric value of
+`value` is identically equal to zero.
+
+<a name='M-xyLOGIX-Core-Extensions-NullableIntExtensions-IsPositive-System-Nullable{System-Int32}-'></a>
+### IsPositive(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly positive (i.e., greater than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly greater than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') | A nullable [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableIntExtensions-IsValid-System-Nullable{System-Int32}-'></a>
+### IsValid(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null`.
+
+##### Returns
+
+`true` if the `value` is non-
+`null`; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int32}') | A nullable [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value to be
+checked. |
+
+<a name='T-xyLOGIX-Core-Extensions-NullableLongExtensions'></a>
+## NullableLongExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Extension methods for a `long?` value.
+
+<a name='M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsNegative-System-Nullable{System-Int64}-'></a>
+### IsNegative(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly negative (i.e., less than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly less than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') | A nullable [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsNonzero-System-Nullable{System-Int64}-'></a>
+### IsNonzero(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a numerical value that is strictly not equal to
+zero.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly not equal
+zero; `false` if the `value` is identically
+equal to zero
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') | A nullable [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be
+checked. |
+
+##### Remarks
+
+Callers must remember that this method returns
+`falsedoc` only in the case where the numeric value of
+`value` is identically equal to `0L`.
+
+<a name='M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsPositive-System-Nullable{System-Int64}-'></a>
+### IsPositive(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly positive (i.e., greater than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly greater than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') | A nullable [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsPositive-System-Int64-'></a>
+### IsPositive(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is strictly
+positive (i.e., greater than zero).
+
+##### Returns
+
+`true` if the `value` is strictly
+greater than zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | A [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsValid-System-Nullable{System-Int64}-'></a>
+### IsValid(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null`.
+
+##### Returns
+
+`true` if the `value` is non-
+`null`; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') | A nullable [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be
+checked. |
 
 <a name='T-xyLOGIX-Core-Extensions-NumberExtensions'></a>
 ## NumberExtensions `type`

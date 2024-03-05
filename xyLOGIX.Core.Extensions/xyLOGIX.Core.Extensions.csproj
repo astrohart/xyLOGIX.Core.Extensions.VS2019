@@ -148,6 +148,9 @@
     <Compile Include="IntExtensions.cs" />
     <Compile Include="IScrollableControl.cs" />
     <Compile Include="ListExtensions.cs" />
+    <Compile Include="NullableDoubleExtensions.cs" />
+    <Compile Include="NullableIntExtensions.cs" />
+    <Compile Include="NullableLongExtensions.cs" />
     <Compile Include="NumberExtensions.cs" />
     <Compile Include="PathnameExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

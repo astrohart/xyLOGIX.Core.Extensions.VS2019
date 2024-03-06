@@ -370,9 +370,14 @@ namespace xyLOGIX.Core.Extensions
                  * Iterate through the list backwards,
                  * starting at index + count and ending on
                  * index.
+                 *
+                 * For each element of the list in that range,
+                 * remove it.
                  */
 
                 for (var i = index + count; i >= index; i--) list.RemoveAt(i);
+
+                list.TrimExcess();
             }
             catch (Exception ex)
             {

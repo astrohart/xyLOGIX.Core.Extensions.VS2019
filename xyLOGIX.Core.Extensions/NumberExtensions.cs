@@ -481,6 +481,18 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsPositive(this decimal value)
             => value > decimal.Zero;
 
+        /// <summary> Determines whether a <paramref name="value" /> is positive. </summary>
+        /// <param name="value">
+        /// (Required.)  Value to be compared. Must be of
+        /// <see cref="T:System.Double" /> data type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the <paramref name="value" /> is strictly
+        /// greater than zero; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsPositive(this double value)
+            => value > 0D;
+
         /// <summary> Determines whether a <paramref name="value" /> is zero. </summary>
         /// <param name="value"> Value to be compared. </param>
         /// <returns> True if the <paramref name="value" /> is zero; false otherwise. </returns>

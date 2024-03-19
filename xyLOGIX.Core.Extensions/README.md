@@ -301,6 +301,11 @@
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
   - [TrimExcess\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-TrimExcess``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.TrimExcess``1(System.Collections.Generic.IList{``0})')
+- [NullableDecimalExtensions](#T-xyLOGIX-Core-Extensions-NullableDecimalExtensions 'xyLOGIX.Core.Extensions.NullableDecimalExtensions')
+  - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNegative-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNegative(System.Nullable{System.Decimal})')
+  - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonzero-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNonzero(System.Nullable{System.Decimal})')
+  - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsPositive-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsPositive(System.Nullable{System.Decimal})')
+  - [IsValid(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsValid-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsValid(System.Nullable{System.Decimal})')
 - [NullableDoubleExtensions](#T-xyLOGIX-Core-Extensions-NullableDoubleExtensions 'xyLOGIX.Core.Extensions.NullableDoubleExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsNegative-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NullableDoubleExtensions.IsNegative(System.Nullable{System.Double})')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsNonzero-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NullableDoubleExtensions.IsNonzero(System.Nullable{System.Double})')
@@ -5677,6 +5682,110 @@ be called on objects implementing
 | ---- | ----------- |
 | T | (Required.) Data type of each element of the specified
 `list`. |
+
+<a name='T-xyLOGIX-Core-Extensions-NullableDecimalExtensions'></a>
+## NullableDecimalExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Extension methods for a `decimal?` value.
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNegative-System-Nullable{System-Decimal}-'></a>
+### IsNegative(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly negative (i.e., less than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly less than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | A nullable [decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.decimal 'System.decimal') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonzero-System-Nullable{System-Decimal}-'></a>
+### IsNonzero(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a numerical value that is strictly not equal to
+zero.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly not equal
+zero; `false` if the `value` is identically
+equal to zero
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | A nullable [decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.decimal 'System.decimal') value to be
+checked. |
+
+##### Remarks
+
+Callers must remember that this method returns
+`falsedoc` only in the case where the numeric value of
+`value` is identically equal to `decimal.Zero`.
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsPositive-System-Nullable{System-Decimal}-'></a>
+### IsPositive(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly positive (i.e., greater than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly greater than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | A nullable [decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.decimal 'System.decimal') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsValid-System-Nullable{System-Decimal}-'></a>
+### IsValid(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null`.
+
+##### Returns
+
+`true` if the `value` is non-
+`null`; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | A nullable [decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.decimal 'System.decimal') value to be
+checked. |
 
 <a name='T-xyLOGIX-Core-Extensions-NullableDoubleExtensions'></a>
 ## NullableDoubleExtensions `type`

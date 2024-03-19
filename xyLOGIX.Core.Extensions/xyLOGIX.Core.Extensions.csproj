@@ -151,6 +151,7 @@
     <Compile Include="IntExtensions.cs" />
     <Compile Include="IScrollableControl.cs" />
     <Compile Include="ListExtensions.cs" />
+    <Compile Include="NullableDecimalExtensions.cs" />
     <Compile Include="NullableDoubleExtensions.cs" />
     <Compile Include="NullableIntExtensions.cs" />
     <Compile Include="NullableLongExtensions.cs" />

@@ -410,6 +410,7 @@
   - [IsSpecialWordAtBeginningOfPhrase(words,currentWord)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsSpecialWordAtBeginningOfPhrase-System-String[],System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsSpecialWordAtBeginningOfPhrase(System.String[],System.String)')
   - [IsStreetNameComponent(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsStreetNameComponent-System-Collections-Generic-IReadOnlyList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsStreetNameComponent(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)')
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsUppercase(System.String)')
+  - [IsValidAssetSymbol(symbol)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidAssetSymbol-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidAssetSymbol(System.String)')
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
   - [IsValidLowercaseGuidWithNoBraces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidLowercaseGuidWithNoBraces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidLowercaseGuidWithNoBraces(System.String)')
   - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
@@ -7964,6 +7965,34 @@ returns `false`.
 
 If an error occurs during the check, then this method returns
 `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsValidAssetSymbol-System-String-'></a>
+### IsValidAssetSymbol(symbol) `method`
+
+##### Summary
+
+Determines whether the specified `symbol` string contains a
+properly-formatted asset symbol, such as `FB`, `00`, `1INCH`,
+`cBETH` etc.
+
+##### Returns
+
+`true` if the specified `symbol` is
+of the proper format; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| symbol | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the text, whose format is to be validated. |
+
+##### Remarks
+
+If the `symbol` parameter is passed a
+`null` reference, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
+value, or a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing only whitespace, then the
+method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String-'></a>
 ### IsValidEmail(value) `method`

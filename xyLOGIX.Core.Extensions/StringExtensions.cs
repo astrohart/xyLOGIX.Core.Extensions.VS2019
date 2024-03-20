@@ -1273,6 +1273,38 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
+        public static bool IsValidAssetSymbol(string symbol)
+        {
+            var result = false;
+
+            try
+            {
+                // Dump the parameter symbol to the log
+                DebugUtils.WriteLine(
+                    DebugLevel.Debug,
+                    $"StringExtensions.IsValidAssetSymbol: symbol = '{symbol}'"
+                );
+
+                if (string.IsNullOrWhiteSpace(symbol)) return result;
+
+                result = Regex.IsMatch(symbol, @"[0-9a-zA-Z]+");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"StringExtensions.IsValidAssetSymbol: Result = {result}"
+            );
+
+            return result;
+        }
+
         /// <summary>
         /// Validates whether <paramref name="value" /> is a valid email address
         /// or not.
@@ -1284,19 +1316,43 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool IsValidEmail(string value)
         {
-            IsEmailAddressInvalid = false;
-            if (string.IsNullOrWhiteSpace(value)) return false;
+            var result = false;
 
-            // Use IdnMapping class to convert Unicode domain names.
-            value = Regex.Replace(value, @"(@)(.+)$", DomainMapper);
+            try
+            {
+                // Dump the parameter value to the log
+                DebugUtils.WriteLine(
+                    DebugLevel.Debug,
+                    $"StringExtensions.IsValidEmail: value = '{value}'"
+                );
 
-            // Return true if value is in valid e-mail format.
-            return !IsEmailAddressInvalid && Regex.IsMatch(
-                value,
-                @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
-                @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$",
-                RegexOptions.IgnoreCase
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                // Use IdnMapping class to convert Unicode domain names.
+                value = Regex.Replace(value, @"(@)(.+)$", DomainMapper);
+
+                // Return true if value is in valid e-mail format.
+                result = Regex.IsMatch(
+                    value,
+                    @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                    @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$",
+                    RegexOptions.IgnoreCase
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"StringExtensions.IsValidEmail: Result = {result}"
             );
+
+            return result;
         }
 
         /// <summary>

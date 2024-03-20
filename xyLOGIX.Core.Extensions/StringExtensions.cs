@@ -1273,19 +1273,60 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        public static bool IsValidAssetSymbol(string symbol)
+        /// <summary>
+        /// Determines whether the specified <paramref name="symbol" /> string contains a
+        /// properly-formatted asset symbol, such as <c>FB</c>, <c>00</c>, <c>1INCH</c>,
+        /// <c>cBETH</c> etc.
+        /// </summary>
+        /// <param name="symbol">
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the text, whose format is to be validated.
+        /// </param>
+        /// <remarks>
+        /// If the <paramref name="symbol" /> parameter is passed a
+        /// <see langword="null" /> reference, the <see cref="F:System.String.Empty" />
+        /// value, or a <see cref="T:System.String" /> containing only whitespace, then the
+        /// method returns <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="symbol" /> is
+        /// of the proper format; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsValidAssetSymbol(this string symbol)
         {
             var result = false;
 
             try
             {
-                // Dump the parameter symbol to the log
                 DebugUtils.WriteLine(
-                    DebugLevel.Debug,
-                    $"StringExtensions.IsValidAssetSymbol: symbol = '{symbol}'"
+                    DebugLevel.Info,
+                    "StringExtensions.IsValidAssetSymbol: Checking whether the value of the 'symbol' parameter is blank..."
                 );
 
-                if (string.IsNullOrWhiteSpace(symbol)) return result;
+                if (string.IsNullOrWhiteSpace(symbol))
+                {
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "StringExtensions.IsValidAssetSymbol: Blank value passed for the 'symbol' parameter. This parameter is required."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"StringExtensions.IsValidAssetSymbol: Result = {result}"
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        "StringExtensions.IsValidAssetSymbol: Done."
+                    );
+
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'symbol' is not blank.  Validating that it matches the appropriate regex..."
+                );
 
                 result = Regex.IsMatch(symbol, @"[0-9a-zA-Z]+");
             }
@@ -1382,7 +1423,40 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                if (string.IsNullOrWhiteSpace(value)) return result;
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** INFO: Checking whether the value of the 'value' parameter is blank..."
+                );
+
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "StringExtensions.IsValidLowercaseGuidWithNoBraces: Blank value passed for the 'value' parameter. This parameter is required."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"StringExtensions.IsValidLowercaseGuidWithNoBraces: Result = {result}"
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        "StringExtensions.IsValidLowercaseGuidWithNoBraces: Done."
+                    );
+
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'value' is not blank.  Continuing..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "StringExtensions.IsValidLowercaseGuidWithNoBraces: Validating the format of the 'value' parameter..."
+                );
 
                 result = Regex.IsMatch(value, GuidRegexLowercaseNoBraces);
             }
@@ -1393,6 +1467,11 @@ namespace xyLOGIX.Core.Extensions
 
                 result = false;
             }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"StringExtensions.IsValidLowercaseGuidWithNoBraces: Result = {result}"
+            );
 
             return result;
         }

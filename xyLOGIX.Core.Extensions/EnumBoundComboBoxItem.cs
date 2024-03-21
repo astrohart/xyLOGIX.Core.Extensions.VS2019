@@ -41,8 +41,7 @@ namespace xyLOGIX.Core.Extensions
         public static EnumBoundComboBoxItem<T> ForEnumValue(T value)
             => new EnumBoundComboBoxItem<T>
             {
-                Description = value.AsString(),
-                Value = value
+                Description = value.AsString(), Value = value
             };
     }
 }

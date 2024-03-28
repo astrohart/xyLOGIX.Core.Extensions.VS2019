@@ -454,7 +454,7 @@ namespace xyLOGIX.Core.Extensions
         {
             if (list == null || list.Count == 0) return "{}";
 
-            var result = "{ ";
+            var result = "[ ";
             foreach (var item in list.Cast<object>()
                                      .Where(item => item != null)
                                      .Take(10))
@@ -468,7 +468,7 @@ namespace xyLOGIX.Core.Extensions
 
             if (list.Count > 10) result += ", ...";
 
-            result += " }";
+            result += " ]";
 
             return result;
         }

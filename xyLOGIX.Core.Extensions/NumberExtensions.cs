@@ -125,6 +125,24 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Returns a value that is not less than the specified
+        /// <paramref name="floorValue" />.
+        /// </summary>
+        /// <param name="value">(Required.) Input value.</param>
+        /// <param name="floorValue">(Required.) Floor value.</param>
+        /// <remarks>
+        /// If the specified <paramref name="value" /> is equal to or greater than
+        /// the <paramref name="floorValue" />, then this method is the identity.
+        /// </remarks>
+        /// <returns>
+        /// <paramref name="floorValue" /> if the specified
+        /// <paramref name="value" /> is less than <paramref name="floorValue" />,
+        /// otherwise <paramref name="value" />.
+        /// </returns>
+        public static int FloorOf(this int value, int floorValue)
+            => value < floorValue ? value : floorValue;
+
+        /// <summary>
         /// Determines whether a number is strictly between (as in, can't be
         /// equal to either).
         /// </summary>

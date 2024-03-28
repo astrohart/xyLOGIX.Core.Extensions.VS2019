@@ -92,7 +92,7 @@ namespace xyLOGIX.Core.Extensions
         /// contains zero elements; <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsNullOrEmpty<T>(this ICollection<T> collection)
-            => collection == null || !collection.Any();
+            => collection == null || collection.Count <= 0;
 
         /// <summary>
         /// Determines if the specified <c>object</c> is of one of the types in

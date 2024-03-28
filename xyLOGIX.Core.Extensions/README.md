@@ -326,6 +326,7 @@
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Double)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Double})')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Int64})')
+  - [FloorOf(value,floorValue)](#M-xyLOGIX-Core-Extensions-NumberExtensions-FloorOf-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.FloorOf(System.Int32,System.Int32)')
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Decimal,System.Decimal,System.Decimal)')
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Int32,System.Int32,System.Int32)')
   - [IsInRangeWithLowerBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithLowerBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithLowerBound(System.Int32,System.Int32,System.Int32)')
@@ -6205,6 +6206,32 @@ converted to `decimal`. |
 
 This method returns zero if the conversion was not successful, or if
 zero is passed for `value`.
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-FloorOf-System-Int32,System-Int32-'></a>
+### FloorOf(value,floorValue) `method`
+
+##### Summary
+
+Returns a value that is not less than the specified
+`floorValue`.
+
+##### Returns
+
+`floorValue` if the specified
+`value` is less than `floorValue`,
+otherwise `value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Input value. |
+| floorValue | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Floor value. |
+
+##### Remarks
+
+If the specified `value` is equal to or greater than
+the `floorValue`, then this method is the identity.
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Decimal,System-Decimal,System-Decimal-'></a>
 ### IsBetween(value,lowerBound,upperBound) `method`

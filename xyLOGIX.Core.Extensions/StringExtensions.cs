@@ -2643,7 +2643,7 @@ namespace xyLOGIX.Core.Extensions
 
             return (currentWord.EndsWith(".") && EqualsNoCase(
                        currentWord, words.First()
-                   )) // this most likely someone's title
+                   )) // this is most likely someone's title
                    | CapitalizeableAsFirstWords
                        .ContainsNoCase(
                            currentWord

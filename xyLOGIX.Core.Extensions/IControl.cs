@@ -617,7 +617,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Gets the parent control that is not parented by another Windows Forms
-        /// control. Typically, this the outermost
+        /// control. Typically, this is the outermost
         /// <see cref="T:System.Windows.Forms.Form" /> that the control is contained in.
         /// </summary>
         /// <returns>

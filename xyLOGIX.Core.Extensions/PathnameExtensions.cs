@@ -80,7 +80,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// This method is superior to calling the
-        /// <see cref="M:Alphaleonis.Win32.Filesystem.File.Exists" /> method.  This due
+        /// <see cref="M:Alphaleonis.Win32.Filesystem.File.Exists" /> method.  This is due
         /// to the fact that the other method throws an exception if it is passed a blank
         /// string, whereas this method simply returns <see langword="false" />.
         /// </remarks>

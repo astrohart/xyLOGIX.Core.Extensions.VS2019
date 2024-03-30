@@ -26,7 +26,7 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="key">
         /// (Required.) Key to be added/updated in the dictionary.
         /// <para />
-        /// If this the <see langword="null" /> or otherwise the default value of the
+        /// If this is the <see langword="null" /> or otherwise the default value of the
         /// key's data type, then this method will do nothing.
         /// </param>
         /// <param name="value">(Required.) Value to be added/updated in the dictionary.</param>
@@ -58,7 +58,7 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) A dictionary that has the items to be merged
         /// in.
         /// <para />
-        /// If this the <see langword="null" /> or otherwise the default value of the
+        /// If this is the <see langword="null" /> or otherwise the default value of the
         /// key's data type, then this method will do nothing.
         /// </param>
         /// <remarks>

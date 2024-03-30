@@ -1072,7 +1072,7 @@ value updated to be `value`.
 
 
 
-If this is the `null` or otherwise the default value of the
+If this the `null` or otherwise the default value of the
 key's data type, then this method will do nothing. |
 | value | [\`\`1](#T-``1 '``1') | (Required.) Value to be added/updated in the dictionary. |
 
@@ -1106,7 +1106,7 @@ in.
 
 
 
-If this is the `null` or otherwise the default value of the
+If this the `null` or otherwise the default value of the
 key's data type, then this method will do nothing. |
 
 ##### Generic Types
@@ -3307,7 +3307,7 @@ container's client area.
 ##### Summary
 
 Gets the parent control that is not parented by another Windows Forms
-control. Typically, this is the outermost
+control. Typically, this the outermost
 [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is contained in.
 
 ##### Returns
@@ -6732,7 +6732,7 @@ the fully-qualified pathname of the file to check for existence. |
 ##### Remarks
 
 This method is superior to calling the
-[Exists](#M-Alphaleonis-Win32-Filesystem-File-Exists 'Alphaleonis.Win32.Filesystem.File.Exists') method.  This is due
+[Exists](#M-Alphaleonis-Win32-Filesystem-File-Exists 'Alphaleonis.Win32.Filesystem.File.Exists') method.  This due
 to the fact that the other method throws an exception if it is passed a blank
 string, whereas this method simply returns `false`.
 

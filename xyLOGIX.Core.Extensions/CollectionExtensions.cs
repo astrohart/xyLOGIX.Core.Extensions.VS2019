@@ -1,3 +1,4 @@
+using PostSharp.Patterns.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -5,6 +6,7 @@ using System.Runtime.CompilerServices;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary> Exposes static extension methods for collection types. </summary>
+    [Log(AttributeExclude = true)]
     public static class CollectionExtensions
     {
         /// <summary>

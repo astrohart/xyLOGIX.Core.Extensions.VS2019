@@ -452,7 +452,7 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static string ToSetString<T>(this IList<T> list)
         {
-            if (list == null || list.Count == 0) return "{}";
+            if (list == null || list.Count == 0) return "[]";
 
             var result = "[ ";
             foreach (var item in list.Cast<object>()
@@ -486,9 +486,9 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         public static string ToSetString<T>(this ICollection<T> collection)
         {
-            if (collection == null || collection.Count == 0) return "{}";
+            if (collection == null || collection.Count == 0) return "[]";
 
-            var result = "{ ";
+            var result = "[ ";
             foreach (var item in collection.Cast<object>()
                                            .Where(item => item != null)
                                            .Take(10))
@@ -502,7 +502,7 @@ namespace xyLOGIX.Core.Extensions
 
             if (collection.Count > 10) result += ", ...";
 
-            result += " }";
+            result += " ]";
 
             return result;
         }

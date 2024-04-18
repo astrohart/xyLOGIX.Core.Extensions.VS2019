@@ -126,6 +126,6 @@
       <value>nChars parameter must be greater than zero.</value>
   </data>
   <data name="Error_ValueCannotBeNullOrWhiteSpace" xml:space="preserve">
-      <value>Value cannot be null or whitespace.</value>
+      <value>Value cannot be null or the blank string.</value>
   </data>
 </root>

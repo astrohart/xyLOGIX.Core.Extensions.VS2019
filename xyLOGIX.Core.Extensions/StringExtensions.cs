@@ -2109,7 +2109,7 @@ namespace xyLOGIX.Core.Extensions
                 throw new ArgumentException(
                     Resources.Error_ValueCannotBeNullOrWhiteSpace, nameof(value)
                 );
-            if (string.IsNullOrWhiteSpace(delimiter))
+            if (string.IsNullOrEmpty(delimiter))
                 throw new ArgumentException(
                     Resources.Error_ValueCannotBeNullOrWhiteSpace,
                     nameof(delimiter)

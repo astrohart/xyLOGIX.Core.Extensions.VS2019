@@ -6795,14 +6795,15 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 ##### Summary
 
-Overrides the current thread's CurrentUICulture property for all resource lookups using this strongly typed resource class.
+Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
 
 <a name='P-xyLOGIX-Core-Extensions-Properties-Resources-Error_ValueCannotBeNullOrWhiteSpace'></a>
 ### Error_ValueCannotBeNullOrWhiteSpace `property`
 
 ##### Summary
 
-Looks up a localized string similar to Value cannot be null or whitespace..
+Looks up a localized string similar to Value cannot be null or the blank string..
 
 <a name='P-xyLOGIX-Core-Extensions-Properties-Resources-NCharsMustBePositive'></a>
 ### NCharsMustBePositive `property`

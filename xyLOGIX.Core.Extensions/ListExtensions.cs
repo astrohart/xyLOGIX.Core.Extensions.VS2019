@@ -151,8 +151,6 @@ namespace xyLOGIX.Core.Extensions
                 if (source.Count == 0) return result;
 
                 foreach (var element in source) result.Add(element);
-
-                ((AdvisableCollection<T>)result).TrimExcess();
             }
             catch (Exception ex)
             {
@@ -376,8 +374,6 @@ namespace xyLOGIX.Core.Extensions
                  */
 
                 for (var i = index + count; i >= index; i--) list.RemoveAt(i);
-
-                list.TrimExcess();
             }
             catch (Exception ex)
             {
@@ -505,32 +501,6 @@ namespace xyLOGIX.Core.Extensions
             result += " ]";
 
             return result;
-        }
-
-        /// <summary>
-        /// Provides a
-        /// <see cref="M:System.Collections.Generic.List{T}.TrimExcess" /> method that can
-        /// be called on objects implementing
-        /// <see cref="T:System.Collections.Generic.IList{T}" />.
-        /// </summary>
-        /// <typeparam name="T">
-        /// (Required.) Data type of each element of the specified
-        /// <paramref name="list" />.
-        /// </typeparam>
-        /// <param name="list">(Required.) A <c>List</c> to be trimmed.</param>
-        public static void TrimExcess<T>(this IList<T> list)
-        {
-            try
-            {
-                if (list == null) return;
-
-                ((List<T>)list).TrimExcess();
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-            }
         }
     }
 }

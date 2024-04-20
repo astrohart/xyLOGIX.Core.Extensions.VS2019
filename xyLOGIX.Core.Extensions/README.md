@@ -300,7 +300,6 @@
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
-  - [TrimExcess\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-TrimExcess``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.TrimExcess``1(System.Collections.Generic.IList{``0})')
 - [NullableDecimalExtensions](#T-xyLOGIX-Core-Extensions-NullableDecimalExtensions 'xyLOGIX.Core.Extensions.NullableDecimalExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNegative-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNegative(System.Nullable{System.Decimal})')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonzero-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNonzero(System.Nullable{System.Decimal})')
@@ -5661,29 +5660,6 @@ The `collection`, formatted as a set string.
 
 This method is helpful for writing some of the members of a
 collection to a log file.
-
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-TrimExcess``1-System-Collections-Generic-IList{``0}-'></a>
-### TrimExcess\`\`1(list) `method`
-
-##### Summary
-
-Provides a
-[TrimExcess](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.List 'System.Collections.Generic.List{T}.TrimExcess') method that can
-be called on objects implementing
-[IList{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{T}').
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) A `List` to be trimmed. |
-
-##### Generic Types
-
-| Name | Description |
-| ---- | ----------- |
-| T | (Required.) Data type of each element of the specified
-`list`. |
 
 <a name='T-xyLOGIX-Core-Extensions-NullableDecimalExtensions'></a>
 ## NullableDecimalExtensions `type`

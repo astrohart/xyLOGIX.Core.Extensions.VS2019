@@ -1292,6 +1292,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the specified <paramref name="symbol" /> is
         /// of the proper format; <see langword="false" /> otherwise.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public static bool IsValidAssetSymbol(this string symbol)
         {
             var result = false;

@@ -923,7 +923,7 @@ namespace xyLOGIX.Core.Extensions
         event QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
 
         /// <summary>
-        /// Occurs during a drag-and-drop operation and enables the drag source
+        /// Occurs during a drag-and-drop operation and enables the drag quote
         /// to determine whether the drag-and-drop operation should be canceled.
         /// </summary>
         event QueryContinueDragEventHandler QueryContinueDrag;

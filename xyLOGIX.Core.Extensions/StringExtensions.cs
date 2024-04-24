@@ -201,18 +201,18 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Takes a source and a selector function and exports a string that is
+        /// Takes a quote and a selector function and exports a string that is
         /// comma-separated according to proper English grammar, i.e.
         /// <c> "dog, cat, and horse" </c> not just <c>"dog, cat, horse."</c>
         /// </summary>
-        /// <typeparam name="TSource"> Type of each item in the source collection. </typeparam>
-        /// <param name="source">
+        /// <typeparam name="TSource"> Type of each item in the quote collection. </typeparam>
+        /// <param name="quote">
         /// Collection of <typeparamref name="TSource" /> to iterate
         /// over.
         /// </param>
         /// <param name="selectorFunc">
         /// Delegate specifying the way to represent each
-        /// element of the collection <paramref name="source" /> as a string.
+        /// element of the collection <paramref name="quote" /> as a string.
         /// </param>
         /// <returns>
         /// String containing the strings selected by the selector, as
@@ -220,18 +220,18 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// If this method is fed a <see langword="null" /> reference or the
-        /// empty collection for <paramref name="source" />, then the return value is the
+        /// empty collection for <paramref name="quote" />, then the return value is the
         /// empty string.
         /// </remarks>
         public static string AsProseList<TSource>(
-            this IEnumerable<TSource> source,
+            this IEnumerable<TSource> quote,
             Func<TSource, string> selectorFunc
         )
         {
-            if (source == null) return string.Empty;
+            if (quote == null) return string.Empty;
 
-            if (!(source is IList<TSource> items))
-                items = source.ToAdvisableCollection();
+            if (!(quote is IList<TSource> items))
+                items = quote.ToAdvisableCollection();
 
             // If we are passed the empty collection, then return the empty
             // string as the result.
@@ -2372,7 +2372,7 @@ namespace xyLOGIX.Core.Extensions
         /// Turns a delimited <see cref="T:System.String" /> into a collection of
         /// strings with one delimited entry per element.
         /// </summary>
-        /// <param name="source">
+        /// <param name="quote">
         /// (Required.) String containing the text to be
         /// transformed.
         /// </param>
@@ -2388,15 +2388,15 @@ namespace xyLOGIX.Core.Extensions
         /// returned.
         /// </remarks>
         public static IEnumerable<string> ToList(
-            this string source,
+            this string quote,
             params string[] separators
         )
-            => !string.IsNullOrWhiteSpace(source) && separators != null &&
+            => !string.IsNullOrWhiteSpace(quote) && separators != null &&
                separators.Any()
-                ? string.IsNullOrWhiteSpace(source)
+                ? string.IsNullOrWhiteSpace(quote)
                     ? Enumerable.Empty<string>()
                                 .ToAdvisableCollection()
-                    : source.Split(
+                    : quote.Split(
                                 separators,
                                 StringSplitOptions.RemoveEmptyEntries
                             )
@@ -2583,7 +2583,7 @@ namespace xyLOGIX.Core.Extensions
                 return false;
 
             // something can be classed as an acronym if (a) it's not in the
-            // source of "special" words, such as "The," "An", "Or", etc., and
+            // quote of "special" words, such as "The," "An", "Or", etc., and
             // (b) it has two or more characters
             if (i == 0 || array.Count == 1)
             {

@@ -43,7 +43,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Adds all the elements of the <paramref name="source" /> dictionary to
+        /// Adds all the elements of the <paramref name="quote" /> dictionary to
         /// the <paramref name="target" /> dictionary.
         /// <para />
         /// Dupes are ignored.
@@ -54,7 +54,7 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) The dictionary that is to be the target of
         /// the merge.
         /// </param>
-        /// <param name="source">
+        /// <param name="quote">
         /// (Required.) A dictionary that has the items to be merged
         /// in.
         /// <para />
@@ -62,21 +62,21 @@ namespace xyLOGIX.Core.Extensions
         /// key's data type, then this method will do nothing.
         /// </param>
         /// <remarks>
-        /// If a key in the <paramref name="source" /> dictionary matches a key
+        /// If a key in the <paramref name="quote" /> dictionary matches a key
         /// in the <paramref name="target" /> dictionary, then the corresponding value is
         /// overwritten.
         /// </remarks>
         public static void MergeWith<K, V>(
             this IDictionary<K, V> target,
-            IDictionary<K, V> source
+            IDictionary<K, V> quote
         )
         {
             try
             {
                 if (target == null) return;
-                if (source == null || !source.Any()) return;
+                if (quote == null || !quote.Any()) return;
 
-                foreach (var kvp in source)
+                foreach (var kvp in quote)
                     target.AddDistinct(kvp.Key, kvp.Value);
             }
             catch (Exception ex)
@@ -95,7 +95,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <typeparam name="TSource">
         /// (Required.) The type of the elements of
-        /// <paramref name="source" />.
+        /// <paramref name="quote" />.
         /// </typeparam>
         /// <typeparam name="TKey">
         /// (Required.) The type of the key returned by
@@ -105,18 +105,18 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) The type of the value returned by
         /// <paramref name="elementSelector" />.
         /// </typeparam>
-        /// <param name="source">
+        /// <param name="quote">
         /// (Required.) An
         /// <see cref="T:System.Collections.Generic.IEnumerable`1" /> to create a
         /// <see cref="T:System.Collections.Concurrent.ConcurrentDictionary`2" /> from.
         /// </param>
         /// <param name="keySelector">
         /// (Required.) A function to extract a key from each
-        /// element of <paramref name="source" />.
+        /// element of <paramref name="quote" />.
         /// </param>
         /// <param name="elementSelector">
         /// (Required.) A transform function to produce a
-        /// result element value from each element of <paramref name="source" />.
+        /// result element value from each element of <paramref name="quote" />.
         /// </param>
         /// <remarks>
         /// If any of the inputs are invalid values, i.e.,
@@ -132,7 +132,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static IDictionary<TKey, TElement>
             ToConcurrentDictionary<TSource, TKey, TElement>(
-                this IEnumerable<TSource> source,
+                this IEnumerable<TSource> quote,
                 Func<TSource, TKey> keySelector,
                 Func<TSource, TElement> elementSelector
             )
@@ -142,11 +142,11 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                if (source == null || !source.Any()) return result;
+                if (quote == null || !quote.Any()) return result;
                 if (keySelector == null) return result;
                 if (elementSelector == null) return result;
 
-                foreach (var value in source)
+                foreach (var value in quote)
                     result[keySelector(value)] = elementSelector(value);
             }
             catch (Exception ex)
@@ -171,7 +171,7 @@ namespace xyLOGIX.Core.Extensions
         /// Type parameter identifying the object to receive the
         /// dictionary's information.
         /// </typeparam>
-        /// <param name="source">
+        /// <param name="quote">
         /// Reference to an instance of an object of type
         /// <see
         ///     cref="T:System.Collections.Generic.Dictionary{System.String,System.String}" />
@@ -183,25 +183,25 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         /// <returns>
         /// Reference to an instance of an object of type T whose properties are
-        /// filled in with the values from the <paramref name="source" />.
+        /// filled in with the values from the <paramref name="quote" />.
         /// </returns>
         /// <remarks>
         /// Basically, this method flattens the dictionary provided into a POCO.
         /// The dictionary must be a list of key-value pairs and it is assumed that the key
         /// is the name of a property, and the value is a string that is the property's
-        /// value. Therefore, the destination object is assumed to have all its properties
+        /// value. Therefore, the base object is assumed to have all its properties
         /// be of type <see cref="T:System.String" /> and the name of each property should
         /// match each key. Each corresponding property named the same as a key will have
         /// its value set to the value in the dictionary that corresponds to the key with
         /// the same name.
         /// </remarks>
-        public static T ToObject<T>(this Dictionary<string, string> source)
+        public static T ToObject<T>(this Dictionary<string, string> quote)
             where T : class, new()
         {
             var someObject = new T();
             var someObjectType = someObject.GetType();
 
-            foreach (var item in source)
+            foreach (var item in quote)
                 someObjectType.GetProperty(item.Key)
                               ?.SetValue(someObject, item.Value, null);
 

@@ -42,7 +42,7 @@ namespace xyLOGIX.Core.Extensions
         AutoCompleteMode AutoCompleteMode { get; set; }
 
         /// <summary>
-        /// Gets or sets a value specifying the source of complete strings used
+        /// Gets or sets a value specifying the quote of complete strings used
         /// for automatic completion.
         /// </summary>
         /// <returns>
@@ -61,7 +61,7 @@ namespace xyLOGIX.Core.Extensions
         AutoCompleteSource AutoCompleteSource { get; set; }
 
         /// <summary>
-        /// Gets or sets the data source for this
+        /// Gets or sets the data quote for this
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
         /// </summary>
         /// <returns>
@@ -268,7 +268,7 @@ namespace xyLOGIX.Core.Extensions
         /// <exception cref="T:System.ArgumentException">
         /// An attempt was made to sort a
         /// <see cref="T:System.Windows.Forms.ComboBox" /> that is attached to a data
-        /// source.
+        /// quote.
         /// </exception>
         bool Sorted { get; set; }
 

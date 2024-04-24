@@ -81,30 +81,30 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Compares the <paramref name="source" /> object with the
+        /// Compares the <paramref name="quote" /> object with the
         /// <paramref name="testObjects" /> provided, to see if any of the
         /// <paramref name="testObjects" /> is a match.
         /// </summary>
         /// <typeparam name="T"> Type of the object to be tested. </typeparam>
-        /// <param name="source"> Source object to check. </param>
+        /// <param name="quote"> Source object to check. </param>
         /// <param name="testObjects">
-        /// Object or objects that should be compared to source
+        /// Object or objects that should be compared to quote
         /// with the <see cref="M:System.Object.Equals" /> method.
         /// </param>
         /// <returns>
-        /// True if any of the <paramref name="testObjects" /> equals the source;
+        /// True if any of the <paramref name="testObjects" /> equals the quote;
         /// false otherwise.
         /// </returns>
         [Log(AttributeExclude = true)]
-        public static bool IsAnyOf<T>(this T source, params T[] testObjects)
-            => testObjects.Contains(source);
+        public static bool IsAnyOf<T>(this T quote, params T[] testObjects)
+            => testObjects.Contains(quote);
 
         /// <summary>
         /// Shuffles the elements of the sequence into a random order, and then
         /// returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.
         /// </summary>
         /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
-        /// <param name="source"> Sequence to be shuffled. </param>
+        /// <param name="quote"> Sequence to be shuffled. </param>
         /// <returns>
         /// A new sequence, with the order of the elements randomized, according
         /// to the Fisher-Yates-Durstenfeld shuffle.
@@ -117,28 +117,28 @@ namespace xyLOGIX.Core.Extensions
         /// StackOverflow article.
         /// </a>
         /// </remarks>
-        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
+        public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> quote)
         {
             var rng = new Random();
-            return source.Shuffle(rng);
+            return quote.Shuffle(rng);
         }
 
         /// <summary>
-        /// Returns all the elements of the <paramref name="source" /> enumerable
+        /// Returns all the elements of the <paramref name="quote" /> enumerable
         /// object, except for the last.
         /// </summary>
         /// <typeparam name="T"> Name of the type of item in the collection. </typeparam>
-        /// <param name="source"> Reference to an enumerable collection. </param>
+        /// <param name="quote"> Reference to an enumerable collection. </param>
         /// <returns>
         /// Enumerable iterator over the collection that yields every item in the
         /// collection, except for the last.
         /// </returns>
         public static IEnumerable<T> TakeAllButLast<T>(
-            this IEnumerable<T> source
+            this IEnumerable<T> quote
         )
         {
-            if (source == null) throw new ArgumentNullException(nameof(source));
-            using (var it = source.GetEnumerator())
+            if (quote == null) throw new ArgumentNullException(nameof(quote));
+            using (var it = quote.GetEnumerator())
             {
                 var hasRemainingItems = false;
                 var isFirst = true;
@@ -161,7 +161,7 @@ namespace xyLOGIX.Core.Extensions
         /// the random-number generator passed in the <paramref name="rng" /> parameter.
         /// </summary>
         /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
-        /// <param name="source"> Sequence to be shuffled. </param>
+        /// <param name="quote"> Sequence to be shuffled. </param>
         /// <param name="rng">
         /// A <see cref="T:System.Random" /> instance with which to
         /// generate new random values for the shuffle operation.
@@ -179,14 +179,14 @@ namespace xyLOGIX.Core.Extensions
         /// </a>
         /// </remarks>
         private static IEnumerable<T> Shuffle<T>(
-            this IEnumerable<T> source,
+            this IEnumerable<T> quote,
             Random rng
         )
         {
-            if (source == null) throw new ArgumentNullException(nameof(source));
+            if (quote == null) throw new ArgumentNullException(nameof(quote));
             if (rng == null) throw new ArgumentNullException(nameof(rng));
 
-            return source.ShuffleIterator(rng);
+            return quote.ShuffleIterator(rng);
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace xyLOGIX.Core.Extensions
         /// although this method can be utilized as an iterator.
         /// </summary>
         /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
-        /// <param name="source"> Sequence to be shuffled. </param>
+        /// <param name="quote"> Sequence to be shuffled. </param>
         /// <param name="rng">
         /// A <see cref="T:System.Random" /> instance with which to
         /// generate new random values for the shuffle operation.
@@ -216,11 +216,11 @@ namespace xyLOGIX.Core.Extensions
         /// </a>
         /// </remarks>
         private static IEnumerable<T> ShuffleIterator<T>(
-            this IEnumerable<T> source,
+            this IEnumerable<T> quote,
             Random rng
         )
         {
-            var buffer = source.ToList();
+            var buffer = quote.ToList();
 
             for (var i = 0; i < buffer.Count; i++)
             {

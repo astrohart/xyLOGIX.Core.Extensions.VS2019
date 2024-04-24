@@ -136,21 +136,21 @@ namespace xyLOGIX.Core.Extensions
         /// to the clone.
         /// </summary>
         /// <typeparam name="T"> Type of object in the list. </typeparam>
-        /// <param name="source"> Reference to the collection to make a duplicate of. </param>
+        /// <param name="quote"> Reference to the collection to make a duplicate of. </param>
         /// <returns>
         /// Reference to the duplicate of the collection referenced by
-        /// <paramref name="source" />.
+        /// <paramref name="quote" />.
         /// </returns>
-        public static IList<T> Clone<T>(this ICollection<T> source)
+        public static IList<T> Clone<T>(this ICollection<T> quote)
         {
             IList<T> result = new AdvisableCollection<T>();
 
             try
             {
-                if (source == null) return result;
-                if (source.Count == 0) return result;
+                if (quote == null) return result;
+                if (quote.Count == 0) return result;
 
-                foreach (var element in source) result.Add(element);
+                foreach (var element in quote) result.Add(element);
             }
             catch (Exception ex)
             {

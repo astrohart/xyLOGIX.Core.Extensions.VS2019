@@ -28,6 +28,7 @@
   - [IsParentFormNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsParentFormNullOrDisposed(System.Windows.Forms.Control)')
 - [DateTimeExtensions](#T-xyLOGIX-Core-Extensions-DateTimeExtensions 'xyLOGIX.Core.Extensions.DateTimeExtensions')
   - [ToRFC3339(date)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToRFC3339-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToRFC3339(System.DateTime)')
+  - [ToSentencePart(dateTime)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToSentencePart-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToSentencePart(System.DateTime)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [AddDistinct\`\`2(dictionary,key,value)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1- 'xyLOGIX.Core.Extensions.DictionaryExtensions.AddDistinct``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)')
   - [MergeWith\`\`2(target,quote)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})')
@@ -1035,6 +1036,28 @@ the supplied `date` in `RFC 3339` format; otherwise, the
 | ---- | ---- | ----------- |
 | date | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value that
 is to be formatted as a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'). |
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToSentencePart-System-DateTime-'></a>
+### ToSentencePart(dateTime) `method`
+
+##### Summary
+
+Emits a string, based on the value of the specified
+`dateTime`, and in local time, that says, e.g.,
+`on 10/16/2024 at 4:59:02 PM`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+required text; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is
+returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dateTime | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) A [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be expressed as part of a sentence. |
 
 <a name='T-xyLOGIX-Core-Extensions-DictionaryExtensions'></a>
 ## DictionaryExtensions `type`

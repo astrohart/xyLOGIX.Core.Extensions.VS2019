@@ -50,5 +50,39 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
+
+        /// <summary>
+        /// Emits a string, based on the value of the specified
+        /// <paramref name="dateTime" />, and in local time, that says, e.g.,
+        /// <c>on 10/16/2024 at 4:59:02 PM</c>.
+        /// </summary>
+        /// <param name="dateTime">
+        /// (Required.) A <see cref="T:System.DateTime" /> value
+        /// that is to be expressed as part of a sentence.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the
+        /// required text; otherwise, the <see cref="F:System.String.Empty" /> value is
+        /// returned.
+        /// </returns>
+        public static string ToSentencePart(this DateTime dateTime)
+        {
+            string result;
+
+            try
+            {
+                result =
+                    $"on {dateTime.Date.ToLocalTime()} at {dateTime.ToLocalTime():h:mm:ss tt}";
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
     }
 }

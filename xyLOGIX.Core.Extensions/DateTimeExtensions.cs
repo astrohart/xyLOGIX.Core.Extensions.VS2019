@@ -72,7 +72,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 result =
-                    $"on {dateTime.Date.ToLocalTime()} at {dateTime.ToLocalTime():h:mm:ss tt}";
+                    $"on {dateTime.Date.ToLocalTime().ToShortDateString()} at {dateTime.ToLocalTime():h:mm:ss tt}";
             }
             catch (Exception ex)
             {

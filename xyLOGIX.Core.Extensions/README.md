@@ -301,6 +301,12 @@
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
+- [LongExtensions](#T-xyLOGIX-Core-Extensions-LongExtensions 'xyLOGIX.Core.Extensions.LongExtensions')
+  - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNegative-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNegative(System.Int64)')
+  - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNonNegative-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNonNegative(System.Int64)')
+  - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNonPositive-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNonPositive(System.Int64)')
+  - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNonzero-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNonzero(System.Int64)')
+  - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsPositive-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsPositive(System.Int64)')
 - [NullableDecimalExtensions](#T-xyLOGIX-Core-Extensions-NullableDecimalExtensions 'xyLOGIX.Core.Extensions.NullableDecimalExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNegative-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNegative(System.Nullable{System.Decimal})')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonzero-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNonzero(System.Nullable{System.Decimal})')
@@ -5683,6 +5689,125 @@ The `collection`, formatted as a set string.
 
 This method is helpful for writing some of the members of a
 collection to a log file.
+
+<a name='T-xyLOGIX-Core-Extensions-LongExtensions'></a>
+## LongExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Extension methods for a `long` value.
+
+<a name='M-xyLOGIX-Core-Extensions-LongExtensions-IsNegative-System-Int64-'></a>
+### IsNegative(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a strictly negative (i.e., less than zero)
+numerical value.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly less than
+zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | A nullable [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be
+checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-LongExtensions-IsNonNegative-System-Int64-'></a>
+### IsNonNegative(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is nonnegative (i.e.,
+greater than, or equal to, zero).
+
+##### Returns
+
+`true` if the `value` is greater than, or
+equal to, zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | A [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-LongExtensions-IsNonPositive-System-Int64-'></a>
+### IsNonPositive(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is nonpositive (i.e.,
+less than, or equal to, zero).
+
+##### Returns
+
+`true` if the `value` is less than, or
+equal to, zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | A [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-LongExtensions-IsNonzero-System-Int64-'></a>
+### IsNonzero(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is non-
+`null` and has a numerical value that is strictly not equal to
+zero.
+
+##### Returns
+
+`true` if the `value` is non-
+`null` and has a numerical value that is strictly not equal
+zero; `false` if the `value` is identically
+equal to zero
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | A nullable [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be
+checked. |
+
+##### Remarks
+
+Callers must remember that this method returns
+`falsedoc` only in the case where the numeric value of
+`value` is identically equal to `0L`.
+
+<a name='M-xyLOGIX-Core-Extensions-LongExtensions-IsPositive-System-Int64-'></a>
+### IsPositive(value) `method`
+
+##### Summary
+
+Indicates whether the specified `value` is strictly
+positive (i.e., greater than zero).
+
+##### Returns
+
+`true` if the `value` is strictly
+greater than zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | A [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be checked. |
 
 <a name='T-xyLOGIX-Core-Extensions-NullableDecimalExtensions'></a>
 ## NullableDecimalExtensions `type`

@@ -264,5 +264,119 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
+
+        /// <summary>
+        /// Evaluates the quotient (i.e., the result when you divide two numbers)
+        /// of the specified <paramref name="numerator" /> and
+        /// <paramref name="denominator" />, provided the <paramref name="denominator" />
+        /// is not equal to zero and neither is the <paramref name="numerator" />.
+        /// </summary>
+        /// <param name="numerator">
+        /// (Required.) A <see cref="T:System.Decimal" /> value to
+        /// serve as the divisor.
+        /// </param>
+        /// <param name="denominator">
+        /// (Required.) A <see cref="T:System.Decimal" /> value
+        /// to serve as the dividend.
+        /// <para />
+        /// Must not be identically equal to zero.
+        /// </param>
+        /// <remarks>
+        /// Zero is returned in the event that either the
+        /// <paramref name="numerator" /> or the <paramref name="denominator" /> are
+        /// identically zero.
+        /// <para />
+        /// Zero is also returned in the event an exception is raised by the division
+        /// operator.
+        /// </remarks>
+        /// <returns>
+        /// The quotient of the <paramref name="numerator" /> divided by the
+        /// <paramref name="denominator" />.
+        /// </returns>
+        public static decimal QuotientOf(decimal numerator, decimal denominator)
+        {
+            var result = decimal.Zero;
+
+            try
+            {
+                if (numerator.IsZero()) return result;
+                if (denominator.IsZero()) return result;
+
+                result = numerator / denominator;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = decimal.Zero;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Computes the zero floor.  Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
+        /// <param name="value">(Required.) Input value.</param>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
+        public static int ZeroFloorOf(int value)
+            => value < 0 ? 0 : value;
+
+        /// <summary>
+        /// Computes the zero floor.  Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
+        /// <param name="value">(Required.) Input value.</param>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
+        public static long ZeroFloorOf(long value)
+            => value < 0L ? 0L : value;
+
+        /// <summary>
+        /// Computes the zero floor.  Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
+        /// <param name="value">(Required.) Input value.</param>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
+        public static decimal ZeroFloorOf(decimal value)
+            => value < 0M ? 0M : value;
+
+        /// <summary>
+        /// Computes the zero floor.  Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
+        /// <param name="value">(Required.) Input value.</param>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
+        public static double ZeroFloorOf(double value)
+            => value < 0D ? 0D : value;
     }
 }

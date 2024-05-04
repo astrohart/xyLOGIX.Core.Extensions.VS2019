@@ -12,6 +12,9 @@
   - [PercentageChangeOf(initialValue,finalValue)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.Calculate.PercentageChangeOf(System.Int32,System.Int32)')
   - [PercentageChangeOf(initialValue,finalValue)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Double,System-Double- 'xyLOGIX.Core.Extensions.Calculate.PercentageChangeOf(System.Double,System.Double)')
   - [PercentageChangeOf(initialValue,finalValue)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.PercentageChangeOf(System.Decimal,System.Decimal)')
+  - [PercentageDifference(a,b)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageDifference-System-Double,System-Double- 'xyLOGIX.Core.Extensions.Calculate.PercentageDifference(System.Double,System.Double)')
+  - [PercentageDifference(a,b)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageDifference-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.PercentageDifference(System.Decimal,System.Decimal)')
+  - [PercentageDifference(a,b)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageDifference-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.Calculate.PercentageDifference(System.Int32,System.Int32)')
   - [ProductOf(factors)](#M-xyLOGIX-Core-Extensions-Calculate-ProductOf-System-Decimal[]- 'xyLOGIX.Core.Extensions.Calculate.ProductOf(System.Decimal[])')
   - [QuotientOf(numerator,denominator)](#M-xyLOGIX-Core-Extensions-Calculate-QuotientOf-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.QuotientOf(System.Decimal,System.Decimal)')
   - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Int32- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Int32)')
@@ -667,6 +670,75 @@ The percentage change between the `initialValue` and
 | ---- | ----------- |
 | [System.DivideByZeroException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DivideByZeroException 'System.DivideByZeroException') | Thrown when the specified
 `initialValue` is equal to zero. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageDifference-System-Double,System-Double-'></a>
+### PercentageDifference(a,b) `method`
+
+##### Summary
+
+Calculates the percentage difference between two given numbers.
+
+##### Returns
+
+The percentage difference between the two numbers.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| a | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | The first number. |
+| b | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | The second number. |
+
+##### Remarks
+
+The formula used to calculate the percentage difference is:
+(|a - b| / ((a + b) / 2)) * 100
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageDifference-System-Decimal,System-Decimal-'></a>
+### PercentageDifference(a,b) `method`
+
+##### Summary
+
+Calculates the percentage difference between two given numbers.
+
+##### Returns
+
+The percentage difference between the two numbers.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| a | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The first number. |
+| b | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The second number. |
+
+##### Remarks
+
+The formula used to calculate the percentage difference is:
+(|a - b| / ((a + b) / 2)) * 100
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageDifference-System-Int32,System-Int32-'></a>
+### PercentageDifference(a,b) `method`
+
+##### Summary
+
+Calculates the percentage difference between two given numbers.
+
+##### Returns
+
+The percentage difference between the two numbers.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| a | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The first number. |
+| b | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The second number. |
+
+##### Remarks
+
+The formula used to calculate the percentage difference is:
+(|a - b| / ((a + b) / 2)) * 100
 
 <a name='M-xyLOGIX-Core-Extensions-Calculate-ProductOf-System-Decimal[]-'></a>
 ### ProductOf(factors) `method`

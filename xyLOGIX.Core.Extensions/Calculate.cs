@@ -215,6 +215,63 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Calculates the percentage difference between two given numbers.
+        /// </summary>
+        /// <param name="a">The first number.</param>
+        /// <param name="b">The second number.</param>
+        /// <returns>The percentage difference between the two numbers.</returns>
+        /// <remarks>
+        /// The formula used to calculate the percentage difference is:
+        /// (|a - b| / ((a + b) / 2)) * 100
+        /// </remarks>
+        public static double PercentageDifference(double a, double b)
+        {
+            var absoluteDifference = Math.Abs(a - b);
+            var average = (a + b) / 2.0;
+            if (0D.Equals(average)) return 0D;
+            var relativeDifference = absoluteDifference / average;
+            return relativeDifference * 100;
+        }
+
+        /// <summary>
+        /// Calculates the percentage difference between two given numbers.
+        /// </summary>
+        /// <param name="a">The first number.</param>
+        /// <param name="b">The second number.</param>
+        /// <returns>The percentage difference between the two numbers.</returns>
+        /// <remarks>
+        /// The formula used to calculate the percentage difference is:
+        /// (|a - b| / ((a + b) / 2)) * 100
+        /// </remarks>
+        public static decimal PercentageDifference(decimal a, decimal b)
+        {
+            var absoluteDifference = Math.Abs(a - b);
+            var average = (a + b) / 2.0M;
+            if (decimal.Zero.Equals(average)) return decimal.Zero;
+            var relativeDifference = absoluteDifference / average;
+            return relativeDifference * 100M;
+        }
+
+        /// <summary>
+        /// Calculates the percentage difference between two given numbers.
+        /// </summary>
+        /// <param name="a">The first number.</param>
+        /// <param name="b">The second number.</param>
+        /// <returns>The percentage difference between the two numbers.</returns>
+        /// <remarks>
+        /// The formula used to calculate the percentage difference is:
+        /// (|a - b| / ((a + b) / 2)) * 100
+        /// </remarks>
+        public static double PercentageDifference(int a, int b)
+        {
+            var absoluteDifference = Math.Abs(a - b);
+            var average = (a + b) / 2.0D;
+            if (0D.Equals(average)) return 0D;
+            var relativeDifference = absoluteDifference / average;
+            return relativeDifference * 100D;
+        }
+
+        /// <summary>
         /// Computes the n-ary product of all the specified
         /// <paramref name="factors" />.
         /// <para />

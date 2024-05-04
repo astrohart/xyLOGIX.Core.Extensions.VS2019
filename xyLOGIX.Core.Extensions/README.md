@@ -5,6 +5,19 @@
 
 - [BoundComboBox](#T-xyLOGIX-Core-Extensions-BoundComboBox 'xyLOGIX.Core.Extensions.BoundComboBox')
   - [OnSelectedIndexChanged(e)](#M-xyLOGIX-Core-Extensions-BoundComboBox-OnSelectedIndexChanged-System-EventArgs- 'xyLOGIX.Core.Extensions.BoundComboBox.OnSelectedIndexChanged(System.EventArgs)')
+- [Calculate](#T-xyLOGIX-Core-Extensions-Calculate 'xyLOGIX.Core.Extensions.Calculate')
+  - [DeltaBetween(end,start)](#M-xyLOGIX-Core-Extensions-Calculate-DeltaBetween-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.DeltaBetween(System.Decimal,System.Decimal)')
+  - [FractionalChangeBetween(end,start)](#M-xyLOGIX-Core-Extensions-Calculate-FractionalChangeBetween-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.FractionalChangeBetween(System.Decimal,System.Decimal)')
+  - [PercentageChangeOf(initialValue,finalValue)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Int64,System-Int64- 'xyLOGIX.Core.Extensions.Calculate.PercentageChangeOf(System.Int64,System.Int64)')
+  - [PercentageChangeOf(initialValue,finalValue)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.Calculate.PercentageChangeOf(System.Int32,System.Int32)')
+  - [PercentageChangeOf(initialValue,finalValue)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Double,System-Double- 'xyLOGIX.Core.Extensions.Calculate.PercentageChangeOf(System.Double,System.Double)')
+  - [PercentageChangeOf(initialValue,finalValue)](#M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.PercentageChangeOf(System.Decimal,System.Decimal)')
+  - [ProductOf(factors)](#M-xyLOGIX-Core-Extensions-Calculate-ProductOf-System-Decimal[]- 'xyLOGIX.Core.Extensions.Calculate.ProductOf(System.Decimal[])')
+  - [QuotientOf(numerator,denominator)](#M-xyLOGIX-Core-Extensions-Calculate-QuotientOf-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.QuotientOf(System.Decimal,System.Decimal)')
+  - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Int32- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Int32)')
+  - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Int64- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Int64)')
+  - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Decimal)')
+  - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Double- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Double)')
 - [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
   - [AreAllItemsSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.AreAllItemsSelected(System.Windows.Forms.CheckedListBox)')
   - [CheckAll(checkedListBox,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckAll(System.Windows.Forms.CheckedListBox,System.Boolean)')
@@ -480,6 +493,348 @@ Raises the
 | ---- | ---- | ----------- |
 | e | [System.EventArgs](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.EventArgs 'System.EventArgs') | An [EventArgs](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.EventArgs 'System.EventArgs') that contains the event
 data. |
+
+<a name='T-xyLOGIX-Core-Extensions-Calculate'></a>
+## Calculate `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static methods to perform various mathematical calculations, such as
+percentage change.
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-DeltaBetween-System-Decimal,System-Decimal-'></a>
+### DeltaBetween(end,start) `method`
+
+##### Summary
+
+Returns the delta, or where you `end` up, minus
+where you `start`.
+
+
+
+If the values are retrieved from time-series data, then `end`
+is the value from the time closest to now, and `start` is
+from back in the past.
+
+##### Returns
+
+Zero if `end` and `start` are
+identically equal to each other; otherwise, the difference between
+`end` and `start`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| end | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Current, or more recent, value. |
+| start | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Starting value. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-FractionalChangeBetween-System-Decimal,System-Decimal-'></a>
+### FractionalChangeBetween(end,start) `method`
+
+##### Summary
+
+Given an `end` and a `start`
+value, where `end` is further back in the past than
+`start`, computes the fractional average rate of change
+between the two.
+
+##### Returns
+
+Average fractional rate of the change from `start`
+to `end`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| end | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Current, or more recent, value. |
+| start | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Starting value. |
+
+##### Remarks
+
+The result of calling this method, in the event that
+`start` is set equal to zero, is defined to be zero.
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Int64,System-Int64-'></a>
+### PercentageChangeOf(initialValue,finalValue) `method`
+
+##### Summary
+
+Calculates the percentage change between an `initialValue`
+and a `finalValue`.
+
+##### Returns
+
+The percentage change between the `initialValue` and
+`finalValue`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| initialValue | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The initial value.  Must not be equal to zero. |
+| finalValue | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The final value. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.DivideByZeroException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DivideByZeroException 'System.DivideByZeroException') | Thrown when the specified
+`initialValue` is equal to zero. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Int32,System-Int32-'></a>
+### PercentageChangeOf(initialValue,finalValue) `method`
+
+##### Summary
+
+Calculates the percentage change between an `initialValue`
+and a `finalValue`.
+
+##### Returns
+
+The percentage change between the `initialValue` and
+`finalValue`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| initialValue | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The initial value.  Must not be equal to zero. |
+| finalValue | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The final value. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.DivideByZeroException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DivideByZeroException 'System.DivideByZeroException') | Thrown when the specified
+`initialValue` is equal to zero. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Double,System-Double-'></a>
+### PercentageChangeOf(initialValue,finalValue) `method`
+
+##### Summary
+
+Calculates the percentage change between an `initialValue`
+and a `finalValue`.
+
+##### Returns
+
+The percentage change between the `initialValue` and
+`finalValue`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| initialValue | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | The initial value.  Must not be equal to zero. |
+| finalValue | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | The final value. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.DivideByZeroException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DivideByZeroException 'System.DivideByZeroException') | Thrown when the specified
+`initialValue` is equal to zero. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageChangeOf-System-Decimal,System-Decimal-'></a>
+### PercentageChangeOf(initialValue,finalValue) `method`
+
+##### Summary
+
+Calculates the percentage change between an `initialValue`
+and a `finalValue`.
+
+##### Returns
+
+The percentage change between the `initialValue` and
+`finalValue`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| initialValue | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The initial value.  Must not be equal to zero. |
+| finalValue | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The final value. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.DivideByZeroException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DivideByZeroException 'System.DivideByZeroException') | Thrown when the specified
+`initialValue` is equal to zero. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-ProductOf-System-Decimal[]-'></a>
+### ProductOf(factors) `method`
+
+##### Summary
+
+Computes the n-ary product of all the specified
+`factors`.
+
+
+
+If any one factor is zero, then this method does not even bother carrying out
+the multiplication; it simply returns zero.
+
+##### Returns
+
+The n-ary product of the specified `factors`, or
+zero if any one factor is zero.
+
+
+
+If no values are passed, then this method is defined to return zero also.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| factors | [System.Decimal[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal[] 'System.Decimal[]') | (Required.) One or more `decimal`
+values that will serve as the factors to be multiplied. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-QuotientOf-System-Decimal,System-Decimal-'></a>
+### QuotientOf(numerator,denominator) `method`
+
+##### Summary
+
+Evaluates the quotient (i.e., the result when you divide two numbers)
+of the specified `numerator` and
+`denominator`, provided the `denominator`
+is not equal to zero and neither is the `numerator`.
+
+##### Returns
+
+The quotient of the `numerator` divided by the
+`denominator`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| numerator | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) A [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value to
+serve as the divisor. |
+| denominator | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) A [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value
+to serve as the dividend.
+
+
+
+Must not be identically equal to zero. |
+
+##### Remarks
+
+Zero is returned in the event that either the
+`numerator` or the `denominator` are
+identically zero.
+
+
+
+Zero is also returned in the event an exception is raised by the division
+operator.
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Int32-'></a>
+### ZeroFloorOf(value) `method`
+
+##### Summary
+
+Computes the zero floor.  Meaning, if the specified
+`value` is negative, then this method returns zero.
+
+
+
+If the specified `value` is zero or greater, then this method
+is the identity.
+
+##### Returns
+
+Zero if the specified `value` is negative;
+otherwise, if the specified `value` is zero or greater, then
+the method is the identity map.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Input value. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Int64-'></a>
+### ZeroFloorOf(value) `method`
+
+##### Summary
+
+Computes the zero floor.  Meaning, if the specified
+`value` is negative, then this method returns zero.
+
+
+
+If the specified `value` is zero or greater, then this method
+is the identity.
+
+##### Returns
+
+Zero if the specified `value` is negative;
+otherwise, if the specified `value` is zero or greater, then
+the method is the identity map.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | (Required.) Input value. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Decimal-'></a>
+### ZeroFloorOf(value) `method`
+
+##### Summary
+
+Computes the zero floor.  Meaning, if the specified
+`value` is negative, then this method returns zero.
+
+
+
+If the specified `value` is zero or greater, then this method
+is the identity.
+
+##### Returns
+
+Zero if the specified `value` is negative;
+otherwise, if the specified `value` is zero or greater, then
+the method is the identity map.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Input value. |
+
+<a name='M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Double-'></a>
+### ZeroFloorOf(value) `method`
+
+##### Summary
+
+Computes the zero floor.  Meaning, if the specified
+`value` is negative, then this method returns zero.
+
+
+
+If the specified `value` is zero or greater, then this method
+is the identity.
+
+##### Returns
+
+Zero if the specified `value` is negative;
+otherwise, if the specified `value` is zero or greater, then
+the method is the identity map.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.) Input value. |
 
 <a name='T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions'></a>
 ## CheckedListBoxExtensions `type`

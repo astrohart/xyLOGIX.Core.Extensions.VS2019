@@ -81,23 +81,23 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Compares the <paramref name="quote" /> object with the
+        /// Compares the <paramref name="value" /> object with the
         /// <paramref name="testObjects" /> provided, to see if any of the
         /// <paramref name="testObjects" /> is a match.
         /// </summary>
         /// <typeparam name="T"> Type of the object to be tested. </typeparam>
-        /// <param name="quote"> Source object to check. </param>
+        /// <param name="value"> Source object to check. </param>
         /// <param name="testObjects">
-        /// Object or objects that should be compared to quote
+        /// Object or objects that should be compared to value
         /// with the <see cref="M:System.Object.Equals" /> method.
         /// </param>
         /// <returns>
-        /// True if any of the <paramref name="testObjects" /> equals the quote;
+        /// True if any of the <paramref name="testObjects" /> equals the value;
         /// false otherwise.
         /// </returns>
         [Log(AttributeExclude = true)]
-        public static bool IsAnyOf<T>(this T quote, params T[] testObjects)
-            => testObjects.Contains(quote);
+        public static bool IsAnyOf<T>(this T value, params T[] testObjects)
+            => testObjects.Contains(value);
 
         /// <summary>
         /// Shuffles the elements of the sequence into a random order, and then

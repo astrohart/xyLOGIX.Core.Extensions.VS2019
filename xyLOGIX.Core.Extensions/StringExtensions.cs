@@ -1299,35 +1299,7 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "StringExtensions.IsValidAssetSymbol: Checking whether the value of the 'symbol' parameter is blank..."
-                );
-
-                if (string.IsNullOrWhiteSpace(symbol))
-                {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        "StringExtensions.IsValidAssetSymbol: Blank value passed for the 'symbol' parameter. This parameter is required."
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"StringExtensions.IsValidAssetSymbol: Result = {result}"
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        "StringExtensions.IsValidAssetSymbol: Done."
-                    );
-
-                    return result;
-                }
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** SUCCESS *** The parameter 'symbol' is not blank.  Validating that it matches the appropriate regex..."
-                );
+                if (string.IsNullOrWhiteSpace(symbol)) return result;
 
                 result = Regex.IsMatch(symbol, @"[0-9a-zA-Z]+");
             }
@@ -1338,11 +1310,6 @@ namespace xyLOGIX.Core.Extensions
 
                 result = false;
             }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"StringExtensions.IsValidAssetSymbol: Result = {result}"
-            );
 
             return result;
         }
@@ -2397,10 +2364,9 @@ namespace xyLOGIX.Core.Extensions
                     ? Enumerable.Empty<string>()
                                 .ToAdvisableCollection()
                     : quote.Split(
-                                separators,
-                                StringSplitOptions.RemoveEmptyEntries
-                            )
-                            .ToAdvisableCollection()
+                               separators, StringSplitOptions.RemoveEmptyEntries
+                           )
+                           .ToAdvisableCollection()
                 : Enumerable.Empty<string>()
                             .ToAdvisableCollection();
 

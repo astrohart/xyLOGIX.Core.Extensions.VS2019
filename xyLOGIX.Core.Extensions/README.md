@@ -60,7 +60,7 @@
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})')
-  - [IsAnyOf\`\`1(quote,testObjects)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]- 'xyLOGIX.Core.Extensions.EnumerableExtensions.IsAnyOf``1(``0,``0[])')
+  - [IsAnyOf\`\`1(value,testObjects)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]- 'xyLOGIX.Core.Extensions.EnumerableExtensions.IsAnyOf``1(``0,``0[])')
   - [ShuffleIterator\`\`1(quote,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ShuffleIterator``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ShuffleIterator``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
   - [Shuffle\`\`1(quote)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})')
   - [Shuffle\`\`1(quote,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
@@ -1853,25 +1853,25 @@ If the `collection` is empty, or if the
 nothing.
 
 <a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]-'></a>
-### IsAnyOf\`\`1(quote,testObjects) `method`
+### IsAnyOf\`\`1(value,testObjects) `method`
 
 ##### Summary
 
-Compares the `quote` object with the
+Compares the `value` object with the
 `testObjects` provided, to see if any of the
 `testObjects` is a match.
 
 ##### Returns
 
-True if any of the `testObjects` equals the quote;
+True if any of the `testObjects` equals the value;
 false otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| quote | [\`\`0](#T-``0 '``0') | Source object to check. |
-| testObjects | [\`\`0[]](#T-``0[] '``0[]') | Object or objects that should be compared to quote
+| value | [\`\`0](#T-``0 '``0') | Source object to check. |
+| testObjects | [\`\`0[]](#T-``0[] '``0[]') | Object or objects that should be compared to value
 with the [Equals](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object.Equals 'System.Object.Equals') method. |
 
 ##### Generic Types

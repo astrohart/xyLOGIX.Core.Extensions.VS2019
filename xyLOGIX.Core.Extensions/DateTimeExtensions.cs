@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Diagnostics;
+using System;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
@@ -65,6 +66,7 @@ namespace xyLOGIX.Core.Extensions
         /// required text; otherwise, the <see cref="F:System.String.Empty" /> value is
         /// returned.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public static string ToSentencePart(this DateTime dateTime)
         {
             string result;

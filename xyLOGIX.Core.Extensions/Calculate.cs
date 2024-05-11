@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Diagnostics;
+using System;
 using System.Linq;
 using xyLOGIX.Core.Debug;
 
@@ -8,6 +9,7 @@ namespace xyLOGIX.Core.Extensions
     /// Exposes static methods to perform various mathematical calculations, such as
     /// percentage change.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class Calculate
     {
         /// <summary>

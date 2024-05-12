@@ -1385,61 +1385,21 @@ namespace xyLOGIX.Core.Extensions
         /// consists of a single GUID that is in all lowercase with no surrounding curly
         /// braces; <see langword="false" /> otherwise.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public static bool IsValidLowercaseGuidWithNoBraces(this string value)
         {
             var result = false;
 
             try
             {
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** INFO: Checking whether the value of the 'value' parameter is blank..."
-                );
-
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        "StringExtensions.IsValidLowercaseGuidWithNoBraces: Blank value passed for the 'value' parameter. This parameter is required."
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"StringExtensions.IsValidLowercaseGuidWithNoBraces: Result = {result}"
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        "StringExtensions.IsValidLowercaseGuidWithNoBraces: Done."
-                    );
-
-                    return result;
-                }
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** SUCCESS *** The parameter 'value' is not blank.  Continuing..."
-                );
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "StringExtensions.IsValidLowercaseGuidWithNoBraces: Validating the format of the 'value' parameter..."
-                );
+                if (string.IsNullOrWhiteSpace(value)) return result;
 
                 result = Regex.IsMatch(value, GuidRegexLowercaseNoBraces);
             }
-            catch (Exception ex)
+            catch
             {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
                 result = false;
             }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"StringExtensions.IsValidLowercaseGuidWithNoBraces: Result = {result}"
-            );
 
             return result;
         }

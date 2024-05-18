@@ -45,6 +45,9 @@
 - [DateTimeExtensions](#T-xyLOGIX-Core-Extensions-DateTimeExtensions 'xyLOGIX.Core.Extensions.DateTimeExtensions')
   - [ToRFC3339(date)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToRFC3339-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToRFC3339(System.DateTime)')
   - [ToSentencePart(dateTime)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToSentencePart-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToSentencePart(System.DateTime)')
+- [DateTimeOffsetExtensions](#T-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions')
+  - [IsWithinXSecondsOf(dto1,dto2,seconds)](#M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTimeOffset,System-DateTimeOffset,System-Int32- 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions.IsWithinXSecondsOf(System.DateTimeOffset,System.DateTimeOffset,System.Int32)')
+  - [IsWithinXSecondsOf(dto1,dto2,seconds)](#M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTime,System-DateTimeOffset,System-Int32- 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions.IsWithinXSecondsOf(System.DateTime,System.DateTimeOffset,System.Int32)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
   - [AddDistinct\`\`2(dictionary,key,value)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1- 'xyLOGIX.Core.Extensions.DictionaryExtensions.AddDistinct``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)')
   - [MergeWith\`\`2(target,quote)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})')
@@ -1491,6 +1494,88 @@ returned.
 | ---- | ---- | ----------- |
 | dateTime | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) A [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
 that is to be expressed as part of a sentence. |
+
+<a name='T-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions'></a>
+## DateTimeOffsetExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension methods for [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset')
+value(s).
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTimeOffset,System-DateTimeOffset,System-Int32-'></a>
+### IsWithinXSecondsOf(dto1,dto2,seconds) `method`
+
+##### Summary
+
+Determines if `dto1` is within `seconds`
+second(s) of `dto2`, where `dto1` and
+`dto2` are both instances of
+[DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset').
+
+##### Returns
+
+`true` if the two
+[DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') value(s), `dto1` and
+`dto2`, are equal to or less than `seconds`
+apart.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dto1 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) One of the
+[DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') value(s) to be compared. |
+| dto2 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) The other of the two
+[DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') value(s) to be compared. |
+| seconds | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A positive [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') that
+gives the number of seconds that the difference between
+`dto1` and `dto2` must be within. |
+
+##### Remarks
+
+This method measures the time difference between
+`dto1` and `dto2` to the nearest
+millisecond.
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTime,System-DateTimeOffset,System-Int32-'></a>
+### IsWithinXSecondsOf(dto1,dto2,seconds) `method`
+
+##### Summary
+
+Determines if `dto1` is within `seconds`
+second(s) of `dto2`, where `dto1` and
+`dto2` are both instances of
+[DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset').
+
+##### Returns
+
+`true` if the two
+[DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') value(s), `dto1` and
+`dto2`, are equal to or less than `seconds`
+apart.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dto1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) One of the
+[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value(s) to be compared. |
+| dto2 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) The other of the two
+[DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') value(s) to be compared. |
+| seconds | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A positive [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') that
+gives the number of seconds that the difference between
+`dto1` and `dto2` must be within. |
+
+##### Remarks
+
+This method measures the time difference between
+`dto1` and `dto2` to the nearest
+millisecond.
 
 <a name='T-xyLOGIX-Core-Extensions-DictionaryExtensions'></a>
 ## DictionaryExtensions `type`

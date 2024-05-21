@@ -395,6 +395,7 @@
   - [IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
   - [WhiteSpaceRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex 'xyLOGIX.Core.Extensions.StringExtensions.WhiteSpaceRegex')
   - [AnyContainNoCase(collection,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AnyContainNoCase(System.Collections.Generic.IEnumerable{System.String},System.String)')
+  - [AreAnyLettersLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AreAnyLettersLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AreAnyLettersLowercase(System.String)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsDecimal-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsDecimal(System.String)')
   - [AsDouble(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsDouble-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsDouble(System.String)')
   - [AsProseList\`\`1(quote,selectorFunc)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsProseList``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.AsProseList``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})')
@@ -7573,6 +7574,26 @@ collection, regardless of case; `false` otherwise.
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | Collection to search. |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Value to compare. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-AreAnyLettersLowercase-System-String-'></a>
+### AreAnyLettersLowercase(value) `method`
+
+##### Summary
+
+Determines if the specified `value` contains any letters that
+are recognized as lowercase.
+
+##### Returns
+
+`true` if the specified `value` has
+at least one lowercase letter; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose
+characters are to be checked. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AsDecimal-System-String-'></a>
 ### AsDecimal(value) `method`

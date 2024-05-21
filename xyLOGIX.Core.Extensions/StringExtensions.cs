@@ -129,6 +129,49 @@ namespace xyLOGIX.Core.Extensions
             => collection.Any(s => s.ContainsNoCase(value));
 
         /// <summary>
+        /// Determines if the specified <paramref name="value" /> contains any letters that
+        /// are recognized as lowercase.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> whose
+        /// characters are to be checked.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> has
+        /// at least one lowercase letter; <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool AreAnyLettersLowercase(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                for (var i = 0; i < value.Length; i++)
+                {
+                    if (!char.IsLower(value[i])) continue;
+
+                    /*
+                     * If we are here, then we've encountered a lowercase letter.
+                     */
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Attempts to express the provided <see cref="T:System.String" />
         /// <paramref name="value" /> as a <see cref="T:System.Decimal" /> value.
         /// </summary>

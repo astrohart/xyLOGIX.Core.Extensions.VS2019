@@ -518,9 +518,9 @@ namespace xyLOGIX.Core.Extensions
             => value == decimal.Zero;
 
         /// <summary>
-        /// Rounds the specified <paramref name="value" /> to the nearest cent, assuming
-        /// that the specified <paramref name="value" /> is denominated in
-        /// <c>U.S. Dollars (USD)</c>.
+        /// Rounds the specified <paramref name="value" /> to the nearest cent, using
+        /// banker's rounding, assuming that the specified <paramref name="value" /> is
+        /// denominated in <c>U.S. Dollars (USD)</c>.
         /// </summary>
         /// <param name="value">
         /// (Required.) The <see cref="T:System.Decimal" /> value that

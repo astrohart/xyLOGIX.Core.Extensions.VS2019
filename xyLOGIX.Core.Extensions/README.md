@@ -331,6 +331,7 @@
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonzero-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNonzero(System.Nullable{System.Decimal})')
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsPositive-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsPositive(System.Nullable{System.Decimal})')
   - [IsValid(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsValid-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsValid(System.Nullable{System.Decimal})')
+  - [ToNearestCent(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-ToNearestCent-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.ToNearestCent(System.Nullable{System.Decimal})')
 - [NullableDoubleExtensions](#T-xyLOGIX-Core-Extensions-NullableDoubleExtensions 'xyLOGIX.Core.Extensions.NullableDoubleExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsNegative-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NullableDoubleExtensions.IsNegative(System.Nullable{System.Double})')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableDoubleExtensions-IsNonzero-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NullableDoubleExtensions.IsNonzero(System.Nullable{System.Double})')
@@ -6425,6 +6426,33 @@ Indicates whether the specified `value` is non-
 | ---- | ---- | ----------- |
 | value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | A nullable [decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.decimal 'System.decimal') value to be
 checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-ToNearestCent-System-Nullable{System-Decimal}-'></a>
+### ToNearestCent(value) `method`
+
+##### Summary
+
+Rounds the specified `value` to the nearest cent, assuming
+that the specified `value` is denominated in
+`U.S. Dollars (USD)`.
+
+##### Returns
+
+Result of the rounding, using banker's rounding; or
+[Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.Zero 'System.Decimal.Zero') if not successful.
+
+
+
+[Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.Zero 'System.Decimal.Zero') is also returned if
+[Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.Zero 'System.Decimal.Zero') or less is passed as the argument of
+`value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | (Required.) The [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value that
+is to be rounded. |
 
 <a name='T-xyLOGIX-Core-Extensions-NullableDoubleExtensions'></a>
 ## NullableDoubleExtensions `type`

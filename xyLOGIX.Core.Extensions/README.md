@@ -46,6 +46,7 @@
   - [ToRFC3339(date)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToRFC3339-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToRFC3339(System.DateTime)')
   - [ToSentencePart(dateTime)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToSentencePart-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToSentencePart(System.DateTime)')
 - [DateTimeOffsetExtensions](#T-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions')
+  - [IsMoreRecentThan(time1,time2)](#M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsMoreRecentThan-System-DateTimeOffset,System-DateTimeOffset- 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions.IsMoreRecentThan(System.DateTimeOffset,System.DateTimeOffset)')
   - [IsWithinXSecondsOf(dto1,dto2,seconds)](#M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTimeOffset,System-DateTimeOffset,System-Int32- 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions.IsWithinXSecondsOf(System.DateTimeOffset,System.DateTimeOffset,System.Int32)')
   - [IsWithinXSecondsOf(dto1,dto2,seconds)](#M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTime,System-DateTimeOffset,System-Int32- 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions.IsWithinXSecondsOf(System.DateTime,System.DateTimeOffset,System.Int32)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
@@ -1509,6 +1510,37 @@ xyLOGIX.Core.Extensions
 
 Exposes static extension methods for [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset')
 value(s).
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsMoreRecentThan-System-DateTimeOffset,System-DateTimeOffset-'></a>
+### IsMoreRecentThan(time1,time2) `method`
+
+##### Summary
+
+Determines whether `time1` is closer to the present than
+`time2`.
+
+##### Returns
+
+`true` if `time1` is more recent
+than `time2`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| time1 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) A [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') that should be compared to
+`time2`. |
+| time2 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) A [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') that
+should be compared to `time2`. |
+
+##### Remarks
+
+If either `time1`, `time2`, or
+both are in the future, then this method returns `false`.
+
+
+
+This method concerns itself only with times that are in the relative past.
 
 <a name='M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTimeOffset,System-DateTimeOffset,System-Int32-'></a>
 ### IsWithinXSecondsOf(dto1,dto2,seconds) `method`

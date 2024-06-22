@@ -10,6 +10,55 @@ namespace xyLOGIX.Core.Extensions
     public static class DateTimeOffsetExtensions
     {
         /// <summary>
+        /// Determines whether <paramref name="time1" />  is closer to the present than
+        /// <paramref name="time2" />.
+        /// </summary>
+        /// <param name="time1">
+        /// (Required.) A <see cref="T:System.DateTimeOffset" /> that should be compared to
+        /// <paramref name="time2" />.
+        /// </param>
+        /// <param name="time2">
+        /// (Required.) A <see cref="T:System.DateTimeOffset" /> that
+        /// should be compared to <paramref name="time2" />.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if <paramref name="time1" /> is more recent
+        /// than <paramref name="time2" />.
+        /// </returns>
+        /// <remarks>
+        /// If either <paramref name="time1" />, <paramref name="time2" />, or
+        /// both are in the future, then this method returns <see langword="false" />.
+        /// <para />
+        /// This method concerns itself only with times that are in the relative past.
+        /// </remarks>
+        public static bool IsMoreRecentThan(
+            this DateTimeOffset time1,
+            DateTimeOffset time2
+        )
+        {
+            var result = false;
+
+            try
+            {
+                // Return false if either time1 or time2 are in the future.  We're concerned only with times that are in the relative past.
+                if (time1 > DateTime.UtcNow) return result;
+                if (time2 > DateTime.UtcNow) return result;
+
+                // Compare time1 and time2 and return true if time1 is more recent (i.e., in the future with respect to) time2
+                result = time1 > time2;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines if <paramref name="dto1" />  is within <paramref name="seconds" />
         /// second(s) of <paramref name="dto2" />, where <paramref name="dto1" /> and
         /// <paramref name="dto2" />  are both instances of

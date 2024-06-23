@@ -6184,8 +6184,7 @@ prior to being returned by this method.
 
 ##### Summary
 
-Writes a list variable out as a set {1,2,3,4} e.g., as in
-mathematics. Stops past the tenth item.
+Writes a list variable out as a Pythonic list, i.e., [1,2,3,4].  Stops past the tenth item.
 
 ##### Returns
 

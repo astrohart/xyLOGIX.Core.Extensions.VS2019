@@ -321,6 +321,7 @@
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
+  - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IEnumerable{``0})')
 - [LongExtensions](#T-xyLOGIX-Core-Extensions-LongExtensions 'xyLOGIX.Core.Extensions.LongExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNegative-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNegative(System.Int64)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNonNegative-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNonNegative(System.Int64)')
@@ -6224,6 +6225,34 @@ The `collection`, formatted as a set string.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Collection to be written. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | The type of each element of the list. |
+
+##### Remarks
+
+This method is helpful for writing some of the members of a
+collection to a log file.
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0}-'></a>
+### ToSetString\`\`1(collection) `method`
+
+##### Summary
+
+Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the tenth item.
+
+##### Returns
+
+The `collection`, formatted as a set string.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection to be written. |
 
 ##### Generic Types
 

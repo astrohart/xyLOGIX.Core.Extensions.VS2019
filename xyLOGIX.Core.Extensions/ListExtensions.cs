@@ -501,5 +501,38 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
+        
+        /// <summary>
+        /// Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the tenth item.
+        /// </summary>
+        /// <param name="collection"> Collection to be written. </param>
+        /// <typeparam name="T"> The type of each element of the list. </typeparam>
+        /// <returns> The <paramref name="collection" />, formatted as a set string. </returns>
+        /// <remarks>
+        /// This method is helpful for writing some of the members of a
+        /// collection to a log file.
+        /// </remarks>
+        public static string ToSetString<T>(this IEnumerable<T> collection)
+        {
+            if (collection == null || !collection.Any()) return "[]";
+
+            var result = "[ ";
+            foreach (var item in collection.Cast<object>()
+                                           .Where(item => item != null)
+                                           .Take(10))
+                if (item is string)
+                    result += $@"'{item}'" + ", ";
+                else
+                    result += item + ", ";
+
+            if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
+                result = result.Remove(result.Length - 2);
+
+            if (collection.Count() > 10) result += ", ...";
+
+            result += " ]";
+
+            return result;
+        }
     }
 }

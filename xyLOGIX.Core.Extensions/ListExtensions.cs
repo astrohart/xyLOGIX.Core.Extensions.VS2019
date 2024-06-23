@@ -435,8 +435,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Writes a list variable out as a set {1,2,3,4} e.g., as in
-        /// mathematics. Stops past the tenth item.
+        /// Writes a list variable out as a Pythonic list, i.e., [1,2,3,4].  Stops past the tenth item.
         /// </summary>
         /// <param name="list"> List to be written. </param>
         /// <typeparam name="T"> The type of each element of the list. </typeparam>

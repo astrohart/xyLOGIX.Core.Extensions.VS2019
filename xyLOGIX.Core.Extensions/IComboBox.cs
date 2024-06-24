@@ -61,7 +61,7 @@ namespace xyLOGIX.Core.Extensions
         AutoCompleteSource AutoCompleteSource { get; set; }
 
         /// <summary>
-        /// Gets or sets the data quote for this
+        /// Gets or sets the data source for this
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
         /// </summary>
         /// <returns>

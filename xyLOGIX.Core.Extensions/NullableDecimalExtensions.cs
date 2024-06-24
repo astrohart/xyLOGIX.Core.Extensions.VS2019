@@ -24,6 +24,22 @@ namespace xyLOGIX.Core.Extensions
             => value != null && value.HasValue && value.Value < decimal.Zero;
 
         /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is
+        /// non-positive; i.e., zero, or a negative number.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) Value to be compared.  Must be of
+        /// <see cref="T:System.Decimal" /> data type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// nonpositive; <see langword="false" /> if the <paramref name="value" /> is
+        /// strictly greater than<see cref="F:System.Decimal.Zero" />.
+        /// </returns>
+        public static bool IsNonPositive(this decimal? value)
+            => value != null && value.HasValue && value.Value <= decimal.Zero;
+
+        /// <summary>
         /// Indicates whether the specified <paramref name="value" /> is non-
         /// <see langword="null" /> and has a numerical value that is strictly not equal to
         /// zero.

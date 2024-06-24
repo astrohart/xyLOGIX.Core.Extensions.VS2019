@@ -330,6 +330,7 @@
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsPositive-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsPositive(System.Int64)')
 - [NullableDecimalExtensions](#T-xyLOGIX-Core-Extensions-NullableDecimalExtensions 'xyLOGIX.Core.Extensions.NullableDecimalExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNegative-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNegative(System.Nullable{System.Decimal})')
+  - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonPositive-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNonPositive(System.Nullable{System.Decimal})')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonzero-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNonzero(System.Nullable{System.Decimal})')
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsPositive-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsPositive(System.Nullable{System.Decimal})')
   - [IsValid(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsValid-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsValid(System.Nullable{System.Decimal})')
@@ -6416,6 +6417,27 @@ zero; `false` otherwise.
 | ---- | ---- | ----------- |
 | value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | A nullable [decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.decimal 'System.decimal') value to be
 checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonPositive-System-Nullable{System-Decimal}-'></a>
+### IsNonPositive(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is
+non-positive; i.e., zero, or a negative number.
+
+##### Returns
+
+`true` if the specified `value` is
+nonpositive; `false` if the `value` is
+strictly greater than[Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.Zero 'System.Decimal.Zero').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | (Required.) Value to be compared.  Must be of
+[Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonzero-System-Nullable{System-Decimal}-'></a>
 ### IsNonzero(value) `method`

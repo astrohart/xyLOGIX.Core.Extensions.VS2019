@@ -2449,7 +2449,7 @@ specified value is not one of the values of
 
 ##### Summary
 
-Gets or sets the data quote for this
+Gets or sets the data source for this
 [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Returns

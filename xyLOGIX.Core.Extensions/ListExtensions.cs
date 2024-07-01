@@ -27,13 +27,98 @@ namespace xyLOGIX.Core.Extensions
         /// Element to be added to the collection, unless it's in the
         /// collection already.
         /// </param>
+        /// <remarks>
+        /// This method does nothing if the values of either the
+        /// <paramref name="list" /> or the <paramref name="item" /> parameter(s) are set
+        /// to a <see langword="null" /> reference.
+        /// </remarks>
         /// <typeparam name="T"> Type of the new element. </typeparam>
         public static void AddDistinct<T>(this IList<T> list, T item)
         {
-            if (list == null) return;
-            if (list.Contains(item)) return;
+            DebugUtils.WriteLine(
+                DebugLevel.Info,
+                "ListExtensions.AddDistinct: Checking whether the 'list' method parameter has a null reference for a value..."
+            );
+
+            // Check to see if the required parameter, list, is null. If it is, send an
+            // error to the log file and quit, returning from this method.
+            if (list == null)
+            {
+                // The parameter, 'list', is required and is not supposed to have a NULL value.
+                DebugUtils.WriteLine(
+                    DebugLevel.Error,
+                    "ListExtensions.AddDistinct: *** *ERROR *** A null reference was passed for the 'list' method parameter.  Stopping."
+                );
+
+                // stop.
+                return;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Info,
+                "ListExtensions.AddDistinct: *** SUCCESS *** We have been passed a valid object reference for the 'list' method parameter."
+            );
+
+            DebugUtils.WriteLine(
+                DebugLevel.Info,
+                "ListExtensions.AddDistinct: Checking whether the 'item' method parameter has a null reference for a value..."
+            );
+
+            // Check to see if the required parameter, item, is null. If it is, send an
+            // error to the log file and quit, returning from this method.
+            if (item == null)
+            {
+                // The parameter, 'item', is required and is not supposed to have a NULL value.
+                DebugUtils.WriteLine(
+                    DebugLevel.Error,
+                    "ListExtensions.AddDistinct: *** *ERROR *** A null reference was passed for the 'item' method parameter.  Stopping."
+                );
+
+                // stop.
+                return;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Info,
+                "ListExtensions.AddDistinct: *** SUCCESS *** We have been passed a valid object reference for the 'item' method parameter."
+            );
+
+            DebugUtils.WriteLine(
+                DebugLevel.Info,
+                "*** ListExtensions.AddDistinct: Checking whether the collection does NOT already contain the specified item..."
+            );
+
+            // Check to see whether the collection does NOT already contain the specified item.
+            // Otherwise, write an error message to the log file,
+            // and then terminate the execution of this method.
+            if (list.Contains(item))
+            {
+                // The collection already contains the specified item.  This is not desirable.
+                DebugUtils.WriteLine(
+                    DebugLevel.Error,
+                    "*** ERROR *** The collection already contains the specified item.  Stopping..."
+                );
+
+                // stop.
+                return;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Info,
+                "ListExtensions.AddDistinct: *** SUCCESS *** The collection does NOT already contain the specified item.  Proceeding..."
+            );
+
+            DebugUtils.WriteLine(
+                DebugLevel.Info,
+                "ListExtensions.AddDistinct: Adding the specified item to the collection..."
+            );
 
             list.Add(item);
+
+            DebugUtils.WriteLine(
+                DebugLevel.Info,
+                "ListExtensions.AddDistinct: *** SUCCESS *** The specified item has been added to the collection."
+            );
         }
 
         /// <summary>
@@ -435,7 +520,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Writes a list variable out as a Pythonic list, i.e., [1,2,3,4].  Stops past the tenth item.
+        /// Writes a list variable out as a Pythonic list, i.e., [1,2,3,4].  Stops past the
+        /// tenth item.
         /// </summary>
         /// <param name="list"> List to be written. </param>
         /// <typeparam name="T"> The type of each element of the list. </typeparam>
@@ -501,9 +587,10 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
-        
+
         /// <summary>
-        /// Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the tenth item.
+        /// Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the
+        /// tenth item.
         /// </summary>
         /// <param name="collection"> Collection to be written. </param>
         /// <typeparam name="T"> The type of each element of the list. </typeparam>

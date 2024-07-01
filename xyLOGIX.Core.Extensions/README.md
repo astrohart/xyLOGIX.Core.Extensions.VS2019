@@ -5929,6 +5929,12 @@ collection already. |
 | ---- | ----------- |
 | T | Type of the new element. |
 
+##### Remarks
+
+This method does nothing if the values of either the
+`list` or the `item` parameter(s) are set
+to a `null` reference.
+
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0-'></a>
 ### AddDistinct\`\`1(collection,item) `method`
 
@@ -6186,7 +6192,8 @@ prior to being returned by this method.
 
 ##### Summary
 
-Writes a list variable out as a Pythonic list, i.e., [1,2,3,4].  Stops past the tenth item.
+Writes a list variable out as a Pythonic list, i.e., [1,2,3,4].  Stops past the
+tenth item.
 
 ##### Returns
 
@@ -6243,7 +6250,8 @@ collection to a log file.
 
 ##### Summary
 
-Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the tenth item.
+Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the
+tenth item.
 
 ##### Returns
 

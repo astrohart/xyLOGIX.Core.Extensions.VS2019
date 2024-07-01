@@ -313,7 +313,7 @@
   - [AddDistinct\`\`1(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.IList{``0},``0)')
   - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
   - [AddRange\`\`1(list,items)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})')
-  - [Clone\`\`1(quote)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
+  - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
   - [FindIndex\`\`1(list,predicate)](#M-xyLOGIX-Core-Extensions-ListExtensions-FindIndex``1-System-Collections-Generic-IList{``0},System-Predicate{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.FindIndex``1(System.Collections.Generic.IList{``0},System.Predicate{``0})')
   - [IsIdenticalTo\`\`1(left,right)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsIdenticalTo``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.IsIdenticalTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
@@ -5992,7 +5992,7 @@ added to the specified `list`. |
 the `list`. |
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}-'></a>
-### Clone\`\`1(quote) `method`
+### Clone\`\`1(source) `method`
 
 ##### Summary
 
@@ -6002,13 +6002,13 @@ to the clone.
 ##### Returns
 
 Reference to the duplicate of the collection referenced by
-`quote`.
+`source`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| quote | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to the collection to make a duplicate of. |
+| source | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to the collection to make a duplicate of. |
 
 ##### Generic Types
 

@@ -26,14 +26,6 @@ namespace xyLOGIX.Core.Extensions
     public static class StringExtensions
     {
         /// <summary>
-        /// A <see cref="T:System.String" /> containing a regular expression to match a
-        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
-        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
-        /// </summary>
-        private const string GuidRegexLowercaseNoBraces =
-            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
-
-        /// <summary>
         /// Collection of strings which are short words but are not acronyms per
         /// se.
         /// </summary>
@@ -43,6 +35,14 @@ namespace xyLOGIX.Core.Extensions
             "al-", "el-", "thus", "if", "then", "Jr.", "Sr.", "Ph.D.",
             "M.S.", "M.D."
         };
+
+        /// <summary>
+        /// A <see cref="T:System.String" /> containing a regular expression to match a
+        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
+        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
+        /// </summary>
+        private const string GuidRegexLowercaseNoBraces =
+            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
 
         /// <summary> Collection of strings that are commonly-used acronyms. </summary>
         private static readonly string[] AcronymList =
@@ -654,6 +654,59 @@ namespace xyLOGIX.Core.Extensions
             {
                 return !string.IsNullOrWhiteSpace(value) &&
                        value.Any(char.IsDigit);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> ends with any of the specified
+        /// <paramref name="endings" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to be
+        /// checked.
+        /// </param>
+        /// <param name="endings">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// elements, each of which is to be assessed against the specified
+        /// <paramref name="value" /> as being what it ends with.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// ends with any of the specified <paramref name="endings" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool EndsWithAny(
+            this string value,
+            params string[] endings
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (endings == null) return result;
+                if (value.Length == 0) return result;
+
+                foreach (var ending in endings)
+                {
+                    if (string.IsNullOrWhiteSpace(ending)) continue;
+                    if (!value.EndsWith(ending)) continue;
+
+                    result = true;
+                    break;
+                }
             }
             catch (Exception ex)
             {

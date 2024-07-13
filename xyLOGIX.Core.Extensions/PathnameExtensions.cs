@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostSharp.Patterns.Diagnostics;
+using System;
 using System.IO;
 using xyLOGIX.Core.Debug;
 
@@ -9,6 +10,7 @@ namespace xyLOGIX.Core.Extensions
     /// order to help a caller in using <see cref="T:System.String" /> variables known
     /// or suspected to contain the fully-qualified pathname of a folder or a file.
     /// </summary>
+    [Log(AttributeExclude = true)]
     public static class PathnameExtensions
     {
         /// <summary>
@@ -43,16 +45,76 @@ namespace xyLOGIX.Core.Extensions
         /// <b>NOTE:</b> This method is meant to be used as an extension method of type
         /// <see cref="T:System.String" />.
         /// </remarks>
-        public static bool HasExtension(this string pathname, string extension)
+        public static bool HasExtension(
+            this string pathname,
+            string extension
+        )
         {
             var result = false;
 
             try
             {
-                if (!FileExists(pathname)) return result;
                 if (string.IsNullOrWhiteSpace(extension)) return result;
 
                 result = extension.Equals(Path.GetExtension(pathname));
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Extension method that can be used with all
+        /// <see cref="T:System.String" /> variables to determine whether a particular
+        /// file's <paramref name="pathname" /> has a given filename
+        /// <paramref name="extensions" />.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the fully-qualified pathname whose filename extension is to be tested.
+        /// </param>
+        /// <param name="extensions">
+        /// (Required.) One or more <see cref="T:System.String" /> values indicating the
+        /// possible extension(s) that the provided <paramref name="pathname" /> must have.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="pathname" />
+        /// has the specified filename <paramref name="extensions" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        /// <remarks>
+        /// If the <paramref name="pathname" /> or <paramref name="extensions" />
+        /// have <see langword="null" /> or blank <see cref="T:System.String" /> values as
+        /// their arguments, then this method returns <see langword="false" />.
+        /// <para />
+        /// <see langword="false" /> is also returned if the argument of the
+        /// <paramref name="pathname" /> parameter refers to a file that does not exist on
+        /// the filesystem.
+        /// <para />
+        /// <b>NOTE:</b> This method is meant to be used as an extension method of type
+        /// <see cref="T:System.String" />.
+        /// </remarks>
+        public static bool HasAnyOfTheseExtensions(
+            this string pathname,
+            params string[] extensions
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (extensions == null) return result;
+                if (extensions.Length == 0) return result;
+                if (!FileExists(pathname)) return result;
+
+                result = Path.GetExtension(pathname)
+                             .IsAnyOf(extensions);
             }
             catch (Exception ex)
             {

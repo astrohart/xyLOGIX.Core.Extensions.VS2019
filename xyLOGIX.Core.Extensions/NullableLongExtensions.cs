@@ -64,18 +64,6 @@ namespace xyLOGIX.Core.Extensions
             => value != null && value.HasValue && value.Value > 0L;
 
         /// <summary>
-        /// Indicates whether the specified <paramref name="value" /> is strictly
-        /// positive (i.e., greater than zero).
-        /// </summary>
-        /// <param name="value"> A <see cref="T:System.Int64" /> value to be checked. </param>
-        /// <returns>
-        /// <see langword="true" /> if the <paramref name="value" /> is strictly
-        /// greater than zero; <see langword="false" /> otherwise.
-        /// </returns>
-        public static bool IsPositive(this long value)
-            => value > 0L;
-
-        /// <summary>
         /// Indicates whether the specified <paramref name="value" /> is non-
         /// <see langword="null" />.
         /// </summary>

@@ -349,7 +349,6 @@
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsNegative-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsNegative(System.Nullable{System.Int64})')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsNonzero-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsNonzero(System.Nullable{System.Int64})')
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsPositive-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsPositive(System.Nullable{System.Int64})')
-  - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsPositive-System-Int64- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsPositive(System.Int64)')
   - [IsValid(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsValid-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsValid(System.Nullable{System.Int64})')
 - [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Double)')
@@ -381,6 +380,7 @@
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Decimal)')
 - [PathnameExtensions](#T-xyLOGIX-Core-Extensions-PathnameExtensions 'xyLOGIX.Core.Extensions.PathnameExtensions')
   - [FileExists(pathname)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.FileExists(System.String)')
+  - [HasAnyOfTheseExtensions(pathname,extensions)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasAnyOfTheseExtensions(System.String,System.String[])')
   - [HasExtension(pathname,extension)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasExtension-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasExtension(System.String,System.String)')
 - [Resources](#T-xyLOGIX-Core-Extensions-Properties-Resources 'xyLOGIX.Core.Extensions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Properties.Resources.Culture')
@@ -6838,25 +6838,6 @@ zero; `false` otherwise.
 | value | [System.Nullable{System.Int64}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Int64}') | A nullable [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be
 checked. |
 
-<a name='M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsPositive-System-Int64-'></a>
-### IsPositive(value) `method`
-
-##### Summary
-
-Indicates whether the specified `value` is strictly
-positive (i.e., greater than zero).
-
-##### Returns
-
-`true` if the `value` is strictly
-greater than zero; `false` otherwise.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | A [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be checked. |
-
 <a name='M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsValid-System-Nullable{System-Int64}-'></a>
 ### IsValid(value) `method`
 
@@ -7519,6 +7500,48 @@ This method is superior to calling the
 [Exists](#M-Alphaleonis-Win32-Filesystem-File-Exists 'Alphaleonis.Win32.Filesystem.File.Exists') method.  This is due
 to the fact that the other method throws an exception if it is passed a blank
 string, whereas this method simply returns `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]-'></a>
+### HasAnyOfTheseExtensions(pathname,extensions) `method`
+
+##### Summary
+
+Extension method that can be used with all
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variables to determine whether a particular
+file's `pathname` has a given filename
+`extensions`.
+
+##### Returns
+
+`true` if the specified `pathname`
+has the specified filename `extensions`;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the fully-qualified pathname whose filename extension is to be tested. |
+| extensions | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values indicating the
+possible extension(s) that the provided `pathname` must have. |
+
+##### Remarks
+
+If the `pathname` or `extensions`
+have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values as
+their arguments, then this method returns `false`.
+
+
+
+`false` is also returned if the argument of the
+`pathname` parameter refers to a file that does not exist on
+the filesystem.
+
+
+
+This method is meant to be used as an extension method of type
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String').
 
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-HasExtension-System-String,System-String-'></a>
 ### HasExtension(pathname,extension) `method`

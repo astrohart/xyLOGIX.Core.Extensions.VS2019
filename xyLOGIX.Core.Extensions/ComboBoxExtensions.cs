@@ -1,4 +1,4 @@
-﻿using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Collections;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;

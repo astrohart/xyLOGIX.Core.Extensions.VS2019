@@ -21,7 +21,7 @@ namespace xyLOGIX.Core.Extensions
         /// The <see cref="T:System.Windows.Forms.AccessibleObject" /> assigned
         /// to the control.
         /// </returns>
-        AccessibleObject AccessibilityObject { get; }
+        AccessibleObject AccessibilityObject { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets the default action description of the control for use by
@@ -31,7 +31,7 @@ namespace xyLOGIX.Core.Extensions
         /// The default action description of the control for use by
         /// accessibility client applications.
         /// </returns>
-        string AccessibleDefaultActionDescription { get; set; }
+        string AccessibleDefaultActionDescription { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the description of the control used by accessibility
@@ -41,7 +41,7 @@ namespace xyLOGIX.Core.Extensions
         /// The description of the control used by accessibility client
         /// applications. The default is <see langword="null" />.
         /// </returns>
-        string AccessibleDescription { get; set; }
+        string AccessibleDescription { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the name of the control used by accessibility client
@@ -51,7 +51,7 @@ namespace xyLOGIX.Core.Extensions
         /// The name of the control used by accessibility client applications.
         /// The default is <see langword="null" />.
         /// </returns>
-        string AccessibleName { get; set; }
+        string AccessibleName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the accessible role of the control </summary>
         /// <returns>
@@ -64,7 +64,7 @@ namespace xyLOGIX.Core.Extensions
         /// value assigned is not one of the
         /// <see cref="T:System.Windows.Forms.AccessibleRole" /> values.
         /// </exception>
-        AccessibleRole AccessibleRole { get; set; }
+        AccessibleRole AccessibleRole { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control can accept data
@@ -75,7 +75,7 @@ namespace xyLOGIX.Core.Extensions
         /// the control; otherwise, <see langword="false" />. The default is
         /// <see langword="false" />.
         /// </returns>
-        bool AllowDrop { get; set; }
+        bool AllowDrop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the edges of the container to which a control is bound
@@ -86,7 +86,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.AnchorStyles" /> values. The default is
         /// <see langword="Top" /> and <see langword="Left" />.
         /// </returns>
-        AnchorStyles Anchor { get; set; }
+        AnchorStyles Anchor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets where this control is scrolled to in
@@ -98,7 +98,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Drawing.Point" /> specifying the scroll
         /// location. The default is the upper-left corner of the control.
         /// </returns>
-        Point AutoScrollOffset { get; set; }
+        Point AutoScrollOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the background color for the control. </summary>
         /// <returns>
@@ -106,14 +106,14 @@ namespace xyLOGIX.Core.Extensions
         /// background color of the control. The default is the value of the
         /// <see cref="P:System.Windows.Forms.Control.DefaultBackColor" /> property.
         /// </returns>
-        Color BackColor { get; set; }
+        Color BackColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the background image displayed in the control. </summary>
         /// <returns>
         /// An <see cref="T:System.Drawing.Image" /> that represents the image to
         /// display in the background of the control.
         /// </returns>
-        Image BackgroundImage { get; set; }
+        Image BackgroundImage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the background image layout as defined in the
@@ -133,7 +133,7 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// specified enumeration value does not exist.
         /// </exception>
-        ImageLayout BackgroundImageLayout { get; set; }
+        ImageLayout BackgroundImageLayout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the <see cref="T:System.Windows.Forms.BindingContext" />
@@ -143,7 +143,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.BindingContext" /> for the
         /// control.
         /// </returns>
-        BindingContext BindingContext { get; set; }
+        BindingContext BindingContext { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets the distance, in pixels, between the bottom edge of the control
@@ -154,7 +154,7 @@ namespace xyLOGIX.Core.Extensions
         /// pixels, between the bottom edge of the control and the top edge of its
         /// container's client area.
         /// </returns>
-        int Bottom { get; }
+        int Bottom { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets the size and location of the control including its
@@ -165,21 +165,21 @@ namespace xyLOGIX.Core.Extensions
         /// parent control that represents the size and location of the control including
         /// its nonclient elements.
         /// </returns>
-        Rectangle Bounds { get; set; }
+        Rectangle Bounds { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets a value indicating whether the control can receive focus. </summary>
         /// <returns>
         /// <see langword="true" /> if the control can receive focus; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool CanFocus { get; }
+        bool CanFocus { [DebuggerStepThrough] get; }
 
         /// <summary> Gets a value indicating whether the control can be selected. </summary>
         /// <returns>
         /// <see langword="true" /> if the control can be selected; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool CanSelect { get; }
+        bool CanSelect { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control has captured the
@@ -189,7 +189,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the control has captured the mouse;
         /// otherwise, <see langword="false" />.
         /// </returns>
-        bool Capture { get; set; }
+        bool Capture { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control causes validation
@@ -200,21 +200,21 @@ namespace xyLOGIX.Core.Extensions
         /// performed on any controls requiring validation when it receives focus;
         /// otherwise, <see langword="false" />. The default is <see langword="true" />.
         /// </returns>
-        bool CausesValidation { get; set; }
+        bool CausesValidation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the rectangle that represents the client area of the control. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Rectangle" /> that represents the
         /// client area of the control.
         /// </returns>
-        Rectangle ClientRectangle { get; }
+        Rectangle ClientRectangle { [DebuggerStepThrough] get; }
 
         /// <summary> Gets or sets the height and width of the client area of the control. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Size" /> that represents the dimensions
         /// of the client area of the control.
         /// </returns>
-        Size ClientSize { get; set; }
+        Size ClientSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets the name of the company or creator of the application containing
@@ -224,7 +224,7 @@ namespace xyLOGIX.Core.Extensions
         /// The company name or creator of the application containing the
         /// control.
         /// </returns>
-        string CompanyName { get; }
+        string CompanyName { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets a value indicating whether the control, or one of its child
@@ -234,14 +234,14 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the control or one of its child controls
         /// currently has the input focus; otherwise, <see langword="false" />.
         /// </returns>
-        bool ContainsFocus { get; }
+        bool ContainsFocus { [DebuggerStepThrough] get; }
 
         /// <summary> Gets or sets the shortcut menu associated with the control. </summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.ContextMenu" /> that represents
         /// the shortcut menu associated with the control.
         /// </returns>
-        ContextMenu ContextMenu { get; set; }
+        ContextMenu ContextMenu { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the
@@ -254,21 +254,21 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.ContextMenuStrip" /> . The default is
         /// <see langword="null" />.
         /// </returns>
-        ContextMenuStrip ContextMenuStrip { get; set; }
+        ContextMenuStrip ContextMenuStrip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the collection of controls contained within the control. </summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.Control.ControlCollection" />
         /// representing the collection of controls contained within the control.
         /// </returns>
-        Control.ControlCollection Controls { get; }
+        Control.ControlCollection Controls { [DebuggerStepThrough] get; }
 
         /// <summary> Gets a value indicating whether the control has been created. </summary>
         /// <returns>
         /// <see langword="true" /> if the control has been created; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool Created { get; }
+        bool Created { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets the cursor that is displayed when the mouse pointer is
@@ -278,7 +278,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.Cursor" /> that represents the
         /// cursor to display when the mouse pointer is over the control.
         /// </returns>
-        Cursor Cursor { get; set; }
+        Cursor Cursor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the data bindings for the control. </summary>
         /// <returns>
@@ -286,21 +286,21 @@ namespace xyLOGIX.Core.Extensions
         /// that contains the <see cref="T:System.Windows.Forms.Binding" /> objects for the
         /// control.
         /// </returns>
-        ControlBindingsCollection DataBindings { get; }
+        ControlBindingsCollection DataBindings { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets the DPI value for the display device where the control is
         /// currently being displayed.
         /// </summary>
         /// <returns> The DPI value of the display device. </returns>
-        int DeviceDpi { get; }
+        int DeviceDpi { [DebuggerStepThrough] get; }
 
         /// <summary> Gets the rectangle that represents the display area of the control. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Rectangle" /> that represents the
         /// display area of the control.
         /// </returns>
-        Rectangle DisplayRectangle { get; }
+        Rectangle DisplayRectangle { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets a value indicating whether the base
@@ -312,7 +312,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.Control" /> class is in the process of
         /// disposing; otherwise, <see langword="false" />.
         /// </returns>
-        bool Disposing { get; }
+        bool Disposing { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets which control borders are docked to its parent control
@@ -327,7 +327,7 @@ namespace xyLOGIX.Core.Extensions
         /// value assigned is not one of the
         /// <see cref="T:System.Windows.Forms.DockStyle" /> values.
         /// </exception>
-        DockStyle Dock { get; set; }
+        DockStyle Dock { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control can respond to
@@ -338,14 +338,14 @@ namespace xyLOGIX.Core.Extensions
         /// interaction; otherwise, <see langword="false" />. The default is
         /// <see langword="true" />.
         /// </returns>
-        bool Enabled { get; set; }
+        bool Enabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets a value indicating whether the control has input focus. </summary>
         /// <returns>
         /// <see langword="true" /> if the control has focus; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool Focused { get; }
+        bool Focused { [DebuggerStepThrough] get; }
 
         /// <summary> Gets or sets the font of the text displayed by the control. </summary>
         /// <returns>
@@ -353,7 +353,7 @@ namespace xyLOGIX.Core.Extensions
         /// displayed by the control. The default is the value of the
         /// <see cref="P:System.Windows.Forms.Control.DefaultFont" /> property.
         /// </returns>
-        Font Font { get; set; }
+        Font Font { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the foreground color of the control. </summary>
         /// <returns>
@@ -361,14 +361,14 @@ namespace xyLOGIX.Core.Extensions
         /// The default is the value of the
         /// <see cref="P:System.Windows.Forms.Control.DefaultForeColor" /> property.
         /// </returns>
-        Color ForeColor { get; set; }
+        Color ForeColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the window handle that the control is bound to. </summary>
         /// <returns>
         /// An <see cref="T:System.IntPtr" /> that contains the window handle (
         /// <see langword="HWND" />) of the control.
         /// </returns>
-        IntPtr Handle { get; }
+        IntPtr Handle { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets a value indicating whether the control contains one or more
@@ -378,11 +378,11 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the control contains one or more child
         /// controls; otherwise, <see langword="false" />.
         /// </returns>
-        bool HasChildren { get; }
+        bool HasChildren { [DebuggerStepThrough] get; }
 
         /// <summary> Gets or sets the height of the control. </summary>
         /// <returns> The height of the control in pixels. </returns>
-        int Height { get; set; }
+        int Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the Input Method Editor (IME) mode of the control. </summary>
         /// <returns>
@@ -394,7 +394,7 @@ namespace xyLOGIX.Core.Extensions
         /// assigned value is not one of the <see cref="T:System.Windows.Forms.ImeMode" />
         /// enumeration values.
         /// </exception>
-        ImeMode ImeMode { get; set; }
+        ImeMode ImeMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control is visible to
@@ -404,14 +404,14 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the control is visible to accessibility
         /// applications; otherwise, <see langword="false" />.
         /// </returns>
-        bool IsAccessible { get; set; }
+        bool IsAccessible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets a value indicating whether the control has been disposed of. </summary>
         /// <returns>
         /// <see langword="true" /> if the control has been disposed of;
         /// otherwise, <see langword="false" />.
         /// </returns>
-        bool IsDisposed { get; }
+        bool IsDisposed { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets a value indicating whether the control has a handle associated
@@ -421,21 +421,21 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if a handle has been assigned to the control;
         /// otherwise, <see langword="false" />.
         /// </returns>
-        bool IsHandleCreated { get; }
+        bool IsHandleCreated { [DebuggerStepThrough] get; }
 
         /// <summary> Gets a value indicating whether the control is mirrored. </summary>
         /// <returns>
         /// <see langword="true" /> if the control is mirrored; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool IsMirrored { get; }
+        bool IsMirrored { [DebuggerStepThrough] get; }
 
         /// <summary> Gets a cached instance of the control's layout engine. </summary>
         /// <returns>
         /// The <see cref="T:System.Windows.Forms.Layout.LayoutEngine" /> for the
         /// control's contents.
         /// </returns>
-        LayoutEngine LayoutEngine { get; }
+        LayoutEngine LayoutEngine { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets the distance, in pixels, between the left edge of the
@@ -446,7 +446,7 @@ namespace xyLOGIX.Core.Extensions
         /// pixels, between the left edge of the control and the left edge of its
         /// container's client area.
         /// </returns>
-        int Left { get; set; }
+        int Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the coordinates of the upper-left corner of the control
@@ -457,14 +457,14 @@ namespace xyLOGIX.Core.Extensions
         /// upper-left corner of the control relative to the upper-left corner of its
         /// container.
         /// </returns>
-        Point Location { get; set; }
+        Point Location { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the space between controls. </summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.Padding" /> representing the
         /// space between controls.
         /// </returns>
-        Padding Margin { get; set; }
+        Padding Margin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the size that is the upper limit that
@@ -476,7 +476,7 @@ namespace xyLOGIX.Core.Extensions
         /// An ordered pair of type <see cref="T:System.Drawing.Size" />
         /// representing the width and height of a rectangle.
         /// </returns>
-        Size MaximumSize { get; set; }
+        Size MaximumSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the size that is the lower limit that
@@ -488,40 +488,40 @@ namespace xyLOGIX.Core.Extensions
         /// An ordered pair of type <see cref="T:System.Drawing.Size" />
         /// representing the width and height of a rectangle.
         /// </returns>
-        Size MinimumSize { get; set; }
+        Size MinimumSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the name of the control. </summary>
         /// <returns> The name of the control. The default is an empty string (""). </returns>
-        string Name { get; set; }
+        string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets padding within the control. </summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.Padding" /> representing the
         /// control's internal spacing characteristics.
         /// </returns>
-        Padding Padding { get; set; }
+        Padding Padding { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the parent container of the control. </summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.Control" /> that represents the
         /// parent or container control of the control.
         /// </returns>
-        Control Parent { get; set; }
+        Control Parent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the size of a rectangular area into which the control can fit. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Size" /> containing the height and
         /// width, in pixels.
         /// </returns>
-        Size PreferredSize { get; }
+        Size PreferredSize { [DebuggerStepThrough] get; }
 
         /// <summary> Gets the product name of the assembly containing the control. </summary>
         /// <returns> The product name of the assembly containing the control. </returns>
-        string ProductName { get; }
+        string ProductName { [DebuggerStepThrough] get; }
 
         /// <summary> Gets the version of the assembly containing the control. </summary>
         /// <returns> The file version of the assembly containing the control. </returns>
-        string ProductVersion { get; }
+        string ProductVersion { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets a value indicating whether the control is currently re-creating
@@ -531,14 +531,14 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the control is currently re-creating its
         /// handle; otherwise, <see langword="false" />.
         /// </returns>
-        bool RecreatingHandle { get; }
+        bool RecreatingHandle { [DebuggerStepThrough] get; }
 
         /// <summary> Gets or sets the window region associated with the control. </summary>
         /// <returns>
         /// The window <see cref="T:System.Drawing.Region" /> associated with the
         /// control.
         /// </returns>
-        Region Region { get; set; }
+        Region Region { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets the distance, in pixels, between the right edge of the control
@@ -549,7 +549,7 @@ namespace xyLOGIX.Core.Extensions
         /// pixels, between the right edge of the control and the left edge of its
         /// container's client area.
         /// </returns>
-        int Right { get; }
+        int Right { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets a value indicating whether control's elements are
@@ -564,21 +564,21 @@ namespace xyLOGIX.Core.Extensions
         /// assigned value is not one of the
         /// <see cref="T:System.Windows.Forms.RightToLeft" /> values.
         /// </exception>
-        RightToLeft RightToLeft { get; set; }
+        RightToLeft RightToLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the height and width of the control. </summary>
         /// <returns>
         /// The <see cref="T:System.Drawing.Size" /> that represents the height
         /// and width of the control in pixels.
         /// </returns>
-        Size Size { get; set; }
+        Size Size { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the tab order of the control within its container. </summary>
         /// <returns>
         /// The index value of the control within the set of controls within its
         /// container. The controls in the container are included in the tab order.
         /// </returns>
-        int TabIndex { get; set; }
+        int TabIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the user can give the focus
@@ -591,18 +591,18 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> for an instance of the
         /// <see cref="T:System.Windows.Forms.Form" /> class.
         /// </returns>
-        bool TabStop { get; set; }
+        bool TabStop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the object that contains data about the control. </summary>
         /// <returns>
         /// An <see cref="T:System.Object" /> that contains data about the
         /// control. The default is <see langword="null" />.
         /// </returns>
-        object Tag { get; set; }
+        object Tag { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the text associated with this control. </summary>
         /// <returns> The text associated with this control. </returns>
-        string Text { get; set; }
+        string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the distance, in pixels, between the top edge of the
@@ -613,7 +613,7 @@ namespace xyLOGIX.Core.Extensions
         /// pixels, between the bottom edge of the control and the top edge of its
         /// container's client area.
         /// </returns>
-        int Top { get; set; }
+        int Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets the parent control that is not parented by another Windows Forms
@@ -624,7 +624,7 @@ namespace xyLOGIX.Core.Extensions
         /// The <see cref="T:System.Windows.Forms.Control" /> that represents the
         /// top-level control that contains the current control.
         /// </returns>
-        Control TopLevelControl { get; }
+        Control TopLevelControl { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use the wait cursor for
@@ -635,7 +635,7 @@ namespace xyLOGIX.Core.Extensions
         /// control and all child controls; otherwise, <see langword="false" />. The
         /// default is <see langword="false" />.
         /// </returns>
-        bool UseWaitCursor { get; set; }
+        bool UseWaitCursor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control and all its child
@@ -646,11 +646,11 @@ namespace xyLOGIX.Core.Extensions
         /// displayed; otherwise, <see langword="false" />. The default is
         /// <see langword="true" />.
         /// </returns>
-        bool Visible { get; set; }
+        bool Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the width of the control. </summary>
         /// <returns> The width of the control in pixels. </returns>
-        int Width { get; set; }
+        int Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> This property is not relevant for this class. </summary>
         /// <returns> The NativeWindow contained within the control. </returns>

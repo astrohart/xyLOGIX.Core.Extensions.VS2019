@@ -18,7 +18,7 @@ namespace xyLOGIX.Core.Extensions
         /// otherwise, <see langword="false" />. The default value is
         /// <see langword="false" />.
         /// </returns>
-        bool AutoScroll { get; set; }
+        bool AutoScroll { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the size of the auto-scroll margin. </summary>
         /// <returns>
@@ -30,21 +30,21 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="P:System.Drawing.Size.Height" /> or
         /// <see cref="P:System.Drawing.Size.Width" /> value assigned is less than 0.
         /// </exception>
-        Size AutoScrollMargin { get; set; }
+        Size AutoScrollMargin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the minimum size of the auto-scroll. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Size" /> that determines the minimum
         /// size of the virtual area through which the user can scroll.
         /// </returns>
-        Size AutoScrollMinSize { get; set; }
+        Size AutoScrollMinSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the location of the auto-scroll position. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Point" /> that represents the
         /// auto-scroll position in pixels.
         /// </returns>
-        Point AutoScrollPosition { get; set; }
+        Point AutoScrollPosition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the dock padding settings for all edges of the control. </summary>
         /// <returns>
@@ -52,21 +52,21 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.ScrollableControl.DockPaddingEdges" /> that
         /// represents the padding for all the edges of a docked control.
         /// </returns>
-        ScrollableControl.DockPaddingEdges DockPadding { get; }
+        ScrollableControl.DockPaddingEdges DockPadding { [DebuggerStepThrough] get; }
 
         /// <summary> Gets the characteristics associated with the horizontal scroll bar. </summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.HScrollProperties" /> that
         /// contains information about the horizontal scroll bar.
         /// </returns>
-        HScrollProperties HorizontalScroll { get; }
+        HScrollProperties HorizontalScroll { [DebuggerStepThrough] get; }
 
         /// <summary> Gets the characteristics associated with the vertical scroll bar. </summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.VScrollProperties" /> that
         /// contains information about the vertical scroll bar.
         /// </returns>
-        VScrollProperties VerticalScroll { get; }
+        VScrollProperties VerticalScroll { [DebuggerStepThrough] get; }
 
         /// <summary> Occurs when the user or code scrolls through the client area. </summary>
         event ScrollEventHandler Scroll;

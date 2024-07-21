@@ -27,7 +27,7 @@ namespace xyLOGIX.Core.Extensions
         /// for faster performance.
         /// </summary>
         public static AdvisableDictionary<Type, Type>
-            CachedActualType { get; } = new AdvisableDictionary<Type, Type>();
+            CachedActualType { [DebuggerStepThrough] get; } = new AdvisableDictionary<Type, Type>();
 
         /// <summary>
         /// Gets the internal type of IList. When the type is not a list then

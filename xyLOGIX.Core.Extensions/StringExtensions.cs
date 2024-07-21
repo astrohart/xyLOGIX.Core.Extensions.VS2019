@@ -110,7 +110,7 @@ namespace xyLOGIX.Core.Extensions
         /// Gets a <see cref="T:System.Text.RegularExpressions.Regex" /> that
         /// matches all whitespace characters.
         /// </summary>
-        private static Regex WhiteSpaceRegex { get; } = new Regex(@"\s+");
+        private static Regex WhiteSpaceRegex { [DebuggerStepThrough] get; } = new Regex(@"\s+");
 
         /// <summary>
         /// Asks if the search text, in <paramref name="value" />, is a substring

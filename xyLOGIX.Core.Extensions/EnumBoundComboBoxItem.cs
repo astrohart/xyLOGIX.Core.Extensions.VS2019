@@ -15,12 +15,12 @@ namespace xyLOGIX.Core.Extensions
         /// Gets or sets a <see cref="T:System.String" /> that contains a user-friendly
         /// display name, or description, for the specific enumeration value.
         /// </summary>
-        public string Description { get; set; }
+        public string Description { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the enumeration value that is "behind" the combo box selection.
         /// </summary>
-        public T Value { get; set; }
+        public T Value { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Creates a new instance of

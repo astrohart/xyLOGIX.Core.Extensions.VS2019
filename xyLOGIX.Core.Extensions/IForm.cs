@@ -17,7 +17,7 @@ namespace xyLOGIX.Core.Extensions
         /// An <see cref="T:System.Windows.Forms.IButtonControl" /> that
         /// represents the button to use as the accept button for the form.
         /// </returns>
-        IButtonControl AcceptButton { get; set; }
+        IButtonControl AcceptButton { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets the currently active multiple-document interface (MDI) child
@@ -28,7 +28,7 @@ namespace xyLOGIX.Core.Extensions
         /// the currently active MDI child window, or <see langword="null" /> if there are
         /// currently no child windows present.
         /// </returns>
-        Form ActiveMdiChild { get; }
+        Form ActiveMdiChild { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the opacity of the form can
@@ -38,7 +38,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the opacity of the form can be changed;
         /// otherwise, <see langword="false" />.
         /// </returns>
-        bool AllowTransparency { get; set; }
+        bool AllowTransparency { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the form adjusts its size to
@@ -49,14 +49,14 @@ namespace xyLOGIX.Core.Extensions
         /// and its controls based on the current font assigned to the form; otherwise,
         /// <see langword="false" />. The default is <see langword="true" />.
         /// </returns>
-        bool AutoScale { get; set; }
+        bool AutoScale { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the base size used for autoscaling of the form. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Size" /> that represents the base size
         /// that this form uses for autoscaling.
         /// </returns>
-        Size AutoScaleBaseSize { get; set; }
+        Size AutoScaleBaseSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the mode by which the form automatically resizes itself. </summary>
         /// <returns>
@@ -68,7 +68,7 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// value is not a valid <see cref="T:System.Windows.Forms.AutoSizeMode" /> value.
         /// </exception>
-        AutoSizeMode AutoSizeMode { get; set; }
+        AutoSizeMode AutoSizeMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value that indicates whether controls in this
@@ -79,7 +79,7 @@ namespace xyLOGIX.Core.Extensions
         /// value that indicates whether contained controls are implicitly validated on
         /// focus change. The default is Inherit.
         /// </returns>
-        AutoValidate AutoValidate { get; set; }
+        AutoValidate AutoValidate { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the background color for the control. </summary>
         /// <returns>
@@ -95,7 +95,7 @@ namespace xyLOGIX.Core.Extensions
         /// An <see cref="T:System.Windows.Forms.IButtonControl" /> that
         /// represents the cancel button for the form.
         /// </returns>
-        IButtonControl CancelButton { get; set; }
+        IButtonControl CancelButton { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether a control box is displayed in
@@ -106,7 +106,7 @@ namespace xyLOGIX.Core.Extensions
         /// upper-right corner of the form; otherwise, <see langword="false" />. The
         /// default is <see langword="true" />.
         /// </returns>
-        bool ControlBox { get; set; }
+        bool ControlBox { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the size and location of the form on the Windows
@@ -116,14 +116,14 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Drawing.Rectangle" /> that represents the
         /// bounds of the form on the Windows desktop using desktop coordinates.
         /// </returns>
-        Rectangle DesktopBounds { get; set; }
+        Rectangle DesktopBounds { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the location of the form on the Windows desktop. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Point" /> that represents the location
         /// of the form on the desktop.
         /// </returns>
-        Point DesktopLocation { get; set; }
+        Point DesktopLocation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the dialog result for the form. </summary>
         /// <returns>
@@ -134,7 +134,7 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
-        DialogResult DialogResult { get; set; }
+        DialogResult DialogResult { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the border style of the form. </summary>
         /// <returns>
@@ -146,7 +146,7 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
-        FormBorderStyle FormBorderStyle { get; set; }
+        FormBorderStyle FormBorderStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether a Help button should be
@@ -157,14 +157,14 @@ namespace xyLOGIX.Core.Extensions
         /// caption bar; otherwise, <see langword="false" />. The default is
         /// <see langword="false" />.
         /// </returns>
-        bool HelpButton { get; set; }
+        bool HelpButton { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the icon for the form. </summary>
         /// <returns>
         /// An <see cref="T:System.Drawing.Icon" /> that represents the icon for
         /// the form.
         /// </returns>
-        Icon Icon { get; set; }
+        Icon Icon { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets a value indicating whether the form is a multiple-document
@@ -174,7 +174,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the form is an MDI child form; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool IsMdiChild { get; }
+        bool IsMdiChild { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the form is a container for
@@ -185,7 +185,7 @@ namespace xyLOGIX.Core.Extensions
         /// forms; otherwise, <see langword="false" />. The default is
         /// <see langword="false" />.
         /// </returns>
-        bool IsMdiContainer { get; set; }
+        bool IsMdiContainer { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets a value indicating whether the form can use all windows and user
@@ -195,7 +195,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the form has restrictions; otherwise,
         /// <see langword="false" /> . The default is <see langword="true" />.
         /// </returns>
-        bool IsRestrictedWindow { get; }
+        bool IsRestrictedWindow { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the form will receive key
@@ -206,7 +206,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="false" /> if the currently selected control on the form receives
         /// key events. The default is <see langword="false" />.
         /// </returns>
-        bool KeyPreview { get; set; }
+        bool KeyPreview { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the primary menu container for the form. </summary>
         /// <returns>
@@ -214,7 +214,7 @@ namespace xyLOGIX.Core.Extensions
         /// container for the menu structure of the form. The default is
         /// <see langword="null" />.
         /// </returns>
-        MenuStrip MainMenuStrip { get; set; }
+        MenuStrip MainMenuStrip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the Maximize button is
@@ -224,7 +224,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> to display a Maximize button for the form;
         /// otherwise, <see langword="false" />. The default is <see langword="true" />.
         /// </returns>
-        bool MaximizeBox { get; set; }
+        bool MaximizeBox { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the maximum size the form can be resized to. </summary>
         /// <returns>
@@ -244,7 +244,7 @@ namespace xyLOGIX.Core.Extensions
         /// An array of <see cref="T:System.Windows.Forms.Form" /> objects, each
         /// of which identifies one of this form's MDI child forms.
         /// </returns>
-        Form[] MdiChildren { get; }
+        Form[] MdiChildren { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets the current multiple-document interface (MDI) parent
@@ -262,7 +262,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.Form" /> assigned to this property is located
         /// on a different thread.
         /// </exception>
-        Form MdiParent { get; set; }
+        Form MdiParent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the <see cref="T:System.Windows.Forms.MainMenu" /> that
@@ -272,7 +272,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.MainMenu" /> that represents the
         /// menu to display in the form.
         /// </returns>
-        MainMenu Menu { get; set; }
+        MainMenu Menu { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the merged menu for the form. </summary>
         /// <returns>
@@ -295,18 +295,18 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> to display a Minimize button for the form;
         /// otherwise, <see langword="false" />. The default is <see langword="true" />.
         /// </returns>
-        bool MinimizeBox { get; set; }
+        bool MinimizeBox { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets a value indicating whether this form is displayed modally. </summary>
         /// <returns>
         /// <see langword="true" /> if the form is displayed modally; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool Modal { get; }
+        bool Modal { [DebuggerStepThrough] get; }
 
         /// <summary> Gets or sets the opacity level of the form. </summary>
         /// <returns> The level of opacity for the form. The default is 1.00. </returns>
-        double Opacity { get; set; }
+        double Opacity { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets an array of <see cref="T:System.Windows.Forms.Form" /> objects
@@ -316,7 +316,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.Form" /> array that represents
         /// the owned forms for this form.
         /// </returns>
-        Form[] OwnedForms { get; }
+        Form[] OwnedForms { [DebuggerStepThrough] get; }
 
         /// <summary> Gets or sets the form that owns this form. </summary>
         /// <returns>
@@ -324,14 +324,14 @@ namespace xyLOGIX.Core.Extensions
         /// that is the owner of this form.
         /// </returns>
         /// <exception cref="T:System.Exception"> A top-level window cannot have an owner. </exception>
-        Form Owner { get; set; }
+        Form Owner { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets the location and size of the form in its normal window state. </summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Rectangle" /> that contains the
         /// location and size of the form in the normal window state.
         /// </returns>
-        Rectangle RestoreBounds { get; }
+        Rectangle RestoreBounds { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Gets or sets a value indicating whether right-to-left mirror
@@ -342,7 +342,7 @@ namespace xyLOGIX.Core.Extensions
         /// on; otherwise, <see langword="false" /> for standard child control placement.
         /// The default is <see langword="false" />.
         /// </returns>
-        bool RightToLeftLayout { get; set; }
+        bool RightToLeftLayout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether an icon is displayed in the
@@ -353,7 +353,7 @@ namespace xyLOGIX.Core.Extensions
         /// bar; otherwise, <see langword="false" />. The default is
         /// <see langword="true" />.
         /// </returns>
-        bool ShowIcon { get; set; }
+        bool ShowIcon { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the form is displayed in the
@@ -364,7 +364,7 @@ namespace xyLOGIX.Core.Extensions
         /// run time; otherwise, <see langword="false" />. The default is
         /// <see langword="true" />.
         /// </returns>
-        bool ShowInTaskbar { get; set; }
+        bool ShowInTaskbar { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the style of the size grip to display in the lower-right
@@ -379,7 +379,7 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
-        SizeGripStyle SizeGripStyle { get; set; }
+        SizeGripStyle SizeGripStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the starting position of the form at run time. </summary>
         /// <returns>
@@ -390,7 +390,7 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
-        FormStartPosition StartPosition { get; set; }
+        FormStartPosition StartPosition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to display the form as a
@@ -404,7 +404,7 @@ namespace xyLOGIX.Core.Extensions
         /// A Multiple-document interface (MDI)
         /// parent form must be a top-level window.
         /// </exception>
-        bool TopLevel { get; set; }
+        bool TopLevel { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the form should be displayed
@@ -414,7 +414,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> to display the form as a topmost form;
         /// otherwise, <see langword="false" />. The default is <see langword="false" />.
         /// </returns>
-        bool TopMost { get; set; }
+        bool TopMost { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the color that will represent transparent areas of the
@@ -424,7 +424,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Drawing.Color" /> that represents the color to
         /// display transparently on the form.
         /// </returns>
-        Color TransparencyKey { get; set; }
+        Color TransparencyKey { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value that indicates whether form is minimized,
@@ -439,7 +439,7 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// value specified is outside the range of valid values.
         /// </exception>
-        FormWindowState WindowState { get; set; }
+        FormWindowState WindowState { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Occurs when the form is activated in code or by the user. </summary>
         event EventHandler Activated;

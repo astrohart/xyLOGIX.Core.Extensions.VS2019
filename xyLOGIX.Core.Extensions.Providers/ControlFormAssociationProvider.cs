@@ -34,7 +34,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         ///     cref="T:xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
         /// interface.
         /// </summary>
-        public static IControlFormAssociationProvider Instance { get; } =
+        public static IControlFormAssociationProvider Instance { [DebuggerStepThrough] get; } =
             new ControlFormAssociationProvider();
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// <see cref="T:System.Windows.Forms.Control" />s to the parent
         /// <see cref="T:System.Windows.Forms.Form" />s that contain them.
         /// </summary>
-        protected IDictionary<Control, Form> ParentFormDictionary { get; }
+        protected IDictionary<Control, Form> ParentFormDictionary { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Adds an association between the specified <paramref name="control" />

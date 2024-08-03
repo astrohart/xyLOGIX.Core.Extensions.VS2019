@@ -1,9 +1,9 @@
-using System.Diagnostics;
 using PostSharp.Patterns.Collections;
 using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Design.PluralizationServices;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -105,7 +105,7 @@ namespace xyLOGIX.Core.Extensions
         /// checked for whether it contains a valid email address, does in fact contain
         /// such a valid address.
         /// </summary>
-        public static bool IsEmailAddressInvalid { get; private set; }
+        public static bool IsEmailAddressInvalid { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
 
         /// <summary>
         /// Gets a <see cref="T:System.Text.RegularExpressions.Regex" /> that

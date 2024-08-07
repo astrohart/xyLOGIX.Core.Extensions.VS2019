@@ -27,6 +27,14 @@ namespace xyLOGIX.Core.Extensions
     public static class StringExtensions
     {
         /// <summary>
+        /// A <see cref="T:System.String" /> containing a regular expression to match a
+        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
+        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
+        /// </summary>
+        private const string GuidRegexLowercaseNoBraces =
+            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
+
+        /// <summary>
         /// Collection of strings which are short words but are not acronyms per
         /// se.
         /// </summary>
@@ -36,14 +44,6 @@ namespace xyLOGIX.Core.Extensions
             "al-", "el-", "thus", "if", "then", "Jr.", "Sr.", "Ph.D.",
             "M.S.", "M.D."
         };
-
-        /// <summary>
-        /// A <see cref="T:System.String" /> containing a regular expression to match a
-        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
-        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
-        /// </summary>
-        private const string GuidRegexLowercaseNoBraces =
-            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
 
         /// <summary> Collection of strings that are commonly-used acronyms. </summary>
         private static readonly string[] AcronymList =
@@ -105,13 +105,18 @@ namespace xyLOGIX.Core.Extensions
         /// checked for whether it contains a valid email address, does in fact contain
         /// such a valid address.
         /// </summary>
-        public static bool IsEmailAddressInvalid { [DebuggerStepThrough] get; [DebuggerStepThrough] private set; }
+        public static bool IsEmailAddressInvalid
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] private set;
+        }
 
         /// <summary>
         /// Gets a <see cref="T:System.Text.RegularExpressions.Regex" /> that
         /// matches all whitespace characters.
         /// </summary>
-        private static Regex WhiteSpaceRegex { [DebuggerStepThrough] get; } = new Regex(@"\s+");
+        private static Regex WhiteSpaceRegex { [DebuggerStepThrough] get; } =
+            new Regex(@"\s+");
 
         /// <summary>
         /// Asks if the search text, in <paramref name="value" />, is a substring
@@ -2057,6 +2062,70 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Replaces any of the elements of the specified
+        /// <paramref name="findWhatValues" /> in <paramref name="source" /> with the
+        /// specified <paramref name="replacementText" />.
+        /// </summary>
+        /// <param name="source">
+        /// (Required.) A <see cref="T:System.String" /> that is to be
+        /// searched.
+        /// </param>
+        /// <param name="findWhatValues">
+        /// (Required.) Collection of
+        /// <see cref="T:System.String" /> values, each of which is to be searched for in
+        /// the <paramref name="source" /> <see cref="T:System.String" />.
+        /// </param>
+        /// <param name="replacementText">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// is to serve as the replacement for any of the specified
+        /// <paramref name="findWhatValues" /> in <paramref name="source" />.
+        /// </param>
+        /// <returns>
+        /// If successful, the <paramref name="source" /> string, with any of the
+        /// specified <paramref name="findWhatValues" />, if they occur in it, replaced
+        /// with the specified <paramref name="replacementText" />.
+        /// </returns>
+        [return: NotLogged]
+        public static string ReplaceAnyOf(
+            [NotLogged] this string source,
+            [NotLogged] ICollection<string> findWhatValues,
+            [NotLogged] string replacementText
+        )
+        {
+            var result = source;
+
+            try
+            {
+                /*
+                 * NOTE: A conscious choice has been deliberately made to NOT
+                 * add logging statements to this method, since it may be called
+                 * very frequently.
+                 */
+
+                if (string.IsNullOrWhiteSpace(source)) return result;
+                if (findWhatValues == null) return result;
+                if (findWhatValues.Count == 0) return result;
+
+                foreach (var thingToFind in findWhatValues.ToArray())
+                {
+                    if (string.IsNullOrEmpty(thingToFind)) continue;
+                    if (!source.Contains(thingToFind)) continue;
+
+                    result = result.Replace(thingToFind, replacementText);
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = source;
             }
 
             return result;

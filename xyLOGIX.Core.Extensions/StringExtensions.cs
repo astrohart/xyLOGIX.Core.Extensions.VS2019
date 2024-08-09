@@ -686,6 +686,10 @@ namespace xyLOGIX.Core.Extensions
         /// elements, each of which is to be assessed against the specified
         /// <paramref name="value" /> as being what it ends with.
         /// </param>
+        /// <remarks>
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for
+        /// <paramref name="endings" />.
+        /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" />
         /// ends with any of the specified <paramref name="endings" />;
@@ -703,7 +707,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
                 if (endings == null) return result;
-                if (value.Length == 0) return result;
+                if (endings.Length == 0) return result;
 
                 foreach (var ending in endings)
                 {
@@ -2212,6 +2216,63 @@ namespace xyLOGIX.Core.Extensions
             return value.Split(
                 new[] { delimiter }, StringSplitOptions.RemoveEmptyEntries
             );
+        }
+
+        /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> starts with any of the specified
+        /// <paramref name="beginnings" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to be
+        /// checked.
+        /// </param>
+        /// <param name="beginnings">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// elements, each of which is to be assessed against the specified
+        /// <paramref name="value" /> as being what it starts with.
+        /// </param>
+        /// <remarks>
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for
+        /// <paramref name="beginnings" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// starts with any of the specified <paramref name="beginnings" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool StartsWithAny(
+            this string value,
+            params string[] beginnings
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (beginnings == null) return result;
+                if (beginnings.Length == 0) return result;
+
+                foreach (var beginning in beginnings)
+                {
+                    if (string.IsNullOrWhiteSpace(beginning)) continue;
+                    if (!value.StartsWith(beginning)) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
         }
 
         /// <summary>

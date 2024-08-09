@@ -462,6 +462,7 @@
   - [ReplaceAnyOf(source,findWhatValues,replacementText)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf(System.String,System.Collections.Generic.ICollection{System.String},System.String)')
   - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
   - [SplitOn(value,delimiter)](#M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.SplitOn(System.String,System.String)')
+  - [StartsWithAny(value,beginnings)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAny(System.String,System.String[])')
   - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [StartsWithNoCase(value,searchText)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithNoCase(System.String,System.String)')
   - [Sub(format,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.Sub(System.String,System.Object[])')
@@ -8252,6 +8253,11 @@ checked. |
 elements, each of which is to be assessed against the specified
 `value` as being what it ends with. |
 
+##### Remarks
+
+This method returns `false` if no values are passed for
+`endings`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String-'></a>
 ### EnsureAtIsInFront(twitterSite) `method`
 
@@ -9391,6 +9397,35 @@ the `value` should be split. |
 | [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if either of the required
 parameters, `value` or `delimiter`, are
 passed blank or `null` strings for values. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]-'></a>
+### StartsWithAny(value,beginnings) `method`
+
+##### Summary
+
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` starts with any of the specified
+`beginnings`.
+
+##### Returns
+
+`true` if the specified `value`
+starts with any of the specified `beginnings`;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
+checked. |
+| beginnings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+elements, each of which is to be assessed against the specified
+`value` as being what it starts with. |
+
+##### Remarks
+
+This method returns `false` if no values are passed for
+`beginnings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### StartsWithAnyOf(text,list) `method`

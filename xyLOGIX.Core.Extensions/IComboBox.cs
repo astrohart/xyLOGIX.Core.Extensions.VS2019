@@ -1,5 +1,5 @@
-using System.Diagnostics;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions
@@ -20,7 +20,11 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Collections.Specialized.StringCollection" /> to
         /// use with <see cref="P:System.Windows.Forms.ComboBox.AutoCompleteSource" />.
         /// </returns>
-        AutoCompleteStringCollection AutoCompleteCustomSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        AutoCompleteStringCollection AutoCompleteCustomSource
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets an option that controls how automatic completion works
@@ -40,7 +44,11 @@ namespace xyLOGIX.Core.Extensions
         /// specified value is not one of the values of
         /// <see cref="T:System.Windows.Forms.AutoCompleteMode" />.
         /// </exception>
-        AutoCompleteMode AutoCompleteMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        AutoCompleteMode AutoCompleteMode
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets a value specifying the quote of complete strings used
@@ -59,7 +67,11 @@ namespace xyLOGIX.Core.Extensions
         /// specified value is not one of the values of
         /// <see cref="T:System.Windows.Forms.AutoCompleteSource" />.
         /// </exception>
-        AutoCompleteSource AutoCompleteSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        AutoCompleteSource AutoCompleteSource
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the data source for this
@@ -70,7 +82,11 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Collections.IList" /> interface or an
         /// <see cref="T:System.Array" /> . The default is <see langword="null" />.
         /// </returns>
-        object DataSource { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        object DataSource
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether your code or the operating
@@ -85,7 +101,11 @@ namespace xyLOGIX.Core.Extensions
         /// value is not a valid <see cref="T:System.Windows.Forms.DrawMode" /> enumeration
         /// value.
         /// </exception>
-        DrawMode DrawMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        DrawMode DrawMode
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the height in pixels of the drop-down portion of the
@@ -96,7 +116,11 @@ namespace xyLOGIX.Core.Extensions
         /// The specified value is less than
         /// one.
         /// </exception>
-        int DropDownHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        int DropDownHeight
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets or sets a value specifying the style of the combo box. </summary>
         /// <returns>
@@ -108,7 +132,11 @@ namespace xyLOGIX.Core.Extensions
         /// assigned value is not one of the
         /// <see cref="T:System.Windows.Forms.ComboBoxStyle" /> values.
         /// </exception>
-        ComboBoxStyle DropDownStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        ComboBoxStyle DropDownStyle
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the width of the of the drop-down portion of a combo
@@ -119,7 +147,11 @@ namespace xyLOGIX.Core.Extensions
         /// The specified value is less than
         /// one.
         /// </exception>
-        int DropDownWidth { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        int DropDownWidth
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether the combo box is displaying
@@ -129,7 +161,11 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the drop-down portion is displayed;
         /// otherwise, <see langword="false" />. The default is false.
         /// </returns>
-        bool DroppedDown { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        bool DroppedDown
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the appearance of the
@@ -146,7 +182,11 @@ namespace xyLOGIX.Core.Extensions
         /// specified value is not one of the values of
         /// <see cref="T:System.Windows.Forms.FlatStyle" />.
         /// </exception>
-        FlatStyle FlatStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        FlatStyle FlatStyle
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control should resize to
@@ -157,7 +197,11 @@ namespace xyLOGIX.Core.Extensions
         /// items; otherwise, <see langword="false" />. The default is
         /// <see langword="true" />.
         /// </returns>
-        bool IntegralHeight { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        bool IntegralHeight
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets or sets the height of an item in the combo box. </summary>
         /// <returns> The height, in pixels, of an item in the combo box. </returns>
@@ -189,7 +233,11 @@ namespace xyLOGIX.Core.Extensions
         /// The maximum number is set less
         /// than one or greater than 100.
         /// </exception>
-        int MaxDropDownItems { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        int MaxDropDownItems
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the number of characters a user can type into the
@@ -218,7 +266,11 @@ namespace xyLOGIX.Core.Extensions
         /// less than or equal to -2. -or- The specified index is greater than or equal to
         /// the number of items in the combo box.
         /// </exception>
-        int SelectedIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        int SelectedIndex
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets currently selected item in the
@@ -228,7 +280,11 @@ namespace xyLOGIX.Core.Extensions
         /// The object that is the currently selected item or
         /// <see langword="null" /> if there is no currently selected item.
         /// </returns>
-        object SelectedItem { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        object SelectedItem
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the text that is selected in the editable portion of a
@@ -240,7 +296,11 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="F:System.Windows.Forms.ComboBoxStyle.DropDownList" /> , the return
         /// value is an empty string ("").
         /// </returns>
-        string SelectedText { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        string SelectedText
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the number of characters selected in the editable
@@ -248,7 +308,11 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <returns> The number of characters selected in the combo box. </returns>
         /// <exception cref="T:System.ArgumentException"> The value was less than zero. </exception>
-        int SelectionLength { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        int SelectionLength
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets or sets the starting index of text selected in the combo box. </summary>
         /// <returns>
@@ -256,7 +320,11 @@ namespace xyLOGIX.Core.Extensions
         /// current text selection.
         /// </returns>
         /// <exception cref="T:System.ArgumentException"> The value is less than zero. </exception>
-        int SelectionStart { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        int SelectionStart
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether the items in the combo box
@@ -417,6 +485,11 @@ namespace xyLOGIX.Core.Extensions
         /// is greater than count of items in the list.
         /// </exception>
         int GetItemHeight(int index);
+
+        /// <summary>
+        /// Invokes the <c>MouseEnter</c> event.
+        /// </summary>
+        void InvokeMouseEnter();
 
         /// <summary>
         /// Selects a range of text in the editable portion of the

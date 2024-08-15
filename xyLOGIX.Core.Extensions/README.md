@@ -33,8 +33,10 @@
   - [IsNullOrEmpty\`\`1(collection)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsNullOrEmpty``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})')
   - [IsOneOf\`\`1(obj)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsOneOf``1-System-Object- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsOneOf``1(System.Object)')
 - [ComboBoxExtensions](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions 'xyLOGIX.Core.Extensions.ComboBoxExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-#cctor 'xyLOGIX.Core.Extensions.ComboBoxExtensions.#cctor')
   - [BindToEnum\`\`1(comboBox,defaultSelection)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindToEnum``1-System-Windows-Forms-ComboBox,``0- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.BindToEnum``1(System.Windows.Forms.ComboBox,``0)')
   - [GetComboBoxItems\`\`1()](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-GetComboBoxItems``1 'xyLOGIX.Core.Extensions.ComboBoxExtensions.GetComboBoxItems``1')
+  - [SelectFirstItem(comboBox)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-SelectFirstItem-System-Windows-Forms-ComboBox- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.SelectFirstItem(System.Windows.Forms.ComboBox)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
   - [ControlFormAssociationProvider](#P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider 'xyLOGIX.Core.Extensions.ControlExtensions.ControlFormAssociationProvider')
   - [AssociateWithParentForm(control)](#M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.AssociateWithParentForm(System.Windows.Forms.Control)')
@@ -1244,6 +1246,28 @@ xyLOGIX.Core.Extensions
 Exposes static extension methods for instances of
 [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
+<a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [ComboBoxExtensions](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions 'xyLOGIX.Core.Extensions.ComboBoxExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
 <a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindToEnum``1-System-Windows-Forms-ComboBox,``0-'></a>
 ### BindToEnum\`\`1(comboBox,defaultSelection) `method`
 
@@ -1292,6 +1316,28 @@ This method has no parameters.
 | Name | Description |
 | ---- | ----------- |
 | T | (Required.) Name of the enumeration. |
+
+<a name='M-xyLOGIX-Core-Extensions-ComboBoxExtensions-SelectFirstItem-System-Windows-Forms-ComboBox-'></a>
+### SelectFirstItem(comboBox) `method`
+
+##### Summary
+
+Attempts to select the first item in the list of items present in the specified
+`comboBox`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| comboBox | [System.Windows.Forms.ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') | (Required.) Reference to an instance of
+[ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that contains the item(s) to be
+used. |
+
+##### Remarks
+
+If the specified `comboBox` is a
+`null` reference or it contains zero items, then this method
+does nothing.
 
 <a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>
 ## ControlExtensions `type`

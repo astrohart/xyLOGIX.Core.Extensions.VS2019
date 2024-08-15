@@ -1,4 +1,5 @@
 using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -12,6 +13,20 @@ namespace xyLOGIX.Core.Extensions
     /// </summary>
     public static class ComboBoxExtensions
     {
+        /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static ComboBoxExtensions() { }
+
         /// <summary>
         /// Data-binds an enumeration in code to a
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
@@ -59,6 +74,37 @@ namespace xyLOGIX.Core.Extensions
                             defaultComboBoxItem.Description
                         ))
                         comboBox.SelectedItem = comboBoxItem;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Attempts to select the first item in the list of items present in the specified
+        /// <paramref name="comboBox" />.
+        /// </summary>
+        /// <param name="comboBox">
+        /// (Required.) Reference to an instance of
+        /// <see cref="T:System.Windows.Forms.ComboBox" /> that contains the item(s) to be
+        /// used.
+        /// </param>
+        /// <remarks>
+        /// If the specified <paramref name="comboBox" /> is a
+        /// <see langword="null" /> reference or it contains zero items, then this method
+        /// does nothing.
+        /// </remarks>
+        public static void SelectFirstItem(this ComboBox comboBox)
+        {
+            try
+            {
+                if (comboBox == null) return;
+                if (comboBox.Items.Count == 0) return;
+
+                comboBox.SelectedIndex = 0;
+                comboBox.Select();
             }
             catch (Exception ex)
             {

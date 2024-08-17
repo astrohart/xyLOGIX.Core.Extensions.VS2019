@@ -487,11 +487,6 @@ namespace xyLOGIX.Core.Extensions
         int GetItemHeight(int index);
 
         /// <summary>
-        /// Invokes the <c>MouseEnter</c> event.
-        /// </summary>
-        void InvokeMouseEnter();
-
-        /// <summary>
         /// Selects a range of text in the editable portion of the
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
         /// </summary>

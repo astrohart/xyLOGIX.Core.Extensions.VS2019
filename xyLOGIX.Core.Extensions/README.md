@@ -114,7 +114,6 @@
   - [FindStringExact(s)](#M-xyLOGIX-Core-Extensions-IComboBox-FindStringExact-System-String- 'xyLOGIX.Core.Extensions.IComboBox.FindStringExact(System.String)')
   - [FindStringExact(s,startIndex)](#M-xyLOGIX-Core-Extensions-IComboBox-FindStringExact-System-String,System-Int32- 'xyLOGIX.Core.Extensions.IComboBox.FindStringExact(System.String,System.Int32)')
   - [GetItemHeight(index)](#M-xyLOGIX-Core-Extensions-IComboBox-GetItemHeight-System-Int32- 'xyLOGIX.Core.Extensions.IComboBox.GetItemHeight(System.Int32)')
-  - [InvokeMouseEnter()](#M-xyLOGIX-Core-Extensions-IComboBox-InvokeMouseEnter 'xyLOGIX.Core.Extensions.IComboBox.InvokeMouseEnter')
   - [Select(start,length)](#M-xyLOGIX-Core-Extensions-IComboBox-Select-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IComboBox.Select(System.Int32,System.Int32)')
   - [SelectAll()](#M-xyLOGIX-Core-Extensions-IComboBox-SelectAll 'xyLOGIX.Core.Extensions.IComboBox.SelectAll')
   - [ToString()](#M-xyLOGIX-Core-Extensions-IComboBox-ToString 'xyLOGIX.Core.Extensions.IComboBox.ToString')
@@ -2970,17 +2969,6 @@ The height, in pixels, of the item at the specified index.
 | [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The
 `index` is less than zero. -or- The `index`
 is greater than count of items in the list. |
-
-<a name='M-xyLOGIX-Core-Extensions-IComboBox-InvokeMouseEnter'></a>
-### InvokeMouseEnter() `method`
-
-##### Summary
-
-Invokes the `MouseEnter` event.
-
-##### Parameters
-
-This method has no parameters.
 
 <a name='M-xyLOGIX-Core-Extensions-IComboBox-Select-System-Int32,System-Int32-'></a>
 ### Select(start,length) `method`

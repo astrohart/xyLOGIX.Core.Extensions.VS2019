@@ -1,6 +1,7 @@
-using System.Diagnostics;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Security.Permissions;
 using System.Windows.Forms;
@@ -412,6 +413,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the control has been disposed of;
         /// otherwise, <see langword="false" />.
         /// </returns>
+        [Log(AttributeExclude = true)]
         bool IsDisposed { [DebuggerStepThrough] get; }
 
         /// <summary>

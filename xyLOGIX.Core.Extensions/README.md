@@ -477,6 +477,11 @@
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
   - [ToUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUppercase(System.String)')
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
+- [TextBoxExtensions](#T-xyLOGIX-Core-Extensions-TextBoxExtensions 'xyLOGIX.Core.Extensions.TextBoxExtensions')
+  - [EM_SETCUEBANNER](#F-xyLOGIX-Core-Extensions-TextBoxExtensions-EM_SETCUEBANNER 'xyLOGIX.Core.Extensions.TextBoxExtensions.EM_SETCUEBANNER')
+  - [IsWindow(hWnd)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-IsWindow-System-IntPtr- 'xyLOGIX.Core.Extensions.TextBoxExtensions.IsWindow(System.IntPtr)')
+  - [SendMessage(hWnd,Msg,wParam,lParam)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-SendMessage-System-IntPtr,System-UInt32,System-IntPtr,System-String- 'xyLOGIX.Core.Extensions.TextBoxExtensions.SendMessage(System.IntPtr,System.UInt32,System.IntPtr,System.String)')
+  - [SetCueBanner(textBox,cueText)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBox,System-String- 'xyLOGIX.Core.Extensions.TextBoxExtensions.SetCueBanner(System.Windows.Forms.TextBox,System.String)')
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
   - [CachedActualType](#P-xyLOGIX-Core-Extensions-TypeExtensions-CachedActualType 'xyLOGIX.Core.Extensions.TypeExtensions.CachedActualType')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-TypeExtensions-#cctor 'xyLOGIX.Core.Extensions.TypeExtensions.#cctor')
@@ -9773,6 +9778,110 @@ Trimmed text.
 If the empty or whitespace string is provided for
 `currentLine` , then the empty string is returned by this
 method.
+
+<a name='T-xyLOGIX-Core-Extensions-TextBoxExtensions'></a>
+## TextBoxExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension methods for
+[TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox')-derived controls.
+
+<a name='F-xyLOGIX-Core-Extensions-TextBoxExtensions-EM_SETCUEBANNER'></a>
+### EM_SETCUEBANNER `constants`
+
+##### Summary
+
+Specifies the message to set the cue banner text (placeholder text) for a
+[TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') control.
+
+##### Remarks
+
+This message is sent to a [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') control
+to display greyed-out text when the
+[TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') is empty and unfocused.
+
+<a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-IsWindow-System-IntPtr-'></a>
+### IsWindow(hWnd) `method`
+
+##### Summary
+
+Determines whether the specified window handle identifies an existing window.
+
+##### Returns
+
+`true` if the window handle identifies an existing window;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| hWnd | [System.IntPtr](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IntPtr 'System.IntPtr') | A handle to the window to be tested. |
+
+##### Remarks
+
+The `hWnd` parameter is a handle to a window.
+The function checks if the window associated with the handle still exists.
+
+<a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-SendMessage-System-IntPtr,System-UInt32,System-IntPtr,System-String-'></a>
+### SendMessage(hWnd,Msg,wParam,lParam) `method`
+
+##### Summary
+
+Sends the specified message to a window or windows.
+
+
+
+The `SendMessage` function calls the window procedure for the specified
+window and does not return until the window procedure has processed the
+message.
+
+##### Returns
+
+The result of the message processing, which depends on the message sent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| hWnd | [System.IntPtr](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IntPtr 'System.IntPtr') | (Required.) A handle to the window whose window procedure
+will receive the message. |
+| Msg | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) The message to be sent. |
+| wParam | [System.IntPtr](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IntPtr 'System.IntPtr') | (Required.) Additional message-specific information. |
+| lParam | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) Additional message-specific information,
+passed as a string. |
+
+##### Remarks
+
+Use this method to send messages directly to a window's window procedure,
+bypassing the system's message queue.
+
+<a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBox,System-String-'></a>
+### SetCueBanner(textBox,cueText) `method`
+
+##### Summary
+
+Sets the cue banner of the specified `textBox` to the
+specified `cueText`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| textBox | [System.Windows.Forms.TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') | (Required.) Reference to an instance of
+[TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') that refers to the textbox for
+which cue text is to be set. |
+| cueText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Optional.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+contains the cue text.
+
+
+
+Pass the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value to remove the cue text. |
 
 <a name='T-xyLOGIX-Core-Extensions-TypeExtensions'></a>
 ## TypeExtensions `type`

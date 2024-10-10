@@ -1,4 +1,4 @@
-namespace xyLOGIX.Core.Extensions
+﻿namespace xyLOGIX.Core.Extensions
 {
     /// <summary> Extension methods for a <c>int?</c> value. </summary>
     public static class NullableIntExtensions

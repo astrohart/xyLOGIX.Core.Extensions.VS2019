@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using PostSharp.Patterns.Threading;
 
 namespace xyLOGIX.Core.Extensions.Tests

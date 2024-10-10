@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions.Actions

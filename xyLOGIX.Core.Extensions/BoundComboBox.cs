@@ -1,4 +1,4 @@
-using PostSharp.Patterns.Threading;
+﻿using PostSharp.Patterns.Threading;
 using System;
 using System.Windows.Forms;
 using xyLOGIX.Core.Debug;

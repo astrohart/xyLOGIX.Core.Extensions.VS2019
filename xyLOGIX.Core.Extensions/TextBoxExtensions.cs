@@ -60,6 +60,7 @@ namespace xyLOGIX.Core.Extensions
                 if (textBox == null) return;
                 if (textBox.IsDisposed) return;
                 if (!IsWindow(textBox.Handle)) return;
+                if (string.IsNullOrWhiteSpace(cueText)) return;
 
                 SendMessage(
                     textBox.Handle, EM_SETCUEBANNER, (IntPtr)1, cueText

@@ -119,6 +119,44 @@ namespace xyLOGIX.Core.Extensions
             new Regex(@"\s+");
 
         /// <summary>
+        /// "Collapses" or "folds" the specified <paramref name="value" /> so that all
+        /// newlines are transformed to single whitespace characters.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value that is to be collapsed.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> containing the value passed, but with
+        /// all newlines transformed to single whitespace characters.
+        /// <para />
+        /// Multiple newlines are removed.
+        /// </returns>
+        public static string CollapseNewlinesToSpaces(this string value)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return value;
+
+                result = value.Trim()
+                              .Replace("\r\n", "\n")
+                              .Replace("\n\n", "\n")
+                              .Replace("\n", " ");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Asks if the search text, in <paramref name="value" />, is a substring
         /// of the strings in <paramref name="collection" />, ignoring case.
         /// </summary>
@@ -687,7 +725,8 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> as being what it ends with.
         /// </param>
         /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
+        /// passed for
         /// <paramref name="endings" />.
         /// </remarks>
         /// <returns>
@@ -2233,7 +2272,8 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> as being what it starts with.
         /// </param>
         /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
+        /// passed for
         /// <paramref name="beginnings" />.
         /// </remarks>
         /// <returns>

@@ -408,6 +408,7 @@
   - [AsProseList\`\`1(quote,selectorFunc)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsProseList``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.AsProseList``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})')
   - [BreakTextIntoLines(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-BreakTextIntoLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.BreakTextIntoLines(System.String)')
   - [CleanLine(line)](#M-xyLOGIX-Core-Extensions-StringExtensions-CleanLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.CleanLine(System.String)')
+  - [CollapseNewlinesToSpaces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-CollapseNewlinesToSpaces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.CollapseNewlinesToSpaces(System.String)')
   - [Concat(initialString,parts)](#M-xyLOGIX-Core-Extensions-StringExtensions-Concat-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.Concat(System.String,System.String[])')
   - [ContainsAny(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.String[])')
   - [ContainsAny(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.Collections.Generic.IEnumerable{System.String})')
@@ -7944,6 +7945,30 @@ removed.
 If the empty string is provided as input, then the empty string is
 returned.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-CollapseNewlinesToSpaces-System-String-'></a>
+### CollapseNewlinesToSpaces(value) `method`
+
+##### Summary
+
+"Collapses" or "folds" the specified `value` so that all
+newlines are transformed to single whitespace characters.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value passed, but with
+all newlines transformed to single whitespace characters.
+
+
+
+Multiple newlines are removed.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+value that is to be collapsed. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Concat-System-String,System-String[]-'></a>
 ### Concat(initialString,parts) `method`
 
@@ -8306,7 +8331,8 @@ elements, each of which is to be assessed against the specified
 
 ##### Remarks
 
-This method returns `false` if no values are passed for
+This method returns `false` if no values are
+passed for
 `endings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String-'></a>
@@ -9475,7 +9501,8 @@ elements, each of which is to be assessed against the specified
 
 ##### Remarks
 
-This method returns `false` if no values are passed for
+This method returns `false` if no values are
+passed for
 `beginnings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>

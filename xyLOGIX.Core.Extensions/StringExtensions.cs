@@ -107,8 +107,10 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         public static bool IsEmailAddressInvalid
         {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] private set;
+            [DebuggerStepThrough]
+            get;
+            [DebuggerStepThrough]
+            private set;
         }
 
         /// <summary>
@@ -117,44 +119,6 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         private static Regex WhiteSpaceRegex { [DebuggerStepThrough] get; } =
             new Regex(@"\s+");
-
-        /// <summary>
-        /// "Collapses" or "folds" the specified <paramref name="value" /> so that all
-        /// newlines are transformed to single whitespace characters.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value that is to be collapsed.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> containing the value passed, but with
-        /// all newlines transformed to single whitespace characters.
-        /// <para />
-        /// Multiple newlines are removed.
-        /// </returns>
-        public static string CollapseNewlinesToSpaces(this string value)
-        {
-            var result = string.Empty;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return value;
-
-                result = value.Trim()
-                              .Replace("\r\n", "\n")
-                              .Replace("\n\n", "\n")
-                              .Replace("\n", " ");
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = string.Empty;
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Asks if the search text, in <paramref name="value" />, is a substring
@@ -394,6 +358,54 @@ namespace xyLOGIX.Core.Extensions
             result = line.Replace("\r", string.Empty);
             result = result.Replace("\n", string.Empty);
             result = result.Trim();
+
+            return result;
+        }
+
+        /// <summary>
+        /// "Collapses" or "folds" the specified <paramref name="value" /> so that all
+        /// newlines are transformed to single whitespace characters.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value that is to be collapsed.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> containing the value passed, but with
+        /// all newlines transformed to single whitespace characters.
+        /// <para />
+        /// Multiple newlines are removed.
+        /// </returns>
+        public static string CollapseNewlinesToSpaces(this string value)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return value;
+
+                result = value.Trim()
+                              .Replace("\r\n", "\n")
+                              .Replace("\n\n", "\n")
+                              .Replace("\n", " ")
+                              .Replace("\t", " ");
+
+                /*
+                 * Strip out all repeating SPACE characters.
+                 */
+
+                do
+                {
+                    result = result.Replace("  ", " ");
+                } while (result.Contains("  "));
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
 
             return result;
         }

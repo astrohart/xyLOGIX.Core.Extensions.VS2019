@@ -428,6 +428,7 @@
   - [EqualsNoCase(str1,str2,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String,System.StringComparison)')
   - [ExcludingWhitespace(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ExcludingWhitespace(System.String)')
   - [GetCompactedString(stringToCompact,font,maxWidth)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetCompactedString(System.String,System.Drawing.Font,System.Int32)')
+  - [GetDottedSuffix(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetDottedSuffix(System.String)')
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
@@ -8446,6 +8447,33 @@ given length.
 | stringToCompact | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The text to be compacted. |
 | font | [System.Drawing.Font](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Font 'System.Drawing.Font') | Font the text is in. |
 | maxWidth | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The maximum length of the string. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String-'></a>
+### GetDottedSuffix(value) `method`
+
+##### Summary
+
+Gets the suffix of a so-called string, i.e.,
+`My.Dotted.String`, which is presumed to be passed as the argument of the
+`value` parameter.
+
+
+
+For the example above, `String` is the result of calling this method.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the final
+part, or , of the dotted string supplied as the argument to the
+`value` parameter; otherwise, the `value`
+parameter is idempotently returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+text to be parsed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32-'></a>
 ### GetFirstNChars(value,nChars) `method`

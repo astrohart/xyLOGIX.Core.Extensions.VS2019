@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -9,16 +10,72 @@ namespace xyLOGIX.Core.Extensions
     public static class EnumerableExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only for the <see cref="T:xyLOGIX.Core.Extensions.EnumerableExtensions"/> class.
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.EnumerableExtensions" /> class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
         /// </remarks>
         [Log(AttributeExclude = true)]
         static EnumerableExtensions() { }
+
+        /// <summary>
+        /// A more fluent version of the LINQ <c>Except</c> extension method; this method
+        /// takes a <paramref name="source" /> enumerable collection, and filters out just
+        /// the element equalling <paramref name="value" /> from it.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Data type of each element of the source
+        /// enumerable collection.
+        /// </typeparam>
+        /// <param name="source">
+        /// (Required.) The enumerable collection from which to filter
+        /// the <paramref name="value" />.
+        /// </param>
+        /// <param name="value">
+        /// (Required.) The value to be removed from the
+        /// <paramref name="source" />.
+        /// </param>
+        /// <returns>
+        /// A sequence containing all elements from the <paramref name="source" />,
+        /// except for any that match the specified <paramref name="value" />.
+        /// The original <paramref name="source" /> is not cloned or modified.
+        /// </returns>
+        public static IEnumerable<T> Except<T>(
+            this IEnumerable<T> source,
+            T value
+        )
+        {
+            if (source == null) yield break;
+            if (!source.Any()) yield break;
+
+            foreach (var element in source)
+            {
+                var shouldYield = false;
+
+                try
+                {
+                    // Check if element equals the specified value
+                    shouldYield = !element.Equals(value);
+                }
+                catch (Exception ex)
+                {
+                    // Log and decide whether to skip or include the element in case of error
+                    DebugUtils.LogException(ex);
+                    shouldYield =
+                        true; // Default behavior: don't filter out on exception
+                }
+
+                if (shouldYield)
+                {
+                    yield return element;
+                }
+            }
+        }
 
         /// <summary>
         /// Runs the specified <paramref name="action" /> for each element of the

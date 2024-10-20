@@ -9,6 +9,18 @@ namespace xyLOGIX.Core.Extensions
     public static class EnumerableExtensions
     {
         /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only for the <see cref="T:xyLOGIX.Core.Extensions.EnumerableExtensions"/> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static EnumerableExtensions() { }
+
+        /// <summary>
         /// Runs the specified <paramref name="action" /> for each element of the
         /// specified <paramref name="collection" />.
         /// </summary>

@@ -64,6 +64,8 @@
   - [AsString\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-AsString``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.AsString``1(``0)')
   - [IsUndefined\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-IsUndefined``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.IsUndefined``1(``0)')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-#cctor 'xyLOGIX.Core.Extensions.EnumerableExtensions.#cctor')
+  - [Except\`\`1(source,value)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Except``1-System-Collections-Generic-IEnumerable{``0},``0- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Except``1(System.Collections.Generic.IEnumerable{``0},``0)')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})')
   - [IsAnyOf\`\`1(value,testObjects)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-IsAnyOf``1-``0,``0[]- 'xyLOGIX.Core.Extensions.EnumerableExtensions.IsAnyOf``1(``0,``0[])')
@@ -1965,6 +1967,59 @@ xyLOGIX.Core.Extensions
 ##### Summary
 
 Helper methods for collections.
+
+<a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-Except``1-System-Collections-Generic-IEnumerable{``0},``0-'></a>
+### Except\`\`1(source,value) `method`
+
+##### Summary
+
+A more fluent version of the LINQ `Except` extension method; this method
+takes a `source` enumerable collection, and filters out just
+the element equalling `value` from it.
+
+##### Returns
+
+A sequence containing all elements from the `source`,
+except for any that match the specified `value`.
+The original `source` is not cloned or modified.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) The enumerable collection from which to filter
+the `value`. |
+| value | [\`\`0](#T-``0 '``0') | (Required.) The value to be removed from the
+`source`. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of each element of the source
+enumerable collection. |
 
 <a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}-'></a>
 ### ForEach\`\`1(collection,action) `method`

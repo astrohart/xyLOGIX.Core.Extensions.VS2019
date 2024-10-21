@@ -1,6 +1,7 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using xyLOGIX.Core.Debug;
 
@@ -45,6 +46,8 @@ namespace xyLOGIX.Core.Extensions
         /// except for any that match the specified <paramref name="value" />.
         /// The original <paramref name="source" /> is not cloned or modified.
         /// </returns>
+        [DebuggerStepThrough]
+        [Log(AttributeExclude = true)]
         public static IEnumerable<T> Except<T>(
             this IEnumerable<T> source,
             T value

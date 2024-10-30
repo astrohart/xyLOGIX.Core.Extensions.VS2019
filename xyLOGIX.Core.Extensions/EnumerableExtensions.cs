@@ -25,6 +25,111 @@ namespace xyLOGIX.Core.Extensions
         static EnumerableExtensions() { }
 
         /// <summary>
+        /// Determines whether any of the element(s) of the specified
+        /// <paramref name="collection" /> are equal to any of the specified
+        /// <paramref name="values" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Data type of the individual elements of the
+        /// specified <paramref name="collection" />.
+        /// </typeparam>
+        /// <param name="collection">
+        /// (Required.) Collection of values, all of the type,
+        /// <typeparamref name="T" />, that is to be searched.
+        /// </param>
+        /// <param name="values">(Required.) One or more values that are to be matched.</param>
+        /// <returns>
+        /// <see langword="true" /> if even one match is found;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool AnyEqualAnyOf<T>(
+            this IEnumerable<T> collection,
+            params T[] values
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (collection == null) return result;
+                if (collection.ToArray()
+                              .Length <= 0) return result;
+                if (values == null) return result;
+                if (values.Length <= 0) return result;
+                if (values.Length == 1) return AnyEqual(collection, values[0]);
+
+                foreach (var element in collection)
+                {
+                    if (element == null) continue;
+                    if (!element.IsAnyOf(values)) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if any of the element(s) of the specified
+        /// <paramref name="collection" /> happen to equal the specified
+        /// <paramref name="value" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Data type of the individual elements of the
+        /// specified <paramref name="collection" />.
+        /// </typeparam>
+        /// <param name="collection">
+        /// (Required.) Collection of values, all of the type,
+        /// <typeparamref name="T" />, that is to be searched.
+        /// </param>
+        /// <param name="value">(Required.) The value that is to be matched.</param>
+        /// <returns>
+        /// <see langword="true" /> if at least one element of the specified
+        /// <paramref name="collection" /> matches the specified <paramref name="value" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool AnyEqual<T>(this IEnumerable<T> collection, T value)
+        {
+            var result = false;
+
+            try
+            {
+                if (collection == null) return result;
+                if (collection.ToArray()
+                              .Length <= 0) return result;
+
+                foreach (var element in collection.ToArray())
+                {
+                    if (element == null) return result;
+                    if (!value.Equals(element)) return result;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// A more fluent version of the LINQ <c>Except</c> extension method; this method
         /// takes a <paramref name="source" /> enumerable collection, and filters out just
         /// the element equalling <paramref name="value" /> from it.
@@ -46,8 +151,7 @@ namespace xyLOGIX.Core.Extensions
         /// except for any that match the specified <paramref name="value" />.
         /// The original <paramref name="source" /> is not cloned or modified.
         /// </returns>
-        [DebuggerStepThrough]
-        [Log(AttributeExclude = true)]
+        [DebuggerStepThrough, Log(AttributeExclude = true)]
         public static IEnumerable<T> Except<T>(
             this IEnumerable<T> source,
             T value

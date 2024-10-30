@@ -107,8 +107,10 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         public static bool IsEmailAddressInvalid
         {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] private set;
+            [DebuggerStepThrough]
+            get;
+            [DebuggerStepThrough]
+            private set;
         }
 
         /// <summary>
@@ -117,47 +119,6 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         private static Regex WhiteSpaceRegex { [DebuggerStepThrough] get; } =
             new Regex(@"\s+");
-
-        /// <summary>
-        /// Gets the suffix of a so-called <i>dotted</i> string, i.e.,
-        /// <c>My.Dotted.String</c>, which is presumed to be passed as the argument of the
-        /// <paramref name="value" /> parameter.<para />
-        /// For the example above, <c>String</c> is the result of calling this method.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// text to be parsed.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the final
-        /// part, or <i>suffix</i>, of the dotted string supplied as the argument to the
-        /// <paramref name="value" /> parameter; otherwise, the <paramref name="value" />
-        /// parameter is idempotently returned.
-        /// </returns>
-        public static string GetDottedSuffix(this string value)
-        {
-            var result = value;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-
-                var parts = value.SplitOn(".");
-                if (parts == null) return result;
-                if (parts.Length == 0) return result;
-
-                result = parts[parts.Length - 1];
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = value;
-            }
-
-            return result;
-        }
 
         /// <summary>
         /// Asks if the search text, in <paramref name="value" />, is a substring
@@ -913,6 +874,48 @@ namespace xyLOGIX.Core.Extensions
             );
 
             return compactedString;
+        }
+
+        /// <summary>
+        /// Gets the suffix of a so-called <i>dotted</i> string, i.e.,
+        /// <c>My.Dotted.String</c>, which is presumed to be passed as the argument of the
+        /// <paramref name="value" /> parameter.
+        /// <para />
+        /// For the example above, <c>String</c> is the result of calling this method.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// text to be parsed.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the final
+        /// part, or <i>suffix</i>, of the dotted string supplied as the argument to the
+        /// <paramref name="value" /> parameter; otherwise, the <paramref name="value" />
+        /// parameter is idempotently returned.
+        /// </returns>
+        public static string GetDottedSuffix(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                var parts = value.SplitOn(".");
+                if (parts == null) return result;
+                if (parts.Length == 0) return result;
+
+                result = parts[parts.Length - 1];
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
         }
 
         /// <summary>

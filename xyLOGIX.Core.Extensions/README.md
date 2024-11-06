@@ -29,6 +29,7 @@
   - [NoItemsAreSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-NoItemsAreSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.NoItemsAreSelected(System.Windows.Forms.CheckedListBox)')
 - [CollectionExtensions](#T-xyLOGIX-Core-Extensions-CollectionExtensions 'xyLOGIX.Core.Extensions.CollectionExtensions')
   - [AddMultiple\`\`1(collection,items)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-AddMultiple``1-System-Collections-Generic-ICollection{``0},``0[]- 'xyLOGIX.Core.Extensions.CollectionExtensions.AddMultiple``1(System.Collections.Generic.ICollection{``0},``0[])')
+  - [AnyAre\`\`1(values,predicate)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-AnyAre``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-Boolean}- 'xyLOGIX.Core.Extensions.CollectionExtensions.AnyAre``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})')
   - [IsEmpty\`\`1(collection)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsEmpty``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsEmpty``1(System.Collections.Generic.ICollection{``0})')
   - [IsNullOrEmpty\`\`1(collection)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsNullOrEmpty``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})')
   - [IsOneOf\`\`1(obj)](#M-xyLOGIX-Core-Extensions-CollectionExtensions-IsOneOf``1-System-Object- 'xyLOGIX.Core.Extensions.CollectionExtensions.IsOneOf``1(System.Object)')
@@ -405,7 +406,9 @@
   - [StateAbbrList](#F-xyLOGIX-Core-Extensions-StringExtensions-StateAbbrList 'xyLOGIX.Core.Extensions.StringExtensions.StateAbbrList')
   - [IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
   - [WhiteSpaceRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex 'xyLOGIX.Core.Extensions.StringExtensions.WhiteSpaceRegex')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-StringExtensions-#cctor 'xyLOGIX.Core.Extensions.StringExtensions.#cctor')
   - [AnyContainNoCase(collection,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AnyContainNoCase(System.Collections.Generic.IEnumerable{System.String},System.String)')
+  - [AnyStartWithAny(targets,values)](#M-xyLOGIX-Core-Extensions-StringExtensions-AnyStartWithAny-System-Collections-Generic-IEnumerable{System-String},System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.AnyStartWithAny(System.Collections.Generic.IEnumerable{System.String},System.String[])')
   - [AreAnyLettersLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AreAnyLettersLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AreAnyLettersLowercase(System.String)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsDecimal-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsDecimal(System.String)')
   - [AsDouble(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsDouble-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsDouble(System.String)')
@@ -1138,6 +1141,65 @@ If an individual element of the `items` parameter is a
 If an individual element of the `items` parameter is already
 a member of the specified `collection`, it is still added.
 Typical use of this method is for, e.g., generating script files.
+
+<a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-AnyAre``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-Boolean}-'></a>
+### AnyAre\`\`1(values,predicate) `method`
+
+##### Summary
+
+Determines whether the `predicate` returns
+`true` for any of the specified `values`.
+
+##### Returns
+
+`true` if any of the `values`
+matches the supplied `predicate`; `false`
+otheriwse.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| values | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Collection of objects, each of whose elements
+are to be passed to the specified `predicate` until either it
+returns `true`, or if the entire collection is enumerated. |
+| predicate | [System.Func{\`\`0,System.Boolean}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,System.Boolean}') | (Required.) Predicate that tests each value in the
+`values` collection. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of each element of the
+`values` collection. |
+
+##### Remarks
+
+This method can make no guarantee about the order in which it evaluates the
+`predicate` on the elements of the `values`
+collection.
+
+
+
+This method enumerates the entire `values`
+collection twice; once to determine if it contains any elements, and the other
+to test each element with the specified `predicate`.
+
+
+
+If you do not want that, then use the LINQ `Any` method on the
+`values` collection instead.
+
+
+
+The approach of this method is designed to make it an asset where thread-safety
+is more important than performance.
+
+
+
+Iteration of the `values` collection stops the moment that
+either the `predicate` returns `true`, or if
+the end of the `values` collection is reached.
 
 <a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-IsEmpty``1-System-Collections-Generic-ICollection{``0}-'></a>
 ### IsEmpty\`\`1(collection) `method`
@@ -7896,6 +7958,28 @@ such a valid address.
 Gets a [Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that
 matches all whitespace characters.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [StringExtensions](#T-xyLOGIX-Core-Extensions-StringExtensions 'xyLOGIX.Core.Extensions.StringExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String-'></a>
 ### AnyContainNoCase(collection,value) `method`
 
@@ -7915,6 +7999,36 @@ collection, regardless of case; `false` otherwise.
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | Collection to search. |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Value to compare. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-AnyStartWithAny-System-Collections-Generic-IEnumerable{System-String},System-String[]-'></a>
+### AnyStartWithAny(targets,values) `method`
+
+##### Summary
+
+Determines if any of the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')s in
+`targets` start with any of the specified
+`values`.
+
+##### Returns
+
+`true`if any of the `targets` start
+with any of the `values`; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| targets | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+value(s) that are to be searched. |
+| values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+value(s) that are to be used as search criteria. |
+
+##### Remarks
+
+If a `null` reference is passed as the argument of
+the `targets` parameter, of if either of the
+`targets` or `values` parameter(s) refer to
+the empty collection, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AreAnyLettersLowercase-System-String-'></a>
 ### AreAnyLettersLowercase(value) `method`

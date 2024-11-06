@@ -101,16 +101,28 @@ namespace xyLOGIX.Core.Extensions
         };
 
         /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.StringExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static StringExtensions() { }
+
+        /// <summary>
         /// Gets or sets a value that indicates whether the string most recently
         /// checked for whether it contains a valid email address, does in fact contain
         /// such a valid address.
         /// </summary>
         public static bool IsEmailAddressInvalid
         {
-            [DebuggerStepThrough]
-            get;
-            [DebuggerStepThrough]
-            private set;
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] private set;
         }
 
         /// <summary>
@@ -119,6 +131,63 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         private static Regex WhiteSpaceRegex { [DebuggerStepThrough] get; } =
             new Regex(@"\s+");
+
+        /// <summary>
+        /// Determines if any of the <see cref="T:System.String" />s in
+        /// <paramref name="targets" /> start with any of the specified
+        /// <paramref name="values" />.
+        /// </summary>
+        /// <param name="targets">
+        /// (Required.) Collection of <see cref="T:System.String" />
+        /// value(s) that are to be searched.
+        /// </param>
+        /// <param name="values">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// value(s) that are to be used as search criteria.
+        /// </param>
+        /// <remarks>
+        /// If a <see langword="null" /> reference is passed as the argument of
+        /// the <paramref name="targets" /> parameter, of if either of the
+        /// <paramref name="targets" /> or <paramref name="values" /> parameter(s) refer to
+        /// the empty collection, then this method returns <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" />if any of the <paramref name="targets" /> start
+        /// with any of the <paramref name="values" />; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool AnyStartWithAny(
+            this IEnumerable<string> targets,
+            params string[] values
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (targets == null) return result;
+                if (targets.ToArray()
+                           .Length <= 0) return result;
+                if (values.Length <= 0) return result;
+
+                foreach (var target in targets.ToArray())
+                {
+                    if (string.IsNullOrWhiteSpace(target)) continue;
+                    if (!target.StartsWithAny(values)) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Asks if the search text, in <paramref name="value" />, is a substring

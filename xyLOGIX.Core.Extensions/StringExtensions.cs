@@ -447,7 +447,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static string CollapseNewlinesToSpaces(this string value)
         {
-            var result = string.Empty;
+            string result;
 
             try
             {

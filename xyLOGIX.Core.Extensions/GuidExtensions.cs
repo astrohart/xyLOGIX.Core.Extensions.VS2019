@@ -1,8 +1,6 @@
 using PostSharp.Patterns.Diagnostics;
 using System;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -13,6 +11,20 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class GuidExtensions
     {
+        /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.GuidExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static GuidExtensions() { }
+
         /// <summary>
         /// Expresses the provided <paramref name="guid" /> as a
         /// <see cref="T:System.String" /> containing only the <see cref="T:System.Guid" />

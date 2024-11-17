@@ -1,7 +1,9 @@
-﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Windows.Forms;
-using xyLOGIX.Core.Debug;
+using Core.Logging;
+using Core.Logging.Constants;
+using Core.Logging.Events;
 
 namespace xyLOGIX.Core.Extensions
 {

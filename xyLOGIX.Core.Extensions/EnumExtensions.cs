@@ -1,6 +1,8 @@
-﻿using System;
+using System;
 using System.ComponentModel;
-using xyLOGIX.Core.Debug;
+using Core.Logging;
+using Core.Logging.Constants;
+using Core.Logging.Events;
 
 namespace xyLOGIX.Core.Extensions
 {

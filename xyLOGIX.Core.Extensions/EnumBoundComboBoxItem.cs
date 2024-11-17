@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using PostSharp.Patterns.Threading;
 using System;
 
@@ -26,7 +26,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>
         /// Creates a new instance of
         /// <see
-        ///     cref="T:Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
+        ///     cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
         /// and initializes it with the specified <paramref name="value" />.
         /// </summary>
         /// <param name="value">
@@ -36,7 +36,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// Reference to an instance of
         /// <see
-        ///     cref="T:Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
+        ///     cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
         /// that contains the required data.
         /// </returns>
         public static EnumBoundComboBoxItem<T> ForEnumValue(T value)

@@ -1,9 +1,11 @@
-﻿using PostSharp.Patterns.Collections;
+using PostSharp.Patterns.Collections;
 using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using xyLOGIX.Core.Debug;
+using Core.Logging;
+using Core.Logging.Constants;
+using Core.Logging.Events;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -121,7 +123,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// A collection of instances of
         /// <see
-        ///     cref="T:Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
+        ///     cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
         /// , each of which represent an item to be added to a
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
         /// </returns>

@@ -79,7 +79,7 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsUndefined<T>(this T enumerationValue)
             where T : Enum
         {
-            var result = false;
+            bool result;
 
             try
             {

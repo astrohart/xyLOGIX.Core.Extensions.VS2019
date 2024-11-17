@@ -3,9 +3,7 @@ using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {

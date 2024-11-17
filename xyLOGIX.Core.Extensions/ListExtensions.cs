@@ -5,9 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using xyLOGIX.Collections.Synchronized;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -15,6 +13,20 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class ListExtensions
     {
+        /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.ListExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static ListExtensions() { }
+
         /// <summary>
         /// Adds an <paramref name="item" /> to a <paramref name="list" />, but
         /// only if the item is not already present in the collection. If it is, then this

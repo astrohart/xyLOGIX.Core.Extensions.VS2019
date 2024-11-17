@@ -4,9 +4,7 @@ using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 using xyLOGIX.Core.Extensions.Providers.Factories;
 using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
@@ -19,6 +17,20 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class ControlExtensions
     {
+        /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.ControlExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static ControlExtensions() { }
+
         /// <summary>
         /// Gets a reference to an instance of an object that implements the
         /// <see

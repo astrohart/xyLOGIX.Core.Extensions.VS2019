@@ -20,12 +20,14 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// Empty, static constructor to prohibit direct allocation of this
         /// class.
         /// </summary>
+        [Log(AttributeExclude = true)]
         static ControlFormAssociationProvider() { }
 
         /// <summary>
         /// Empty, protected constructor to prohibit direct allocation of this
         /// class.
         /// </summary>
+        [Log(AttributeExclude = true)]
         protected ControlFormAssociationProvider()
             => ParentFormDictionary = new AdvisableDictionary<Control, Form>();
 

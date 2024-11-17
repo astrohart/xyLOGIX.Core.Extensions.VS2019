@@ -162,7 +162,7 @@ namespace xyLOGIX.Core.Extensions
 
             foreach (var element in source)
             {
-                var shouldYield = false;
+                bool shouldYield;
 
                 try
                 {

@@ -148,7 +148,7 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         private static bool FileExists(string pathname)
         {
-            var result = false;
+            bool result;
 
             try
             {

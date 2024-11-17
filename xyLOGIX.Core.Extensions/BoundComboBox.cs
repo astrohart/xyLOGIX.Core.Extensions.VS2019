@@ -1,9 +1,7 @@
 using PostSharp.Patterns.Threading;
 using System;
 using System.Windows.Forms;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {

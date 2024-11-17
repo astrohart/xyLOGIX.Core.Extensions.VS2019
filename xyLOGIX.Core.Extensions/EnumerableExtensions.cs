@@ -3,9 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {

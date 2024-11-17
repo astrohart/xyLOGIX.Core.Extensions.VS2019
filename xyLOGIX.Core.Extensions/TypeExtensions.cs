@@ -1,12 +1,10 @@
-using System.Diagnostics;
 using PostSharp.Patterns.Collections;
 using PostSharp.Patterns.Diagnostics;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -29,8 +27,11 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="M:xyLOGIX.Core.Extensions.TypeExtensions.GetActualType" /> method
         /// for faster performance.
         /// </summary>
-        public static AdvisableDictionary<Type, Type>
-            CachedActualType { [DebuggerStepThrough] get; } = new AdvisableDictionary<Type, Type>();
+        public static AdvisableDictionary<Type, Type> CachedActualType
+        {
+            [DebuggerStepThrough]
+            get;
+        } = new AdvisableDictionary<Type, Type>();
 
         /// <summary>
         /// Gets the internal type of IList. When the type is not a list then

@@ -1,14 +1,12 @@
-using System.Diagnostics;
 using PostSharp.Patterns.Collections;
 using PostSharp.Patterns.Diagnostics;
 using PostSharp.Patterns.Threading;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions.Providers
@@ -37,15 +35,20 @@ namespace xyLOGIX.Core.Extensions.Providers
         ///     cref="T:xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
         /// interface.
         /// </summary>
-        public static IControlFormAssociationProvider Instance { [DebuggerStepThrough] get; } =
-            new ControlFormAssociationProvider();
+        public static IControlFormAssociationProvider Instance
+        {
+            [DebuggerStepThrough] get;
+        } = new ControlFormAssociationProvider();
 
         /// <summary>
         /// Reference to an instance of a dictionary that maps instances of
         /// <see cref="T:System.Windows.Forms.Control" />s to the parent
         /// <see cref="T:System.Windows.Forms.Form" />s that contain them.
         /// </summary>
-        protected IDictionary<Control, Form> ParentFormDictionary { [DebuggerStepThrough] get; }
+        protected IDictionary<Control, Form> ParentFormDictionary
+        {
+            [DebuggerStepThrough] get;
+        }
 
         /// <summary>
         /// Adds an association between the specified <paramref name="control" />

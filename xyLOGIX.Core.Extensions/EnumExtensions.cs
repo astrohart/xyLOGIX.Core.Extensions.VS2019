@@ -1,14 +1,27 @@
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.ComponentModel;
-using Core.Logging;
-using Core.Logging.Constants;
-using Core.Logging.Events;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary> Extension methods to utilize on enums. </summary>
     public static class EnumExtensions
     {
+        /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.EnumExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static EnumExtensions() { }
+
         /// <summary>
         /// Converts an enumeration value of the specified type (with a
         /// Description attribute) to a string value.

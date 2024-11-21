@@ -403,6 +403,9 @@
   - [PersonNameEmpty](#P-xyLOGIX-Core-Extensions-Properties-Resources-PersonNameEmpty 'xyLOGIX.Core.Extensions.Properties.Resources.PersonNameEmpty')
   - [PersonNameIncorrectFormat](#P-xyLOGIX-Core-Extensions-Properties-Resources-PersonNameIncorrectFormat 'xyLOGIX.Core.Extensions.Properties.Resources.PersonNameIncorrectFormat')
   - [ResourceManager](#P-xyLOGIX-Core-Extensions-Properties-Resources-ResourceManager 'xyLOGIX.Core.Extensions.Properties.Resources.ResourceManager')
+- [SetExtensions](#T-xyLOGIX-Core-Extensions-SetExtensions 'xyLOGIX.Core.Extensions.SetExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-SetExtensions-#cctor 'xyLOGIX.Core.Extensions.SetExtensions.#cctor')
+  - [AddRange\`\`1(target,source)](#M-xyLOGIX-Core-Extensions-SetExtensions-AddRange``1-System-Collections-Generic-ISet{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.SetExtensions.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})')
 - [StringExtensions](#T-xyLOGIX-Core-Extensions-StringExtensions 'xyLOGIX.Core.Extensions.StringExtensions')
   - [AcronymList](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList 'xyLOGIX.Core.Extensions.StringExtensions.AcronymList')
   - [AlwaysCapitalizeIfFirstWord](#F-xyLOGIX-Core-Extensions-StringExtensions-AlwaysCapitalizeIfFirstWord 'xyLOGIX.Core.Extensions.StringExtensions.AlwaysCapitalizeIfFirstWord')
@@ -8020,6 +8023,85 @@ Looks up a localized string similar to The Full Name should at least be two word
 ##### Summary
 
 Returns the cached ResourceManager instance used by this class.
+
+<a name='T-xyLOGIX-Core-Extensions-SetExtensions'></a>
+## SetExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension methods for instances of object(s) that implement the
+[ISet\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet`1 'System.Collections.Generic.ISet`1') interface.
+
+<a name='M-xyLOGIX-Core-Extensions-SetExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [SetExtensions](#T-xyLOGIX-Core-Extensions-SetExtensions 'xyLOGIX.Core.Extensions.SetExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-SetExtensions-AddRange``1-System-Collections-Generic-ISet{``0},System-Collections-Generic-IEnumerable{``0}-'></a>
+### AddRange\`\`1(target,source) `method`
+
+##### Summary
+
+Adds a range of data value(s) from the specified `source`
+collection to the `target` set.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| target | [System.Collections.Generic.ISet{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet 'System.Collections.Generic.ISet{``0}') | (Required.) Reference to a collection of element(s), each of which is of type,
+`T`, that implements the
+[ISet\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet`1 'System.Collections.Generic.ISet`1') interface that is to receive
+the element(s) of `source`. |
+| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Reference to a collection of element(s), each
+of which is of type, `T`, that is enumerated and added to
+the `target`. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of the individual element(s) of the
+`target` and `source`. |
+
+##### Remarks
+
+If the `source` collection is passed a
+`null` reference, or has zero element(s), then this method
+does nothing.
+
+
+
+This method also does nothing if a `null` reference is passed
+for the `target` collection.
+If an element from the `source` collection is
+already a member of the `target` collection, then it is
+skipped.
+
+
+
+`null` references are also skipped.
 
 <a name='T-xyLOGIX-Core-Extensions-StringExtensions'></a>
 ## StringExtensions `type`

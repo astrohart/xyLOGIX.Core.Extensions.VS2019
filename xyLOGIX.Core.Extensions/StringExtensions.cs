@@ -133,6 +133,52 @@ namespace xyLOGIX.Core.Extensions
             new Regex(@"\s+");
 
         /// <summary>
+        /// Extracts the last initial-capped word from a fully-qualified class name or
+        /// string containing a name such as <c>FooBarBaz</c> (in which case, it would
+        /// return <c>Baz</c>).
+        /// </summary>
+        /// <param name="input">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// text that is to be parsed.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the last
+        /// initial-capped word in the <paramref name="input" />; otherwise, this method is
+        /// idempotent.
+        /// </returns>
+        public static string GetLastWord(this string input)
+        {
+            var result = input;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(input))
+                    return input;
+
+                // Start from the end of the string and work backwards
+                for (var i = input.Length - 1; i >= 0; i--)
+                {
+                    if (!char.IsUpper(input[i])) continue;
+
+                    // Return the substring starting from the capital letter
+                    result = input.Substring(i);
+                    break;
+                }
+
+                // If no capital letter is found, return the original input (unlikely with valid input)
+            }
+            catch (Exception ex)
+            {
+                 // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = input;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines if any of the <see cref="T:System.String" />s in
         /// <paramref name="targets" /> start with any of the specified
         /// <paramref name="values" />.

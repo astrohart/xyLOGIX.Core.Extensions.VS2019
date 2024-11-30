@@ -448,6 +448,7 @@
   - [GetCompactedString(stringToCompact,font,maxWidth)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetCompactedString(System.String,System.Drawing.Font,System.Int32)')
   - [GetDottedSuffix(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetDottedSuffix(System.String)')
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
+  - [GetLastWord(input)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetLastWord(System.String)')
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
   - [IsAbsolutePath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePath(System.String)')
@@ -8999,6 +9000,28 @@ the start of the string to get. |
 | [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown if
 `nChars` has a zero or negative number value.
 `nChars` must be a positive number. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String-'></a>
+### GetLastWord(input) `method`
+
+##### Summary
+
+Extracts the last initial-capped word from a fully-qualified class name or
+string containing a name such as `FooBarBaz` (in which case, it would
+return `Baz`).
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the last
+initial-capped word in the `input`; otherwise, this method is
+idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| input | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+text that is to be parsed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String-'></a>
 ### GetPersonFirstName(fullName) `method`

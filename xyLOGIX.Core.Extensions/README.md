@@ -3,8 +3,6 @@
 
 ## Contents
 
-- [BindingManagerBaseExtensions](#T-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions 'xyLOGIX.Core.Extensions.BindingManagerBaseExtensions')
-  - [#cctor()](#M-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions-#cctor 'xyLOGIX.Core.Extensions.BindingManagerBaseExtensions.#cctor')
 - [BoundComboBox](#T-xyLOGIX-Core-Extensions-BoundComboBox 'xyLOGIX.Core.Extensions.BoundComboBox')
   - [OnSelectedIndexChanged(e)](#M-xyLOGIX-Core-Extensions-BoundComboBox-OnSelectedIndexChanged-System-EventArgs- 'xyLOGIX.Core.Extensions.BoundComboBox.OnSelectedIndexChanged(System.EventArgs)')
 - [Calculate](#T-xyLOGIX-Core-Extensions-Calculate 'xyLOGIX.Core.Extensions.Calculate')
@@ -42,7 +40,6 @@
   - [SelectFirstItem(comboBox)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-SelectFirstItem-System-Windows-Forms-ComboBox- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.SelectFirstItem(System.Windows.Forms.ComboBox)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
   - [ControlFormAssociationProvider](#P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider 'xyLOGIX.Core.Extensions.ControlExtensions.ControlFormAssociationProvider')
-  - [#cctor()](#M-xyLOGIX-Core-Extensions-ControlExtensions-#cctor 'xyLOGIX.Core.Extensions.ControlExtensions.#cctor')
   - [AssociateWithParentForm(control)](#M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.AssociateWithParentForm(System.Windows.Forms.Control)')
   - [GetParentForm()](#M-xyLOGIX-Core-Extensions-ControlExtensions-GetParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.GetParentForm(System.Windows.Forms.Control)')
   - [InvokeIfRequired(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)')
@@ -65,7 +62,6 @@
   - [Value](#P-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-Value 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1.Value')
   - [ForEnumValue(value)](#M-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-ForEnumValue-`0- 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1.ForEnumValue(`0)')
 - [EnumExtensions](#T-xyLOGIX-Core-Extensions-EnumExtensions 'xyLOGIX.Core.Extensions.EnumExtensions')
-  - [#cctor()](#M-xyLOGIX-Core-Extensions-EnumExtensions-#cctor 'xyLOGIX.Core.Extensions.EnumExtensions.#cctor')
   - [AsString\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-AsString``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.AsString``1(``0)')
   - [IsUndefined\`\`1(enumerationValue)](#M-xyLOGIX-Core-Extensions-EnumExtensions-IsUndefined``1-``0- 'xyLOGIX.Core.Extensions.EnumExtensions.IsUndefined``1(``0)')
 - [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
@@ -89,7 +85,6 @@
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
 - [GuidExtensions](#T-xyLOGIX-Core-Extensions-GuidExtensions 'xyLOGIX.Core.Extensions.GuidExtensions')
-  - [#cctor()](#M-xyLOGIX-Core-Extensions-GuidExtensions-#cctor 'xyLOGIX.Core.Extensions.GuidExtensions.#cctor')
   - [AsDigitsWithHyphens(guid)](#M-xyLOGIX-Core-Extensions-GuidExtensions-AsDigitsWithHyphens-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.AsDigitsWithHyphens(System.Guid)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-GuidExtensions-IsZero-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.IsZero(System.Guid)')
   - [ToUppercaseWithBraces(guid)](#M-xyLOGIX-Core-Extensions-GuidExtensions-ToUppercaseWithBraces-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.ToUppercaseWithBraces(System.Guid)')
@@ -321,7 +316,6 @@
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
 - [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions')
-  - [#cctor()](#M-xyLOGIX-Core-Extensions-ListExtensions-#cctor 'xyLOGIX.Core.Extensions.ListExtensions.#cctor')
   - [AddDistinct(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct-System-Collections-IList,System-Object- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct(System.Collections.IList,System.Object)')
   - [AddDistinct\`\`1(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-IList{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.IList{``0},``0)')
   - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
@@ -364,7 +358,6 @@
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsPositive-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsPositive(System.Nullable{System.Int64})')
   - [IsValid(value)](#M-xyLOGIX-Core-Extensions-NullableLongExtensions-IsValid-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NullableLongExtensions.IsValid(System.Nullable{System.Int64})')
 - [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
-  - [#cctor()](#M-xyLOGIX-Core-Extensions-NumberExtensions-#cctor 'xyLOGIX.Core.Extensions.NumberExtensions.#cctor')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Double)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Double}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Double})')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Nullable{System-Int64}- 'xyLOGIX.Core.Extensions.NumberExtensions.AsDecimal(System.Nullable{System.Int64})')
@@ -403,9 +396,6 @@
   - [PersonNameEmpty](#P-xyLOGIX-Core-Extensions-Properties-Resources-PersonNameEmpty 'xyLOGIX.Core.Extensions.Properties.Resources.PersonNameEmpty')
   - [PersonNameIncorrectFormat](#P-xyLOGIX-Core-Extensions-Properties-Resources-PersonNameIncorrectFormat 'xyLOGIX.Core.Extensions.Properties.Resources.PersonNameIncorrectFormat')
   - [ResourceManager](#P-xyLOGIX-Core-Extensions-Properties-Resources-ResourceManager 'xyLOGIX.Core.Extensions.Properties.Resources.ResourceManager')
-- [SetExtensions](#T-xyLOGIX-Core-Extensions-SetExtensions 'xyLOGIX.Core.Extensions.SetExtensions')
-  - [#cctor()](#M-xyLOGIX-Core-Extensions-SetExtensions-#cctor 'xyLOGIX.Core.Extensions.SetExtensions.#cctor')
-  - [AddRange\`\`1(target,source)](#M-xyLOGIX-Core-Extensions-SetExtensions-AddRange``1-System-Collections-Generic-ISet{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.SetExtensions.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})')
 - [StringExtensions](#T-xyLOGIX-Core-Extensions-StringExtensions 'xyLOGIX.Core.Extensions.StringExtensions')
   - [AcronymList](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList 'xyLOGIX.Core.Extensions.StringExtensions.AcronymList')
   - [AlwaysCapitalizeIfFirstWord](#F-xyLOGIX-Core-Extensions-StringExtensions-AlwaysCapitalizeIfFirstWord 'xyLOGIX.Core.Extensions.StringExtensions.AlwaysCapitalizeIfFirstWord')
@@ -440,7 +430,6 @@
   - [DoInitialCaps(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.DoInitialCaps(System.String)')
   - [DomainMapper(match)](#M-xyLOGIX-Core-Extensions-StringExtensions-DomainMapper-System-Text-RegularExpressions-Match- 'xyLOGIX.Core.Extensions.StringExtensions.DomainMapper(System.Text.RegularExpressions.Match)')
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.String[])')
-  - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [EnsureAtIsInFront(twitterSite)](#M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EnsureAtIsInFront(System.String)')
   - [EqualsNoCase(str1,str2)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String)')
   - [EqualsNoCase(str1,str2,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String,System.StringComparison)')
@@ -448,7 +437,6 @@
   - [GetCompactedString(stringToCompact,font,maxWidth)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetCompactedString(System.String,System.Drawing.Font,System.Int32)')
   - [GetDottedSuffix(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetDottedSuffix(System.String)')
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
-  - [GetLastWord(input)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetLastWord(System.String)')
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
   - [IsAbsolutePath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePath(System.String)')
@@ -508,36 +496,6 @@
   - [#cctor()](#M-xyLOGIX-Core-Extensions-TypeExtensions-#cctor 'xyLOGIX.Core.Extensions.TypeExtensions.#cctor')
   - [GetActualType()](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType(System.Type)')
   - [IsSameOrSubclassOf(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclassOf-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclassOf(System.Type,System.Type)')
-
-<a name='T-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions'></a>
-## BindingManagerBaseExtensions `type`
-
-##### Namespace
-
-xyLOGIX.Core.Extensions
-
-<a name='M-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed once only
-for the [BindingManagerBaseExtensions](#T-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions 'xyLOGIX.Core.Extensions.BindingManagerBaseExtensions')
-class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
-
-
-
-We've decorated this constructor with the `[Log(AttributeExclude = true)]`
-attribute in order to simplify the logging output.
 
 <a name='T-xyLOGIX-Core-Extensions-BoundComboBox'></a>
 ## BoundComboBox `type`
@@ -1417,7 +1375,7 @@ enumeration.
 ##### Returns
 
 A collection of instances of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
 , each of which represent an item to be added to a
 [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
@@ -1471,30 +1429,8 @@ extending the functionality of .NET framework controls.
 ##### Summary
 
 Gets a reference to an instance of an object that implements the
-[IControlFormAssociationProvider](#T-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider 'xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider')
+[IControlFormAssociationProvider](#T-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider 'Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider')
 interface.
-
-<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed once only
-for the [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions') class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
-
-
-
-We've decorated this constructor with the `[Log(AttributeExclude = true)]`
-attribute in order to simplify the logging output.
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-AssociateWithParentForm-System-Windows-Forms-Control-'></a>
 ### AssociateWithParentForm(control) `method`
@@ -2007,13 +1943,13 @@ Gets or sets the enumeration value that is "behind" the combo box selection.
 ##### Summary
 
 Creates a new instance of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
 and initializes it with the specified `value`.
 
 ##### Returns
 
 Reference to an instance of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
 that contains the required data.
 
 ##### Parameters
@@ -2033,28 +1969,6 @@ xyLOGIX.Core.Extensions
 ##### Summary
 
 Extension methods to utilize on enums.
-
-<a name='M-xyLOGIX-Core-Extensions-EnumExtensions-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed once only
-for the [EnumExtensions](#T-xyLOGIX-Core-Extensions-EnumExtensions 'xyLOGIX.Core.Extensions.EnumExtensions') class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
-
-
-
-We've decorated this constructor with the `[Log(AttributeExclude = true)]`
-attribute in order to simplify the logging output.
 
 <a name='M-xyLOGIX-Core-Extensions-EnumExtensions-AsString``1-``0-'></a>
 ### AsString\`\`1(enumerationValue) `method`
@@ -2593,28 +2507,6 @@ xyLOGIX.Core.Extensions
 
 Exposes static extension methods for the [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid')
 class.
-
-<a name='M-xyLOGIX-Core-Extensions-GuidExtensions-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed once only
-for the [GuidExtensions](#T-xyLOGIX-Core-Extensions-GuidExtensions 'xyLOGIX.Core.Extensions.GuidExtensions') class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
-
-
-
-We've decorated this constructor with the `[Log(AttributeExclude = true)]`
-attribute in order to simplify the logging output.
 
 <a name='M-xyLOGIX-Core-Extensions-GuidExtensions-AsDigitsWithHyphens-System-Guid-'></a>
 ### AsDigitsWithHyphens(guid) `method`
@@ -6226,28 +6118,6 @@ xyLOGIX.Core.Extensions
 
 Provides methods to help with lists of items.
 
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed once only
-for the [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions') class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
-
-
-
-We've decorated this constructor with the `[Log(AttributeExclude = true)]`
-attribute in order to simplify the logging output.
-
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct-System-Collections-IList,System-Object-'></a>
 ### AddDistinct(list,item) `method`
 
@@ -7233,28 +7103,6 @@ xyLOGIX.Core.Extensions
 Helper functions for doing operations on, or making decisions about,
 numerical data.
 
-<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed once only
-for the [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions') class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
-
-
-
-We've decorated this constructor with the `[Log(AttributeExclude = true)]`
-attribute in order to simplify the logging output.
-
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-AsDecimal-System-Double-'></a>
 ### AsDecimal(value) `method`
 
@@ -8025,85 +7873,6 @@ Looks up a localized string similar to The Full Name should at least be two word
 
 Returns the cached ResourceManager instance used by this class.
 
-<a name='T-xyLOGIX-Core-Extensions-SetExtensions'></a>
-## SetExtensions `type`
-
-##### Namespace
-
-xyLOGIX.Core.Extensions
-
-##### Summary
-
-Exposes static extension methods for instances of object(s) that implement the
-[ISet\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet`1 'System.Collections.Generic.ISet`1') interface.
-
-<a name='M-xyLOGIX-Core-Extensions-SetExtensions-#cctor'></a>
-### #cctor() `method`
-
-##### Summary
-
-Initializes static data or performs actions that need to be performed once only
-for the [SetExtensions](#T-xyLOGIX-Core-Extensions-SetExtensions 'xyLOGIX.Core.Extensions.SetExtensions') class.
-
-##### Parameters
-
-This method has no parameters.
-
-##### Remarks
-
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
-
-
-
-We've decorated this constructor with the `[Log(AttributeExclude = true)]`
-attribute in order to simplify the logging output.
-
-<a name='M-xyLOGIX-Core-Extensions-SetExtensions-AddRange``1-System-Collections-Generic-ISet{``0},System-Collections-Generic-IEnumerable{``0}-'></a>
-### AddRange\`\`1(target,source) `method`
-
-##### Summary
-
-Adds a range of data value(s) from the specified `source`
-collection to the `target` set.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| target | [System.Collections.Generic.ISet{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet 'System.Collections.Generic.ISet{``0}') | (Required.) Reference to a collection of element(s), each of which is of type,
-`T`, that implements the
-[ISet\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet`1 'System.Collections.Generic.ISet`1') interface that is to receive
-the element(s) of `source`. |
-| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Reference to a collection of element(s), each
-of which is of type, `T`, that is enumerated and added to
-the `target`. |
-
-##### Generic Types
-
-| Name | Description |
-| ---- | ----------- |
-| T | (Required.) Data type of the individual element(s) of the
-`target` and `source`. |
-
-##### Remarks
-
-If the `source` collection is passed a
-`null` reference, or has zero element(s), then this method
-does nothing.
-
-
-
-This method also does nothing if a `null` reference is passed
-for the `target` collection.
-If an element from the `source` collection is
-already a member of the `target` collection, then it is
-skipped.
-
-
-
-`null` references are also skipped.
-
 <a name='T-xyLOGIX-Core-Extensions-StringExtensions'></a>
 ## StringExtensions `type`
 
@@ -8797,36 +8566,6 @@ This method returns `false` if no values are
 passed for
 `endings`.
 
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
-### EndsWithAny(value,endings) `method`
-
-##### Summary
-
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
-`endings`.
-
-##### Returns
-
-`true` if the specified `value`
-ends with any of the specified `endings`;
-`false` otherwise.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
-checked. |
-| endings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-elements, each of which is to be assessed against the specified
-`value` as being what it ends with. |
-
-##### Remarks
-
-This method returns `false` if no values are
-passed for
-`endings`.
-
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String-'></a>
 ### EnsureAtIsInFront(twitterSite) `method`
 
@@ -9000,28 +8739,6 @@ the start of the string to get. |
 | [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown if
 `nChars` has a zero or negative number value.
 `nChars` must be a positive number. |
-
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String-'></a>
-### GetLastWord(input) `method`
-
-##### Summary
-
-Extracts the last initial-capped word from a fully-qualified class name or
-string containing a name such as `FooBarBaz` (in which case, it would
-return `Baz`).
-
-##### Returns
-
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the last
-initial-capped word in the `input`; otherwise, this method is
-idempotent.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| input | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-text that is to be parsed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String-'></a>
 ### GetPersonFirstName(fullName) `method`

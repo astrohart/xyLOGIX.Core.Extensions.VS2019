@@ -133,6 +133,40 @@ namespace xyLOGIX.Core.Extensions
             new Regex(@"\s+");
 
         /// <summary>
+        /// Prepends a bang (<c>!</c>) character before the specified
+        /// <paramref name="value" />, and then returns the result.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value to which a bang (<c>!</c>) character is to be prepended.
+        /// </param>
+        /// <returns>
+        /// If successful, the argument of the <paramref name="value" />
+        /// parameter, with a bang (<c>!</c>) character prepended; otherwise, the method is
+        /// idempotent.
+        /// </returns>
+        public static string PrependBang(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = "!" + value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Extracts the last initial-capped word from a fully-qualified class name or
         /// string containing a name such as <c>FooBarBaz</c> (in which case, it would
         /// return <c>Baz</c>).
@@ -169,7 +203,7 @@ namespace xyLOGIX.Core.Extensions
             }
             catch (Exception ex)
             {
-                 // dump all the exception info to the log
+                // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
                 result = input;

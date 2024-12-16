@@ -216,7 +216,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (list == null) return;
-                if (items == null || !items.Any()) return;
+                if (items == null) return;
 
                 foreach (var item in items)
                     list.Add(item);

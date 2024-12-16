@@ -199,10 +199,10 @@ namespace xyLOGIX.Core.Extensions
             where T : class, new()
         {
             var someObject = new T();
-            var someObjectType = someObject.GetType();
+            var someComponentType = someObject.GetType();
 
             foreach (var item in quote)
-                someObjectType.GetProperty(item.Key)
+                someComponentType.GetProperty(item.Key)
                               ?.SetValue(someObject, item.Value, null);
 
             return someObject;

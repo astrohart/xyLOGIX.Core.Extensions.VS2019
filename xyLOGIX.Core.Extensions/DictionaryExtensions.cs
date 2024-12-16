@@ -1,3 +1,4 @@
+using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -9,6 +10,20 @@ namespace xyLOGIX.Core.Extensions
     /// <summary> Provides methods for extending any dictionary. </summary>
     public static class DictionaryExtensions
     {
+        /// <summary>
+        /// Initializes static data or performs actions that need to be performed once only
+        /// for the <see cref="T:xyLOGIX.Core.Extensions.DictionaryExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance being
+        /// created or before any static members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static DictionaryExtensions() { }
+
         /// <summary>
         /// Adds the specified <paramref name="key" /> and
         /// <paramref name="value" /> to the specified <paramref name="dictionary" />, but
@@ -187,7 +202,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// Basically, this method flattens the dictionary provided into a POCO.
-        /// The dictionary must be a list of key-value pairs and it is assumed that the key
+        /// The dictionary must be a list of key-value pairs, and it is assumed that the key
         /// is the name of a property, and the value is a string that is the property's
         /// value. Therefore, the base object is assumed to have all its properties
         /// be of type <see cref="T:System.String" /> and the name of each property should
@@ -199,11 +214,11 @@ namespace xyLOGIX.Core.Extensions
             where T : class, new()
         {
             var someObject = new T();
-            var someComponentType = someObject.GetType();
+            var someObjectType = someObject.GetType();
 
             foreach (var item in quote)
-                someComponentType.GetProperty(item.Key)
-                              ?.SetValue(someObject, item.Value, null);
+                someObjectType.GetProperty(item.Key)
+                                 ?.SetValue(someObject, item.Value, null);
 
             return someObject;
         }

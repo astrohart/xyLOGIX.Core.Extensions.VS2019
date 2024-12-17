@@ -54,6 +54,7 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
+                if (string.IsNullOrWhiteSpace(pathname)) return result;
                 if (string.IsNullOrWhiteSpace(extension)) return result;
 
                 result = extension.Equals(Path.GetExtension(pathname));

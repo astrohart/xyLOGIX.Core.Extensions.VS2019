@@ -133,6 +133,42 @@ namespace xyLOGIX.Core.Extensions
             new Regex(@"\s+");
 
         /// <summary>
+        /// Removes all carriage-return (<c>CR</c>) and newline (<c>NL</c>) ASCII
+        /// character(s) from the provided <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text from which
+        /// newline(s) are to be stripped.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> that is identical to
+        /// the specified <paramref name="value" /> but where all newline character(s) have
+        /// been converted to single space(s); otherwise, the method is idempotent.
+        /// </returns>
+        public static string StripNewlines(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.Replace("\r", " ")
+                              .Replace("\n", " ")
+                              .Trim();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Prepends a bang (<c>!</c>) character before the specified
         /// <paramref name="value" />, and then returns the result.
         /// </summary>

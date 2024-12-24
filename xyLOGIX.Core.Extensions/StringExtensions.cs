@@ -145,7 +145,8 @@ namespace xyLOGIX.Core.Extensions
         /// the specified <paramref name="value" /> but where all newline character(s) have
         /// been converted to single space(s); otherwise, the method is idempotent.
         /// </returns>
-        public static string StripNewlines(this string value)
+        [return: NotLogged]
+        public static string StripNewlines([NotLogged] this string value)
         {
             var result = value;
 

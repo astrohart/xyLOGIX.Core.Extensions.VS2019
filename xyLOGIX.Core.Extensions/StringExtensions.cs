@@ -143,7 +143,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// If successful, a <see cref="T:System.String" /> that is identical to
         /// the specified <paramref name="value" /> but where all newline character(s) have
-        /// been converted to single space(s); otherwise, the method is idempotent.
+        /// been converted to blanks; otherwise, the method is idempotent.
         /// </returns>
         [return: NotLogged]
         public static string StripNewlines([NotLogged] this string value)
@@ -154,8 +154,8 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
 
-                result = value.Replace("\r", " ")
-                              .Replace("\n", " ")
+                result = value.Replace("\r", string.Empty)
+                              .Replace("\n", string.Empty)
                               .Trim();
             }
             catch (Exception ex)

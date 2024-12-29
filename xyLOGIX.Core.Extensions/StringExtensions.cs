@@ -145,6 +145,12 @@ namespace xyLOGIX.Core.Extensions
         /// <para />
         /// The default value of this parameter is <see langword="false" />.
         /// </param>
+        /// <param name="recursive">
+        /// (Optional.) A <see cref="T:System.Boolean" /> value indicating whether the
+        /// removal of bad endings should be applied repeatedly until no matches remain.
+        /// <para />
+        /// The default value of this parameter is <see langword="true" />.
+        /// </param>
         /// <param name="badEndings">
         /// An array of <see cref="T:System.String" /> values representing the substrings
         /// to remove from the end of <paramref name="value" />. If
@@ -162,14 +168,15 @@ namespace xyLOGIX.Core.Extensions
         /// The method iterates through the <paramref name="badEndings" /> array to
         /// identify
         /// and remove any substrings that match the end of <paramref name="value" />.
-        /// It performs case-insensitive comparisons and trims trailing whitespace
-        /// after each removal. In case of an exception, the original
-        /// <paramref name="value" />
-        /// is returned unchanged.
+        /// It performs case-sensitive or case-insensitive comparisons depending on
+        /// the value of <paramref name="caseSensitive" />.
+        /// If <paramref name="recursive" /> is set to <see langword="true" />, the method
+        /// will repeatedly trim matches until no further matches are found.
         /// </remarks>
         public static string TrimAnyOffEnd(
             this string value,
             bool caseSensitive = false,
+            bool recursive = true,
             params string[] badEndings
         )
         {
@@ -178,8 +185,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
-                if (badEndings == null) return result;
-                if (badEndings.Length <= 0) return result;
+                if (badEndings == null || badEndings.Length <= 0) return result;
 
                 bool changed;
                 do
@@ -201,9 +207,10 @@ namespace xyLOGIX.Core.Extensions
                                        )
                                        .TrimEnd();
                         changed = true;
-                        break; // Start over to handle nested bad endings
+                        break; // Exit loop after one match
                     }
-                } while (changed);
+                } while
+                    (recursive && changed); // Only repeat if recursive is true
             }
             catch (Exception ex)
             {

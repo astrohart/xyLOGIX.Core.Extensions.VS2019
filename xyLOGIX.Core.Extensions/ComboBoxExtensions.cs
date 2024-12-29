@@ -55,7 +55,7 @@ namespace xyLOGIX.Core.Extensions
 
                 comboBoxItems = GetComboBoxItems<T>();
                 if (comboBoxItems == null) return;
-                if (comboBoxItems.Count == 0) return;
+                if (comboBoxItems.Count <= 0) return;
 
                 comboBox.DataSource = comboBoxItems;
                 comboBox.DisplayMember = "Description";
@@ -101,7 +101,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (comboBox == null) return;
-                if (comboBox.Items.Count == 0) return;
+                if (comboBox.Items.Count <= 0) return;
 
                 comboBox.SelectedIndex = 0;
                 comboBox.Select();
@@ -134,7 +134,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 var values = Enum.GetValues(typeof(T));
-                if (values.Length == 0) return result;
+                if (values.Length <= 0) return result;
 
                 foreach (T value in values)
                 {

@@ -46,7 +46,7 @@ namespace xyLOGIX.Core.Extensions
                 //for the enum
                 var attrs = memberInfo[0]
                     .GetCustomAttributes(typeof(DescriptionAttribute), false);
-                if (attrs == null || attrs.Length == 0) return result;
+                if (attrs == null || attrs.Length <= 0) return result;
 
                 //Pull out the description value
                 result = ((DescriptionAttribute)attrs[0]).Description;

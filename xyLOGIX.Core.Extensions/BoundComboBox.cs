@@ -27,7 +27,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 base.OnSelectedIndexChanged(e);
 
-                if (DataBindings.Count == 0) return;
+                if (DataBindings.Count <= 0) return;
                 if (DataBindings["SelectedItem"] == null) return;
 
                 DataBindings["SelectedItem"]

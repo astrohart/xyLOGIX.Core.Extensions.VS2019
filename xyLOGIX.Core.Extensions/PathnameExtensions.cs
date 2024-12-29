@@ -111,7 +111,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (extensions == null) return result;
-                if (extensions.Length == 0) return result;
+                if (extensions.Length <= 0) return result;
                 if (!FileExists(pathname)) return result;
 
                 result = Path.GetExtension(pathname)

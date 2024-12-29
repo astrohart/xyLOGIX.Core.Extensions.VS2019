@@ -724,7 +724,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(initialString)) return result;
                 if (parts == null) return result;
-                if (parts.Length == 0) return result;
+                if (parts.Length <= 0) return result;
 
                 result = parts.Aggregate(
                     result, (current, part) => current + part
@@ -1036,7 +1036,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
                 if (endings == null) return result;
-                if (endings.Length == 0) return result;
+                if (endings.Length <= 0) return result;
 
                 foreach (var ending in endings)
                 {
@@ -1181,7 +1181,7 @@ namespace xyLOGIX.Core.Extensions
 
                 var parts = value.SplitOn(".");
                 if (parts == null) return result;
-                if (parts.Length == 0) return result;
+                if (parts.Length <= 0) return result;
 
                 result = parts[parts.Length - 1];
             }
@@ -2485,7 +2485,7 @@ namespace xyLOGIX.Core.Extensions
 
                 if (string.IsNullOrWhiteSpace(source)) return result;
                 if (findWhatValues == null) return result;
-                if (findWhatValues.Count == 0) return result;
+                if (findWhatValues.Count <= 0) return result;
 
                 foreach (var thingToFind in findWhatValues.ToArray())
                 {
@@ -2634,7 +2634,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
                 if (beginnings == null) return result;
-                if (beginnings.Length == 0) return result;
+                if (beginnings.Length <= 0) return result;
 
                 foreach (var beginning in beginnings)
                 {
@@ -2768,7 +2768,7 @@ namespace xyLOGIX.Core.Extensions
 
             // If we ended up removing all parts from the list, then return the
             // empty string
-            return parts.Count == 0
+            return parts.Count <= 0
                 ? string.Empty
                 : parts.Aggregate(
                     string.Empty,

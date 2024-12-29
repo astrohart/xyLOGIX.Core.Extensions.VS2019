@@ -37,7 +37,7 @@ namespace xyLOGIX.Core.Extensions
             if (checkedListBox == null)
                 throw new ArgumentNullException(nameof(checkedListBox));
 
-            if (checkedListBox.Items.Count == 0)
+            if (checkedListBox.Items.Count <= 0)
                 return false;
 
             return checkedListBox.Items.Count > 0 &&
@@ -70,7 +70,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (checkedListBox == null) return;
-                if (checkedListBox.Items.Count == 0) return;
+                if (checkedListBox.Items.Count <= 0) return;
 
                 for (var i = 0; i < checkedListBox.Items.Count; i++)
                     checkedListBox.SetItemCheckState(
@@ -111,7 +111,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (checkedListBox == null) return;
-                if (checkedListBox.Items.Count == 0) return;
+                if (checkedListBox.Items.Count <= 0) return;
                 if (string.IsNullOrWhiteSpace(itemName)) return;
 
                 for (var i = 0; i < checkedListBox.Items.Count; i++)
@@ -175,7 +175,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (checkedListBox == null) return result;
-                if (checkedListBox.Items.Count == 0) return result;
+                if (checkedListBox.Items.Count <= 0) return result;
                 if (string.IsNullOrWhiteSpace(itemName)) return result;
 
                 for (var i = 0; i < checkedListBox.Items.Count; i++)
@@ -223,8 +223,8 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 result = checkedListBox != null &&
-                         (checkedListBox.Items.Count == 0 ||
-                          checkedListBox.CheckedItems.Count == 0);
+                         (checkedListBox.Items.Count <= 0 ||
+                          checkedListBox.CheckedItems.Count <= 0);
             }
             catch (Exception ex)
             {

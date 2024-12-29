@@ -247,7 +247,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (source == null) return result;
-                if (source.Count == 0) return result;
+                if (source.Count <= 0) return result;
 
                 foreach (var element in source) result.Add(element);
             }
@@ -300,7 +300,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (list == null) return result;
-                if (list.Count == 0) return result;
+                if (list.Count <= 0) return result;
                 if (predicate == null) return result;
 
                 for (var i = 0; i < list.Count; i++)
@@ -458,7 +458,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (list == null) return;
-                if (list.Count == 0) return;
+                if (list.Count <= 0) return;
                 if (index < 0) return;
                 if (index >= list.Count) return;
                 if (count <= 0) return;
@@ -547,7 +547,7 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static string ToSetString<T>(this IList<T> list)
         {
-            if (list == null || list.Count == 0) return "[]";
+            if (list == null || list.Count <= 0) return "[]";
 
             var result = "[ ";
             foreach (var item in list.Cast<object>()
@@ -581,7 +581,7 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         public static string ToSetString<T>(this ICollection<T> collection)
         {
-            if (collection == null || collection.Count == 0) return "[]";
+            if (collection == null || collection.Count <= 0) return "[]";
 
             var result = "[ ";
             foreach (var item in collection.Cast<object>()

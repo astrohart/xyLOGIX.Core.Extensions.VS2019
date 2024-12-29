@@ -185,7 +185,8 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
-                if (badEndings == null || badEndings.Length <= 0) return result;
+                if (badEndings == null) return result;
+                if (badEndings.Length <= 0) return result;
 
                 bool changed;
                 do

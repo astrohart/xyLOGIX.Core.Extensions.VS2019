@@ -133,6 +133,88 @@ namespace xyLOGIX.Core.Extensions
             new Regex(@"\s+");
 
         /// <summary>
+        /// Removes any specified substrings from the end of the given string.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be
+        /// processed.
+        /// </param>
+        /// <param name="caseSensitive">
+        /// (Optional.) A <see cref="T:System.Boolean" /> value indicating whether a
+        /// case-sensitive search is to be performed.
+        /// <para />
+        /// The default value of this parameter is <see langword="false" />.
+        /// </param>
+        /// <param name="badEndings">
+        /// An array of <see cref="T:System.String" /> values representing the substrings
+        /// to remove from the end of <paramref name="value" />. If
+        /// <paramref name="badEndings" />
+        /// is <see langword="null" /> or empty, no changes are made.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> with any matching substrings from
+        /// <paramref name="badEndings" />
+        /// removed from the end. If <paramref name="value" /> is <see langword="null" />,
+        /// whitespace,
+        /// or no matches are found, the original string is returned.
+        /// </returns>
+        /// <remarks>
+        /// The method iterates through the <paramref name="badEndings" /> array to
+        /// identify
+        /// and remove any substrings that match the end of <paramref name="value" />.
+        /// It performs case-insensitive comparisons and trims trailing whitespace
+        /// after each removal. In case of an exception, the original
+        /// <paramref name="value" />
+        /// is returned unchanged.
+        /// </remarks>
+        public static string TrimAnyOffEnd(
+            this string value,
+            bool caseSensitive = false,
+            params string[] badEndings
+        )
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (badEndings == null) return result;
+                if (badEndings.Length <= 0) return result;
+
+                bool changed;
+                do
+                {
+                    changed = false;
+                    foreach (var ending in badEndings)
+                    {
+                        if (string.IsNullOrEmpty(ending)) continue;
+
+                        if (result.EndsWith(
+                                ending, StringComparison.OrdinalIgnoreCase
+                            ))
+                        {
+                            result = result.Substring(
+                                               0, result.Length - ending.Length
+                                           )
+                                           .TrimEnd();
+                            changed = true;
+                            break; // Start over to handle nested bad endings
+                        }
+                    }
+                } while (changed);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Removes all carriage-return (<c>CR</c>) and newline (<c>NL</c>) ASCII
         /// character(s) from the provided <paramref name="value" />.
         /// </summary>

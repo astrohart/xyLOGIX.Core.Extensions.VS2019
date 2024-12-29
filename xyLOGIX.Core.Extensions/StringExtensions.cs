@@ -189,17 +189,19 @@ namespace xyLOGIX.Core.Extensions
                     {
                         if (string.IsNullOrEmpty(ending)) continue;
 
-                        if (result.EndsWith(
-                                ending, StringComparison.OrdinalIgnoreCase
-                            ))
-                        {
-                            result = result.Substring(
-                                               0, result.Length - ending.Length
-                                           )
-                                           .TrimEnd();
-                            changed = true;
-                            break; // Start over to handle nested bad endings
-                        }
+                        if (!result.EndsWith(
+                                ending,
+                                caseSensitive
+                                    ? StringComparison.Ordinal
+                                    : StringComparison.OrdinalIgnoreCase
+                            )) continue;
+
+                        result = result.Substring(
+                                           0, result.Length - ending.Length
+                                       )
+                                       .TrimEnd();
+                        changed = true;
+                        break; // Start over to handle nested bad endings
                     }
                 } while (changed);
             }

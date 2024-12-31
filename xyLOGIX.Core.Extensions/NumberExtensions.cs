@@ -309,6 +309,10 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="value"> The value to be checked. </param>
         /// <param name="lowerBound"> Lower bound. </param>
         /// <param name="upperBound"> Upper bound. </param>
+        /// <remarks>
+        /// The <paramref name="upperBound" /> is EXCLUDED from the range of valid
+        /// value(s) by this method.
+        /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the value is either within the range specified or
         /// equal to the <paramref name="lowerBound" />; <see langword="false" />

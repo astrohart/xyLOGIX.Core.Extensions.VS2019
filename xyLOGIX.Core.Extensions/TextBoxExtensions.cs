@@ -17,7 +17,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <remarks>
         /// This message is sent to a <see cref="T:System.Windows.Forms.TextBox" /> control
-        /// to display greyed-out text when the
+        /// to display grayed-out text when the
         /// <see cref="T:System.Windows.Forms.TextBox" /> is empty and unfocused.
         /// </remarks>
         private const uint EM_SETCUEBANNER = 0x1501;

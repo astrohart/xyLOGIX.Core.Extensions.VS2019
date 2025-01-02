@@ -56,6 +56,7 @@
   - [IsWithinXSecondsOf(dto1,dto2,seconds)](#M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTimeOffset,System-DateTimeOffset,System-Int32- 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions.IsWithinXSecondsOf(System.DateTimeOffset,System.DateTimeOffset,System.Int32)')
   - [IsWithinXSecondsOf(dto1,dto2,seconds)](#M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsWithinXSecondsOf-System-DateTime,System-DateTimeOffset,System-Int32- 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions.IsWithinXSecondsOf(System.DateTime,System.DateTimeOffset,System.Int32)')
 - [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-#cctor 'xyLOGIX.Core.Extensions.DictionaryExtensions.#cctor')
   - [AddDistinct\`\`2(dictionary,key,value)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1- 'xyLOGIX.Core.Extensions.DictionaryExtensions.AddDistinct``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)')
   - [MergeWith\`\`2(target,quote)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-MergeWith``2-System-Collections-Generic-IDictionary{``0,``1},System-Collections-Generic-IDictionary{``0,``1}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1})')
   - [ToConcurrentDictionary\`\`3(quote,keySelector,elementSelector)](#M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}- 'xyLOGIX.Core.Extensions.DictionaryExtensions.ToConcurrentDictionary``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})')
@@ -371,6 +372,7 @@
   - [FloorOf(value,floorValue)](#M-xyLOGIX-Core-Extensions-NumberExtensions-FloorOf-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.FloorOf(System.Int32,System.Int32)')
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Decimal,System.Decimal,System.Decimal)')
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Int32,System.Int32,System.Int32)')
+  - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int64,System-Int64,System-Int64- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Int64,System.Int64,System.Int64)')
   - [IsInRangeWithLowerBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithLowerBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithLowerBound(System.Int32,System.Int32,System.Int32)')
   - [IsInRangeWithUpperBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithUpperBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithUpperBound(System.Int32,System.Int32,System.Int32)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
@@ -465,6 +467,7 @@
   - [IsRomanNumerals(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsRomanNumerals-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsRomanNumerals(System.String)')
   - [IsSpecialWordAtBeginningOfPhrase(words,currentWord)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsSpecialWordAtBeginningOfPhrase-System-String[],System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsSpecialWordAtBeginningOfPhrase(System.String[],System.String)')
   - [IsStreetNameComponent(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsStreetNameComponent-System-Collections-Generic-IReadOnlyList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsStreetNameComponent(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)')
+  - [IsUppercase(c)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-Char- 'xyLOGIX.Core.Extensions.StringExtensions.IsUppercase(System.Char)')
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsUppercase(System.String)')
   - [IsValidAssetSymbol(symbol)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidAssetSymbol-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidAssetSymbol(System.String)')
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
@@ -474,6 +477,7 @@
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
   - [PluralizeWord(word)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String)')
   - [PostfixFormat(value,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-PostfixFormat-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.PostfixFormat(System.String,System.Object[])')
+  - [PrependBang(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-PrependBang-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.PrependBang(System.String)')
   - [RegexMatchesNoCase(stringToSearch,regex)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexMatchesNoCase(System.String,System.String)')
   - [RegexMatchesWithCase(stringToSearch,regex)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexMatchesWithCase(System.String,System.String)')
   - [RegexReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceNoCase(System.String,System.String,System.String)')
@@ -486,8 +490,9 @@
   - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
   - [SplitOn(value,delimiter)](#M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.SplitOn(System.String,System.String)')
   - [StartsWithAny(value,beginnings)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAny(System.String,System.String[])')
-  - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.Collections.Generic.IEnumerable{System.String})')
+  - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.String[])')
   - [StartsWithNoCase(value,searchText)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithNoCase(System.String,System.String)')
+  - [StripNewlines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripNewlines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripNewlines(System.String)')
   - [Sub(format,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.Sub(System.String,System.Object[])')
   - [ToASCII(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII(System.String)')
   - [ToAcronym(phrase)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToAcronym-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToAcronym(System.String)')
@@ -497,6 +502,7 @@
   - [ToList(quote,separators)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToList-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ToList(System.String,System.String[])')
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
   - [ToUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUppercase(System.String)')
+  - [TrimAnyOffEnd(value,caseSensitive,recursive,badEndings)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimAnyOffEnd-System-String,System-Boolean,System-Boolean,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.TrimAnyOffEnd(System.String,System.Boolean,System.Boolean,System.String[])')
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
 - [TextBoxExtensions](#T-xyLOGIX-Core-Extensions-TextBoxExtensions 'xyLOGIX.Core.Extensions.TextBoxExtensions')
   - [EM_SETCUEBANNER](#F-xyLOGIX-Core-Extensions-TextBoxExtensions-EM_SETCUEBANNER 'xyLOGIX.Core.Extensions.TextBoxExtensions.EM_SETCUEBANNER')
@@ -1810,6 +1816,28 @@ xyLOGIX.Core.Extensions
 ##### Summary
 
 Provides methods for extending any dictionary.
+
+<a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
 
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-AddDistinct``2-System-Collections-Generic-IDictionary{``0,``1},``0,``1-'></a>
 ### AddDistinct\`\`2(dictionary,key,value) `method`
@@ -7400,6 +7428,28 @@ True if `value` is strictly greater than
 | lowerBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound. |
 | upperBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound. |
 
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int64,System-Int64,System-Int64-'></a>
+### IsBetween(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines whether a number is strictly between (as in, can't be
+equal to either).
+
+##### Returns
+
+True if `value` is strictly greater than
+`lowerBound` and strictly less than
+`upperBound` ; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The value to be checked. |
+| lowerBound | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | Lower bound. |
+| upperBound | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | Upper bound. |
+
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithLowerBound-System-Int32,System-Int32,System-Int32-'></a>
 ### IsInRangeWithLowerBound(value,lowerBound,upperBound) `method`
 
@@ -7421,6 +7471,11 @@ otherwise.
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The value to be checked. |
 | lowerBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound. |
 | upperBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound. |
+
+##### Remarks
+
+The `upperBound` is EXCLUDED from the range of valid
+value(s) by this method.
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithUpperBound-System-Int32,System-Int32,System-Int32-'></a>
 ### IsInRangeWithUpperBound(value,lowerBound,upperBound) `method`
@@ -9437,6 +9492,27 @@ If this method is provided with the empty collection or an array
 index outside the bounds of the collection, then this method returns
 `false`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-Char-'></a>
+### IsUppercase(c) `method`
+
+##### Summary
+
+Determines whether the specified character, `c`, is
+uppercase.
+
+##### Returns
+
+`true` if the specified [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char')
+value, `c`, is an ASCII or Unicode uppercase character;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| c | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value that is to be
+checked. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String-'></a>
 ### IsUppercase(value) `method`
 
@@ -9669,6 +9745,27 @@ if no format values were provided in the `args` parameter.
 format placeholders. |
 | args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) One or more format values to be substituted in
 the corresponding locations in the specified `value`. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-PrependBang-System-String-'></a>
+### PrependBang(value) `method`
+
+##### Summary
+
+Prepends a bang (`!`) character before the specified
+`value`, and then returns the result.
+
+##### Returns
+
+If successful, the argument of the `value`
+parameter, with a bang (`!`) character prepended; otherwise, the method is
+idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+value to which a bang (`!`) character is to be prepended. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String-'></a>
 ### RegexMatchesNoCase(stringToSearch,regex) `method`
@@ -10046,7 +10143,7 @@ This method returns `false` if no values are
 passed for
 `beginnings`.
 
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-String[]-'></a>
 ### StartsWithAnyOf(text,list) `method`
 
 ##### Summary
@@ -10064,7 +10161,7 @@ in `list`.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to be checked. |
-| list | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | List of entries. |
+| list | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | List of entries. |
 
 ##### Remarks
 
@@ -10097,6 +10194,27 @@ Tells whether the `value` starts with the substring
 If `value` is the empty string or if
 `searchText` is the empty string, then this method returns
 `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StripNewlines-System-String-'></a>
+### StripNewlines(value) `method`
+
+##### Summary
+
+Removes all carriage-return (`CR`) and newline (`NL`) ASCII
+character(s) from the provided `value`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is identical to
+the specified `value` but where all newline character(s) have
+been converted to blanks; otherwise, the method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text from which
+newline(s) are to be stripped. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]-'></a>
 ### Sub(format,args) `method`
@@ -10323,6 +10441,54 @@ to uppercase; otherwise, this method is idempotent.
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
 converted to uppercase. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimAnyOffEnd-System-String,System-Boolean,System-Boolean,System-String[]-'></a>
+### TrimAnyOffEnd(value,caseSensitive,recursive,badEndings) `method`
+
+##### Summary
+
+Removes any specified substrings from the end of the given string.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with any matching substrings from
+`badEndings`
+removed from the end. If `value` is `null`,
+whitespace,
+or no matches are found, the original string is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
+processed. |
+| caseSensitive | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) A [Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') value indicating whether a
+case-sensitive search is to be performed.
+
+
+
+The default value of this parameter is `false`. |
+| recursive | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) A [Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') value indicating whether the
+removal of bad endings should be applied repeatedly until no matches remain.
+
+
+
+The default value of this parameter is `true`. |
+| badEndings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | An array of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values representing the substrings
+to remove from the end of `value`. If
+`badEndings`
+is `null` or empty, no changes are made. |
+
+##### Remarks
+
+The method iterates through the `badEndings` array to
+identify
+and remove any substrings that match the end of `value`.
+It performs case-sensitive or case-insensitive comparisons depending on
+the value of `caseSensitive`.
+If `recursive` is set to `true`, the method
+will repeatedly trim matches until no further matches are found.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String-'></a>
 ### TrimLine(currentLine) `method`
 
@@ -10370,7 +10536,7 @@ Specifies the message to set the cue banner text (placeholder text) for a
 ##### Remarks
 
 This message is sent to a [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') control
-to display greyed-out text when the
+to display grayed-out text when the
 [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') is empty and unfocused.
 
 <a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-IsWindow-System-IntPtr-'></a>

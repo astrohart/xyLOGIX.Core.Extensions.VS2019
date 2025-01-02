@@ -1699,6 +1699,39 @@ namespace xyLOGIX.Core.Extensions
                choices.Any(value.EqualsNoCase);
 
         /// <summary>
+        /// Determines whether the specified character, <paramref name="c" />, is
+        /// uppercase.
+        /// </summary>
+        /// <param name="c">
+        /// (Required.) A <see cref="T:System.Char" /> value that is to be
+        /// checked.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <see cref="T:System.Char" />
+        /// value, <paramref name="c" />, is an ASCII or Unicode uppercase character;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool IsUppercase(this char c)
+        {
+            bool result;
+
+            try
+            {
+                result = char.IsUpper(c);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the specified <paramref name="value" /> is a
         /// <see cref="T:System.String" /> that consists solely of uppercase letters
         /// (excluding whitespace).
@@ -2673,7 +2706,7 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         public static bool StartsWithAnyOf(
             this string text,
-            IEnumerable<string> list
+            params string[] list
         )
             => !string.IsNullOrWhiteSpace(text) &&
                list.Any(text.StartsWithNoCase);

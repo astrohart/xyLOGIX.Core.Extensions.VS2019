@@ -231,6 +231,43 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether a number is strictly between (as in, can't be
+        /// equal to either).
+        /// </summary>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
+        /// <returns>
+        /// True if <paramref name="value" /> is strictly greater than
+        /// <paramref name="lowerBound" /> and strictly less than
+        /// <paramref name="upperBound" /> ; false otherwise.
+        /// </returns>
+        public static bool IsBetween(
+            this long value,
+            long lowerBound,
+            long upperBound
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound > value && value > lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines if a decimal value is between a pair of values or equal to
         /// either of them.
         /// </summary>

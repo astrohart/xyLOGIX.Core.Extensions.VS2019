@@ -2607,8 +2607,7 @@ namespace xyLOGIX.Core.Extensions
         /// </exception>
         public static string[] SplitOn(this string value, string delimiter)
         {
-            var result = Enumerable.Empty<string>()
-                                   .ToArray();
+            string[] result = { };
 
             try
             {
@@ -2624,8 +2623,7 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
-                result = Enumerable.Empty<string>()
-                                   .ToArray();
+                result = new string[] { };
             }
 
             return result;

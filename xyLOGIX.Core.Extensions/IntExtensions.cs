@@ -9,28 +9,35 @@ namespace xyLOGIX.Core.Extensions
     public static class IntExtensions
     {
         /// <summary>
-        /// Converts an <see cref="T:System.Int32" /> value to its ordinal string representation,
-        /// appending the appropriate suffix (e.g., "st", "nd", "rd", "th") based on the value.
+        /// Converts an <see cref="T:System.Int32" /> <paramref name="value" /> to
+        /// its ordinal string representation, appending the appropriate suffix (e.g.,
+        /// <c>"st"</c>, <c>"nd"</c>, <c>"rd"</c>, <c>"th"</c>, etc.) based on the
+        /// specified <paramref name="value" />.
         /// </summary>
         /// <param name="value">
-        /// (Required.) An <see cref="T:System.Int32" /> value that represents the number to format.
-        /// Must be 1 or greater.
+        /// (Required.) An <see cref="T:System.Int32" /> value that
+        /// represents the number to format.
+        /// <para />
+        /// <b>NOTE:</b> The argument of this parameter must be <c>1</c> or greater.
         /// </param>
         /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the ordinal representation
-        /// of the provided <paramref name="value" />.
+        /// If successful, a <see cref="T:System.String" /> containing the ordinal
+        /// representation of the provided <paramref name="value" />.
         /// </returns>
         /// <exception cref="T:System.ArgumentOutOfRangeException">
-        /// Thrown when the provided <paramref name="value" /> is less than 1.
+        /// Thrown when the provided
+        /// <paramref name="value" /> is less than 1.
         /// </exception>
         public static string ToOrdinalString(this int value)
         {
             if (value < 1)
-                throw new ArgumentOutOfRangeException(nameof(value), "Value must be 1 or greater.");
+                throw new ArgumentOutOfRangeException(
+                    nameof(value), "Value must be 1 or greater."
+                );
 
             // Determine the suffix
-            int lastDigit = value % 10;
-            int lastTwoDigits = value % 100;
+            var lastDigit = value % 10;
+            var lastTwoDigits = value % 100;
 
             string suffix;
             if (lastTwoDigits >= 11 && lastTwoDigits <= 13)

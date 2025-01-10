@@ -1025,6 +1025,37 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="false" /> otherwise.
         /// </returns>
         [Log(AttributeExclude = true)]
+        public static bool EndsWithAnyOf(
+            this string value,
+            params string[] endings
+        )
+            => EndsWithAny(value, endings);
+
+        /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> ends with any of the specified
+        /// <paramref name="endings" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to be
+        /// checked.
+        /// </param>
+        /// <param name="endings">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// elements, each of which is to be assessed against the specified
+        /// <paramref name="value" /> as being what it ends with.
+        /// </param>
+        /// <remarks>
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
+        /// passed for
+        /// <paramref name="endings" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// ends with any of the specified <paramref name="endings" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
         public static bool EndsWithAny(
             this string value,
             params string[] endings

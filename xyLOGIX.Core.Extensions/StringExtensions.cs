@@ -133,6 +133,47 @@ namespace xyLOGIX.Core.Extensions
             new Regex(@"\s+");
 
         /// <summary>
+        /// Provides a method to format a string in a more Pythonic manner, where we simply
+        /// call <c>Format()</c> on the string variable itself.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value that is to be formatted.
+        /// </param>
+        /// <param name="args">
+        /// (Required.) Zero or more object(s) whose value(s) are to be
+        /// substituted in for the format specifier(s) in the specified
+        /// <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// If successful, this method returns the specified
+        /// <paramref name="value" />, with the format placeholders updated according to
+        /// the specified <paramref name="args" />, if any; otherwise, the method is
+        /// idempotent.
+        /// </returns>
+        public static string Format(this string value, params object[] args)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    return result;
+
+                result = string.Format(value, args);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Removes any specified substrings from the end of the given string.
         /// </summary>
         /// <param name="value">

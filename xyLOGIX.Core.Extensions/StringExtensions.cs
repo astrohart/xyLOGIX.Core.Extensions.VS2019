@@ -134,7 +134,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Provides a method to format a string in a more Pythonic manner, where we simply
-        /// call <c>Format()</c> on the string variable itself.
+        /// call <c>Format()</c> following the string to be formatted.
         /// </summary>
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing the
@@ -151,7 +151,7 @@ namespace xyLOGIX.Core.Extensions
         /// the specified <paramref name="args" />, if any; otherwise, the method is
         /// idempotent.
         /// </returns>
-        public static string Format(this string value, params object[] args)
+        public static string FormatLikePython(this string value, params object[] args)
         {
             var result = value;
 
@@ -2113,7 +2113,7 @@ namespace xyLOGIX.Core.Extensions
             => PluralizeWord(word, CultureInfo.CurrentUICulture);
 
         /// <summary>
-        /// More Pythonic version of the <see cref="M:System.String.Format" />
+        /// More Pythonic version of the <see cref="M:System.String.FormatLikePython" />
         /// method, which you can put after a string literal or
         /// <see cref="T:System.String" /> variable to format a string.
         /// </summary>
@@ -2817,7 +2817,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns> A string with the format placeholders replaced by the args. </returns>
         /// <remarks>
         /// This method is just an alias for
-        /// <see cref="T:System.String.Format" /> . It is here to provide a way to
+        /// <see cref="T:System.String.FormatLikePython" /> . It is here to provide a way to
         /// translate VB to C# code and still use the moniker Sub from VB that does the
         /// same operation. If this method is passed the empty string for
         /// <paramref name="format" />, then the return value is the empty string.

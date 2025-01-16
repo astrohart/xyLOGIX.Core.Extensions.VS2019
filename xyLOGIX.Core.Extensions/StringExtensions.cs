@@ -2946,6 +2946,36 @@ namespace xyLOGIX.Core.Extensions
                    .StartsWith(searchText.ToLowerInvariant());
 
         /// <summary>
+        /// Strips "smart quotes" from the specified <paramref name="inputString" /> and
+        /// replaces them with "straight quotes."
+        /// </summary>
+        /// <param name="inputString">
+        /// (Required.) A <see cref="T:System.String" />
+        /// containing the data on which replacement is to be performed.
+        /// </param>
+        /// <remarks>
+        /// If the value of the <paramref name="inputString" /> is
+        /// <see langword="null" />, only consists of whitespace, or is the
+        /// <see cref="F:System.String.Empty" /> value, then this method is idempotent.
+        /// </remarks>
+        /// <returns>
+        /// If successful, the <paramref name="inputString" />, but with "smart
+        /// quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
+        /// </returns>
+        public static string StripIncompatableQuotes(this string inputString)
+        {
+            if (string.IsNullOrWhiteSpace(inputString))
+            {
+                return inputString;
+            }
+
+            return inputString.Replace('\u2018', '\'')
+                              .Replace('\u2019', '\'')
+                              .Replace('\u201c', '\"')
+                              .Replace('\u201d', '\"');
+        }
+
+        /// <summary>
         /// Removes all carriage-return (<c>CR</c>) and newline (<c>NL</c>) ASCII
         /// character(s) from the provided <paramref name="value" />.
         /// </summary>

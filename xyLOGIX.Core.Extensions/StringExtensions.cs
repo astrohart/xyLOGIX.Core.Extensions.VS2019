@@ -26,25 +26,6 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class StringExtensions
     {
-        /// <summary>
-        /// A <see cref="T:System.String" /> containing a regular expression to match a
-        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
-        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
-        /// </summary>
-        private const string GuidRegexLowercaseNoBraces =
-            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
-
-        /// <summary>
-        /// Collection of strings which are short words but are not acronyms per
-        /// se.
-        /// </summary>
-        public static readonly string[] ShortWordsThatAreNotAcronyms =
-        {
-            "a", "an", "and", "of", "or", "the", "this", "that", "o", "O\'",
-            "al-", "el-", "thus", "if", "then", "Jr.", "Sr.", "Ph.D.",
-            "M.S.", "M.D."
-        };
-
         /// <summary> Collection of strings that are commonly-used acronyms. </summary>
         private static readonly string[] AcronymList =
         {
@@ -74,6 +55,14 @@ namespace xyLOGIX.Core.Extensions
         };
 
         /// <summary>
+        /// A <see cref="T:System.String" /> containing a regular expression to match a
+        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
+        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
+        /// </summary>
+        private const string GuidRegexLowercaseNoBraces =
+            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
+
+        /// <summary>
         /// Collection of strings that contain words commonly found in the name
         /// of a street, and that need to be capitalized.
         /// </summary>
@@ -84,6 +73,17 @@ namespace xyLOGIX.Core.Extensions
             "Street", "Road", "Avenue", "Avenida", "Boulevard", "Place",
             "Rue", "Vieux", "Parkway", "Court", "Terrace", "Circle",
             "Highway", "Drive", "Driveway", "Pike", "Lane"
+        };
+
+        /// <summary>
+        /// Collection of strings which are short words but are not acronyms per
+        /// se.
+        /// </summary>
+        public static readonly string[] ShortWordsThatAreNotAcronyms =
+        {
+            "a", "an", "and", "of", "or", "the", "this", "that", "o", "O\'",
+            "al-", "el-", "thus", "if", "then", "Jr.", "Sr.", "Ph.D.",
+            "M.S.", "M.D."
         };
 
         /// <summary>
@@ -133,254 +133,20 @@ namespace xyLOGIX.Core.Extensions
             new Regex(@"\s+");
 
         /// <summary>
-        /// Provides a method to format a string in a more Pythonic manner, where we simply
-        /// call <c>Format()</c> following the string to be formatted.
+        /// Asks if the search text, in <paramref name="value" />, is a substring
+        /// of the strings in <paramref name="collection" />, ignoring case.
         /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value that is to be formatted.
-        /// </param>
-        /// <param name="args">
-        /// (Required.) Zero or more object(s) whose value(s) are to be
-        /// substituted in for the format specifier(s) in the specified
-        /// <paramref name="value" />.
-        /// </param>
+        /// <param name="collection"> Collection to search. </param>
+        /// <param name="value"> Value to compare. </param>
         /// <returns>
-        /// If successful, this method returns the specified
-        /// <paramref name="value" />, with the format placeholders updated according to
-        /// the specified <paramref name="args" />, if any; otherwise, the method is
-        /// idempotent.
+        /// <see langword="true" /> if the indicated value is in the specified
+        /// collection, regardless of case; <see langword="false" /> otherwise.
         /// </returns>
-        public static string FormatLikePython(this string value, params object[] args)
-        {
-            var result = value;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                    return result;
-
-                result = string.Format(value, args);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = value;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Removes any specified substrings from the end of the given string.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text to be
-        /// processed.
-        /// </param>
-        /// <param name="caseSensitive">
-        /// (Optional.) A <see cref="T:System.Boolean" /> value indicating whether a
-        /// case-sensitive search is to be performed.
-        /// <para />
-        /// The default value of this parameter is <see langword="false" />.
-        /// </param>
-        /// <param name="recursive">
-        /// (Optional.) A <see cref="T:System.Boolean" /> value indicating whether the
-        /// removal of bad endings should be applied repeatedly until no matches remain.
-        /// <para />
-        /// The default value of this parameter is <see langword="true" />.
-        /// </param>
-        /// <param name="badEndings">
-        /// An array of <see cref="T:System.String" /> values representing the substrings
-        /// to remove from the end of <paramref name="value" />. If
-        /// <paramref name="badEndings" />
-        /// is <see langword="null" /> or empty, no changes are made.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> with any matching substrings from
-        /// <paramref name="badEndings" />
-        /// removed from the end. If <paramref name="value" /> is <see langword="null" />,
-        /// whitespace,
-        /// or no matches are found, the original string is returned.
-        /// </returns>
-        /// <remarks>
-        /// The method iterates through the <paramref name="badEndings" /> array to
-        /// identify
-        /// and remove any substrings that match the end of <paramref name="value" />.
-        /// It performs case-sensitive or case-insensitive comparisons depending on
-        /// the value of <paramref name="caseSensitive" />.
-        /// If <paramref name="recursive" /> is set to <see langword="true" />, the method
-        /// will repeatedly trim matches until no further matches are found.
-        /// </remarks>
-        public static string TrimAnyOffEnd(
-            this string value,
-            bool caseSensitive = false,
-            bool recursive = true,
-            params string[] badEndings
+        public static bool AnyContainNoCase(
+            this IEnumerable<string> collection,
+            string value
         )
-        {
-            var result = value;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-                if (badEndings == null) return result;
-                if (badEndings.Length <= 0) return result;
-
-                bool changed;
-                do
-                {
-                    changed = false;
-                    foreach (var ending in badEndings)
-                    {
-                        if (string.IsNullOrEmpty(ending)) continue;
-
-                        if (!result.EndsWith(
-                                ending,
-                                caseSensitive
-                                    ? StringComparison.Ordinal
-                                    : StringComparison.OrdinalIgnoreCase
-                            )) continue;
-
-                        result = result.Substring(
-                                           0, result.Length - ending.Length
-                                       )
-                                       .TrimEnd();
-                        changed = true;
-                        break; // Exit loop after one match
-                    }
-                } while
-                    (recursive && changed); // Only repeat if recursive is true
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = value;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Removes all carriage-return (<c>CR</c>) and newline (<c>NL</c>) ASCII
-        /// character(s) from the provided <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text from which
-        /// newline(s) are to be stripped.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> that is identical to
-        /// the specified <paramref name="value" /> but where all newline character(s) have
-        /// been converted to blanks; otherwise, the method is idempotent.
-        /// </returns>
-        [return: NotLogged]
-        public static string StripNewlines([NotLogged] this string value)
-        {
-            var result = value;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-
-                result = value.Replace("\r", string.Empty)
-                              .Replace("\n", string.Empty)
-                              .Trim();
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = value;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Prepends a bang (<c>!</c>) character before the specified
-        /// <paramref name="value" />, and then returns the result.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value to which a bang (<c>!</c>) character is to be prepended.
-        /// </param>
-        /// <returns>
-        /// If successful, the argument of the <paramref name="value" />
-        /// parameter, with a bang (<c>!</c>) character prepended; otherwise, the method is
-        /// idempotent.
-        /// </returns>
-        public static string PrependBang(this string value)
-        {
-            var result = value;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(value)) return result;
-
-                result = "!" + value;
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = value;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Extracts the last initial-capped word from a fully-qualified class name or
-        /// string containing a name such as <c>FooBarBaz</c> (in which case, it would
-        /// return <c>Baz</c>).
-        /// </summary>
-        /// <param name="input">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// text that is to be parsed.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the last
-        /// initial-capped word in the <paramref name="input" />; otherwise, this method is
-        /// idempotent.
-        /// </returns>
-        public static string GetLastWord(this string input)
-        {
-            var result = input;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(input))
-                    return input;
-
-                // Start from the end of the string and work backwards
-                for (var i = input.Length - 1; i >= 0; i--)
-                {
-                    if (!char.IsUpper(input[i])) continue;
-
-                    // Return the substring starting from the capital letter
-                    result = input.Substring(i);
-                    break;
-                }
-
-                // If no capital letter is found, return the original input (unlikely with valid input)
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = input;
-            }
-
-            return result;
-        }
+            => collection.Any(s => s.ContainsNoCase(value));
 
         /// <summary>
         /// Determines if any of the <see cref="T:System.String" />s in
@@ -438,22 +204,6 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
-
-        /// <summary>
-        /// Asks if the search text, in <paramref name="value" />, is a substring
-        /// of the strings in <paramref name="collection" />, ignoring case.
-        /// </summary>
-        /// <param name="collection"> Collection to search. </param>
-        /// <param name="value"> Value to compare. </param>
-        /// <returns>
-        /// <see langword="true" /> if the indicated value is in the specified
-        /// collection, regardless of case; <see langword="false" /> otherwise.
-        /// </returns>
-        public static bool AnyContainNoCase(
-            this IEnumerable<string> collection,
-            string value
-        )
-            => collection.Any(s => s.ContainsNoCase(value));
 
         /// <summary>
         /// Determines if the specified <paramref name="value" /> contains any letters that
@@ -1042,35 +792,57 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> ends with any of the specified
-        /// <paramref name="endings" />.
+        /// Helper method to aid in transforming text casing of a string to
+        /// Initial Caps.
         /// </summary>
         /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
+        /// (Required.) String containing the word that needs to be
+        /// initial-capitalized.
         /// </param>
-        /// <param name="endings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it ends with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="endings" />.
-        /// </remarks>
         /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with any of the specified <paramref name="endings" />;
-        /// <see langword="false" /> otherwise.
+        /// Word provided in <paramref name="value" /> with its first letter
+        /// replaced with a capital letter and all the remaining letters as lowercase.
         /// </returns>
-        [Log(AttributeExclude = true)]
-        public static bool EndsWithAnyOf(
-            this string value,
-            params string[] endings
-        )
-            => EndsWithAny(value, endings);
+        /// <remarks>
+        /// If this method is provided with the empty or whitespace string, then
+        /// this method returns the empty string.
+        /// </remarks>
+        private static string DoInitialCaps(string value)
+            => string.IsNullOrWhiteSpace(value)
+                ? string.Empty
+                : value[0]
+                  .ToString(CultureInfo.InvariantCulture)
+                  .ToUpper() + value.ToLowerInvariant()
+                                    .Substring(1, value.Length - 1);
+
+        /// <summary> Helper for determining whether strings contain valid email addresses. </summary>
+        /// <param name="match">
+        /// Reference to an instance of
+        /// <see cref="T:System.Text.RegularExpressions.Match" /> that resulted from a
+        /// regex search.
+        /// </param>
+        /// <returns> Correctly-formatted domain-name matching value. </returns>
+        /// <remarks>
+        /// This method also sets the value of the
+        /// <see cref="P:xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid" />
+        /// property to <see langword="true" /> in the event that an error occurs.
+        /// </remarks>
+        private static string DomainMapper(Match match)
+        {
+            // IdnMapping class with default property values.
+
+            var domainName = match.Groups[2].Value;
+            try
+            {
+                domainName = new IdnMapping().GetAscii(domainName);
+            }
+            catch (ArgumentException)
+            {
+                IsEmailAddressInvalid = true;
+            }
+
+            return match.Groups[1].Value + domainName;
+        }
 
         /// <summary>
         /// Determines if the specified <see cref="T:System.String" />
@@ -1129,6 +901,68 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
+
+        /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> ends with any of the specified
+        /// <paramref name="endings" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to be
+        /// checked.
+        /// </param>
+        /// <param name="endings">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// elements, each of which is to be assessed against the specified
+        /// <paramref name="value" /> as being what it ends with.
+        /// </param>
+        /// <remarks>
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
+        /// passed for
+        /// <paramref name="endings" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// ends with any of the specified <paramref name="endings" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool EndsWithAny(
+            this string value,
+            IEnumerable<string> endings
+        )
+            => EndsWithAny(value, endings.ToArray());
+
+        /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> ends with any of the specified
+        /// <paramref name="endings" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to be
+        /// checked.
+        /// </param>
+        /// <param name="endings">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// elements, each of which is to be assessed against the specified
+        /// <paramref name="value" /> as being what it ends with.
+        /// </param>
+        /// <remarks>
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
+        /// passed for
+        /// <paramref name="endings" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// ends with any of the specified <paramref name="endings" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool EndsWithAnyOf(
+            this string value,
+            params string[] endings
+        )
+            => EndsWithAny(value, endings);
 
         /// <summary>
         /// Double-checks a <paramref name="twitterSite" /> (at-mention) string
@@ -1191,6 +1025,95 @@ namespace xyLOGIX.Core.Extensions
                   string.IsNullOrWhiteSpace(str2)
                 : str2.ToLowerInvariant()
                       .Equals(str1.ToLowerInvariant(), comparisonType);
+
+        /// <summary>
+        /// Excludes whitespace characters from the specified
+        /// <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> from which to
+        /// exclude all whitespace characters.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> that matches
+        /// <paramref name="value" />, but with all whitespace characters removed.
+        /// </returns>
+        /// <remarks>
+        /// This method is useful for conducting whitespace-insensitive testing
+        /// of strings.
+        /// </remarks>
+        private static string ExcludingWhitespace(this string value)
+            => WhiteSpaceRegex.Replace(value, "");
+
+        /// <summary>
+        /// Returns the specified <paramref name="val2" /> if <paramref name="val1" /> is
+        /// <see langword="null" /> or a blank string; otherwise, <paramref name="val1" />
+        /// is returned if both <paramref name="val1" /> and <paramref name="val2" /> are
+        /// non-blank.
+        /// </summary>
+        /// <param name="val1">
+        /// (Required.) A <see cref="T:System.String" /> that is the
+        /// preferred value to be returned.
+        /// </param>
+        /// <param name="val2">
+        /// (Required.) A <see cref="T:System.String" /> whose value is
+        /// to be returned in the event that the argument of <paramref name="val1" /> is
+        /// <see langword="null" />, whitespace, or the
+        /// <see cref="F:System.String.Empty" /> value.
+        /// </param>
+        /// <returns>
+        /// Specified <paramref name="val2" /> if <paramref name="val1" /> is
+        /// <see langword="null" /> or a blank string; otherwise, <paramref name="val1" />
+        /// is returned if both <paramref name="val1" /> and <paramref name="val2" /> are
+        /// non-blank.
+        /// </returns>
+        [return: NotLogged]
+        public static string FirstOrNotEmpty(this string val1, string val2)
+            => string.IsNullOrWhiteSpace(val1) ? val2 : val1;
+
+        /// <summary>
+        /// Provides a method to format a string in a more Pythonic manner, where we simply
+        /// call <c>Format()</c> following the string to be formatted.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value that is to be formatted.
+        /// </param>
+        /// <param name="args">
+        /// (Required.) Zero or more object(s) whose value(s) are to be
+        /// substituted in for the format specifier(s) in the specified
+        /// <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// If successful, this method returns the specified
+        /// <paramref name="value" />, with the format placeholders updated according to
+        /// the specified <paramref name="args" />, if any; otherwise, the method is
+        /// idempotent.
+        /// </returns>
+        public static string FormatLikePython(
+            this string value,
+            params object[] args
+        )
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    return result;
+
+                result = string.Format(value, args);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Re-expresses strings with ellipsis (...) if they are longer than a
@@ -1306,6 +1229,52 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Extracts the last initial-capped word from a fully-qualified class name or
+        /// string containing a name such as <c>FooBarBaz</c> (in which case, it would
+        /// return <c>Baz</c>).
+        /// </summary>
+        /// <param name="input">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// text that is to be parsed.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the last
+        /// initial-capped word in the <paramref name="input" />; otherwise, this method is
+        /// idempotent.
+        /// </returns>
+        public static string GetLastWord(this string input)
+        {
+            var result = input;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(input))
+                    return input;
+
+                // Start from the end of the string and work backwards
+                for (var i = input.Length - 1; i >= 0; i--)
+                {
+                    if (!char.IsUpper(input[i])) continue;
+
+                    // Return the substring starting from the capital letter
+                    result = input.Substring(i);
+                    break;
+                }
+
+                // If no capital letter is found, return the original input (unlikely with valid input)
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = input;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Very na?ve determination of person first name 99.9% of the time,
         /// persons' names are // given as &lt;First Name&gt; &lt;Rest&gt;.
         /// </summary>
@@ -1414,6 +1383,46 @@ namespace xyLOGIX.Core.Extensions
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Determines whether the current word in the text being parsed for a
+        /// character-casing operation is
+        /// </summary>
+        /// <param name="array"> </param>
+        /// <param name="i"> </param>
+        /// <returns> </returns>
+        private static bool IsAcronymOrStateAbbr(IList<string> array, int i)
+        {
+            if (array == null || !array.Any() ||
+                string.IsNullOrWhiteSpace(array[i]) ||
+                ShortWordsThatAreNotAcronyms.ContainsNoCase(array[i]))
+                return false;
+
+            // something can be classed as an acronym if (a) it's not in the
+            // quote of "special" words, such as "The," "An", "Or", etc., and
+            // (b) it has two or more characters
+            if (i == 0 || array.Count == 1)
+            {
+                if (array.Count == 1)
+
+                    // always initial-capitalize a one-word phrase
+                    // --- but it's not an acronym
+                    return false;
+
+                return StateAbbrList.ContainsNoCase(array[i]) |
+                       new Regex("\"[^\"]*\"").IsMatch(array[i]) |
+                       (!CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
+                        AcronymList.Any(s => EqualsNoCase(s, array[i])));
+            }
+
+            if (i > 0) /* means we are past the first word of a phrase */
+                return (StateAbbrList.Contains(array[i]) && array[i - 1]
+                           .EndsWith(",")) ||
+                       !CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
+                       AcronymList.ContainsNoCase(array[i]);
+
+            return false;
         }
 
         /// <summary>
@@ -1769,6 +1778,87 @@ namespace xyLOGIX.Core.Extensions
         )
             => !string.IsNullOrWhiteSpace(value) && choices != null &&
                choices.Any(value.EqualsNoCase);
+
+        /// <summary>
+        /// Determines whether the passed <see cref="string" /> contains Roman
+        /// numerals.
+        /// </summary>
+        /// <param name="value"> Value to be checked. </param>
+        /// <returns> TRUE if the value contains Roman numerals; FALSE otherwise. </returns>
+        private static bool IsRomanNumerals(this string value)
+        {
+            if (string.IsNullOrWhiteSpace(value)) return false;
+
+            var regex = new Regex(
+                @"(?i)^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
+            );
+            var result = regex.IsMatch(value);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether a special word, such as 'The' or
+        /// 'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and still needs
+        /// to be initial-capitalized.
+        /// </summary>
+        /// <param name="words"> Array of words (a phrase split on spaces, etc.) </param>
+        /// <param name="currentWord"> Current word being checked. </param>
+        /// <returns> </returns>
+        private static bool IsSpecialWordAtBeginningOfPhrase(
+            string[] words,
+            string currentWord
+        )
+        {
+            if (words == null || !words.Any()) return false;
+
+            if (string.IsNullOrWhiteSpace(currentWord)) return false;
+
+            return (currentWord.EndsWith(".") && EqualsNoCase(
+                       currentWord, words.First()
+                   )) // this is most likely someone's title
+                   | CapitalizeableAsFirstWords
+                       .ContainsNoCase(
+                           currentWord
+                       ) // any words appearing in this array that are at the beginning of our phrase, should always be initial-capitalized
+                   && EqualsNoCase(currentWord, words.First());
+        }
+
+        /// <summary>
+        /// Determines whether the current element in the list of words being
+        /// parsed (as part of a character-casing operation) is the component of common
+        /// names for US streets.
+        /// </summary>
+        /// <param name="array">
+        /// (Required.) Collection of words from the text being
+        /// parsed.
+        /// </param>
+        /// <param name="i">
+        /// (Required.) Index into the <paramref name="array" /> of the
+        /// current word being parsed.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the current word belongs as part of the
+        /// name of common US streets; <see langword="false" /> otherwise.
+        /// </returns>
+        /// <remarks>
+        /// If this method is provided with the empty collection or an array
+        /// index outside the bounds of the collection, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        private static bool IsStreetNameComponent(
+            IReadOnlyList<string> array,
+            int i
+        )
+            => array != null && array.Any() && i < array.Count &&
+               (i + 1 >= array.Count
+                   ? NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
+                       array[i]
+                   )
+                   : NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
+                       array[i]
+                   ) | NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
+                       array[i + 1]
+                   ));
 
         /// <summary>
         /// Determines whether the specified character, <paramref name="c" />, is
@@ -2143,6 +2233,40 @@ namespace xyLOGIX.Core.Extensions
                 if (args == null || !args.Any()) return result;
 
                 result = string.Format(value, args);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Prepends a bang (<c>!</c>) character before the specified
+        /// <paramref name="value" />, and then returns the result.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value to which a bang (<c>!</c>) character is to be prepended.
+        /// </param>
+        /// <returns>
+        /// If successful, the argument of the <paramref name="value" />
+        /// parameter, with a bang (<c>!</c>) character prepended; otherwise, the method is
+        /// idempotent.
+        /// </returns>
+        public static string PrependBang(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = "!" + value;
             }
             catch (Exception ex)
             {
@@ -2806,6 +2930,43 @@ namespace xyLOGIX.Core.Extensions
                    .StartsWith(searchText.ToLowerInvariant());
 
         /// <summary>
+        /// Removes all carriage-return (<c>CR</c>) and newline (<c>NL</c>) ASCII
+        /// character(s) from the provided <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text from which
+        /// newline(s) are to be stripped.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> that is identical to
+        /// the specified <paramref name="value" /> but where all newline character(s) have
+        /// been converted to blanks; otherwise, the method is idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string StripNewlines([NotLogged] this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.Replace("\r", string.Empty)
+                              .Replace("\n", string.Empty)
+                              .Trim();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Formats a string using the <paramref name="format" /> and
         /// <paramref name="args" />.
         /// </summary>
@@ -2817,7 +2978,8 @@ namespace xyLOGIX.Core.Extensions
         /// <returns> A string with the format placeholders replaced by the args. </returns>
         /// <remarks>
         /// This method is just an alias for
-        /// <see cref="T:System.String.FormatLikePython" /> . It is here to provide a way to
+        /// <see cref="T:System.String.FormatLikePython" /> . It is here to provide a way
+        /// to
         /// translate VB to C# code and still use the moniker Sub from VB that does the
         /// same operation. If this method is passed the empty string for
         /// <paramref name="format" />, then the return value is the empty string.
@@ -2878,6 +3040,28 @@ namespace xyLOGIX.Core.Extensions
                     (current, part) => current + ToAcronymLetter(part)
                 );
         }
+
+        /// <summary>
+        /// Uses the first letter (turned into being uppercase, if necessary) of
+        /// the <paramref name="word" /> provided to be one of the letters of an acronym
+        /// that is being built, e.g., from a phrase, using the first letter of each of the
+        /// words of the phrase as each of the corresponding letters of the resulting
+        /// acronym.
+        /// </summary>
+        /// <param name="word">
+        /// (Required.) String containing the word whose first letter
+        /// should be made into a corresponding acronym letter.
+        /// </param>
+        /// <returns> String containing the letter(s) to be utilized in the acronym. </returns>
+        /// <remarks>
+        /// If <paramref name="word" /> is the empty or whitespace string, then
+        /// this method returns the empty string.
+        /// </remarks>
+        private static string ToAcronymLetter(string word)
+            => string.IsNullOrWhiteSpace(word) ? string.Empty :
+                "Reengagement".EqualsNoCase(word) ? "RE" : word[0]
+                    .ToString(CultureInfo.InvariantCulture)
+                    .ToUpperInvariant();
 
         /// <summary>
         /// Forces all characters in the input string, <paramref name="value" />,
@@ -3118,6 +3302,98 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Removes any specified substrings from the end of the given string.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be
+        /// processed.
+        /// </param>
+        /// <param name="caseSensitive">
+        /// (Optional.) A <see cref="T:System.Boolean" /> value indicating whether a
+        /// case-sensitive search is to be performed.
+        /// <para />
+        /// The default value of this parameter is <see langword="false" />.
+        /// </param>
+        /// <param name="recursive">
+        /// (Optional.) A <see cref="T:System.Boolean" /> value indicating whether the
+        /// removal of bad endings should be applied repeatedly until no matches remain.
+        /// <para />
+        /// The default value of this parameter is <see langword="true" />.
+        /// </param>
+        /// <param name="badEndings">
+        /// An array of <see cref="T:System.String" /> values representing the substrings
+        /// to remove from the end of <paramref name="value" />. If
+        /// <paramref name="badEndings" />
+        /// is <see langword="null" /> or empty, no changes are made.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> with any matching substrings from
+        /// <paramref name="badEndings" />
+        /// removed from the end. If <paramref name="value" /> is <see langword="null" />,
+        /// whitespace,
+        /// or no matches are found, the original string is returned.
+        /// </returns>
+        /// <remarks>
+        /// The method iterates through the <paramref name="badEndings" /> array to
+        /// identify
+        /// and remove any substrings that match the end of <paramref name="value" />.
+        /// It performs case-sensitive or case-insensitive comparisons depending on
+        /// the value of <paramref name="caseSensitive" />.
+        /// If <paramref name="recursive" /> is set to <see langword="true" />, the method
+        /// will repeatedly trim matches until no further matches are found.
+        /// </remarks>
+        public static string TrimAnyOffEnd(
+            this string value,
+            bool caseSensitive = false,
+            bool recursive = true,
+            params string[] badEndings
+        )
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (badEndings == null) return result;
+                if (badEndings.Length <= 0) return result;
+
+                bool changed;
+                do
+                {
+                    changed = false;
+                    foreach (var ending in badEndings)
+                    {
+                        if (string.IsNullOrEmpty(ending)) continue;
+
+                        if (!result.EndsWith(
+                                ending,
+                                caseSensitive
+                                    ? StringComparison.Ordinal
+                                    : StringComparison.OrdinalIgnoreCase
+                            )) continue;
+
+                        result = result.Substring(
+                                           0, result.Length - ending.Length
+                                       )
+                                       .TrimEnd();
+                        changed = true;
+                        break; // Exit loop after one match
+                    }
+                } while
+                    (recursive && changed); // Only repeat if recursive is true
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Trims the <paramref name="currentLine" /> of text; i.e., removes
         /// whitespace both before and after the text.
         /// </summary>
@@ -3132,251 +3408,5 @@ namespace xyLOGIX.Core.Extensions
             => !string.IsNullOrWhiteSpace(currentLine)
                 ? currentLine.Trim()
                 : string.Empty;
-
-        /// <summary>
-        /// Helper method to aid in transforming text casing of a string to
-        /// Initial Caps.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the word that needs to be
-        /// initial-capitalized.
-        /// </param>
-        /// <returns>
-        /// Word provided in <paramref name="value" /> with its first letter
-        /// replaced with a capital letter and all the remaining letters as lowercase.
-        /// </returns>
-        /// <remarks>
-        /// If this method is provided with the empty or whitespace string, then
-        /// this method returns the empty string.
-        /// </remarks>
-        private static string DoInitialCaps(string value)
-            => string.IsNullOrWhiteSpace(value)
-                ? string.Empty
-                : value[0]
-                  .ToString(CultureInfo.InvariantCulture)
-                  .ToUpper() + value.ToLowerInvariant()
-                                    .Substring(1, value.Length - 1);
-
-        /// <summary> Helper for determining whether strings contain valid email addresses. </summary>
-        /// <param name="match">
-        /// Reference to an instance of
-        /// <see cref="T:System.Text.RegularExpressions.Match" /> that resulted from a
-        /// regex search.
-        /// </param>
-        /// <returns> Correctly-formatted domain-name matching value. </returns>
-        /// <remarks>
-        /// This method also sets the value of the
-        /// <see cref="P:xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid" />
-        /// property to <see langword="true" /> in the event that an error occurs.
-        /// </remarks>
-        private static string DomainMapper(Match match)
-        {
-            // IdnMapping class with default property values.
-
-            var domainName = match.Groups[2].Value;
-            try
-            {
-                domainName = new IdnMapping().GetAscii(domainName);
-            }
-            catch (ArgumentException)
-            {
-                IsEmailAddressInvalid = true;
-            }
-
-            return match.Groups[1].Value + domainName;
-        }
-
-        /// <summary>
-        /// Excludes whitespace characters from the specified
-        /// <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> from which to
-        /// exclude all whitespace characters.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> that matches
-        /// <paramref name="value" />, but with all whitespace characters removed.
-        /// </returns>
-        /// <remarks>
-        /// This method is useful for conducting whitespace-insensitive testing
-        /// of strings.
-        /// </remarks>
-        private static string ExcludingWhitespace(this string value)
-            => WhiteSpaceRegex.Replace(value, "");
-
-        /// <summary>
-        /// Determines whether the current word in the text being parsed for a
-        /// character-casing operation is
-        /// </summary>
-        /// <param name="array"> </param>
-        /// <param name="i"> </param>
-        /// <returns> </returns>
-        private static bool IsAcronymOrStateAbbr(IList<string> array, int i)
-        {
-            if (array == null || !array.Any() ||
-                string.IsNullOrWhiteSpace(array[i]) ||
-                ShortWordsThatAreNotAcronyms.ContainsNoCase(array[i]))
-                return false;
-
-            // something can be classed as an acronym if (a) it's not in the
-            // quote of "special" words, such as "The," "An", "Or", etc., and
-            // (b) it has two or more characters
-            if (i == 0 || array.Count == 1)
-            {
-                if (array.Count == 1)
-
-                    // always initial-capitalize a one-word phrase
-                    // --- but it's not an acronym
-                    return false;
-
-                return StateAbbrList.ContainsNoCase(array[i]) |
-                       new Regex("\"[^\"]*\"").IsMatch(array[i]) |
-                       (!CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
-                        AcronymList.Any(s => EqualsNoCase(s, array[i])));
-            }
-
-            if (i > 0) /* means we are past the first word of a phrase */
-                return (StateAbbrList.Contains(array[i]) && array[i - 1]
-                           .EndsWith(",")) ||
-                       !CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
-                       AcronymList.ContainsNoCase(array[i]);
-
-            return false;
-        }
-
-        /// <summary>
-        /// Determines whether the passed <see cref="string" /> contains Roman
-        /// numerals.
-        /// </summary>
-        /// <param name="value"> Value to be checked. </param>
-        /// <returns> TRUE if the value contains Roman numerals; FALSE otherwise. </returns>
-        private static bool IsRomanNumerals(this string value)
-        {
-            if (string.IsNullOrWhiteSpace(value)) return false;
-
-            var regex = new Regex(
-                @"(?i)^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
-            );
-            var result = regex.IsMatch(value);
-            return result;
-        }
-
-        /// <summary>
-        /// Gets a value indicating whether a special word, such as 'The' or
-        /// 'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and still needs
-        /// to be initial-capitalized.
-        /// </summary>
-        /// <param name="words"> Array of words (a phrase split on spaces, etc.) </param>
-        /// <param name="currentWord"> Current word being checked. </param>
-        /// <returns> </returns>
-        private static bool IsSpecialWordAtBeginningOfPhrase(
-            string[] words,
-            string currentWord
-        )
-        {
-            if (words == null || !words.Any()) return false;
-
-            if (string.IsNullOrWhiteSpace(currentWord)) return false;
-
-            return (currentWord.EndsWith(".") && EqualsNoCase(
-                       currentWord, words.First()
-                   )) // this is most likely someone's title
-                   | CapitalizeableAsFirstWords
-                       .ContainsNoCase(
-                           currentWord
-                       ) // any words appearing in this array that are at the beginning of our phrase, should always be initial-capitalized
-                   && EqualsNoCase(currentWord, words.First());
-        }
-
-        /// <summary>
-        /// Determines whether the current element in the list of words being
-        /// parsed (as part of a character-casing operation) is the component of common
-        /// names for US streets.
-        /// </summary>
-        /// <param name="array">
-        /// (Required.) Collection of words from the text being
-        /// parsed.
-        /// </param>
-        /// <param name="i">
-        /// (Required.) Index into the <paramref name="array" /> of the
-        /// current word being parsed.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the current word belongs as part of the
-        /// name of common US streets; <see langword="false" /> otherwise.
-        /// </returns>
-        /// <remarks>
-        /// If this method is provided with the empty collection or an array
-        /// index outside the bounds of the collection, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        private static bool IsStreetNameComponent(
-            IReadOnlyList<string> array,
-            int i
-        )
-            => array != null && array.Any() && i < array.Count &&
-               (i + 1 >= array.Count
-                   ? NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
-                       array[i]
-                   )
-                   : NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
-                       array[i]
-                   ) | NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
-                       array[i + 1]
-                   ));
-
-        /// <summary>
-        /// Uses the first letter (turned into being uppercase, if necessary) of
-        /// the <paramref name="word" /> provided to be one of the letters of an acronym
-        /// that is being built, e.g., from a phrase, using the first letter of each of the
-        /// words of the phrase as each of the corresponding letters of the resulting
-        /// acronym.
-        /// </summary>
-        /// <param name="word">
-        /// (Required.) String containing the word whose first letter
-        /// should be made into a corresponding acronym letter.
-        /// </param>
-        /// <returns> String containing the letter(s) to be utilized in the acronym. </returns>
-        /// <remarks>
-        /// If <paramref name="word" /> is the empty or whitespace string, then
-        /// this method returns the empty string.
-        /// </remarks>
-        private static string ToAcronymLetter(string word)
-            => string.IsNullOrWhiteSpace(word) ? string.Empty :
-                "Reengagement".EqualsNoCase(word) ? "RE" : word[0]
-                    .ToString(CultureInfo.InvariantCulture)
-                    .ToUpperInvariant();
-
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> ends with any of the specified
-        /// <paramref name="endings" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
-        /// </param>
-        /// <param name="endings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it ends with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="endings" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with any of the specified <paramref name="endings" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
-        [Log(AttributeExclude = true)]
-        public static bool EndsWithAny(
-            this string value,
-            IEnumerable<string> endings
-        )
-            => EndsWithAny(value, endings.ToArray());
     }
 }

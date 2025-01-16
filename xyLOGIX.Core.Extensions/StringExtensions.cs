@@ -26,6 +26,35 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class StringExtensions
     {
+        /// <summary>
+        /// Replaces single quotation marks, <c>'</c>, appearing in the specified <paramref name="inputString"/> with the HTML entity <c>&amp;apos;</c>.
+        /// </summary>
+        /// <param name="inputString">(Required.) A <see cref="T:System.String" /> value in which the replacement is to take place.</param>
+        /// <remarks>If the value of the <paramref name="inputString"/> parameter is <see langword="null" />, blank, contains only whitespace, or is the <see cref="F:System.String.Empty" /> value, then this method is idempotent.<para/>This method is also idempotent if an exception is caught during the execution of the algorithm.v</remarks>
+        /// <returns>A <see cref="T:System.String" /> that contains the text that has had the replacement done on it.</returns>
+        [return: NotLogged]
+        public static string ReplaceSingleQuotesWithHTMLApostrophes(
+            [NotLogged]  this string inputString)
+        {
+            var result = inputString;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(inputString)) return result;
+
+                result = inputString.Replace("'", "&apos;");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = inputString;
+            }
+
+            return result;
+        }
+
         /// <summary> Collection of strings that are commonly-used acronyms. </summary>
         private static readonly string[] AcronymList =
         {

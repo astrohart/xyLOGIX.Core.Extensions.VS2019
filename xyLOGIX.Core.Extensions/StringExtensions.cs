@@ -2962,7 +2962,8 @@ namespace xyLOGIX.Core.Extensions
         /// If successful, the <paramref name="inputString" />, but with "smart
         /// quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
         /// </returns>
-        public static string StripIncompatableQuotes(this string inputString)
+        [return: NotLogged]
+        public static string StripIncompatableQuotes([NotLogged] this string inputString)
         {
             if (string.IsNullOrWhiteSpace(inputString))
             {

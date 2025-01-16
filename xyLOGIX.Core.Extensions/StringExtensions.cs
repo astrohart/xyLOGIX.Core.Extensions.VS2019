@@ -2963,17 +2963,33 @@ namespace xyLOGIX.Core.Extensions
         /// quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
         /// </returns>
         [return: NotLogged]
-        public static string StripIncompatableQuotes([NotLogged] this string inputString)
+        public static string StripIncompatableQuotes(
+            [NotLogged] this string inputString
+        )
         {
-            if (string.IsNullOrWhiteSpace(inputString))
+            var result = inputString;
+
+            try
             {
-                return inputString;
+                if (string.IsNullOrWhiteSpace(inputString))
+                {
+                    return inputString;
+                }
+
+                result = inputString.Replace('\u2018', '\'')
+                                    .Replace('\u2019', '\'')
+                                    .Replace('\u201c', '\"')
+                                    .Replace('\u201d', '\"');
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = inputString;
             }
 
-            return inputString.Replace('\u2018', '\'')
-                              .Replace('\u2019', '\'')
-                              .Replace('\u201c', '\"')
-                              .Replace('\u201d', '\"');
+            return result;
         }
 
         /// <summary>

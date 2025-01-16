@@ -1069,7 +1069,23 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         [return: NotLogged]
         public static string FirstOrNotEmpty(this string val1, string val2)
-            => string.IsNullOrWhiteSpace(val1) ? val2 : val1;
+        {
+            var result = string.Empty;
+
+            try
+            {
+                result = string.IsNullOrWhiteSpace(val1) ? val2 : val1;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Provides a method to format a string in a more Pythonic manner, where we simply

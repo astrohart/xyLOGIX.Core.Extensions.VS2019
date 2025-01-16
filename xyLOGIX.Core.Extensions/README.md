@@ -321,6 +321,7 @@
   - [SetAutoScrollMargin(x,y)](#M-xyLOGIX-Core-Extensions-IScrollableControl-SetAutoScrollMargin-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IScrollableControl.SetAutoScrollMargin(System.Int32,System.Int32)')
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
+  - [ToOrdinalString(value)](#M-xyLOGIX-Core-Extensions-IntExtensions-ToOrdinalString-System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.ToOrdinalString(System.Int32)')
 - [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-ListExtensions-#cctor 'xyLOGIX.Core.Extensions.ListExtensions.#cctor')
   - [AddDistinct(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct-System-Collections-IList,System-Object- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct(System.Collections.IList,System.Object)')
@@ -443,10 +444,13 @@
   - [DomainMapper(match)](#M-xyLOGIX-Core-Extensions-StringExtensions-DomainMapper-System-Text-RegularExpressions-Match- 'xyLOGIX.Core.Extensions.StringExtensions.DomainMapper(System.Text.RegularExpressions.Match)')
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.String[])')
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.Collections.Generic.IEnumerable{System.String})')
+  - [EndsWithAnyOf(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAnyOf(System.String,System.String[])')
   - [EnsureAtIsInFront(twitterSite)](#M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EnsureAtIsInFront(System.String)')
   - [EqualsNoCase(str1,str2)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String)')
   - [EqualsNoCase(str1,str2,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String,System.StringComparison)')
   - [ExcludingWhitespace(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ExcludingWhitespace(System.String)')
+  - [FirstOrNotEmpty(val1,val2)](#M-xyLOGIX-Core-Extensions-StringExtensions-FirstOrNotEmpty-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.FirstOrNotEmpty(System.String,System.String)')
+  - [FormatLikePython(value,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython(System.String,System.Object[])')
   - [GetCompactedString(stringToCompact,font,maxWidth)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetCompactedString(System.String,System.Drawing.Font,System.Int32)')
   - [GetDottedSuffix(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetDottedSuffix(System.String)')
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
@@ -492,6 +496,7 @@
   - [StartsWithAny(value,beginnings)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAny(System.String,System.String[])')
   - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.String[])')
   - [StartsWithNoCase(value,searchText)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithNoCase(System.String,System.String)')
+  - [StripIncompatableQuotes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatableQuotes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripIncompatableQuotes(System.String)')
   - [StripNewlines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripNewlines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripNewlines(System.String)')
   - [Sub(format,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.Sub(System.String,System.Object[])')
   - [ToASCII(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII(System.String)')
@@ -6243,6 +6248,39 @@ elements of the collection; `false` if not.
 | list | [System.Int32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32[] 'System.Int32[]') | Collection of integers that should be searched for the
 `value`. |
 
+<a name='M-xyLOGIX-Core-Extensions-IntExtensions-ToOrdinalString-System-Int32-'></a>
+### ToOrdinalString(value) `method`
+
+##### Summary
+
+Converts an [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32')`value` to
+its ordinal string representation, appending the appropriate suffix (e.g.,
+`"st"`, `"nd"`, `"rd"`, `"th"`, etc.) based on the
+specified `value`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the ordinal
+representation of the provided `value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value that
+represents the number to format.
+
+
+
+The argument of this parameter must be `1` or greater. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown when the provided
+`value` is less than 1. |
+
 <a name='T-xyLOGIX-Core-Extensions-ListExtensions'></a>
 ## ListExtensions `type`
 
@@ -8882,6 +8920,36 @@ This method returns `false` if no values are
 passed for
 `endings`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-String[]-'></a>
+### EndsWithAnyOf(value,endings) `method`
+
+##### Summary
+
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
+`endings`.
+
+##### Returns
+
+`true` if the specified `value`
+ends with any of the specified `endings`;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
+checked. |
+| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+elements, each of which is to be assessed against the specified
+`value` as being what it ends with. |
+
+##### Remarks
+
+This method returns `false` if no values are
+passed for
+`endings`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String-'></a>
 ### EnsureAtIsInFront(twitterSite) `method`
 
@@ -8972,6 +9040,59 @@ exclude all whitespace characters. |
 
 This method is useful for conducting whitespace-insensitive testing
 of strings.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-FirstOrNotEmpty-System-String,System-String-'></a>
+### FirstOrNotEmpty(val1,val2) `method`
+
+##### Summary
+
+Returns the specified `val2` if `val1` is
+`null` or a blank string; otherwise, `val1`
+is returned if both `val1` and `val2` are
+non-blank.
+
+##### Returns
+
+Specified `val2` if `val1` is
+`null` or a blank string; otherwise, `val1`
+is returned if both `val1` and `val2` are
+non-blank.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| val1 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the
+preferred value to be returned. |
+| val2 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose value is
+to be returned in the event that the argument of `val1` is
+`null`, whitespace, or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython-System-String,System-Object[]-'></a>
+### FormatLikePython(value,args) `method`
+
+##### Summary
+
+Provides a method to format a string in a more Pythonic manner, where we simply
+call `Format()` following the string to be formatted.
+
+##### Returns
+
+If successful, this method returns the specified
+`value`, with the format placeholders updated according to
+the specified `args`, if any; otherwise, the method is
+idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+value that is to be formatted. |
+| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Required.) Zero or more object(s) whose value(s) are to be
+substituted in for the format specifier(s) in the specified
+`value`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32-'></a>
 ### GetCompactedString(stringToCompact,font,maxWidth) `method`
@@ -9727,7 +9848,7 @@ method returns the empty string.
 
 ##### Summary
 
-More Pythonic version of the [Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format')
+More Pythonic version of the [FormatLikePython](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.FormatLikePython 'System.String.FormatLikePython')
 method, which you can put after a string literal or
 [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variable to format a string.
 
@@ -10195,6 +10316,32 @@ If `value` is the empty string or if
 `searchText` is the empty string, then this method returns
 `false`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatableQuotes-System-String-'></a>
+### StripIncompatableQuotes(inputString) `method`
+
+##### Summary
+
+Strips "smart quotes" from the specified `inputString` and
+replaces them with "straight quotes."
+
+##### Returns
+
+If successful, the `inputString`, but with "smart
+quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing the data on which replacement is to be performed. |
+
+##### Remarks
+
+If the value of the `inputString` is
+`null`, only consists of whitespace, or is the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StripNewlines-System-String-'></a>
 ### StripNewlines(value) `method`
 
@@ -10239,7 +10386,8 @@ replaced in the format string. |
 ##### Remarks
 
 This method is just an alias for
-[Format](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Format 'System.String.Format') . It is here to provide a way to
+[FormatLikePython](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.FormatLikePython 'System.String.FormatLikePython') . It is here to provide a way
+to
 translate VB to C# code and still use the moniker Sub from VB that does the
 same operation. If this method is passed the empty string for
 `format`, then the return value is the empty string.

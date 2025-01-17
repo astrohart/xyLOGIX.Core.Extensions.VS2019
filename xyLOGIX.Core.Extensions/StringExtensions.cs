@@ -1088,6 +1088,71 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Formats the specified <paramref name="content" /> as HTML by replacing certain
+        /// characters
+        /// with their corresponding HTML entities.
+        /// </summary>
+        /// <param name="content">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be
+        /// formatted as HTML.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> containing the formatted HTML text.
+        /// </returns>
+        /// <remarks>
+        /// This method replaces the following characters in the input string:
+        /// <list type="bullet">
+        ///     <item>
+        ///         <description>&lt; with <c>&amp;lt;</c></description>
+        ///     </item>
+        ///     <item>
+        ///         <description>&gt; with <c>&amp;gt;</c></description>
+        ///     </item>
+        ///     <item>
+        ///         <description>" with <c>&amp;quot;</c></description>
+        ///     </item>
+        ///     <item>
+        ///         <description>Single quotes with <c>&amp;apos;</c></description>
+        ///     </item>
+        ///     <item>
+        ///         <description>Spaces with <c>&amp;nbsp;</c></description>
+        ///     </item>
+        /// </list>
+        /// <para />
+        /// In addition, this method also transforms 'smart' quotes, i.e., "curly" quotes,
+        /// to 'straight' quotes before performing the reformat of single and double
+        /// quotation marks.
+        /// <para />
+        /// If an exception occurs during the formatting process, then this method is
+        /// idempotent.
+        /// </remarks>
+        public static string FormatAsHtml(this string content)
+        {
+            var result = content;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(content)) return result;
+
+                result = content.Replace("<", "&lt;")
+                                .Replace(">", "&gt;")
+                                .StripIncompatableQuotes()
+                                .Replace("\"", "&quot;")
+                                .ReplaceSingleQuotesWithHTMLApostrophes()
+                                .ReplaceSpacesWithHtmlNonBreakingSpace();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = content;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Provides a method to format a string in a more Pythonic manner, where we simply
         /// call <c>Format()</c> following the string to be formatted.
         /// </summary>
@@ -2831,6 +2896,47 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(inputString)) return result;
 
                 result = inputString.Replace("'", "&apos;");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = inputString;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Replaces all spaces in the specified <paramref name="inputString" /> with HTML
+        /// non-breaking space entities (<c>&amp;nbsp;</c>).
+        /// </summary>
+        /// <param name="inputString">
+        /// (Required.) A <see cref="T:System.String" /> containing the text in which
+        /// spaces are to be replaced.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> with all spaces replaced by HTML non-breaking
+        /// space entities (<c>&amp;nbsp;</c>).
+        /// </returns>
+        /// <remarks>
+        /// If the <paramref name="inputString" /> is <see langword="null" /> or consists
+        /// only of whitespace, the method returns the original
+        /// <paramref name="inputString" />.
+        /// </remarks>
+        [return: NotLogged]
+        public static string ReplaceSpacesWithHtmlNonBreakingSpace(
+            [NotLogged] this string inputString
+        )
+        {
+            var result = inputString;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(inputString)) return result;
+
+                result = inputString.Replace(" ", "&nbsp;");
             }
             catch (Exception ex)
             {

@@ -115,6 +115,17 @@ namespace xyLOGIX.Core.Extensions
         static StringExtensions() { }
 
         /// <summary>
+        /// Gets a reference to an instance of
+        /// <see cref="T:System.Text.RegularExpressions.Regex" /> that is compiled to match
+        /// a <see cref="T:System.String" /> that ends with a colon (<c>:</c>) and then a
+        /// natural number.
+        /// </summary>
+        private static Regex EndsWithColonAndNumberRegex
+        {
+            [DebuggerStepThrough] get;
+        } = new Regex(@":\d+$", RegexOptions.Compiled);
+
+        /// <summary>
         /// Gets or sets a value that indicates whether the string most recently
         /// checked for whether it contains a valid email address, does in fact contain
         /// such a valid address.
@@ -965,6 +976,39 @@ namespace xyLOGIX.Core.Extensions
             => EndsWithAny(value, endings);
 
         /// <summary>
+        /// Determines whether the specified <paramref name="value" /> ends with a colon
+        /// and a number.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> that is set to
+        /// the value that is to be examined.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" />if the specified <paramref name="value" /> ends
+        /// with a colon and a number; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool EndsWithColonAndNumber(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = EndsWithColonAndNumberRegex.IsMatch(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Double-checks a <paramref name="twitterSite" /> (at-mention) string
         /// to make sure it begins with the character '@'.
         /// </summary>
@@ -1044,6 +1088,52 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         private static string ExcludingWhitespace(this string value)
             => WhiteSpaceRegex.Replace(value, "");
+
+        /// <summary>
+        /// Extracts all characters of the specified <paramref name="value" /> up to but
+        /// not including the first occurrence of a colon (<c>:</c>).
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> that is set to the value to be
+        /// processed.
+        /// </param>
+        /// <remarks>
+        /// If the specified <paramref name="value" /> is <see langword="null" />,
+        /// blank, the <see cref="F:System.String.Empty" /> value, or does not contain a
+        /// colon, then the method is idempotent.
+        /// </remarks>
+        /// <returns>
+        /// A <see cref="T:System.String" /> containing all characters of the
+        /// specified <paramref name="value" /> up to but not including the first colon (
+        /// <c>:</c>), if present.
+        /// </returns>
+        public static string ExtractUpToColon(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                /*
+                 * Extract up to the FIRST occurrence of a colon.
+                 */
+
+                var colonIndex = value.IndexOf(':');
+                if (colonIndex <= 0) return value;
+
+                result = value.Substring(0, colonIndex);
+            }
+            catch (Exception ex)
+            {
+                // Log exception details
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Returns the specified <paramref name="val2" /> if <paramref name="val1" /> is

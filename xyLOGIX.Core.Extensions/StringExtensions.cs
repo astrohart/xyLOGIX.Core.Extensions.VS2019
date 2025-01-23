@@ -112,7 +112,16 @@ namespace xyLOGIX.Core.Extensions
         /// attribute in order to simplify the logging output.
         /// </remarks>
         [Log(AttributeExclude = true)]
-        static StringExtensions() { }
+        static StringExtensions()
+
+            // Only initialize a new instance of the IdnMapping once per execution of a client 
+            // application.
+            => DomainMappingObject = new IdnMapping();
+
+        private static IdnMapping DomainMappingObject
+        {
+            [DebuggerStepThrough] get;
+        }
 
         /// <summary>
         /// Gets a reference to an instance of
@@ -843,9 +852,13 @@ namespace xyLOGIX.Core.Extensions
             // IdnMapping class with default property values.
 
             var domainName = match.Groups[2].Value;
+
             try
             {
-                domainName = new IdnMapping().GetAscii(domainName);
+                if (match == null) return domainName;
+                if (string.IsNullOrWhiteSpace(domainName)) return domainName;
+
+                domainName = DomainMappingObject.GetAscii(domainName);
             }
             catch (ArgumentException)
             {
@@ -1325,19 +1338,35 @@ namespace xyLOGIX.Core.Extensions
         /// <c>My.Dotted.String</c>, which is presumed to be passed as the argument of the
         /// <paramref name="value" /> parameter.
         /// <para />
-        /// For the example above, <c>String</c> is the result of calling this method.
+        /// For the example above, <c>.String</c> or <c>String</c> is the result of calling
+        /// this method, depending on the value of the <paramref name="includingDot" />
+        /// parameter.
         /// </summary>
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing the
         /// text to be parsed.
         /// </param>
+        /// <param name="includingDot">
+        /// (Optional.) <see langword="true" /> to make the resultant string include the
+        /// <c>.</c> character at the start of the suffix; <see langword="false" /> to
+        /// exclude the <c>.</c> character.
+        /// <para />
+        /// The default value of this parameter is <see langword="false" />.
+        /// </param>
         /// <returns>
         /// If successful, a <see cref="T:System.String" /> containing the final
         /// part, or <i>suffix</i>, of the dotted string supplied as the argument to the
-        /// <paramref name="value" /> parameter; otherwise, the <paramref name="value" />
-        /// parameter is idempotently returned.
+        /// <paramref name="value" /> parameter. The result includes the <c>.</c> character
+        /// if <paramref name="includingDot" /> is set to <see langword="true" />;
+        /// otherwise,
+        /// the result does not include the <c>.</c> character. If the input is invalid,
+        /// the
+        /// <paramref name="value" /> parameter is idempotently returned.
         /// </returns>
-        public static string GetDottedSuffix(this string value)
+        public static string GetDottedSuffix(
+            this string value,
+            bool includingDot = false
+        )
         {
             var result = value;
 
@@ -1345,12 +1374,21 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
 
-                var parts = value.SplitOn(".");
-                if (parts == null) return result;
-                if (parts.Length <= 0) return result;
+                var lastDotIndex = value.LastIndexOf('.');
 
-                result = parts[parts.Length - 1];
+                // Find the last occurrence of '.' without splitting the string,
+                // except if a '.' character is not present in the string, or if
+                // the '.' is the final character of the string.
+                if (lastDotIndex < 0 || lastDotIndex == value.Length - 1)
+                    return result;
+
+                // Adjust the starting index based on includingDot parameter
+                var startIndex = includingDot ? lastDotIndex : lastDotIndex + 1;
+
+                // Extract the suffix directly
+                result = value.Substring(startIndex);
             }
+
             catch (Exception ex)
             {
                 // dump all the exception info to the log
@@ -2178,7 +2216,11 @@ namespace xyLOGIX.Core.Extensions
                     $"StringExtensions.IsValidEmail: value = '{value}'"
                 );
 
-                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    IsEmailAddressInvalid = true;
+                    return result;
+                }
 
                 // Use IdnMapping class to convert Unicode domain names.
                 value = Regex.Replace(value, @"(@)(.+)$", DomainMapper);
@@ -2197,6 +2239,10 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = false;
+            }
+            finally
+            {
+                IsEmailAddressInvalid = !result;
             }
 
             DebugUtils.WriteLine(

@@ -2387,8 +2387,9 @@ namespace xyLOGIX.Core.Extensions
         /// language rules.
         /// </param>
         /// <returns>
-        /// The <paramref name="word" /> if it is not plural; otherwise, a string
-        /// containing the plural version of the <paramref name="word" />.
+        /// The <paramref name="word" /> if it is already plural; otherwise, a
+        /// <see cref="T:System.String" /> containing the plural version of the
+        /// <paramref name="word" />.
         /// </returns>
         /// <remarks>
         /// If the empty string is passed for <paramref name="word" />, then this
@@ -2409,8 +2410,9 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Pluralizes the word passed in, using the current UI culture. </summary>
         /// <param name="word"> String containing the word to be pluralized. </param>
         /// <returns>
-        /// The <paramref name="word" /> if it is not plural; otherwise, a string
-        /// containing the plural version of the <paramref name="word" />.
+        /// The <paramref name="word" /> if it is already plural; otherwise, a
+        /// <see cref="T:System.String" /> containing the plural version of the
+        /// <paramref name="word" />.
         /// </returns>
         /// <remarks>
         /// If the empty string is passed for <paramref name="word" />, then this

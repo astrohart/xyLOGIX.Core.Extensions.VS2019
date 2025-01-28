@@ -417,6 +417,7 @@
   - [NamesOfStreetsThatShouldBeCapitalized](#F-xyLOGIX-Core-Extensions-StringExtensions-NamesOfStreetsThatShouldBeCapitalized 'xyLOGIX.Core.Extensions.StringExtensions.NamesOfStreetsThatShouldBeCapitalized')
   - [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
   - [StateAbbrList](#F-xyLOGIX-Core-Extensions-StringExtensions-StateAbbrList 'xyLOGIX.Core.Extensions.StringExtensions.StateAbbrList')
+  - [EndsWithColonAndNumberRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumberRegex 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithColonAndNumberRegex')
   - [IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
   - [WhiteSpaceRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex 'xyLOGIX.Core.Extensions.StringExtensions.WhiteSpaceRegex')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-StringExtensions-#cctor 'xyLOGIX.Core.Extensions.StringExtensions.#cctor')
@@ -445,14 +446,17 @@
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.String[])')
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [EndsWithAnyOf(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAnyOf(System.String,System.String[])')
+  - [EndsWithColonAndNumber(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumber-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithColonAndNumber(System.String)')
   - [EnsureAtIsInFront(twitterSite)](#M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EnsureAtIsInFront(System.String)')
   - [EqualsNoCase(str1,str2)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String)')
   - [EqualsNoCase(str1,str2,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String,System.StringComparison)')
   - [ExcludingWhitespace(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ExcludingWhitespace(System.String)')
+  - [ExtractUpToColon(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ExtractUpToColon-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ExtractUpToColon(System.String)')
   - [FirstOrNotEmpty(val1,val2)](#M-xyLOGIX-Core-Extensions-StringExtensions-FirstOrNotEmpty-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.FirstOrNotEmpty(System.String,System.String)')
+  - [FormatAsHtml(content)](#M-xyLOGIX-Core-Extensions-StringExtensions-FormatAsHtml-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.FormatAsHtml(System.String)')
   - [FormatLikePython(value,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython(System.String,System.Object[])')
   - [GetCompactedString(stringToCompact,font,maxWidth)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetCompactedString(System.String,System.Drawing.Font,System.Int32)')
-  - [GetDottedSuffix(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetDottedSuffix(System.String)')
+  - [GetDottedSuffix(value,includingDot)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String,System-Boolean- 'xyLOGIX.Core.Extensions.StringExtensions.GetDottedSuffix(System.String,System.Boolean)')
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
   - [GetLastWord(input)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetLastWord(System.String)')
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
@@ -492,6 +496,8 @@
   - [RemoveTrailingBackslashes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveTrailingBackslashes(System.String)')
   - [ReplaceAnyOf(source,findWhatValues,replacementText)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf(System.String,System.Collections.Generic.ICollection{System.String},System.String)')
   - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
+  - [ReplaceSingleQuotesWithHTMLApostrophes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSingleQuotesWithHTMLApostrophes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceSingleQuotesWithHTMLApostrophes(System.String)')
+  - [ReplaceSpacesWithHtmlNonBreakingSpace(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSpacesWithHtmlNonBreakingSpace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceSpacesWithHtmlNonBreakingSpace(System.String)')
   - [SplitOn(value,delimiter)](#M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.SplitOn(System.String,System.String)')
   - [StartsWithAny(value,beginnings)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAny(System.String,System.String[])')
   - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.String[])')
@@ -513,7 +519,13 @@
   - [EM_SETCUEBANNER](#F-xyLOGIX-Core-Extensions-TextBoxExtensions-EM_SETCUEBANNER 'xyLOGIX.Core.Extensions.TextBoxExtensions.EM_SETCUEBANNER')
   - [IsWindow(hWnd)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-IsWindow-System-IntPtr- 'xyLOGIX.Core.Extensions.TextBoxExtensions.IsWindow(System.IntPtr)')
   - [SendMessage(hWnd,Msg,wParam,lParam)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-SendMessage-System-IntPtr,System-UInt32,System-IntPtr,System-String- 'xyLOGIX.Core.Extensions.TextBoxExtensions.SendMessage(System.IntPtr,System.UInt32,System.IntPtr,System.String)')
-  - [SetCueBanner(textBox,cueText)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBox,System-String- 'xyLOGIX.Core.Extensions.TextBoxExtensions.SetCueBanner(System.Windows.Forms.TextBox,System.String)')
+  - [SetCueBanner(textBox,cueText)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBoxBase,System-String- 'xyLOGIX.Core.Extensions.TextBoxExtensions.SetCueBanner(System.Windows.Forms.TextBoxBase,System.String)')
+- [ToolStripMenuItemExtensions](#T-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-#cctor 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.#cctor')
+  - [ContainsMenuItemNamed(item,name)](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-ContainsMenuItemNamed-System-Windows-Forms-ToolStripMenuItem,System-String- 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.ContainsMenuItemNamed(System.Windows.Forms.ToolStripMenuItem,System.String)')
+  - [ContainsMenuItemNamed(menu,name)](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-ContainsMenuItemNamed-System-Windows-Forms-MenuStrip,System-String- 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.ContainsMenuItemNamed(System.Windows.Forms.MenuStrip,System.String)')
+  - [GetMenuItemNamed(menu,name)](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-GetMenuItemNamed-System-Windows-Forms-ToolStripMenuItem,System-String- 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.GetMenuItemNamed(System.Windows.Forms.ToolStripMenuItem,System.String)')
+  - [GetMenuItemNamed(menu,name)](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-GetMenuItemNamed-System-Windows-Forms-MenuStrip,System-String- 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.GetMenuItemNamed(System.Windows.Forms.MenuStrip,System.String)')
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
   - [CachedActualType](#P-xyLOGIX-Core-Extensions-TypeExtensions-CachedActualType 'xyLOGIX.Core.Extensions.TypeExtensions.CachedActualType')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-TypeExtensions-#cctor 'xyLOGIX.Core.Extensions.TypeExtensions.#cctor')
@@ -6361,9 +6373,9 @@ collection already. |
 
 ##### Remarks
 
-This method does nothing if the values of either the
-`list` or the `item` parameter(s) are set
-to a `null` reference.
+This method does nothing if the values of either the `list`
+or the `item` parameter(s), respectively, are set to a
+`null` reference.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0-'></a>
 ### AddDistinct\`\`1(collection,item) `method`
@@ -8265,6 +8277,16 @@ se.
 Collection of strings that are the two-letter abbreviations of the 50
 U.S. states.
 
+<a name='P-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumberRegex'></a>
+### EndsWithColonAndNumberRegex `property`
+
+##### Summary
+
+Gets a reference to an instance of
+[Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that is compiled to match
+a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that ends with a colon (`:`) and then a
+natural number.
+
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid'></a>
 ### IsEmailAddressInvalid `property`
 
@@ -8950,6 +8972,26 @@ This method returns `false` if no values are
 passed for
 `endings`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumber-System-String-'></a>
+### EndsWithColonAndNumber(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` ends with a colon
+and a number.
+
+##### Returns
+
+`true`if the specified `value` ends
+with a colon and a number; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to
+the value that is to be examined. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String-'></a>
 ### EnsureAtIsInFront(twitterSite) `method`
 
@@ -9041,6 +9083,33 @@ exclude all whitespace characters. |
 This method is useful for conducting whitespace-insensitive testing
 of strings.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ExtractUpToColon-System-String-'></a>
+### ExtractUpToColon(value) `method`
+
+##### Summary
+
+Extracts all characters of the specified `value` up to but
+not including the first occurrence of a colon (`:`).
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing all characters of the
+specified `value` up to but not including the first colon (
+`:`), if present.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to the value to be
+processed. |
+
+##### Remarks
+
+If the specified `value` is `null`,
+blank, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or does not contain a
+colon, then the method is idempotent.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-FirstOrNotEmpty-System-String,System-String-'></a>
 ### FirstOrNotEmpty(val1,val2) `method`
 
@@ -9068,6 +9137,41 @@ preferred value to be returned. |
 to be returned in the event that the argument of `val1` is
 `null`, whitespace, or the
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-FormatAsHtml-System-String-'></a>
+### FormatAsHtml(content) `method`
+
+##### Summary
+
+Formats the specified `content` as HTML by replacing certain
+characters
+with their corresponding HTML entities.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the formatted HTML text.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
+formatted as HTML. |
+
+##### Remarks
+
+This method replaces the following characters in the input string:
+
+
+
+In addition, this method also transforms 'smart' quotes, i.e., "curly" quotes,
+to 'straight' quotes before performing the reformat of single and double
+quotation marks.
+
+
+
+If an exception occurs during the formatting process, then this method is
+idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython-System-String,System-Object[]-'></a>
 ### FormatLikePython(value,args) `method`
@@ -9115,8 +9219,8 @@ given length.
 | font | [System.Drawing.Font](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Font 'System.Drawing.Font') | Font the text is in. |
 | maxWidth | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The maximum length of the string. |
 
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String-'></a>
-### GetDottedSuffix(value) `method`
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String,System-Boolean-'></a>
+### GetDottedSuffix(value,includingDot) `method`
 
 ##### Summary
 
@@ -9126,14 +9230,20 @@ Gets the suffix of a so-called string, i.e.,
 
 
 
-For the example above, `String` is the result of calling this method.
+For the example above, `.String` or `String` is the result of calling
+this method, depending on the value of the `includingDot`
+parameter.
 
 ##### Returns
 
 If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the final
 part, or , of the dotted string supplied as the argument to the
-`value` parameter; otherwise, the `value`
-parameter is idempotently returned.
+`value` parameter. The result includes the `.` character
+if `includingDot` is set to `true`;
+otherwise,
+the result does not include the `.` character. If the input is invalid,
+the
+`value` parameter is idempotently returned.
 
 ##### Parameters
 
@@ -9141,6 +9251,13 @@ parameter is idempotently returned.
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
 text to be parsed. |
+| includingDot | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) `true` to make the resultant string include the
+`.` character at the start of the suffix; `false` to
+exclude the `.` character.
+
+
+
+The default value of this parameter is `false`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32-'></a>
 ### GetFirstNChars(value,nChars) `method`
@@ -9803,8 +9920,9 @@ specified `culture`.
 
 ##### Returns
 
-The `word` if it is not plural; otherwise, a string
-containing the plural version of the `word`.
+The `word` if it is already plural; otherwise, a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the plural version of the
+`word`.
 
 ##### Parameters
 
@@ -9829,8 +9947,9 @@ Pluralizes the word passed in, using the current UI culture.
 
 ##### Returns
 
-The `word` if it is not plural; otherwise, a string
-containing the plural version of the `word`.
+The `word` if it is already plural; otherwise, a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the plural version of the
+`word`.
 
 ##### Parameters
 
@@ -10204,6 +10323,63 @@ found occurrences of `search` are to be substituted with. |
 parameters, `value`, `search`, or
 `replacement`, are passed blank or `null`
 strings for values. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSingleQuotesWithHTMLApostrophes-System-String-'></a>
+### ReplaceSingleQuotesWithHTMLApostrophes(inputString) `method`
+
+##### Summary
+
+Replaces single quotation marks, `'`, appearing in the specified
+`inputString` with the HTML entity `&apos;`.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the text that has had
+the replacement done on it.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value in
+which the replacement is to take place. |
+
+##### Remarks
+
+If the value of the `inputString` parameter is
+`null`, blank, contains only whitespace, or is the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
+
+
+
+This method is also idempotent if an exception is caught during the execution
+of the algorithm.v
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSpacesWithHtmlNonBreakingSpace-System-String-'></a>
+### ReplaceSpacesWithHtmlNonBreakingSpace(inputString) `method`
+
+##### Summary
+
+Replaces all spaces in the specified `inputString` with HTML
+non-breaking space entities (`&nbsp;`).
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all spaces replaced by HTML non-breaking
+space entities (`&nbsp;`).
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text in which
+spaces are to be replaced. |
+
+##### Remarks
+
+If the `inputString` is `null` or consists
+only of whitespace, the method returns the original
+`inputString`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String-'></a>
 ### SplitOn(value,delimiter) `method`
@@ -10743,7 +10919,7 @@ passed as a string. |
 Use this method to send messages directly to a window's window procedure,
 bypassing the system's message queue.
 
-<a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBox,System-String-'></a>
+<a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBoxBase,System-String-'></a>
 ### SetCueBanner(textBox,cueText) `method`
 
 ##### Summary
@@ -10755,7 +10931,7 @@ specified `cueText`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| textBox | [System.Windows.Forms.TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') | (Required.) Reference to an instance of
+| textBox | [System.Windows.Forms.TextBoxBase](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBoxBase 'System.Windows.Forms.TextBoxBase') | (Required.) Reference to an instance of
 [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') that refers to the textbox for
 which cue text is to be set. |
 | cueText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Optional.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
@@ -10764,6 +10940,142 @@ contains the cue text.
 
 
 Pass the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value to remove the cue text. |
+
+<a name='T-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions'></a>
+## ToolStripMenuItemExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension methods for
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') controls.
+
+<a name='M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [ToolStripMenuItemExtensions](#T-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions')
+class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-ContainsMenuItemNamed-System-Windows-Forms-ToolStripMenuItem,System-String-'></a>
+### ContainsMenuItemNamed(item,name) `method`
+
+##### Summary
+
+Determines whether the specified `item` contains a menu item
+with the specified `name`.
+
+##### Returns
+
+`true` if a drop-down menu item having the specified
+`name` is found in the drop-down items of the specified
+`item`; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| item | [System.Windows.Forms.ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') | (Required.) Reference to an instance of
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu item
+whose drop-down item(s) are to be searched. |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
+item to search for. |
+
+<a name='M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-ContainsMenuItemNamed-System-Windows-Forms-MenuStrip,System-String-'></a>
+### ContainsMenuItemNamed(menu,name) `method`
+
+##### Summary
+
+Determines whether the specified `menu` contains a menu item
+with the specified `name`.
+
+##### Returns
+
+`true` if a drop-down menu item having the specified
+`name` is found in the drop-down items of the specified
+`menu`; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| menu | [System.Windows.Forms.MenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MenuStrip 'System.Windows.Forms.MenuStrip') | (Required.) Reference to an instance of
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu
+whose drop-down menu(s) are to be searched. |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
+item to search for. |
+
+<a name='M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-GetMenuItemNamed-System-Windows-Forms-ToolStripMenuItem,System-String-'></a>
+### GetMenuItemNamed(menu,name) `method`
+
+##### Summary
+
+Among the drop-down items of the specified `menu`,
+gets a reference to an instance of
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that has the specified
+`name`.
+
+##### Returns
+
+If successful, a reference to an instance of
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that refers to the
+matching menu item; otherwise, a `null` reference is
+returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| menu | [System.Windows.Forms.ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') | (Required.) Reference to an instance of
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu
+whose drop-down menu(s) are to be searched. |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
+item to search for. |
+
+<a name='M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-GetMenuItemNamed-System-Windows-Forms-MenuStrip,System-String-'></a>
+### GetMenuItemNamed(menu,name) `method`
+
+##### Summary
+
+Among the drop-down items of the specified `menu`, gets a
+reference to an instance of
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that has the specified
+`name`.
+
+##### Returns
+
+If successful, a reference to an instance of
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that refers to the
+matching menu item; otherwise, a `null` reference is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| menu | [System.Windows.Forms.MenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MenuStrip 'System.Windows.Forms.MenuStrip') | (Required.) Reference to an instance of
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu
+whose drop-down menu(s) are to be searched. |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
+item to search for. |
 
 <a name='T-xyLOGIX-Core-Extensions-TypeExtensions'></a>
 ## TypeExtensions `type`

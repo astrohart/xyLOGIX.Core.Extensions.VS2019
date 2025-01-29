@@ -59,12 +59,12 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (textBox == null) return;
                 if (textBox.IsDisposed) return;
-                if (!(textBox is TextBoxBase)) return;
-                if (!IsWindow(textBox.Handle)) return;
+                if (!(textBox is TextBoxBase theTextBox)) return;
+                if (!IsWindow(theTextBox.Handle)) return;
                 if (string.IsNullOrWhiteSpace(cueText)) return;
 
                 SendMessage(
-                    textBox.Handle, EM_SETCUEBANNER, (IntPtr)1, cueText
+                    theTextBox.Handle, EM_SETCUEBANNER, (IntPtr)1, cueText
                 );
             }
             catch (Exception ex)

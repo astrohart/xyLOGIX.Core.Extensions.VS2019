@@ -53,12 +53,13 @@ namespace xyLOGIX.Core.Extensions
         /// <para />
         /// Pass the <see cref="F:System.String.Empty" /> value to remove the cue text.
         /// </param>
-        public static void SetCueBanner(this TextBoxBase textBox, string cueText)
+        public static void SetCueBanner(this Control textBox, string cueText)
         {
             try
             {
                 if (textBox == null) return;
                 if (textBox.IsDisposed) return;
+                if (!(textBox is TextBoxBase)) return;
                 if (!IsWindow(textBox.Handle)) return;
                 if (string.IsNullOrWhiteSpace(cueText)) return;
 

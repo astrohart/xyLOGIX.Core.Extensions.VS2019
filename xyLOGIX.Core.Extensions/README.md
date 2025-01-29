@@ -519,7 +519,7 @@
   - [EM_SETCUEBANNER](#F-xyLOGIX-Core-Extensions-TextBoxExtensions-EM_SETCUEBANNER 'xyLOGIX.Core.Extensions.TextBoxExtensions.EM_SETCUEBANNER')
   - [IsWindow(hWnd)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-IsWindow-System-IntPtr- 'xyLOGIX.Core.Extensions.TextBoxExtensions.IsWindow(System.IntPtr)')
   - [SendMessage(hWnd,Msg,wParam,lParam)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-SendMessage-System-IntPtr,System-UInt32,System-IntPtr,System-String- 'xyLOGIX.Core.Extensions.TextBoxExtensions.SendMessage(System.IntPtr,System.UInt32,System.IntPtr,System.String)')
-  - [SetCueBanner(textBox,cueText)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBoxBase,System-String- 'xyLOGIX.Core.Extensions.TextBoxExtensions.SetCueBanner(System.Windows.Forms.TextBoxBase,System.String)')
+  - [SetCueBanner(textBox,cueText)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-Control,System-String- 'xyLOGIX.Core.Extensions.TextBoxExtensions.SetCueBanner(System.Windows.Forms.Control,System.String)')
 - [ToolStripMenuItemExtensions](#T-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-#cctor 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.#cctor')
   - [ContainsMenuItemNamed(item,name)](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-ContainsMenuItemNamed-System-Windows-Forms-ToolStripMenuItem,System-String- 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.ContainsMenuItemNamed(System.Windows.Forms.ToolStripMenuItem,System.String)')
@@ -10919,7 +10919,7 @@ passed as a string. |
 Use this method to send messages directly to a window's window procedure,
 bypassing the system's message queue.
 
-<a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBoxBase,System-String-'></a>
+<a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-Control,System-String-'></a>
 ### SetCueBanner(textBox,cueText) `method`
 
 ##### Summary
@@ -10931,7 +10931,7 @@ specified `cueText`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| textBox | [System.Windows.Forms.TextBoxBase](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBoxBase 'System.Windows.Forms.TextBoxBase') | (Required.) Reference to an instance of
+| textBox | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | (Required.) Reference to an instance of
 [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') that refers to the textbox for
 which cue text is to be set. |
 | cueText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Optional.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that

@@ -448,6 +448,8 @@
   - [EndsWithAnyOf(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAnyOf(System.String,System.String[])')
   - [EndsWithColonAndNumber(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumber-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithColonAndNumber(System.String)')
   - [EnsureAtIsInFront(twitterSite)](#M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EnsureAtIsInFront(System.String)')
+  - [EqualsAnyOf(value,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsAnyOf(System.String,System.String[])')
+  - [EqualsAnyOfNoCase(value,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOfNoCase-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsAnyOfNoCase(System.String,System.String[])')
   - [EqualsNoCase(str1,str2)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String)')
   - [EqualsNoCase(str1,str2,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String,System.StringComparison)')
   - [ExcludingWhitespace(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ExcludingWhitespace(System.String)')
@@ -502,7 +504,7 @@
   - [StartsWithAny(value,beginnings)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAny(System.String,System.String[])')
   - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.String[])')
   - [StartsWithNoCase(value,searchText)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithNoCase(System.String,System.String)')
-  - [StripIncompatableQuotes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatableQuotes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripIncompatableQuotes(System.String)')
+  - [StripIncompatibleQuotes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatibleQuotes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripIncompatibleQuotes(System.String)')
   - [StripNewlines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripNewlines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripNewlines(System.String)')
   - [Sub(format,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.Sub(System.String,System.Object[])')
   - [ToASCII(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII(System.String)')
@@ -9017,6 +9019,77 @@ String containing the same value as in
 If this method is passed the empty string, then the result is the
 empty string.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOf-System-String,System-String[]-'></a>
+### EqualsAnyOf(value,list) `method`
+
+##### Summary
+
+Determines whether the specified `value` is equal to,
+respecting case, any of the item(s) in the specified `list`.
+
+##### Returns
+
+`true` if one of the element(s) of the specified
+`list` matches the value, accounting for character casing;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+value that is to be examined. |
+| list | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+value(s) that are to be checked for equality without regard to case. |
+
+##### Remarks
+
+If nothing is passed for the `list` parameter, then
+the method returns `false`.
+
+
+
+If the value is the `null`, blank, or
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, and one of the element(s) of the
+`list` is also, then this method returns
+`true`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOfNoCase-System-String,System-String[]-'></a>
+### EqualsAnyOfNoCase(value,list) `method`
+
+##### Summary
+
+Determines whether the specified `value` is equal to,
+regardless of case, any of the item(s) in the specified
+`list`.
+
+##### Returns
+
+`true` if one of the element(s) of the specified
+`list` matches the value, regardless of case; otherwise,
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+value that is to be examined. |
+| list | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+value(s) that are to be checked for equality without regard to case. |
+
+##### Remarks
+
+If nothing is passed for the `list` parameter, then
+the method returns `false`.
+
+
+
+If the value is the `null`, blank, or
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, and one of the element(s) of the
+`list` is also, then this method returns
+`true`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String-'></a>
 ### EqualsNoCase(str1,str2) `method`
 
@@ -10492,8 +10565,8 @@ If `value` is the empty string or if
 `searchText` is the empty string, then this method returns
 `false`.
 
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatableQuotes-System-String-'></a>
-### StripIncompatableQuotes(inputString) `method`
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatibleQuotes-System-String-'></a>
+### StripIncompatibleQuotes(inputString) `method`
 
 ##### Summary
 

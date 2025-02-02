@@ -1045,6 +1045,139 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is equal to,
+        /// respecting case, any of the item(s) in the specified <paramref name="list" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value that is to be examined.
+        /// </param>
+        /// <param name="list">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// value(s) that are to be checked for equality without regard to case.
+        /// </param>
+        /// <remarks>
+        /// If nothing is passed for the <paramref name="list" /> parameter, then
+        /// the method returns <see langword="false" />.
+        /// <para />
+        /// If the value is the <see langword="null" />, blank, or
+        /// <see cref="F:System.String.Empty" /> value, and one of the element(s) of the
+        /// <paramref name="list" /> is also, then this method returns
+        /// <see langword="true" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if one of the element(s) of the specified
+        /// <paramref name="list" /> matches the value, accounting for character casing;
+        /// otherwise, <see langword="false" />.
+        /// </returns>
+        public static bool EqualsAnyOf(
+            [NotLogged] this string value,
+            [NotLogged] params string[] list
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (list == null) return result;
+                if (list.Length <= 0) return result;
+
+                foreach (var item in list)
+                {
+                    /* special case: if the current item is null or
+                     blank, and so is the value, then return true
+                     immediately */
+                    if (string.IsNullOrWhiteSpace(item) &&
+                        string.IsNullOrWhiteSpace(value)) return true;
+
+                    if (!item.Equals(value, StringComparison.Ordinal)) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is equal to,
+        /// regardless of case, any of the item(s) in the specified
+        /// <paramref name="list" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value that is to be examined.
+        /// </param>
+        /// <param name="list">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// value(s) that are to be checked for equality without regard to case.
+        /// </param>
+        /// <remarks>
+        /// If nothing is passed for the <paramref name="list" /> parameter, then
+        /// the method returns <see langword="false" />.
+        /// <para />
+        /// If the value is the <see langword="null" />, blank, or
+        /// <see cref="F:System.String.Empty" /> value, and one of the element(s) of the
+        /// <paramref name="list" /> is also, then this method returns
+        /// <see langword="true" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if one of the element(s) of the specified
+        /// <paramref name="list" /> matches the value, regardless of case; otherwise,
+        /// <see langword="false" />.
+        /// </returns>
+        public static bool EqualsAnyOfNoCase(
+            [NotLogged] this string value,
+            [NotLogged] params string[] list
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (list == null) return result;
+                if (list.Length <= 0) return result;
+
+                foreach (var item in list)
+                {
+                    /* special case: if the current item is null or
+                     blank, and so is the value, then return true
+                     immediately */
+                    if (string.IsNullOrWhiteSpace(item) &&
+                        string.IsNullOrWhiteSpace(value)) return true;
+
+                    /*
+                     * otherwise, skip the current item if it isn't equal
+                     * to the value, regardless of case.
+                     */
+                    if (!item.Equals(
+                            value, StringComparison.OrdinalIgnoreCase
+                        )) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// A case-insensitive equality comparer for strings. Basically, converts
         /// each of its operands to lowercase before comparing.
         /// </summary>
@@ -1052,12 +1185,33 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="str2"> Second string to compare. </param>
         /// <returns> Whether the two strings are the same, regardless of case. </returns>
         public static bool EqualsNoCase(this string str1, string str2)
-            => string.IsNullOrWhiteSpace(str1) ||
-               string.IsNullOrWhiteSpace(str2)
-                ? string.IsNullOrWhiteSpace(str1) &&
-                  string.IsNullOrWhiteSpace(str2)
-                : str2.ToLowerInvariant()
-                      .Equals(str1.ToLowerInvariant());
+        {
+            var result = false;
+
+            try
+            {
+                result =
+                    string.IsNullOrWhiteSpace(str1) ||
+                    string.IsNullOrWhiteSpace(str2)
+                        ? string.IsNullOrWhiteSpace(str1) &&
+                          string.IsNullOrWhiteSpace(str2)
+                        : str2.Equals(str1, StringComparison.OrdinalIgnoreCase);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"StringExtensions.EqualsNoCase: Result = {result}"
+            );
+
+            return result;
+        }
 
         /// <summary>
         /// A case-insensitive equality comparer for strings. Basically, converts
@@ -1239,7 +1393,7 @@ namespace xyLOGIX.Core.Extensions
 
                 result = content.Replace("<", "&lt;")
                                 .Replace(">", "&gt;")
-                                .StripIncompatableQuotes()
+                                .StripIncompatibleQuotes()
                                 .Replace("\"", "&quot;")
                                 .ReplaceSingleQuotesWithHTMLApostrophes()
                                 .ReplaceSpacesWithHtmlNonBreakingSpace();
@@ -3251,7 +3405,7 @@ namespace xyLOGIX.Core.Extensions
         /// quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
         /// </returns>
         [return: NotLogged]
-        public static string StripIncompatableQuotes(
+        public static string StripIncompatibleQuotes(
             [NotLogged] this string inputString
         )
         {

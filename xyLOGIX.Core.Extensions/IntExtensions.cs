@@ -1,6 +1,7 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Linq;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -81,7 +82,33 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if <paramref name="value" /> is one of the
         /// elements of the collection; <see langword="false" /> if not.
         /// </returns>
-        public static bool EqualsOneOf(this int value, params int[] list)
-            => list != null && list.Length != 0 && list.Any(t => value == t);
+        public static bool EqualsOneOf([NotLogged] this int value,
+            [NotLogged] params int[] list)
+        {
+            var result = false;
+
+            try
+            {
+                if (list == null) return result;
+                if (list.Length <= 0) return result;
+
+                foreach(var x in list)
+                {
+                    if (value != x) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
     }
 }

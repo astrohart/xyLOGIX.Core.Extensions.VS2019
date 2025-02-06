@@ -1,6 +1,5 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
-using System.Linq;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
@@ -9,6 +8,61 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class IntExtensions
     {
+        /// <summary>
+        /// Returns a value indicating whether the specified
+        /// <paramref name="value" /> is equal to one of the items in a collection of
+        /// integers.
+        /// </summary>
+        /// <param name="value"> Integer to be compared to the members of the list. </param>
+        /// <param name="list">
+        /// Collection of integers that should be searched for the
+        /// <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if <paramref name="value" /> is one of the
+        /// elements of the collection; <see langword="false" /> if not.
+        /// </returns>
+        public static bool EqualsOneOf(
+            [NotLogged] this int value,
+            [NotLogged] params int[] list
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (list == null) return result;
+                if (list.Length <= 0) return result;
+
+                foreach (var x in list)
+                {
+                    if (value != x) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary> Determines whether a bitmask is 'on' or 'off'. </summary>
+        /// <param name="num">(Required.) Value containing the data to be checked.</param>
+        /// <param name="bitmask">(Required.) Bitmask.</param>
+        /// <returns>
+        /// <see langword="true" /> if the bit that is identified by the bitmask
+        /// in the data is 'on'; <see langword="false" /> if it is not.
+        /// </returns>
+        public static bool IsBitmaskOn(this int num, int bitmask)
+            => (num & bitmask) != 0;
+
         /// <summary>
         /// Converts an <see cref="T:System.Int32" /> <paramref name="value" /> to
         /// its ordinal string representation, appending the appropriate suffix (e.g.,
@@ -52,12 +106,15 @@ namespace xyLOGIX.Core.Extensions
                     case 1:
                         suffix = "st";
                         break;
+
                     case 2:
                         suffix = "nd";
                         break;
+
                     case 3:
                         suffix = "rd";
                         break;
+
                     default:
                         suffix = "th";
                         break;
@@ -66,49 +123,6 @@ namespace xyLOGIX.Core.Extensions
 
             // Return the formatted value
             return $"{value}{suffix}";
-        }
-
-        /// <summary>
-        /// Returns a value indicating whether the specified
-        /// <paramref name="value" /> is equal to one of the items in a collection of
-        /// integers.
-        /// </summary>
-        /// <param name="value"> Integer to be compared to the members of the list. </param>
-        /// <param name="list">
-        /// Collection of integers that should be searched for the
-        /// <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if <paramref name="value" /> is one of the
-        /// elements of the collection; <see langword="false" /> if not.
-        /// </returns>
-        public static bool EqualsOneOf([NotLogged] this int value,
-            [NotLogged] params int[] list)
-        {
-            var result = false;
-
-            try
-            {
-                if (list == null) return result;
-                if (list.Length <= 0) return result;
-
-                foreach(var x in list)
-                {
-                    if (value != x) continue;
-
-                    result = true;
-                    break;
-                }
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = false;
-            }
-
-            return result;
         }
     }
 }

@@ -321,6 +321,7 @@
   - [SetAutoScrollMargin(x,y)](#M-xyLOGIX-Core-Extensions-IScrollableControl-SetAutoScrollMargin-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IScrollableControl.SetAutoScrollMargin(System.Int32,System.Int32)')
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
+  - [IsBitmaskOn(num,bitmask)](#M-xyLOGIX-Core-Extensions-IntExtensions-IsBitmaskOn-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.IsBitmaskOn(System.Int32,System.Int32)')
   - [ToOrdinalString(value)](#M-xyLOGIX-Core-Extensions-IntExtensions-ToOrdinalString-System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.ToOrdinalString(System.Int32)')
 - [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-ListExtensions-#cctor 'xyLOGIX.Core.Extensions.ListExtensions.#cctor')
@@ -6263,6 +6264,25 @@ elements of the collection; `false` if not.
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Integer to be compared to the members of the list. |
 | list | [System.Int32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32[] 'System.Int32[]') | Collection of integers that should be searched for the
 `value`. |
+
+<a name='M-xyLOGIX-Core-Extensions-IntExtensions-IsBitmaskOn-System-Int32,System-Int32-'></a>
+### IsBitmaskOn(num,bitmask) `method`
+
+##### Summary
+
+Determines whether a bitmask is 'on' or 'off'.
+
+##### Returns
+
+`true` if the bit that is identified by the bitmask
+in the data is 'on'; `false` if it is not.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| num | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value containing the data to be checked. |
+| bitmask | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Bitmask. |
 
 <a name='M-xyLOGIX-Core-Extensions-IntExtensions-ToOrdinalString-System-Int32-'></a>
 ### ToOrdinalString(value) `method`

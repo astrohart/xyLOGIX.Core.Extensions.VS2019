@@ -675,6 +675,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="null" /> reference, then this method returns
         /// <see langword="false" />.
         /// </remarks>
+        [Log(AttributeExclude = true)]
         public static bool ContainsAnyOf(
             this string value,
             params string[] searchStrings

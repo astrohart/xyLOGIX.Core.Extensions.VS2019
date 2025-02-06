@@ -1239,6 +1239,115 @@ namespace xyLOGIX.Core.Extensions
                       .Equals(str1.ToLowerInvariant(), comparisonType);
 
         /// <summary>
+        /// Escapes newlines (e.g., <c>\r\n</c>) in the provided <paramref name="value" />,
+        /// assuming that it is destined to then be written to a PowerShell Script (
+        /// <c>*.ps1</c>) file.
+        /// <para />
+        /// This method is useful when you need to write a string to a PowerShell script
+        /// file, and you want to ensure that the newlines (e.g., <c>\r\n</c>), within a
+        /// value to be sent somewhere else, are properly escaped.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// original value.
+        /// </param>
+        /// <remarks>
+        /// If the <see langword="null" /> blank, or
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// <paramref name="value" /> parameter, or if there is a problem completing the
+        /// replacement, then the method is idempotent.
+        /// <para />
+        /// <b>NOTE:</b> This method is also idempotent when the text that is to be
+        /// replaced is not present.
+        /// </remarks>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the
+        /// specified <paramref name="value" />, but altered to properly escape newline(s)
+        /// so that they are sent properly to whichever command the PowerShell Script (
+        /// <c>*.ps1</c>) file is calling; otherwise, the method is idempotent.
+        /// </returns>
+        [DebuggerStepThrough]
+        [return: NotLogged]
+        public static string EscapePowerShellNewline(
+            [NotLogged] this string value
+        )
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.Replace(
+                    Environment.NewLine, $"`{Environment.NewLine}"
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Escapes double-quotation marks in the provided <paramref name="value" />,
+        /// assuming that it is destined to then be written to a PowerShell Script (
+        /// <c>*.ps1</c>) file.
+        /// <para />
+        /// This method is useful when you need to write a string to a PowerShell script
+        /// file, and you want to ensure that the double-quotation marks (<c>"</c>) are
+        /// properly escaped.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// original value.
+        /// </param>
+        /// <remarks>
+        /// If the <see langword="null" /> blank, or
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// <paramref name="value" /> parameter, or if there is a problem completing the
+        /// replacement, then the method is idempotent.
+        /// <para />
+        /// <b>NOTE:</b> This method is also idempotent when the text that is to be
+        /// replaced is not present.
+        /// </remarks>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the
+        /// specified <paramref name="value" />, but altered to properly escape
+        /// double-quotation mark(s) so that they are sent properly to whichever command
+        /// the PowerShell Script (<c>*.ps1</c>) file is calling; otherwise, the method is
+        /// idempotent.
+        /// </returns>
+        [DebuggerStepThrough]
+        [return: NotLogged]
+        public static string EscapePowerShellQuotes(
+            [NotLogged] this string value
+        )
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.Replace("\"", @"\`""");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Excludes whitespace characters from the specified
         /// <paramref name="value" />.
         /// </summary>

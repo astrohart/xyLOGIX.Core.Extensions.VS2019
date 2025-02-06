@@ -452,6 +452,8 @@
   - [EqualsAnyOfNoCase(value,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOfNoCase-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsAnyOfNoCase(System.String,System.String[])')
   - [EqualsNoCase(str1,str2)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String)')
   - [EqualsNoCase(str1,str2,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsNoCase(System.String,System.String,System.StringComparison)')
+  - [EscapePowerShellNewline(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-EscapePowerShellNewline-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EscapePowerShellNewline(System.String)')
+  - [EscapePowerShellQuotes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-EscapePowerShellQuotes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EscapePowerShellQuotes(System.String)')
   - [ExcludingWhitespace(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ExcludingWhitespace(System.String)')
   - [ExtractUpToColon(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ExtractUpToColon-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ExtractUpToColon(System.String)')
   - [FirstOrNotEmpty(val1,val2)](#M-xyLOGIX-Core-Extensions-StringExtensions-FirstOrNotEmpty-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.FirstOrNotEmpty(System.String,System.String)')
@@ -9130,6 +9132,89 @@ Whether the two strings are the same, regardless of case.
 | comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | One of the
 [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values saying how the strings are to
 be compared. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EscapePowerShellNewline-System-String-'></a>
+### EscapePowerShellNewline(value) `method`
+
+##### Summary
+
+Escapes newlines (e.g., `\r\n`) in the provided `value`,
+assuming that it is destined to then be written to a PowerShell Script (
+`*.ps1`) file.
+
+
+
+This method is useful when you need to write a string to a PowerShell script
+file, and you want to ensure that the newlines (e.g., `\r\n`), within a
+value to be sent somewhere else, are properly escaped.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+specified `value`, but altered to properly escape newline(s)
+so that they are sent properly to whichever command the PowerShell Script (
+`*.ps1`) file is calling; otherwise, the method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+original value. |
+
+##### Remarks
+
+If the `null` blank, or
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+`value` parameter, or if there is a problem completing the
+replacement, then the method is idempotent.
+
+
+
+This method is also idempotent when the text that is to be
+replaced is not present.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EscapePowerShellQuotes-System-String-'></a>
+### EscapePowerShellQuotes(value) `method`
+
+##### Summary
+
+Escapes double-quotation marks in the provided `value`,
+assuming that it is destined to then be written to a PowerShell Script (
+`*.ps1`) file.
+
+
+
+This method is useful when you need to write a string to a PowerShell script
+file, and you want to ensure that the double-quotation marks (`"`) are
+properly escaped.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+specified `value`, but altered to properly escape
+double-quotation mark(s) so that they are sent properly to whichever command
+the PowerShell Script (`*.ps1`) file is calling; otherwise, the method is
+idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+original value. |
+
+##### Remarks
+
+If the `null` blank, or
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+`value` parameter, or if there is a problem completing the
+replacement, then the method is idempotent.
+
+
+
+This method is also idempotent when the text that is to be
+replaced is not present.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String-'></a>
 ### ExcludingWhitespace(value) `method`

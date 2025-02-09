@@ -33,7 +33,11 @@ namespace xyLOGIX.Core.Extensions
         /// The default action description of the control for use by
         /// accessibility client applications.
         /// </returns>
-        string AccessibleDefaultActionDescription { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        string AccessibleDefaultActionDescription
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the description of the control used by accessibility
@@ -43,7 +47,11 @@ namespace xyLOGIX.Core.Extensions
         /// The description of the control used by accessibility client
         /// applications. The default is <see langword="null" />.
         /// </returns>
-        string AccessibleDescription { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        string AccessibleDescription
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the name of the control used by accessibility client
@@ -53,7 +61,11 @@ namespace xyLOGIX.Core.Extensions
         /// The name of the control used by accessibility client applications.
         /// The default is <see langword="null" />.
         /// </returns>
-        string AccessibleName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        string AccessibleName
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets or sets the accessible role of the control </summary>
         /// <returns>
@@ -66,7 +78,11 @@ namespace xyLOGIX.Core.Extensions
         /// value assigned is not one of the
         /// <see cref="T:System.Windows.Forms.AccessibleRole" /> values.
         /// </exception>
-        AccessibleRole AccessibleRole { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        AccessibleRole AccessibleRole
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control can accept data
@@ -88,7 +104,11 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.AnchorStyles" /> values. The default is
         /// <see langword="Top" /> and <see langword="Left" />.
         /// </returns>
-        AnchorStyles Anchor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        AnchorStyles Anchor
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets where this control is scrolled to in
@@ -100,7 +120,27 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Drawing.Point" /> specifying the scroll
         /// location. The default is the upper-left corner of the control.
         /// </returns>
-        Point AutoScrollOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Point AutoScrollOffset
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the height of the control
+        /// automatically adjusts when the font assigned to the control is changed.
+        /// </summary>
+        /// <remarks>
+        /// This property raises the
+        /// <see cref="E:System.Windows.Forms.Control.AutoSizeChanged" /> event when its
+        /// value is updated.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the height of the control automatically adjusts when
+        /// the font is changed; otherwise, <see langword="false" />. The default is
+        /// <see langword="true" />.
+        /// </returns>
+        bool AutoSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary> Gets or sets the background color for the control. </summary>
         /// <returns>
@@ -108,14 +148,22 @@ namespace xyLOGIX.Core.Extensions
         /// background color of the control. The default is the value of the
         /// <see cref="P:System.Windows.Forms.Control.DefaultBackColor" /> property.
         /// </returns>
-        Color BackColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Color BackColor
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets or sets the background image displayed in the control. </summary>
         /// <returns>
         /// An <see cref="T:System.Drawing.Image" /> that represents the image to
         /// display in the background of the control.
         /// </returns>
-        Image BackgroundImage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Image BackgroundImage
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the background image layout as defined in the
@@ -135,7 +183,11 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// specified enumeration value does not exist.
         /// </exception>
-        ImageLayout BackgroundImageLayout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        ImageLayout BackgroundImageLayout
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the <see cref="T:System.Windows.Forms.BindingContext" />
@@ -145,7 +197,11 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.BindingContext" /> for the
         /// control.
         /// </returns>
-        BindingContext BindingContext { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        BindingContext BindingContext
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets the distance, in pixels, between the bottom edge of the control
@@ -167,7 +223,11 @@ namespace xyLOGIX.Core.Extensions
         /// parent control that represents the size and location of the control including
         /// its nonclient elements.
         /// </returns>
-        Rectangle Bounds { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Rectangle Bounds
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets a value indicating whether the control can receive focus. </summary>
         /// <returns>
@@ -202,7 +262,11 @@ namespace xyLOGIX.Core.Extensions
         /// performed on any controls requiring validation when it receives focus;
         /// otherwise, <see langword="false" />. The default is <see langword="true" />.
         /// </returns>
-        bool CausesValidation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        bool CausesValidation
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets the rectangle that represents the client area of the control. </summary>
         /// <returns>
@@ -216,7 +280,11 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Drawing.Size" /> that represents the dimensions
         /// of the client area of the control.
         /// </returns>
-        Size ClientSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Size ClientSize
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets the name of the company or creator of the application containing
@@ -243,7 +311,11 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.ContextMenu" /> that represents
         /// the shortcut menu associated with the control.
         /// </returns>
-        ContextMenu ContextMenu { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        ContextMenu ContextMenu
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the
@@ -256,7 +328,11 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.ContextMenuStrip" /> . The default is
         /// <see langword="null" />.
         /// </returns>
-        ContextMenuStrip ContextMenuStrip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        ContextMenuStrip ContextMenuStrip
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets the collection of controls contained within the control. </summary>
         /// <returns>
@@ -363,7 +439,11 @@ namespace xyLOGIX.Core.Extensions
         /// The default is the value of the
         /// <see cref="P:System.Windows.Forms.Control.DefaultForeColor" /> property.
         /// </returns>
-        Color ForeColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Color ForeColor
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets the window handle that the control is bound to. </summary>
         /// <returns>
@@ -396,7 +476,11 @@ namespace xyLOGIX.Core.Extensions
         /// assigned value is not one of the <see cref="T:System.Windows.Forms.ImeMode" />
         /// enumeration values.
         /// </exception>
-        ImeMode ImeMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        ImeMode ImeMode
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control is visible to
@@ -406,7 +490,11 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the control is visible to accessibility
         /// applications; otherwise, <see langword="false" />.
         /// </returns>
-        bool IsAccessible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        bool IsAccessible
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets a value indicating whether the control has been disposed of. </summary>
         /// <returns>
@@ -479,7 +567,11 @@ namespace xyLOGIX.Core.Extensions
         /// An ordered pair of type <see cref="T:System.Drawing.Size" />
         /// representing the width and height of a rectangle.
         /// </returns>
-        Size MaximumSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Size MaximumSize
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the size that is the lower limit that
@@ -491,7 +583,11 @@ namespace xyLOGIX.Core.Extensions
         /// An ordered pair of type <see cref="T:System.Drawing.Size" />
         /// representing the width and height of a rectangle.
         /// </returns>
-        Size MinimumSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Size MinimumSize
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets or sets the name of the control. </summary>
         /// <returns> The name of the control. The default is an empty string (""). </returns>
@@ -502,7 +598,11 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.Padding" /> representing the
         /// control's internal spacing characteristics.
         /// </returns>
-        Padding Padding { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        Padding Padding
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets or sets the parent container of the control. </summary>
         /// <returns>
@@ -567,7 +667,11 @@ namespace xyLOGIX.Core.Extensions
         /// assigned value is not one of the
         /// <see cref="T:System.Windows.Forms.RightToLeft" /> values.
         /// </exception>
-        RightToLeft RightToLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        RightToLeft RightToLeft
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary> Gets or sets the height and width of the control. </summary>
         /// <returns>
@@ -638,7 +742,11 @@ namespace xyLOGIX.Core.Extensions
         /// control and all child controls; otherwise, <see langword="false" />. The
         /// default is <see langword="false" />.
         /// </returns>
-        bool UseWaitCursor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        bool UseWaitCursor
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control and all its child
@@ -694,10 +802,29 @@ namespace xyLOGIX.Core.Extensions
         event EventHandler BackgroundImageLayoutChanged;
 
         /// <summary>
+        /// Executes the specified delegate asynchronously on the thread that the
+        /// control's underlying handle was created on.
+        /// </summary>
+        /// <param name="method"> A delegate to a method that takes no parameters. </param>
+        /// <returns>
+        /// An <see cref="T:System.IAsyncResult" /> that represents the result of
+        /// the <see cref="M:System.Windows.Forms.Control.BeginInvoke(System.Delegate)" />
+        /// operation.
+        /// </returns>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// No appropriate window
+        /// handle can be found.
+        /// </exception>
+        IAsyncResult BeginInvoke(Delegate method);
+
+        /// <summary>
         /// Occurs when the value of the
         /// <see cref="T:System.Windows.Forms.BindingContext" /> property changes.
         /// </summary>
         event EventHandler BindingContextChanged;
+
+        /// <summary> Brings the control to the front of the z-order. </summary>
+        void BringToFront();
 
         /// <summary>
         /// Occurs when the value of the
@@ -717,6 +844,20 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="P:System.Windows.Forms.Control.ClientSize" /> property changes.
         /// </summary>
         event EventHandler ClientSizeChanged;
+
+        /// <summary>
+        /// Retrieves a value indicating whether the specified control is a child
+        /// of the control.
+        /// </summary>
+        /// <param name="ctl">
+        /// The <see cref="T:System.Windows.Forms.Control" /> to
+        /// evaluate.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified control is a child of the
+        /// control; otherwise, <see langword="false" />.
+        /// </returns>
+        bool Contains(Control ctl);
 
         /// <summary>
         /// Occurs when the value of the
@@ -744,6 +885,16 @@ namespace xyLOGIX.Core.Extensions
         event ControlEventHandler ControlRemoved;
 
         /// <summary>
+        /// Forces the creation of the visible control, including the creation of
+        /// the handle and any visible child controls.
+        /// </summary>
+        void CreateControl();
+
+        /// <summary> Creates the <see cref="T:System.Drawing.Graphics" /> for the control. </summary>
+        /// <returns> The <see cref="T:System.Drawing.Graphics" /> for the control. </returns>
+        Graphics CreateGraphics();
+
+        /// <summary>
         /// Occurs when the value of the
         /// <see cref="P:System.Windows.Forms.Control.Cursor" /> property changes.
         /// </summary>
@@ -754,6 +905,20 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="P:System.Windows.Forms.Control.Dock" /> property changes.
         /// </summary>
         event EventHandler DockChanged;
+
+        /// <summary> Begins a drag-and-drop operation. </summary>
+        /// <param name="data"> The data to drag. </param>
+        /// <param name="allowedEffects">
+        /// One of the
+        /// <see cref="T:System.Windows.Forms.DragDropEffects" /> values.
+        /// </param>
+        /// <returns>
+        /// A value from the
+        /// <see cref="T:System.Windows.Forms.DragDropEffects" /> enumeration that
+        /// represents the final effect that was performed during the drag-and-drop
+        /// operation.
+        /// </returns>
+        DragDropEffects DoDragDrop(object data, DragDropEffects allowedEffects);
 
         /// <summary> Occurs when the control is double-clicked. </summary>
         event EventHandler DoubleClick;
@@ -782,6 +947,11 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Occurs when an object is dragged over the control's bounds. </summary>
         event DragEventHandler DragOver;
 
+        /// <summary> Supports rendering to the specified bitmap. </summary>
+        /// <param name="bitmap"> The bitmap to be drawn to. </param>
+        /// <param name="targetBounds"> The bounds within which the control is rendered. </param>
+        void DrawToBitmap(Bitmap bitmap, Rectangle targetBounds);
+
         /// <summary>
         /// Occurs when the <see cref="P:System.Windows.Forms.Control.Enabled" />
         /// property value has changed.
@@ -790,266 +960,6 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary> Occurs when the control is entered. </summary>
         event EventHandler Enter;
-
-        /// <summary>
-        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Font" />
-        /// property value changes.
-        /// </summary>
-        event EventHandler FontChanged;
-
-        /// <summary>
-        /// Occurs when the
-        /// <see cref="P:System.Windows.Forms.Control.ForeColor" /> property value changes.
-        /// </summary>
-        event EventHandler ForeColorChanged;
-
-        /// <summary> Occurs during a drag operation. </summary>
-        event GiveFeedbackEventHandler GiveFeedback;
-
-        /// <summary> Occurs when the control receives focus. </summary>
-        event EventHandler GotFocus;
-
-        /// <summary> Occurs when a handle is created for the control. </summary>
-        event EventHandler HandleCreated;
-
-        /// <summary>
-        /// Occurs when the control's handle is in the process of being
-        /// destroyed.
-        /// </summary>
-        event EventHandler HandleDestroyed;
-
-        /// <summary> Occurs when the user requests help for a control. </summary>
-        event HelpEventHandler HelpRequested;
-
-        /// <summary>
-        /// Occurs when the <see cref="P:System.Windows.Forms.Control.ImeMode" />
-        /// property has changed.
-        /// </summary>
-        event EventHandler ImeModeChanged;
-
-        /// <summary> Occurs when a control's display requires redrawing. </summary>
-        event InvalidateEventHandler Invalidated;
-
-        /// <summary> Occurs when a key is pressed while the control has focus. </summary>
-        event KeyEventHandler KeyDown;
-
-        /// <summary>
-        /// Occurs when a character. space or backspace key is pressed while the
-        /// control has focus.
-        /// </summary>
-        event KeyPressEventHandler KeyPress;
-
-        /// <summary> Occurs when a key is released while the control has focus. </summary>
-        event KeyEventHandler KeyUp;
-
-        /// <summary> Occurs when a control should reposition its child controls. </summary>
-        event LayoutEventHandler Layout;
-
-        /// <summary> Occurs when the input focus leaves the control. </summary>
-        event EventHandler Leave;
-
-        /// <summary>
-        /// Occurs when the
-        /// <see cref="P:System.Windows.Forms.Control.Location" /> property value has
-        /// changed.
-        /// </summary>
-        event EventHandler LocationChanged;
-
-        /// <summary> Occurs when the control loses focus. </summary>
-        event EventHandler LostFocus;
-
-        /// <summary> Occurs when the control's margin changes. </summary>
-        event EventHandler MarginChanged;
-
-        /// <summary> Occurs when the control loses mouse capture. </summary>
-        event EventHandler MouseCaptureChanged;
-
-        /// <summary> Occurs when the control is clicked by the mouse. </summary>
-        event MouseEventHandler MouseClick;
-
-        /// <summary> Occurs when the control is double clicked by the mouse. </summary>
-        event MouseEventHandler MouseDoubleClick;
-
-        /// <summary>
-        /// Occurs when the mouse pointer is over the control and a mouse button
-        /// is pressed.
-        /// </summary>
-        event MouseEventHandler MouseDown;
-
-        /// <summary> Occurs when the mouse pointer enters the control. </summary>
-        event EventHandler MouseEnter;
-
-        /// <summary> Occurs when the mouse pointer rests on the control. </summary>
-        event EventHandler MouseHover;
-
-        /// <summary> Occurs when the mouse pointer leaves the control. </summary>
-        event EventHandler MouseLeave;
-
-        /// <summary> Occurs when the mouse pointer is moved over the control. </summary>
-        event MouseEventHandler MouseMove;
-
-        /// <summary>
-        /// Occurs when the mouse pointer is over the control and a mouse button
-        /// is released.
-        /// </summary>
-        event MouseEventHandler MouseUp;
-
-        /// <summary> Occurs when the mouse wheel moves while the control has focus. </summary>
-        event MouseEventHandler MouseWheel;
-
-        /// <summary> Occurs when the control is moved. </summary>
-        event EventHandler Move;
-
-        /// <summary> Occurs when the control's padding changes. </summary>
-        event EventHandler PaddingChanged;
-
-        /// <summary> Occurs when the control is redrawn. </summary>
-        event PaintEventHandler Paint;
-
-        /// <summary>
-        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Parent" />
-        /// property value changes.
-        /// </summary>
-        event EventHandler ParentChanged;
-
-        /// <summary>
-        /// Occurs before the
-        /// <see cref="E:System.Windows.Forms.Control.KeyDown" /> event when a key is
-        /// pressed while focus is on this control.
-        /// </summary>
-        event PreviewKeyDownEventHandler PreviewKeyDown;
-
-        /// <summary>
-        /// Occurs when <see cref="T:System.Windows.Forms.AccessibleObject" /> is
-        /// providing help to accessibility applications.
-        /// </summary>
-        event QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
-
-        /// <summary>
-        /// Occurs during a drag-and-drop operation and enables the drag quote
-        /// to determine whether the drag-and-drop operation should be canceled.
-        /// </summary>
-        event QueryContinueDragEventHandler QueryContinueDrag;
-
-        /// <summary>
-        /// Occurs when the value of the
-        /// <see cref="P:System.Windows.Forms.Control.Region" /> property changes.
-        /// </summary>
-        event EventHandler RegionChanged;
-
-        /// <summary> Occurs when the control is resized. </summary>
-        event EventHandler Resize;
-
-        /// <summary>
-        /// Occurs when the
-        /// <see cref="P:System.Windows.Forms.Control.RightToLeft" /> property value
-        /// changes.
-        /// </summary>
-        event EventHandler RightToLeftChanged;
-
-        /// <summary>
-        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Size" />
-        /// property value changes.
-        /// </summary>
-        event EventHandler SizeChanged;
-
-        /// <summary> Occurs when the control style changes. </summary>
-        event EventHandler StyleChanged;
-
-        /// <summary> Occurs when the system colors change. </summary>
-        event EventHandler SystemColorsChanged;
-
-        /// <summary>
-        /// Occurs when the
-        /// <see cref="P:System.Windows.Forms.Control.TabIndex" /> property value changes.
-        /// </summary>
-        event EventHandler TabIndexChanged;
-
-        /// <summary>
-        /// Occurs when the <see cref="P:System.Windows.Forms.Control.TabStop" />
-        /// property value changes.
-        /// </summary>
-        event EventHandler TabStopChanged;
-
-        /// <summary>
-        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Text" />
-        /// property value changes.
-        /// </summary>
-        event EventHandler TextChanged;
-
-        /// <summary> Occurs when the control is finished validating. </summary>
-        event EventHandler Validated;
-
-        /// <summary> Occurs when the control is validating. </summary>
-        event CancelEventHandler Validating;
-
-        /// <summary>
-        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Visible" />
-        /// property value changes.
-        /// </summary>
-        event EventHandler VisibleChanged;
-
-        /// <summary>
-        /// Executes the specified delegate asynchronously on the thread that the
-        /// control's underlying handle was created on.
-        /// </summary>
-        /// <param name="method"> A delegate to a method that takes no parameters. </param>
-        /// <returns>
-        /// An <see cref="T:System.IAsyncResult" /> that represents the result of
-        /// the <see cref="M:System.Windows.Forms.Control.BeginInvoke(System.Delegate)" />
-        /// operation.
-        /// </returns>
-        /// <exception cref="T:System.InvalidOperationException">
-        /// No appropriate window
-        /// handle can be found.
-        /// </exception>
-        IAsyncResult BeginInvoke(Delegate method);
-
-        /// <summary> Brings the control to the front of the z-order. </summary>
-        void BringToFront();
-
-        /// <summary>
-        /// Retrieves a value indicating whether the specified control is a child
-        /// of the control.
-        /// </summary>
-        /// <param name="ctl">
-        /// The <see cref="T:System.Windows.Forms.Control" /> to
-        /// evaluate.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the specified control is a child of the
-        /// control; otherwise, <see langword="false" />.
-        /// </returns>
-        bool Contains(Control ctl);
-
-        /// <summary>
-        /// Forces the creation of the visible control, including the creation of
-        /// the handle and any visible child controls.
-        /// </summary>
-        void CreateControl();
-
-        /// <summary> Creates the <see cref="T:System.Drawing.Graphics" /> for the control. </summary>
-        /// <returns> The <see cref="T:System.Drawing.Graphics" /> for the control. </returns>
-        Graphics CreateGraphics();
-
-        /// <summary> Begins a drag-and-drop operation. </summary>
-        /// <param name="data"> The data to drag. </param>
-        /// <param name="allowedEffects">
-        /// One of the
-        /// <see cref="T:System.Windows.Forms.DragDropEffects" /> values.
-        /// </param>
-        /// <returns>
-        /// A value from the
-        /// <see cref="T:System.Windows.Forms.DragDropEffects" /> enumeration that
-        /// represents the final effect that was performed during the drag-and-drop
-        /// operation.
-        /// </returns>
-        DragDropEffects DoDragDrop(object data, DragDropEffects allowedEffects);
-
-        /// <summary> Supports rendering to the specified bitmap. </summary>
-        /// <param name="bitmap"> The bitmap to be drawn to. </param>
-        /// <param name="targetBounds"> The bounds within which the control is rendered. </param>
-        void DrawToBitmap(Bitmap bitmap, Rectangle targetBounds);
 
         /// <summary> Retrieves the form that the control is on. </summary>
         /// <returns>
@@ -1064,6 +974,18 @@ namespace xyLOGIX.Core.Extensions
         /// otherwise, <see langword="false" />.
         /// </returns>
         bool Focus();
+
+        /// <summary>
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Font" />
+        /// property value changes.
+        /// </summary>
+        event EventHandler FontChanged;
+
+        /// <summary>
+        /// Occurs when the
+        /// <see cref="P:System.Windows.Forms.Control.ForeColor" /> property value changes.
+        /// </summary>
+        event EventHandler ForeColorChanged;
 
         /// <summary>
         /// Retrieves the child control that is located at the specified
@@ -1140,8 +1062,32 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         Size GetPreferredSize(Size proposedSize);
 
+        /// <summary> Occurs during a drag operation. </summary>
+        event GiveFeedbackEventHandler GiveFeedback;
+
+        /// <summary> Occurs when the control receives focus. </summary>
+        event EventHandler GotFocus;
+
+        /// <summary> Occurs when a handle is created for the control. </summary>
+        event EventHandler HandleCreated;
+
+        /// <summary>
+        /// Occurs when the control's handle is in the process of being
+        /// destroyed.
+        /// </summary>
+        event EventHandler HandleDestroyed;
+
+        /// <summary> Occurs when the user requests help for a control. </summary>
+        event HelpEventHandler HelpRequested;
+
         /// <summary> Conceals the control from the user. </summary>
         void Hide();
+
+        /// <summary>
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.ImeMode" />
+        /// property has changed.
+        /// </summary>
+        event EventHandler ImeModeChanged;
 
         /// <summary>
         /// Invalidates the specified region of the control (adds it to the
@@ -1214,6 +1160,9 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         void Invalidate(Rectangle rc, bool invalidateChildren);
 
+        /// <summary> Occurs when a control's display requires redrawing. </summary>
+        event InvalidateEventHandler Invalidated;
+
         /// <summary>
         /// Executes the specified delegate on the thread that owns the control's
         /// underlying window handle.
@@ -1228,6 +1177,31 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         object Invoke(Delegate method);
 
+        /// <summary> Occurs when a key is pressed while the control has focus. </summary>
+        event KeyEventHandler KeyDown;
+
+        /// <summary>
+        /// Occurs when a character. space or backspace key is pressed while the
+        /// control has focus.
+        /// </summary>
+        event KeyPressEventHandler KeyPress;
+
+        /// <summary> Occurs when a key is released while the control has focus. </summary>
+        event KeyEventHandler KeyUp;
+
+        /// <summary> Occurs when a control should reposition its child controls. </summary>
+        event LayoutEventHandler Layout;
+
+        /// <summary> Occurs when the input focus leaves the control. </summary>
+        event EventHandler Leave;
+
+        /// <summary>
+        /// Occurs when the
+        /// <see cref="P:System.Windows.Forms.Control.Location" /> property value has
+        /// changed.
+        /// </summary>
+        event EventHandler LocationChanged;
+
         /// <summary> Converts a Logical DPI value to its equivalent DeviceUnit DPI value. </summary>
         /// <param name="value"> The Logical value to convert. </param>
         /// <returns> The resulting DeviceUnit value. </returns>
@@ -1241,6 +1215,63 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="value"> The size to be scaled. </param>
         /// <returns> The scaled size. </returns>
         Size LogicalToDeviceUnits(Size value);
+
+        /// <summary> Occurs when the control loses focus. </summary>
+        event EventHandler LostFocus;
+
+        /// <summary> Occurs when the control's margin changes. </summary>
+        event EventHandler MarginChanged;
+
+        /// <summary> Occurs when the control loses mouse capture. </summary>
+        event EventHandler MouseCaptureChanged;
+
+        /// <summary> Occurs when the control is clicked by the mouse. </summary>
+        event MouseEventHandler MouseClick;
+
+        /// <summary> Occurs when the control is double clicked by the mouse. </summary>
+        event MouseEventHandler MouseDoubleClick;
+
+        /// <summary>
+        /// Occurs when the mouse pointer is over the control and a mouse button
+        /// is pressed.
+        /// </summary>
+        event MouseEventHandler MouseDown;
+
+        /// <summary> Occurs when the mouse pointer enters the control. </summary>
+        event EventHandler MouseEnter;
+
+        /// <summary> Occurs when the mouse pointer rests on the control. </summary>
+        event EventHandler MouseHover;
+
+        /// <summary> Occurs when the mouse pointer leaves the control. </summary>
+        event EventHandler MouseLeave;
+
+        /// <summary> Occurs when the mouse pointer is moved over the control. </summary>
+        event MouseEventHandler MouseMove;
+
+        /// <summary>
+        /// Occurs when the mouse pointer is over the control and a mouse button
+        /// is released.
+        /// </summary>
+        event MouseEventHandler MouseUp;
+
+        /// <summary> Occurs when the mouse wheel moves while the control has focus. </summary>
+        event MouseEventHandler MouseWheel;
+
+        /// <summary> Occurs when the control is moved. </summary>
+        event EventHandler Move;
+
+        /// <summary> Occurs when the control's padding changes. </summary>
+        event EventHandler PaddingChanged;
+
+        /// <summary> Occurs when the control is redrawn. </summary>
+        event PaintEventHandler Paint;
+
+        /// <summary>
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Parent" />
+        /// property value changes.
+        /// </summary>
+        event EventHandler ParentChanged;
 
         /// <summary> Forces the control to apply layout logic to all its child controls. </summary>
         void PerformLayout();
@@ -1323,6 +1354,25 @@ namespace xyLOGIX.Core.Extensions
         bool PreProcessMessage(ref Message msg);
 
         /// <summary>
+        /// Occurs before the
+        /// <see cref="E:System.Windows.Forms.Control.KeyDown" /> event when a key is
+        /// pressed while focus is on this control.
+        /// </summary>
+        event PreviewKeyDownEventHandler PreviewKeyDown;
+
+        /// <summary>
+        /// Occurs when <see cref="T:System.Windows.Forms.AccessibleObject" /> is
+        /// providing help to accessibility applications.
+        /// </summary>
+        event QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
+
+        /// <summary>
+        /// Occurs during a drag-and-drop operation and enables the drag quote
+        /// to determine whether the drag-and-drop operation should be canceled.
+        /// </summary>
+        event QueryContinueDragEventHandler QueryContinueDrag;
+
+        /// <summary>
         /// Computes the size and location of the specified screen rectangle in
         /// client coordinates.
         /// </summary>
@@ -1357,6 +1407,12 @@ namespace xyLOGIX.Core.Extensions
         /// redraw itself and any child controls.
         /// </summary>
         void Refresh();
+
+        /// <summary>
+        /// Occurs when the value of the
+        /// <see cref="P:System.Windows.Forms.Control.Region" /> property changes.
+        /// </summary>
+        event EventHandler RegionChanged;
 
         /// <summary>
         /// Resets the <see cref="P:System.Windows.Forms.Control.BackColor" />
@@ -1407,6 +1463,9 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         void ResetText();
 
+        /// <summary> Occurs when the control is resized. </summary>
+        event EventHandler Resize;
+
         /// <summary> Resumes usual layout logic. </summary>
         void ResumeLayout();
 
@@ -1419,6 +1478,13 @@ namespace xyLOGIX.Core.Extensions
         /// requests; otherwise, <see langword="false" />.
         /// </param>
         void ResumeLayout(bool performLayout);
+
+        /// <summary>
+        /// Occurs when the
+        /// <see cref="P:System.Windows.Forms.Control.RightToLeft" /> property value
+        /// changes.
+        /// </summary>
+        event EventHandler RightToLeftChanged;
 
         /// <summary> Scales the control and any child controls. </summary>
         /// <param name="ratio"> The ratio to use for scaling. </param>
@@ -1546,13 +1612,55 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Displays the control to the user. </summary>
         void Show();
 
+        /// <summary>
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Size" />
+        /// property value changes.
+        /// </summary>
+        event EventHandler SizeChanged;
+
+        /// <summary> Occurs when the control style changes. </summary>
+        event EventHandler StyleChanged;
+
         /// <summary> Temporarily suspends the layout logic for the control. </summary>
         void SuspendLayout();
+
+        /// <summary> Occurs when the system colors change. </summary>
+        event EventHandler SystemColorsChanged;
+
+        /// <summary>
+        /// Occurs when the
+        /// <see cref="P:System.Windows.Forms.Control.TabIndex" /> property value changes.
+        /// </summary>
+        event EventHandler TabIndexChanged;
+
+        /// <summary>
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.TabStop" />
+        /// property value changes.
+        /// </summary>
+        event EventHandler TabStopChanged;
+
+        /// <summary>
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Text" />
+        /// property value changes.
+        /// </summary>
+        event EventHandler TextChanged;
 
         /// <summary>
         /// Causes the control to redraw the invalidated regions within its
         /// client area.
         /// </summary>
         void Update();
+
+        /// <summary> Occurs when the control is finished validating. </summary>
+        event EventHandler Validated;
+
+        /// <summary> Occurs when the control is validating. </summary>
+        event CancelEventHandler Validating;
+
+        /// <summary>
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Visible" />
+        /// property value changes.
+        /// </summary>
+        event EventHandler VisibleChanged;
     }
 }

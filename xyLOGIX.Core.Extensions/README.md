@@ -137,6 +137,7 @@
   - [AllowDrop](#P-xyLOGIX-Core-Extensions-IControl-AllowDrop 'xyLOGIX.Core.Extensions.IControl.AllowDrop')
   - [Anchor](#P-xyLOGIX-Core-Extensions-IControl-Anchor 'xyLOGIX.Core.Extensions.IControl.Anchor')
   - [AutoScrollOffset](#P-xyLOGIX-Core-Extensions-IControl-AutoScrollOffset 'xyLOGIX.Core.Extensions.IControl.AutoScrollOffset')
+  - [AutoSize](#P-xyLOGIX-Core-Extensions-IControl-AutoSize 'xyLOGIX.Core.Extensions.IControl.AutoSize')
   - [BackColor](#P-xyLOGIX-Core-Extensions-IControl-BackColor 'xyLOGIX.Core.Extensions.IControl.BackColor')
   - [BackgroundImage](#P-xyLOGIX-Core-Extensions-IControl-BackgroundImage 'xyLOGIX.Core.Extensions.IControl.BackgroundImage')
   - [BackgroundImageLayout](#P-xyLOGIX-Core-Extensions-IControl-BackgroundImageLayout 'xyLOGIX.Core.Extensions.IControl.BackgroundImageLayout')
@@ -3494,6 +3495,26 @@ Gets or sets where this control is scrolled to in
 
 A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') specifying the scroll
 location. The default is the upper-left corner of the control.
+
+<a name='P-xyLOGIX-Core-Extensions-IControl-AutoSize'></a>
+### AutoSize `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the height of the control
+automatically adjusts when the font assigned to the control is changed.
+
+##### Returns
+
+`true` if the height of the control automatically adjusts when
+the font is changed; otherwise, `false`. The default is
+`true`.
+
+##### Remarks
+
+This property raises the
+[](#E-System-Windows-Forms-Control-AutoSizeChanged 'System.Windows.Forms.Control.AutoSizeChanged') event when its
+value is updated.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-BackColor'></a>
 ### BackColor `property`

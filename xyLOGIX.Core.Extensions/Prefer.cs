@@ -81,6 +81,267 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
+        /// <see cref="T:System.Byte" /> variable whose value is to be returned if it
+        /// indeed does have a value.
+        /// </param>
+        /// <param name="preferredValue">
+        /// (Required.) Reference to the preferred
+        /// <see cref="T:System.Byte" /> value that is to be returned if the
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
+        /// value.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="preferredValue" /> over the
+        /// <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static byte ByteOverNull(
+            [NotLogged] byte? nullableValue,
+            [NotLogged] byte preferredValue
+        )
+        {
+            var result = preferredValue;
+
+            try
+            {
+                if (nullableValue == null) return result;
+                if (!nullableValue.HasValue) return result;
+
+                result = nullableValue.Value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = preferredValue;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Preferentially returns the specified <paramref name="preferredValue" /> over
+        /// the <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </summary>
+        /// <param name="nullableValue">
+        /// (Required.) A nullable
+        /// <see cref="T:System.Char" /> variable whose value is to be returned if it
+        /// indeed does have a value.
+        /// </param>
+        /// <param name="preferredValue">
+        /// (Required.) Reference to the preferred
+        /// <see cref="T:System.Char" /> value that is to be returned if the
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
+        /// value.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="preferredValue" /> over the
+        /// <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static char CharOverNull(
+            [NotLogged] char? nullableValue,
+            [NotLogged] char preferredValue
+        )
+        {
+            var result = preferredValue;
+
+            try
+            {
+                if (nullableValue == null) return result;
+                if (!nullableValue.HasValue) return result;
+                if ('\0'.Equals(nullableValue.Value)) return result;
+
+                result = nullableValue.Value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = preferredValue;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Preferentially returns the specified <paramref name="preferredValue" /> over
+        /// the <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </summary>
+        /// <param name="nullableValue">
+        /// (Required.) A nullable
+        /// <see cref="T:System.Decimal" /> variable whose value is to be returned if it
+        /// indeed does have a value.
+        /// </param>
+        /// <param name="preferredValue">
+        /// (Required.) Reference to the preferred
+        /// <see cref="T:System.Decimal" /> value that is to be returned if the
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
+        /// value.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="preferredValue" /> over the
+        /// <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static decimal DecimalOverNull(
+            [NotLogged] decimal? nullableValue,
+            [NotLogged] decimal preferredValue
+        )
+        {
+            var result = preferredValue;
+
+            try
+            {
+                if (nullableValue == null) return result;
+                if (!nullableValue.HasValue) return result;
+
+                result = nullableValue.Value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = preferredValue;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Preferentially returns the specified <paramref name="preferredValue" /> over
+        /// the <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </summary>
+        /// <param name="nullableValue">
+        /// (Required.) A nullable
+        /// <see cref="T:System.Double" /> variable whose value is to be returned if it
+        /// indeed does have a value.
+        /// </param>
+        /// <param name="preferredValue">
+        /// (Required.) Reference to the preferred
+        /// <see cref="T:System.Double" /> value that is to be returned if the
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
+        /// value.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="preferredValue" /> over the
+        /// <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static double DoubleOverNull(
+            [NotLogged] double? nullableValue,
+            [NotLogged] double preferredValue
+        )
+        {
+            var result = preferredValue;
+
+            try
+            {
+                if (nullableValue == null) return result;
+                if (!nullableValue.HasValue) return result;
+
+                result = nullableValue.Value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = preferredValue;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Preferentially returns the specified <paramref name="preferredValue" /> over
+        /// the <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </summary>
+        /// <param name="nullableValue">
+        /// (Required.) A nullable
+        /// <see cref="T:Single" /> variable whose value is to be returned if it
+        /// indeed does have a value.
+        /// </param>
+        /// <param name="preferredValue">
+        /// (Required.) Reference to the preferred
+        /// <see cref="T:Single" /> value that is to be returned if the
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
+        /// value.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="preferredValue" /> over the
+        /// <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static float FloatOverNull(
+            [NotLogged] float? nullableValue,
+            [NotLogged] float preferredValue
+        )
+        {
+            var result = preferredValue;
+
+            try
+            {
+                if (nullableValue == null) return result;
+                if (!nullableValue.HasValue) return result;
+
+                result = nullableValue.Value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = preferredValue;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Preferentially returns the specified <paramref name="preferredValue" /> over
+        /// the <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </summary>
+        /// <param name="nullableValue">
+        /// (Required.) A nullable
         /// <see cref="T:System.Int32" /> variable whose value is to be returned if it
         /// indeed does have a value.
         /// </param>
@@ -102,6 +363,110 @@ namespace xyLOGIX.Core.Extensions
         public static int IntOverNull(
             [NotLogged] int? nullableValue,
             [NotLogged] int preferredValue
+        )
+        {
+            var result = preferredValue;
+
+            try
+            {
+                if (nullableValue == null) return result;
+                if (!nullableValue.HasValue) return result;
+
+                result = nullableValue.Value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = preferredValue;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Preferentially returns the specified <paramref name="preferredValue" /> over
+        /// the <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </summary>
+        /// <param name="nullableValue">
+        /// (Required.) A nullable
+        /// <see cref="T:System.Int64" /> variable whose value is to be returned if it
+        /// indeed does have a value.
+        /// </param>
+        /// <param name="preferredValue">
+        /// (Required.) Reference to the preferred
+        /// <see cref="T:System.Int64" /> value that is to be returned if the
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
+        /// value.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="preferredValue" /> over the
+        /// <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static long LongOverNull(
+            [NotLogged] long? nullableValue,
+            [NotLogged] long preferredValue
+        )
+        {
+            var result = preferredValue;
+
+            try
+            {
+                if (nullableValue == null) return result;
+                if (!nullableValue.HasValue) return result;
+
+                result = nullableValue.Value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = preferredValue;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Preferentially returns the specified <paramref name="preferredValue" /> over
+        /// the <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </summary>
+        /// <param name="nullableValue">
+        /// (Required.) A nullable
+        /// <see cref="T:System.SByte" /> variable whose value is to be returned if it
+        /// indeed does have a value.
+        /// </param>
+        /// <param name="preferredValue">
+        /// (Required.) Reference to the preferred
+        /// <see cref="T:System.SByte" /> value that is to be returned if the
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
+        /// value.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="preferredValue" /> over the
+        /// <paramref name="nullableValue" />, if the specified
+        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
+        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
+        /// returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static sbyte SByteOverNull(
+            [NotLogged] sbyte? nullableValue,
+            [NotLogged] sbyte preferredValue
         )
         {
             var result = preferredValue;

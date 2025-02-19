@@ -133,6 +133,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Prefer.cs" />
     <Compile Include="Round.cs" />
     <None Include="key.snk" />
     <Compile Include="Properties\AssemblyInfo.cs" />

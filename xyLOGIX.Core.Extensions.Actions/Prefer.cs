@@ -68,6 +68,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -120,6 +121,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -172,6 +174,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
                 if ('\0'.Equals(nullableValue.Value)) return result;
 
                 result = nullableValue.Value;
@@ -225,6 +228,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -277,6 +281,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -329,6 +334,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -381,6 +387,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -433,6 +440,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -485,6 +493,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -537,6 +546,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -748,6 +758,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -800,6 +811,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -840,7 +852,7 @@ namespace xyLOGIX.Core.Extensions.Actions
         /// </returns>
         [Log(AttributeExclude = true)]
         [return: NotLogged]
-        public static string StringOverNull(
+        public static string StringOverBlank(
             [NotLogged] string nullableValue,
             [NotLogged] string preferredValue
         )
@@ -902,6 +914,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -954,6 +967,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }
@@ -1006,6 +1020,7 @@ namespace xyLOGIX.Core.Extensions.Actions
             {
                 if (nullableValue == null) return result;
                 if (!nullableValue.HasValue) return result;
+                if (nullableValue.Value == preferredValue) return result;
 
                 result = nullableValue.Value;
             }

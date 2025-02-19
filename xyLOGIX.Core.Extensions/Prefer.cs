@@ -289,61 +289,6 @@ namespace xyLOGIX.Core.Extensions
         /// returned.
         /// </summary>
         /// <param name="nullableValue">
-        /// (Required.) A <see cref="T:System.Object" /> variable whose value is to be
-        /// returned if it indeed does have a non-<see langword="null" />, non-blank value.
-        /// </param>
-        /// <param name="preferredValue">
-        /// (Required.) A <see cref="T:System.Object" />
-        /// containing the preferred value that is to be returned if the
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
-        /// value.
-        /// </param>
-        /// <returns>
-        /// The specified <paramref name="preferredValue" /> over the
-        /// <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
-        /// </returns>
-        [Log(AttributeExclude = true)]
-        [return: NotLogged]
-        public static dynamic DynamicOverNull(
-            [NotLogged] dynamic nullableValue,
-            [NotLogged] dynamic preferredValue
-        )
-        {
-            var result = preferredValue;
-
-            try
-            {
-                if (nullableValue == null && preferredValue == null)
-                    return result;
-                if (nullableValue == null && preferredValue != null)
-                    return result;
-                if (nullableValue != null && preferredValue == null)
-                    return nullableValue;
-
-                result = preferredValue;
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = preferredValue;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
-        /// </summary>
-        /// <param name="nullableValue">
         /// (Required.) A nullable
         /// <see cref="T:Single" /> variable whose value is to be returned if it
         /// indeed does have a value.

@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Collections.Synchro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Core.Extensions.Actions", "xyLOGIX.Core.Extensions.Actions\xyLOGIX.Core.Extensions.Actions.csproj", "{DA17C249-8F83-4C5A-ABEE-43D98AF5212A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xyLOGIX.Core.Extensions.Dynamic", "xyLOGIX.Core.Extensions.Dynamic\xyLOGIX.Core.Extensions.Dynamic.csproj", "{4C7D562B-D7E0-4D23-9377-641083D507E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -96,6 +98,14 @@ Global
 		{DA17C249-8F83-4C5A-ABEE-43D98AF5212A}.Release|x64.Build.0 = Release|x64
 		{DA17C249-8F83-4C5A-ABEE-43D98AF5212A}.Release|x86.ActiveCfg = Release|x86
 		{DA17C249-8F83-4C5A-ABEE-43D98AF5212A}.Release|x86.Build.0 = Release|x86
+		{4C7D562B-D7E0-4D23-9377-641083D507E8}.Debug|x64.ActiveCfg = Debug|x64
+		{4C7D562B-D7E0-4D23-9377-641083D507E8}.Debug|x64.Build.0 = Debug|x64
+		{4C7D562B-D7E0-4D23-9377-641083D507E8}.Debug|x86.ActiveCfg = Debug|x86
+		{4C7D562B-D7E0-4D23-9377-641083D507E8}.Debug|x86.Build.0 = Debug|x86
+		{4C7D562B-D7E0-4D23-9377-641083D507E8}.Release|x64.ActiveCfg = Release|x64
+		{4C7D562B-D7E0-4D23-9377-641083D507E8}.Release|x64.Build.0 = Release|x64
+		{4C7D562B-D7E0-4D23-9377-641083D507E8}.Release|x86.ActiveCfg = Release|x86
+		{4C7D562B-D7E0-4D23-9377-641083D507E8}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

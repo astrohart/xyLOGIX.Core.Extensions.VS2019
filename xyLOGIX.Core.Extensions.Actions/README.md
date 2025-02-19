@@ -20,7 +20,7 @@
   - [ObjectOverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-ObjectOverNull-System-Object,System-Object- 'xyLOGIX.Core.Extensions.Actions.Prefer.ObjectOverNull(System.Object,System.Object)')
   - [SByteOverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-SByteOverNull-System-Nullable{System-SByte},System-SByte- 'xyLOGIX.Core.Extensions.Actions.Prefer.SByteOverNull(System.Nullable{System.SByte},System.SByte)')
   - [ShortOverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-ShortOverNull-System-Nullable{System-Int16},System-Int16- 'xyLOGIX.Core.Extensions.Actions.Prefer.ShortOverNull(System.Nullable{System.Int16},System.Int16)')
-  - [StringOverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-StringOverNull-System-String,System-String- 'xyLOGIX.Core.Extensions.Actions.Prefer.StringOverNull(System.String,System.String)')
+  - [StringOverBlank(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-StringOverBlank-System-String,System-String- 'xyLOGIX.Core.Extensions.Actions.Prefer.StringOverBlank(System.String,System.String)')
   - [UInt32OverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-UInt32OverNull-System-Nullable{System-UInt32},System-UInt32- 'xyLOGIX.Core.Extensions.Actions.Prefer.UInt32OverNull(System.Nullable{System.UInt32},System.UInt32)')
   - [UIntPtrOverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-UIntPtrOverNull-System-Nullable{System-UIntPtr},System-UIntPtr- 'xyLOGIX.Core.Extensions.Actions.Prefer.UIntPtrOverNull(System.Nullable{System.UIntPtr},System.UIntPtr)')
   - [UShortOverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-UShortOverNull-System-Nullable{System-UInt16},System-UInt16- 'xyLOGIX.Core.Extensions.Actions.Prefer.UShortOverNull(System.Nullable{System.UInt16},System.UInt16)')
@@ -535,8 +535,8 @@ indeed does have a value. |
 `nullableValue` is `null` or does not have a
 value. |
 
-<a name='M-xyLOGIX-Core-Extensions-Actions-Prefer-StringOverNull-System-String,System-String-'></a>
-### StringOverNull(nullableValue,preferredValue) `method`
+<a name='M-xyLOGIX-Core-Extensions-Actions-Prefer-StringOverBlank-System-String,System-String-'></a>
+### StringOverBlank(nullableValue,preferredValue) `method`
 
 ##### Summary
 

@@ -494,7 +494,8 @@ This method has no parameters.
 ##### Summary
 
 Tests that [ObjectOverNull](#M-xyLOGIX-Core-Extensions-Actions-Prefer-ObjectOverNull-System-Object,System-Object- 'xyLOGIX.Core.Extensions.Actions.Prefer.ObjectOverNull(System.Object,System.Object)') returns the
-nullable value when it is not null.
+preferred value over the nullable value (since it is preferred, after all) when
+it is both are not `null`.
 
 ##### Parameters
 

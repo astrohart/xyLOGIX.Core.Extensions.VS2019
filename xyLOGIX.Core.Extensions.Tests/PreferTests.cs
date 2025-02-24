@@ -523,17 +523,17 @@ namespace xyLOGIX.Core.Extensions.Tests
             }
 
             /// <summary>
-            /// Tests that <see cref="Prefer.StringOverNull(string, string)" /> returns the
+            /// Tests that <see cref="Prefer.StringOverBlank(string, string)" /> returns the
             /// nullable value when it is not null.
             /// </summary>
             [Test]
             public void
-                StringOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull()
+                StringOverBlank_ReturnsNullableValue_WhenNullableValueIsNotNull()
             {
                 const string nullableValue = "nullable";
                 const string preferredValue = "preferred";
 
-                var result = Prefer.StringOverNull(
+                var result = Prefer.StringOverBlank(
                     nullableValue, preferredValue
                 );
 
@@ -541,17 +541,17 @@ namespace xyLOGIX.Core.Extensions.Tests
             }
 
             /// <summary>
-            /// Tests that <see cref="Prefer.StringOverNull(string, string)" /> returns the
+            /// Tests that <see cref="Prefer.StringOverBlank(string, string)" /> returns the
             /// preferred value when the nullable value is null.
             /// </summary>
             [Test]
             public void
-                StringOverNull_ReturnsPreferredValue_WhenNullableValueIsNull()
+                StringOverBlank_ReturnsPreferredValue_WhenNullableValueIsNull()
             {
                 string nullableValue = null;
                 const string preferredValue = "preferred";
 
-                var result = Prefer.StringOverNull(
+                var result = Prefer.StringOverBlank(
                     nullableValue, preferredValue
                 );
 

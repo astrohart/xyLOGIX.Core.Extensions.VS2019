@@ -446,8 +446,11 @@
   - [DoInitialCaps(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.DoInitialCaps(System.String)')
   - [DomainMapper(match)](#M-xyLOGIX-Core-Extensions-StringExtensions-DomainMapper-System-Text-RegularExpressions-Match- 'xyLOGIX.Core.Extensions.StringExtensions.DomainMapper(System.Text.RegularExpressions.Match)')
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.String[])')
+  - [EndsWithAny(value,comparisonType,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-StringComparison,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.StringComparison,System.String[])')
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.Collections.Generic.IEnumerable{System.String})')
+  - [EndsWithAny(value,comparisonType,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-StringComparison,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.StringComparison,System.Collections.Generic.IEnumerable{System.String})')
   - [EndsWithAnyOf(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAnyOf(System.String,System.String[])')
+  - [EndsWithAnyOf(value,comparisonType,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-StringComparison,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAnyOf(System.String,System.StringComparison,System.String[])')
   - [EndsWithColonAndNumber(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumber-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithColonAndNumber(System.String)')
   - [EnsureAtIsInFront(twitterSite)](#M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EnsureAtIsInFront(System.String)')
   - [EqualsAnyOf(value,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsAnyOf(System.String,System.String[])')
@@ -8957,6 +8960,38 @@ This method returns `false` if no values are
 passed for
 `endings`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-StringComparison,System-String[]-'></a>
+### EndsWithAny(value,comparisonType,endings) `method`
+
+##### Summary
+
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
+`endings`.
+
+##### Returns
+
+`true` if the specified `value`
+ends with any of the specified `endings`;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
+checked. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values that
+specifies how the comparison is to be performed. |
+| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+elements, each of which is to be assessed against the specified
+`value` as being what it ends with. |
+
+##### Remarks
+
+This method returns `false` if no values are
+passed for
+`endings`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### EndsWithAny(value,endings) `method`
 
@@ -8987,6 +9022,38 @@ This method returns `false` if no values are
 passed for
 `endings`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-StringComparison,System-Collections-Generic-IEnumerable{System-String}-'></a>
+### EndsWithAny(value,comparisonType,endings) `method`
+
+##### Summary
+
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
+`endings`.
+
+##### Returns
+
+`true` if the specified `value`
+ends with any of the specified `endings`;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
+checked. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values that
+specifies how the comparison is to be performed. |
+| endings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+elements, each of which is to be assessed against the specified
+`value` as being what it ends with. |
+
+##### Remarks
+
+This method returns `false` if no values are
+passed for
+`endings`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-String[]-'></a>
 ### EndsWithAnyOf(value,endings) `method`
 
@@ -9007,6 +9074,38 @@ ends with any of the specified `endings`;
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
 checked. |
+| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+elements, each of which is to be assessed against the specified
+`value` as being what it ends with. |
+
+##### Remarks
+
+This method returns `false` if no values are
+passed for
+`endings`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-StringComparison,System-String[]-'></a>
+### EndsWithAnyOf(value,comparisonType,endings) `method`
+
+##### Summary
+
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
+`endings`.
+
+##### Returns
+
+`true` if the specified `value`
+ends with any of the specified `endings`;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
+checked. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values that
+specifies how the comparison is to be performed. |
 | endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
 elements, each of which is to be assessed against the specified
 `value` as being what it ends with. |

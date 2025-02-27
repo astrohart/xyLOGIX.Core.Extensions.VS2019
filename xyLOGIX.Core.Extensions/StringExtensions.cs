@@ -936,6 +936,71 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) A <see cref="T:System.String" /> containing the value to be
         /// checked.
         /// </param>
+        /// <param name="comparisonType">
+        /// (Required.) One of the <see cref="T:System.StringComparison" /> values that
+        /// specifies how the comparison is to be performed.
+        /// </param>
+        /// <param name="endings">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// elements, each of which is to be assessed against the specified
+        /// <paramref name="value" /> as being what it ends with.
+        /// </param>
+        /// <remarks>
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
+        /// passed for
+        /// <paramref name="endings" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// ends with any of the specified <paramref name="endings" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool EndsWithAny(
+            this string value,
+            StringComparison comparisonType,
+            params string[] endings
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (endings == null) return result;
+                if (endings.Length <= 0) return result;
+                if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
+                    return result;
+
+                foreach (var ending in endings)
+                {
+                    if (string.IsNullOrWhiteSpace(ending)) continue;
+                    if (!value.EndsWith(ending, comparisonType)) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> ends with any of the specified
+        /// <paramref name="endings" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to be
+        /// checked.
+        /// </param>
         /// <param name="endings">
         /// (Required.) One or more <see cref="T:System.String" />
         /// elements, each of which is to be assessed against the specified
@@ -967,6 +1032,42 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) A <see cref="T:System.String" /> containing the value to be
         /// checked.
         /// </param>
+        /// <param name="comparisonType">
+        /// (Required.) One of the <see cref="T:System.StringComparison" /> values that
+        /// specifies how the comparison is to be performed.
+        /// </param>
+        /// <param name="endings">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// elements, each of which is to be assessed against the specified
+        /// <paramref name="value" /> as being what it ends with.
+        /// </param>
+        /// <remarks>
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
+        /// passed for
+        /// <paramref name="endings" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// ends with any of the specified <paramref name="endings" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool EndsWithAny(
+            this string value,
+            StringComparison comparisonType,
+            IEnumerable<string> endings
+        )
+            => EndsWithAny(value, comparisonType, endings.ToArray());
+
+        /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> ends with any of the specified
+        /// <paramref name="endings" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to be
+        /// checked.
+        /// </param>
         /// <param name="endings">
         /// (Required.) One or more <see cref="T:System.String" />
         /// elements, each of which is to be assessed against the specified
@@ -988,6 +1089,42 @@ namespace xyLOGIX.Core.Extensions
             params string[] endings
         )
             => EndsWithAny(value, endings);
+
+        /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />
+        /// <paramref name="value" /> ends with any of the specified
+        /// <paramref name="endings" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to be
+        /// checked.
+        /// </param>
+        /// <param name="comparisonType">
+        /// (Required.) One of the <see cref="T:System.StringComparison" /> values that
+        /// specifies how the comparison is to be performed.
+        /// </param>
+        /// <param name="endings">
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// elements, each of which is to be assessed against the specified
+        /// <paramref name="value" /> as being what it ends with.
+        /// </param>
+        /// <remarks>
+        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
+        /// passed for
+        /// <paramref name="endings" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// ends with any of the specified <paramref name="endings" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool EndsWithAnyOf(
+            this string value,
+            StringComparison comparisonType,
+            params string[] endings
+        )
+            => EndsWithAny(value, comparisonType, endings);
 
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> ends with a colon

@@ -1034,5 +1034,46 @@ namespace xyLOGIX.Core.Extensions.Actions
 
             return result;
         }
+
+        /// <summary>
+        /// Returns the value of the <paramref name="value1" /> parameter if it is greater
+        /// than or equal to zero; otherwise, <paramref name="value2" /> is returned.
+        /// </summary>
+        /// <param name="value1">
+        /// (Required.) An integer value to be returned if it is greater than or equal to
+        /// zero.
+        /// </param>
+        /// <param name="value2">
+        /// (Required.) An integer value to be returned if the <paramref name="value1" />
+        /// is less than zero.
+        /// </param>
+        /// <returns>
+        /// <c>-1</c> if neither <paramref name="value1" /> nor
+        /// <paramref name="value2" /> are zero or greater; otherwise,
+        /// <paramref name="value1" /> if it is nonnegative; otherwise,
+        /// <paramref name="value2" />.
+        /// </returns>
+        public static int WhicheverValueIsNonNegative(int value1, int value2)
+        {
+            var result = value1;
+
+            try
+            {
+                if (value1 < 0)
+                    if (value2 >= 0)
+                        result = value2;
+                    else
+                        result = -1;
+                else
+                    result = value1;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+
+            return result;
+        }
     }
 }

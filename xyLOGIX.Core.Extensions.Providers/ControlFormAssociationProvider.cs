@@ -193,6 +193,7 @@ namespace xyLOGIX.Core.Extensions.Providers
                 // Unsubscribe the event first, in case we already subscribed the handler to
                 // the form's FormClosed event.
 
+                form.FormClosed -= OnMemberFormClosed;
                 form.FormClosed += OnMemberFormClosed;
             }
             catch (Exception ex)
@@ -254,8 +255,6 @@ namespace xyLOGIX.Core.Extensions.Providers
             try
             {
                 if (form == null) return;
-                if (ParentFormDictionary == null) return;
-                if (!ParentFormDictionary.Any()) return;
 
                 /*
                  * OKAY, get all the entries in the dictionary
@@ -325,6 +324,8 @@ namespace xyLOGIX.Core.Extensions.Providers
         private void OnMemberFormClosed(object sender, FormClosedEventArgs e)
         {
             if (!(sender is Form form)) return;
+            if (ParentFormDictionary == null) return;
+            if (!ParentFormDictionary.Any()) return;
 
             DetachForm(form);
         }

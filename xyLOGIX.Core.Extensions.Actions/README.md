@@ -24,6 +24,7 @@
   - [UInt32OverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-UInt32OverNull-System-Nullable{System-UInt32},System-UInt32- 'xyLOGIX.Core.Extensions.Actions.Prefer.UInt32OverNull(System.Nullable{System.UInt32},System.UInt32)')
   - [UIntPtrOverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-UIntPtrOverNull-System-Nullable{System-UIntPtr},System-UIntPtr- 'xyLOGIX.Core.Extensions.Actions.Prefer.UIntPtrOverNull(System.Nullable{System.UIntPtr},System.UIntPtr)')
   - [UShortOverNull(nullableValue,preferredValue)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-UShortOverNull-System-Nullable{System-UInt16},System-UInt16- 'xyLOGIX.Core.Extensions.Actions.Prefer.UShortOverNull(System.Nullable{System.UInt16},System.UInt16)')
+  - [WhicheverValueIsNonNegative(value1,value2)](#M-xyLOGIX-Core-Extensions-Actions-Prefer-WhicheverValueIsNonNegative-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.Actions.Prefer.WhicheverValueIsNonNegative(System.Int32,System.Int32)')
 - [Resources](#T-xyLOGIX-Core-Extensions-Actions-Properties-Resources 'xyLOGIX.Core.Extensions.Actions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Actions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Actions.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Core-Extensions-Actions-Properties-Resources-ResourceManager 'xyLOGIX.Core.Extensions.Actions.Properties.Resources.ResourceManager')
@@ -657,6 +658,30 @@ indeed does have a value. |
 [UInt16](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt16 'System.UInt16') value that is to be returned if the
 `nullableValue` is `null` or does not have a
 value. |
+
+<a name='M-xyLOGIX-Core-Extensions-Actions-Prefer-WhicheverValueIsNonNegative-System-Int32,System-Int32-'></a>
+### WhicheverValueIsNonNegative(value1,value2) `method`
+
+##### Summary
+
+Returns the value of the `value1` parameter if it is greater
+than or equal to zero; otherwise, `value2` is returned.
+
+##### Returns
+
+`-1` if neither `value1` nor
+`value2` are zero or greater; otherwise,
+`value1` if it is nonnegative; otherwise,
+`value2`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value1 | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An integer value to be returned if it is greater than or equal to
+zero. |
+| value2 | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An integer value to be returned if the `value1`
+is less than zero. |
 
 <a name='T-xyLOGIX-Core-Extensions-Actions-Properties-Resources'></a>
 ## Resources `type`

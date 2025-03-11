@@ -467,7 +467,10 @@
   - [GetCompactedString(stringToCompact,font,maxWidth)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetCompactedString(System.String,System.Drawing.Font,System.Int32)')
   - [GetDottedSuffix(value,includingDot)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetDottedSuffix-System-String,System-Boolean- 'xyLOGIX.Core.Extensions.StringExtensions.GetDottedSuffix(System.String,System.Boolean)')
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
+  - [GetFirstNonBlankLine(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNonBlankLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNonBlankLine(System.String)')
+  - [GetFirstTwoNonBlankLines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstTwoNonBlankLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstTwoNonBlankLines(System.String)')
   - [GetLastWord(input)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetLastWord(System.String)')
+  - [GetNonBlankLineCount(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetNonBlankLineCount-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetNonBlankLineCount(System.String)')
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
   - [IsAbsolutePath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePath(System.String)')
@@ -9592,6 +9595,55 @@ the start of the string to get. |
 `nChars` has a zero or negative number value.
 `nChars` must be a positive number. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNonBlankLine-System-String-'></a>
+### GetFirstNonBlankLine(value) `method`
+
+##### Summary
+
+Gets the first non-blank line, if any, of a multi-line
+`value`, splitting on `CRLF`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that corresponds
+to the first non-blank line of the specified `value`,
+splitting on `CRLF`; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
+value is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+value for which the first line is to be obtained. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstTwoNonBlankLines-System-String-'></a>
+### GetFirstTwoNonBlankLines(value) `method`
+
+##### Summary
+
+Gets the first two non-blank line(s), if any, of a multi-line
+`value`, splitting on `CRLF`.
+
+##### Returns
+
+If the specified `value` has less than two non-blank
+line(s), then this method is idempotent.
+
+
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that corresponds to the
+first two non-blank line(s) of the specified `value`,
+splitting on `CRLF`; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
+value is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+value for which the first two non-blank line(s) are to be obtained. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String-'></a>
 ### GetLastWord(input) `method`
 
@@ -9613,6 +9665,28 @@ idempotent.
 | ---- | ---- | ----------- |
 | input | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
 text that is to be parsed. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetNonBlankLineCount-System-String-'></a>
+### GetNonBlankLineCount(value) `method`
+
+##### Summary
+
+Gets the count of the number of non-blank line(s) in the specified
+`value`, splitting on `CRLF`, if any.
+
+##### Returns
+
+The count of non-blank line(s) in the specified
+`value`, splitting on `CRLF`, or zero if, e.g., the
+specified `value` is blank, the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or `null`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+value for which the non-blank line count is to be determined. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String-'></a>
 ### GetPersonFirstName(fullName) `method`

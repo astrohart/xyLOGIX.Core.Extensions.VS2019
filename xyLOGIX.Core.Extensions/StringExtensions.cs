@@ -1839,6 +1839,97 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Gets the first non-blank line, if any, of a multi-line
+        /// <paramref name="value" />, splitting on <c>CRLF</c>.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value for which the first line is to be obtained.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> value that corresponds
+        /// to the first non-blank line of the specified <paramref name="value" />,
+        /// splitting on <c>CRLF</c>; otherwise, the <see cref="F:System.String.Empty" />
+        /// value is returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static string GetFirstNonBlankLine([NotLogged] this string value)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                var valueLines = value.Split(
+                    new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries
+                );
+                if (valueLines.Length < 1) return value;
+
+                result = valueLines[0];
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the first two non-blank line(s), if any, of a multi-line
+        /// <paramref name="value" />, splitting on <c>CRLF</c>.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value for which the first two non-blank line(s) are to be obtained.
+        /// </param>
+        /// <returns>
+        /// If the specified <paramref name="value" /> has less than two non-blank
+        /// line(s), then this method is idempotent.
+        /// <para />
+        /// If successful, a <see cref="T:System.String" /> value that corresponds to the
+        /// first two non-blank line(s) of the specified <paramref name="value" />,
+        /// splitting on <c>CRLF</c>; otherwise, the <see cref="F:System.String.Empty" />
+        /// value is returned.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static string GetFirstTwoNonBlankLines(
+            [NotLogged] this string value
+        )
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                var valueLines = value.Split(
+                    new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries
+                );
+                if (valueLines.Length == 0) return string.Empty;
+                if (valueLines.Length == 1) return value;
+
+                result = valueLines.Take(2)
+                                   .Aggregate((a, b) => $"{a} {b}");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Extracts the last initial-capped word from a fully-qualified class name or
         /// string containing a name such as <c>FooBarBaz</c> (in which case, it would
         /// return <c>Baz</c>).
@@ -1879,6 +1970,47 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = input;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the count of the number of non-blank line(s) in the specified
+        /// <paramref name="value" />, splitting on <c>CRLF</c>, if any.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// value for which the non-blank line count is to be determined.
+        /// </param>
+        /// <returns>
+        /// The count of non-blank line(s) in the specified
+        /// <paramref name="value" />, splitting on <c>CRLF</c>, or zero if, e.g., the
+        /// specified <paramref name="value" /> is blank, the
+        /// <see cref="F:System.String.Empty" /> value, or <see langword="null" />.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        [return: NotLogged]
+        public static int GetNonBlankLineCount([NotLogged] this string value)
+        {
+            var result = 0;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.Split(
+                                  new[] { "\r\n" },
+                                  StringSplitOptions.RemoveEmptyEntries
+                              )
+                              .Length;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = 0;
             }
 
             return result;

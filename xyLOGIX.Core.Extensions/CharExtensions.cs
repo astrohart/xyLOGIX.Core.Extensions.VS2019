@@ -1,4 +1,5 @@
 ﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Model;
 using System;
 using xyLOGIX.Core.Debug;
 
@@ -42,7 +43,7 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                result = value >= 'a' && value <= 'z';
+                result = char.IsLower(value);
             }
             catch (Exception ex)
             {
@@ -73,7 +74,7 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                result = value >= 'A' && value <= 'Z';
+                result = char.IsUpper(value);
             }
             catch (Exception ex)
             {

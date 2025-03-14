@@ -1,5 +1,4 @@
 ﻿using PostSharp.Patterns.Diagnostics;
-using PostSharp.Patterns.Model;
 using System;
 using xyLOGIX.Core.Debug;
 
@@ -24,6 +23,35 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         [Log(AttributeExclude = true)]
         static CharExtensions() { }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> is a digit.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.Char" /> value to evaluate.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if <paramref name="value" /> is a digit; otherwise,
+        /// <see langword="false" />.
+        /// </returns>
+        public static bool IsDigit([NotLogged] this char value)
+        {
+            bool result;
+
+            try
+            {
+                result = char.IsDigit(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> is an ASCII

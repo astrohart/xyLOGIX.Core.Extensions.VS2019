@@ -23,6 +23,10 @@
   - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Int64- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Int64)')
   - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Decimal)')
   - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Double- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Double)')
+- [CharExtensions](#T-xyLOGIX-Core-Extensions-CharExtensions 'xyLOGIX.Core.Extensions.CharExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-CharExtensions-#cctor 'xyLOGIX.Core.Extensions.CharExtensions.#cctor')
+  - [IsLowercase(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsLowercase-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsLowercase(System.Char)')
+  - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsUppercase-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsUppercase(System.Char)')
 - [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
   - [AreAllItemsSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.AreAllItemsSelected(System.Windows.Forms.CheckedListBox)')
   - [CheckAll(checkedListBox,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckAll(System.Windows.Forms.CheckedListBox,System.Boolean)')
@@ -487,7 +491,6 @@
   - [IsRomanNumerals(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsRomanNumerals-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsRomanNumerals(System.String)')
   - [IsSpecialWordAtBeginningOfPhrase(words,currentWord)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsSpecialWordAtBeginningOfPhrase-System-String[],System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsSpecialWordAtBeginningOfPhrase(System.String[],System.String)')
   - [IsStreetNameComponent(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsStreetNameComponent-System-Collections-Generic-IReadOnlyList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsStreetNameComponent(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)')
-  - [IsUppercase(c)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-Char- 'xyLOGIX.Core.Extensions.StringExtensions.IsUppercase(System.Char)')
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsUppercase(System.String)')
   - [IsValidAssetSymbol(symbol)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidAssetSymbol-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidAssetSymbol(System.String)')
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
@@ -1012,6 +1015,78 @@ the method is the identity map.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.) Input value. |
+
+<a name='T-xyLOGIX-Core-Extensions-CharExtensions'></a>
+## CharExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Contains extension methods to be used on instances of the
+[Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char').
+
+<a name='M-xyLOGIX-Core-Extensions-CharExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [CharExtensions](#T-xyLOGIX-Core-Extensions-CharExtensions 'xyLOGIX.Core.Extensions.CharExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsLowercase-System-Char-'></a>
+### IsLowercase(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is an ASCII
+lowercase letter ('a' through 'z').
+
+##### Returns
+
+`true` if `value` is a lowercase
+ASCII letter; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to evaluate. |
+
+<a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsUppercase-System-Char-'></a>
+### IsUppercase(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is an ASCII
+uppercase letter ('A' through 'Z').
+
+##### Returns
+
+`true` if `value` is an uppercase
+ASCII letter; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to evaluate. |
 
 <a name='T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions'></a>
 ## CheckedListBoxExtensions `type`
@@ -10101,27 +10176,6 @@ current word being parsed. |
 If this method is provided with the empty collection or an array
 index outside the bounds of the collection, then this method returns
 `false`.
-
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-Char-'></a>
-### IsUppercase(c) `method`
-
-##### Summary
-
-Determines whether the specified character, `c`, is
-uppercase.
-
-##### Returns
-
-`true` if the specified [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char')
-value, `c`, is an ASCII or Unicode uppercase character;
-`false` otherwise.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| c | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value that is to be
-checked. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String-'></a>
 ### IsUppercase(value) `method`

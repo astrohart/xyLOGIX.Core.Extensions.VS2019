@@ -729,6 +729,46 @@ namespace xyLOGIX.Core.Extensions
             => !string.IsNullOrWhiteSpace(value) && searchChars != null &&
                searchChars.Any(item => ContainsNoCase(value, item));
 
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> contains a namespace
+        /// separator character, which in C# and VB is a period (<c>.</c>).
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value that is to be
+        /// checked.
+        /// </param>
+        /// <remarks>
+        /// If a <see langword="null" />, blank, or
+        /// <see cref="F:System.String.Empty" /> value is passed for the argument of the
+        /// <paramref name="value" /> parameter, then the method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// contains a namespace separator character, which in C# or VB is a period (
+        /// <c>.</c>); <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool ContainsNamespaceSeparator(this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.Contains('.');
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
         /// <summary> Searches one string for another. Case-insensitive. </summary>
         /// <param name="stringToSearch"> The string to be searched. </param>
         /// <param name="value"> Value to search for. </param>
@@ -800,6 +840,66 @@ namespace xyLOGIX.Core.Extensions
             {
                 return !string.IsNullOrWhiteSpace(value) &&
                        value.Any(char.IsDigit);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" /> contains a
+        /// whitespace character.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
+        /// examined.
+        /// </param>
+        /// <remarks>
+        /// The text in the argument of the <paramref name="value" /> parameter is
+        /// expressed as an array of <see cref="T:System.Char" /> element(s).
+        /// <para />
+        /// This method then iterates over said array, element-by-element.
+        /// <para />
+        /// The method stops iteration, and returns <see langword="true" />, the first time
+        /// any whitespace character is encountered.
+        /// <para />
+        /// If the argument of the <paramref name="value" /> parameter is
+        /// <see langword="null" />, blank, or the <see cref="F:System.String.Empty" />
+        /// value, then this method returns <see langword="true" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> contains a
+        /// whitespace character; otherwise, <see langword="false" />.
+        /// </returns>
+        public static bool ContainsWhitespace([NotLogged] this string value)
+        {
+            var result = true;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                /*
+                 * reset the default return value to false, returning
+                 * true only if a search of the string, as a character
+                 * array, turns up any whitespace character.
+                 */
+
+                result = false;
+
+                foreach (var character in value.ToCharArray())
+                {
+                    if (!char.IsWhiteSpace(character)) continue;
+
+                    result = true;
+                    break;
+                }
             }
             catch (Exception ex)
             {

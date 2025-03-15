@@ -25,6 +25,7 @@
   - [ZeroFloorOf(value)](#M-xyLOGIX-Core-Extensions-Calculate-ZeroFloorOf-System-Double- 'xyLOGIX.Core.Extensions.Calculate.ZeroFloorOf(System.Double)')
 - [CharExtensions](#T-xyLOGIX-Core-Extensions-CharExtensions 'xyLOGIX.Core.Extensions.CharExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-CharExtensions-#cctor 'xyLOGIX.Core.Extensions.CharExtensions.#cctor')
+  - [IsDigit(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsDigit-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsDigit(System.Char)')
   - [IsLowercase(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsLowercase-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsLowercase(System.Char)')
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsUppercase-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsUppercase(System.Char)')
 - [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
@@ -443,10 +444,12 @@
   - [ContainsAnyOf(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAnyOf(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [ContainsAnyOf(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAnyOf(System.String,System.String[])')
   - [ContainsAnyOf(value,searchChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Char[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAnyOf(System.String,System.Char[])')
+  - [ContainsNamespaceSeparator(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNamespaceSeparator-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNamespaceSeparator(System.String)')
   - [ContainsNoCase(stringToSearch,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.String,System.String)')
   - [ContainsNoCase(stringToSearch,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-Char- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.String,System.Char)')
   - [ContainsNoCase(collection,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-Collections-Generic-IEnumerable{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.Collections.Generic.IEnumerable{System.String},System.String)')
   - [ContainsNumbers(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNumbers-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNumbers(System.String)')
+  - [ContainsWhitespace(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsWhitespace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsWhitespace(System.String)')
   - [DoInitialCaps(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.DoInitialCaps(System.String)')
   - [DomainMapper(match)](#M-xyLOGIX-Core-Extensions-StringExtensions-DomainMapper-System-Text-RegularExpressions-Match- 'xyLOGIX.Core.Extensions.StringExtensions.DomainMapper(System.Text.RegularExpressions.Match)')
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.String[])')
@@ -1049,6 +1052,24 @@ created or before any static members are referenced.
 
 We've decorated this constructor with the `[Log(AttributeExclude = true)]`
 attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsDigit-System-Char-'></a>
+### IsDigit(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is a digit.
+
+##### Returns
+
+`true` if `value` is a digit; otherwise,
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to evaluate. |
 
 <a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsLowercase-System-Char-'></a>
 ### IsLowercase(value) `method`
@@ -8880,6 +8901,34 @@ If this method is passed the empty string for
 collection for `searchChars`, then this method returns
 `false`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNamespaceSeparator-System-String-'></a>
+### ContainsNamespaceSeparator(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` contains a namespace
+separator character, which in C# and VB is a period (`.`).
+
+##### Returns
+
+`true` if the specified `value`
+contains a namespace separator character, which in C# or VB is a period (
+`.`); `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value that is to be
+checked. |
+
+##### Remarks
+
+If a `null`, blank, or
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed for the argument of the
+`value` parameter, then the method returns
+`false`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-String-'></a>
 ### ContainsNoCase(stringToSearch,value) `method`
 
@@ -8957,6 +9006,46 @@ contains any digits.
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
 checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsWhitespace-System-String-'></a>
+### ContainsWhitespace(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` contains a
+whitespace character.
+
+##### Returns
+
+`true` if the specified `value` contains a
+whitespace character; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
+examined. |
+
+##### Remarks
+
+The text in the argument of the `value` parameter is
+expressed as an array of [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') element(s).
+
+
+
+This method then iterates over said array, element-by-element.
+
+
+
+The method stops iteration, and returns `true`, the first time
+any whitespace character is encountered.
+
+
+
+If the argument of the `value` parameter is
+`null`, blank, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
+value, then this method returns `true`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String-'></a>
 ### DoInitialCaps(value) `method`

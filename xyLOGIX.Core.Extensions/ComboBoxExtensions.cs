@@ -83,37 +83,6 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Attempts to select the first item in the list of items present in the specified
-        /// <paramref name="comboBox" />.
-        /// </summary>
-        /// <param name="comboBox">
-        /// (Required.) Reference to an instance of
-        /// <see cref="T:System.Windows.Forms.ComboBox" /> that contains the item(s) to be
-        /// used.
-        /// </param>
-        /// <remarks>
-        /// If the specified <paramref name="comboBox" /> is a
-        /// <see langword="null" /> reference or it contains zero items, then this method
-        /// does nothing.
-        /// </remarks>
-        public static void SelectFirstItem(this ComboBox comboBox)
-        {
-            try
-            {
-                if (comboBox == null) return;
-                if (comboBox.Items.Count <= 0) return;
-
-                comboBox.SelectedIndex = 0;
-                comboBox.Select();
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-            }
-        }
-
-        /// <summary>
         /// Attempts to gather a collection of combo box items for the specified C#
         /// enumeration.
         /// </summary>
@@ -160,6 +129,84 @@ namespace xyLOGIX.Core.Extensions
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Attempts to select the first item in the list of items present in the specified
+        /// <paramref name="comboBox" />.
+        /// </summary>
+        /// <param name="comboBox">
+        /// (Required.) Reference to an instance of
+        /// <see cref="T:System.Windows.Forms.ComboBox" /> that contains the item(s) to be
+        /// used.
+        /// </param>
+        /// <remarks>
+        /// If the specified <paramref name="comboBox" /> is a
+        /// <see langword="null" /> reference or it contains zero items, then this method
+        /// does nothing.
+        /// </remarks>
+        public static void SelectFirstItem([NotLogged] this ComboBox comboBox)
+        {
+            try
+            {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "ComboBoxExtensions.SelectFirstItem: Checking whether the 'comboBox' method parameter has a null reference for a value..."
+                );
+
+                // Check to see if the required parameter, comboBox, is null. If it is, send an 
+                // error to the log file and quit, returning from this method.
+                if (comboBox == null)
+                {
+                    // The parameter, 'comboBox', is required and is not supposed to have a NULL value.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "ComboBoxExtensions.SelectFirstItem: *** *ERROR *** A null reference was passed for the 'comboBox' method parameter.  Stopping."
+                    );
+
+                    // stop.
+                    return;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "ComboBoxExtensions.SelectFirstItem: *** SUCCESS *** We have been passed a valid object reference for the 'comboBox' method parameter."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** ComboBoxExtensions.SelectFirstItem: Checking whether the 'comboBox.Items' collection contains greater than zero elements..."
+                );
+
+                // Check to see whether the 'comboBox.Items' collection contains greater than
+                // zero elements. Otherwise, write an error message to the log file, and then
+                // terminate the execution of this method.
+                if (comboBox.Items.Count <= 0)
+                {
+                    // The 'comboBox.Items' collection contains zero elements.  This is not 
+                    // desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR *** The 'comboBox.Items' collection contains zero elements.  Stopping..."
+                    );
+
+                    // stop.
+                    return;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $"ComboBoxExtensions.SelectFirstItem: *** SUCCESS *** {comboBox.Items.Count} element(s) were found in the 'comboBox.Items' collection.  Selecting its first item (if any)..."
+                );
+
+                comboBox.SelectedIndex = 0;
+                comboBox.Focus();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
     }
 }

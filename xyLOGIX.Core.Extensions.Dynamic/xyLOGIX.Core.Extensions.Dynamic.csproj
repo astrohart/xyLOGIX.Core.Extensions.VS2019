@@ -20,7 +20,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
-    <SkipPostSharp>false</SkipPostSharp>
+    <SkipPostSharp>False</SkipPostSharp>
     <DocumentationFile>bin\x64\Debug\xyLOGIX.Core.Extensions.Dynamic.xml</DocumentationFile>
     <WarningLevel>4</WarningLevel>
     <NoWarn>CS1591;CS1587</NoWarn>
@@ -35,7 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
-    <SkipPostSharp>true</SkipPostSharp>
+    <SkipPostSharp>False</SkipPostSharp>
     <DocumentationFile>bin\x64\Release\xyLOGIX.Core.Extensions.Dynamic.xml</DocumentationFile>
     <WarningLevel>4</WarningLevel>
     <NoWarn>CS1591;CS1587</NoWarn>
@@ -50,7 +50,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
-    <SkipPostSharp>false</SkipPostSharp>
+    <SkipPostSharp>False</SkipPostSharp>
     <DocumentationFile>bin\x86\Debug\xyLOGIX.Core.Extensions.Dynamic.xml</DocumentationFile>
     <WarningLevel>4</WarningLevel>
     <NoWarn>CS1591;CS1587</NoWarn>
@@ -65,7 +65,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
-    <SkipPostSharp>true</SkipPostSharp>
+    <SkipPostSharp>False</SkipPostSharp>
     <DocumentationFile>bin\x86\Release\xyLOGIX.Core.Extensions.Dynamic.xml</DocumentationFile>
     <WarningLevel>4</WarningLevel>
     <NoWarn>CS1591;CS1587</NoWarn>

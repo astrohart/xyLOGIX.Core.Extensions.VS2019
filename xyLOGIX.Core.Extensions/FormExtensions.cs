@@ -16,6 +16,7 @@ namespace xyLOGIX.Core.Extensions
         public static void CenterForm(this IForm child, Form parent)
         {
             if (child == null || child.IsDisposed) return;
+            if (parent == null || parent.IsDisposed) return;
 
             child.StartPosition = FormStartPosition.Manual;
             child.Location = new Point(

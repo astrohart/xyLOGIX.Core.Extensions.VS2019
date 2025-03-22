@@ -4198,6 +4198,39 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Converts an initial-caps string into a space-separated, lowercase phrase,
+        /// preserving acronyms.
+        /// </summary>
+        /// <param name="value">The initial-caps string to be transformed. (Required.)</param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> where all words are separated by spaces.
+        /// Acronyms remain in uppercase while other words are converted to lowercase.
+        /// If <paramref name="value" /> is <see langword="null" /> or empty, an empty
+        /// string is returned.
+        /// </returns>
+        [return: NotLogged]
+        public static string ToPhrase([NotLogged] this string value)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = Transform.PascalCasedTextToPhrase(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Translates each character of the provided <paramref name="value" />,
         /// character-by-character, to Unicode encoding. This method performs the inverse
         /// operation of the

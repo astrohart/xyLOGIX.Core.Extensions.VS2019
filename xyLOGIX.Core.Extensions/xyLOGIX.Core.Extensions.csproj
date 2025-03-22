@@ -163,6 +163,7 @@
     <Compile Include="StringExtensions.cs" />
     <Compile Include="TextBoxExtensions.cs" />
     <Compile Include="ToolStripMenuItemExtensions.cs" />
+    <Compile Include="Transform.cs" />
     <Compile Include="TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -529,6 +529,7 @@
   - [ToGuidWithNoPunctuation(guid)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToGuidWithNoPunctuation-System-Guid- 'xyLOGIX.Core.Extensions.StringExtensions.ToGuidWithNoPunctuation(System.Guid)')
   - [ToInitialCaps(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToInitialCaps-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToInitialCaps(System.String)')
   - [ToList(quote,separators)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToList-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ToList(System.String,System.String[])')
+  - [ToPhrase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToPhrase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToPhrase(System.String)')
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
   - [ToUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUppercase(System.String)')
   - [TrimAnyOffEnd(value,caseSensitive,recursive,badEndings)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimAnyOffEnd-System-String,System-Boolean,System-Boolean,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.TrimAnyOffEnd(System.String,System.Boolean,System.Boolean,System.String[])')
@@ -544,6 +545,11 @@
   - [ContainsMenuItemNamed(menu,name)](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-ContainsMenuItemNamed-System-Windows-Forms-MenuStrip,System-String- 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.ContainsMenuItemNamed(System.Windows.Forms.MenuStrip,System.String)')
   - [GetMenuItemNamed(menu,name)](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-GetMenuItemNamed-System-Windows-Forms-ToolStripMenuItem,System-String- 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.GetMenuItemNamed(System.Windows.Forms.ToolStripMenuItem,System.String)')
   - [GetMenuItemNamed(menu,name)](#M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-GetMenuItemNamed-System-Windows-Forms-MenuStrip,System-String- 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions.GetMenuItemNamed(System.Windows.Forms.MenuStrip,System.String)')
+- [Transform](#T-xyLOGIX-Core-Extensions-Transform 'xyLOGIX.Core.Extensions.Transform')
+  - [AcronymPattern](#F-xyLOGIX-Core-Extensions-Transform-AcronymPattern 'xyLOGIX.Core.Extensions.Transform.AcronymPattern')
+  - [InitialCapsWordPattern](#F-xyLOGIX-Core-Extensions-Transform-InitialCapsWordPattern 'xyLOGIX.Core.Extensions.Transform.InitialCapsWordPattern')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-Transform-#cctor 'xyLOGIX.Core.Extensions.Transform.#cctor')
+  - [PascalCasedTextToPhrase(input)](#M-xyLOGIX-Core-Extensions-Transform-PascalCasedTextToPhrase-System-String- 'xyLOGIX.Core.Extensions.Transform.PascalCasedTextToPhrase(System.String)')
 - [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
   - [CachedActualType](#P-xyLOGIX-Core-Extensions-TypeExtensions-CachedActualType 'xyLOGIX.Core.Extensions.TypeExtensions.CachedActualType')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-TypeExtensions-#cctor 'xyLOGIX.Core.Extensions.TypeExtensions.#cctor')
@@ -11238,6 +11244,27 @@ empty string is provided as input to this method, then the method returns the
 empty string. If no separators are specified, then the empty collection is
 returned.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToPhrase-System-String-'></a>
+### ToPhrase(value) `method`
+
+##### Summary
+
+Converts an initial-caps string into a space-separated, lowercase phrase,
+preserving acronyms.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces.
+Acronyms remain in uppercase while other words are converted to lowercase.
+If `value` is `null` or empty, an empty
+string is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The initial-caps string to be transformed. (Required.) |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String-'></a>
 ### ToUnicode(value) `method`
 
@@ -11591,6 +11618,88 @@ matching menu item; otherwise, a `null` reference is returned.
 whose drop-down menu(s) are to be searched. |
 | name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
 item to search for. |
+
+<a name='T-xyLOGIX-Core-Extensions-Transform'></a>
+## Transform `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static method(s) to transform text strings in various ways.
+
+<a name='F-xyLOGIX-Core-Extensions-Transform-AcronymPattern'></a>
+### AcronymPattern `constants`
+
+##### Summary
+
+A regular expression pattern that matches an entire string consisting only of
+uppercase letters.
+This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR")
+that appear as
+standalone words without any lowercase letters.
+
+This pattern ensures that the input string contains only uppercase letters from
+A to Z
+and does not include numbers, spaces, or lowercase characters.
+
+<a name='F-xyLOGIX-Core-Extensions-Transform-InitialCapsWordPattern'></a>
+### InitialCapsWordPattern `constants`
+
+##### Summary
+
+A regular expression pattern that matches words in an initial-caps formatted
+string.
+This pattern identifies:
+
+The matched words can be used to transform an initial-caps string into a
+space-separated phrase
+while preserving acronyms.
+
+<a name='M-xyLOGIX-Core-Extensions-Transform-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [Transform](#T-xyLOGIX-Core-Extensions-Transform 'xyLOGIX.Core.Extensions.Transform') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-Transform-PascalCasedTextToPhrase-System-String-'></a>
+### PascalCasedTextToPhrase(input) `method`
+
+##### Summary
+
+Converts an initial-caps string into a space-separated, lowercase phrase,
+preserving acronyms.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces.
+Acronyms remain in uppercase while other words are converted to lowercase.
+If `input` is `null` or empty, an empty
+string is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| input | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The initial-caps string to be transformed. (Required.) |
 
 <a name='T-xyLOGIX-Core-Extensions-TypeExtensions'></a>
 ## TypeExtensions `type`

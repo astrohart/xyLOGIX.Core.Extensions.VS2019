@@ -44,8 +44,8 @@
   - [SByteOverNull_ReturnsPreferredValue_WhenNullableValueIsNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-SByteOverNull_ReturnsPreferredValue_WhenNullableValueIsNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.SByteOverNull_ReturnsPreferredValue_WhenNullableValueIsNull')
   - [ShortOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-ShortOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.ShortOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull')
   - [ShortOverNull_ReturnsPreferredValue_WhenNullableValueIsNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-ShortOverNull_ReturnsPreferredValue_WhenNullableValueIsNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.ShortOverNull_ReturnsPreferredValue_WhenNullableValueIsNull')
-  - [StringOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-StringOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.StringOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull')
-  - [StringOverNull_ReturnsPreferredValue_WhenNullableValueIsNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-StringOverNull_ReturnsPreferredValue_WhenNullableValueIsNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.StringOverNull_ReturnsPreferredValue_WhenNullableValueIsNull')
+  - [StringOverBlank_ReturnsNullableValue_WhenNullableValueIsNotNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-StringOverBlank_ReturnsNullableValue_WhenNullableValueIsNotNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.StringOverBlank_ReturnsNullableValue_WhenNullableValueIsNotNull')
+  - [StringOverBlank_ReturnsPreferredValue_WhenNullableValueIsNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-StringOverBlank_ReturnsPreferredValue_WhenNullableValueIsNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.StringOverBlank_ReturnsPreferredValue_WhenNullableValueIsNull')
   - [UInt32OverNull_ReturnsNullableValue_WhenNullableValueIsNotNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-UInt32OverNull_ReturnsNullableValue_WhenNullableValueIsNotNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.UInt32OverNull_ReturnsNullableValue_WhenNullableValueIsNotNull')
   - [UInt32OverNull_ReturnsPreferredValue_WhenNullableValueIsNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-UInt32OverNull_ReturnsPreferredValue_WhenNullableValueIsNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.UInt32OverNull_ReturnsPreferredValue_WhenNullableValueIsNull')
   - [UIntPtrOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull()](#M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-UIntPtrOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull 'xyLOGIX.Core.Extensions.Tests.xyLOGIX.Core.Extensions.Tests.PreferTests.UIntPtrOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull')
@@ -561,24 +561,24 @@ preferred value when the nullable value is null.
 
 This method has no parameters.
 
-<a name='M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-StringOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull'></a>
-### StringOverNull_ReturnsNullableValue_WhenNullableValueIsNotNull() `method`
+<a name='M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-StringOverBlank_ReturnsNullableValue_WhenNullableValueIsNotNull'></a>
+### StringOverBlank_ReturnsNullableValue_WhenNullableValueIsNotNull() `method`
 
 ##### Summary
 
-Tests that [StringOverNull](#M-xyLOGIX-Core-Extensions-Actions-Prefer-StringOverNull-System-String,System-String- 'xyLOGIX.Core.Extensions.Actions.Prefer.StringOverNull(System.String,System.String)') returns the
+Tests that [StringOverBlank](#M-xyLOGIX-Core-Extensions-Actions-Prefer-StringOverBlank-System-String,System-String- 'xyLOGIX.Core.Extensions.Actions.Prefer.StringOverBlank(System.String,System.String)') returns the
 nullable value when it is not null.
 
 ##### Parameters
 
 This method has no parameters.
 
-<a name='M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-StringOverNull_ReturnsPreferredValue_WhenNullableValueIsNull'></a>
-### StringOverNull_ReturnsPreferredValue_WhenNullableValueIsNull() `method`
+<a name='M-xyLOGIX-Core-Extensions-Tests-xyLOGIX-Core-Extensions-Tests-PreferTests-StringOverBlank_ReturnsPreferredValue_WhenNullableValueIsNull'></a>
+### StringOverBlank_ReturnsPreferredValue_WhenNullableValueIsNull() `method`
 
 ##### Summary
 
-Tests that [StringOverNull](#M-xyLOGIX-Core-Extensions-Actions-Prefer-StringOverNull-System-String,System-String- 'xyLOGIX.Core.Extensions.Actions.Prefer.StringOverNull(System.String,System.String)') returns the
+Tests that [StringOverBlank](#M-xyLOGIX-Core-Extensions-Actions-Prefer-StringOverBlank-System-String,System-String- 'xyLOGIX.Core.Extensions.Actions.Prefer.StringOverBlank(System.String,System.String)') returns the
 preferred value when the nullable value is null.
 
 ##### Parameters

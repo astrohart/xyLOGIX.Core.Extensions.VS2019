@@ -3450,6 +3450,45 @@ namespace xyLOGIX.Core.Extensions
                        .Trim();
 
         /// <summary>
+        /// Removes all extra blank lines from the specified <paramref name="value" />
+        /// string.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> that may contain extra blank
+        /// lines.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> with all consecutive blank lines collapsed
+        /// into a single blank line.
+        /// </returns>
+        [return: NotLogged]
+        public static string RemoveExtraEmptyLines(
+            [NotLogged] this string value
+        )
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                // Replace 2 or more line breaks (with optional whitespace between) with a single line break
+                result = Regex.Replace(
+                    value, @"(\r?\n\s*){2,}", Environment.NewLine
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Removes any trailing <c>\</c> characters from the string provided in
         /// <paramref name="value" />.
         /// </summary>

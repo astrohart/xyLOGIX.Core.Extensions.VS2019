@@ -511,6 +511,7 @@
   - [RegexReplaceWithCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceWithCase(System.String,System.String,System.String)')
   - [RegexReplaceWithCase(value,search,replacement,options)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceWithCase(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)')
   - [RemoveDigitsAndPunctuation(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveDigitsAndPunctuation(System.String)')
+  - [RemoveExtraEmptyLines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveExtraEmptyLines(System.String)')
   - [RemoveTrailingBackslashes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveTrailingBackslashes(System.String)')
   - [ReplaceAnyOf(source,findWhatValues,replacementText)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf(System.String,System.Collections.Generic.ICollection{System.String},System.String)')
   - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
@@ -10752,6 +10753,26 @@ String after transformation.
 
 If the empty string is passed to `value`, then the
 empty string is returned.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String-'></a>
+### RemoveExtraEmptyLines(value) `method`
+
+##### Summary
+
+Removes all extra blank lines from the specified `value`
+string.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all consecutive blank lines collapsed
+into a single blank line.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that may contain extra blank
+lines. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String-'></a>
 ### RemoveTrailingBackslashes(value) `method`

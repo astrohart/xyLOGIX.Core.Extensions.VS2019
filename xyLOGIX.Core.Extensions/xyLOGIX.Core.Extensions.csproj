@@ -121,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
+    <Compile Include="GetLanguageArticleTypeValidator.cs" />
+    <Compile Include="LanguageArticleType.cs" />
+    <Compile Include="LanguageArticleTypeValidator.cs" />
     <Compile Include="BoundComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -140,6 +143,7 @@
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="FormExtensions.cs" />
     <Compile Include="GuidExtensions.cs" />
+    <Compile Include="ILanguageArticleTypeValidator.cs" />
     <Compile Include="IComboBox.cs" />
     <Compile Include="IControl.cs" />
     <Compile Include="IForm.cs" />

@@ -114,7 +114,7 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         static StringExtensions()
 
-            // Only initialize a new instance of the IdnMapping once per execution of a client 
+            // Only initialize a new instance of the IdnMapping once per execution of a client
             // application.
             => DomainMappingObject = new IdnMapping();
 
@@ -144,6 +144,15 @@ namespace xyLOGIX.Core.Extensions
             [DebuggerStepThrough] get;
             [DebuggerStepThrough] private set;
         }
+
+        /// <summary>
+        /// Gets a reference to the one and only instance of the object that implements the
+        /// <see cref="T:xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator" />
+        /// interface.
+        /// </summary>
+        private static ILanguageArticleTypeValidator
+            LanguageArticleTypeValidator { [DebuggerStepThrough] get; } =
+            GetLanguageArticleTypeValidator.SoleInstance();
 
         /// <summary>
         /// Gets a <see cref="T:System.Text.RegularExpressions.Regex" /> that
@@ -263,6 +272,38 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Surrounds the specified <paramref name="text" /> with XML documentation
+        /// tags &lt;c&gt; and &lt;/c&gt;, to indicate inline code formatting.
+        /// </summary>
+        /// <param name="text">(Required.) The text to format as inline code.</param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> containing the input surrounded by
+        /// &lt;c&gt; and &lt;/c&gt; tags. If <paramref name="text" /> is
+        /// <see langword="null" />
+        /// or whitespace, the original value is returned.
+        /// </returns>
+        [return: NotLogged]
+        public static string AsCodeElement([NotLogged] this string text)
+        {
+            var result = text;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                    return result;
+
+                result = $"<c>{text}</c>";
+            }
+            catch (Exception ex)
+            {
+                DebugUtils.LogException(ex);
+                result = text;
             }
 
             return result;
@@ -1889,7 +1930,6 @@ namespace xyLOGIX.Core.Extensions
                 // Extract the suffix directly
                 result = value.Substring(startIndex);
             }
-
             catch (Exception ex)
             {
                 // dump all the exception info to the log
@@ -2017,6 +2057,66 @@ namespace xyLOGIX.Core.Extensions
 
                 result = valueLines.Take(2)
                                    .Aggregate((a, b) => $"{a} {b}");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="text" /> starts with a vowel
+        /// sound, and, if so, applies the specified <paramref name="languageArticle" />
+        /// setting to determine the appropriate article, if any, to return.
+        /// </summary>
+        /// <param name="languageArticle">
+        /// (Required.) One of the
+        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that
+        /// indicates which article, if any, is to be returned.
+        /// </param>
+        /// <param name="text">
+        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
+        /// parsed.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the appropriate
+        /// article, if any, based on the specified <paramref name="languageArticle" />
+        /// setting and whether the specified <paramref name="text" /> starts with a vowel
+        /// sound; otherwise, the method returns the <see cref="F:System.String.Empty" />
+        /// value.
+        /// </returns>
+        [return: NotLogged]
+        private static string GetLanguageArticleText(
+            LanguageArticleType languageArticle,
+            [NotLogged] string text
+        )
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text)) return result;
+
+                switch (languageArticle)
+                {
+                    case LanguageArticleType.Definite:
+                        result = "the ";
+                        break;
+
+                    case LanguageArticleType.Indefinite:
+                        result = IsVowelSound(text) ? "an " : "a ";
+                        break;
+
+                    case LanguageArticleType.None:
+                    default:
+                        result = string.Empty;
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -2894,6 +2994,25 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines if the first word of the phrase begins with a vowel (for indefinite
+        /// article use).
+        /// </summary>
+        /// <param name="text">The phrase to analyze.</param>
+        /// <returns>
+        /// <see langword="true" /> if the first character of the first word is a
+        /// vowel.
+        /// </returns>
+        private static bool IsVowelSound(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return false;
+
+            var firstWord = text.Split(' ')[0]
+                                .ToLowerInvariant();
+            return "aeiou".IndexOf(firstWord[0]) >= 0;
+        }
+
+        /// <summary>
         /// Determines whether the <paramref name="stringToSearch" /> contains
         /// the text in the <paramref name="findWhat" /> parameter, in a case-insensitive
         /// fashion.
@@ -3728,6 +3847,112 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = inputString;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Rearranges a space-separated phrase by moving the last word to the front,
+        /// inserting the preposition 'of', and conditionally adding an languageArticle
+        /// before the
+        /// rest
+        /// of the phrase. Optionally pluralizes the remainder of the phrase.
+        /// </summary>
+        /// <param name="phrase">(Required.) The space-separated phrase to transform.</param>
+        /// <param name="languageArticle">
+        /// (Optional.) One of the
+        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> enumeration
+        /// value(s) indicating which article to insert before the remaining phrase.
+        /// <para />
+        /// The default value of this parameter is
+        /// <see cref="F:xyLOGIX.Core.Extensions.LanguageArticleType.None" />.
+        /// </param>
+        /// <param name="pluralizeRemainder">
+        /// (Optional.) <see langword="true" /> to pluralize the remainder of the phrase
+        /// (after the
+        /// preposition); otherwise, <see langword="false" />.
+        /// <para />
+        /// The default value of this parameter is <see langword="false" />.
+        /// </param>
+        /// <param name="culture">
+        /// (Optional.) A <see cref="T:System.Globalization.CultureInfo" /> to apply for
+        /// languageArticle
+        /// rules and pluralization.
+        /// <para />
+        /// Defaults to
+        /// <see cref="CultureInfo.InvariantCulture" />.
+        /// </param>
+        /// <remarks>
+        /// If the <see cref="F:System.String.Empty" /> value, a blank
+        /// <see cref="T:System.String" />, or <see langword="null" /> is passed as the
+        /// argument of the <paramref name="phrase" /> parameter, then this method is
+        /// idempotent.
+        /// </remarks>
+        /// <returns>
+        /// A <see cref="T:System.String" /> formatted as one of:
+        /// <list type="bullet">
+        ///     <item>
+        ///         <description>
+        ///             <c>X of Y</c>
+        ///         </description>
+        ///     </item>
+        ///     <item>
+        ///         <description>
+        ///             <c>X of the Y</c>
+        ///         </description>
+        ///     </item>
+        ///     <item>
+        ///         <description><c>X of a Y</c> or <c>X of an Y</c></description>
+        ///     </item>
+        ///     <item>
+        ///         <description><c>X of the Ys</c> if pluralization is enabled</description>
+        ///     </item>
+        /// </list>
+        /// </returns>
+        [return: NotLogged]
+        public static string RewordAsTypeOfPhrase(
+            [NotLogged] this string phrase,
+            LanguageArticleType languageArticle = LanguageArticleType.None,
+            bool pluralizeRemainder = false,
+            [NotLogged] CultureInfo culture = null
+        )
+        {
+            var result = phrase;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(phrase))
+                    return result;
+                if (!LanguageArticleTypeValidator.IsValid(languageArticle))
+                    return result;
+
+                var words = phrase.Split(
+                    new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries
+                );
+                if (words.Length <= 1)
+                    return result;
+
+                var lastWord = words[words.Length - 1];
+                var rest = string.Join(" ", words, 0, words.Length - 1);
+
+                if (culture == null)
+                    culture = CultureInfo.InvariantCulture;
+
+                if (pluralizeRemainder)
+                    rest = rest.PluralizeWord(culture);
+
+                var articleText = GetLanguageArticleText(languageArticle, rest);
+
+                result = string.IsNullOrWhiteSpace(articleText)
+                    ? $"{lastWord} of {rest}"
+                    : $"{lastWord} of {articleText}{rest}";
+            }
+            catch (Exception ex)
+            {
+                DebugUtils.LogException(ex);
+
+                result = phrase;
             }
 
             return result;

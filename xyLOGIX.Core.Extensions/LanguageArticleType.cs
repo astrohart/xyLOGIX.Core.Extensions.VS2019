@@ -23,6 +23,23 @@
         Indefinite = 2,
 
         /// <summary>
+        /// Indicates that a preposition should be inserted, the default being <c>of</c>.
+        /// </summary>
+        Prepopsition = 3,
+
+        /// <summary>
+        /// Indicates that a preposition should be inserted, the default being <c>of</c>,
+        /// followed by the definite article, <c>the</c>.
+        /// </summary>
+        PrepopsitionWithDefinite = 4,
+
+        /// <summary>
+        /// Indicates that a preposition should be inserted, the default being <c>of</c>,
+        /// followed by the indefinite article, <c>a</c> or <c>an</c>.
+        /// </summary>
+        PrepopsitionWithIndefinite = 5,
+
+        /// <summary>
         /// Unknown article type.
         /// </summary>
         Unknown = -1

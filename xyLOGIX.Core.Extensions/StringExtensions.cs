@@ -3450,16 +3450,17 @@ namespace xyLOGIX.Core.Extensions
                        .Trim();
 
         /// <summary>
-        /// Removes all extra blank lines from the specified <paramref name="value" />
-        /// string.
+        /// Removes any extra blank lines from the end of the specified
+        /// <paramref name="value" />.
         /// </summary>
         /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that may contain extra blank
-        /// lines.
+        /// (Required.) A <see cref="T:System.String" /> to normalize trailing newlines in.
         /// </param>
         /// <returns>
-        /// A <see cref="T:System.String" /> with all consecutive blank lines collapsed
-        /// into a single blank line.
+        /// A <see cref="T:System.String" /> with extra blank lines removed from the end.
+        /// If
+        /// <paramref name="value" /> is <see langword="null" /> or only whitespace,
+        /// returns <see cref="F:System.String.Empty" />.
         /// </returns>
         [return: NotLogged]
         public static string RemoveExtraEmptyLines(
@@ -3470,12 +3471,18 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (string.IsNullOrWhiteSpace(value))
+                    return result;
 
-                // Replace 2 or more line breaks (with optional whitespace between) with a single line break
-                result = Regex.Replace(
-                    value, @"(\r?\n\s*){2,}", Environment.NewLine
-                );
+                // Normalize line endings
+                value = value.Replace("\r\n", "\n")
+                             .Replace("\r", "\n");
+
+                // Remove all trailing blank lines (i.e., lines containing only whitespace or are empty)
+                result = Regex.Replace(value, @"(\n\s*)+\Z", string.Empty);
+
+                // Restore platform-specific newline characters if needed
+                result = result.Replace("\n", Environment.NewLine);
             }
             catch (Exception ex)
             {

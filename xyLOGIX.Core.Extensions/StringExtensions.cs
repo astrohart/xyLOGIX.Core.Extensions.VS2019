@@ -26,6 +26,13 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class StringExtensions
     {
+        /// <summary>
+        /// Reference to an instance of <see cref="T:System.Globalization.TextInfo" /> that
+        /// works for the <see cref="P:System.Globalization.CultureInfo.CurrentCulture" />.
+        /// </summary>
+        private static readonly TextInfo _textInfoFromCurrentCulture =
+            CultureInfo.CurrentCulture.TextInfo;
+
         /// <summary> Collection of strings that are commonly-used acronyms. </summary>
         private static readonly string[] AcronymList =
         {
@@ -2071,10 +2078,10 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Determines whether the specified <paramref name="text" /> starts with a vowel
-        /// sound, and, if so, applies the specified <paramref name="languageArticle" />
+        /// sound, and, if so, applies the specified <paramref name="type" />
         /// setting to determine the appropriate article, if any, to return.
         /// </summary>
-        /// <param name="languageArticle">
+        /// <param name="type">
         /// (Required.) One of the
         /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that
         /// indicates which article, if any, is to be returned.
@@ -2085,14 +2092,14 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// If successful, a <see cref="T:System.String" /> containing the appropriate
-        /// article, if any, based on the specified <paramref name="languageArticle" />
+        /// article, if any, based on the specified <paramref name="type" />
         /// setting and whether the specified <paramref name="text" /> starts with a vowel
         /// sound; otherwise, the method returns the <see cref="F:System.String.Empty" />
         /// value.
         /// </returns>
         [return: NotLogged]
         private static string GetLanguageArticleText(
-            LanguageArticleType languageArticle,
+            LanguageArticleType type,
             [NotLogged] string text
         )
         {
@@ -2101,15 +2108,30 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(text)) return result;
+                if (!LanguageArticleTypeValidator.IsValid(type)) return result;
 
-                switch (languageArticle)
+                var preferredIndefiniteArticle =
+                    IsVowelSound(text) ? "an " : "a ";
+                switch (type)
                 {
                     case LanguageArticleType.Definite:
                         result = "the ";
                         break;
 
                     case LanguageArticleType.Indefinite:
-                        result = IsVowelSound(text) ? "an " : "a ";
+                        result = preferredIndefiniteArticle;
+                        break;
+
+                    case LanguageArticleType.Prepopsition:
+                        result = "of ";
+                        break;
+
+                    case LanguageArticleType.PrepopsitionWithDefinite:
+                        result = "of the ";
+                        break;
+
+                    case LanguageArticleType.PrepopsitionWithIndefinite:
+                        result = $"of {preferredIndefiniteArticle}";
                         break;
 
                     case LanguageArticleType.None:
@@ -2994,22 +3016,61 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines if the first word of the phrase begins with a vowel (for indefinite
-        /// article use).
+        /// Determines if the first word of the phrase begins with a vowel sound
+        /// for the purposes of choosing between the indefinite articles 'a' or 'an'.
         /// </summary>
-        /// <param name="text">The phrase to analyze.</param>
+        /// <param name="text">(Required.) The phrase to analyze.</param>
         /// <returns>
-        /// <see langword="true" /> if the first character of the first word is a
-        /// vowel.
+        /// <see langword="true" /> if the first word begins with a vowel sound; otherwise,
+        /// <see langword="false" />.
         /// </returns>
-        private static bool IsVowelSound(string text)
+        private static bool IsVowelSound([NotLogged] string text)
         {
-            if (string.IsNullOrWhiteSpace(text))
-                return false;
+            var result = false;
 
-            var firstWord = text.Split(' ')[0]
-                                .ToLowerInvariant();
-            return "aeiou".IndexOf(firstWord[0]) >= 0;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                    return result;
+
+                var firstWord = text.Trim()
+                                    .Split(' ')[0];
+
+                if (string.IsNullOrWhiteSpace(firstWord))
+                    return result;
+
+                firstWord = firstWord.ToLowerInvariant();
+
+                // Words starting with consonant letters but vowel sounds
+                var startsWithVowelSound = new[]
+                {
+                    "honest", "honor", "hour", "heir", "herb" // US English
+                };
+
+                // Words starting with vowel letters but consonant ("yoo") sounds
+                var startsWithYooSound = new[]
+                {
+                    "university", "unicorn", "unique", "user", "usual",
+                    "ubiquitous", "ukulele", "european", "eulogy"
+                };
+
+                result =
+                    Array.Exists(
+                        startsWithVowelSound, w => firstWord.StartsWith(w)
+                    ) || (firstWord.Length == 2 &&
+                          firstWord.ToUpperInvariant() == firstWord &&
+                          "AEFHILMNORSX".IndexOf(firstWord[0]) >= 0) ||
+                    (!"aeiou".Contains(firstWord[0]) && !Array.Exists(
+                        startsWithYooSound, w => firstWord.StartsWith(w)
+                    ) && "aeiou".IndexOf(firstWord[0]) >= 0);
+            }
+            catch (Exception ex)
+            {
+                DebugUtils.LogException(ex);
+                result = false;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -3205,6 +3266,50 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(value)) return result;
 
                 result = "!" + value;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Prepends the specified <paramref name="value" /> with the text of the language
+        /// article specified by the <paramref name="type" /> parameter.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to which the
+        /// language article is to be prepended.
+        /// </param>
+        /// <param name="type">
+        /// (Required.) One of the
+        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> values that
+        /// specifies the type of language article to prepend.
+        /// </param>
+        /// <returns>
+        /// If successful, the argument of the <paramref name="value" /> parameter, with
+        /// the language article specified by the <paramref name="type" /> parameter
+        /// prepended; otherwise, the method is idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string PrependLanguageArticle(
+            [NotLogged] this string value,
+            LanguageArticleType type
+        )
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (!LanguageArticleTypeValidator.IsValid(type)) return result;
+
+                result = GetLanguageArticleText(type, value) + value;
             }
             catch (Exception ex)
             {
@@ -3609,6 +3714,46 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Removes the last word from the specified space-delimited phrase.
+        /// </summary>
+        /// <param name="text">(Required.) The phrase to process.</param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> containing all but the final word of
+        /// <paramref name="text" />. If <paramref name="text" /> contains only
+        /// one word, the empty string is returned.
+        /// If <paramref name="text" /> is <see langword="null" /> or whitespace,
+        /// the original value is returned.
+        /// </returns>
+        [return: NotLogged]
+        public static string RemoveLastWord([NotLogged] this string text)
+        {
+            var result = text;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                    return result;
+
+                var words = text.Split(
+                    new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries
+                );
+
+                if (words == null) return string.Empty;
+                if (words.Length <= 1)
+                    return string.Empty;
+
+                result = string.Join(" ", words, 0, words.Length - 1);
+            }
+            catch (Exception ex)
+            {
+                DebugUtils.LogException(ex);
+                result = text;
             }
 
             return result;
@@ -4303,7 +4448,8 @@ namespace xyLOGIX.Core.Extensions
         /// If this method is passed the empty or whitespace string for
         /// <paramref name="value" />, then this method returns the empty string.
         /// </remarks>
-        public static string ToASCII(this string value)
+        [return: NotLogged]
+        public static string ToASCII([NotLogged] string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return string.Empty;
 
@@ -4315,6 +4461,89 @@ namespace xyLOGIX.Core.Extensions
 
             return sb.ToString()
                      .Replace("%F1", "?");
+        }
+
+        /// <summary>
+        /// Converts the specified <paramref name="text" /> into a code element by
+        /// preserving pluralization.
+        /// </summary>
+        /// <param name="text">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to convert
+        /// into a code element.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> that is the same as the
+        /// <paramref name="text" /> but with the first letter of each word capitalized and
+        /// pluralization preserved.
+        /// </returns>
+        [return: NotLogged]
+        public static string ToCodeElementPreservingPluralization(
+            [NotLogged] this string text
+        )
+        {
+            var result = text;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                    return result;
+
+                // Match optional plural forms like property(ies), journey(s)
+                var optionalPluralPattern = new Regex(
+                    @"^(.*?)(\((?:s|es|ies)\))$", RegexOptions.IgnoreCase
+                );
+                var optionalMatch = optionalPluralPattern.Match(text);
+
+                if (optionalMatch.Success)
+                {
+                    var stem = optionalMatch.Groups[1]
+                                            .Value.Trim();
+                    var suffix = optionalMatch.Groups[2].Value;
+                    result = $"<c>{stem.ToTitleCase()}</c>{suffix}";
+                    return result;
+                }
+
+                // If it's a single word and already plural (e.g., "shoes", "discrepancies")
+                if (!text.Contains(" "))
+                {
+                    var culture = CultureInfo.CurrentUICulture;
+                    var pluralizationService =
+                        PluralizationService.CreateService(culture);
+
+                    if (pluralizationService.IsPlural(text))
+                    {
+                        result = $"<c>{text.ToTitleCase()}</c>";
+                        return result;
+                    }
+
+                    // Singular word, apply plural suffix outside <c> tag
+                    var plural = pluralizationService.Pluralize(text);
+                    var stem = text.ToTitleCase();
+                    var suffix = plural.Substring(text.Length);
+                    result = $"<c>{stem}</c>{suffix}";
+                    return result;
+                }
+
+                // Multi-word phrase, check if it's plural already
+                var words = text.Split(' ');
+                var lastWord = words[words.Length - 1];
+                var pluralCheck =
+                    PluralizationService.CreateService(
+                        CultureInfo.CurrentUICulture
+                    );
+                var isPlural = pluralCheck.IsPlural(lastWord);
+
+                result = isPlural
+                    ? $"<c>{text.ToTitleCase()}</c>"
+                    : $"<c>{text.ToTitleCase()}</c>s";
+            }
+            catch (Exception ex)
+            {
+                DebugUtils.LogException(ex);
+                result = text;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -4413,6 +4642,50 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Obtains the text of the language article specified by the
+        /// <paramref name="type" /> parameter for the <paramref name="value" /> passed.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value to which the
+        /// language article is to be obtained.
+        /// </param>
+        /// <param name="type">
+        /// (Required.) One of the
+        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> values that
+        /// specifies the type of language article to obtain.
+        /// </param>
+        /// <returns>
+        /// If successful, the language article specified by the <paramref name="type" />
+        /// parameter for the <paramref name="value" /> passed; otherwise, the method is
+        /// idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string ToLanguageArticle(
+            [NotLogged] this string value,
+            LanguageArticleType type
+        )
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (!LanguageArticleTypeValidator.IsValid(type)) return result;
+
+                result = GetLanguageArticleText(type, value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Turns a delimited <see cref="T:System.String" /> into a collection of
         /// strings with one delimited entry per element.
         /// </summary>
@@ -4432,7 +4705,7 @@ namespace xyLOGIX.Core.Extensions
         /// returned.
         /// </remarks>
         public static IEnumerable<string> ToList(
-            this string quote,
+            [NotLogged] this string quote,
             params string[] separators
         )
             => !string.IsNullOrWhiteSpace(quote) && separators != null &&
@@ -4447,7 +4720,20 @@ namespace xyLOGIX.Core.Extensions
                 : Enumerable.Empty<string>()
                             .ToAdvisableCollection();
 
-        public static string ToLowercase(this string value)
+        /// <summary>
+        /// Converts the specified <paramref name="value" /> to lowercase, ignoring
+        /// culture.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be
+        /// converted to lowercase.
+        /// </param>
+        /// <returns>
+        /// If successful, the <paramref name="value" /> specified, but converted to
+        /// lowercase; otherwise, this method is idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string ToLowercase([NotLogged] this string value)
         {
             var result = value;
 
@@ -4496,6 +4782,42 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts the specified <paramref name="value" /> to Title Case.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text to be
+        /// converted to Title Case.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> containing the text from
+        /// <paramref name="value" /> converted to Title Case.
+        /// <para />
+        /// If <paramref name="value" /> is <see langword="null" /> or whitespace, the
+        /// original value is returned.
+        /// </returns>
+        public static string ToTitleCase(this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result =
+                    _textInfoFromCurrentCulture.ToTitleCase(value.ToLower());
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
             }
 
             return result;

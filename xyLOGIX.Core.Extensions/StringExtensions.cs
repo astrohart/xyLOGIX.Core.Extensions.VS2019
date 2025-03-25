@@ -305,11 +305,12 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(text))
                     return result;
 
-                result = $"<c>{text}</c>";
+                result = $"<c>{text.Trim()}</c>";
             }
             catch (Exception ex)
             {
                 DebugUtils.LogException(ex);
+
                 result = text;
             }
 

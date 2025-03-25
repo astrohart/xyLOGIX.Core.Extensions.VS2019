@@ -4488,6 +4488,8 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(text))
                     return result;
 
+                var suffix = string.Empty;
+
                 // Match optional plural forms like property(ies), journey(s)
                 var optionalPluralPattern = new Regex(
                     @"^(.*?)(\((?:s|es|ies)\))$", RegexOptions.IgnoreCase
@@ -4498,18 +4500,19 @@ namespace xyLOGIX.Core.Extensions
                 {
                     var stem = optionalMatch.Groups[1]
                                             .Value.Trim();
-                    var suffix = optionalMatch.Groups[2].Value;
+                    suffix = optionalMatch.Groups[2].Value;
                     result = $"<c>{stem.ToTitleCase()}</c>{suffix}";
                     return result;
                 }
 
+                var plural = string.Empty;
+                var culture = CultureInfo.CurrentCulture;
+                var pluralizationService =
+                    PluralizationService.CreateService(culture);
+
                 // If it's a single word and already plural (e.g., "shoes", "discrepancies")
                 if (!text.Contains(" "))
                 {
-                    var culture = CultureInfo.CurrentUICulture;
-                    var pluralizationService =
-                        PluralizationService.CreateService(culture);
-
                     if (pluralizationService.IsPlural(text))
                     {
                         result = $"<c>{text.ToTitleCase()}</c>";
@@ -4517,9 +4520,9 @@ namespace xyLOGIX.Core.Extensions
                     }
 
                     // Singular word, apply plural suffix outside <c> tag
-                    var plural = pluralizationService.Pluralize(text);
-                    var stem = text.ToTitleCase();
-                    var suffix = plural.Substring(text.Length);
+                    plural = pluralizationService.Pluralize(text);
+                    var stem = text.ToTitleCase(); 
+                    suffix = plural.Substring(text.Length);
                     result = $"<c>{stem}</c>{suffix}";
                     return result;
                 }
@@ -4527,15 +4530,13 @@ namespace xyLOGIX.Core.Extensions
                 // Multi-word phrase, check if it's plural already
                 var words = text.Split(' ');
                 var lastWord = words[words.Length - 1];
-                var pluralCheck =
-                    PluralizationService.CreateService(
-                        CultureInfo.CurrentUICulture
-                    );
-                var isPlural = pluralCheck.IsPlural(lastWord);
+                var isPlural = pluralizationService.IsPlural(lastWord);
+                plural = pluralizationService.Pluralize(lastWord);
+                suffix = plural.Substring(lastWord.Length);
 
                 result = isPlural
                     ? $"<c>{text.ToTitleCase()}</c>"
-                    : $"<c>{text.ToTitleCase()}</c>s";
+                    : $"<c>{text.ToTitleCase()}</c>{suffix}";
             }
             catch (Exception ex)
             {

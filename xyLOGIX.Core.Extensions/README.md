@@ -94,6 +94,9 @@
   - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
+- [GetLanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-GetLanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.GetLanguageArticleTypeValidator')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-GetLanguageArticleTypeValidator-#cctor 'xyLOGIX.Core.Extensions.GetLanguageArticleTypeValidator.#cctor')
+  - [SoleInstance()](#M-xyLOGIX-Core-Extensions-GetLanguageArticleTypeValidator-SoleInstance 'xyLOGIX.Core.Extensions.GetLanguageArticleTypeValidator.SoleInstance')
 - [GuidExtensions](#T-xyLOGIX-Core-Extensions-GuidExtensions 'xyLOGIX.Core.Extensions.GuidExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-GuidExtensions-#cctor 'xyLOGIX.Core.Extensions.GuidExtensions.#cctor')
   - [AsDigitsWithHyphens(guid)](#M-xyLOGIX-Core-Extensions-GuidExtensions-AsDigitsWithHyphens-System-Guid- 'xyLOGIX.Core.Extensions.GuidExtensions.AsDigitsWithHyphens(System.Guid)')
@@ -315,6 +318,8 @@
   - [ToString()](#M-xyLOGIX-Core-Extensions-IForm-ToString 'xyLOGIX.Core.Extensions.IForm.ToString')
   - [ValidateChildren()](#M-xyLOGIX-Core-Extensions-IForm-ValidateChildren 'xyLOGIX.Core.Extensions.IForm.ValidateChildren')
   - [ValidateChildren(validationConstraints)](#M-xyLOGIX-Core-Extensions-IForm-ValidateChildren-System-Windows-Forms-ValidationConstraints- 'xyLOGIX.Core.Extensions.IForm.ValidateChildren(System.Windows.Forms.ValidationConstraints)')
+- [ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
+  - [IsValid(type)](#M-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator-IsValid-xyLOGIX-Core-Extensions-LanguageArticleType- 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator.IsValid(xyLOGIX.Core.Extensions.LanguageArticleType)')
 - [IScrollableControl](#T-xyLOGIX-Core-Extensions-IScrollableControl 'xyLOGIX.Core.Extensions.IScrollableControl')
   - [AutoScroll](#P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScroll 'xyLOGIX.Core.Extensions.IScrollableControl.AutoScroll')
   - [AutoScrollMargin](#P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollMargin 'xyLOGIX.Core.Extensions.IScrollableControl.AutoScrollMargin')
@@ -329,6 +334,19 @@
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
   - [IsBitmaskOn(num,bitmask)](#M-xyLOGIX-Core-Extensions-IntExtensions-IsBitmaskOn-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.IsBitmaskOn(System.Int32,System.Int32)')
   - [ToOrdinalString(value)](#M-xyLOGIX-Core-Extensions-IntExtensions-ToOrdinalString-System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.ToOrdinalString(System.Int32)')
+- [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType')
+  - [Definite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Definite 'xyLOGIX.Core.Extensions.LanguageArticleType.Definite')
+  - [Indefinite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Indefinite 'xyLOGIX.Core.Extensions.LanguageArticleType.Indefinite')
+  - [None](#F-xyLOGIX-Core-Extensions-LanguageArticleType-None 'xyLOGIX.Core.Extensions.LanguageArticleType.None')
+  - [Prepopsition](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Prepopsition 'xyLOGIX.Core.Extensions.LanguageArticleType.Prepopsition')
+  - [PrepopsitionWithDefinite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-PrepopsitionWithDefinite 'xyLOGIX.Core.Extensions.LanguageArticleType.PrepopsitionWithDefinite')
+  - [PrepopsitionWithIndefinite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-PrepopsitionWithIndefinite 'xyLOGIX.Core.Extensions.LanguageArticleType.PrepopsitionWithIndefinite')
+  - [Unknown](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Unknown 'xyLOGIX.Core.Extensions.LanguageArticleType.Unknown')
+- [LanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.LanguageArticleTypeValidator')
+  - [#ctor()](#M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-#ctor 'xyLOGIX.Core.Extensions.LanguageArticleTypeValidator.#ctor')
+  - [Instance](#P-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-Instance 'xyLOGIX.Core.Extensions.LanguageArticleTypeValidator.Instance')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-#cctor 'xyLOGIX.Core.Extensions.LanguageArticleTypeValidator.#cctor')
+  - [IsValid(type)](#M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-IsValid-xyLOGIX-Core-Extensions-LanguageArticleType- 'xyLOGIX.Core.Extensions.LanguageArticleTypeValidator.IsValid(xyLOGIX.Core.Extensions.LanguageArticleType)')
 - [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-ListExtensions-#cctor 'xyLOGIX.Core.Extensions.ListExtensions.#cctor')
   - [AddDistinct(list,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct-System-Collections-IList,System-Object- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct(System.Collections.IList,System.Object)')
@@ -424,13 +442,16 @@
   - [NamesOfStreetsThatShouldBeCapitalized](#F-xyLOGIX-Core-Extensions-StringExtensions-NamesOfStreetsThatShouldBeCapitalized 'xyLOGIX.Core.Extensions.StringExtensions.NamesOfStreetsThatShouldBeCapitalized')
   - [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
   - [StateAbbrList](#F-xyLOGIX-Core-Extensions-StringExtensions-StateAbbrList 'xyLOGIX.Core.Extensions.StringExtensions.StateAbbrList')
+  - [_textInfoFromCurrentCulture](#F-xyLOGIX-Core-Extensions-StringExtensions-_textInfoFromCurrentCulture 'xyLOGIX.Core.Extensions.StringExtensions._textInfoFromCurrentCulture')
   - [EndsWithColonAndNumberRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumberRegex 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithColonAndNumberRegex')
   - [IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
+  - [LanguageArticleTypeValidator](#P-xyLOGIX-Core-Extensions-StringExtensions-LanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.StringExtensions.LanguageArticleTypeValidator')
   - [WhiteSpaceRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex 'xyLOGIX.Core.Extensions.StringExtensions.WhiteSpaceRegex')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-StringExtensions-#cctor 'xyLOGIX.Core.Extensions.StringExtensions.#cctor')
   - [AnyContainNoCase(collection,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AnyContainNoCase(System.Collections.Generic.IEnumerable{System.String},System.String)')
   - [AnyStartWithAny(targets,values)](#M-xyLOGIX-Core-Extensions-StringExtensions-AnyStartWithAny-System-Collections-Generic-IEnumerable{System-String},System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.AnyStartWithAny(System.Collections.Generic.IEnumerable{System.String},System.String[])')
   - [AreAnyLettersLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AreAnyLettersLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AreAnyLettersLowercase(System.String)')
+  - [AsCodeElement(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsCodeElement-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsCodeElement(System.String)')
   - [AsDecimal(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsDecimal-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsDecimal(System.String)')
   - [AsDouble(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsDouble-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AsDouble(System.String)')
   - [AsProseList\`\`1(quote,selectorFunc)](#M-xyLOGIX-Core-Extensions-StringExtensions-AsProseList``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.AsProseList``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})')
@@ -476,6 +497,7 @@
   - [GetFirstNChars(value,nChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNChars-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNChars(System.String,System.Int32)')
   - [GetFirstNonBlankLine(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNonBlankLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstNonBlankLine(System.String)')
   - [GetFirstTwoNonBlankLines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstTwoNonBlankLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetFirstTwoNonBlankLines(System.String)')
+  - [GetLanguageArticleText(type,text)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetLanguageArticleText-xyLOGIX-Core-Extensions-LanguageArticleType,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetLanguageArticleText(xyLOGIX.Core.Extensions.LanguageArticleType,System.String)')
   - [GetLastWord(input)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetLastWord(System.String)')
   - [GetNonBlankLineCount(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetNonBlankLineCount-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetNonBlankLineCount(System.String)')
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
@@ -498,12 +520,14 @@
   - [IsValidAssetSymbol(symbol)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidAssetSymbol-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidAssetSymbol(System.String)')
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
   - [IsValidLowercaseGuidWithNoBraces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidLowercaseGuidWithNoBraces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidLowercaseGuidWithNoBraces(System.String)')
+  - [IsVowelSound(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsVowelSound-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsVowelSound(System.String)')
   - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
   - [MatchesWithCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
   - [PluralizeWord(word)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String)')
   - [PostfixFormat(value,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-PostfixFormat-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.PostfixFormat(System.String,System.Object[])')
   - [PrependBang(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-PrependBang-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.PrependBang(System.String)')
+  - [PrependLanguageArticle(value,type)](#M-xyLOGIX-Core-Extensions-StringExtensions-PrependLanguageArticle-System-String,xyLOGIX-Core-Extensions-LanguageArticleType- 'xyLOGIX.Core.Extensions.StringExtensions.PrependLanguageArticle(System.String,xyLOGIX.Core.Extensions.LanguageArticleType)')
   - [RegexMatchesNoCase(stringToSearch,regex)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexMatchesNoCase(System.String,System.String)')
   - [RegexMatchesWithCase(stringToSearch,regex)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexMatchesWithCase(System.String,System.String)')
   - [RegexReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceNoCase(System.String,System.String,System.String)')
@@ -512,11 +536,13 @@
   - [RegexReplaceWithCase(value,search,replacement,options)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceWithCase(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)')
   - [RemoveDigitsAndPunctuation(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveDigitsAndPunctuation(System.String)')
   - [RemoveExtraEmptyLines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveExtraEmptyLines(System.String)')
+  - [RemoveLastWord(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveLastWord(System.String)')
   - [RemoveTrailingBackslashes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveTrailingBackslashes(System.String)')
   - [ReplaceAnyOf(source,findWhatValues,replacementText)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf(System.String,System.Collections.Generic.ICollection{System.String},System.String)')
   - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
   - [ReplaceSingleQuotesWithHTMLApostrophes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSingleQuotesWithHTMLApostrophes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceSingleQuotesWithHTMLApostrophes(System.String)')
   - [ReplaceSpacesWithHtmlNonBreakingSpace(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSpacesWithHtmlNonBreakingSpace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceSpacesWithHtmlNonBreakingSpace(System.String)')
+  - [RewordAsTypeOfPhrase(phrase,languageArticle,pluralizeRemainder,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-RewordAsTypeOfPhrase-System-String,xyLOGIX-Core-Extensions-LanguageArticleType,System-Boolean,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.RewordAsTypeOfPhrase(System.String,xyLOGIX.Core.Extensions.LanguageArticleType,System.Boolean,System.Globalization.CultureInfo)')
   - [SplitOn(value,delimiter)](#M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.SplitOn(System.String,System.String)')
   - [StartsWithAny(value,beginnings)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAny(System.String,System.String[])')
   - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.String[])')
@@ -527,10 +553,14 @@
   - [ToASCII(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII(System.String)')
   - [ToAcronym(phrase)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToAcronym-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToAcronym(System.String)')
   - [ToAcronymLetter(word)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToAcronymLetter-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToAcronymLetter(System.String)')
+  - [ToCodeElementPreservingPluralization(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToCodeElementPreservingPluralization-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToCodeElementPreservingPluralization(System.String)')
   - [ToGuidWithNoPunctuation(guid)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToGuidWithNoPunctuation-System-Guid- 'xyLOGIX.Core.Extensions.StringExtensions.ToGuidWithNoPunctuation(System.Guid)')
   - [ToInitialCaps(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToInitialCaps-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToInitialCaps(System.String)')
+  - [ToLanguageArticle(value,type)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToLanguageArticle-System-String,xyLOGIX-Core-Extensions-LanguageArticleType- 'xyLOGIX.Core.Extensions.StringExtensions.ToLanguageArticle(System.String,xyLOGIX.Core.Extensions.LanguageArticleType)')
   - [ToList(quote,separators)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToList-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ToList(System.String,System.String[])')
+  - [ToLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToLowercase(System.String)')
   - [ToPhrase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToPhrase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToPhrase(System.String)')
+  - [ToTitleCase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToTitleCase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToTitleCase(System.String)')
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
   - [ToUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUppercase(System.String)')
   - [TrimAnyOffEnd(value,caseSensitive,recursive,badEndings)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimAnyOffEnd-System-String,System-Boolean,System-Boolean,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.TrimAnyOffEnd(System.String,System.Boolean,System.Boolean,System.String[])')
@@ -2741,6 +2771,56 @@ monitor (whatever monitor they have designated as Monitor #1)
 | form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form')
 to be moved to the user's primary monitor. The form is also centered on the
 screen. |
+
+<a name='T-xyLOGIX-Core-Extensions-GetLanguageArticleTypeValidator'></a>
+## GetLanguageArticleTypeValidator `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Provides access to the one and only instance of the object that implements the
+[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
+interface.
+
+<a name='M-xyLOGIX-Core-Extensions-GetLanguageArticleTypeValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed
+once only for the
+[GetLanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-GetLanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.GetLanguageArticleTypeValidator') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
+
+<a name='M-xyLOGIX-Core-Extensions-GetLanguageArticleTypeValidator-SoleInstance'></a>
+### SoleInstance() `method`
+
+##### Summary
+
+Obtains access to the sole instance of the object that implements the
+[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
+interface, and returns a reference to it.
+
+##### Returns
+
+Reference to the one, and only, instance of the object that implements the
+[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
+interface.
+
+##### Parameters
+
+This method has no parameters.
 
 <a name='T-xyLOGIX-Core-Extensions-GuidExtensions'></a>
 ## GuidExtensions `type`
@@ -6227,6 +6307,48 @@ method will always return `false`.
 | validationConstraints | [System.Windows.Forms.ValidationConstraints](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ValidationConstraints 'System.Windows.Forms.ValidationConstraints') | Places restrictions on which controls have
 their [](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') event raised. |
 
+<a name='T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator'></a>
+## ILanguageArticleTypeValidator `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Defines the publicly-exposed events, methods and properties of a validator of
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration
+values.
+
+##### Remarks
+
+Specifically, objects that implement this interface ascertain whether
+the values of variables fall within the value set that is defined by the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration.
+
+<a name='M-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator-IsValid-xyLOGIX-Core-Extensions-LanguageArticleType-'></a>
+### IsValid(type) `method`
+
+##### Summary
+
+Determines whether the language article `type` value
+passed is within the value set that is defined by the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration.
+
+##### Returns
+
+`true` if the language article
+`type` falls within the defined value set;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') values that is to
+be examined. |
+
 <a name='T-xyLOGIX-Core-Extensions-IScrollableControl'></a>
 ## IScrollableControl `type`
 
@@ -6446,6 +6568,138 @@ The argument of this parameter must be `1` or greater. |
 | ---- | ----------- |
 | [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown when the provided
 `value` is less than 1. |
+
+<a name='T-xyLOGIX-Core-Extensions-LanguageArticleType'></a>
+## LanguageArticleType `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Specifies the kind of article, if any, to be inserted before a noun phrase
+during phrase rewording.
+
+<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Definite'></a>
+### Definite `constants`
+
+##### Summary
+
+Indicates that the definite article `the` should be inserted.
+
+<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Indefinite'></a>
+### Indefinite `constants`
+
+##### Summary
+
+Indicates that the indefinite article `a` or `an` should be inserted,
+depending on the starting sound of the following word.
+
+<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-None'></a>
+### None `constants`
+
+##### Summary
+
+Indicates that no article should be inserted.
+
+<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Prepopsition'></a>
+### Prepopsition `constants`
+
+##### Summary
+
+Indicates that a preposition should be inserted, the default being `of`.
+
+<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-PrepopsitionWithDefinite'></a>
+### PrepopsitionWithDefinite `constants`
+
+##### Summary
+
+Indicates that a preposition should be inserted, the default being `of`,
+followed by the definite article, `the`.
+
+<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-PrepopsitionWithIndefinite'></a>
+### PrepopsitionWithIndefinite `constants`
+
+##### Summary
+
+Indicates that a preposition should be inserted, the default being `of`,
+followed by the indefinite article, `a` or `an`.
+
+<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Unknown'></a>
+### Unknown `constants`
+
+##### Summary
+
+Unknown article type.
+
+<a name='T-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator'></a>
+## LanguageArticleTypeValidator `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Validates whether certain value(s) are within the defined value set of the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration.
+
+<a name='M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-#ctor'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Empty, protected constructor to prohibit direct allocation of this
+class.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='P-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-Instance'></a>
+### Instance `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that
+implements the
+[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-Interfaces-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.Interfaces.ILanguageArticleTypeValidator')
+interface.
+
+<a name='M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Empty, static constructor to prohibit direct allocation of this class.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-IsValid-xyLOGIX-Core-Extensions-LanguageArticleType-'></a>
+### IsValid(type) `method`
+
+##### Summary
+
+Determines whether the language article `type` value
+passed is within the value set that is defined by the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration.
+
+##### Returns
+
+`true` if the language article
+`type` falls within the defined value set;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') values that is to
+be examined. |
 
 <a name='T-xyLOGIX-Core-Extensions-ListExtensions'></a>
 ## ListExtensions `type`
@@ -8431,6 +8685,14 @@ se.
 Collection of strings that are the two-letter abbreviations of the 50
 U.S. states.
 
+<a name='F-xyLOGIX-Core-Extensions-StringExtensions-_textInfoFromCurrentCulture'></a>
+### _textInfoFromCurrentCulture `constants`
+
+##### Summary
+
+Reference to an instance of [TextInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.TextInfo 'System.Globalization.TextInfo') that
+works for the [CurrentCulture](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo.CurrentCulture 'System.Globalization.CultureInfo.CurrentCulture').
+
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumberRegex'></a>
 ### EndsWithColonAndNumberRegex `property`
 
@@ -8449,6 +8711,15 @@ natural number.
 Gets or sets a value that indicates whether the string most recently
 checked for whether it contains a valid email address, does in fact contain
 such a valid address.
+
+<a name='P-xyLOGIX-Core-Extensions-StringExtensions-LanguageArticleTypeValidator'></a>
+### LanguageArticleTypeValidator `property`
+
+##### Summary
+
+Gets a reference to the one and only instance of the object that implements the
+[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
+interface.
 
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex'></a>
 ### WhiteSpaceRegex `property`
@@ -8549,6 +8820,27 @@ at least one lowercase letter; `false` otherwise.
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose
 characters are to be checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-AsCodeElement-System-String-'></a>
+### AsCodeElement(text) `method`
+
+##### Summary
+
+Surrounds the specified `text` with XML documentation
+tags <c> and </c>, to indicate inline code formatting.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the input surrounded by
+<c> and </c> tags. If `text` is
+`null`
+or whitespace, the original value is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The text to format as inline code. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AsDecimal-System-String-'></a>
 ### AsDecimal(value) `method`
@@ -9815,6 +10107,33 @@ value is returned.
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
 value for which the first two non-blank line(s) are to be obtained. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetLanguageArticleText-xyLOGIX-Core-Extensions-LanguageArticleType,System-String-'></a>
+### GetLanguageArticleText(type,text) `method`
+
+##### Summary
+
+Determines whether the specified `text` starts with a vowel
+sound, and, if so, applies the specified `type`
+setting to determine the appropriate article, if any, to return.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the appropriate
+article, if any, based on the specified `type`
+setting and whether the specified `text` starts with a vowel
+sound; otherwise, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
+value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that
+indicates which article, if any, is to be returned. |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
+parsed. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String-'></a>
 ### GetLastWord(input) `method`
 
@@ -10383,6 +10702,25 @@ This method returns `false` if the argument of the
 consists of only whitespace characters, or is the
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsVowelSound-System-String-'></a>
+### IsVowelSound(text) `method`
+
+##### Summary
+
+Determines if the first word of the phrase begins with a vowel sound
+for the purposes of choosing between the indefinite articles 'a' or 'an'.
+
+##### Returns
+
+`true` if the first word begins with a vowel sound; otherwise,
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The phrase to analyze. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String-'></a>
 ### MatchesNoCase(stringToSearch,findWhat) `method`
 
@@ -10528,6 +10866,30 @@ idempotent.
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
 value to which a bang (`!`) character is to be prepended. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-PrependLanguageArticle-System-String,xyLOGIX-Core-Extensions-LanguageArticleType-'></a>
+### PrependLanguageArticle(value,type) `method`
+
+##### Summary
+
+Prepends the specified `value` with the text of the language
+article specified by the `type` parameter.
+
+##### Returns
+
+If successful, the argument of the `value` parameter, with
+the language article specified by the `type` parameter
+prepended; otherwise, the method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which the
+language article is to be prepended. |
+| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') values that
+specifies the type of language article to prepend. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String-'></a>
 ### RegexMatchesNoCase(stringToSearch,regex) `method`
@@ -10775,6 +11137,27 @@ returns [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=E
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to normalize trailing newlines in. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveLastWord-System-String-'></a>
+### RemoveLastWord(text) `method`
+
+##### Summary
+
+Removes the last word from the specified space-delimited phrase.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing all but the final word of
+`text`. If `text` contains only
+one word, the empty string is returned.
+If `text` is `null` or whitespace,
+the original value is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The phrase to process. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String-'></a>
 ### RemoveTrailingBackslashes(value) `method`
 
@@ -10923,6 +11306,57 @@ spaces are to be replaced. |
 If the `inputString` is `null` or consists
 only of whitespace, the method returns the original
 `inputString`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RewordAsTypeOfPhrase-System-String,xyLOGIX-Core-Extensions-LanguageArticleType,System-Boolean,System-Globalization-CultureInfo-'></a>
+### RewordAsTypeOfPhrase(phrase,languageArticle,pluralizeRemainder,culture) `method`
+
+##### Summary
+
+Rearranges a space-separated phrase by moving the last word to the front,
+inserting the preposition 'of', and conditionally adding an languageArticle
+before the
+rest
+of the phrase. Optionally pluralizes the remainder of the phrase.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') formatted as one of:
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| phrase | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The space-separated phrase to transform. |
+| languageArticle | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Optional.) One of the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration
+value(s) indicating which article to insert before the remaining phrase.
+
+
+
+The default value of this parameter is
+[None](#F-xyLOGIX-Core-Extensions-LanguageArticleType-None 'xyLOGIX.Core.Extensions.LanguageArticleType.None'). |
+| pluralizeRemainder | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) `true` to pluralize the remainder of the phrase
+(after the
+preposition); otherwise, `false`.
+
+
+
+The default value of this parameter is `false`. |
+| culture | [System.Globalization.CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') | (Optional.) A [CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') to apply for
+languageArticle
+rules and pluralization.
+
+
+
+Defaults to
+[InvariantCulture](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo.InvariantCulture 'System.Globalization.CultureInfo.InvariantCulture'). |
+
+##### Remarks
+
+If the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, a blank
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or `null` is passed as the
+argument of the `phrase` parameter, then this method is
+idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String-'></a>
 ### SplitOn(value,delimiter) `method`
@@ -11193,6 +11627,27 @@ should be made into a corresponding acronym letter. |
 If `word` is the empty or whitespace string, then
 this method returns the empty string.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToCodeElementPreservingPluralization-System-String-'></a>
+### ToCodeElementPreservingPluralization(text) `method`
+
+##### Summary
+
+Converts the specified `text` into a code element by
+preserving pluralization.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the same as the
+`text` but with the first letter of each word capitalized and
+pluralization preserved.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to convert
+into a code element. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToGuidWithNoPunctuation-System-Guid-'></a>
 ### ToGuidWithNoPunctuation(guid) `method`
 
@@ -11238,6 +11693,30 @@ String with the casing changed to InitialCaps.
 If this method is passed the empty or whitespace string, then it
 returns the empty string.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToLanguageArticle-System-String,xyLOGIX-Core-Extensions-LanguageArticleType-'></a>
+### ToLanguageArticle(value,type) `method`
+
+##### Summary
+
+Obtains the text of the language article specified by the
+`type` parameter for the `value` passed.
+
+##### Returns
+
+If successful, the language article specified by the `type`
+parameter for the `value` passed; otherwise, the method is
+idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which the
+language article is to be obtained. |
+| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') values that
+specifies the type of language article to obtain. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToList-System-String,System-String[]-'></a>
 ### ToList(quote,separators) `method`
 
@@ -11266,6 +11745,26 @@ empty string is provided as input to this method, then the method returns the
 empty string. If no separators are specified, then the empty collection is
 returned.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToLowercase-System-String-'></a>
+### ToLowercase(value) `method`
+
+##### Summary
+
+Converts the specified `value` to lowercase, ignoring
+culture.
+
+##### Returns
+
+If successful, the `value` specified, but converted to
+lowercase; otherwise, this method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
+converted to lowercase. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToPhrase-System-String-'></a>
 ### ToPhrase(value) `method`
 
@@ -11286,6 +11785,30 @@ string is returned.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The initial-caps string to be transformed. (Required.) |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToTitleCase-System-String-'></a>
+### ToTitleCase(value) `method`
+
+##### Summary
+
+Converts the specified `value` to Title Case.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text from
+`value` converted to Title Case.
+
+
+
+If `value` is `null` or whitespace, the
+original value is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
+converted to Title Case. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String-'></a>
 ### ToUnicode(value) `method`

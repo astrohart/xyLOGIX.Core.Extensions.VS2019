@@ -1,5 +1,6 @@
 ﻿using PostSharp.Patterns.Collections;
 using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Design.PluralizationServices;
@@ -23,7 +24,7 @@ namespace xyLOGIX.Core.Extensions
     /// Provides methods and properties to assist with manipulating strings
     /// of text.
     /// </summary>
-    [Log(AttributeExclude = true)]
+    [Log(AttributeExclude = true), ExplicitlySynchronized]
     public static class StringExtensions
     {
         /// <summary>
@@ -4522,7 +4523,7 @@ namespace xyLOGIX.Core.Extensions
 
                     // Singular word, apply plural suffix outside <c> tag
                     plural = pluralizationService.Pluralize(text);
-                    var stem = text.ToTitleCase(); 
+                    var stem = text.ToTitleCase();
                     suffix = plural.Substring(text.Length);
                     result = $"<c>{stem}</c>{suffix}";
                     return result;

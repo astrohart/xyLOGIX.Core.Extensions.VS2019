@@ -297,7 +297,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// <see cref="T:System.Windows.Forms.Form" />.
         /// </remarks>
         [EntryPoint]
-        private void OnMemberControlHandleDestroyed(object sender, EventArgs e)
+        private void OnMemberControlHandleDestroyed([NotLogged] object sender, [NotLogged] EventArgs e)
         {
             if (!(sender is Control control)) return;
 

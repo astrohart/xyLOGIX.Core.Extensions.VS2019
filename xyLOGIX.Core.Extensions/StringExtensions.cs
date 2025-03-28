@@ -43,7 +43,7 @@ namespace xyLOGIX.Core.Extensions
             "PSAT", "CBEST", "CEST", "APA", "ADA", "AMA", "RP", "RB", "RFS",
             "EE", "CS", "EECS", "ECE", "UC", "SDSU", "UCSB", "UCSD", "UCD",
             "CSU", "UCM", "UCR", "UCI", "UCSF", "UCSC", "UCLA", "USC",
-            "USD", "CSUF", "CSULA", "CSUDH", "CSUNR", "HS", "LLC"
+            "USD", "CSUF", "CSULA", "CSUDH", "CSUNR", "HS", "LLC", "XOW"
         };
 
         /// <summary>

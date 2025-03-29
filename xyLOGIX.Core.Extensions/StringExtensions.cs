@@ -4765,17 +4765,18 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// A <see cref="T:System.String" /> where all words are separated by spaces.
         /// Acronyms remain in uppercase while other words are converted to lowercase.
+        /// <para />
         /// If <paramref name="value" /> is <see langword="null" /> or empty, an empty
         /// string is returned.
         /// </returns>
         [return: NotLogged]
         public static string ToPhrase([NotLogged] this string value)
         {
-            var result = string.Empty;
+            var result = value;
 
             try
             {
-                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (string.IsNullOrWhiteSpace(value)) return string.Empty;
 
                 result = Transform.PascalCasedTextToPhrase(value);
             }
@@ -4784,7 +4785,44 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
-                result = string.Empty;
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts an initial-caps string into a space-separated, title-cased phrase,
+        /// preserving acronyms.
+        /// </summary>
+        /// <param name="value">The initial-caps string to be transformed. (Required.)</param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> where all words are separated by spaces.
+        /// Acronyms remain in uppercase while other words are converted to
+        /// <c>Title Case</c>.
+        /// <para />
+        /// If <paramref name="value" /> is <see langword="null" /> or empty, an empty
+        /// string is returned.
+        /// </returns>
+        [return: NotLogged]
+        public static string ToPhraseInTitleCase([NotLogged] this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return string.Empty;
+                if (value.Contains(" ")) return result;
+
+                result = Transform.PascalCasedTextToPhrase(value)
+                                  .ToTitleCase();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
             }
 
             return result;

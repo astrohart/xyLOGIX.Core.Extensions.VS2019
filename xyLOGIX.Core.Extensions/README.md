@@ -560,6 +560,7 @@
   - [ToList(quote,separators)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToList-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ToList(System.String,System.String[])')
   - [ToLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToLowercase(System.String)')
   - [ToPhrase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToPhrase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToPhrase(System.String)')
+  - [ToPhraseInTitleCase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToPhraseInTitleCase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToPhraseInTitleCase(System.String)')
   - [ToTitleCase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToTitleCase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToTitleCase(System.String)')
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
   - [ToUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUppercase(System.String)')
@@ -11777,6 +11778,34 @@ preserving acronyms.
 
 A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces.
 Acronyms remain in uppercase while other words are converted to lowercase.
+
+
+
+If `value` is `null` or empty, an empty
+string is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The initial-caps string to be transformed. (Required.) |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToPhraseInTitleCase-System-String-'></a>
+### ToPhraseInTitleCase(value) `method`
+
+##### Summary
+
+Converts an initial-caps string into a space-separated, title-cased phrase,
+preserving acronyms.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces.
+Acronyms remain in uppercase while other words are converted to
+`Title Case`.
+
+
+
 If `value` is `null` or empty, an empty
 string is returned.
 

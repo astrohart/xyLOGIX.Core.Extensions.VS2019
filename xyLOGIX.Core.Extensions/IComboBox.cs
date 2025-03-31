@@ -492,7 +492,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="start">
         /// The position of the first character in the current text
-        /// selection within the text box.
+        /// selection within the textbox.
         /// </param>
         /// <param name="length"> The number of characters to select. </param>
         /// <exception cref="T:System.ArgumentException">

@@ -3517,7 +3517,7 @@ Selects a range of text in the editable portion of the
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | start | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The position of the first character in the current text
-selection within the text box. |
+selection within the textbox. |
 | length | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The number of characters to select. |
 
 ##### Exceptions

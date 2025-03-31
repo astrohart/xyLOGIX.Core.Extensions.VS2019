@@ -6,6 +6,7 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary> Extension methods to utilize on enums. </summary>
+    [Log(AttributeExclude = true)]
     public static class EnumExtensions
     {
         /// <summary>
@@ -24,7 +25,8 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Converts an enumeration value of the specified type (with a
-        /// Description attribute) to a string value.
+        /// <see cref="T:System.ComponentModel.DescriptionAttribute" /> applied to it) to a
+        /// string value.
         /// </summary>
         /// <typeparam name="T"> Type of the enumeration. </typeparam>
         /// <param name="enumerationValue"> Value of the enumeration. </param>

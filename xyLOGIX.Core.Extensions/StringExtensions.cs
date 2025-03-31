@@ -3656,6 +3656,47 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Removes all ampersand (<c>&amp;</c>) character(s) from the specified
+        /// <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the value from which
+        /// the ampersand (<c>&amp;</c>) character(s) are to be removed.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> that is the same as the input
+        /// <paramref name="value" />, but with all ampersand (<c>&amp;</c>) character(s)
+        /// removed.
+        /// <para />
+        /// If the input <paramref name="value" /> is <see langword="null" />, empty, or
+        /// consists only of whitespace characters, then the return value is the same as
+        /// the input <paramref name="value" />.
+        /// <para />
+        /// If another sort of issue occurs, then this method is also idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string RemoveAmpersands([NotLogged] this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.Replace("&", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Strips all punctuation and numeric digits from a string and trims the
         /// result.
         /// </summary>

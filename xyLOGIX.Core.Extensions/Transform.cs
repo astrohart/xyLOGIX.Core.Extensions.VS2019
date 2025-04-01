@@ -71,6 +71,7 @@ namespace xyLOGIX.Core.Extensions
         /// If <paramref name="input" /> is <see langword="null" /> or empty, an empty
         /// string is returned.
         /// </returns>
+        [Log(AttributeExclude = true)]
         [return: NotLogged]
         internal static string PascalCasedTextToPhrase([NotLogged] string input)
         {

@@ -1,6 +1,7 @@
 ﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
@@ -31,7 +32,9 @@ namespace xyLOGIX.Core.Extensions
         /// <typeparam name="T"> Type of the enumeration. </typeparam>
         /// <param name="enumerationValue"> Value of the enumeration. </param>
         /// <returns> String containing the enumeration value expressed as a string. </returns>
-        public static string AsString<T>(this T enumerationValue) where T : Enum
+        [DebuggerStepThrough]
+        [return: NotLogged]
+        public static string AsString<T>([NotLogged] this T enumerationValue) where T : Enum
         {
             var result = enumerationValue.ToString();
 

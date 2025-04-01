@@ -534,6 +534,7 @@
   - [RegexReplaceNoCase(value,search,replacement,options)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceNoCase(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)')
   - [RegexReplaceWithCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceWithCase(System.String,System.String,System.String)')
   - [RegexReplaceWithCase(value,search,replacement,options)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceWithCase(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)')
+  - [RemoveAmpersands(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveAmpersands-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveAmpersands(System.String)')
   - [RemoveDigitsAndPunctuation(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveDigitsAndPunctuation(System.String)')
   - [RemoveExtraEmptyLines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveExtraEmptyLines(System.String)')
   - [RemoveLastWord(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveLastWord(System.String)')
@@ -2253,7 +2254,8 @@ attribute in order to simplify the logging output.
 ##### Summary
 
 Converts an enumeration value of the specified type (with a
-Description attribute) to a string value.
+[DescriptionAttribute](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.DescriptionAttribute 'System.ComponentModel.DescriptionAttribute') applied to it) to a
+string value.
 
 ##### Returns
 
@@ -11093,6 +11095,37 @@ that provide options for matching. |
 parameters, `value`, `search`, or
 `replacement`, are passed blank or `null`
 strings for values. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveAmpersands-System-String-'></a>
+### RemoveAmpersands(value) `method`
+
+##### Summary
+
+Removes all ampersand (`&`) character(s) from the specified
+`value`.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the same as the input
+`value`, but with all ampersand (`&`) character(s)
+removed.
+
+
+
+If the input `value` is `null`, empty, or
+consists only of whitespace characters, then the return value is the same as
+the input `value`.
+
+
+
+If another sort of issue occurs, then this method is also idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value from which
+the ampersand (`&`) character(s) are to be removed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String-'></a>
 ### RemoveDigitsAndPunctuation(value) `method`

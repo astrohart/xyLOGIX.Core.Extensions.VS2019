@@ -25,7 +25,7 @@
         /// <summary>
         /// Indicates that a preposition should be inserted, the default being <c>of</c>.
         /// </summary>
-        Prepopsition = 3,
+        Preposition = 3,
 
         /// <summary>
         /// Indicates that a preposition should be inserted, the default being <c>of</c>,

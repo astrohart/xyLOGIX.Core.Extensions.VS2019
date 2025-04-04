@@ -47,6 +47,20 @@ namespace xyLOGIX.Core.Extensions
         };
 
         /// <summary>
+        /// A regular expression pattern that matches an entire string consisting only of
+        /// uppercase letters.
+        /// This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR")
+        /// that appear as
+        /// standalone words without any lowercase letters.
+        /// <para>
+        /// This pattern ensures that the input string contains only uppercase letters from
+        /// A to Z
+        /// and does not include numbers, spaces, or lowercase characters.
+        /// </para>
+        /// </summary>
+        private const string AcronymPattern = @"^[A-Z]+$";
+
+        /// <summary>
         /// Collection of strings that should always be capitalized if they are
         /// the first word of a phrase.
         /// </summary>
@@ -2124,7 +2138,7 @@ namespace xyLOGIX.Core.Extensions
                         result = preferredIndefiniteArticle;
                         break;
 
-                    case LanguageArticleType.Prepopsition:
+                    case LanguageArticleType.Preposition:
                         result = "of ";
                         break;
 
@@ -4870,7 +4884,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Converts the specified <paramref name="value" /> to Title Case.
+        /// Converts the specified <paramref name="value" /> to Title Case,
+        /// preserving the casing of acronyms.
         /// </summary>
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing the text to be
@@ -4878,12 +4893,13 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// A <see cref="T:System.String" /> containing the text from
-        /// <paramref name="value" /> converted to Title Case.
+        /// <paramref name="value" /> converted to Title Case, with acronyms preserved.
         /// <para />
         /// If <paramref name="value" /> is <see langword="null" /> or whitespace, the
         /// original value is returned.
         /// </returns>
-        public static string ToTitleCase(this string value)
+        [return: NotLogged]
+        public static string ToTitleCase([NotLogged] this string value)
         {
             var result = value;
 
@@ -4891,12 +4907,28 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
 
-                result =
-                    _textInfoFromCurrentCulture.ToTitleCase(value.ToLower());
+                var words = value.Split(' ');
+                for (var i = 0; i < words.Length; i++)
+                {
+                    var word = words[i];
+
+                    if (AcronymList.Contains(word) ||
+                        Regex.IsMatch(word, AcronymPattern))
+                    {
+                        // Preserve the original casing for acronyms
+                        continue;
+                    }
+
+                    // Convert to title case
+                    words[i] =
+                        _textInfoFromCurrentCulture.ToTitleCase(word.ToLower());
+                }
+
+                result = string.Join(" ", words);
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
+                // Log the exception
                 DebugUtils.LogException(ex);
 
                 result = value;

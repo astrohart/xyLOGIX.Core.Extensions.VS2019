@@ -338,9 +338,9 @@
   - [Definite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Definite 'xyLOGIX.Core.Extensions.LanguageArticleType.Definite')
   - [Indefinite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Indefinite 'xyLOGIX.Core.Extensions.LanguageArticleType.Indefinite')
   - [None](#F-xyLOGIX-Core-Extensions-LanguageArticleType-None 'xyLOGIX.Core.Extensions.LanguageArticleType.None')
-  - [Prepopsition](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Prepopsition 'xyLOGIX.Core.Extensions.LanguageArticleType.Prepopsition')
   - [PrepopsitionWithDefinite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-PrepopsitionWithDefinite 'xyLOGIX.Core.Extensions.LanguageArticleType.PrepopsitionWithDefinite')
   - [PrepopsitionWithIndefinite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-PrepopsitionWithIndefinite 'xyLOGIX.Core.Extensions.LanguageArticleType.PrepopsitionWithIndefinite')
+  - [Preposition](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Preposition 'xyLOGIX.Core.Extensions.LanguageArticleType.Preposition')
   - [Unknown](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Unknown 'xyLOGIX.Core.Extensions.LanguageArticleType.Unknown')
 - [LanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.LanguageArticleTypeValidator')
   - [#ctor()](#M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-#ctor 'xyLOGIX.Core.Extensions.LanguageArticleTypeValidator.#ctor')
@@ -436,6 +436,7 @@
   - [AddRange\`\`1(target,source)](#M-xyLOGIX-Core-Extensions-SetExtensions-AddRange``1-System-Collections-Generic-ISet{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.SetExtensions.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})')
 - [StringExtensions](#T-xyLOGIX-Core-Extensions-StringExtensions 'xyLOGIX.Core.Extensions.StringExtensions')
   - [AcronymList](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList 'xyLOGIX.Core.Extensions.StringExtensions.AcronymList')
+  - [AcronymPattern](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymPattern 'xyLOGIX.Core.Extensions.StringExtensions.AcronymPattern')
   - [AlwaysCapitalizeIfFirstWord](#F-xyLOGIX-Core-Extensions-StringExtensions-AlwaysCapitalizeIfFirstWord 'xyLOGIX.Core.Extensions.StringExtensions.AlwaysCapitalizeIfFirstWord')
   - [CapitalizeableAsFirstWords](#F-xyLOGIX-Core-Extensions-StringExtensions-CapitalizeableAsFirstWords 'xyLOGIX.Core.Extensions.StringExtensions.CapitalizeableAsFirstWords')
   - [GuidRegexLowercaseNoBraces](#F-xyLOGIX-Core-Extensions-StringExtensions-GuidRegexLowercaseNoBraces 'xyLOGIX.Core.Extensions.StringExtensions.GuidRegexLowercaseNoBraces')
@@ -6606,13 +6607,6 @@ depending on the starting sound of the following word.
 
 Indicates that no article should be inserted.
 
-<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Prepopsition'></a>
-### Prepopsition `constants`
-
-##### Summary
-
-Indicates that a preposition should be inserted, the default being `of`.
-
 <a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-PrepopsitionWithDefinite'></a>
 ### PrepopsitionWithDefinite `constants`
 
@@ -6628,6 +6622,13 @@ followed by the definite article, `the`.
 
 Indicates that a preposition should be inserted, the default being `of`,
 followed by the indefinite article, `a` or `an`.
+
+<a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Preposition'></a>
+### Preposition `constants`
+
+##### Summary
+
+Indicates that a preposition should be inserted, the default being `of`.
 
 <a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Unknown'></a>
 ### Unknown `constants`
@@ -8638,6 +8639,21 @@ of text.
 ##### Summary
 
 Collection of strings that are commonly-used acronyms.
+
+<a name='F-xyLOGIX-Core-Extensions-StringExtensions-AcronymPattern'></a>
+### AcronymPattern `constants`
+
+##### Summary
+
+A regular expression pattern that matches an entire string consisting only of
+uppercase letters.
+This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR")
+that appear as
+standalone words without any lowercase letters.
+
+This pattern ensures that the input string contains only uppercase letters from
+A to Z
+and does not include numbers, spaces, or lowercase characters.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-AlwaysCapitalizeIfFirstWord'></a>
 ### AlwaysCapitalizeIfFirstWord `constants`
@@ -11853,12 +11869,13 @@ string is returned.
 
 ##### Summary
 
-Converts the specified `value` to Title Case.
+Converts the specified `value` to Title Case,
+preserving the casing of acronyms.
 
 ##### Returns
 
 A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text from
-`value` converted to Title Case.
+`value` converted to Title Case, with acronyms preserved.
 
 
 

@@ -154,7 +154,10 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(pathname)) return result;
                 if (string.IsNullOrWhiteSpace(extension)) return result;
 
-                result = extension.Equals(Path.GetExtension(pathname));
+                result = extension.Equals(
+                    Path.GetExtension(pathname),
+                    StringComparison.OrdinalIgnoreCase
+                );
             }
             catch (Exception ex)
             {

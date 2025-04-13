@@ -413,6 +413,22 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Determines whether the specified <paramref name="value" />  is a member of the
+        /// set of all natural numbers; i.e., one or greater.
+        /// </summary>
+        /// <param name="value">
+        /// Value to be compared.  Must be of
+        /// <see cref="T:System.Int32" /> data type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// a member of the set of all natural numbers; otherwise, <see langword="false" />
+        /// .
+        /// </returns>
+        public static bool IsNaturalNumber(this int value)
+            => value >= 1;
+
         /// <summary> Determines if a <paramref name="value" /> is negative. </summary>
         /// <param name="value">
         /// (Required.) Value to be compared. Must be of
@@ -538,7 +554,10 @@ namespace xyLOGIX.Core.Extensions
         /// Value to be compared.  Must be of
         /// <see cref="T:System.Int32" /> data type.
         /// </param>
-        /// <returns></returns>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" /> is
+        /// greater than zero; otherwise, <see langword="false" />.
+        /// </returns>
         public static bool IsPositive(this int value)
             => value > 0;
 

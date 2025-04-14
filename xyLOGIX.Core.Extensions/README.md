@@ -403,6 +403,7 @@
   - [IsInRangeWithUpperBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithUpperBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithUpperBound(System.Int32,System.Int32,System.Int32)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Int32,System.Int32,System.Int32)')
+  - [IsNaturalNumber(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNaturalNumber-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNaturalNumber(System.Int32)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Int32)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Decimal)')
@@ -8003,6 +8004,27 @@ specified or equal to either of the bounds; `false` otherwise.
 | lowerBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound. |
 | upperBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound. |
 
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNaturalNumber-System-Int32-'></a>
+### IsNaturalNumber(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is a member of the
+set of all natural numbers; i.e., one or greater.
+
+##### Returns
+
+`true` if the specified `value` is
+a member of the set of all natural numbers; otherwise, `false`
+.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to be compared.  Must be of
+[Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') data type. |
+
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal-'></a>
 ### IsNegative(value) `method`
 
@@ -8176,7 +8198,8 @@ integer; i.e., the `value` is strictly greater than zero.
 
 ##### Returns
 
-
+`true` if the specified `value` is
+greater than zero; otherwise, `false`.
 
 ##### Parameters
 

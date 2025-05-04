@@ -403,7 +403,7 @@ namespace xyLOGIX.Core.Extensions
                  * starting at index + count and ending on
                  * index.
                  *
-                 * For each element of the list in that range,
+                 * For Each element of the list in that range,
                  * remove it.
                  */
 

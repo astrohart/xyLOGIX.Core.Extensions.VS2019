@@ -725,7 +725,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// A string consisting of the fully qualified name of the form object's
         /// class, with the <see cref="P:System.Windows.Forms.Form.Text" /> property of the
-        /// form appended to the end. For example, if the form is derived from the class
+        /// form appended to the end. OfType example, if the form is derived from the class
         /// <c>MyForm</c> in the <c>MyNamespace</c> namespace, and the
         /// <see cref="P:System.Windows.Forms.Form.Text" /> property is set to
         /// <c>Hello, World</c>, this method will return

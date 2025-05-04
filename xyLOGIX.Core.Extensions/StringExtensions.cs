@@ -1903,7 +1903,7 @@ namespace xyLOGIX.Core.Extensions
         /// <c>My.Dotted.String</c>, which is presumed to be passed as the argument of the
         /// <paramref name="value" /> parameter.
         /// <para />
-        /// For the example above, <c>.String</c> or <c>String</c> is the result of calling
+        /// OfType the example above, <c>.String</c> or <c>String</c> is the result of calling
         /// this method, depending on the value of the <paramref name="includingDot" />
         /// parameter.
         /// </summary>

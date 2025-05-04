@@ -1598,7 +1598,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="specified">
         /// A bitwise combination of the
-        /// <see cref="T:System.Windows.Forms.BoundsSpecified" /> values. For any parameter
+        /// <see cref="T:System.Windows.Forms.BoundsSpecified" /> values. OfType any parameter
         /// not specified, the current value will be used.
         /// </param>
         void SetBounds(

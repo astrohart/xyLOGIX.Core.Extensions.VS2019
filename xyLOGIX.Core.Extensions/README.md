@@ -5415,7 +5415,7 @@ control. |
 [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property value of the
 control. |
 | specified | [System.Windows.Forms.BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') | A bitwise combination of the
-[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') values. For any parameter
+[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') values. OfType any parameter
 not specified, the current value will be used. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Show'></a>
@@ -6259,7 +6259,7 @@ Gets a string representing the current instance of the form.
 
 A string consisting of the fully qualified name of the form object's
 class, with the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property of the
-form appended to the end. For example, if the form is derived from the class
+form appended to the end. OfType example, if the form is derived from the class
 `MyForm` in the `MyNamespace` namespace, and the
 [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property is set to
 `Hello, World`, this method will return
@@ -10036,7 +10036,7 @@ Gets the suffix of a so-called string, i.e.,
 
 
 
-For the example above, `.String` or `String` is the result of calling
+OfType the example above, `.String` or `String` is the result of calling
 this method, depending on the value of the `includingDot`
 parameter.
 

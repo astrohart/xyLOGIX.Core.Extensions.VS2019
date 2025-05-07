@@ -596,7 +596,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary> Gets or sets padding within the control. </summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.Padding" /> representing the
-        /// control's internal spacing characteristics.
+        /// control's public spacing characteristics.
         /// </returns>
         Padding Padding
         {

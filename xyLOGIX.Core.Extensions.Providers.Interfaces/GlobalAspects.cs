@@ -8,11 +8,11 @@ using PostSharp.Patterns.Diagnostics;
         AttributeTargetTypeAttributes = MulticastAttributes.Private |
                                         MulticastAttributes.Protected |
                                         MulticastAttributes.Internal |
-                                        MulticastAttributes.Public,
+                                        MulticastAttributes.Internal,
         AttributeTargetMemberAttributes = MulticastAttributes.Private |
                                           MulticastAttributes.Protected |
                                           MulticastAttributes.Internal |
-                                          MulticastAttributes.Public |
+                                          MulticastAttributes.Internal |
                                           MulticastAttributes.UserGenerated
     )]
 [assembly:

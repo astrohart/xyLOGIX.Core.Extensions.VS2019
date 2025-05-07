@@ -8,7 +8,7 @@ namespace xyLOGIX.Core.Extensions
     /// <summary>
     /// Exposes static method(s) to transform text strings in various ways.
     /// </summary>
-    internal static class Transform
+    public static class Transform
     {
         /// <summary>
         /// A regular expression pattern that matches an entire string consisting only of
@@ -22,7 +22,7 @@ namespace xyLOGIX.Core.Extensions
         /// and does not include numbers, spaces, or lowercase characters.
         /// </para>
         /// </summary>
-        internal const string AcronymPattern = @"^[A-Z]+$";
+        public const string AcronymPattern = @"^[A-Z]+$";
 
         /// <summary>
         /// A regular expression pattern that matches words in an initial-caps formatted
@@ -43,7 +43,7 @@ namespace xyLOGIX.Core.Extensions
         /// space-separated phrase
         /// while preserving acronyms.
         /// </summary>
-        internal const string InitialCapsWordPattern =
+        public const string InitialCapsWordPattern =
             @"[A-Z]+(?![a-z])|[A-Z][a-z]*";
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         [Log(AttributeExclude = true)]
         [return: NotLogged]
-        internal static string PascalCasedTextToPhrase([NotLogged] string input)
+        public static string PascalCasedTextToPhrase([NotLogged] string input)
         {
             var result = input; //idempotent if input is null or empty
 

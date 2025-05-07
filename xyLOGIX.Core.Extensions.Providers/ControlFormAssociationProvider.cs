@@ -131,12 +131,12 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// Subscribes the
         /// <see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> event of the
         /// specified <paramref name="control" /> to remove all the mappings for it from
-        /// our internal dictionary.
+        /// our public dictionary.
         /// </summary>
         /// <param name="control">
         /// (Required.) A
         /// <see cref="T:System.Windows.Forms.Control" /> for whom all the mappings should
-        /// be removed to its parent form(s) in our internal dictionary.
+        /// be removed to its parent form(s) in our public dictionary.
         /// </param>
         private void CleanupOnControlDestroyed(Control control)
         {
@@ -165,7 +165,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// <summary>
         /// Subscribes the <see cref="E:System.Windows.Forms.Form.FormClosed" />
         /// event of the specified <paramref name="form" /> to un-associate it with all its
-        /// contained controls in our internal dictionary.
+        /// contained controls in our public dictionary.
         /// </summary>
         /// <param name="form">
         /// (Required.) A <see cref="T:System.Windows.Forms.Form" />
@@ -174,8 +174,8 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// </param>
         /// <remarks>
         /// If the specified <paramref name="form" /> is <see langword="null" />
-        /// or disposed, or if the internal dictionary has not been initialized, or if the
-        /// internal dictionary contains no mappings for the specified
+        /// or disposed, or if the public dictionary has not been initialized, or if the
+        /// public dictionary contains no mappings for the specified
         /// <paramref name="form" />, then this method does nothing.
         /// </remarks>
         private void CleanupOnFormClosed(Form form)
@@ -209,7 +209,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// </summary>
         /// <param name="control">
         /// A <see cref="T:System.Windows.Forms.Control" /> that is
-        /// to be removed from our internal dictionary.
+        /// to be removed from our public dictionary.
         /// </param>
         /// <remarks>
         /// This method is usually called as part of the handling of a
@@ -280,7 +280,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// <summary>
         /// Handles the
         /// <see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> event raised by a
-        /// <see cref="T:System.Windows.Forms.Control" /> in our internal collection.
+        /// <see cref="T:System.Windows.Forms.Control" /> in our public collection.
         /// </summary>
         /// <param name="sender">
         /// Reference to an instance of the object that raised the

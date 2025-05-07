@@ -34,7 +34,7 @@ namespace xyLOGIX.Core.Extensions
         } = new AdvisableDictionary<Type, Type>();
 
         /// <summary>
-        /// Gets the internal type of IList. When the type is not a list then
+        /// Gets the public type of IList. When the type is not a list then
         /// this method will return the same type. if type is List of T then this method
         /// will return the type of T.
         /// </summary>

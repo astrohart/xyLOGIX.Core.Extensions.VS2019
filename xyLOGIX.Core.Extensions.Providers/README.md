@@ -98,7 +98,7 @@ created between it and its containing
 Subscribes the
 [](#E-System-Windows-Forms-Control-HandleDestroyed 'System.Windows.Forms.Control.HandleDestroyed') event of the
 specified `control` to remove all the mappings for it from
-our internal dictionary.
+our public dictionary.
 
 ##### Parameters
 
@@ -106,7 +106,7 @@ our internal dictionary.
 | ---- | ---- | ----------- |
 | control | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | (Required.) A
 [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') for whom all the mappings should
-be removed to its parent form(s) in our internal dictionary. |
+be removed to its parent form(s) in our public dictionary. |
 
 <a name='M-xyLOGIX-Core-Extensions-Providers-ControlFormAssociationProvider-CleanupOnFormClosed-System-Windows-Forms-Form-'></a>
 ### CleanupOnFormClosed(form) `method`
@@ -115,7 +115,7 @@ be removed to its parent form(s) in our internal dictionary. |
 
 Subscribes the [](#E-System-Windows-Forms-Form-FormClosed 'System.Windows.Forms.Form.FormClosed')
 event of the specified `form` to un-associate it with all its
-contained controls in our internal dictionary.
+contained controls in our public dictionary.
 
 ##### Parameters
 
@@ -128,8 +128,8 @@ dictionary. |
 ##### Remarks
 
 If the specified `form` is `null`
-or disposed, or if the internal dictionary has not been initialized, or if the
-internal dictionary contains no mappings for the specified
+or disposed, or if the public dictionary has not been initialized, or if the
+public dictionary contains no mappings for the specified
 `form`, then this method does nothing.
 
 <a name='M-xyLOGIX-Core-Extensions-Providers-ControlFormAssociationProvider-DetachControl-System-Windows-Forms-Control-'></a>
@@ -145,7 +145,7 @@ Removes the association(s) between the specified
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | control | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | A [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that is
-to be removed from our internal dictionary. |
+to be removed from our public dictionary. |
 
 ##### Remarks
 
@@ -206,7 +206,7 @@ to be obtained. |
 
 Handles the
 [](#E-System-Windows-Forms-Control-HandleDestroyed 'System.Windows.Forms.Control.HandleDestroyed') event raised by a
-[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') in our internal collection.
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') in our public collection.
 
 ##### Parameters
 

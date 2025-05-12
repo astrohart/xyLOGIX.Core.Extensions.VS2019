@@ -4300,7 +4300,7 @@ Gets or sets padding within the control.
 ##### Returns
 
 A [Padding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Padding 'System.Windows.Forms.Padding') representing the
-control's internal spacing characteristics.
+control's public spacing characteristics.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Parent'></a>
 ### Parent `property`
@@ -12390,7 +12390,7 @@ created or before any static members are referenced.
 
 ##### Summary
 
-Gets the internal type of IList. When the type is not a list then
+Gets the public type of IList. When the type is not a list then
 this method will return the same type. if type is List of T then this method
 will return the type of T.
 

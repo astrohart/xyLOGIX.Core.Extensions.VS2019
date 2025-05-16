@@ -1903,7 +1903,8 @@ namespace xyLOGIX.Core.Extensions
         /// <c>My.Dotted.String</c>, which is presumed to be passed as the argument of the
         /// <paramref name="value" /> parameter.
         /// <para />
-        /// OfType the example above, <c>.String</c> or <c>String</c> is the result of calling
+        /// OfType the example above, <c>.String</c> or <c>String</c> is the result of
+        /// calling
         /// this method, depending on the value of the <paramref name="includingDot" />
         /// parameter.
         /// </summary>
@@ -4878,6 +4879,52 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Formats the specified <paramref name="pathname" /> as a Visual Studio Solution
+        /// (<c>*.sln</c>) file entry, e.g., <c>MyProject\MyProject.csproj</c>.
+        /// </summary>
+        /// <param name="pathname">
+        /// (Required.) A <see cref="T:System.String" /> that contains the fully-qualified
+        /// pathname of a file that is to be formatted as a Visual Studio Solution (
+        /// <c>*.sln</c>) file entry.
+        /// </param>
+        /// <remarks>
+        /// If a <see langword="null" /> blank, or
+        /// <see cref="F:System.String.Empty" /> value is passed for the argument of the
+        /// <paramref name="pathname" /> parameter, then the method returns the
+        /// <see cref="F:System.String.Empty" /> value,
+        /// </remarks>
+        /// <returns>
+        /// If successful, the specified <paramref name="pathname" />, formatted
+        /// as a Visual Studio Solution (<c>*.sln</c>) file entry, e.g.,
+        /// <c>MyProject\MyProject.csproj</c>; otherwise, the
+        /// <see cref="F:System.String.Empty" /> value is returned.
+        /// </returns>
+        public static string ToSolutionFileEntryFormat(
+            [NotLogged] this string pathname
+        )
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(pathname)) return result;
+                if (!IsAbsolutePath(pathname)) return result;
+
+                result =
+                    $@"{Path.GetFileName(Path.GetDirectoryName(pathname))}\{Path.GetFileName(pathname)}";
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
             }
 
             return result;

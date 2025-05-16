@@ -564,6 +564,7 @@
   - [ToLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToLowercase(System.String)')
   - [ToPhrase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToPhrase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToPhrase(System.String)')
   - [ToPhraseInTitleCase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToPhraseInTitleCase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToPhraseInTitleCase(System.String)')
+  - [ToSolutionFileEntryFormat(pathname)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToSolutionFileEntryFormat-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToSolutionFileEntryFormat(System.String)')
   - [ToTitleCase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToTitleCase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToTitleCase(System.String)')
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
   - [ToUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUppercase(System.String)')
@@ -10036,7 +10037,8 @@ Gets the suffix of a so-called string, i.e.,
 
 
 
-OfType the example above, `.String` or `String` is the result of calling
+OfType the example above, `.String` or `String` is the result of
+calling
 this method, depending on the value of the `includingDot`
 parameter.
 
@@ -11886,6 +11888,36 @@ string is returned.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The initial-caps string to be transformed. (Required.) |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToSolutionFileEntryFormat-System-String-'></a>
+### ToSolutionFileEntryFormat(pathname) `method`
+
+##### Summary
+
+Formats the specified `pathname` as a Visual Studio Solution
+(`*.sln`) file entry, e.g., `MyProject\MyProject.csproj`.
+
+##### Returns
+
+If successful, the specified `pathname`, formatted
+as a Visual Studio Solution (`*.sln`) file entry, e.g.,
+`MyProject\MyProject.csproj`; otherwise, the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the fully-qualified
+pathname of a file that is to be formatted as a Visual Studio Solution (
+`*.sln`) file entry. |
+
+##### Remarks
+
+If a `null` blank, or
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed for the argument of the
+`pathname` parameter, then the method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value,
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToTitleCase-System-String-'></a>
 ### ToTitleCase(value) `method`

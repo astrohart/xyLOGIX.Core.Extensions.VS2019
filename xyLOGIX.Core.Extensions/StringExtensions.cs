@@ -4065,8 +4065,61 @@ namespace xyLOGIX.Core.Extensions
                     $"StringExtensions.Replace: *** SUCCESS *** The string comparison, '{comparisonType}', is within the defined value set.  Proceeding..."
                 );
 
-                if (string.IsNullOrWhiteSpace(source)) return result;
-                if (string.IsNullOrEmpty(oldValue)) return result;
+                System.Diagnostics.Debug.WriteLine(
+                    "StringExtensions.Replace *** INFO: Checking whether the value of the parameter, 'source', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'source', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(source))
+                {
+                    // The parameter, 'source' was either passed a null value, or it is blank.  This is not desirable.
+                    System.Diagnostics.Debug.WriteLine(
+                        "StringExtensions.Replace: The parameter, 'source' was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    System.Diagnostics.Debug.WriteLine(
+                        $"StringExtensions.Replace: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                System.Diagnostics.Debug.WriteLine(
+                    "*** SUCCESS *** The parameter 'source' is not blank.  Proceeding..."
+                );
+
+                System.Diagnostics.Debug.WriteLine(
+                    "StringExtensions.Replace *** INFO: Checking whether the value of the parameter, 'oldValue', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'oldValue', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(oldValue))
+                {
+                    // The parameter, 'oldValue' was either passed a null value, or it is blank.  This is not desirable.
+                    System.Diagnostics.Debug.WriteLine(
+                        "StringExtensions.Replace: The parameter, 'oldValue' was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    System.Diagnostics.Debug.WriteLine(
+                        $"StringExtensions.Replace: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                System.Diagnostics.Debug.WriteLine(
+                    "*** SUCCESS *** The parameter 'oldValue' is not blank.  Proceeding..."
+                );
+
+                System.Diagnostics.Debug.WriteLine(
+                    "StringExtensions.Replace: *** FYI *** Carrying out the replacement..."
+                );
 
                 var sb = new StringBuilder(source.Length);
                 var pos = 0;
@@ -4094,6 +4147,10 @@ namespace xyLOGIX.Core.Extensions
 
                 result = source;
             }
+
+            System.Diagnostics.Debug.WriteLine(
+                $"StringExtensions.Replace: Result = '{result}'"
+            );
 
             return result;
         }

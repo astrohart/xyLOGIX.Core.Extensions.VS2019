@@ -4173,7 +4173,11 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) The replacement character.
         /// </param>
         /// <param name="comparisonType">
-        /// (Ignored.) Present for API symmetry; no effect on the operation.
+        /// (Required.) One of the <see cref="T:System.StringComparison" /> value(s) that
+        /// defines how the old and new value(s) are to be compared.
+        /// <para />
+        /// This parameter is ignored; it is accepted only to provide symmetry with the
+        /// other overload(s) of this method.
         /// </param>
         /// <returns>
         /// A new <see cref="T:System.String" /> with all occurrences of
@@ -4193,33 +4197,27 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 /*
-                 * For cybersecurity reasons, and to defeat reverse-engineering,
-                 * check the value of the 'comparisonType' parameter to ensure that it
-                 * is not set to a value outside the set of valid values defined
-                 * by the System.StringComparison enumeration.
-                 *
-                 * In principle, since all C# enums devolve to integer values, a
-                 * hacker could insert a different value into the CPU register that the
-                 * 'comparisonType' parameter is read from and thereby make this application
-                 * do something it's not intended to do.
+                 * NOTE: It is not necessary to carry out the anti-reverse-engineering
+                 * check on the value of the 'comparisonType' parameter, since the
+                 * parameter is ignored.  StringComparison.Ordinal is used by default.
                  */
 
                 System.Diagnostics.Debug.WriteLine(
-                    $"*** StringExtensions.Replace: Checking whether the string comparison, '{comparisonType}', is within the defined value set..."
+                    "StringExtensions.Replace *** INFO: Checking whether the value of the parameter, 'source', is blank..."
                 );
 
-                // Check to see whether the specified string comparison type is within the defined value set.
-                // If this is not the case, then write an error message to the log file,
-                // and then terminate the execution of this method.
-                if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
+                // Check whether the value of the parameter, 'source', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(source))
                 {
-                    // The specified string comparison type is NOT within the defined value set.  This is not desirable.
+                    // The parameter, 'source' was either passed a null value, or it is blank.  This is not desirable.
                     System.Diagnostics.Debug.WriteLine(
-                        $"*** ERROR *** The string comparison, '{comparisonType}', is NOT within the defined value set.  Stopping..."
+                        "StringExtensions.Replace: The parameter, 'source' was either passed a null value, or it is blank. Stopping..."
                     );
 
                     System.Diagnostics.Debug.WriteLine(
-                        $"*** StringExtensions.Replace: Result = '{result}'"
+                        $"StringExtensions.Replace: Result = '{result}'"
                     );
 
                     // stop.
@@ -4227,10 +4225,12 @@ namespace xyLOGIX.Core.Extensions
                 }
 
                 System.Diagnostics.Debug.WriteLine(
-                    $"StringExtensions.Replace: *** SUCCESS *** The string comparison, '{comparisonType}', is within the defined value set.  Proceeding..."
+                    "*** SUCCESS *** The parameter 'source' is not blank.  Proceeding..."
                 );
 
-                if (string.IsNullOrEmpty(source)) return result;
+                System.Diagnostics.Debug.WriteLine(
+                    "StringExtensions.Replace: *** FYI *** Carrying out the replacement..."
+                );
 
                 result = source.Replace(oldChar, newChar);
             }
@@ -4239,6 +4239,10 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the Debug output.
                 System.Diagnostics.Debug.WriteLine(ex);
             }
+
+            System.Diagnostics.Debug.WriteLine(
+                $"StringExtensions.Replace: Result = '{result}'"
+            );
 
             return result;
         }

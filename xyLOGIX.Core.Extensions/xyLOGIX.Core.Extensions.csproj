@@ -118,6 +118,7 @@
     <Reference Include="System.Windows.Forms">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
@@ -151,6 +152,7 @@
     <Compile Include="IScrollableControl.cs" />
     <Compile Include="ListExtensions.cs" />
     <Compile Include="LongExtensions.cs" />
+    <Compile Include="MarkdownExtensions.cs" />
     <Compile Include="NullableDecimalExtensions.cs" />
     <Compile Include="NullableDoubleExtensions.cs" />
     <Compile Include="NullableIntExtensions.cs" />

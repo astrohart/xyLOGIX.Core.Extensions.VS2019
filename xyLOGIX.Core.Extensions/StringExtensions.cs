@@ -3223,6 +3223,63 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Concatenates each element of <paramref name="values" /> using the
+        /// specified <paramref name="separator" />.
+        /// </summary>
+        /// <param name="values">
+        /// (Required.) A collection of <see cref="T:System.String" /> instances to
+        /// concatenate.
+        /// </param>
+        /// <param name="separator">
+        /// (Required.) The <see cref="T:System.String" /> to insert between
+        /// adjacent elements of <paramref name="values" />.  If
+        /// <see langword="null" />, it is treated as the
+        /// <see cref="F:System.String.Empty" /> value.
+        /// </param>
+        /// <remarks>
+        /// The method returns the <see cref="F:System.String.Empty" /> value if
+        /// <paramref name="values" /> is <see langword="null" /> or contains no
+        /// elements.
+        /// <para />
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// parameter, <paramref name="separator" />, then this method assumes that the
+        /// separator is the <see cref="F:System.String.Empty" /> value.
+        /// </remarks>
+        /// <returns>
+        /// A <see cref="T:System.String" /> representing the concatenated result,
+        /// or the <see cref="F:System.String.Empty" /> value on failure.
+        /// </returns>
+        public static string Join(
+            [NotLogged] this IList<string> values,
+            string separator
+        )
+        {
+            var result = string.Empty;
+
+            try
+            {
+                // Validate the input collection.
+                if (values == null) return result;
+                if (values.Count <= 0) return result;
+
+                // Normalise the separator so it is never null.
+                separator = separator ?? string.Empty;
+
+                result = string.Join(separator, values);
+            }
+            catch (Exception ex)
+            {
+                // Dump the exception details to the log.
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the <paramref name="stringToSearch" /> contains
         /// the text in the <paramref name="findWhat" /> parameter, in a case-insensitive
         /// fashion.
@@ -4802,6 +4859,95 @@ namespace xyLOGIX.Core.Extensions
             => string.IsNullOrWhiteSpace(format)
                 ? string.Empty
                 : string.Format(format, args);
+
+        /// <summary>
+        /// Produces a new <see cref="T:System.String" /> by appending the specified
+        /// <paramref name="suffix" /> to the end of the specified
+        /// <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> that is the
+        /// original string.  If this parameter is <see langword="null" />, the method
+        /// treats it as the <see cref="F:System.String.Empty" /> value.
+        /// </param>
+        /// <param name="suffix">
+        /// (Required.) A <see cref="T:System.String" /> that contains
+        /// the text to append.
+        /// <para />
+        /// If this parameter is <see langword="null" />, the method treats it as the
+        /// <see cref="F:System.String.Empty" /> value.
+        /// </param>
+        /// <remarks>
+        ///     <list type="bullet">
+        ///         <item>
+        ///             <description>
+        ///             The method never throws; on unexpected failure it logs the
+        ///             exception and returns the <see cref="F:System.String.Empty" />
+        ///             value.
+        ///             </description>
+        ///         </item>
+        ///         <item>
+        ///             <description>
+        ///             The specified <paramref name="suffix" />  is returned if the
+        ///             argument of the <paramref name="value" /> parameter is
+        ///             <see langword="null" />, blank, or the
+        ///             <see cref="F:System.String.Empty" /> value.
+        ///             </description>
+        ///         </item>
+        ///         <item>
+        ///             <description>
+        ///             The operation is idempotent if <paramref name="suffix" /> is the
+        ///             <see cref="F:System.String.Empty" /> value.
+        ///             </description>
+        ///         </item>
+        ///     </list>
+        /// </remarks>
+        /// <returns>
+        /// If successful, a new <see cref="T:System.String" /> containing the
+        /// concatenation of
+        /// <paramref name="value" /> and <paramref name="suffix" />, or the
+        /// <see cref="F:System.String.Empty" /> value on failure.
+        /// </returns>
+        [return: NotLogged]
+        public static string Suffix(
+            [NotLogged] this string value,
+            [NotLogged] string suffix
+        )
+        {
+            var result = string.Empty;
+
+            try
+            {
+                /*
+                 * Obviously, the result of running this method in the event that the
+                 * method is passed the blank or empty string for the argument of the
+                 * 'value' parameter, or the blank or empty string for the argument of the
+                 * 'suffix' parameter, is just the suffix itself.
+                 */
+
+                if (string.IsNullOrWhiteSpace(value))
+                    return suffix;
+
+                // Normalise potential null inputs so that the concatenation never fails.
+                value = value ?? string.Empty;
+                suffix = suffix ?? string.Empty;
+
+                // Fast-path: nothing to append.
+                if (suffix.Length == 0)
+                    return value;
+
+                result = string.Concat(value, suffix);
+            }
+            catch (Exception ex)
+            {
+                // Ship the full exception details to the diagnostic log.
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Turns the specified <paramref name="phrase" /> into an all-caps acronym, if a

@@ -356,6 +356,67 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Returns the <paramref name="index" />-th element counted from the end of
+        /// the <paramref name="source" /> collection (0 ⇒ last, 1 ⇒ second-to-last,
+        /// and so on).
+        /// </summary>
+        /// <typeparam name="TSource">
+        /// The element type of the <paramref name="source" /> collection.
+        /// </typeparam>
+        /// <param name="source">
+        /// (Required.) The collection to inspect.  A <see langword="null" />
+        /// reference or an empty collection causes the method to return the default
+        /// value of <typeparamref name="TSource" />.
+        /// </param>
+        /// <param name="index">
+        /// (Required.) Zero-based offset from the last element.  Must be greater
+        /// than or equal to zero and strictly less than <c>source.Count</c>.
+        /// </param>
+        /// <remarks>
+        /// The method never throws; on any error it returns
+        /// <c>default(<typeparamref name="TSource" />)</c> after logging the
+        /// exception.
+        /// </remarks>
+        /// <returns>
+        /// A reference to the requested element, or the default value of
+        /// <typeparamref name="TSource" /> on failure.
+        /// </returns>
+        [return: NotLogged]
+        public static TSource NthLast<TSource>(
+            [NotLogged] this IList<TSource> source,
+            [NotLogged] int index
+        )
+        {
+            // Default return value for error / edge cases.
+            TSource result = default;
+
+            try
+            {
+                // Basic validation.
+                if (source == null || source.Count == 0) return result;
+                if (index < 0 || index >= source.Count) return result;
+
+                // Snapshot the collection to an array so that any concurrent changes to
+                // 'source' made by another thread cannot affect our calculation.
+                var buffer = new TSource[source.Count];
+                source.CopyTo(buffer, 0);
+
+                // Locate the element:  last element is buffer.Length-1, etc.
+                var targetIndex = buffer.Length - 1 - index;
+                result = buffer[targetIndex];
+            }
+            catch (Exception ex)
+            {
+                // Log the details; never propagate the exception.
+                DebugUtils.LogException(ex);
+
+                result = default;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Removes <paramref name="count" /> items from the specified
         /// <paramref name="list" />, starting at the specified zero-based
         /// <paramref name="index" />.
@@ -414,6 +475,110 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
             }
+        }
+
+        /// <summary>
+        /// Returns a new collection that contains every element of
+        /// <paramref name="source" /> <b>except</b> the last
+        /// <paramref name="count" /> element(s).
+        /// </summary>
+        /// <typeparam name="TSource">
+        /// The element type of the <paramref name="source" /> collection.
+        /// </typeparam>
+        /// <param name="source">
+        /// (Required.) The input list.  If it is <see langword="null" /> or empty,
+        /// the method returns an empty collection.
+        /// </param>
+        /// <param name="count">
+        /// (Required.) The number of trailing elements to omit.  If
+        /// <paramref name="count" /> is less than or equal to zero, the method
+        /// returns a copy of the entire <paramref name="source" /> collection.  If
+        /// <paramref name="count" /> is greater than or equal to
+        /// <c>source.Count</c>, the method returns an empty collection.
+        /// </param>
+        /// <param name="includeNulls">
+        /// (Optional.) If <see langword="true" />, the method copies
+        /// <see langword="null" /> value(s) that may be present in the specified
+        /// <paramref name="source" /> collection to the resulting collection; if
+        /// <see langword="false" />, the method skips <see langword="null" /> value(s) in
+        /// the specified <paramref name="source" /> collection.
+        /// <para />
+        /// The default value of this parameter is <see langword="true" />.
+        /// </param>
+        /// <remarks>
+        ///     <list type="bullet">
+        ///         <item>
+        ///             <description>
+        ///             The method never throws; on any unexpected failure it logs
+        ///             the exception and returns an empty
+        ///             <see cref="T:AdvisableCollection{TSource}" />.
+        ///             </description>
+        ///         </item>
+        ///         <item>
+        ///         The implementation avoids LINQ and allocates exactly one result
+        ///         collection.  It is thread-safe because it works against a
+        ///         snapshot of <paramref name="source" /> taken at the moment of
+        ///         invocation.
+        ///         </item>
+        ///     </list>
+        /// </remarks>
+        /// <returns>
+        /// A new <see cref="T:AdvisableCollection{TSource}" /> that contains all
+        /// elements of <paramref name="source" /> except the last
+        /// <paramref name="count" />; or an empty collection under the conditions
+        /// noted above.
+        /// </returns>
+        [return: NotLogged]
+        public static IList<TSource> TakeAllButLast<TSource>(
+            [NotLogged] this IList<TSource> source,
+            [NotLogged] int count,
+            bool includeNulls = true
+        )
+        {
+            var result = new AdvisableCollection<TSource>();
+
+            try
+            {
+                // Validate the source collection.
+                if (source == null) return result;
+
+                var sourceArray = source.ToArray();
+
+                if (sourceArray == null) return result;
+                if (sourceArray.Length <= 0) return result;
+
+                // If the caller asked to omit zero elements, return a copy of the source.
+                if (count <= 0) return source;
+
+                // If the caller asked to omit more (or the same number of) elements
+                // than exist, the result is empty.
+                if (count >= sourceArray.Length)
+                    return result; // empty
+
+                // Snapshot the current state to avoid multi-thread interference.
+                var length = sourceArray.Length;
+                var takeUpToIndex = length - count; // exclusive upper bound
+
+                // Reserve capacity to avoid repeated reallocations.
+                result = new AdvisableCollection<TSource>(takeUpToIndex);
+
+                for (var i = 0; i < takeUpToIndex; i++)
+                {
+                    if (!includeNulls && sourceArray[i] == null)
+                        continue; // skip nulls if the caller requested it
+
+                    result.Add(sourceArray[i]);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the full exception details.  Never re-throw.
+                DebugUtils.LogException(ex);
+
+                result = new AdvisableCollection<TSource>();
+            }
+
+            return result;
         }
 
         /// <summary>

@@ -617,6 +617,138 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Returns <see langword="true" /> if <paramref name="source" />
+        /// contains <paramref name="value" />, using the chosen comparison
+        /// rule.
+        /// </summary>
+        /// <param name="source">
+        /// (Required.) A <see cref="T:System.String" /> containing the text
+        /// that is to be searched for <paramref name="value" />.
+        /// </param>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text
+        /// that is to be searched for.
+        /// </param>
+        /// <param name="comparisonType">
+        /// (Required.) One of the <see cref="T:System.StringComparison" />
+        /// values that dictates how the comparison is performed.
+        /// </param>
+        [DebuggerStepThrough]
+        public static bool Contains(
+            [NotLogged] this string source,
+            [NotLogged] string value,
+            StringComparison comparisonType
+        )
+        {
+            var result = false;
+
+            try
+            {
+                /*
+                 * For cybersecurity reasons, and to defeat reverse-engineering,
+                 * check the value of the 'comparisonType' parameter to ensure that it
+                 * is not set to a value outside the set of valid values defined
+                 * by the System.StringComparison enumeration.
+                 *
+                 * In principle, since all C# enums devolve to integer values, a
+                 * hacker could insert a different value into the CPU register that the
+                 * 'comparisonType' parameter is read from and thereby make this application
+                 * do something it's not intended to do.
+                 */
+
+                System.Diagnostics.Debug.WriteLine(
+                    $"StringExtensions.Contains: Checking whether the string comparison, '{comparisonType}', is within the defined value set..."
+                );
+
+                // Check to see whether the specified string comparison is within the defined value set.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
+                {
+                    // The specified string comparison is NOT within the defined value set.  This is not desirable.
+                    System.Diagnostics.Debug.WriteLine(
+                        $"*** ERROR *** The string comparison, '{comparisonType}', is NOT within the defined value set.  Stopping..."
+                    );
+
+                    System.Diagnostics.Debug.WriteLine(
+                        $"*** StringExtensions.Contains: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                System.Diagnostics.Debug.WriteLine(
+                    $"StringExtensions.Contains: *** SUCCESS *** The string comparison, '{comparisonType}', is within the defined value set.  Proceeding..."
+                );
+
+                // Defensive null / whitespace checks.
+                System.Diagnostics.Debug.WriteLine(
+                    "StringExtensions.Contains *** INFO: Checking whether the value of the parameter, 'source', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'source', is blank.
+                // If this is so, then emit an error message to the Debug output, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(source))
+                {
+                    // The parameter, 'source', was either passed a null value, or it is blank.  This is not desirable.
+                    System.Diagnostics.Debug.WriteLine(
+                        "StringExtensions.Contains: *** ERROR *** The parameter, 'source', was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    System.Diagnostics.Debug.WriteLine(
+                        $"StringExtensions.Contains: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                System.Diagnostics.Debug.WriteLine(
+                    "*** SUCCESS *** The parameter, 'source', is not blank.  Proceeding..."
+                );
+
+                System.Diagnostics.Debug.WriteLine(
+                    "StringExtensions.Contains *** INFO: Checking whether the value of the parameter, 'value', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'value', is blank.
+                // If this is so, then emit an error message to the Debug output, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    // The parameter, 'value', was either passed a null value, or it is blank.  This is not desirable.
+                    System.Diagnostics.Debug.WriteLine(
+                        "StringExtensions.Contains: *** ERROR *** The parameter, 'value', was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    System.Diagnostics.Debug.WriteLine(
+                        $"StringExtensions.Contains: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                System.Diagnostics.Debug.WriteLine(
+                    "*** SUCCESS *** The parameter, 'value', is not blank.  Proceeding..."
+                );
+
+                result = source.IndexOf(value, comparisonType) >= 0;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the Debug output.
+                System.Diagnostics.Debug.WriteLine(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Returns <see langword="true" /> if the <paramref name="value" /> has
         /// any of the strings in <paramref name="searchStrings" /> as a substring.
         /// </summary>
@@ -3853,6 +3985,202 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Replaces all occurrences of <paramref name="oldValue" /> with
+        /// <paramref name="newValue" />, using
+        /// <paramref name="comparisonType" /> to control the matching logic.
+        /// </summary>
+        /// <param name="source">
+        /// (Required.) The original <see cref="T:System.String" /> to
+        /// operate on.
+        /// </param>
+        /// <param name="oldValue">
+        /// (Required.) The substring to be replaced.
+        /// </param>
+        /// <param name="newValue">
+        /// (Required.) The replacement text.
+        /// </param>
+        /// <param name="comparisonType">
+        /// (Required.) One of the <see cref="T:System.StringComparison" />
+        /// values that dictates how the comparison is performed.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="T:System.String" /> with all appropriate
+        /// replacements applied, or the original
+        /// <paramref name="source" /> if no replacements were made or if
+        /// validation failed.
+        /// </returns>
+        [DebuggerStepThrough]
+        public static string Replace(
+            [NotLogged] this string source,
+            [NotLogged] string oldValue,
+            [NotLogged] string newValue,
+            StringComparison comparisonType
+        )
+        {
+            var result = source;
+
+            try
+            {
+                /*
+                 * For cybersecurity reasons, and to defeat reverse-engineering,
+                 * check the value of the 'comparisonType' parameter to ensure that it
+                 * is not set to a value outside the set of valid values defined
+                 * by the System.StringComparison enumeration.
+                 *
+                 * In principle, since all C# enums devolve to integer values, a
+                 * hacker could insert a different value into the CPU register that the
+                 * 'comparisonType' parameter is read from and thereby make this application
+                 * do something it's not intended to do.
+                 */
+
+                System.Diagnostics.Debug.WriteLine(
+                    $"*** StringExtensions.Replace: Checking whether the string comparison, '{comparisonType}', is within the defined value set..."
+                );
+
+                // Check to see whether the specified string comparison type is within the defined value set.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
+                {
+                    // The specified string comparison type is NOT within the defined value set.  This is not desirable.
+                    System.Diagnostics.Debug.WriteLine(
+                        $"*** ERROR *** The string comparison, '{comparisonType}', is NOT within the defined value set.  Stopping..."
+                    );
+
+                    System.Diagnostics.Debug.WriteLine(
+                        $"*** StringExtensions.Replace: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                System.Diagnostics.Debug.WriteLine(
+                    $"StringExtensions.Replace: *** SUCCESS *** The string comparison, '{comparisonType}', is within the defined value set.  Proceeding..."
+                );
+
+                if (string.IsNullOrWhiteSpace(source)) return result;
+                if (string.IsNullOrEmpty(oldValue)) return result;
+
+                var sb = new StringBuilder(source.Length);
+                var pos = 0;
+
+                while (true)
+                {
+                    var idx = source.IndexOf(oldValue, pos, comparisonType);
+                    if (idx < 0)
+                    {
+                        sb.Append(source, pos, source.Length - pos);
+                        break;
+                    }
+
+                    sb.Append(source, pos, idx - pos);
+                    sb.Append(newValue);
+                    pos = idx + oldValue.Length;
+                }
+
+                result = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the Debug output.
+                System.Diagnostics.Debug.WriteLine(ex);
+
+                result = source;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Replaces all occurrences of <paramref name="oldChar" /> with
+        /// <paramref name="newChar" />.  The
+        /// <paramref name="comparisonType" /> parameter is accepted only to
+        /// mirror the other overload; it is ignored because
+        /// character‑for‑character replacement is culture‑invariant.
+        /// </summary>
+        /// <param name="source">
+        /// (Required.) The original <see cref="T:System.String" /> to
+        /// operate on.
+        /// </param>
+        /// <param name="oldChar">
+        /// (Required.) The character to be replaced.
+        /// </param>
+        /// <param name="newChar">
+        /// (Required.) The replacement character.
+        /// </param>
+        /// <param name="comparisonType">
+        /// (Ignored.) Present for API symmetry; no effect on the operation.
+        /// </param>
+        /// <returns>
+        /// A new <see cref="T:System.String" /> with all occurrences of
+        /// <paramref name="oldChar" /> replaced, or the original string if
+        /// <paramref name="source" /> is <see langword="null" />.
+        /// </returns>
+        [DebuggerStepThrough]
+        public static string Replace(
+            [NotLogged] this string source,
+            [NotLogged] char oldChar,
+            [NotLogged] char newChar,
+            StringComparison comparisonType
+        )
+        {
+            var result = source;
+
+            try
+            {
+                /*
+                 * For cybersecurity reasons, and to defeat reverse-engineering,
+                 * check the value of the 'comparisonType' parameter to ensure that it
+                 * is not set to a value outside the set of valid values defined
+                 * by the System.StringComparison enumeration.
+                 *
+                 * In principle, since all C# enums devolve to integer values, a
+                 * hacker could insert a different value into the CPU register that the
+                 * 'comparisonType' parameter is read from and thereby make this application
+                 * do something it's not intended to do.
+                 */
+
+                System.Diagnostics.Debug.WriteLine(
+                    $"*** StringExtensions.Replace: Checking whether the string comparison, '{comparisonType}', is within the defined value set..."
+                );
+
+                // Check to see whether the specified string comparison type is within the defined value set.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
+                {
+                    // The specified string comparison type is NOT within the defined value set.  This is not desirable.
+                    System.Diagnostics.Debug.WriteLine(
+                        $"*** ERROR *** The string comparison, '{comparisonType}', is NOT within the defined value set.  Stopping..."
+                    );
+
+                    System.Diagnostics.Debug.WriteLine(
+                        $"*** StringExtensions.Replace: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                System.Diagnostics.Debug.WriteLine(
+                    $"StringExtensions.Replace: *** SUCCESS *** The string comparison, '{comparisonType}', is within the defined value set.  Proceeding..."
+                );
+
+                if (string.IsNullOrEmpty(source)) return result;
+
+                result = source.Replace(oldChar, newChar);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the Debug output.
+                System.Diagnostics.Debug.WriteLine(ex);
             }
 
             return result;

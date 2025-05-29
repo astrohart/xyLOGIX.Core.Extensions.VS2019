@@ -143,7 +143,7 @@ namespace xyLOGIX.Core.Extensions
         /// any backticks.
         /// </remarks>
         /// <returns>The escaped content.</returns>
-        public static string Escape(this string content)
+        public static string EscapeMarkdownText(this string content)
         {
             var result = content;
 

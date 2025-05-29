@@ -104,12 +104,126 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                if (node == null) return result;
-                if (!(node is XText text)) return result;
-                if (string.IsNullOrWhiteSpace(text.Value)) return result;
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "MarkdownExtensions.AsSpanMargin: Checking whether the 'node' method parameter has a null reference for a value..."
+                );
 
-                if (!text.Value.StartsWith(" ", StringComparison.Ordinal))
+                // Check to see if the required parameter, node, is null. If it is, send an 
+                // error to the log file and quit, returning the default return value of this
+                // method.
+                if (node == null)
+                {
+                    // The parameter, 'node', is required and is not supposed to have a NULL value.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "MarkdownExtensions.AsSpanMargin: *** ERROR *** A null reference was passed for the 'node' method parameter.  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"*** MarkdownExtensions.AsSpanMargin: Result = '{result}'"
+                    );
+
+                    // stop.
                     return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "MarkdownExtensions.AsSpanMargin: *** SUCCESS *** We have been passed a valid object reference for the 'node' method parameter.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** MarkdownExtensions.AsSpanMargin: Checking whether the specified node is an XML text node..."
+                );
+
+                // Check to see whether the specified node is an XML text node.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (!(node is XText text))
+                {
+                    // The specified node is NOT an XML text node.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR *** The specified node is NOT an XML text node.  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"*** MarkdownExtensions.AsSpanMargin: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "MarkdownExtensions.AsSpanMargin: *** SUCCESS *** The specified node is an XML text node.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** INFO: Checking whether the property, 'text.Value', appears to have a null or blank value..."
+                );
+
+                // Check to see if the required property, 'text.Value', appears to have a null 
+                // or blank value. If it does, then send an error to the log file and quit,
+                // returning the default value of the result variable.
+                if (string.IsNullOrWhiteSpace(text.Value))
+                {
+                    // The property, 'text.Value', appears to have a null or blank value.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR: The property, 'text.Value', appears to have a null or blank value.  Stopping..."
+                    );
+
+                    // log the result
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"MarkdownExtensions.AsSpanMargin: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The property, 'text.Value', seems to have a non-blank value.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** MarkdownExtensions.AsSpanMargin: Checking whether the text starts with leading whitespace..."
+                );
+
+                // Check to see whether the text starts with leading whitespace.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (!text.Value.StartsWith(" ", StringComparison.Ordinal))
+                {
+                    // The text does NOT start with leading whitespace.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR *** The text does NOT start with leading whitespace.  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"*** MarkdownExtensions.AsSpanMargin: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "MarkdownExtensions.AsSpanMargin: *** SUCCESS *** The text starts with leading whitespace.  Proceeding..."
+                );
 
                 result = " "; // a single whitespace character
             }
@@ -120,6 +234,11 @@ namespace xyLOGIX.Core.Extensions
 
                 result = string.Empty;
             }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"MarkdownExtensions.AsSpanMargin: Result = '{result}'"
+            );
 
             return result;
         }

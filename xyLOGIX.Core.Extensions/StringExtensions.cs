@@ -3280,6 +3280,64 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Returns the first <paramref name="count" /> characters of
+        /// <paramref name="value" />.
+        /// If the source string is <see langword="null" />,
+        /// empty, or shorter than <paramref name="count" />, the original string (or
+        /// <see cref="F:System.String.Empty" />) is returned.
+        /// </summary>
+        /// <param name="value">(Required.) The source <see cref="T:System.String" />.</param>
+        /// <param name="count">
+        /// The number of leading characters to keep.
+        /// <para />
+        /// Must be a natural number and less than or equal to the length of the string.
+        /// </param>
+        /// <returns>The requested leading substring, or a safe fallback.</returns>
+        [return: NotLogged]
+        public static string Left([NotLogged] this string value, int count)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (count < 0)
+                {
+                    throw new ArgumentOutOfRangeException(
+                        nameof(count),
+                        Resources.StringExtensions_Left_CountMustBeNaturalNumber
+                    );
+                }
+
+                if (count > value.Length)
+                {
+                    throw new ArgumentOutOfRangeException(
+                        nameof(count),
+                        string.Format(
+                            Resources
+                                .StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString,
+                            value.Length
+                        )
+                    );
+                }
+
+                if (!string.IsNullOrEmpty(value) && count < value.Length)
+                    result = value.Substring(0, count);
+                else
+                    result = value ?? string.Empty;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the <paramref name="stringToSearch" /> contains
         /// the text in the <paramref name="findWhat" /> parameter, in a case-insensitive
         /// fashion.

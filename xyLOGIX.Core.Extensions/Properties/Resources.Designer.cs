@@ -29,7 +29,7 @@ namespace xyLOGIX.Core.Extensions.Properties {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public Resources() {
+        internal Resources() {
         }
         
         /// <summary>
@@ -93,6 +93,24 @@ namespace xyLOGIX.Core.Extensions.Properties {
         public static string PersonNameIncorrectFormat {
             get {
                 return ResourceManager.GetString("PersonNameIncorrectFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument of the &apos;count&apos; parameter of the &apos;Left&apos; method must not be greater than the length of the string passed in the &apos;value&apos; parameter, which is {0} character(s)..
+        /// </summary>
+        public static string StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString {
+            get {
+                return ResourceManager.GetString("StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The argument of the &apos;count&apos; parameter of the &apos;Left&apos; method must be greater than zero..
+        /// </summary>
+        public static string StringExtensions_Left_CountMustBeNaturalNumber {
+            get {
+                return ResourceManager.GetString("StringExtensions_Left_CountMustBeNaturalNumber", resourceCulture);
             }
         }
     }

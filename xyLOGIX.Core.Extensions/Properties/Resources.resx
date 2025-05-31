@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -123,9 +124,15 @@
     <value>The Full Name should at least be two words, separated by a space, such as '&lt;FirstName&gt; &lt;LastName&gt;'.</value>
   </data>
   <data name="NCharsMustBePositive" xml:space="preserve">
-      <value>nChars parameter must be greater than zero.</value>
+    <value>nChars parameter must be greater than zero.</value>
   </data>
   <data name="Error_ValueCannotBeNullOrWhiteSpace" xml:space="preserve">
-      <value>Value cannot be null or the blank string.</value>
+    <value>Value cannot be null or the blank string.</value>
+  </data>
+  <data name="StringExtensions_Left_CountMustBeNaturalNumber" xml:space="preserve">
+    <value>The argument of the 'count' parameter of the 'Left' method must be greater than zero.</value>
+  </data>
+  <data name="StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString" xml:space="preserve">
+    <value>The argument of the 'count' parameter of the 'Left' method must not be greater than the length of the string passed in the 'value' parameter, which is {0} character(s).</value>
   </data>
 </root>

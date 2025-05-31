@@ -357,7 +357,9 @@
   - [FindIndex\`\`1(list,predicate)](#M-xyLOGIX-Core-Extensions-ListExtensions-FindIndex``1-System-Collections-Generic-IList{``0},System-Predicate{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.FindIndex``1(System.Collections.Generic.IList{``0},System.Predicate{``0})')
   - [IsIdenticalTo\`\`1(left,right)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsIdenticalTo``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.IsIdenticalTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
+  - [NthLast\`\`1(source,index)](#M-xyLOGIX-Core-Extensions-ListExtensions-NthLast``1-System-Collections-Generic-IList{``0},System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.NthLast``1(System.Collections.Generic.IList{``0},System.Int32)')
   - [RemoveRange\`\`1(list,index,count)](#M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.RemoveRange``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)')
+  - [TakeAllButLast\`\`1(source,count,includeNulls)](#M-xyLOGIX-Core-Extensions-ListExtensions-TakeAllButLast``1-System-Collections-Generic-IList{``0},System-Int32,System-Boolean- 'xyLOGIX.Core.Extensions.ListExtensions.TakeAllButLast``1(System.Collections.Generic.IList{``0},System.Int32,System.Boolean)')
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
   - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
@@ -368,6 +370,13 @@
   - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNonPositive-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNonPositive(System.Int64)')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNonzero-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNonzero(System.Int64)')
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsPositive-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsPositive(System.Int64)')
+- [MarkdownExtensions](#T-xyLOGIX-Core-Extensions-MarkdownExtensions 'xyLOGIX.Core.Extensions.MarkdownExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-#cctor 'xyLOGIX.Core.Extensions.MarkdownExtensions.#cctor')
+  - [AsCode(code)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-AsCode-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.AsCode(System.String)')
+  - [AsSpanMargin(node)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-AsSpanMargin-System-Xml-Linq-XNode- 'xyLOGIX.Core.Extensions.MarkdownExtensions.AsSpanMargin(System.Xml.Linq.XNode)')
+  - [EscapeMarkdownText(content)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-EscapeMarkdownText-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.EscapeMarkdownText(System.String)')
+  - [ToAnchor(hyperlink)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToAnchor-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.ToAnchor(System.String)')
+  - [ToHereLink(hyperlink)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToHereLink-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.ToHereLink(System.String)')
 - [NullableDecimalExtensions](#T-xyLOGIX-Core-Extensions-NullableDecimalExtensions 'xyLOGIX.Core.Extensions.NullableDecimalExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNegative-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNegative(System.Nullable{System.Decimal})')
   - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonPositive-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNonPositive(System.Nullable{System.Decimal})')
@@ -461,6 +470,7 @@
   - [CleanLine(line)](#M-xyLOGIX-Core-Extensions-StringExtensions-CleanLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.CleanLine(System.String)')
   - [CollapseNewlinesToSpaces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-CollapseNewlinesToSpaces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.CollapseNewlinesToSpaces(System.String)')
   - [Concat(initialString,parts)](#M-xyLOGIX-Core-Extensions-StringExtensions-Concat-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.Concat(System.String,System.String[])')
+  - [Contains(source,value,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Contains-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Contains(System.String,System.String,System.StringComparison)')
   - [ContainsAny(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.String[])')
   - [ContainsAny(value,searchStrings)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [ContainsAny(value,searchChars)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Char[]- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsAny(System.String,System.Char[])')
@@ -523,6 +533,7 @@
   - [IsValidEmail(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidEmail(System.String)')
   - [IsValidLowercaseGuidWithNoBraces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidLowercaseGuidWithNoBraces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidLowercaseGuidWithNoBraces(System.String)')
   - [IsVowelSound(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsVowelSound-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsVowelSound(System.String)')
+  - [Join(values,separator)](#M-xyLOGIX-Core-Extensions-StringExtensions-Join-System-Collections-Generic-IList{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.Join(System.Collections.Generic.IList{System.String},System.String)')
   - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
   - [MatchesWithCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
@@ -541,6 +552,8 @@
   - [RemoveExtraEmptyLines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveExtraEmptyLines(System.String)')
   - [RemoveLastWord(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveLastWord(System.String)')
   - [RemoveTrailingBackslashes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveTrailingBackslashes(System.String)')
+  - [Replace(source,oldValue,newValue,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Replace(System.String,System.String,System.String,System.StringComparison)')
+  - [Replace(source,oldChar,newChar,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-Char,System-Char,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Replace(System.String,System.Char,System.Char,System.StringComparison)')
   - [ReplaceAnyOf(source,findWhatValues,replacementText)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf(System.String,System.Collections.Generic.ICollection{System.String},System.String)')
   - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
   - [ReplaceSingleQuotesWithHTMLApostrophes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSingleQuotesWithHTMLApostrophes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceSingleQuotesWithHTMLApostrophes(System.String)')
@@ -553,6 +566,7 @@
   - [StripIncompatibleQuotes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatibleQuotes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripIncompatibleQuotes(System.String)')
   - [StripNewlines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripNewlines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripNewlines(System.String)')
   - [Sub(format,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.Sub(System.String,System.Object[])')
+  - [Suffix(value,suffix)](#M-xyLOGIX-Core-Extensions-StringExtensions-Suffix-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.Suffix(System.String,System.String)')
   - [ToASCII(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII(System.String)')
   - [ToAcronym(phrase)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToAcronym-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToAcronym(System.String)')
   - [ToAcronymLetter(word)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToAcronymLetter-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToAcronymLetter(System.String)')
@@ -6966,6 +6980,42 @@ true if `value` is in the
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to compare. |
 | valueSet | [System.Collections.Generic.IEnumerable{System.Int32}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.Int32}') | Range of integer values to check. |
 
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-NthLast``1-System-Collections-Generic-IList{``0},System-Int32-'></a>
+### NthLast\`\`1(source,index) `method`
+
+##### Summary
+
+Returns the `index`-th element counted from the end of
+the `source` collection (0 ⇒ last, 1 ⇒ second-to-last,
+and so on).
+
+##### Returns
+
+A reference to the requested element, or the default value of
+`TSource` on failure.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) The collection to inspect.  A `null`
+reference or an empty collection causes the method to return the default
+value of `TSource`. |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Zero-based offset from the last element.  Must be greater
+than or equal to zero and strictly less than `source.Count`. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TSource | The element type of the `source` collection. |
+
+##### Remarks
+
+The method never throws; on any error it returns
+`default()` after logging the
+exception.
+
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32-'></a>
 ### RemoveRange\`\`1(list,index,count) `method`
 
@@ -7003,6 +7053,53 @@ contains zero elements, then this method does nothing.
 
 This method also does nothing in the event that `index` is
 less than zero, or `count` is less than or equal to zero.
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-TakeAllButLast``1-System-Collections-Generic-IList{``0},System-Int32,System-Boolean-'></a>
+### TakeAllButLast\`\`1(source,count,includeNulls) `method`
+
+##### Summary
+
+Returns a new collection that contains every element of
+`source`the last
+`count` element(s).
+
+##### Returns
+
+A new [AdvisableCollection{TSource}](#T-AdvisableCollection{TSource} 'AdvisableCollection{TSource}') that contains all
+elements of `source` except the last
+`count`; or an empty collection under the conditions
+noted above.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) The input list.  If it is `null` or empty,
+the method returns an empty collection. |
+| count | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) The number of trailing elements to omit.  If
+`count` is less than or equal to zero, the method
+returns a copy of the entire `source` collection.  If
+`count` is greater than or equal to
+`source.Count`, the method returns an empty collection. |
+| includeNulls | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) If `true`, the method copies
+`null` value(s) that may be present in the specified
+`source` collection to the resulting collection; if
+`false`, the method skips `null` value(s) in
+the specified `source` collection.
+
+
+
+The default value of this parameter is `true`. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TSource | The element type of the `source` collection. |
+
+##### Remarks
+
+
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}-'></a>
 ### ToConcurrentList\`\`1(items) `method`
@@ -7248,6 +7345,176 @@ greater than zero; `false` otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | A [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') value to be checked. |
+
+<a name='T-xyLOGIX-Core-Extensions-MarkdownExtensions'></a>
+## MarkdownExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension method(s) for manipulating Markdown text.
+
+<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [MarkdownExtensions](#T-xyLOGIX-Core-Extensions-MarkdownExtensions 'xyLOGIX.Core.Extensions.MarkdownExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-AsCode-System-String-'></a>
+### AsCode(code) `method`
+
+##### Summary
+
+Wraps the `code` into Markdown backticks safely.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+corresponding Markdown; otherwise, the method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| code | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the content that is to
+be wrapped in Markdown backticks. |
+
+##### Remarks
+
+See also
+
+.
+
+<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-AsSpanMargin-System-Xml-Linq-XNode-'></a>
+### AsSpanMargin(node) `method`
+
+##### Summary
+
+Attempts to detect leading whitespace in the value of the specified
+`node` and, if found, carries the whitespace over to the
+resultant Markdown span as a whitespace character.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+resultant Markdown; otherwise, the method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| node | [System.Xml.Linq.XNode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.Linq.XNode 'System.Xml.Linq.XNode') | (Required.) Reference to an instance of [XNode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.Linq.XNode 'System.Xml.Linq.XNode')
+that represents the XML node that is to be examined for leading whitespace. |
+
+##### Remarks
+
+If a `null` reference is passed as the argument of
+the `node` parameter, then the method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+
+
+The method also returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value if the
+specified `node` is not of type
+[XText](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.Linq.XText 'System.Xml.Linq.XText').
+
+<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-EscapeMarkdownText-System-String-'></a>
+### EscapeMarkdownText(content) `method`
+
+##### Summary
+
+Escapes the specified `content` by replacing all backticks
+with a backtick preceded by a backslash, so that the content can be safely used
+in Markdown as-is.
+
+##### Returns
+
+The escaped content.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the content that is to
+be escaped. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `content`, then this method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+
+
+The method is idempotent if the `content` does not contain
+any backticks.
+
+<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToAnchor-System-String-'></a>
+### ToAnchor(hyperlink) `method`
+
+##### Summary
+
+Generates an anchor for the specified `hyperlink`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the anchor
+for the specified `hyperlink`; otherwise, the method returns
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| hyperlink | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+contains the hyperlink reference destination. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+`hyperlink` parameter, then this method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToHereLink-System-String-'></a>
+### ToHereLink(hyperlink) `method`
+
+##### Summary
+
+Generates a "to here" link for the `hyperlink`.
+
+##### Returns
+
+The "to here" link for the `hyperlink`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| hyperlink | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+contains the hyperlink reference destination. |
 
 <a name='T-xyLOGIX-Core-Extensions-NullableDecimalExtensions'></a>
 ## NullableDecimalExtensions `type`
@@ -9067,6 +9334,26 @@ This method does nothing if the `initialString` is
 blank or `null`, or if there are zero values in the
 `parts`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-Contains-System-String,System-String,System-StringComparison-'></a>
+### Contains(source,value,comparisonType) `method`
+
+##### Summary
+
+Returns `true` if `source`
+contains `value`, using the chosen comparison
+rule.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text
+that is to be searched for `value`. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text
+that is to be searched for. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison')
+values that dictates how the comparison is performed. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]-'></a>
 ### ContainsAny(value,searchStrings) `method`
 
@@ -10765,6 +11052,43 @@ for the purposes of choosing between the indefinite articles 'a' or 'an'.
 | ---- | ---- | ----------- |
 | text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The phrase to analyze. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-Join-System-Collections-Generic-IList{System-String},System-String-'></a>
+### Join(values,separator) `method`
+
+##### Summary
+
+Concatenates each element of `values` using the
+specified `separator`.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') representing the concatenated result,
+or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value on failure.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| values | [System.Collections.Generic.IList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{System.String}') | (Required.) A collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') instances to
+concatenate. |
+| separator | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to insert between
+adjacent elements of `values`.  If
+`null`, it is treated as the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+
+##### Remarks
+
+The method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value if
+`values` is `null` or contains no
+elements.
+
+
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `separator`, then this method assumes that the
+separator is the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String-'></a>
 ### MatchesNoCase(stringToSearch,findWhat) `method`
 
@@ -11264,6 +11588,66 @@ If the argument of the `value` parameter is blank
 or `null`, then the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value
 is returned.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-String,System-String,System-StringComparison-'></a>
+### Replace(source,oldValue,newValue,comparisonType) `method`
+
+##### Summary
+
+Replaces all occurrences of `oldValue` with
+`newValue`, using
+`comparisonType` to control the matching logic.
+
+##### Returns
+
+A new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all appropriate
+replacements applied, or the original
+`source` if no replacements were made or if
+validation failed.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The original [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to
+operate on. |
+| oldValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The substring to be replaced. |
+| newValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The replacement text. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison')
+values that dictates how the comparison is performed. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-Char,System-Char,System-StringComparison-'></a>
+### Replace(source,oldChar,newChar,comparisonType) `method`
+
+##### Summary
+
+Replaces all occurrences of `oldChar` with
+`newChar`.  The
+`comparisonType` parameter is accepted only to
+mirror the other overload; it is ignored because
+character‑for‑character replacement is culture‑invariant.
+
+##### Returns
+
+A new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all occurrences of
+`oldChar` replaced, or the original string if
+`source` is `null`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The original [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to
+operate on. |
+| oldChar | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) The character to be replaced. |
+| newChar | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) The replacement character. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
+defines how the old and new value(s) are to be compared.
+
+
+
+This parameter is ignored; it is accepted only to provide symmetry with the
+other overload(s) of this method. |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String-'></a>
 ### ReplaceAnyOf(source,findWhatValues,replacementText) `method`
 
@@ -11619,6 +12003,41 @@ to
 translate VB to C# code and still use the moniker Sub from VB that does the
 same operation. If this method is passed the empty string for
 `format`, then the return value is the empty string.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-Suffix-System-String,System-String-'></a>
+### Suffix(value,suffix) `method`
+
+##### Summary
+
+Produces a new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') by appending the specified
+`suffix` to the end of the specified
+`value`.
+
+##### Returns
+
+If successful, a new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+concatenation of
+`value` and `suffix`, or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value on failure.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the
+original string.  If this parameter is `null`, the method
+treats it as the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+| suffix | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+the text to append.
+
+
+
+If this parameter is `null`, the method treats it as the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+
+##### Remarks
+
+
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII-System-String-'></a>
 ### ToASCII(value) `method`

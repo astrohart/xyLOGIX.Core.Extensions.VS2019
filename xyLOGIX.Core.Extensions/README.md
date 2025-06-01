@@ -441,6 +441,8 @@
   - [PersonNameEmpty](#P-xyLOGIX-Core-Extensions-Properties-Resources-PersonNameEmpty 'xyLOGIX.Core.Extensions.Properties.Resources.PersonNameEmpty')
   - [PersonNameIncorrectFormat](#P-xyLOGIX-Core-Extensions-Properties-Resources-PersonNameIncorrectFormat 'xyLOGIX.Core.Extensions.Properties.Resources.PersonNameIncorrectFormat')
   - [ResourceManager](#P-xyLOGIX-Core-Extensions-Properties-Resources-ResourceManager 'xyLOGIX.Core.Extensions.Properties.Resources.ResourceManager')
+  - [StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString](#P-xyLOGIX-Core-Extensions-Properties-Resources-StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString 'xyLOGIX.Core.Extensions.Properties.Resources.StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString')
+  - [StringExtensions_Left_CountMustBeNaturalNumber](#P-xyLOGIX-Core-Extensions-Properties-Resources-StringExtensions_Left_CountMustBeNaturalNumber 'xyLOGIX.Core.Extensions.Properties.Resources.StringExtensions_Left_CountMustBeNaturalNumber')
 - [SetExtensions](#T-xyLOGIX-Core-Extensions-SetExtensions 'xyLOGIX.Core.Extensions.SetExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-SetExtensions-#cctor 'xyLOGIX.Core.Extensions.SetExtensions.#cctor')
   - [AddRange\`\`1(target,source)](#M-xyLOGIX-Core-Extensions-SetExtensions-AddRange``1-System-Collections-Generic-ISet{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.SetExtensions.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})')
@@ -534,6 +536,7 @@
   - [IsValidLowercaseGuidWithNoBraces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsValidLowercaseGuidWithNoBraces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsValidLowercaseGuidWithNoBraces(System.String)')
   - [IsVowelSound(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsVowelSound-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsVowelSound(System.String)')
   - [Join(values,separator)](#M-xyLOGIX-Core-Extensions-StringExtensions-Join-System-Collections-Generic-IList{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.Join(System.Collections.Generic.IList{System.String},System.String)')
+  - [Left(value,count)](#M-xyLOGIX-Core-Extensions-StringExtensions-Left-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.Left(System.String,System.Int32)')
   - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
   - [MatchesWithCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
@@ -8833,6 +8836,20 @@ Looks up a localized string similar to The Full Name should at least be two word
 
 Returns the cached ResourceManager instance used by this class.
 
+<a name='P-xyLOGIX-Core-Extensions-Properties-Resources-StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString'></a>
+### StringExtensions_Left_CountMustBeLessThanOrEqualToLengthOfString `property`
+
+##### Summary
+
+Looks up a localized string similar to The argument of the 'count' parameter of the 'Left' method must not be greater than the length of the string passed in the 'value' parameter, which is {0} character(s)..
+
+<a name='P-xyLOGIX-Core-Extensions-Properties-Resources-StringExtensions_Left_CountMustBeNaturalNumber'></a>
+### StringExtensions_Left_CountMustBeNaturalNumber `property`
+
+##### Summary
+
+Looks up a localized string similar to The argument of the 'count' parameter of the 'Left' method must be greater than zero..
+
 <a name='T-xyLOGIX-Core-Extensions-SetExtensions'></a>
 ## SetExtensions `type`
 
@@ -11088,6 +11105,32 @@ If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=De
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
 parameter, `separator`, then this method assumes that the
 separator is the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-Left-System-String,System-Int32-'></a>
+### Left(value,count) `method`
+
+##### Summary
+
+Returns the first `count` characters of
+`value`.
+If the source string is `null`,
+empty, or shorter than `count`, the original string (or
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')) is returned.
+
+##### Returns
+
+The requested leading substring, or a safe fallback.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The source [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'). |
+| count | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The number of leading characters to keep.
+
+
+
+Must be a natural number and less than or equal to the length of the string. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String-'></a>
 ### MatchesNoCase(stringToSearch,findWhat) `method`

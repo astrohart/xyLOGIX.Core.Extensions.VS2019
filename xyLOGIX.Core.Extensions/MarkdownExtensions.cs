@@ -270,7 +270,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(content)) return string.Empty;
                 if (!content.Contains("`", StringComparison.InvariantCulture))
-                    return content;
+                    return result;
 
                 // escape the backticks in the content
                 result = content.Replace(
@@ -282,7 +282,7 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
-                result = string.Empty;
+                result = content;
             }
 
             return result;
@@ -312,9 +312,37 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                if (string.IsNullOrWhiteSpace(hyperlink)) return result;
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "MarkdownExtensions.ToAnchor *** INFO: Checking whether the value of the parameter, 'hyperlink', is blank..."
+                );
 
-                result = $"<a name='{hyperlink}'></a>\n";
+                // Check whether the value of the parameter, 'hyperlink', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(hyperlink))
+                {
+                    // The parameter, 'hyperlink' was either passed a null value, or it is blank.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "MarkdownExtensions.ToAnchor: The parameter, 'hyperlink' was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"MarkdownExtensions.ToAnchor: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'hyperlink' is not blank.  Proceeding..."
+                );
+
+                result = $"<a name='{hyperlink}' />{Environment.NewLine}";
             }
             catch (Exception ex)
             {
@@ -323,6 +351,11 @@ namespace xyLOGIX.Core.Extensions
 
                 result = string.Empty;
             }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"MarkdownExtensions.ToAnchor: Result = '{result}'"
+            );
 
             return result;
         }

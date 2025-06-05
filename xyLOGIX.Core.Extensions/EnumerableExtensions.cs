@@ -25,6 +25,56 @@ namespace xyLOGIX.Core.Extensions
         static EnumerableExtensions() { }
 
         /// <summary>
+        /// Determines if any of the element(s) of the specified
+        /// <paramref name="collection" /> happen to equal the specified
+        /// <paramref name="value" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Data type of the individual elements of the
+        /// specified <paramref name="collection" />.
+        /// </typeparam>
+        /// <param name="collection">
+        /// (Required.) Collection of values, all of the type,
+        /// <typeparamref name="T" />, that is to be searched.
+        /// </param>
+        /// <param name="value">(Required.) The value that is to be matched.</param>
+        /// <returns>
+        /// <see langword="true" /> if at least one element of the specified
+        /// <paramref name="collection" /> matches the specified <paramref name="value" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool AnyEqual<T>(this IEnumerable<T> collection, T value)
+        {
+            var result = false;
+
+            try
+            {
+                if (collection == null) return result;
+                if (collection.ToArray()
+                              .Length <= 0) return result;
+
+                foreach (var element in collection.ToArray())
+                {
+                    if (element == null) return result;
+                    if (!value.Equals(element)) return result;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether any of the element(s) of the specified
         /// <paramref name="collection" /> are equal to any of the specified
         /// <paramref name="values" />.
@@ -63,56 +113,6 @@ namespace xyLOGIX.Core.Extensions
                 {
                     if (element == null) continue;
                     if (!element.IsAnyOf(values)) continue;
-
-                    result = true;
-                    break;
-                }
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = false;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines if any of the element(s) of the specified
-        /// <paramref name="collection" /> happen to equal the specified
-        /// <paramref name="value" />.
-        /// </summary>
-        /// <typeparam name="T">
-        /// (Required.) Data type of the individual elements of the
-        /// specified <paramref name="collection" />.
-        /// </typeparam>
-        /// <param name="collection">
-        /// (Required.) Collection of values, all of the type,
-        /// <typeparamref name="T" />, that is to be searched.
-        /// </param>
-        /// <param name="value">(Required.) The value that is to be matched.</param>
-        /// <returns>
-        /// <see langword="true" /> if at least one element of the specified
-        /// <paramref name="collection" /> matches the specified <paramref name="value" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
-        [Log(AttributeExclude = true)]
-        public static bool AnyEqual<T>(this IEnumerable<T> collection, T value)
-        {
-            var result = false;
-
-            try
-            {
-                if (collection == null) return result;
-                if (collection.ToArray()
-                              .Length <= 0) return result;
-
-                foreach (var element in collection.ToArray())
-                {
-                    if (element == null) return result;
-                    if (!value.Equals(element)) return result;
 
                     result = true;
                     break;
@@ -212,12 +212,25 @@ namespace xyLOGIX.Core.Extensions
             Action<T> action
         )
         {
-            if (collection == null) return;
-            if (action == null) return;
-            if (!collection.Any()) return;
+            try
+            {
+                if (collection == null) return;
+                
+                var collectionArray = collection.ToArray();
 
-            foreach (var item in collection)
-                action(item);
+                if (collectionArray
+                        .Length <= 0) return;
+
+                if (action == null) return;
+
+                foreach(var item in collectionArray)
+                    action(item);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
 
         /// <summary>
@@ -248,12 +261,25 @@ namespace xyLOGIX.Core.Extensions
             Action<T> action
         )
         {
-            if (collection == null) return;
-            if (action == null) return;
-            if (!collection.Any()) return;
+            try
+            {
+                if (collection == null) return;
+                
+                var collectionArray = collection.ToArray();
 
-            foreach (var item in collection)
-                action(item);
+                if (collectionArray
+                        .Length <= 0) return;
+
+                if (action == null) return;
+
+                foreach(var item in collectionArray)
+                    action(item);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
         }
 
         /// <summary>
@@ -297,38 +323,6 @@ namespace xyLOGIX.Core.Extensions
         {
             var rng = new Random();
             return quote.Shuffle(rng);
-        }
-
-        /// <summary>
-        /// Returns all the elements of the <paramref name="quote" /> enumerable
-        /// object, except for the last.
-        /// </summary>
-        /// <typeparam name="T"> Name of the type of item in the collection. </typeparam>
-        /// <param name="quote"> Reference to an enumerable collection. </param>
-        /// <returns>
-        /// Enumerable iterator over the collection that yields every item in the
-        /// collection, except for the last.
-        /// </returns>
-        public static IEnumerable<T> TakeAllButLast<T>(
-            this IEnumerable<T> quote
-        )
-        {
-            if (quote == null) throw new ArgumentNullException(nameof(quote));
-            using (var it = quote.GetEnumerator())
-            {
-                var hasRemainingItems = false;
-                var isFirst = true;
-                var item = default(T);
-
-                do
-                {
-                    hasRemainingItems = it.MoveNext();
-                    if (!hasRemainingItems) continue;
-                    if (!isFirst) yield return item;
-                    item = it.Current;
-                    isFirst = false;
-                } while (hasRemainingItems);
-            }
         }
 
         /// <summary>
@@ -404,6 +398,38 @@ namespace xyLOGIX.Core.Extensions
                 yield return buffer[j];
 
                 buffer[j] = buffer[i];
+            }
+        }
+
+        /// <summary>
+        /// Returns all the elements of the <paramref name="quote" /> enumerable
+        /// object, except for the last.
+        /// </summary>
+        /// <typeparam name="T"> Name of the type of item in the collection. </typeparam>
+        /// <param name="quote"> Reference to an enumerable collection. </param>
+        /// <returns>
+        /// Enumerable iterator over the collection that yields every item in the
+        /// collection, except for the last.
+        /// </returns>
+        public static IEnumerable<T> TakeAllButLast<T>(
+            this IEnumerable<T> quote
+        )
+        {
+            if (quote == null) throw new ArgumentNullException(nameof(quote));
+            using (var it = quote.GetEnumerator())
+            {
+                var hasRemainingItems = false;
+                var isFirst = true;
+                var item = default(T);
+
+                do
+                {
+                    hasRemainingItems = it.MoveNext();
+                    if (!hasRemainingItems) continue;
+                    if (!isFirst) yield return item;
+                    item = it.Current;
+                    isFirst = false;
+                } while (hasRemainingItems);
             }
         }
     }

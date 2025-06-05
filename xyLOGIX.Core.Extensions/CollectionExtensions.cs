@@ -49,13 +49,24 @@ namespace xyLOGIX.Core.Extensions
             params T[] items
         )
         {
-            if (collection == null) return;
-            if (items == null || !items.Any()) return;
-
-            foreach (var item in items)
+            try
             {
-                if (item == null) continue;
-                collection.Add(item);
+                if (collection == null) return;
+
+                if (items == null) return;
+                if (items.Length <= 0) return;
+
+                foreach (var item in items.ToArray())
+                {
+                    if (item == null) continue;
+
+                    collection.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
             }
         }
 
@@ -152,7 +163,26 @@ namespace xyLOGIX.Core.Extensions
         /// the method also returns <see langword="false" />.
         /// </remarks>
         public static bool IsEmpty<T>(this ICollection<T> collection)
-            => collection != null && !collection.Any();
+        {
+            var result = true;
+
+            try
+            {
+                if (collection == null) return result;
+
+                result = collection.ToArray()
+                                   .Length <= 0;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = true;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Determines whether the specified <paramref name="collection" /> is a
@@ -204,9 +234,37 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsOneOf<TTypes>(this object obj)
             where TTypes : ITuple
         {
-            var tupleType = typeof(TTypes);
-            return tupleType.GetGenericArguments()
-                            .Any(type => type.IsInstanceOfType(obj));
+            var result = false;
+
+            try
+            {
+                var tupleType = typeof(TTypes);
+                if (tupleType == null) return result;
+
+                var genericArgs = tupleType.GetGenericArguments();
+
+                if (genericArgs == null) return result;
+                if (genericArgs.Length <= 0) return result;
+
+                foreach (var genericArg in genericArgs.ToArray())
+                {
+                    if (genericArg == null) continue;
+
+                    if (!genericArg.IsInstanceOfType(obj)) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
         }
     }
 }

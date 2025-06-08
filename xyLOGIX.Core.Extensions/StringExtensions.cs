@@ -177,6 +177,17 @@ namespace xyLOGIX.Core.Extensions
             GetLanguageArticleTypeValidator.SoleInstance();
 
         /// <summary>
+        /// Gets a reference to an instance of
+        /// <see
+        ///     cref="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" />
+        /// for the current culture.
+        /// </summary>
+        private static PluralizationService PluralizationService
+        {
+            [DebuggerStepThrough] get;
+        } = PluralizationService.CreateService(CultureInfo.CurrentCulture);
+
+        /// <summary>
         /// Gets a <see cref="T:System.Text.RegularExpressions.Regex" /> that
         /// matches all whitespace characters.
         /// </summary>
@@ -3332,6 +3343,49 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Assuming that the specified <paramref name="pluralWord" /> contains a plural
+        /// pluralWord, this method will attempt to make it singular.
+        /// </summary>
+        /// <remarks>
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or
+        /// the <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// parameter, <paramref name="pluralWord" />, then this method is idempotent.
+        /// <para />
+        /// This method is also idempotent if the operation cannot be completed
+        /// successfully.
+        /// </remarks>
+        /// <param name="pluralWord">
+        /// (Required.) A <see cref="T:System.String" /> contaiing
+        /// the pluralWord to make singular.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the
+        /// singular version of the specified <paramref name="pluralWord" />; otherwise,
+        /// the method returns the <see cref="F:System.String.Empty" /> pluralWord.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static string MakeSingular([NotLogged] this string pluralWord)
+        {
+            var result = pluralWord;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(pluralWord)) return result;
+
+                result = PluralizationService.Singularize(pluralWord.Trim());
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = pluralWord;
             }
 
             return result;

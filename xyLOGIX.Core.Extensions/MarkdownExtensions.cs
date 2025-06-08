@@ -289,78 +289,6 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Generates an anchor for the specified <paramref name="hyperlink" />.
-        /// </summary>
-        /// <param name="hyperlink">
-        /// (Required.) A <see cref="T:System.String" /> that
-        /// contains the hyperlink reference destination.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// <paramref name="hyperlink" /> parameter, then this method returns the
-        /// <see cref="F:System.String.Empty" /> value.
-        /// </remarks>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the anchor
-        /// for the specified <paramref name="hyperlink" />; otherwise, the method returns
-        /// the <see cref="F:System.String.Empty" /> value.
-        /// </returns>
-        public static string ToAnchor(this string hyperlink)
-        {
-            var result = string.Empty;
-
-            try
-            {
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "MarkdownExtensions.ToAnchor *** INFO: Checking whether the value of the parameter, 'hyperlink', is blank..."
-                );
-
-                // Check whether the value of the parameter, 'hyperlink', is blank.
-                // If this is so, then emit an error message to the log file, and
-                // then terminate the execution of this method.
-                if (string.IsNullOrWhiteSpace(hyperlink))
-                {
-                    // The parameter, 'hyperlink' was either passed a null value, or it is blank.  This is not desirable.
-                    DebugUtils.WriteLine(
-                        DebugLevel.Error,
-                        "MarkdownExtensions.ToAnchor: The parameter, 'hyperlink' was either passed a null value, or it is blank. Stopping..."
-                    );
-
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"MarkdownExtensions.ToAnchor: Result = '{result}'"
-                    );
-
-                    // stop.
-                    return result;
-                }
-
-                DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** SUCCESS *** The parameter 'hyperlink' is not blank.  Proceeding..."
-                );
-
-                result = $"<a name='{hyperlink}' />{Environment.NewLine}";
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = string.Empty;
-            }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"MarkdownExtensions.ToAnchor: Result = '{result}'"
-            );
-
-            return result;
-        }
-
-        /// <summary>
         /// Generates a "to here" link for the <paramref name="hyperlink" />.
         /// </summary>
         /// <param name="hyperlink">
@@ -385,6 +313,85 @@ namespace xyLOGIX.Core.Extensions
 
                 result = string.Empty;
             }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Generates an opening anchor tag, i.e., <c>&lt;a name="hyperlink" &gt;</c> for
+        /// the specified <paramref name="hyperlink" />.
+        /// </summary>
+        /// <param name="hyperlink">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// contains the hyperlink reference destination.
+        /// </param>
+        /// <remarks>
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// <paramref name="hyperlink" /> parameter, then this method returns the
+        /// <see cref="F:System.String.Empty" /> value.
+        /// <para />
+        /// Callers of this method should ensure that the value of the
+        /// <paramref name="hyperlink" /> parameter is a valid HTML anchor name.
+        /// <para />
+        /// This method only generates the opening anchor tag; it does not generate the
+        /// closing anchor tag, i.e., <c>&lt;/a&gt;</c>.
+        /// </remarks>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the anchor
+        /// for the specified <paramref name="hyperlink" />; otherwise, the method returns
+        /// the <see cref="F:System.String.Empty" /> value.
+        /// </returns>
+        public static string ToOpeningAnchorTag(this string hyperlink)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "MarkdownExtensions.ToOpeningAnchorTag *** INFO: Checking whether the value of the parameter, 'hyperlink', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'hyperlink', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(hyperlink))
+                {
+                    // The parameter, 'hyperlink' was either passed a null value, or it is blank.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "MarkdownExtensions.ToOpeningAnchorTag: The parameter, 'hyperlink' was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"MarkdownExtensions.ToOpeningAnchorTag: Result = '{result}'"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'hyperlink' is not blank.  Proceeding..."
+                );
+
+                result = $"<a name=\"{hyperlink}\">";
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"MarkdownExtensions.ToOpeningAnchorTag: Result = '{result}'"
+            );
 
             return result;
         }

@@ -375,8 +375,8 @@
   - [AsCode(code)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-AsCode-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.AsCode(System.String)')
   - [AsSpanMargin(node)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-AsSpanMargin-System-Xml-Linq-XNode- 'xyLOGIX.Core.Extensions.MarkdownExtensions.AsSpanMargin(System.Xml.Linq.XNode)')
   - [EscapeMarkdownText(content)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-EscapeMarkdownText-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.EscapeMarkdownText(System.String)')
-  - [ToAnchor(hyperlink)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToAnchor-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.ToAnchor(System.String)')
   - [ToHereLink(hyperlink)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToHereLink-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.ToHereLink(System.String)')
+  - [ToOpeningAnchorTag(hyperlink)](#M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToOpeningAnchorTag-System-String- 'xyLOGIX.Core.Extensions.MarkdownExtensions.ToOpeningAnchorTag(System.String)')
 - [NullableDecimalExtensions](#T-xyLOGIX-Core-Extensions-NullableDecimalExtensions 'xyLOGIX.Core.Extensions.NullableDecimalExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNegative-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNegative(System.Nullable{System.Decimal})')
   - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonPositive-System-Nullable{System-Decimal}- 'xyLOGIX.Core.Extensions.NullableDecimalExtensions.IsNonPositive(System.Nullable{System.Decimal})')
@@ -7474,12 +7474,31 @@ parameter, `content`, then this method returns the
 The method is idempotent if the `content` does not contain
 any backticks.
 
-<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToAnchor-System-String-'></a>
-### ToAnchor(hyperlink) `method`
+<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToHereLink-System-String-'></a>
+### ToHereLink(hyperlink) `method`
 
 ##### Summary
 
-Generates an anchor for the specified `hyperlink`.
+Generates a "to here" link for the `hyperlink`.
+
+##### Returns
+
+The "to here" link for the `hyperlink`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| hyperlink | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+contains the hyperlink reference destination. |
+
+<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToOpeningAnchorTag-System-String-'></a>
+### ToOpeningAnchorTag(hyperlink) `method`
+
+##### Summary
+
+Generates an opening anchor tag, i.e., `<a name="hyperlink" >` for
+the specified `hyperlink`.
 
 ##### Returns
 
@@ -7501,23 +7520,15 @@ If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=De
 `hyperlink` parameter, then this method returns the
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
-<a name='M-xyLOGIX-Core-Extensions-MarkdownExtensions-ToHereLink-System-String-'></a>
-### ToHereLink(hyperlink) `method`
 
-##### Summary
 
-Generates a "to here" link for the `hyperlink`.
+Callers of this method should ensure that the value of the
+`hyperlink` parameter is a valid HTML anchor name.
 
-##### Returns
 
-The "to here" link for the `hyperlink`.
 
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| hyperlink | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-contains the hyperlink reference destination. |
+This method only generates the opening anchor tag; it does not generate the
+closing anchor tag, i.e., `</a>`.
 
 <a name='T-xyLOGIX-Core-Extensions-NullableDecimalExtensions'></a>
 ## NullableDecimalExtensions `type`

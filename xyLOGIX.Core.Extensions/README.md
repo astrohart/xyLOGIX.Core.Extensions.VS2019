@@ -361,7 +361,7 @@
   - [RemoveRange\`\`1(list,index,count)](#M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.RemoveRange``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)')
   - [TakeAllButLast\`\`1(source,count,includeNulls)](#M-xyLOGIX-Core-Extensions-ListExtensions-TakeAllButLast``1-System-Collections-Generic-IList{``0},System-Int32,System-Boolean- 'xyLOGIX.Core.Extensions.ListExtensions.TakeAllButLast``1(System.Collections.Generic.IList{``0},System.Int32,System.Boolean)')
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
-  - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0})')
+  - [ToSetString\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0},System-Boolean- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0},System.Boolean)')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IEnumerable{``0})')
 - [LongExtensions](#T-xyLOGIX-Core-Extensions-LongExtensions 'xyLOGIX.Core.Extensions.LongExtensions')
@@ -7145,7 +7145,7 @@ The collection to be returned has its excess memory storage reduced to match
 the actual number of items in the collection, and the garbage collector is run,
 prior to being returned by this method.
 
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0}-'></a>
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0},System-Boolean-'></a>
 ### ToSetString\`\`1(list) `method`
 
 ##### Summary

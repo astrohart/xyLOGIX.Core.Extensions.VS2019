@@ -638,6 +638,12 @@ namespace xyLOGIX.Core.Extensions
         /// tenth item.
         /// </summary>
         /// <param name="list"> List to be written. </param>
+        /// <param name="all">
+        /// (Optional.) <see langword="true" /> to write all items in the list,
+        /// <see langword="false" /> to just write the first ten item(s).
+        /// <para />
+        /// The default value of this parameter is <see langword="false" />.
+        /// </param>
         /// <typeparam name="T"> The type of each element of the list. </typeparam>
         /// <returns> The <paramref name="list" />, formatted as a set string. </returns>
         /// <remarks>
@@ -645,14 +651,17 @@ namespace xyLOGIX.Core.Extensions
         /// collection to a log file.
         /// </remarks>
         [Log(AttributeExclude = true)]
-        public static string ToSetString<T>(this IList<T> list)
+        public static string ToSetString<T>(
+            this IList<T> list,
+            bool all = false
+        )
         {
             if (list == null || list.Count <= 0) return "[]";
 
             var result = "[ ";
             foreach (var item in list.Cast<object>()
                                      .Where(item => item != null)
-                                     .Take(10))
+                                     .Take(all ? list.Count : 10))
                 if (item is string)
                     result += $@"'{item}'" + ", ";
                 else
@@ -661,7 +670,7 @@ namespace xyLOGIX.Core.Extensions
             if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
                 result = result.Remove(result.Length - 2);
 
-            if (list.Count > 10) result += ", ...";
+            if (!all && list.Count > 10) result += ", ...";
 
             result += " ]";
 

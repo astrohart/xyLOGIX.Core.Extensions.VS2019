@@ -459,6 +459,7 @@
   - [EndsWithColonAndNumberRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumberRegex 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithColonAndNumberRegex')
   - [IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
   - [LanguageArticleTypeValidator](#P-xyLOGIX-Core-Extensions-StringExtensions-LanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.StringExtensions.LanguageArticleTypeValidator')
+  - [PluralizationService](#P-xyLOGIX-Core-Extensions-StringExtensions-PluralizationService 'xyLOGIX.Core.Extensions.StringExtensions.PluralizationService')
   - [WhiteSpaceRegex](#P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex 'xyLOGIX.Core.Extensions.StringExtensions.WhiteSpaceRegex')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-StringExtensions-#cctor 'xyLOGIX.Core.Extensions.StringExtensions.#cctor')
   - [AnyContainNoCase(collection,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.AnyContainNoCase(System.Collections.Generic.IEnumerable{System.String},System.String)')
@@ -537,6 +538,7 @@
   - [IsVowelSound(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsVowelSound-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsVowelSound(System.String)')
   - [Join(values,separator)](#M-xyLOGIX-Core-Extensions-StringExtensions-Join-System-Collections-Generic-IList{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.Join(System.Collections.Generic.IList{System.String},System.String)')
   - [Left(value,count)](#M-xyLOGIX-Core-Extensions-StringExtensions-Left-System-String,System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.Left(System.String,System.Int32)')
+  - [MakeSingular(pluralWord)](#M-xyLOGIX-Core-Extensions-StringExtensions-MakeSingular-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MakeSingular(System.String)')
   - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
   - [MatchesWithCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
@@ -9059,6 +9061,15 @@ Gets a reference to the one and only instance of the object that implements the
 [ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
 interface.
 
+<a name='P-xyLOGIX-Core-Extensions-StringExtensions-PluralizationService'></a>
+### PluralizationService `property`
+
+##### Summary
+
+Gets a reference to an instance of
+[PluralizationService](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Data.Entity.Design.PluralizationServices.PluralizationService 'System.Data.Entity.Design.PluralizationServices.PluralizationService')
+for the current culture.
+
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex'></a>
 ### WhiteSpaceRegex `property`
 
@@ -11142,6 +11153,38 @@ The requested leading substring, or a safe fallback.
 
 
 Must be a natural number and less than or equal to the length of the string. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-MakeSingular-System-String-'></a>
+### MakeSingular(pluralWord) `method`
+
+##### Summary
+
+Assuming that the specified `pluralWord` contains a plural
+pluralWord, this method will attempt to make it singular.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+singular version of the specified `pluralWord`; otherwise,
+the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') pluralWord.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pluralWord | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') contaiing
+the pluralWord to make singular. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `pluralWord`, then this method is idempotent.
+
+
+
+This method is also idempotent if the operation cannot be completed
+successfully.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String-'></a>
 ### MatchesNoCase(stringToSearch,findWhat) `method`

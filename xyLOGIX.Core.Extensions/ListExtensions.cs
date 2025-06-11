@@ -716,20 +716,38 @@ namespace xyLOGIX.Core.Extensions
         /// tenth item.
         /// </summary>
         /// <param name="collection"> Collection to be written. </param>
+        /// <param name="max">
+        /// (Optional.) Integer value specifying the max number of element(s) of the
+        /// collection to write.
+        /// <para />
+        /// Must be one or greater.
+        /// <para/>
+        /// The default value of this parameter is 2.
+        /// </param>
         /// <typeparam name="T"> The type of each element of the list. </typeparam>
         /// <returns> The <paramref name="collection" />, formatted as a set string. </returns>
         /// <remarks>
         /// This method is helpful for writing some of the members of a
         /// collection to a log file.
         /// </remarks>
-        public static string ToSetString<T>(this IEnumerable<T> collection)
+        public static string ToSetString<T>(
+            this IEnumerable<T> collection,
+            int max = 2
+        )
         {
             if (collection == null || !collection.Any()) return "[]";
+
+            if (max < 1)
+                throw new ArgumentOutOfRangeException(
+                    nameof(max), "Must be one or greater."
+                );
 
             var result = "[ ";
             foreach (var item in collection.Cast<object>()
                                            .Where(item => item != null)
-                                           .Take(10))
+                                           .Take(
+                                               max
+                                           )) /* we do not want to iterate too much */
                 if (item is string)
                     result += $@"'{item}'" + ", ";
                 else
@@ -738,7 +756,7 @@ namespace xyLOGIX.Core.Extensions
             if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
                 result = result.Remove(result.Length - 2);
 
-            if (collection.Count() > 10) result += ", ...";
+            if (collection.Count() > max) result += ", ...";
 
             result += " ]";
 

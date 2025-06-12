@@ -363,7 +363,7 @@
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
   - [ToSetString\`\`1(list,all)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0},System-Boolean- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0},System.Boolean)')
   - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
-  - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IEnumerable{``0})')
+  - [ToSetString\`\`1(collection,max)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0},System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IEnumerable{``0},System.Int32)')
 - [LongExtensions](#T-xyLOGIX-Core-Extensions-LongExtensions 'xyLOGIX.Core.Extensions.LongExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNegative-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNegative(System.Int64)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNonNegative-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNonNegative(System.Int64)')
@@ -7209,8 +7209,8 @@ The `collection`, formatted as a set string.
 This method is helpful for writing some of the members of a
 collection to a log file.
 
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0}-'></a>
-### ToSetString\`\`1(collection) `method`
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0},System-Int32-'></a>
+### ToSetString\`\`1(collection,max) `method`
 
 ##### Summary
 
@@ -7226,6 +7226,16 @@ The `collection`, formatted as a set string.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection to be written. |
+| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Optional.) Integer value specifying the max number of element(s) of the
+collection to write.
+
+
+
+Must be one or greater.
+
+
+
+The default value of this parameter is 2. |
 
 ##### Generic Types
 

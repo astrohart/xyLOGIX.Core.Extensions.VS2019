@@ -3,7 +3,10 @@ using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Text;
+using System.Threading;
 using xyLOGIX.Collections.Synchronized;
 using xyLOGIX.Core.Debug;
 
@@ -634,43 +637,80 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Writes a list variable out as a Pythonic list, i.e., [1,2,3,4].  Stops past the
-        /// tenth item.
+        /// Writes a list variable out in “Pythonic” notation, e.g.,
+        /// <c>[ 1, 2, 3 ]</c>.
         /// </summary>
-        /// <param name="list"> List to be written. </param>
-        /// <param name="all">
-        /// (Optional.) <see langword="true" /> to write all items in the list,
-        /// <see langword="false" /> to just write the first ten item(s).
-        /// <para />
-        /// The default value of this parameter is <see langword="false" />.
+        /// <typeparam name="T">The type of each element of the list.</typeparam>
+        /// <param name="list">List to be written.</param>
+        /// <param name="max">
+        /// Maximum number of items to include before appending an ellipsis;
+        /// must be <c>&gt;= 1</c>. Default is <c>2</c>.
         /// </param>
-        /// <typeparam name="T"> The type of each element of the list. </typeparam>
-        /// <returns> The <paramref name="list" />, formatted as a set string. </returns>
+        /// <param name="all">
+        /// <see langword="true" /> to write **every** non-null item,
+        /// <see langword="false" /> (to write only the first <paramref name="max" />
+        /// items) is the default.
+        /// </param>
+        /// <returns>The list, formatted as a string for logging.</returns>
         /// <remarks>
-        /// This method is helpful for writing some of the members of a
-        /// collection to a log file.
+        /// Per-item formatting is delegated to
+        /// <see cref="ObjectExtensions.ToLogRepresentation(object)" />, so any
+        /// PostSharp <c>Formatter&lt;T&gt;</c> you register is automatically applied.
         /// </remarks>
-        [Log(AttributeExclude = true)]
+        [Log(AttributeExclude = true), DebuggerStepThrough]
         public static string ToSetString<T>(
             this IList<T> list,
+            int max = 2,
             bool all = false
         )
         {
-            if (list == null || list.Count <= 0) return "[]";
-
             var result = "[ ";
-            foreach (var item in list.Cast<object>()
-                                     .Where(item => item != null)
-                                     .Take(all ? list.Count : 10))
-                if (item is string)
-                    result += $@"'{item}'" + ", ";
-                else
-                    result += item + ", ";
 
-            if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
-                result = result.Remove(result.Length - 2);
+            try
+            {
+                // Validate arguments first.
+                if (max < 1)
+                    throw new ArgumentOutOfRangeException(
+                        nameof(max), max,
+                        "The value of the 'max' parameter must be ≥ 1."
+                    );
 
-            if (!all && list.Count > 10) result += ", ...";
+                // Empty or null list → simple brackets.
+                if (list == null || list.Count <= 0)
+                    return "[]";
+
+                var sb = new StringBuilder();
+
+                var limit = all ? list.Count : max;
+                if (limit < 1) return "[]"; // assume no items to write
+
+                var itemsWritten = 0;
+
+                for (var i = 0;
+                     i < list.Count && itemsWritten < limit;
+                     Interlocked.Increment(ref i))
+                {
+                    var item = list[i];
+                    if (item == null) continue; // skip nulls
+
+                    sb.Append(item.ToLogRepresentation());
+                    sb.Append(", ");
+
+                    Interlocked.Increment(ref itemsWritten);
+                }
+
+                if (sb.Length >= 2)
+                    sb.Length -= 2; // trim trailing ", "
+
+                if (!all && list.Count > max)
+                    sb.Append(", ...");
+
+                result += sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                result += $"<error: '{ex.Message}'>";
+            }
 
             result += " ]";
 
@@ -678,36 +718,87 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Writes a list variable out as a set {1,2,3,4} e.g., as in
-        /// mathematics. Stops past the tenth item.
+        /// Converts an <see cref="T:System.Collections.Generic.ICollection`1" /> to a
+        /// concise, Pythonic, set-style string (e.g., <c>[ 1, 2, 3, ... ]</c>) for
+        /// logging.
         /// </summary>
-        /// <param name="collection"> Collection to be written. </param>
-        /// <typeparam name="T"> The type of each element of the list. </typeparam>
-        /// <returns> The <paramref name="collection" />, formatted as a set string. </returns>
+        /// <typeparam name="T">Type of the collection item.</typeparam>
+        /// <param name="collection">The collection to format.</param>
+        /// <param name="max">
+        /// Maximum number of items to include before appending an ellipsis; must
+        /// be <c>&gt;= 1</c>. Defaults to <see langword="2" />.
+        /// </param>
         /// <remarks>
-        /// This method is helpful for writing some of the members of a
-        /// collection to a log file.
+        /// Uses <see cref="ObjectExtensions.ToLogRepresentation(object)" /> for
+        /// per-item formatting, so any <c>Formatter&lt;T&gt;</c> you register with
+        /// PostSharp is automatically honored.
         /// </remarks>
-        public static string ToSetString<T>(this ICollection<T> collection)
+        /// <returns>
+        /// A string such as <c>[ 42, 99 ]</c>, <c>[ &lt;null&gt; ]</c>,
+        /// <c>[ person:Brian, ... ]</c>, etc.
+        /// </returns>
+        [DebuggerStepThrough]
+        public static string ToSetString<T>(
+            this ICollection<T> collection,
+            int max = 2
+        )
         {
-            if (collection == null || collection.Count <= 0) return "[]";
-
             var result = "[ ";
-            foreach (var item in collection.Cast<object>()
-                                           .Where(item => item != null)
-                                           .Take(10))
-                if (item is string)
-                    result += $@"'{item}'" + ", ";
-                else
-                    result += item + ", ";
 
-            if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
-                result = result.Remove(result.Length - 2);
+            try
+            {
+                // Fail-fast validation of arguments.
+                if (max < 1)
+                    throw new ArgumentOutOfRangeException(
+                        nameof(max), max,
+                        "The value of the 'max' parameter must be ≥ 1."
+                    );
 
-            if (collection.Count > 10) result += ", ...";
+                // Empty or null collection → simple brackets.
+                if (collection == null || collection.Count <= 0)
+                    return "[]";
+
+                // Take (max + 1) to know whether we truncated without
+                // double-enumerating.
+                var items = new List<object>(collection.Count);
+
+                var itemsTaken = 0;
+                foreach (object item in collection)
+                {
+                    if (item == null) continue; // skip nulls
+                    items.Add(item);
+                    Interlocked.Increment(ref itemsTaken);
+
+                    // stop at the greater of max or collection.Count
+                    if (itemsTaken >= max + 1) break;
+                }
+
+                items.TrimExcess();
+
+                var sb = new StringBuilder();
+
+                foreach (var item in items.Take(max))
+                {
+                    sb.Append(item.ToLogRepresentation());
+                    sb.Append(", ");
+                }
+
+                if (sb.Length >= 2)
+                    sb.Length -= 2; // trim trailing ", "
+
+                if (items.Count > max)
+                    sb.Append(", ...");
+
+                result += sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                // Never let logging helpers throw.
+                DebugUtils.LogException(ex);
+                result += "<error>";
+            }
 
             result += " ]";
-
             return result;
         }
 
@@ -715,52 +806,68 @@ namespace xyLOGIX.Core.Extensions
         /// Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the
         /// tenth item.
         /// </summary>
-        /// <param name="collection"> Collection to be written. </param>
+        /// <param name="source"> Collection to be written. </param>
         /// <param name="max">
         /// (Optional.) Integer value specifying the max number of element(s) of the
         /// collection to write.
         /// <para />
         /// Must be one or greater.
-        /// <para/>
+        /// <para />
         /// The default value of this parameter is 2.
         /// </param>
         /// <typeparam name="T"> The type of each element of the list. </typeparam>
-        /// <returns> The <paramref name="collection" />, formatted as a set string. </returns>
+        /// <returns> The <paramref name="source" />, formatted as a set string. </returns>
         /// <remarks>
         /// This method is helpful for writing some of the members of a
         /// collection to a log file.
         /// </remarks>
+        [DebuggerStepThrough]
         public static string ToSetString<T>(
-            this IEnumerable<T> collection,
+            this IEnumerable<T> source,
             int max = 2
         )
         {
-            if (collection == null || !collection.Any()) return "[]";
-
+            if (source == null) return "[]";
             if (max < 1)
                 throw new ArgumentOutOfRangeException(
-                    nameof(max), "Must be one or greater."
+                    nameof(max), max,
+                    "The value of the 'max' parameter must be ≥ 1."
                 );
 
-            var result = "[ ";
-            foreach (var item in collection.Cast<object>()
-                                           .Where(item => item != null)
-                                           .Take(
-                                               max
-                                           )) /* we do not want to iterate too much */
-                if (item is string)
-                    result += $@"'{item}'" + ", ";
-                else
-                    result += item + ", ";
+            // Take (max + 1) to know whether we truncated without
+            // double-enumerating.
+            var items = new List<object>();
+            items.Clear();
+            items.TrimExcess();
 
-            if (!string.IsNullOrWhiteSpace(result) && result.EndsWith(", "))
-                result = result.Remove(result.Length - 2);
+            var itemsTaken = 0;
+            foreach (object item in source)
+            {
+                if (item == null) continue; // skip nulls
+                items.Add(item);
+                Interlocked.Increment(ref itemsTaken);
 
-            if (collection.Count() > max) result += ", ...";
+                // stop at the greater of max or collection.Count
+                if (itemsTaken >= max + 1) break;
+            }
 
-            result += " ]";
+            items.TrimExcess();
 
-            return result;
+            if (items.Count == 0) return "[]";
+
+            var sb = new StringBuilder("[ ");
+
+            foreach (var item in items.Take(max))
+            {
+                sb.Append(item.ToLogRepresentation());
+                sb.Append(", ");
+            }
+
+            if (sb.Length > 2) sb.Length -= 2; // Trim trailing comma/space.
+            if (items.Count > max) sb.Append(", ...");
+
+            sb.Append(" ]");
+            return sb.ToString();
         }
     }
 }

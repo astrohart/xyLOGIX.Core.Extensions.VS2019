@@ -361,9 +361,9 @@
   - [RemoveRange\`\`1(list,index,count)](#M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.RemoveRange``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)')
   - [TakeAllButLast\`\`1(source,count,includeNulls)](#M-xyLOGIX-Core-Extensions-ListExtensions-TakeAllButLast``1-System-Collections-Generic-IList{``0},System-Int32,System-Boolean- 'xyLOGIX.Core.Extensions.ListExtensions.TakeAllButLast``1(System.Collections.Generic.IList{``0},System.Int32,System.Boolean)')
   - [ToConcurrentList\`\`1(items)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToConcurrentList``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToConcurrentList``1(System.Collections.Generic.IEnumerable{``0})')
-  - [ToSetString\`\`1(list,all)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0},System-Boolean- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0},System.Boolean)')
-  - [ToSetString\`\`1(collection)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0})')
-  - [ToSetString\`\`1(collection,max)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0},System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IEnumerable{``0},System.Int32)')
+  - [ToSetString\`\`1(list,max,all)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0},System-Int32,System-Boolean- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IList{``0},System.Int32,System.Boolean)')
+  - [ToSetString\`\`1(collection,max)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0},System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.ICollection{``0},System.Int32)')
+  - [ToSetString\`\`1(source,max)](#M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0},System-Int32- 'xyLOGIX.Core.Extensions.ListExtensions.ToSetString``1(System.Collections.Generic.IEnumerable{``0},System.Int32)')
 - [LongExtensions](#T-xyLOGIX-Core-Extensions-LongExtensions 'xyLOGIX.Core.Extensions.LongExtensions')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNegative-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNegative(System.Int64)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-LongExtensions-IsNonNegative-System-Int64- 'xyLOGIX.Core.Extensions.LongExtensions.IsNonNegative(System.Int64)')
@@ -430,6 +430,9 @@
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Int32)')
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Double)')
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Decimal)')
+- [ObjectExtensions](#T-xyLOGIX-Core-Extensions-ObjectExtensions 'xyLOGIX.Core.Extensions.ObjectExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-ObjectExtensions-#cctor 'xyLOGIX.Core.Extensions.ObjectExtensions.#cctor')
+  - [ToLogRepresentation(value)](#M-xyLOGIX-Core-Extensions-ObjectExtensions-ToLogRepresentation-System-Object- 'xyLOGIX.Core.Extensions.ObjectExtensions.ToLogRepresentation(System.Object)')
 - [PathnameExtensions](#T-xyLOGIX-Core-Extensions-PathnameExtensions 'xyLOGIX.Core.Extensions.PathnameExtensions')
   - [FileExists(pathname)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.FileExists(System.String)')
   - [HasAnyOfTheseExtensions(pathname,extensions)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasAnyOfTheseExtensions(System.String,System.String[])')
@@ -641,7 +644,8 @@ created or before any static members are referenced.
 We've decorated this constructor with the `[Log(AttributeExclude = true)]`
 attribute in order to simplify the logging output.
 
-## <a name='T-xyLOGIX-Core-Extensions-BoundComboBox'>BoundComboBox `type`</a>
+<a name='T-xyLOGIX-Core-Extensions-BoundComboBox'></a>
+## BoundComboBox `type`
 
 ##### Namespace
 
@@ -7144,29 +7148,28 @@ The collection to be returned has its excess memory storage reduced to match
 the actual number of items in the collection, and the garbage collector is run,
 prior to being returned by this method.
 
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0},System-Boolean-'></a>
-### ToSetString\`\`1(list,all) `method`
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IList{``0},System-Int32,System-Boolean-'></a>
+### ToSetString\`\`1(list,max,all) `method`
 
 ##### Summary
 
-Writes a list variable out as a Pythonic list, i.e., [1,2,3,4].  Stops past the
-tenth item.
+Writes a list variable out in “Pythonic” notation, e.g.,
+`[ 1, 2, 3 ]`.
 
 ##### Returns
 
-The `list`, formatted as a set string.
+The list, formatted as a string for logging.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | List to be written. |
-| all | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) `true` to write all items in the list,
-`false` to just write the first ten item(s).
-
-
-
-The default value of this parameter is `false`. |
+| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Maximum number of items to include before appending an ellipsis;
+must be `>= 1`. Default is `2`. |
+| all | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to write **every** non-null item,
+`false` (to write only the first `max`
+items) is the default. |
 
 ##### Generic Types
 
@@ -7176,40 +7179,46 @@ The default value of this parameter is `false`. |
 
 ##### Remarks
 
-This method is helpful for writing some of the members of a
-collection to a log file.
+Per-item formatting is delegated to
+[ToLogRepresentation](#M-xyLOGIX-Core-Extensions-ObjectExtensions-ToLogRepresentation-System-Object- 'xyLOGIX.Core.Extensions.ObjectExtensions.ToLogRepresentation(System.Object)'), so any
+PostSharp `Formatter<T>` you register is automatically applied.
 
-<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0}-'></a>
-### ToSetString\`\`1(collection) `method`
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0},System-Int32-'></a>
+### ToSetString\`\`1(collection,max) `method`
 
 ##### Summary
 
-Writes a list variable out as a set {1,2,3,4} e.g., as in
-mathematics. Stops past the tenth item.
+Converts an [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') to a
+concise, Pythonic, set-style string (e.g., `[ 1, 2, 3, ... ]`) for
+logging.
 
 ##### Returns
 
-The `collection`, formatted as a set string.
+A string such as `[ 42, 99 ]`, `[ <null> ]`,
+`[ person:Brian, ... ]`, etc.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Collection to be written. |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | The collection to format. |
+| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Maximum number of items to include before appending an ellipsis; must
+be `>= 1`. Defaults to `2`. |
 
 ##### Generic Types
 
 | Name | Description |
 | ---- | ----------- |
-| T | The type of each element of the list. |
+| T | Type of the collection item. |
 
 ##### Remarks
 
-This method is helpful for writing some of the members of a
-collection to a log file.
+Uses [ToLogRepresentation](#M-xyLOGIX-Core-Extensions-ObjectExtensions-ToLogRepresentation-System-Object- 'xyLOGIX.Core.Extensions.ObjectExtensions.ToLogRepresentation(System.Object)') for
+per-item formatting, so any `Formatter<T>` you register with
+PostSharp is automatically honored.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-IEnumerable{``0},System-Int32-'></a>
-### ToSetString\`\`1(collection,max) `method`
+### ToSetString\`\`1(source,max) `method`
 
 ##### Summary
 
@@ -7218,13 +7227,13 @@ tenth item.
 
 ##### Returns
 
-The `collection`, formatted as a set string.
+The `source`, formatted as a set string.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection to be written. |
+| source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection to be written. |
 | max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Optional.) Integer value specifying the max number of element(s) of the
 collection to write.
 
@@ -8683,6 +8692,79 @@ the method is the identity map.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Input value. |
+
+<a name='T-xyLOGIX-Core-Extensions-ObjectExtensions'></a>
+## ObjectExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes static extension methods for [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object').
+
+<a name='M-xyLOGIX-Core-Extensions-ObjectExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [ObjectExtensions](#T-xyLOGIX-Core-Extensions-ObjectExtensions 'xyLOGIX.Core.Extensions.ObjectExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-ObjectExtensions-ToLogRepresentation-System-Object-'></a>
+### ToLogRepresentation(value) `method`
+
+##### Summary
+
+Converts a reference to [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') to a string
+representation suitable for logging.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the textual
+representation of the object; otherwise a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+containing the text `<error>`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | (Required.) Reference to an instance of
+[Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') that represents the object that is to be
+converted to a log-friendly string representation. |
+
+##### Remarks
+
+If a `null` reference is passed as the argument of the
+`value` parameter, then the method returns the string
+`<null>`.
+
+
+
+This method uses PostSharp's formatting system to generate the string
+representation.
+
+
+
+If PostSharp's formatter is not available, this method attempts to call
+[ToString](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object.ToString 'System.Object.ToString') on the specified
+`value`; failing that, the method returns
+`<error>`.
 
 <a name='T-xyLOGIX-Core-Extensions-PathnameExtensions'></a>
 ## PathnameExtensions `type`

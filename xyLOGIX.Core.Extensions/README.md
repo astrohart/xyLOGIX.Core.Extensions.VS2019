@@ -641,8 +641,7 @@ created or before any static members are referenced.
 We've decorated this constructor with the `[Log(AttributeExclude = true)]`
 attribute in order to simplify the logging output.
 
-<a name='T-xyLOGIX-Core-Extensions-BoundComboBox'></a>
-## BoundComboBox `type`
+## <a name='T-xyLOGIX-Core-Extensions-BoundComboBox'>BoundComboBox `type`</a>
 
 ##### Namespace
 

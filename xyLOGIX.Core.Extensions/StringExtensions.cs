@@ -1,6 +1,5 @@
 ﻿using PostSharp.Patterns.Collections;
 using PostSharp.Patterns.Diagnostics;
-using PostSharp.Patterns.Formatters;
 using PostSharp.Patterns.Threading;
 using System;
 using System.Collections.Generic;
@@ -549,26 +548,27 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(value)) return value;
 
-                result = value.Trim()
-                              .Replace("\r\n", "\n")
-                              .Replace("\n\n", "\n")
-                              .Replace("\n", " ")
-                              .Replace("\t", " ");
+                // 1. Normalise endings to '\n'.
+                result = value.Replace("\r\n", "\n")
+                              .Replace("\r", "\n");
 
-                /*
-                 * Strip out all repeating SPACE characters.
-                 */
+                // 2. Two-or-more consecutive newlines  →  exactly two spaces.
+                result = Regex.Replace(result, @"\n{2,}", "  ");
 
-                do
-                {
-                    result = result.Replace("  ", " ");
-                } while (result.Contains("  "));
+                // 3. Any remaining single newline  →  one space.
+                result = result.Replace("\n", " ");
+
+                // 4. Tabs  →  one space.
+                result = result.Replace("\t", " ");
+
+                // 5. Collapse runs ≥ 3 spaces to one (keeps the double spaces we just added).
+                result = Regex.Replace(result, @" {3,}", " ");
+
+                result = result.Trim();
             }
             catch (Exception ex)
             {
-                // dump all the exception info to the log
                 DebugUtils.LogException(ex);
-
                 result = string.Empty;
             }
 

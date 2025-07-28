@@ -77,6 +77,12 @@ namespace xyLOGIX.Core.Extensions
         };
 
         /// <summary>
+        /// A <see cref="T:System.String" /> that is set to the error prefix used by all
+        /// debugging messages.
+        /// </summary>
+        private const string ErrorPrefix = "*** ERROR *** ";
+
+        /// <summary>
         /// A <see cref="T:System.String" /> containing a regular expression to match a
         /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
         /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
@@ -1630,9 +1636,13 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="str1"> First string to compare. </param>
         /// <param name="str2"> Second string to compare. </param>
         /// <returns> Whether the two strings are the same, regardless of case. </returns>
-        public static bool EqualsNoCase(this string str1, string str2)
+        [DebuggerStepThrough]
+        public static bool EqualsNoCase(
+            [NotLogged] this string str1,
+            [NotLogged] string str2
+        )
         {
-            var result = false;
+            bool result;
 
             try
             {
@@ -1879,10 +1889,14 @@ namespace xyLOGIX.Core.Extensions
         /// is returned if both <paramref name="val1" /> and <paramref name="val2" /> are
         /// non-blank.
         /// </returns>
+        [Log(AttributeExclude = true), DebuggerStepThrough]
         [return: NotLogged]
-        public static string FirstOrNotEmpty(this string val1, string val2)
+        public static string FirstOrNotEmpty(
+            [NotLogged] this string val1,
+            [NotLogged] string val2
+        )
         {
-            var result = string.Empty;
+            string result;
 
             try
             {
@@ -4034,6 +4048,49 @@ namespace xyLOGIX.Core.Extensions
                        .Trim();
 
         /// <summary>
+        /// Removes the <c>*** ERROR *** </c> prefix from the specified
+        /// <paramref name="message" />, and then returns the altered content.
+        /// </summary>
+        /// <param name="message">
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the message that is to be altered.
+        /// </param>
+        /// <remarks>
+        /// If the specified <paramref name="message" /> does not contain the
+        /// <c>*** ERROR *** </c> prefix, then this method is idempotent.
+        /// </remarks>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the
+        /// specified <paramref name="message" /> without the <c>*** ERROR *** </c> prefix;
+        /// otherwise, the method is idempotent.
+        /// </returns>
+        public static string RemoveErrorPrefix([NotLogged] this string message)
+        {
+            var result = message;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(message)) return result;
+                if (!message.StartsWith(ErrorPrefix)) return result;
+
+                result = message.Replace(ErrorPrefix, string.Empty);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the Debug output.
+                System.Diagnostics.Debug.WriteLine(ex);
+
+                result = message;
+            }
+
+            System.Diagnostics.Debug.WriteLine(
+                $"StringExtensions.RemoveErrorPrefix: Result = '{result}'"
+            );
+
+            return result;
+        }
+
+        /// <summary>
         /// Removes any extra blank lines from the end of the specified
         /// <paramref name="value" />.
         /// </summary>
@@ -4354,7 +4411,8 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="oldChar" /> replaced, or the original string if
         /// <paramref name="source" /> is <see langword="null" />.
         /// </returns>
-        [DebuggerStepThrough]
+        [Log(AttributeExclude = true), DebuggerStepThrough]
+        [return: NotLogged]
         public static string Replace(
             [NotLogged] this string source,
             [NotLogged] char oldChar,
@@ -4883,12 +4941,13 @@ namespace xyLOGIX.Core.Extensions
         /// If successful, the <paramref name="inputString" />, but with "smart
         /// quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
         /// </returns>
+        [Log(AttributeExclude = true), DebuggerStepThrough]
         [return: NotLogged]
         public static string StripIncompatibleQuotes(
             [NotLogged] this string inputString
         )
         {
-            var result = inputString;
+            string result;
 
             try
             {
@@ -5027,7 +5086,7 @@ namespace xyLOGIX.Core.Extensions
             [NotLogged] string suffix
         )
         {
-            var result = string.Empty;
+            string result;
 
             try
             {
@@ -5473,10 +5532,11 @@ namespace xyLOGIX.Core.Extensions
         /// If <paramref name="value" /> is <see langword="null" /> or empty, an empty
         /// string is returned.
         /// </returns>
+        [Log(AttributeExclude = true), DebuggerStepThrough]
         [return: NotLogged]
         public static string ToPhrase([NotLogged] this string value)
         {
-            var result = value;
+            string result;
 
             try
             {

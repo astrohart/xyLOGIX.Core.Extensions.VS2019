@@ -454,6 +454,7 @@
   - [AcronymPattern](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymPattern 'xyLOGIX.Core.Extensions.StringExtensions.AcronymPattern')
   - [AlwaysCapitalizeIfFirstWord](#F-xyLOGIX-Core-Extensions-StringExtensions-AlwaysCapitalizeIfFirstWord 'xyLOGIX.Core.Extensions.StringExtensions.AlwaysCapitalizeIfFirstWord')
   - [CapitalizeableAsFirstWords](#F-xyLOGIX-Core-Extensions-StringExtensions-CapitalizeableAsFirstWords 'xyLOGIX.Core.Extensions.StringExtensions.CapitalizeableAsFirstWords')
+  - [ErrorPrefix](#F-xyLOGIX-Core-Extensions-StringExtensions-ErrorPrefix 'xyLOGIX.Core.Extensions.StringExtensions.ErrorPrefix')
   - [GuidRegexLowercaseNoBraces](#F-xyLOGIX-Core-Extensions-StringExtensions-GuidRegexLowercaseNoBraces 'xyLOGIX.Core.Extensions.StringExtensions.GuidRegexLowercaseNoBraces')
   - [NamesOfStreetsThatShouldBeCapitalized](#F-xyLOGIX-Core-Extensions-StringExtensions-NamesOfStreetsThatShouldBeCapitalized 'xyLOGIX.Core.Extensions.StringExtensions.NamesOfStreetsThatShouldBeCapitalized')
   - [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
@@ -557,6 +558,7 @@
   - [RegexReplaceWithCase(value,search,replacement,options)](#M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions- 'xyLOGIX.Core.Extensions.StringExtensions.RegexReplaceWithCase(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)')
   - [RemoveAmpersands(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveAmpersands-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveAmpersands(System.String)')
   - [RemoveDigitsAndPunctuation(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveDigitsAndPunctuation(System.String)')
+  - [RemoveErrorPrefix(message)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveErrorPrefix-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveErrorPrefix(System.String)')
   - [RemoveExtraEmptyLines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveExtraEmptyLines(System.String)')
   - [RemoveLastWord(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveLastWord(System.String)')
   - [RemoveTrailingBackslashes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveTrailingBackslashes(System.String)')
@@ -9089,6 +9091,14 @@ the first word of a phrase.
 Collection of strings that are potentially needing to be capitalized
 if they are the first word of a phrase or a name.
 
+<a name='F-xyLOGIX-Core-Extensions-StringExtensions-ErrorPrefix'></a>
+### ErrorPrefix `constants`
+
+##### Summary
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to the error prefix used by all
+debugging messages.
+
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-GuidRegexLowercaseNoBraces'></a>
 ### GuidRegexLowercaseNoBraces `constants`
 
@@ -11708,6 +11718,32 @@ String after transformation.
 
 If the empty string is passed to `value`, then the
 empty string is returned.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveErrorPrefix-System-String-'></a>
+### RemoveErrorPrefix(message) `method`
+
+##### Summary
+
+Removes the `*** ERROR *** ` prefix from the specified
+`message`, and then returns the altered content.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+specified `message` without the `*** ERROR *** ` prefix;
+otherwise, the method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| message | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the message that is to be altered. |
+
+##### Remarks
+
+If the specified `message` does not contain the
+`*** ERROR *** ` prefix, then this method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String-'></a>
 ### RemoveExtraEmptyLines(value) `method`

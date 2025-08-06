@@ -6680,7 +6680,7 @@ Validates whether certain value(s) are within the defined value set of the
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this
+Empty, private constructor to prohibit direct allocation of this
 class.
 
 ##### Parameters

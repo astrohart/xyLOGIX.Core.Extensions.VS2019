@@ -16,11 +16,11 @@ namespace xyLOGIX.Core.Extensions
         static LanguageArticleTypeValidator() { }
 
         /// <summary>
-        /// Empty, protected constructor to prohibit direct allocation of this
+        /// Empty, private constructor to prohibit direct allocation of this
         /// class.
         /// </summary>
         [Log(AttributeExclude = true)]
-        protected LanguageArticleTypeValidator() { }
+        private LanguageArticleTypeValidator() { }
 
         /// <summary>
         /// Gets a reference to the one and only instance of the object that

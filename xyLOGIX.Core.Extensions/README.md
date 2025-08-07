@@ -354,6 +354,7 @@
   - [AddDistinct\`\`1(collection,item)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0- 'xyLOGIX.Core.Extensions.ListExtensions.AddDistinct``1(System.Collections.Generic.ICollection{``0},``0)')
   - [AddRange\`\`1(list,items)](#M-xyLOGIX-Core-Extensions-ListExtensions-AddRange``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.AddRange``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IEnumerable{``0})')
   - [Clone\`\`1(source)](#M-xyLOGIX-Core-Extensions-ListExtensions-Clone``1-System-Collections-Generic-ICollection{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.Clone``1(System.Collections.Generic.ICollection{``0})')
+  - [DumpToLog\`\`1(list)](#M-xyLOGIX-Core-Extensions-ListExtensions-DumpToLog``1-System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.DumpToLog``1(System.Collections.Generic.IList{``0})')
   - [FindIndex\`\`1(list,predicate)](#M-xyLOGIX-Core-Extensions-ListExtensions-FindIndex``1-System-Collections-Generic-IList{``0},System-Predicate{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.FindIndex``1(System.Collections.Generic.IList{``0},System.Predicate{``0})')
   - [IsIdenticalTo\`\`1(left,right)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsIdenticalTo``1-System-Collections-Generic-IList{``0},System-Collections-Generic-IList{``0}- 'xyLOGIX.Core.Extensions.ListExtensions.IsIdenticalTo``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})')
   - [IsOneOf(value,valueSet)](#M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}- 'xyLOGIX.Core.Extensions.ListExtensions.IsOneOf(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})')
@@ -6895,6 +6896,42 @@ Reference to the duplicate of the collection referenced by
 | Name | Description |
 | ---- | ----------- |
 | T | Type of object in the list. |
+
+<a name='M-xyLOGIX-Core-Extensions-ListExtensions-DumpToLog``1-System-Collections-Generic-IList{``0}-'></a>
+### DumpToLog\`\`1(list) `method`
+
+##### Summary
+
+Dumps the contents of the specified `list` to the log, with
+indices of the individual element(s) shown.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) Reference to an instance of the list whose
+contents are to be dumped. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) The type of each of the element(s) of the list. |
+
+##### Remarks
+
+This method is primarily intended to be called from the
+window in the Visual Studio IDE.
+
+
+
+If a `null` reference is passed for the argument of the
+`list` parameter, then this method does nothing.
+
+
+
+No action is also taken if the `list` contains zero
+element(s).
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-FindIndex``1-System-Collections-Generic-IList{``0},System-Predicate{``0}-'></a>
 ### FindIndex\`\`1(list,predicate) `method`

@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
+    <Compile Include="ArrayExtensions.cs" />
     <Compile Include="GetLanguageArticleTypeValidator.cs" />
     <Compile Include="LanguageArticleType.cs" />
     <Compile Include="LanguageArticleTypeValidator.cs" />

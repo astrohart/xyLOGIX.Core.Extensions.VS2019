@@ -201,6 +201,101 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Dumps the contents of the specified <paramref name="list" /> to the log, with
+        /// indices of the individual element(s) shown.
+        /// </summary>
+        /// <typeparam name="T">(Required.) The type of each of the element(s) of the list.</typeparam>
+        /// <param name="list">
+        /// (Required.) Reference to an instance of the list whose
+        /// contents are to be dumped.
+        /// </param>
+        /// <remarks>
+        /// This method is primarily intended to be called from the
+        /// <b>Immediate</b> window in the Visual Studio IDE.
+        /// <para />
+        /// If a <see langword="null" /> reference is passed for the argument of the
+        /// <paramref name="list" /> parameter, then this method does nothing.
+        /// <para />
+        /// No action is also taken if the <paramref name="list" /> contains zero
+        /// element(s).
+        /// </remarks>
+        public static void DumpToLog<T>([NotLogged] this IList<T> list)
+        {
+            try
+            {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "ListExtensions.DumpToLog: Checking whether the method parameter, 'list', has a null reference for a value..."
+                );
+
+                // Check to see if the required parameter, 'list', is null. If it is,
+                // then write an error message to the log file and then terminate the
+                // execution of this method, returning the default return value.
+                if (list == null)
+                {
+                    // The method parameter, 'list', is required and is not supposed
+                    // to have a NULL value.  It does, and this is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "ListExtensions.DumpToLog: *** ERROR *** A null reference was passed for the method parameter, 'list'.  Stopping..."
+                    );
+
+                    // stop.
+                    return;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "ListExtensions.DumpToLog: *** SUCCESS *** We have been passed a valid object reference for the method parameter, 'list'.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** FYI *** Transforming the list to an array..."
+                );
+
+                var arrList = list.ToArray();
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "ListExtensions.DumpToLog *** INFO: Checking whether the array, 'arrList', has greater than zero elements..."
+                );
+
+                // Check whether the array, 'arrList', has greater than zero elements.  If it is empty,
+                // then write an error message to the log file, and then terminate the execution of this method.
+                // It is preferred for the array to have greater than zero elements.
+                if (arrList.Length <= 0)
+                {
+                    // The array, 'arrList', has zero elements, and we can't proceed if this is so.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "ListExtensions.DumpToLog *** ERROR *** The array, 'arrList', has zero elements.  Stopping..."
+                    );
+
+                    // stop.
+                    return;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $"ListExtensions.DumpToLog *** SUCCESS *** {arrList.Length} element(s) were found in the 'arrList' array.  Dumping its element(s)..."
+                );
+
+                for (var i = 0; i < arrList.Length; i++)
+                {
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug, $"[{i}]: {arrList[i]}"
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+        }
+
+        /// <summary>
         /// Searches the provided <paramref name="list" />, trying to locate the element
         /// that satisfies the Boolean conditions imposed by the specified
         /// <paramref name="predicate" />.

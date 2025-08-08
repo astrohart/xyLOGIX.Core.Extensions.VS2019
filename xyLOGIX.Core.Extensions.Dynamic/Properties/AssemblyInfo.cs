@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("xyLOGIX Core Extension Library")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2017-25 by xyLOGIX, LLC.  All rights reserved."
+        "Copyright ? 2017-25 by xyLOGIX, LLC.  All rights reserved."
     )]
 [assembly:
     AssemblyTrademark(
@@ -28,7 +28,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6095856e-802b-4bf8-853f-6b01a6bbb633")]
+[assembly: Guid("9fe0c31c-177a-4726-933d-72d4c39fa588")]
 
 // Version information for an assembly consists of the following four values:
 //

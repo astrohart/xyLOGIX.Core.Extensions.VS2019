@@ -674,84 +674,26 @@ namespace xyLOGIX.Core.Extensions
                  * do something it's not intended to do.
                  */
 
-                System.Diagnostics.Debug.WriteLine(
-                    $"StringExtensions.Contains: Checking whether the string comparison, '{comparisonType}', is within the defined value set..."
-                );
-
                 // Check to see whether the specified string comparison is within the defined value set.
-                // If this is not the case, then write an error message to the log file,
-                // and then terminate the execution of this method.
                 if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
                 {
-                    // The specified string comparison is NOT within the defined value set.  This is not desirable.
-                    System.Diagnostics.Debug.WriteLine(
-                        $"*** ERROR *** The string comparison, '{comparisonType}', is NOT within the defined value set.  Stopping..."
-                    );
-
-                    System.Diagnostics.Debug.WriteLine(
-                        $"*** StringExtensions.Contains: Result = {result}"
-                    );
-
                     // stop.
                     return result;
                 }
-
-                System.Diagnostics.Debug.WriteLine(
-                    $"StringExtensions.Contains: *** SUCCESS *** The string comparison, '{comparisonType}', is within the defined value set.  Proceeding..."
-                );
-
-                // Defensive null / whitespace checks.
-                System.Diagnostics.Debug.WriteLine(
-                    "StringExtensions.Contains *** INFO: Checking whether the value of the parameter, 'source', is blank..."
-                );
 
                 // Check whether the value of the parameter, 'source', is blank.
-                // If this is so, then emit an error message to the Debug output, and
-                // then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(source))
                 {
-                    // The parameter, 'source', was either passed a null value, or it is blank.  This is not desirable.
-                    System.Diagnostics.Debug.WriteLine(
-                        "StringExtensions.Contains: *** ERROR *** The parameter, 'source', was either passed a null value, or it is blank. Stopping..."
-                    );
-
-                    System.Diagnostics.Debug.WriteLine(
-                        $"StringExtensions.Contains: Result = {result}"
-                    );
-
                     // stop.
                     return result;
                 }
-
-                System.Diagnostics.Debug.WriteLine(
-                    "*** SUCCESS *** The parameter, 'source', is not blank.  Proceeding..."
-                );
-
-                System.Diagnostics.Debug.WriteLine(
-                    "StringExtensions.Contains *** INFO: Checking whether the value of the parameter, 'value', is blank..."
-                );
 
                 // Check whether the value of the parameter, 'value', is blank.
-                // If this is so, then emit an error message to the Debug output, and
-                // then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    // The parameter, 'value', was either passed a null value, or it is blank.  This is not desirable.
-                    System.Diagnostics.Debug.WriteLine(
-                        "StringExtensions.Contains: *** ERROR *** The parameter, 'value', was either passed a null value, or it is blank. Stopping..."
-                    );
-
-                    System.Diagnostics.Debug.WriteLine(
-                        $"StringExtensions.Contains: Result = {result}"
-                    );
-
                     // stop.
                     return result;
                 }
-
-                System.Diagnostics.Debug.WriteLine(
-                    "*** SUCCESS *** The parameter, 'value', is not blank.  Proceeding..."
-                );
 
                 result = source.IndexOf(value, comparisonType) >= 0;
             }

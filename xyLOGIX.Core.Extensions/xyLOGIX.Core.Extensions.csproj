@@ -167,6 +167,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SetExtensions.cs" />
+    <Compile Include="StringArrayExtensions.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="TextBoxExtensions.cs" />
     <Compile Include="ToolStripMenuItemExtensions.cs" />

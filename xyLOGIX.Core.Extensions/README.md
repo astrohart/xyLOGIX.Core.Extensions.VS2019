@@ -450,6 +450,9 @@
 - [SetExtensions](#T-xyLOGIX-Core-Extensions-SetExtensions 'xyLOGIX.Core.Extensions.SetExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-SetExtensions-#cctor 'xyLOGIX.Core.Extensions.SetExtensions.#cctor')
   - [AddRange\`\`1(target,source)](#M-xyLOGIX-Core-Extensions-SetExtensions-AddRange``1-System-Collections-Generic-ISet{``0},System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.SetExtensions.AddRange``1(System.Collections.Generic.ISet{``0},System.Collections.Generic.IEnumerable{``0})')
+- [StringArrayExtensions](#T-xyLOGIX-Core-Extensions-StringArrayExtensions 'xyLOGIX.Core.Extensions.StringArrayExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-StringArrayExtensions-#cctor 'xyLOGIX.Core.Extensions.StringArrayExtensions.#cctor')
+  - [DumpToLog(values)](#M-xyLOGIX-Core-Extensions-StringArrayExtensions-DumpToLog-System-String[]- 'xyLOGIX.Core.Extensions.StringArrayExtensions.DumpToLog(System.String[])')
 - [StringExtensions](#T-xyLOGIX-Core-Extensions-StringExtensions 'xyLOGIX.Core.Extensions.StringExtensions')
   - [AcronymList](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList 'xyLOGIX.Core.Extensions.StringExtensions.AcronymList')
   - [AcronymPattern](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymPattern 'xyLOGIX.Core.Extensions.StringExtensions.AcronymPattern')
@@ -9077,6 +9080,54 @@ skipped.
 
 
 `null` references are also skipped.
+
+<a name='T-xyLOGIX-Core-Extensions-StringArrayExtensions'></a>
+## StringArrayExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Provides extension methods for [String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') arrays.
+
+<a name='M-xyLOGIX-Core-Extensions-StringArrayExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes static data or performs actions that need to be performed once only
+for the [StringArrayExtensions](#T-xyLOGIX-Core-Extensions-StringArrayExtensions 'xyLOGIX.Core.Extensions.StringArrayExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance being
+created or before any static members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-StringArrayExtensions-DumpToLog-System-String[]-'></a>
+### DumpToLog(values) `method`
+
+##### Summary
+
+Dumps the contents of the specified [String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]')
+array to the application log.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Reference to the [String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') whose
+contents are to be logged. |
 
 <a name='T-xyLOGIX-Core-Extensions-StringExtensions'></a>
 ## StringExtensions `type`

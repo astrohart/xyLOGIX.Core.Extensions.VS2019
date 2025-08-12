@@ -42,7 +42,7 @@ namespace xyLOGIX.Core.Extensions
 
                 DebugUtils.WriteLine(
                     DebugLevel.Info,
-                    $"StringArrayExtensions.DumpToLog: Dumping {values.Length} value(s) to log..."
+                    $"(Dumping {values.Length} value(s) to log...)"
                 );
 
                 for (var i = 0; i < values.Length; i++)

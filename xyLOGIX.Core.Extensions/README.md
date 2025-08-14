@@ -569,6 +569,7 @@
   - [Replace(source,oldValue,newValue,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Replace(System.String,System.String,System.String,System.StringComparison)')
   - [Replace(source,oldChar,newChar,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-Char,System-Char,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Replace(System.String,System.Char,System.Char,System.StringComparison)')
   - [ReplaceAnyOf(source,findWhatValues,replacementText)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf(System.String,System.Collections.Generic.ICollection{System.String},System.String)')
+  - [ReplaceCopyrightSymbolWithEscapeSequence(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceCopyrightSymbolWithEscapeSequence-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceCopyrightSymbolWithEscapeSequence(System.String)')
   - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
   - [ReplaceSingleQuotesWithHTMLApostrophes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSingleQuotesWithHTMLApostrophes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceSingleQuotesWithHTMLApostrophes(System.String)')
   - [ReplaceSpacesWithHtmlNonBreakingSpace(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSpacesWithHtmlNonBreakingSpace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceSpacesWithHtmlNonBreakingSpace(System.String)')
@@ -11993,6 +11994,27 @@ the `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF
 | replacementText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
 is to serve as the replacement for any of the specified
 `findWhatValues` in `source`. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceCopyrightSymbolWithEscapeSequence-System-String-'></a>
+### ReplaceCopyrightSymbolWithEscapeSequence(value) `method`
+
+##### Summary
+
+Replaces the copyright symbol (©) with a PowerShell escape sequence that allows
+it to show up correctly in a Git commit message.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+modified text; otherwise, the method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+text that is to be replaced. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String-'></a>
 ### ReplaceNoCase(value,search,replacement) `method`

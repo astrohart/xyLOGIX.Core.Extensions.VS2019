@@ -4482,6 +4482,51 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Replaces the copyright symbol (©) with a PowerShell escape sequence that allows
+        /// it to show up correctly in a Git commit message.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// text that is to be replaced.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the
+        /// modified text; otherwise, the method returns the
+        /// <see cref="F:System.String.Empty" /> value.
+        /// </returns>
+        [DebuggerStepThrough]
+        [return: NotLogged]
+        public static string ReplaceCopyrightSymbolWithEscapeSequence(
+            [NotLogged] this string value
+        )
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return value;
+
+                const string copyright = "\u00A9"; // ©
+                const string
+                    mojibake =
+                        "\u00C2\u00A9"; // Â© (UTF-8 C2 A9 misread as CP1252)
+                const string replacement = "$([char]0x00A9)";
+
+                result = value.Replace(mojibake, replacement)
+                              .Replace(copyright, replacement);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Replaces the string specified by <paramref name="search" /> by the
         /// <paramref name="replacement" /> string in the <paramref name="value" /> ,
         /// ignoring case.

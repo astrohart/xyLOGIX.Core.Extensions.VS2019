@@ -6707,7 +6707,7 @@ interface.
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct allocation of this class.
 
 ##### Parameters
 

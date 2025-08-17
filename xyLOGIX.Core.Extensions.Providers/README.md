@@ -66,7 +66,7 @@ Reference to an instance of a dictionary that maps instances of
 
 ##### Summary
 
-Empty, static constructor to prohibit direct allocation of this
+Empty, `static` constructor to prohibit direct allocation of this
 class.
 
 ##### Parameters

@@ -11,7 +11,7 @@ namespace xyLOGIX.Core.Extensions
     /// </summary>
     public class LanguageArticleTypeValidator : ILanguageArticleTypeValidator
     {
-        /// <summary>Empty, static constructor to prohibit direct allocation of this class.</summary>
+        /// <summary>Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.</summary>
         [Log(AttributeExclude = true)]
         static LanguageArticleTypeValidator() { }
 

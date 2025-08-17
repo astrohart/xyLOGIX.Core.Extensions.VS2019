@@ -36,7 +36,7 @@ Defines associations between forms and their contained controls.
 
 ##### Summary
 
-Empty, protected constructor to prohibit direct allocation of this
+Empty, `private` constructor to prohibit direct allocation of this
 class.
 
 ##### Parameters

@@ -17,7 +17,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         ControlFormAssociationProvider : IControlFormAssociationProvider
     {
         /// <summary>
-        /// Empty, static constructor to prohibit direct allocation of this
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this
         /// class.
         /// </summary>
         [Log(AttributeExclude = true)]

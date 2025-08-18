@@ -1619,7 +1619,7 @@ enumeration.
 ##### Returns
 
 A collection of instances of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-EnumBoundComboBoxItem{T} 'EnumBoundComboBoxItem{T}')
 , each of which represent an item to be added to a
 [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
@@ -1681,8 +1681,9 @@ interface.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions') class.
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions') class.
 
 ##### Parameters
 
@@ -1690,8 +1691,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any `static` members are referenced.
 
 
 
@@ -1739,10 +1740,9 @@ This method has no parameters.
 
 ##### Remarks
 
-This method provides the return value of the
-[FindForm](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.FindForm 'System.Windows.Forms.Control.FindForm') method if the value of
-the [_parentForm](#F-xyLOGIX-UI-Dark-Controls-DarkCheckBox2-_parentForm 'xyLOGIX.UI.Dark.Controls.DarkCheckBox2._parentForm') field
-is uninitialized.
+If the `Control-Form Association Provider` does not contain a reference to
+the containing [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form'), then the method
+calls the [FindForm](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.FindForm 'System.Windows.Forms.Control.FindForm') method.
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker-'></a>
 ### InvokeIfRequired(obj,message) `method`
@@ -2163,7 +2163,7 @@ returns the empty collection.
 ##### Summary
 
 Transforms an instance of an object of type
-[String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
+[string](#T-string 'string')
 into an object by mapping the dictionary elements onto the object's properties
 that have the same name.
 
@@ -2177,7 +2177,7 @@ filled in with the values from the `quote`.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | quote | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') | Reference to an instance of an object of type
-[String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}')
+[string](#T-string 'string')
 , whose key-value pairs identify what properties to fill with what information. |
 
 ##### Generic Types
@@ -2231,13 +2231,13 @@ Gets or sets the enumeration value that is "behind" the combo box selection.
 ##### Summary
 
 Creates a new instance of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-EnumBoundComboBoxItem{T} 'EnumBoundComboBoxItem{T}')
 and initializes it with the specified `value`.
 
 ##### Returns
 
 Reference to an instance of
-[EnumBoundComboBoxItem{T}](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions-EnumBoundComboBoxItem{T} 'xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem{T}](#T-EnumBoundComboBoxItem{T} 'EnumBoundComboBoxItem{T}')
 that contains the required data.
 
 ##### Parameters
@@ -2756,7 +2756,7 @@ Shows a modal dialog that can be awaited upon while a task completes.
 ##### Returns
 
 An awaitable
-[DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
+[DialogResult](#T-DialogResult 'DialogResult')
 that contains the result of the dialog's closure.
 
 ##### Parameters
@@ -2780,7 +2780,7 @@ Shows a modal dialog that can be awaited upon while a task completes.
 ##### Returns
 
 An awaitable
-[DialogResult}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Threading.Tasks.Task 'System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}')
+[DialogResult](#T-DialogResult 'DialogResult')
 that contains the result of the dialog's closure.
 
 ##### Parameters
@@ -6699,7 +6699,7 @@ This constructor has no parameters.
 
 Gets a reference to the one and only instance of the object that
 implements the
-[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-Interfaces-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.Interfaces.ILanguageArticleTypeValidator')
+[ILanguageArticleTypeValidator](#T-ILanguageArticleTypeValidator 'ILanguageArticleTypeValidator')
 interface.
 
 <a name='M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-#cctor'></a>

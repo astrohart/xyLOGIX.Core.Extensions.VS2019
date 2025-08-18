@@ -18,16 +18,14 @@ namespace xyLOGIX.Core.Extensions.Providers
     {
         /// <summary>
         /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
-        /// this
-        /// class.
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static ControlFormAssociationProvider() { }
 
         /// <summary>
         /// Empty, <see langword="private" /> constructor to prohibit direct allocation of
-        /// this
-        /// class.
+        /// this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         protected ControlFormAssociationProvider()
@@ -64,7 +62,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// created between it and its containing
         /// <see cref="T:System.Windows.Forms.Form" />.
         /// </param>
-        public void Add(Control control)
+        public void Add([NotLogged] Control control)
         {
             try
             {
@@ -105,7 +103,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// <paramref name="control" />, or <see langword="null" /> if no such form was
         /// found.
         /// </returns>
-        public Form GetFormFor(Control control)
+        public Form GetFormFor([NotLogged] Control control)
         {
             Form result = default;
 

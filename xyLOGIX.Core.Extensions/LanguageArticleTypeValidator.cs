@@ -25,7 +25,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>
         /// Gets a reference to the one and only instance of the object that
         /// implements the
-        /// <see cref="T:xyLOGIX.Core.Extensions.Interfaces.ILanguageArticleTypeValidator" />
+        /// <see cref="T:xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator" />
         /// interface.
         /// </summary>
         public static ILanguageArticleTypeValidator Instance

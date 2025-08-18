@@ -16,6 +16,7 @@
   - [GetFormFor(control)](#M-xyLOGIX-Core-Extensions-Providers-ControlFormAssociationProvider-GetFormFor-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.Providers.ControlFormAssociationProvider.GetFormFor(System.Windows.Forms.Control)')
   - [OnMemberControlHandleDestroyed(sender,e)](#M-xyLOGIX-Core-Extensions-Providers-ControlFormAssociationProvider-OnMemberControlHandleDestroyed-System-Object,System-EventArgs- 'xyLOGIX.Core.Extensions.Providers.ControlFormAssociationProvider.OnMemberControlHandleDestroyed(System.Object,System.EventArgs)')
   - [OnMemberFormClosed(sender,e)](#M-xyLOGIX-Core-Extensions-Providers-ControlFormAssociationProvider-OnMemberFormClosed-System-Object,System-Windows-Forms-FormClosedEventArgs- 'xyLOGIX.Core.Extensions.Providers.ControlFormAssociationProvider.OnMemberFormClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)')
+  - [Remove(control)](#M-xyLOGIX-Core-Extensions-Providers-ControlFormAssociationProvider-Remove-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.Providers.ControlFormAssociationProvider.Remove(System.Windows.Forms.Control)')
 - [Resources](#T-xyLOGIX-Core-Extensions-Providers-Properties-Resources 'xyLOGIX.Core.Extensions.Providers.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Providers-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Providers.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Core-Extensions-Providers-Properties-Resources-ResourceManager 'xyLOGIX.Core.Extensions.Providers.Properties.Resources.ResourceManager')
@@ -36,7 +37,8 @@ Defines associations between forms and their contained controls.
 
 ##### Summary
 
-Empty, `private` constructor to prohibit direct allocation of this
+Empty, `private` constructor to prohibit direct allocation of
+this
 class.
 
 ##### Parameters
@@ -66,7 +68,8 @@ Reference to an instance of a dictionary that maps instances of
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this
+Empty, `static` constructor to prohibit direct allocation of
+this
 class.
 
 ##### Parameters
@@ -245,6 +248,27 @@ data. |
 
 This method responds by removing all the entries from our internal
 dictionary that correspond to the specified form.
+
+<a name='M-xyLOGIX-Core-Extensions-Providers-ControlFormAssociationProvider-Remove-System-Windows-Forms-Control-'></a>
+### Remove(control) `method`
+
+##### Summary
+
+Removes the specified `control` and the corresponding
+association to its containing [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
+
+##### Returns
+
+`true` if the specified operation(s) have completed
+successfully; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| control | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | (Required.) Reference to an instance of
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that refers to the control that
+is to be removed. |
 
 <a name='T-xyLOGIX-Core-Extensions-Providers-Properties-Resources'></a>
 ## Resources `type`

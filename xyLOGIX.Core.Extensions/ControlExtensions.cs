@@ -15,16 +15,16 @@ namespace xyLOGIX.Core.Extensions
     /// The <c>ControlExtensions</c> class provides helper methods for
     /// extending the functionality of .NET framework controls.
     /// </summary>
-    [Log(AttributeExclude = true)]
     public static class ControlExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.ControlExtensions" /> class.
+        /// Initializes <see langword="static" /> data or performs actions that
+        /// need to be performed once only for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.ControlExtensions" /> class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any <see langword="static" /> members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -39,8 +39,8 @@ namespace xyLOGIX.Core.Extensions
         /// interface.
         /// </summary>
         private static IControlFormAssociationProvider
-            ControlFormAssociationProvider
-            => GetControlFormAssociationProvider.SoleInstance();
+            ControlFormAssociationProvider { [DebuggerStepThrough] get; } =
+            GetControlFormAssociationProvider.SoleInstance();
 
         /// <summary>
         /// Associates the specified <paramref name="control" /> with its
@@ -56,12 +56,18 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="null" /> reference as its argument, then this method does
         /// nothing.
         /// </remarks>
-        public static void AssociateWithParentForm(this Control control)
+        public static void AssociateWithParentForm(
+            [NotLogged] this Control control
+        )
         {
             try
             {
-                if (control == null || control.Disposing || control.IsDisposed)
+                if (control == null) return;
+                if (control.Disposing || control.IsDisposed)
+                {
+                    ControlFormAssociationProvider.Remove(control);
                     return;
+                }
 
                 ControlFormAssociationProvider.Add(control);
             }
@@ -81,19 +87,23 @@ namespace xyLOGIX.Core.Extensions
         /// contains this control.
         /// </returns>
         /// <remarks>
-        /// This method provides the return value of the
-        /// <see cref="M:System.Windows.Forms.Control.FindForm" /> method if the value of
-        /// the <see cref="F:xyLOGIX.UI.Dark.Controls.DarkCheckBox2._parentForm" /> field
-        /// is uninitialized.
+        /// If the <c>Control-Form Association Provider</c> does not contain a reference to
+        /// the containing <see cref="T:System.Windows.Forms.Form" />, then the method
+        /// calls the <see cref="M:System.Windows.Forms.Control.FindForm" /> method.
         /// </remarks>
         [Log(AttributeExclude = true)]
-        public static Form GetParentForm(this Control control)
+        public static Form GetParentForm([NotLogged] this Control control)
         {
             Form result = default;
 
             try
             {
                 if (control == null) return result;
+                if (control.Disposing || control.IsDisposed)
+                {
+                    ControlFormAssociationProvider.Remove(control);
+                    return result;
+                }
 
                 result = ControlFormAssociationProvider.GetFormFor(control) ??
                          control.FindForm();
@@ -138,13 +148,24 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.ComponentModel.ISynchronizeInvoke" /> interface).
         /// </remarks>
         public static T InvokeIfRequired<T>(
-            this ISynchronizeInvoke obj,
-            Func<T> message
+            [NotLogged] this ISynchronizeInvoke obj,
+            [NotLogged] Func<T> message
         )
         {
             T result = default;
 
-            if (!(obj is Control)) return result;
+            if (!(obj is Control control)) return result;
+            if (control.Disposing || control.IsDisposed)
+            {
+                ControlFormAssociationProvider.Remove(control);
+                return result;
+            }
+
+            if (control.IsDisposed || control.Disposing)
+            {
+                ControlFormAssociationProvider.Remove(control);
+                return result;
+            }
 
             if (obj.InvokeRequired)
                 result = (T)obj.Invoke(
@@ -179,14 +200,20 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         [Yielder, DebuggerStepThrough]
         public static void InvokeIfRequired(
-            this ISynchronizeInvoke obj,
-            MethodInvoker message
+            [NotLogged] this ISynchronizeInvoke obj,
+            [NotLogged] MethodInvoker message
         )
         {
-            if (!(obj is Control)) return;
+            if (!(obj is Control control)) return;
 
-            if (obj.InvokeRequired)
-                obj.Invoke(
+            if (control.IsDisposed || control.Disposing)
+            {
+                ControlFormAssociationProvider.Remove(control);
+                return;
+            }
+
+            if (control.InvokeRequired)
+                control.Invoke(
                     message, Enumerable.Empty<object>()
                                        .ToArray()
                 );
@@ -206,13 +233,20 @@ namespace xyLOGIX.Core.Extensions
         /// initialized, or if that <see cref="T:System.Windows.Forms.Form" /> has been
         /// disposed; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool IsParentFormNullOrDisposed(this Control control)
+        public static bool IsParentFormNullOrDisposed(
+            [NotLogged] this Control control
+        )
         {
             var result = false;
 
             try
             {
-                if (control == null || control.IsDisposed) return result;
+                if (control == null) return result;
+                if (control.IsDisposed)
+                {
+                    ControlFormAssociationProvider.Remove(control);
+                    return result;
+                }
 
                 var parentForm =
                     ControlFormAssociationProvider.GetFormFor(control);

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using PostSharp.Patterns.Diagnostics;
+using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions.Providers.Interfaces
 {
@@ -38,5 +39,20 @@ namespace xyLOGIX.Core.Extensions.Providers.Interfaces
         /// found.
         /// </returns>
         Form GetFormFor(Control control);
+
+        /// <summary>
+        /// Removes the specified <paramref name="control" /> and the corresponding
+        /// association to its containing <see cref="T:System.Windows.Forms.Form" />.
+        /// </summary>
+        /// <param name="control">
+        /// (Required.) Reference to an instance of
+        /// <see cref="T:System.Windows.Forms.Control" /> that refers to the control that
+        /// is to be removed.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified operation(s) have completed
+        /// successfully; <see langword="false" /> otherwise.
+        /// </returns>
+        bool Remove([NotLogged] Control control);
     }
 }

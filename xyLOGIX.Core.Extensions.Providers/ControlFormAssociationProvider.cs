@@ -17,14 +17,16 @@ namespace xyLOGIX.Core.Extensions.Providers
         ControlFormAssociationProvider : IControlFormAssociationProvider
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of this
+        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
+        /// this
         /// class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static ControlFormAssociationProvider() { }
 
         /// <summary>
-        /// Empty, <see langword="private" /> constructor to prohibit direct allocation of this
+        /// Empty, <see langword="private" /> constructor to prohibit direct allocation of
+        /// this
         /// class.
         /// </summary>
         [Log(AttributeExclude = true)]
@@ -297,7 +299,10 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// <see cref="T:System.Windows.Forms.Form" />.
         /// </remarks>
         [EntryPoint]
-        private void OnMemberControlHandleDestroyed([NotLogged] object sender, [NotLogged] EventArgs e)
+        private void OnMemberControlHandleDestroyed(
+            [NotLogged] object sender,
+            [NotLogged] EventArgs e
+        )
         {
             if (!(sender is Control control)) return;
 
@@ -328,6 +333,46 @@ namespace xyLOGIX.Core.Extensions.Providers
             if (!ParentFormDictionary.Any()) return;
 
             DetachForm(form);
+        }
+
+        /// <summary>
+        /// Removes the specified <paramref name="control" /> and the corresponding
+        /// association to its containing <see cref="T:System.Windows.Forms.Form" />.
+        /// </summary>
+        /// <param name="control">
+        /// (Required.) Reference to an instance of
+        /// <see cref="T:System.Windows.Forms.Control" /> that refers to the control that
+        /// is to be removed.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified operation(s) have completed
+        /// successfully; <see langword="false" /> otherwise.
+        /// </returns>
+        public bool Remove([NotLogged] Control control)
+        {
+            var result = false;
+
+            try
+            {
+                if (ParentFormDictionary == null) return result;
+                if (ParentFormDictionary.Count <= 0) return result;
+
+                result = ParentFormDictionary.Remove(control);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"ControlFormAssociationProvider.Remove: Result = {result}"
+            );
+
+            return result;
         }
     }
 }

@@ -90,7 +90,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// A collection of instances of
         /// <see
-        ///     cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
+        ///     cref="T:xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1" />
         /// , each of which represent an item to be added to a
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
         /// </returns>

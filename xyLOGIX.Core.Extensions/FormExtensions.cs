@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Threading;
+﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -60,8 +61,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Invokes an message on the form unless it's not disposed, in which
-        /// case nothing is done.
+        /// Invokes the specified <paramref name="message" /> on the form unless it's NOT
+        /// disposed, in which case nothing is done.
         /// </summary>
         /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form" /> on which to
@@ -72,7 +73,10 @@ namespace xyLOGIX.Core.Extensions
         /// run if the form is disposed.
         /// </param>
         [Yielder]
-        public static void DoIfDisposed(this IForm form, Action message)
+        public static void DoIfDisposed(
+            [NotLogged] this IForm form,
+            [NotLogged] Action message
+        )
         {
             if (form != null && !form.IsDisposed) return;
 
@@ -80,8 +84,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Invokes an message on the form unless it's disposed, in which case
-        /// nothing is done.
+        /// Invokes the specified <paramref name="message" /> on the form unless it's
+        /// disposed, in which case nothing is done.
         /// </summary>
         /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form" /> on which to
@@ -92,7 +96,10 @@ namespace xyLOGIX.Core.Extensions
         /// run if the form is not disposed.
         /// </param>
         [Yielder]
-        public static void DoIfNotDisposed(this IForm form, Action message)
+        public static void DoIfNotDisposed(
+            [NotLogged] this IForm form,
+            [NotLogged] Action message
+        )
         {
             if (form == null || form.IsDisposed) return;
             if (message == null) return;
@@ -100,7 +107,7 @@ namespace xyLOGIX.Core.Extensions
             if (form.InvokeRequired)
                 form.BeginInvoke(message);
             else
-                message?.Invoke();
+                message();
         }
 
         /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>
@@ -116,12 +123,12 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// An awaitable
-        /// <see cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
+        /// <see cref="T:DialogResult" />
         /// that contains the result of the dialog's closure.
         /// </returns>
         public static async Task<DialogResult> ShowDialogAsync(
-            this IForm form,
-            IWin32Window owner
+            [NotLogged] this IForm form,
+            [NotLogged] IWin32Window owner
         )
         {
             await Task.Yield();
@@ -136,10 +143,12 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// An awaitable
-        /// <see cref="T:System.Threading.Tasks.Task{System.Windows.Forms.DialogResult}" />
+        /// <see cref="T:DialogResult" />
         /// that contains the result of the dialog's closure.
         /// </returns>
-        public static async Task<DialogResult> ShowDialogAsync(this IForm form)
+        public static async Task<DialogResult> ShowDialogAsync(
+            [NotLogged] this IForm form
+        )
         {
             await Task.Yield();
             return form.IsDisposed ? DialogResult.OK : form.ShowDialog();
@@ -154,7 +163,7 @@ namespace xyLOGIX.Core.Extensions
         /// to be moved to the user's primary monitor. The form is also centered on the
         /// screen.
         /// </param>
-        public static void ShowOnPrimaryMonitor(this IForm form)
+        public static void ShowOnPrimaryMonitor([NotLogged] this IForm form)
         {
             if (form == null) throw new ArgumentNullException(nameof(form));
 

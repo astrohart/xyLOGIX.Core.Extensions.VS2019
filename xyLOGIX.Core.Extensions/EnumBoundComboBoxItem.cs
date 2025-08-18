@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Threading;
+﻿using PostSharp.Patterns.Threading;
 using System;
+using System.Diagnostics;
 
 namespace xyLOGIX.Core.Extensions
 {
@@ -16,7 +16,11 @@ namespace xyLOGIX.Core.Extensions
         /// Gets or sets a <see cref="T:System.String" /> that contains a user-friendly
         /// display name, or description, for the specific enumeration value.
         /// </summary>
-        public string Description { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        public string Description
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
 
         /// <summary>
         /// Gets or sets the enumeration value that is "behind" the combo box selection.
@@ -26,7 +30,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>
         /// Creates a new instance of
         /// <see
-        ///     cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
+        ///     cref="T:xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1" />
         /// and initializes it with the specified <paramref name="value" />.
         /// </summary>
         /// <param name="value">
@@ -36,7 +40,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// Reference to an instance of
         /// <see
-        ///     cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions.EnumBoundComboBoxItem{T}" />
+        ///     cref="T:xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1" />
         /// that contains the required data.
         /// </returns>
         public static EnumBoundComboBoxItem<T> ForEnumValue(T value)

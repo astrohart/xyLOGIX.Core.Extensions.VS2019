@@ -178,7 +178,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>
         /// Transforms an instance of an object of type
         /// <see
-        ///     cref="T:System.Collections.Generic.Dictionary{System.String,System.String}" />
+        ///     cref="T:string" />
         /// into an object by mapping the dictionary elements onto the object's properties
         /// that have the same name.
         /// </summary>
@@ -189,7 +189,7 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="quote">
         /// Reference to an instance of an object of type
         /// <see
-        ///     cref="T:System.Collections.Generic.Dictionary{System.String,System.String}" />
+        ///     cref="T:string" />
         /// , whose key-value pairs identify what properties to fill with what information.
         /// </param>
         /// <remarks>

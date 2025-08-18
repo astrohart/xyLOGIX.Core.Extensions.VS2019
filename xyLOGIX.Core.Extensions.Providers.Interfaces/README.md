@@ -6,6 +6,7 @@
 - [IControlFormAssociationProvider](#T-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider 'xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider')
   - [Add(control)](#M-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider-Add-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider.Add(System.Windows.Forms.Control)')
   - [GetFormFor(control)](#M-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider-GetFormFor-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider.GetFormFor(System.Windows.Forms.Control)')
+  - [Remove(control)](#M-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider-Remove-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider.Remove(System.Windows.Forms.Control)')
 - [Resources](#T-xyLOGIX-Core-Extensions-Providers-Interfaces-Properties-Resources 'xyLOGIX.Core.Extensions.Providers.Interfaces.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Providers-Interfaces-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Providers.Interfaces.Properties.Resources.Culture')
   - [ResourceManager](#P-xyLOGIX-Core-Extensions-Providers-Interfaces-Properties-Resources-ResourceManager 'xyLOGIX.Core.Extensions.Providers.Interfaces.Properties.Resources.ResourceManager')
@@ -63,6 +64,27 @@ found.
 | control | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | (Required.) An instance of
 [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') for whom the containing form is
 to be obtained. |
+
+<a name='M-xyLOGIX-Core-Extensions-Providers-Interfaces-IControlFormAssociationProvider-Remove-System-Windows-Forms-Control-'></a>
+### Remove(control) `method`
+
+##### Summary
+
+Removes the specified `control` and the corresponding
+association to its containing [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
+
+##### Returns
+
+`true` if the specified operation(s) have completed
+successfully; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| control | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | (Required.) Reference to an instance of
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that refers to the control that
+is to be removed. |
 
 <a name='T-xyLOGIX-Core-Extensions-Providers-Interfaces-Properties-Resources'></a>
 ## Resources `type`

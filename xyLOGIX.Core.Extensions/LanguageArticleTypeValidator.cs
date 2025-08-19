@@ -40,7 +40,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="type">
         /// (Required.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> values that is to
+        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that is to
         /// be examined.
         /// </param>
         /// <returns>

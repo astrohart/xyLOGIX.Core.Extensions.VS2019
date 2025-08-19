@@ -6,7 +6,7 @@ namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
     /// Exposes static extension methods to perform operations on
-    /// <see cref="T:System.DateTime" /> values.
+    /// <see cref="T:System.DateTime" /> value(s).
     /// </summary>
     public static class DateTimeExtensions
     {

@@ -588,7 +588,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="initialString">
         /// (Required.) A <see cref="T:System.String" /> that
-        /// specifies the initial value to have other <see cref="T:System.String" /> values
+        /// specifies the initial value to have other <see cref="T:System.String" /> value(s)
         /// concatenated to it.
         /// </param>
         /// <param name="parts">
@@ -1193,7 +1193,7 @@ namespace xyLOGIX.Core.Extensions
         /// checked.
         /// </param>
         /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" /> values that
+        /// (Required.) One of the <see cref="T:System.StringComparison" /> value(s) that
         /// specifies how the comparison is to be performed.
         /// </param>
         /// <param name="endings">
@@ -1289,7 +1289,7 @@ namespace xyLOGIX.Core.Extensions
         /// checked.
         /// </param>
         /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" /> values that
+        /// (Required.) One of the <see cref="T:System.StringComparison" /> value(s) that
         /// specifies how the comparison is to be performed.
         /// </param>
         /// <param name="endings">
@@ -1356,7 +1356,7 @@ namespace xyLOGIX.Core.Extensions
         /// checked.
         /// </param>
         /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" /> values that
+        /// (Required.) One of the <see cref="T:System.StringComparison" /> value(s) that
         /// specifies how the comparison is to be performed.
         /// </param>
         /// <param name="endings">
@@ -1619,7 +1619,7 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="str2"> Second string to compare. </param>
         /// <param name="comparisonType">
         /// One of the
-        /// <see cref="T:System.StringComparison" /> values saying how the strings are to
+        /// <see cref="T:System.StringComparison" /> value(s) saying how the strings are to
         /// be compared.
         /// </param>
         /// <returns> Whether the two strings are the same, regardless of case. </returns>
@@ -3363,7 +3363,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the case-insensitive search determines
-        /// that the <paramref name="stringToSearch" /> values contains one or more
+        /// that the <paramref name="stringToSearch" /> value(s) contains one or more
         /// instances of the <paramref name="findWhat" /> text; <see langword="false" />
         /// otherwise.
         /// </returns>
@@ -3405,7 +3405,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the case-sensitive search determines that
-        /// the <paramref name="stringToSearch" /> values contains instances of the
+        /// the <paramref name="stringToSearch" /> value(s) contains instances of the
         /// <paramref name="findWhat" /> text; <see langword="false" /> otherwise.
         /// </returns>
         public static bool MatchesWithCase(
@@ -3563,7 +3563,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="type">
         /// (Required.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> values that
+        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that
         /// specifies the type of language article to prepend.
         /// </param>
         /// <returns>
@@ -4428,7 +4428,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="findWhatValues">
         /// (Required.) Collection of
-        /// <see cref="T:System.String" /> values, each of which is to be searched for in
+        /// <see cref="T:System.String" /> value(s), each of which is to be searched for in
         /// the <paramref name="source" /> <see cref="T:System.String" />.
         /// </param>
         /// <param name="replacementText">
@@ -5404,7 +5404,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="type">
         /// (Required.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> values that
+        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that
         /// specifies the type of language article to obtain.
         /// </param>
         /// <returns>
@@ -5754,7 +5754,7 @@ namespace xyLOGIX.Core.Extensions
         /// The default value of this parameter is <see langword="true" />.
         /// </param>
         /// <param name="badEndings">
-        /// An array of <see cref="T:System.String" /> values representing the substrings
+        /// An array of <see cref="T:System.String" /> value(s) representing the substrings
         /// to remove from the end of <paramref name="value" />. If
         /// <paramref name="badEndings" />
         /// is <see langword="null" /> or empty, no changes are made.

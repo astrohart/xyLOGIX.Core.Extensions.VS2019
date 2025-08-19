@@ -63,7 +63,7 @@ namespace xyLOGIX.Core.Extensions
         /// the fully-qualified pathname whose filename extension is to be tested.
         /// </param>
         /// <param name="extensions">
-        /// (Required.) One or more <see cref="T:System.String" /> values indicating the
+        /// (Required.) One or more <see cref="T:System.String" /> value(s) indicating the
         /// possible extension(s) that the provided <paramref name="pathname" /> must have.
         /// </param>
         /// <returns>
@@ -73,7 +73,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// If the <paramref name="pathname" /> or <paramref name="extensions" />
-        /// have <see langword="null" /> or blank <see cref="T:System.String" /> values as
+        /// have <see langword="null" /> or blank <see cref="T:System.String" /> value(s) as
         /// their arguments, then this method returns <see langword="false" />.
         /// <para />
         /// <see langword="false" /> is also returned if the argument of the
@@ -132,7 +132,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// If the <paramref name="pathname" /> or <paramref name="extension" />
-        /// have <see langword="null" /> or blank <see cref="T:System.String" /> values as
+        /// have <see langword="null" /> or blank <see cref="T:System.String" /> value(s) as
         /// their arguments, then this method returns <see langword="false" />.
         /// <para />
         /// <see langword="false" /> is also returned if the argument of the

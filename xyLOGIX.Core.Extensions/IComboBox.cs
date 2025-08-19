@@ -130,7 +130,7 @@ namespace xyLOGIX.Core.Extensions
         /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// assigned value is not one of the
-        /// <see cref="T:System.Windows.Forms.ComboBoxStyle" /> values.
+        /// <see cref="T:System.Windows.Forms.ComboBoxStyle" /> value(s).
         /// </exception>
         ComboBoxStyle DropDownStyle
         {

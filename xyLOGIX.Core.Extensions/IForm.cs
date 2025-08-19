@@ -689,7 +689,7 @@ namespace xyLOGIX.Core.Extensions
         void Show(IWin32Window owner);
 
         /// <summary> Shows the form as a modal dialog box. </summary>
-        /// <returns> One of the <see cref="T:System.Windows.Forms.DialogResult" /> values. </returns>
+        /// <returns> One of the <see cref="T:System.Windows.Forms.DialogResult" /> value(s). </returns>
         /// <exception cref="T:System.InvalidOperationException">
         /// The form being shown is
         /// already visible. -or- The form being shown is disabled. -or- The form being
@@ -706,7 +706,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.IWin32Window" /> that represents the
         /// top-level window that will own the modal dialog box.
         /// </param>
-        /// <returns> One of the <see cref="T:System.Windows.Forms.DialogResult" /> values. </returns>
+        /// <returns> One of the <see cref="T:System.Windows.Forms.DialogResult" /> value(s). </returns>
         /// <exception cref="T:System.ArgumentException">
         /// The form specified in the
         /// <paramref name="owner" /> parameter is the same as the form being shown.

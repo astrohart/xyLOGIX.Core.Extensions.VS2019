@@ -76,7 +76,7 @@ namespace xyLOGIX.Core.Extensions
         /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// value assigned is not one of the
-        /// <see cref="T:System.Windows.Forms.AccessibleRole" /> values.
+        /// <see cref="T:System.Windows.Forms.AccessibleRole" /> value(s).
         /// </exception>
         AccessibleRole AccessibleRole
         {
@@ -101,7 +101,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <returns>
         /// A bitwise combination of the
-        /// <see cref="T:System.Windows.Forms.AnchorStyles" /> values. The default is
+        /// <see cref="T:System.Windows.Forms.AnchorStyles" /> value(s). The default is
         /// <see langword="Top" /> and <see langword="Left" />.
         /// </returns>
         AnchorStyles Anchor
@@ -397,13 +397,13 @@ namespace xyLOGIX.Core.Extensions
         /// and determines how a control is resized with its parent.
         /// </summary>
         /// <returns>
-        /// One of the <see cref="T:System.Windows.Forms.DockStyle" /> values.
+        /// One of the <see cref="T:System.Windows.Forms.DockStyle" /> value(s).
         /// The default is <see cref="F:System.Windows.Forms.DockStyle.None" />.
         /// </returns>
         /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// value assigned is not one of the
-        /// <see cref="T:System.Windows.Forms.DockStyle" /> values.
+        /// <see cref="T:System.Windows.Forms.DockStyle" /> value(s).
         /// </exception>
         DockStyle Dock { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
@@ -468,7 +468,7 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary> Gets or sets the Input Method Editor (IME) mode of the control. </summary>
         /// <returns>
-        /// One of the <see cref="T:System.Windows.Forms.ImeMode" /> values. The
+        /// One of the <see cref="T:System.Windows.Forms.ImeMode" /> value(s). The
         /// default is <see cref="F:System.Windows.Forms.ImeMode.Inherit" />.
         /// </returns>
         /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
@@ -659,13 +659,13 @@ namespace xyLOGIX.Core.Extensions
         /// aligned to support locales using right-to-left fonts.
         /// </summary>
         /// <returns>
-        /// One of the <see cref="T:System.Windows.Forms.RightToLeft" /> values.
+        /// One of the <see cref="T:System.Windows.Forms.RightToLeft" /> value(s).
         /// The default is <see cref="F:System.Windows.Forms.RightToLeft.Inherit" />.
         /// </returns>
         /// <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
         /// The
         /// assigned value is not one of the
-        /// <see cref="T:System.Windows.Forms.RightToLeft" /> values.
+        /// <see cref="T:System.Windows.Forms.RightToLeft" /> value(s).
         /// </exception>
         RightToLeft RightToLeft
         {
@@ -910,7 +910,7 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="data"> The data to drag. </param>
         /// <param name="allowedEffects">
         /// One of the
-        /// <see cref="T:System.Windows.Forms.DragDropEffects" /> values.
+        /// <see cref="T:System.Windows.Forms.DragDropEffects" /> value(s).
         /// </param>
         /// <returns>
         /// A value from the
@@ -1326,7 +1326,7 @@ namespace xyLOGIX.Core.Extensions
         /// represents the message to process.
         /// </param>
         /// <returns>
-        /// One of the <see cref="T:System.Windows.Forms.PreProcessControlState" /> values,
+        /// One of the <see cref="T:System.Windows.Forms.PreProcessControlState" /> value(s),
         /// depending on whether
         /// <see
         ///     cref="M:System.Windows.Forms.Control.PreProcessMessage(System.Windows.Forms.Message@)" />
@@ -1598,7 +1598,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="specified">
         /// A bitwise combination of the
-        /// <see cref="T:System.Windows.Forms.BoundsSpecified" /> values. OfType any parameter
+        /// <see cref="T:System.Windows.Forms.BoundsSpecified" /> value(s). OfType any parameter
         /// not specified, the current value will be used.
         /// </param>
         void SetBounds(

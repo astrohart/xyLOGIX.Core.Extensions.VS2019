@@ -249,7 +249,8 @@ namespace xyLOGIX.Core.Extensions
                 }
 
                 var parentForm =
-                    ControlFormAssociationProvider.GetFormFor(control);
+                    ControlFormAssociationProvider.GetFormFor(control) ??
+                    control.FindForm();
                 result = parentForm == null || parentForm.Disposing ||
                          parentForm.IsDisposed;
             }

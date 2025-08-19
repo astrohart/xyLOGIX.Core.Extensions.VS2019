@@ -38,8 +38,7 @@ Defines associations between forms and their contained controls.
 ##### Summary
 
 Empty, `private` constructor to prohibit direct allocation of
-this
-class.
+this class.
 
 ##### Parameters
 
@@ -69,8 +68,7 @@ Reference to an instance of a dictionary that maps instances of
 ##### Summary
 
 Empty, `static` constructor to prohibit direct allocation of
-this
-class.
+this class.
 
 ##### Parameters
 

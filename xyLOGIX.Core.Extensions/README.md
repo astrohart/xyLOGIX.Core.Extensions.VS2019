@@ -1839,7 +1839,7 @@ xyLOGIX.Core.Extensions
 ##### Summary
 
 Exposes static extension methods to perform operations on
-[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') values.
+[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value(s).
 
 <a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToRFC3339-System-DateTime-'></a>
 ### ToRFC3339(date) `method`
@@ -3133,7 +3133,7 @@ values. The default is `DropDown`.
 | ---- | ----------- |
 | [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
 assigned value is not one of the
-[ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle') values. |
+[ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle') value(s). |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-DropDownWidth'></a>
 ### DropDownWidth `property`
@@ -3676,7 +3676,7 @@ One of the values of
 | ---- | ----------- |
 | [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
 value assigned is not one of the
-[AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole') values. |
+[AccessibleRole](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleRole 'System.Windows.Forms.AccessibleRole') value(s). |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AllowDrop'></a>
 ### AllowDrop `property`
@@ -3703,7 +3703,7 @@ and determines how a control is resized with its parent.
 ##### Returns
 
 A bitwise combination of the
-[AnchorStyles](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AnchorStyles 'System.Windows.Forms.AnchorStyles') values. The default is
+[AnchorStyles](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AnchorStyles 'System.Windows.Forms.AnchorStyles') value(s). The default is
 `Top` and `Left`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AutoScrollOffset'></a>
@@ -4060,7 +4060,7 @@ and determines how a control is resized with its parent.
 
 ##### Returns
 
-One of the [DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle') values.
+One of the [DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle') value(s).
 The default is [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle.None 'System.Windows.Forms.DockStyle.None').
 
 ##### Exceptions
@@ -4069,7 +4069,7 @@ The default is [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDE
 | ---- | ----------- |
 | [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
 value assigned is not one of the
-[DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle') values. |
+[DockStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DockStyle 'System.Windows.Forms.DockStyle') value(s). |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Enabled'></a>
 ### Enabled `property`
@@ -4168,7 +4168,7 @@ Gets or sets the Input Method Editor (IME) mode of the control.
 
 ##### Returns
 
-One of the [ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode 'System.Windows.Forms.ImeMode') values. The
+One of the [ImeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode 'System.Windows.Forms.ImeMode') value(s). The
 default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImeMode.Inherit 'System.Windows.Forms.ImeMode.Inherit').
 
 ##### Exceptions
@@ -4427,7 +4427,7 @@ aligned to support locales using right-to-left fonts.
 
 ##### Returns
 
-One of the [RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft') values.
+One of the [RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft') value(s).
 The default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft.Inherit 'System.Windows.Forms.RightToLeft.Inherit').
 
 ##### Exceptions
@@ -4436,7 +4436,7 @@ The default is [Inherit](http://msdn.microsoft.com/query/dev14.query?appId=Dev14
 | ---- | ----------- |
 | [System.ComponentModel.InvalidEnumArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.InvalidEnumArgumentException 'System.ComponentModel.InvalidEnumArgumentException') | The
 assigned value is not one of the
-[RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft') values. |
+[RightToLeft](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.RightToLeft 'System.Windows.Forms.RightToLeft') value(s). |
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Size'></a>
 ### Size `property`
@@ -4684,7 +4684,7 @@ operation.
 | ---- | ---- | ----------- |
 | data | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | The data to drag. |
 | allowedEffects | [System.Windows.Forms.DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') | One of the
-[DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') values. |
+[DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') value(s). |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-DrawToBitmap-System-Drawing-Bitmap,System-Drawing-Rectangle-'></a>
 ### DrawToBitmap(bitmap,targetBounds) `method`
@@ -5080,7 +5080,7 @@ before they are dispatched.
 
 ##### Returns
 
-One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState') values,
+One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState') value(s),
 depending on whether
 [PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(System.Windows.Forms.Message@)')
 is `true` or `false` and whether
@@ -5445,7 +5445,7 @@ control. |
 [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property value of the
 control. |
 | specified | [System.Windows.Forms.BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') | A bitwise combination of the
-[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') values. OfType any parameter
+[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') value(s). OfType any parameter
 not specified, the current value will be used. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Show'></a>
@@ -6229,7 +6229,7 @@ Shows the form as a modal dialog box.
 
 ##### Returns
 
-One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') values.
+One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') value(s).
 
 ##### Parameters
 
@@ -6255,7 +6255,7 @@ Shows the form as a modal dialog box with the specified owner.
 
 ##### Returns
 
-One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') values.
+One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') value(s).
 
 ##### Parameters
 
@@ -6381,7 +6381,7 @@ passed is within the value set that is defined by the
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') values that is to
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is to
 be examined. |
 
 <a name='T-xyLOGIX-Core-Extensions-IScrollableControl'></a>
@@ -6733,7 +6733,7 @@ passed is within the value set that is defined by the
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') values that is to
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is to
 be examined. |
 
 <a name='T-xyLOGIX-Core-Extensions-ListExtensions'></a>
@@ -8872,13 +8872,13 @@ has the specified filename `extensions`;
 | ---- | ---- | ----------- |
 | pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
 the fully-qualified pathname whose filename extension is to be tested. |
-| extensions | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values indicating the
+| extensions | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) indicating the
 possible extension(s) that the provided `pathname` must have. |
 
 ##### Remarks
 
 If the `pathname` or `extensions`
-have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values as
+have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) as
 their arguments, then this method returns `false`.
 
 
@@ -8921,7 +8921,7 @@ containing the filename extension that the specified
 ##### Remarks
 
 If the `pathname` or `extension`
-have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values as
+have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) as
 their arguments, then this method returns `false`.
 
 
@@ -9557,7 +9557,7 @@ concatenated to it.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | initialString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-specifies the initial value to have other [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values
+specifies the initial value to have other [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s)
 concatenated to it. |
 | parts | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
 values that are to be concatenated, in the order specified, to the
@@ -10011,7 +10011,7 @@ ends with any of the specified `endings`;
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
 checked. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values that
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
 specifies how the comparison is to be performed. |
 | endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
 elements, each of which is to be assessed against the specified
@@ -10073,7 +10073,7 @@ ends with any of the specified `endings`;
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
 checked. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values that
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
 specifies how the comparison is to be performed. |
 | endings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
 elements, each of which is to be assessed against the specified
@@ -10135,7 +10135,7 @@ ends with any of the specified `endings`;
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
 checked. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values that
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
 specifies how the comparison is to be performed. |
 | endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
 elements, each of which is to be assessed against the specified
@@ -10301,7 +10301,7 @@ Whether the two strings are the same, regardless of case.
 | str1 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | First string to compare. |
 | str2 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Second string to compare. |
 | comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | One of the
-[StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values saying how the strings are to
+[StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) saying how the strings are to
 be compared. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EscapePowerShellNewline-System-String-'></a>
@@ -11394,7 +11394,7 @@ fashion.
 ##### Returns
 
 `true` if the case-insensitive search determines
-that the `stringToSearch` values contains one or more
+that the `stringToSearch` value(s) contains one or more
 instances of the `findWhat` text; `false`
 otherwise.
 
@@ -11419,7 +11419,7 @@ fashion.
 ##### Returns
 
 `true` if the case-sensitive search determines that
-the `stringToSearch` values contains instances of the
+the `stringToSearch` value(s) contains instances of the
 `findWhat` text; `false` otherwise.
 
 ##### Parameters
@@ -11549,7 +11549,7 @@ prepended; otherwise, the method is idempotent.
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which the
 language article is to be prepended. |
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') values that
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that
 specifies the type of language article to prepend. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String-'></a>
@@ -11989,7 +11989,7 @@ with the specified `replacementText`.
 | source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
 searched. |
 | findWhatValues | [System.Collections.Generic.ICollection{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{System.String}') | (Required.) Collection of
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values, each of which is to be searched for in
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s), each of which is to be searched for in
 the `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'). |
 | replacementText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
 is to serve as the replacement for any of the specified
@@ -12548,7 +12548,7 @@ idempotent.
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which the
 language article is to be obtained. |
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') values that
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that
 specifies the type of language article to obtain. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToList-System-String,System-String[]-'></a>
@@ -12778,7 +12778,7 @@ removal of bad endings should be applied repeatedly until no matches remain.
 
 
 The default value of this parameter is `true`. |
-| badEndings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | An array of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values representing the substrings
+| badEndings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | An array of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) representing the substrings
 to remove from the end of `value`. If
 `badEndings`
 is `null` or empty, no changes are made. |

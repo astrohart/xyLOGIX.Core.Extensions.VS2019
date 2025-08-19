@@ -1619,7 +1619,7 @@ enumeration.
 ##### Returns
 
 A collection of instances of
-[EnumBoundComboBoxItem{T}](#T-EnumBoundComboBoxItem{T} 'EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
 , each of which represent an item to be added to a
 [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
@@ -2231,13 +2231,13 @@ Gets or sets the enumeration value that is "behind" the combo box selection.
 ##### Summary
 
 Creates a new instance of
-[EnumBoundComboBoxItem{T}](#T-EnumBoundComboBoxItem{T} 'EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
 and initializes it with the specified `value`.
 
 ##### Returns
 
 Reference to an instance of
-[EnumBoundComboBoxItem{T}](#T-EnumBoundComboBoxItem{T} 'EnumBoundComboBoxItem{T}')
+[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
 that contains the required data.
 
 ##### Parameters
@@ -2717,8 +2717,8 @@ form is to be centered on. |
 
 ##### Summary
 
-Invokes an message on the form unless it's not disposed, in which
-case nothing is done.
+Invokes the specified `message` on the form unless it's NOT
+disposed, in which case nothing is done.
 
 ##### Parameters
 
@@ -2734,8 +2734,8 @@ run if the form is disposed. |
 
 ##### Summary
 
-Invokes an message on the form unless it's disposed, in which case
-nothing is done.
+Invokes the specified `message` on the form unless it's
+disposed, in which case nothing is done.
 
 ##### Parameters
 
@@ -6699,7 +6699,7 @@ This constructor has no parameters.
 
 Gets a reference to the one and only instance of the object that
 implements the
-[ILanguageArticleTypeValidator](#T-ILanguageArticleTypeValidator 'ILanguageArticleTypeValidator')
+[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
 interface.
 
 <a name='M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-#cctor'></a>

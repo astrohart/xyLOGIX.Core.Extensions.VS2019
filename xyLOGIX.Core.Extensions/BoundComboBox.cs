@@ -1,4 +1,5 @@
-﻿using PostSharp.Patterns.Threading;
+﻿using PostSharp.Patterns.Diagnostics;
+using PostSharp.Patterns.Threading;
 using System;
 using System.Windows.Forms;
 using xyLOGIX.Core.Debug;
@@ -21,7 +22,7 @@ namespace xyLOGIX.Core.Extensions
         /// An <see cref="T:System.EventArgs" /> that contains the event
         /// data.
         /// </param>
-        protected override void OnSelectedIndexChanged(EventArgs e)
+        protected override void OnSelectedIndexChanged([NotLogged] EventArgs e)
         {
             try
             {

@@ -236,6 +236,7 @@ namespace xyLOGIX.Core.Extensions
         /// is in the <see langword="null" /> reference or <c>Disposed</c> state, or if it
         /// is in the process of being disposed.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public static bool IsNullOrDisposed([NotLogged] this Control control)
         {
             bool result;

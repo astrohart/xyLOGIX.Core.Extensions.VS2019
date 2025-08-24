@@ -5,16 +5,44 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary> Helper methods for manipulating windows forms. </summary>
     public static class FormExtensions
     {
+        /// <summary>
+        /// Initializes <see langword="static" /> data or performs actions that
+        /// need to be performed once only for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.FormExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any <see langword="static" /> members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static FormExtensions() { }
+
         /// <summary> Centers this form on the specified <paramref name="parent" /> form. </summary>
-        /// <param name="child"> Reference to the form to be centered. </param>
-        /// <param name="parent"> Reference to the parent form. </param>
-        public static void CenterForm(this IForm child, Form parent)
+        /// <param name="child">
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:xyLOGIX.Core.Extensions.IForm" /> interface that
+        /// represents the <c>Child Form</c>; i.e., the form that is to be centered with
+        /// respect to the specified <paramref name="parent" /> form.
+        /// </param>
+        /// <param name="parent">
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:xyLOGIX.Core.Extensions.IForm" /> interface that
+        /// represents the parent form.
+        /// </param>
+        public static void CenterForm(
+            [NotLogged] this IForm child,
+            [NotLogged] IForm parent
+        )
         {
             if (child == null || child.IsDisposed) return;
             if (parent == null || parent.IsDisposed) return;
@@ -108,6 +136,47 @@ namespace xyLOGIX.Core.Extensions
                 form.BeginInvoke(message);
             else
                 message();
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the specified <paramref name="form" /> is
+        /// either set to a <see langword="null" /> reference, or is in the process of
+        /// being disposed, or has already been disposed.
+        /// </summary>
+        /// <param name="form">
+        /// (Required.) Reference to an instance of an object that implements the
+        /// <see cref="T:xyLOGIX.Core.Extensions.IForm" /> interface that is to be
+        /// checked for being in the <c>Disposed</c> state.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="form" />
+        /// is in the <see langword="null" /> reference or <c>Disposed</c> state, or if it
+        /// is in the process of being disposed.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool IsNullOrDisposed([NotLogged] this IForm form)
+        {
+            bool result;
+
+            try
+            {
+                result = form == null || form.Disposing || form.IsDisposed;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                /*
+                 * We are actually going to return TRUE here, so
+                 * that the caller of this method errs on the side of
+                 * caution and does not use the specified form.
+                 */
+
+                result = true;
+            }
+
+            return result;
         }
 
         /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>

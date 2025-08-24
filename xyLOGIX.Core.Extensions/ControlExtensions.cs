@@ -264,48 +264,6 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a value indicating whether the specified <paramref name="control" /> is
-        /// either set to a <see langword="null" /> reference, or is in the process of
-        /// being disposed, or has already been disposed.
-        /// </summary>
-        /// <param name="control">
-        /// (Required.) Reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Core.Extensions.IControl" /> interface that is to be
-        /// checked for being in the <c>Disposed</c> state.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="control" />
-        /// is in the <see langword="null" /> reference or <c>Disposed</c> state, or if it
-        /// is in the process of being disposed.
-        /// </returns>
-        [Log(AttributeExclude = true)]
-        public static bool IsNullOrDisposed([NotLogged] this IControl control)
-        {
-            bool result;
-
-            try
-            {
-                result = control == null || control.Disposing ||
-                         control.IsDisposed;
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                /*
-                 * We are actually going to return TRUE here, so
-                 * that the caller of this method errs on the side of
-                 * caution and does not use the specified control.
-                 */
-
-                result = true;
-            }
-
-            return result;
-        }
-
-        /// <summary>
         /// Gets a value that indicates whether the reference to the
         /// <see cref="T:System.Windows.Forms.Form" /> that contains this control is not
         /// initialized, or whether that <see cref="T:System.Windows.Forms.Form" /> is

@@ -1329,7 +1329,7 @@ namespace xyLOGIX.Core.Extensions
         /// One of the <see cref="T:System.Windows.Forms.PreProcessControlState" /> value(s),
         /// depending on whether
         /// <see
-        ///     cref="M:System.Windows.Forms.Control.PreProcessMessage(System.Windows.Forms.Message@)" />
+        ///     cref="M:System.Windows.Forms.Control.PreProcessMessage(ref System.Windows.Forms.Message)" />
         /// is <see langword="true" /> or <see langword="false" /> and whether
         /// <see
         ///     cref="M:System.Windows.Forms.Control.IsInputKey(System.Windows.Forms.Keys)" />

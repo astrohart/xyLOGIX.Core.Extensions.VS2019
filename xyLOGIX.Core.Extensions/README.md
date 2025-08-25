@@ -45,6 +45,9 @@
   - [BindToEnum\`\`1(comboBox,defaultSelection)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-BindToEnum``1-System-Windows-Forms-ComboBox,``0- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.BindToEnum``1(System.Windows.Forms.ComboBox,``0)')
   - [GetComboBoxItems\`\`1()](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-GetComboBoxItems``1 'xyLOGIX.Core.Extensions.ComboBoxExtensions.GetComboBoxItems``1')
   - [SelectFirstItem(comboBox)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-SelectFirstItem-System-Windows-Forms-ComboBox- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.SelectFirstItem(System.Windows.Forms.ComboBox)')
+- [ComponentExtensions](#T-xyLOGIX-Core-Extensions-ComponentExtensions 'xyLOGIX.Core.Extensions.ComponentExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-ComponentExtensions-#cctor 'xyLOGIX.Core.Extensions.ComponentExtensions.#cctor')
+  - [IsNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ComponentExtensions-IsNullOrDisposed-System-ComponentModel-Component- 'xyLOGIX.Core.Extensions.ComponentExtensions.IsNullOrDisposed(System.ComponentModel.Component)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
   - [ControlFormAssociationProvider](#P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider 'xyLOGIX.Core.Extensions.ControlExtensions.ControlFormAssociationProvider')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-ControlExtensions-#cctor 'xyLOGIX.Core.Extensions.ControlExtensions.#cctor')
@@ -52,6 +55,7 @@
   - [GetParentForm()](#M-xyLOGIX-Core-Extensions-ControlExtensions-GetParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.GetParentForm(System.Windows.Forms.Control)')
   - [InvokeIfRequired(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)')
   - [InvokeIfRequired\`\`1(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired``1-System-ComponentModel-ISynchronizeInvoke,System-Func{``0}- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired``1(System.ComponentModel.ISynchronizeInvoke,System.Func{``0})')
+  - [IsNullOrDisposed(control)](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsNullOrDisposed(System.Windows.Forms.Control)')
   - [IsParentFormNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsParentFormNullOrDisposed(System.Windows.Forms.Control)')
 - [DateTimeExtensions](#T-xyLOGIX-Core-Extensions-DateTimeExtensions 'xyLOGIX.Core.Extensions.DateTimeExtensions')
   - [ToRFC3339(date)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToRFC3339-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToRFC3339(System.DateTime)')
@@ -1655,6 +1659,63 @@ If the specified `comboBox` is a
 `null` reference or it contains zero items, then this method
 does nothing.
 
+<a name='T-xyLOGIX-Core-Extensions-ComponentExtensions'></a>
+## ComponentExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Exposes `static` extension method(s) for the
+[Component](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.Component 'System.ComponentModel.Component') class.
+
+<a name='M-xyLOGIX-Core-Extensions-ComponentExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[ComponentExtensions](#T-xyLOGIX-Core-Extensions-ComponentExtensions 'xyLOGIX.Core.Extensions.ComponentExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any `static` members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-ComponentExtensions-IsNullOrDisposed-System-ComponentModel-Component-'></a>
+### IsNullOrDisposed() `method`
+
+##### Summary
+
+Determines whether the specified `component` is set to a
+`null` reference or has been disposed.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Uses the [IsDisposed](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsDisposed 'System.Windows.Forms.Control.IsDisposed') for
+WinForms controls and falls back to reflection and a conservative probe for
+other Component implementations.
+
+
+
+On any exception the method logs and returns `true`.
+
 <a name='T-xyLOGIX-Core-Extensions-ControlExtensions'></a>
 ## ControlExtensions `type`
 
@@ -1807,6 +1868,29 @@ This method should always be called for a child control of a frame
 window; never the window itself (even though, technically, it also derives from
 [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and implements the
 [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface).
+
+<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-IsNullOrDisposed-System-Windows-Forms-Control-'></a>
+### IsNullOrDisposed(control) `method`
+
+##### Summary
+
+Gets a value indicating whether the specified `control` is
+either set to a `null` reference, or is in the process of
+being disposed, or has already been disposed.
+
+##### Returns
+
+`true` if the specified `control`
+is in the `null` reference or `Disposed` state, or if it
+is in the process of being disposed.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| control | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | (Required.) Reference to an instance of
+[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that is to be checked for being a
+`null` reference or being in the `Disposed` state. |
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control-'></a>
 ### IsParentFormNullOrDisposed() `method`

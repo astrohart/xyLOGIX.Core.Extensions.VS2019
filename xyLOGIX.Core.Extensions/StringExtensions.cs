@@ -508,9 +508,9 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Strips newlines from the text in <paramref name="line" />, and then
-        /// calls <see cref="T:System.String.Trim" /> on the results.
+        /// calls <see cref="M:System.String.Trim()" /> on the results.
         /// </summary>
-        /// <param name="line"> Text to clean. </param>
+        /// <param name="line"> Text to clean.</param>
         /// <returns>
         /// Same as input, except all newline characters and whitespace has been
         /// removed.
@@ -588,7 +588,8 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="initialString">
         /// (Required.) A <see cref="T:System.String" /> that
-        /// specifies the initial value to have other <see cref="T:System.String" /> value(s)
+        /// specifies the initial value to have other <see cref="T:System.String" />
+        /// value(s)
         /// concatenated to it.
         /// </param>
         /// <param name="parts">
@@ -3477,13 +3478,14 @@ namespace xyLOGIX.Core.Extensions
             => PluralizeWord(word, CultureInfo.CurrentUICulture);
 
         /// <summary>
-        /// More Pythonic version of the <see cref="M:System.String.FormatLikePython" />
+        /// More Pythonic version of the
+        /// <see cref="M:xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython" />
         /// method, which you can put after a string literal or
         /// <see cref="T:System.String" /> variable to format a string.
         /// </summary>
         /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that contains
-        /// format placeholders.
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// optionally contains one or more format placeholder(s).
         /// </param>
         /// <param name="args">
         /// (Optional.) One or more format values to be substituted in
@@ -5000,19 +5002,28 @@ namespace xyLOGIX.Core.Extensions
         /// Formats a string using the <paramref name="format" /> and
         /// <paramref name="args" />.
         /// </summary>
-        /// <param name="format"> (Required.) String containing the format. </param>
+        /// <param name="format">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// optionally contains one or more format specifier(s).
+        /// </param>
         /// <param name="args">
         /// (Optional.) Collection of args whose values are to be
         /// replaced in the format string.
         /// </param>
-        /// <returns> A string with the format placeholders replaced by the args. </returns>
+        /// <returns>
+        /// A <see cref="T:System.String" /> with the format placeholders replaced
+        /// by the args.
+        /// </returns>
         /// <remarks>
-        /// This method is just an alias for
-        /// <see cref="T:System.String.FormatLikePython" /> . It is here to provide a way
-        /// to
-        /// translate VB to C# code and still use the moniker Sub from VB that does the
-        /// same operation. If this method is passed the empty string for
-        /// <paramref name="format" />, then the return value is the empty string.
+        /// This method is just an alias for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython" />
+        /// method.
+        /// <para />
+        /// It is here to provide a way to translate VB to C# code and still use the
+        /// moniker Sub from VB that does the same operation.
+        /// <para />
+        /// If this method is passed the empty string for <paramref name="format" />, then
+        /// the return value is the empty string.
         /// </remarks>
         public static string Sub(this string format, params object[] args)
             => string.IsNullOrWhiteSpace(format)

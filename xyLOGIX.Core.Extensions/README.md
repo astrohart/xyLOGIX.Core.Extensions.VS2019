@@ -55,7 +55,6 @@
   - [GetParentForm()](#M-xyLOGIX-Core-Extensions-ControlExtensions-GetParentForm-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.GetParentForm(System.Windows.Forms.Control)')
   - [InvokeIfRequired(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired(System.ComponentModel.ISynchronizeInvoke,System.Windows.Forms.MethodInvoker)')
   - [InvokeIfRequired\`\`1(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired``1-System-ComponentModel-ISynchronizeInvoke,System-Func{``0}- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired``1(System.ComponentModel.ISynchronizeInvoke,System.Func{``0})')
-  - [IsNullOrDisposed(control)](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsNullOrDisposed(System.Windows.Forms.Control)')
   - [IsParentFormNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsParentFormNullOrDisposed(System.Windows.Forms.Control)')
 - [DateTimeExtensions](#T-xyLOGIX-Core-Extensions-DateTimeExtensions 'xyLOGIX.Core.Extensions.DateTimeExtensions')
   - [ToRFC3339(date)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToRFC3339-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToRFC3339(System.DateTime)')
@@ -91,10 +90,12 @@
   - [Shuffle\`\`1(quote,rng)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Shuffle``1-System-Collections-Generic-IEnumerable{``0},System-Random- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Random)')
   - [TakeAllButLast\`\`1(quote)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-TakeAllButLast``1-System-Collections-Generic-IEnumerable{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.TakeAllButLast``1(System.Collections.Generic.IEnumerable{``0})')
 - [FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions')
-  - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Form- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Form)')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-FormExtensions-#cctor 'xyLOGIX.Core.Extensions.FormExtensions.#cctor')
+  - [CenterForm(child,parent)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,xyLOGIX.Core.Extensions.IForm)')
   - [CenterForm(form,screen)](#M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen- 'xyLOGIX.Core.Extensions.FormExtensions.CenterForm(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.Screen)')
   - [DoIfDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
   - [DoIfNotDisposed(form,message)](#M-xyLOGIX-Core-Extensions-FormExtensions-DoIfNotDisposed-xyLOGIX-Core-Extensions-IForm,System-Action- 'xyLOGIX.Core.Extensions.FormExtensions.DoIfNotDisposed(xyLOGIX.Core.Extensions.IForm,System.Action)')
+  - [IsNullOrDisposed(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-IsNullOrDisposed-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.IsNullOrDisposed(xyLOGIX.Core.Extensions.IForm)')
   - [ShowDialogAsync(form,owner)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm,System.Windows.Forms.IWin32Window)')
   - [ShowDialogAsync(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowDialogAsync(xyLOGIX.Core.Extensions.IForm)')
   - [ShowOnPrimaryMonitor(form)](#M-xyLOGIX-Core-Extensions-FormExtensions-ShowOnPrimaryMonitor-xyLOGIX-Core-Extensions-IForm- 'xyLOGIX.Core.Extensions.FormExtensions.ShowOnPrimaryMonitor(xyLOGIX.Core.Extensions.IForm)')
@@ -1869,29 +1870,6 @@ window; never the window itself (even though, technically, it also derives from
 [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') and implements the
 [ISynchronizeInvoke](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.ISynchronizeInvoke 'System.ComponentModel.ISynchronizeInvoke') interface).
 
-<a name='M-xyLOGIX-Core-Extensions-ControlExtensions-IsNullOrDisposed-System-Windows-Forms-Control-'></a>
-### IsNullOrDisposed(control) `method`
-
-##### Summary
-
-Gets a value indicating whether the specified `control` is
-either set to a `null` reference, or is in the process of
-being disposed, or has already been disposed.
-
-##### Returns
-
-`true` if the specified `control`
-is in the `null` reference or `Disposed` state, or if it
-is in the process of being disposed.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| control | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | (Required.) Reference to an instance of
-[Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') that is to be checked for being a
-`null` reference or being in the `Disposed` state. |
-
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control-'></a>
 ### IsParentFormNullOrDisposed() `method`
 
@@ -2763,7 +2741,30 @@ xyLOGIX.Core.Extensions
 
 Helper methods for manipulating windows forms.
 
-<a name='M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Form-'></a>
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[FormExtensions](#T-xyLOGIX-Core-Extensions-FormExtensions 'xyLOGIX.Core.Extensions.FormExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any `static` members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,xyLOGIX-Core-Extensions-IForm-'></a>
 ### CenterForm(child,parent) `method`
 
 ##### Summary
@@ -2774,8 +2775,13 @@ Centers this form on the specified `parent` form.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| child | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | Reference to the form to be centered. |
-| parent | [System.Windows.Forms.Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') | Reference to the parent form. |
+| child | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | (Required.) Reference to an instance of an object that
+implements the [IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') interface that
+represents the `Child Form`; i.e., the form that is to be centered with
+respect to the specified `parent` form. |
+| parent | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | (Required.) Reference to an instance of an object that
+implements the [IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') interface that
+represents the parent form. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-CenterForm-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-Screen-'></a>
 ### CenterForm(form,screen) `method`
@@ -2829,6 +2835,29 @@ disposed, in which case nothing is done.
 perform the `message`. |
 | message | [System.Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') | An [Action](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action') specifying code to be
 run if the form is not disposed. |
+
+<a name='M-xyLOGIX-Core-Extensions-FormExtensions-IsNullOrDisposed-xyLOGIX-Core-Extensions-IForm-'></a>
+### IsNullOrDisposed(form) `method`
+
+##### Summary
+
+Gets a value indicating whether the specified `form` is
+either set to a `null` reference, or is in the process of
+being disposed, or has already been disposed.
+
+##### Returns
+
+`true` if the specified `form`
+is in the `null` reference or `Disposed` state, or if it
+is in the process of being disposed.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | (Required.) Reference to an instance of an object that implements the
+[IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') interface that is to be
+checked for being in the `Disposed` state. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
 ### ShowDialogAsync(form,owner) `method`
@@ -5166,7 +5195,7 @@ before they are dispatched.
 
 One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState') value(s),
 depending on whether
-[PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(System.Windows.Forms.Message@)')
+[PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(ref System.Windows.Forms.Message)')
 is `true` or `false` and whether
 [IsInputKey](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputKey 'System.Windows.Forms.Control.IsInputKey(System.Windows.Forms.Keys)')
 or [IsInputChar](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputChar 'System.Windows.Forms.Control.IsInputChar(System.Char)') are

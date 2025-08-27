@@ -1,4 +1,6 @@
-﻿using PostSharp.Patterns.Collections;
+﻿#pragma warning disable IDE0060
+
+using PostSharp.Patterns.Collections;
 using PostSharp.Patterns.Diagnostics;
 using PostSharp.Patterns.Threading;
 using System;
@@ -4502,7 +4504,7 @@ namespace xyLOGIX.Core.Extensions
             [NotLogged] this string value
         )
         {
-            var result = value;
+            string result;
 
             try
             {
@@ -5854,3 +5856,5 @@ namespace xyLOGIX.Core.Extensions
                 : string.Empty;
     }
 }
+
+#pragma warning restore IDE0060

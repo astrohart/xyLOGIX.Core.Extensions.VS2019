@@ -18,6 +18,6 @@ using PostSharp.Patterns.Diagnostics;
 [assembly:
     Log(
         AttributeExclude = true,
-        AttributeTargetMembers = "regex:^get_|^set_|^add_|^remove_",
+        AttributeTargetMembers = "regex:^get_|^set_|^add_|^remove_|^._get",
         AttributePriority = 2
     )]

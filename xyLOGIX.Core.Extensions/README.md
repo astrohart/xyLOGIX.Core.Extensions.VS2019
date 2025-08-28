@@ -9608,7 +9608,7 @@ then it returns the empty collection.
 ##### Summary
 
 Strips newlines from the text in `line`, and then
-calls [Trim](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Trim 'System.String.Trim') on the results.
+calls [Trim](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Trim 'System.String.Trim()') on the results.
 
 ##### Returns
 
@@ -9670,7 +9670,8 @@ concatenated to it.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | initialString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-specifies the initial value to have other [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s)
+specifies the initial value to have other [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+value(s)
 concatenated to it. |
 | parts | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
 values that are to be concatenated, in the order specified, to the
@@ -10672,7 +10673,7 @@ Gets the suffix of a so-called string, i.e.,
 
 
 
-OfType the example above, `.String` or `String` is the result of
+For the example above, `.String` or `String` is the result of
 calling
 this method, depending on the value of the `includingDot`
 parameter.
@@ -11601,7 +11602,8 @@ method returns the empty string.
 
 ##### Summary
 
-More Pythonic version of the [FormatLikePython](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.FormatLikePython 'System.String.FormatLikePython')
+More Pythonic version of the
+[FormatLikePython](#M-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython 'xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython')
 method, which you can put after a string literal or
 [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variable to format a string.
 
@@ -11615,8 +11617,8 @@ if no format values were provided in the `args` parameter.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
-format placeholders. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+optionally contains one or more format placeholder(s). |
 | args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) One or more format values to be substituted in
 the corresponding locations in the specified `value`. |
 
@@ -12438,24 +12440,33 @@ Formats a string using the `format` and
 
 ##### Returns
 
-A string with the format placeholders replaced by the args.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with the format placeholders replaced
+by the args.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| format | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the format. |
+| format | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+optionally contains one or more format specifier(s). |
 | args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) Collection of args whose values are to be
 replaced in the format string. |
 
 ##### Remarks
 
-This method is just an alias for
-[FormatLikePython](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.FormatLikePython 'System.String.FormatLikePython') . It is here to provide a way
-to
-translate VB to C# code and still use the moniker Sub from VB that does the
-same operation. If this method is passed the empty string for
-`format`, then the return value is the empty string.
+This method is just an alias for the
+[FormatLikePython](#T-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython 'xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython')
+method.
+
+
+
+It is here to provide a way to translate VB to C# code and still use the
+moniker Sub from VB that does the same operation.
+
+
+
+If this method is passed the empty string for `format`, then
+the return value is the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Suffix-System-String,System-String-'></a>
 ### Suffix(value,suffix) `method`

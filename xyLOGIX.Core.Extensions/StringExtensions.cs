@@ -4440,6 +4440,9 @@ namespace xyLOGIX.Core.Extensions
         /// is to serve as the replacement for any of the specified
         /// <paramref name="findWhatValues" /> in <paramref name="source" />.
         /// </param>
+        /// <param name="option">
+        /// (Required.) One of the <see cref="T:xyLOGIX.Core.Extensions.ReplaceAnyOfOption" /> value(s) that indicates which of the occurrence(s) of the specified <paramref name="source"/> string are to be replaced.<para/>The default value of this parameter is <see cref="F:xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First"/>.
+        /// </param>
         /// <returns>
         /// If successful, the <paramref name="source" /> string, with any of the
         /// specified <paramref name="findWhatValues" />, if they occur in it, replaced
@@ -4449,7 +4452,8 @@ namespace xyLOGIX.Core.Extensions
         public static string ReplaceAnyOf(
             [NotLogged] this string source,
             [NotLogged] ICollection<string> findWhatValues,
-            [NotLogged] string replacementText
+            [NotLogged] string replacementText,
+            ReplaceAnyOfOption option = ReplaceAnyOfOption.First
         )
         {
             var result = source;
@@ -4465,6 +4469,9 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(source)) return result;
                 if (findWhatValues == null) return result;
                 if (findWhatValues.Count <= 0) return result;
+                if (ReplaceAnyOfOption.Unknown.Equals(option)) return result;
+                if (!Enum.IsDefined(typeof(ReplaceAnyOfOption), option))
+                    return result;
 
                 foreach (var thingToFind in findWhatValues.ToArray())
                 {
@@ -4472,7 +4479,7 @@ namespace xyLOGIX.Core.Extensions
                     if (!source.Contains(thingToFind)) continue;
 
                     result = result.Replace(thingToFind, replacementText);
-                    break; // only replace the first one found
+                    if (ReplaceAnyOfOption.First.Equals(option)) break;
                 }
             }
             catch (Exception ex)

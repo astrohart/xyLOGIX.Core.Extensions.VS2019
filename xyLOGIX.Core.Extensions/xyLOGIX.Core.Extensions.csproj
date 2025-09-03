@@ -167,6 +167,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReplaceAnyOfOption.cs" />
     <Compile Include="SetExtensions.cs" />
     <Compile Include="StringArrayExtensions.cs" />
     <Compile Include="StringExtensions.cs" />

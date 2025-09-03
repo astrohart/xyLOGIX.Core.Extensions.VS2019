@@ -4472,6 +4472,7 @@ namespace xyLOGIX.Core.Extensions
                     if (!source.Contains(thingToFind)) continue;
 
                     result = result.Replace(thingToFind, replacementText);
+                    break; // only replace the first one found
                 }
             }
             catch (Exception ex)

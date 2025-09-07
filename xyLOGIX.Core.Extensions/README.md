@@ -443,6 +443,10 @@
   - [FileExists(pathname)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.FileExists(System.String)')
   - [HasAnyOfTheseExtensions(pathname,extensions)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasAnyOfTheseExtensions(System.String,System.String[])')
   - [HasExtension(pathname,extension)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasExtension-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasExtension(System.String,System.String)')
+- [ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption')
+  - [All](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-All 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.All')
+  - [First](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First')
+  - [Unknown](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-Unknown 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.Unknown')
 - [Resources](#T-xyLOGIX-Core-Extensions-Properties-Resources 'xyLOGIX.Core.Extensions.Properties.Resources')
   - [Culture](#P-xyLOGIX-Core-Extensions-Properties-Resources-Culture 'xyLOGIX.Core.Extensions.Properties.Resources.Culture')
   - [Error_ValueCannotBeNullOrWhiteSpace](#P-xyLOGIX-Core-Extensions-Properties-Resources-Error_ValueCannotBeNullOrWhiteSpace 'xyLOGIX.Core.Extensions.Properties.Resources.Error_ValueCannotBeNullOrWhiteSpace')
@@ -573,7 +577,7 @@
   - [RemoveTrailingBackslashes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveTrailingBackslashes(System.String)')
   - [Replace(source,oldValue,newValue,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Replace(System.String,System.String,System.String,System.StringComparison)')
   - [Replace(source,oldChar,newChar,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-Char,System-Char,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Replace(System.String,System.Char,System.Char,System.StringComparison)')
-  - [ReplaceAnyOf(source,findWhatValues,replacementText)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf(System.String,System.Collections.Generic.ICollection{System.String},System.String)')
+  - [ReplaceAnyOf(source,findWhatValues,replacementText,option)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String,xyLOGIX-Core-Extensions-ReplaceAnyOfOption- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf(System.String,System.Collections.Generic.ICollection{System.String},System.String,xyLOGIX.Core.Extensions.ReplaceAnyOfOption)')
   - [ReplaceCopyrightSymbolWithEscapeSequence(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceCopyrightSymbolWithEscapeSequence-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceCopyrightSymbolWithEscapeSequence(System.String)')
   - [ReplaceNoCase(value,search,replacement)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceNoCase(System.String,System.String,System.String)')
   - [ReplaceSingleQuotesWithHTMLApostrophes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSingleQuotesWithHTMLApostrophes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceSingleQuotesWithHTMLApostrophes(System.String)')
@@ -9048,6 +9052,46 @@ the filesystem.
 This method is meant to be used as an extension method of type
 [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String').
 
+<a name='T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption'></a>
+## ReplaceAnyOfOption `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Value(s) that allow the caller of the
+[ReplaceAnyOf](#M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf 'xyLOGIX.Core.Extensions.StringExtensions.ReplaceAnyOf') method
+to specify options for how the replacement should be performed.
+
+<a name='F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-All'></a>
+### All `constants`
+
+##### Summary
+
+All occurrences of the target string(s) should be replaced.
+
+<a name='F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First'></a>
+### First `constants`
+
+##### Summary
+
+Only the first occurrence of the target string(s) should be replaced.
+
+<a name='F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-Unknown'></a>
+### Unknown `constants`
+
+##### Summary
+
+Represents an unknown or undefined state.
+
+##### Remarks
+
+This value is typically used as a default or sentinel value to indicate that
+the
+state is not recognized or has not been explicitly set.
+
 <a name='T-xyLOGIX-Core-Extensions-Properties-Resources'></a>
 ## Resources `type`
 
@@ -12082,8 +12126,8 @@ defines how the old and new value(s) are to be compared.
 This parameter is ignored; it is accepted only to provide symmetry with the
 other overload(s) of this method. |
 
-<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String-'></a>
-### ReplaceAnyOf(source,findWhatValues,replacementText) `method`
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String,xyLOGIX-Core-Extensions-ReplaceAnyOfOption-'></a>
+### ReplaceAnyOf(source,findWhatValues,replacementText,option) `method`
 
 ##### Summary
 
@@ -12109,6 +12153,11 @@ the `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF
 | replacementText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
 is to serve as the replacement for any of the specified
 `findWhatValues` in `source`. |
+| option | [xyLOGIX.Core.Extensions.ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') | (Required.) One of the [ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') value(s) that indicates which of the occurrence(s) of the specified `source` string are to be replaced.
+
+
+
+The default value of this parameter is [First](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First'). |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceCopyrightSymbolWithEscapeSequence-System-String-'></a>
 ### ReplaceCopyrightSymbolWithEscapeSequence(value) `method`

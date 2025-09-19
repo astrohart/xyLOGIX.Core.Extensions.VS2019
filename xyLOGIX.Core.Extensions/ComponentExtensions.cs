@@ -58,70 +58,78 @@ namespace xyLOGIX.Core.Extensions
                     // Fast path for WinForms controls
                     if (component is Control ctrl)
                     {
-                        result = ctrl.IsDisposed;
+                        result = ctrl.InvokeIfRequired(() => ctrl.IsDisposed);
                     }
                     else
                     {
                         // Reflection: look for public/non-public bool properties named IsDisposed / Disposed
-                        var t = component.GetType();
-                        var prop =
-                            t.GetProperty(
-                                "IsDisposed",
-                                BindingFlags.Instance | BindingFlags.Public |
-                                BindingFlags.NonPublic
-                            ) ?? t.GetProperty(
-                                "Disposed",
-                                BindingFlags.Instance | BindingFlags.Public |
-                                BindingFlags.NonPublic
-                            );
-
-                        if (prop != null && prop.PropertyType == typeof(bool))
-                        {
-                            // property getter may throw if object is disposed; catch below
-                            result = (bool)prop.GetValue(component);
-                        }
-                        else
-                        {
-                            // Reflection: common private field names often used by implementations
-                            var foundField = false;
-                            foreach (var fieldName in new[]
-                                     {
-                                         "_disposed", "disposed",
-                                         "isDisposed", "m_disposed"
-                                     })
+                        new Control().InvokeIfRequired(() =>
                             {
-                                var fld = t.GetField(
-                                    fieldName,
-                                    BindingFlags.Instance |
-                                    BindingFlags.NonPublic | BindingFlags.Public
-                                );
-                                if (fld == null ||
-                                    fld.FieldType != typeof(bool)) continue;
-                                result = (bool)fld.GetValue(component);
-                                foundField = true;
-                                break;
-                            }
+                                var t = component.GetType();
+                                var prop =
+                                    t.GetProperty(
+                                        "IsDisposed",
+                                        BindingFlags.Instance |
+                                        BindingFlags.Public |
+                                        BindingFlags.NonPublic
+                                    ) ?? t.GetProperty(
+                                        "Disposed",
+                                        BindingFlags.Instance |
+                                        BindingFlags.Public |
+                                        BindingFlags.NonPublic
+                                    );
 
-                            if (!foundField)
-                            {
-                                // Last resort: attempt to touch a benign property and see if ObjectDisposedException is thrown.
-                                // If touching throws ObjectDisposedException, treat it as disposed; otherwise assume not disposed.
-                                try
+                                if (prop != null &&
+                                    prop.PropertyType == typeof(bool))
                                 {
-                                    _ = component.Site; // benign probe
-                                    result = false;
+                                    // property getter may throw if object is disposed; catch below
+                                    result = (bool)prop.GetValue(component);
                                 }
-                                catch (ObjectDisposedException)
+                                else
                                 {
-                                    result = true;
-                                }
-                                catch
-                                {
-                                    // If anything else goes wrong, be conservative.
-                                    result = true;
+                                    // Reflection: common private field names often used by implementations
+                                    var foundField = false;
+                                    foreach (var fieldName in new[]
+                                             {
+                                                 "_disposed", "disposed",
+                                                 "isDisposed", "m_disposed"
+                                             })
+                                    {
+                                        var fld = t.GetField(
+                                            fieldName,
+                                            BindingFlags.Instance |
+                                            BindingFlags.NonPublic |
+                                            BindingFlags.Public
+                                        );
+                                        if (fld == null ||
+                                            fld.FieldType != typeof(bool))
+                                            continue;
+                                        result = (bool)fld.GetValue(component);
+                                        foundField = true;
+                                        break;
+                                    }
+
+                                    if (foundField) return;
+
+                                    // Last resort: attempt to touch a benign property and see if ObjectDisposedException is thrown.
+                                    // If touching throws ObjectDisposedException, treat it as disposed; otherwise assume not disposed.
+                                    try
+                                    {
+                                        _ = component.Site; // benign probe
+                                        result = false;
+                                    }
+                                    catch (ObjectDisposedException)
+                                    {
+                                        result = true;
+                                    }
+                                    catch
+                                    {
+                                        // If anything else goes wrong, be conservative.
+                                        result = true;
+                                    }
                                 }
                             }
-                        }
+                        );
                     }
                 }
             }

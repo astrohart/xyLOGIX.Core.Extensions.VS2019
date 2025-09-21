@@ -324,7 +324,7 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// dictionary that correspond to the specified form.
         /// </remarks>
         [EntryPoint]
-        private void OnMemberFormClosed(object sender, FormClosedEventArgs e)
+        private void OnMemberFormClosed([NotLogged] object sender, FormClosedEventArgs e)
         {
             if (!(sender is Form form)) return;
             if (ParentFormDictionary == null) return;

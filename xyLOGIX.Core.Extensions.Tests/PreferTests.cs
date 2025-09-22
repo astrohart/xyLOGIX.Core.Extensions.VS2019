@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Diagnostics;
+using NUnit.Framework;
 using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Core.Extensions.Actions;

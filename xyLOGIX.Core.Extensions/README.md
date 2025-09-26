@@ -325,6 +325,72 @@
   - [ValidateChildren(validationConstraints)](#M-xyLOGIX-Core-Extensions-IForm-ValidateChildren-System-Windows-Forms-ValidationConstraints- 'xyLOGIX.Core.Extensions.IForm.ValidateChildren(System.Windows.Forms.ValidationConstraints)')
 - [ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
   - [IsValid(type)](#M-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator-IsValid-xyLOGIX-Core-Extensions-LanguageArticleType- 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator.IsValid(xyLOGIX.Core.Extensions.LanguageArticleType)')
+- [IListView](#T-xyLOGIX-Core-Extensions-IListView 'xyLOGIX.Core.Extensions.IListView')
+  - [Activation](#P-xyLOGIX-Core-Extensions-IListView-Activation 'xyLOGIX.Core.Extensions.IListView.Activation')
+  - [Alignment](#P-xyLOGIX-Core-Extensions-IListView-Alignment 'xyLOGIX.Core.Extensions.IListView.Alignment')
+  - [AllowColumnReorder](#P-xyLOGIX-Core-Extensions-IListView-AllowColumnReorder 'xyLOGIX.Core.Extensions.IListView.AllowColumnReorder')
+  - [AutoArrange](#P-xyLOGIX-Core-Extensions-IListView-AutoArrange 'xyLOGIX.Core.Extensions.IListView.AutoArrange')
+  - [BackgroundImageTiled](#P-xyLOGIX-Core-Extensions-IListView-BackgroundImageTiled 'xyLOGIX.Core.Extensions.IListView.BackgroundImageTiled')
+  - [BorderStyle](#P-xyLOGIX-Core-Extensions-IListView-BorderStyle 'xyLOGIX.Core.Extensions.IListView.BorderStyle')
+  - [CheckBoxes](#P-xyLOGIX-Core-Extensions-IListView-CheckBoxes 'xyLOGIX.Core.Extensions.IListView.CheckBoxes')
+  - [CheckedIndices](#P-xyLOGIX-Core-Extensions-IListView-CheckedIndices 'xyLOGIX.Core.Extensions.IListView.CheckedIndices')
+  - [CheckedItems](#P-xyLOGIX-Core-Extensions-IListView-CheckedItems 'xyLOGIX.Core.Extensions.IListView.CheckedItems')
+  - [Columns](#P-xyLOGIX-Core-Extensions-IListView-Columns 'xyLOGIX.Core.Extensions.IListView.Columns')
+  - [Container](#P-xyLOGIX-Core-Extensions-IListView-Container 'xyLOGIX.Core.Extensions.IListView.Container')
+  - [FocusedItem](#P-xyLOGIX-Core-Extensions-IListView-FocusedItem 'xyLOGIX.Core.Extensions.IListView.FocusedItem')
+  - [FullRowSelect](#P-xyLOGIX-Core-Extensions-IListView-FullRowSelect 'xyLOGIX.Core.Extensions.IListView.FullRowSelect')
+  - [GridLines](#P-xyLOGIX-Core-Extensions-IListView-GridLines 'xyLOGIX.Core.Extensions.IListView.GridLines')
+  - [Groups](#P-xyLOGIX-Core-Extensions-IListView-Groups 'xyLOGIX.Core.Extensions.IListView.Groups')
+  - [HeaderStyle](#P-xyLOGIX-Core-Extensions-IListView-HeaderStyle 'xyLOGIX.Core.Extensions.IListView.HeaderStyle')
+  - [HideSelection](#P-xyLOGIX-Core-Extensions-IListView-HideSelection 'xyLOGIX.Core.Extensions.IListView.HideSelection')
+  - [HotTracking](#P-xyLOGIX-Core-Extensions-IListView-HotTracking 'xyLOGIX.Core.Extensions.IListView.HotTracking')
+  - [HoverSelection](#P-xyLOGIX-Core-Extensions-IListView-HoverSelection 'xyLOGIX.Core.Extensions.IListView.HoverSelection')
+  - [InsertionMark](#P-xyLOGIX-Core-Extensions-IListView-InsertionMark 'xyLOGIX.Core.Extensions.IListView.InsertionMark')
+  - [Items](#P-xyLOGIX-Core-Extensions-IListView-Items 'xyLOGIX.Core.Extensions.IListView.Items')
+  - [LabelEdit](#P-xyLOGIX-Core-Extensions-IListView-LabelEdit 'xyLOGIX.Core.Extensions.IListView.LabelEdit')
+  - [LabelWrap](#P-xyLOGIX-Core-Extensions-IListView-LabelWrap 'xyLOGIX.Core.Extensions.IListView.LabelWrap')
+  - [LargeImageList](#P-xyLOGIX-Core-Extensions-IListView-LargeImageList 'xyLOGIX.Core.Extensions.IListView.LargeImageList')
+  - [ListViewItemSorter](#P-xyLOGIX-Core-Extensions-IListView-ListViewItemSorter 'xyLOGIX.Core.Extensions.IListView.ListViewItemSorter')
+  - [MultiSelect](#P-xyLOGIX-Core-Extensions-IListView-MultiSelect 'xyLOGIX.Core.Extensions.IListView.MultiSelect')
+  - [OwnerDraw](#P-xyLOGIX-Core-Extensions-IListView-OwnerDraw 'xyLOGIX.Core.Extensions.IListView.OwnerDraw')
+  - [RightToLeftLayout](#P-xyLOGIX-Core-Extensions-IListView-RightToLeftLayout 'xyLOGIX.Core.Extensions.IListView.RightToLeftLayout')
+  - [Scrollable](#P-xyLOGIX-Core-Extensions-IListView-Scrollable 'xyLOGIX.Core.Extensions.IListView.Scrollable')
+  - [SelectedIndices](#P-xyLOGIX-Core-Extensions-IListView-SelectedIndices 'xyLOGIX.Core.Extensions.IListView.SelectedIndices')
+  - [SelectedItems](#P-xyLOGIX-Core-Extensions-IListView-SelectedItems 'xyLOGIX.Core.Extensions.IListView.SelectedItems')
+  - [ShowGroups](#P-xyLOGIX-Core-Extensions-IListView-ShowGroups 'xyLOGIX.Core.Extensions.IListView.ShowGroups')
+  - [ShowItemToolTips](#P-xyLOGIX-Core-Extensions-IListView-ShowItemToolTips 'xyLOGIX.Core.Extensions.IListView.ShowItemToolTips')
+  - [SmallImageList](#P-xyLOGIX-Core-Extensions-IListView-SmallImageList 'xyLOGIX.Core.Extensions.IListView.SmallImageList')
+  - [Sorting](#P-xyLOGIX-Core-Extensions-IListView-Sorting 'xyLOGIX.Core.Extensions.IListView.Sorting')
+  - [StateImageList](#P-xyLOGIX-Core-Extensions-IListView-StateImageList 'xyLOGIX.Core.Extensions.IListView.StateImageList')
+  - [TileSize](#P-xyLOGIX-Core-Extensions-IListView-TileSize 'xyLOGIX.Core.Extensions.IListView.TileSize')
+  - [TopItem](#P-xyLOGIX-Core-Extensions-IListView-TopItem 'xyLOGIX.Core.Extensions.IListView.TopItem')
+  - [UseCompatibleStateImageBehavior](#P-xyLOGIX-Core-Extensions-IListView-UseCompatibleStateImageBehavior 'xyLOGIX.Core.Extensions.IListView.UseCompatibleStateImageBehavior')
+  - [View](#P-xyLOGIX-Core-Extensions-IListView-View 'xyLOGIX.Core.Extensions.IListView.View')
+  - [VirtualListSize](#P-xyLOGIX-Core-Extensions-IListView-VirtualListSize 'xyLOGIX.Core.Extensions.IListView.VirtualListSize')
+  - [VirtualMode](#P-xyLOGIX-Core-Extensions-IListView-VirtualMode 'xyLOGIX.Core.Extensions.IListView.VirtualMode')
+  - [ArrangeIcons(value)](#M-xyLOGIX-Core-Extensions-IListView-ArrangeIcons-System-Windows-Forms-ListViewAlignment- 'xyLOGIX.Core.Extensions.IListView.ArrangeIcons(System.Windows.Forms.ListViewAlignment)')
+  - [ArrangeIcons()](#M-xyLOGIX-Core-Extensions-IListView-ArrangeIcons 'xyLOGIX.Core.Extensions.IListView.ArrangeIcons')
+  - [AutoResizeColumn(columnIndex,headerAutoResize)](#M-xyLOGIX-Core-Extensions-IListView-AutoResizeColumn-System-Int32,System-Windows-Forms-ColumnHeaderAutoResizeStyle- 'xyLOGIX.Core.Extensions.IListView.AutoResizeColumn(System.Int32,System.Windows.Forms.ColumnHeaderAutoResizeStyle)')
+  - [AutoResizeColumns(headerAutoResize)](#M-xyLOGIX-Core-Extensions-IListView-AutoResizeColumns-System-Windows-Forms-ColumnHeaderAutoResizeStyle- 'xyLOGIX.Core.Extensions.IListView.AutoResizeColumns(System.Windows.Forms.ColumnHeaderAutoResizeStyle)')
+  - [BeginUpdate()](#M-xyLOGIX-Core-Extensions-IListView-BeginUpdate 'xyLOGIX.Core.Extensions.IListView.BeginUpdate')
+  - [Clear()](#M-xyLOGIX-Core-Extensions-IListView-Clear 'xyLOGIX.Core.Extensions.IListView.Clear')
+  - [CreateObjRef(requestedType)](#M-xyLOGIX-Core-Extensions-IListView-CreateObjRef-System-Type- 'xyLOGIX.Core.Extensions.IListView.CreateObjRef(System.Type)')
+  - [EndUpdate()](#M-xyLOGIX-Core-Extensions-IListView-EndUpdate 'xyLOGIX.Core.Extensions.IListView.EndUpdate')
+  - [EnsureVisible(index)](#M-xyLOGIX-Core-Extensions-IListView-EnsureVisible-System-Int32- 'xyLOGIX.Core.Extensions.IListView.EnsureVisible(System.Int32)')
+  - [FindItemWithText(text)](#M-xyLOGIX-Core-Extensions-IListView-FindItemWithText-System-String- 'xyLOGIX.Core.Extensions.IListView.FindItemWithText(System.String)')
+  - [FindItemWithText(text,includeSubItemsInSearch,startIndex)](#M-xyLOGIX-Core-Extensions-IListView-FindItemWithText-System-String,System-Boolean,System-Int32- 'xyLOGIX.Core.Extensions.IListView.FindItemWithText(System.String,System.Boolean,System.Int32)')
+  - [FindItemWithText(text,includeSubItemsInSearch,startIndex,isPrefixSearch)](#M-xyLOGIX-Core-Extensions-IListView-FindItemWithText-System-String,System-Boolean,System-Int32,System-Boolean- 'xyLOGIX.Core.Extensions.IListView.FindItemWithText(System.String,System.Boolean,System.Int32,System.Boolean)')
+  - [FindNearestItem(dir,point)](#M-xyLOGIX-Core-Extensions-IListView-FindNearestItem-System-Windows-Forms-SearchDirectionHint,System-Drawing-Point- 'xyLOGIX.Core.Extensions.IListView.FindNearestItem(System.Windows.Forms.SearchDirectionHint,System.Drawing.Point)')
+  - [FindNearestItem(searchDirection,x,y)](#M-xyLOGIX-Core-Extensions-IListView-FindNearestItem-System-Windows-Forms-SearchDirectionHint,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IListView.FindNearestItem(System.Windows.Forms.SearchDirectionHint,System.Int32,System.Int32)')
+  - [GetItemAt(x,y)](#M-xyLOGIX-Core-Extensions-IListView-GetItemAt-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IListView.GetItemAt(System.Int32,System.Int32)')
+  - [GetItemRect(index)](#M-xyLOGIX-Core-Extensions-IListView-GetItemRect-System-Int32- 'xyLOGIX.Core.Extensions.IListView.GetItemRect(System.Int32)')
+  - [GetItemRect(index,portion)](#M-xyLOGIX-Core-Extensions-IListView-GetItemRect-System-Int32,System-Windows-Forms-ItemBoundsPortion- 'xyLOGIX.Core.Extensions.IListView.GetItemRect(System.Int32,System.Windows.Forms.ItemBoundsPortion)')
+  - [GetLifetimeService()](#M-xyLOGIX-Core-Extensions-IListView-GetLifetimeService 'xyLOGIX.Core.Extensions.IListView.GetLifetimeService')
+  - [HitTest(point)](#M-xyLOGIX-Core-Extensions-IListView-HitTest-System-Drawing-Point- 'xyLOGIX.Core.Extensions.IListView.HitTest(System.Drawing.Point)')
+  - [HitTest(x,y)](#M-xyLOGIX-Core-Extensions-IListView-HitTest-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IListView.HitTest(System.Int32,System.Int32)')
+  - [InitializeLifetimeService()](#M-xyLOGIX-Core-Extensions-IListView-InitializeLifetimeService 'xyLOGIX.Core.Extensions.IListView.InitializeLifetimeService')
+  - [RedrawItems(startIndex,endIndex,invalidateOnly)](#M-xyLOGIX-Core-Extensions-IListView-RedrawItems-System-Int32,System-Int32,System-Boolean- 'xyLOGIX.Core.Extensions.IListView.RedrawItems(System.Int32,System.Int32,System.Boolean)')
+  - [Sort()](#M-xyLOGIX-Core-Extensions-IListView-Sort 'xyLOGIX.Core.Extensions.IListView.Sort')
 - [IScrollableControl](#T-xyLOGIX-Core-Extensions-IScrollableControl 'xyLOGIX.Core.Extensions.IScrollableControl')
   - [AutoScroll](#P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScroll 'xyLOGIX.Core.Extensions.IScrollableControl.AutoScroll')
   - [AutoScrollMargin](#P-xyLOGIX-Core-Extensions-IScrollableControl-AutoScrollMargin 'xyLOGIX.Core.Extensions.IScrollableControl.AutoScrollMargin')
@@ -6500,6 +6566,950 @@ passed is within the value set that is defined by the
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
 [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is to
 be examined. |
+
+<a name='T-xyLOGIX-Core-Extensions-IListView'></a>
+## IListView `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Defines the publicly-exposed methods, properties, and events of a Windows Forms
+ListView control.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-Activation'></a>
+### Activation `property`
+
+##### Summary
+
+Gets or sets how items are activated (clicked).
+
+##### Returns
+
+One of the [ItemActivation](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ItemActivation 'System.Windows.Forms.ItemActivation') values. The
+default is ItemActivation.Standard.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-Alignment'></a>
+### Alignment `property`
+
+##### Summary
+
+Gets or sets the alignment of items in the control.
+
+##### Returns
+
+One of the [ListViewAlignment](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewAlignment 'System.Windows.Forms.ListViewAlignment') values. The
+default is ListViewAlignment.Top.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-AllowColumnReorder'></a>
+### AllowColumnReorder `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the user can drag column headers to
+reorder columns.
+
+##### Returns
+
+`true` if the user can drag column headers to reorder columns;
+otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-AutoArrange'></a>
+### AutoArrange `property`
+
+##### Summary
+
+Gets or sets a value indicating whether icons are automatically arranged.
+
+##### Returns
+
+`true` if icons are automatically arranged; otherwise,
+`false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-BackgroundImageTiled'></a>
+### BackgroundImageTiled `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the background image is tiled.
+
+##### Returns
+
+`true` if the background image is tiled; otherwise,
+`false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-BorderStyle'></a>
+### BorderStyle `property`
+
+##### Summary
+
+Gets or sets the border style of the control.
+
+##### Returns
+
+One of the [BorderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BorderStyle 'System.Windows.Forms.BorderStyle') values. The
+default is BorderStyle.Fixed3D.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-CheckBoxes'></a>
+### CheckBoxes `property`
+
+##### Summary
+
+Gets or sets a value indicating whether a checkbox appears next to each item in
+the control.
+
+##### Returns
+
+`true` if a checkbox appears next to each item in the control;
+otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-CheckedIndices'></a>
+### CheckedIndices `property`
+
+##### Summary
+
+Gets the collection of items in the control that are checked.
+
+##### Returns
+
+A [CheckedIndexCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.CheckedIndexCollection 'System.Windows.Forms.ListView.CheckedIndexCollection') that
+contains the indexes of checked items in the list.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-CheckedItems'></a>
+### CheckedItems `property`
+
+##### Summary
+
+Gets the collection of checked items in the control.
+
+##### Returns
+
+A [CheckedListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.CheckedListViewItemCollection 'System.Windows.Forms.ListView.CheckedListViewItemCollection')
+that contains the checked items in the list.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-Columns'></a>
+### Columns `property`
+
+##### Summary
+
+Gets the collection of column headers in the control.
+
+##### Returns
+
+A [ColumnHeaderCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.ColumnHeaderCollection 'System.Windows.Forms.ListView.ColumnHeaderCollection') that
+contains all column header objects in the list.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-Container'></a>
+### Container `property`
+
+##### Summary
+
+Gets the container for components.
+
+##### Returns
+
+The [IContainer](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IContainer 'System.ComponentModel.IContainer') that contains the
+component.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-FocusedItem'></a>
+### FocusedItem `property`
+
+##### Summary
+
+Gets or sets the item that has focus in the list view control.
+
+##### Returns
+
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that represents the item
+that has focus.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-FullRowSelect'></a>
+### FullRowSelect `property`
+
+##### Summary
+
+Gets or sets a value indicating whether clicking an item selects all its
+subitems.
+
+##### Returns
+
+`true` if clicking an item selects all its subitems;
+otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-GridLines'></a>
+### GridLines `property`
+
+##### Summary
+
+Gets or sets a value indicating whether grid lines appear between the rows and
+columns containing the items and subitems in the control.
+
+##### Returns
+
+`true` if grid lines appear between the rows and columns of
+the list; otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-Groups'></a>
+### Groups `property`
+
+##### Summary
+
+Gets the collection of groups in the list view control.
+
+##### Returns
+
+A [ListViewGroupCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewGroupCollection 'System.Windows.Forms.ListViewGroupCollection') that represents
+the groups within the list.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-HeaderStyle'></a>
+### HeaderStyle `property`
+
+##### Summary
+
+Gets or sets the column header style.
+
+##### Returns
+
+One of the [ColumnHeaderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ColumnHeaderStyle 'System.Windows.Forms.ColumnHeaderStyle') values. The
+default is ColumnHeaderStyle.Clickable.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-HideSelection'></a>
+### HideSelection `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the selected item in the control
+remains highlighted when the control loses focus.
+
+##### Returns
+
+`true` if the selected item is not highlighted when the
+control loses focus; otherwise, `false`.
+The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-HotTracking'></a>
+### HotTracking `property`
+
+##### Summary
+
+Gets or sets a value indicating whether an item is automatically selected when
+the mouse pointer remains over the item for a few seconds.
+
+##### Returns
+
+`true` if an item is automatically selected when the mouse
+pointer hovers over the item; otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-HoverSelection'></a>
+### HoverSelection `property`
+
+##### Summary
+
+Gets or sets a value indicating whether an item is automatically selected when
+the mouse pointer pauses over the item.
+
+##### Returns
+
+`true` if an item is automatically selected when the mouse
+pointer hovers over the item; otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-InsertionMark'></a>
+### InsertionMark `property`
+
+##### Summary
+
+Gets the insertion mark for the list view.
+
+##### Returns
+
+A [ListViewInsertionMark](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewInsertionMark 'System.Windows.Forms.ListViewInsertionMark') that provides
+information about the insertion mark of the list view.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-Items'></a>
+### Items `property`
+
+##### Summary
+
+Gets the collection of items in the control.
+
+##### Returns
+
+A [ListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.ListViewItemCollection 'System.Windows.Forms.ListView.ListViewItemCollection') that
+contains all items in the list.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-LabelEdit'></a>
+### LabelEdit `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the user can edit the item labels.
+
+##### Returns
+
+`true` if item labels can be edited; otherwise,
+`false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-LabelWrap'></a>
+### LabelWrap `property`
+
+##### Summary
+
+Gets or sets a value indicating whether item labels wrap when they are too long
+to fit in the control.
+
+##### Returns
+
+`true` if item labels wrap when they are too long to fit in
+the control; otherwise, `false`.
+The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-LargeImageList'></a>
+### LargeImageList `property`
+
+##### Summary
+
+Gets or sets the ImageList to use when displaying items as large icons in the
+control.
+
+##### Returns
+
+An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the images to
+display for the large icon view of the items.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-ListViewItemSorter'></a>
+### ListViewItemSorter `property`
+
+##### Summary
+
+Gets or sets the implementation of the
+[IComparer](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IComparer 'System.Collections.IComparer') interface used to sort the items
+in the control.
+
+##### Returns
+
+An implementation of the [IComparer](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.IComparer 'System.Collections.IComparer')
+interface used to sort the items in the list.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-MultiSelect'></a>
+### MultiSelect `property`
+
+##### Summary
+
+Gets or sets a value indicating whether multiple items can be selected.
+
+##### Returns
+
+`true` if multiple items can be selected; otherwise,
+`false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-OwnerDraw'></a>
+### OwnerDraw `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the items in the control are drawn by
+the application.
+
+##### Returns
+
+`true` if the items in the control are drawn by the
+application; otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-RightToLeftLayout'></a>
+### RightToLeftLayout `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the RightToLeft property should affect
+the layout of the ListView control and its elements.
+
+##### Returns
+
+`true` if the layout of the ListView control and its elements
+is affected by the RightToLeft property; otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-Scrollable'></a>
+### Scrollable `property`
+
+##### Summary
+
+Gets or sets a value indicating whether scroll bars appear in the control when
+they are needed.
+
+##### Returns
+
+`true` if scroll bars appear in the control when they are
+needed; otherwise, `false`.
+The default is `true`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-SelectedIndices'></a>
+### SelectedIndices `property`
+
+##### Summary
+
+Gets a collection of the indexes of the selected items in the control.
+
+##### Returns
+
+A [SelectedIndexCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.SelectedIndexCollection 'System.Windows.Forms.ListView.SelectedIndexCollection') that
+contains the indexes of the selected items in the list.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-SelectedItems'></a>
+### SelectedItems `property`
+
+##### Summary
+
+Gets a collection of the selected items in the control.
+
+##### Returns
+
+A [SelectedListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.SelectedListViewItemCollection 'System.Windows.Forms.ListView.SelectedListViewItemCollection')
+that contains the selected items in the list.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-ShowGroups'></a>
+### ShowGroups `property`
+
+##### Summary
+
+Gets or sets a value indicating whether groups are displayed.
+
+##### Returns
+
+`true` if groups are displayed; otherwise,
+`false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-ShowItemToolTips'></a>
+### ShowItemToolTips `property`
+
+##### Summary
+
+Gets or sets a value indicating whether ToolTips are shown for the
+ListViewItems and SubItems.
+
+##### Returns
+
+`true` if ToolTips are shown for the ListViewItems and
+SubItems; otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-SmallImageList'></a>
+### SmallImageList `property`
+
+##### Summary
+
+Gets or sets the ImageList to use when displaying items as small icons in the
+control.
+
+##### Returns
+
+An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the images to
+display for the small icon view of the items.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-Sorting'></a>
+### Sorting `property`
+
+##### Summary
+
+Gets or sets the sort order for items in the control.
+
+##### Returns
+
+One of the [SortOrder](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SortOrder 'System.Windows.Forms.SortOrder') values. The default
+is SortOrder.None.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-StateImageList'></a>
+### StateImageList `property`
+
+##### Summary
+
+Gets or sets the state image list for the control.
+
+##### Returns
+
+An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the images to
+use for the different states of the items.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-TileSize'></a>
+### TileSize `property`
+
+##### Summary
+
+Gets or sets the size of the tiles shown in tile view.
+
+##### Returns
+
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the size, in pixels, of
+the tiles.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-TopItem'></a>
+### TopItem `property`
+
+##### Summary
+
+Gets or sets the item at the top of the ListView.
+
+##### Returns
+
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that represents the item
+at the top of the ListView.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-UseCompatibleStateImageBehavior'></a>
+### UseCompatibleStateImageBehavior `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the system-defined or the user-defined
+behavior for the state image of the control is used.
+
+##### Returns
+
+`true` if the user-defined behavior for the state image is
+used; otherwise, `false`.
+The default is `false`.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-View'></a>
+### View `property`
+
+##### Summary
+
+Gets or sets the view mode of the control.
+
+##### Returns
+
+One of the [View](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.View 'System.Windows.Forms.View') values. The default is
+View.LargeIcon.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-VirtualListSize'></a>
+### VirtualListSize `property`
+
+##### Summary
+
+Gets or sets the number of items that the list view control will display in
+virtual mode.
+
+##### Returns
+
+The number of items that the list view control will display in virtual mode.
+
+<a name='P-xyLOGIX-Core-Extensions-IListView-VirtualMode'></a>
+### VirtualMode `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the ListView uses the virtual mode.
+
+##### Returns
+
+`true` if the ListView uses the virtual mode; otherwise,
+`false`.
+The default is `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-ArrangeIcons-System-Windows-Forms-ListViewAlignment-'></a>
+### ArrangeIcons(value) `method`
+
+##### Summary
+
+Arranges the items in the control according to the specified value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Windows.Forms.ListViewAlignment](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewAlignment 'System.Windows.Forms.ListViewAlignment') | One of the
+[ListViewAlignment](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewAlignment 'System.Windows.Forms.ListViewAlignment') values. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-ArrangeIcons'></a>
+### ArrangeIcons() `method`
+
+##### Summary
+
+Arranges the items in the control according to the default alignment.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-AutoResizeColumn-System-Int32,System-Windows-Forms-ColumnHeaderAutoResizeStyle-'></a>
+### AutoResizeColumn(columnIndex,headerAutoResize) `method`
+
+##### Summary
+
+Resizes a column to fit the header or the contents, as specified.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| columnIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the column to resize. |
+| headerAutoResize | [System.Windows.Forms.ColumnHeaderAutoResizeStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ColumnHeaderAutoResizeStyle 'System.Windows.Forms.ColumnHeaderAutoResizeStyle') | One of the
+[ColumnHeaderAutoResizeStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ColumnHeaderAutoResizeStyle 'System.Windows.Forms.ColumnHeaderAutoResizeStyle') values. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-AutoResizeColumns-System-Windows-Forms-ColumnHeaderAutoResizeStyle-'></a>
+### AutoResizeColumns(headerAutoResize) `method`
+
+##### Summary
+
+Resizes all columns to fit the header or the contents, as specified.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| headerAutoResize | [System.Windows.Forms.ColumnHeaderAutoResizeStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ColumnHeaderAutoResizeStyle 'System.Windows.Forms.ColumnHeaderAutoResizeStyle') | One of the
+[ColumnHeaderAutoResizeStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ColumnHeaderAutoResizeStyle 'System.Windows.Forms.ColumnHeaderAutoResizeStyle') values. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-BeginUpdate'></a>
+### BeginUpdate() `method`
+
+##### Summary
+
+Prevents the control from drawing until the EndUpdate method is called.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-Clear'></a>
+### Clear() `method`
+
+##### Summary
+
+Removes all items from the control.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-CreateObjRef-System-Type-'></a>
+### CreateObjRef(requestedType) `method`
+
+##### Summary
+
+Creates an object reference that can be used to marshal to the control from
+another application domain.
+
+##### Returns
+
+An [ObjRef](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Runtime.Remoting.ObjRef 'System.Runtime.Remoting.ObjRef') that represents a
+marshaled reference to the control.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| requestedType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | The type of the requested object. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-EndUpdate'></a>
+### EndUpdate() `method`
+
+##### Summary
+
+Resumes the usual painting of the control, after painting is suspended by the
+BeginUpdate method.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-EnsureVisible-System-Int32-'></a>
+### EnsureVisible(index) `method`
+
+##### Summary
+
+Ensures that the specified item is visible within the control, scrolling the
+control if necessary.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item to scroll into view. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-FindItemWithText-System-String-'></a>
+### FindItemWithText(text) `method`
+
+##### Summary
+
+Searches for the item that matches the specified text.
+
+##### Returns
+
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that contains the
+specified text.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The text to search for. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-FindItemWithText-System-String,System-Boolean,System-Int32-'></a>
+### FindItemWithText(text,includeSubItemsInSearch,startIndex) `method`
+
+##### Summary
+
+Searches for the item that matches the specified text with search options and
+starting index.
+
+##### Returns
+
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that contains the
+specified text.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The text to search for. |
+| includeSubItemsInSearch | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to include
+subitems in the search; otherwise, `false`. |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item to start searching
+from. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-FindItemWithText-System-String,System-Boolean,System-Int32,System-Boolean-'></a>
+### FindItemWithText(text,includeSubItemsInSearch,startIndex,isPrefixSearch) `method`
+
+##### Summary
+
+Searches for the item that matches the specified text with search options,
+starting index, and prefix search.
+
+##### Returns
+
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that contains the
+specified text.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The text to search for. |
+| includeSubItemsInSearch | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to include
+subitems in the search; otherwise, `false`. |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item to start searching
+from. |
+| isPrefixSearch | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to search from the
+beginning of the string; `false` to search for the text
+anywhere in the string. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-FindNearestItem-System-Windows-Forms-SearchDirectionHint,System-Drawing-Point-'></a>
+### FindNearestItem(dir,point) `method`
+
+##### Summary
+
+Returns the nearest item to the location of the input point.
+
+##### Returns
+
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that is nearest
+to the location of the input point.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dir | [System.Windows.Forms.SearchDirectionHint](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SearchDirectionHint 'System.Windows.Forms.SearchDirectionHint') | One of the
+[SearchDirectionHint](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SearchDirectionHint 'System.Windows.Forms.SearchDirectionHint') values. |
+| point | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | The point to search from. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-FindNearestItem-System-Windows-Forms-SearchDirectionHint,System-Int32,System-Int32-'></a>
+### FindNearestItem(searchDirection,x,y) `method`
+
+##### Summary
+
+Returns the nearest item to the point with the specified coordinates.
+
+##### Returns
+
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that is nearest
+to the specified coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| searchDirection | [System.Windows.Forms.SearchDirectionHint](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SearchDirectionHint 'System.Windows.Forms.SearchDirectionHint') | One of the
+[SearchDirectionHint](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SearchDirectionHint 'System.Windows.Forms.SearchDirectionHint') values. |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The x-coordinate of the point to search from. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The y-coordinate of the point to search from. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-GetItemAt-System-Int32,System-Int32-'></a>
+### GetItemAt(x,y) `method`
+
+##### Summary
+
+Returns the item at the specified coordinates.
+
+##### Returns
+
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') at the specified
+coordinates, or `null` if there is no item at those
+coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The x-coordinate of the point to search from. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The y-coordinate of the point to search from. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-GetItemRect-System-Int32-'></a>
+### GetItemRect(index) `method`
+
+##### Summary
+
+Retrieves the bounding rectangle for an item within the control.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+bounding rectangle for the specified item.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item whose bounding rectangle
+you want. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-GetItemRect-System-Int32,System-Windows-Forms-ItemBoundsPortion-'></a>
+### GetItemRect(index,portion) `method`
+
+##### Summary
+
+Retrieves the bounding rectangle for an item within the control and specifies
+the portion of the item for which to retrieve the bounding rectangle.
+
+##### Returns
+
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
+bounding rectangle for the specified portion of the specified item.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item whose bounding rectangle
+you want. |
+| portion | [System.Windows.Forms.ItemBoundsPortion](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ItemBoundsPortion 'System.Windows.Forms.ItemBoundsPortion') | One of the
+[ItemBoundsPortion](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ItemBoundsPortion 'System.Windows.Forms.ItemBoundsPortion') values that specifies
+the portion of the item for which to retrieve the bounding rectangle. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-GetLifetimeService'></a>
+### GetLifetimeService() `method`
+
+##### Summary
+
+Gets the current lifetime service object that controls the lifetime policy for
+this instance.
+
+##### Returns
+
+An object of type
+[ILease](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Runtime.Remoting.Lifetime.ILease 'System.Runtime.Remoting.Lifetime.ILease') used to control the
+lifetime policy for this instance.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-HitTest-System-Drawing-Point-'></a>
+### HitTest(point) `method`
+
+##### Summary
+
+Returns hit-test information about the specified point.
+
+##### Returns
+
+A [ListViewHitTestInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewHitTestInfo 'System.Windows.Forms.ListViewHitTestInfo') that
+contains the information about the specified point.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| point | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | A [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') that contains the
+coordinates for the hit test. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-HitTest-System-Int32,System-Int32-'></a>
+### HitTest(x,y) `method`
+
+##### Summary
+
+Returns hit-test information about the specified coordinates.
+
+##### Returns
+
+A [ListViewHitTestInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewHitTestInfo 'System.Windows.Forms.ListViewHitTestInfo') that
+contains the information about the specified coordinates.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The x-coordinate at which to perform the hit test. |
+| y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The y-coordinate at which to perform the hit test. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-InitializeLifetimeService'></a>
+### InitializeLifetimeService() `method`
+
+##### Summary
+
+Obtains a lifetime service object to control the lifetime policy for this
+instance.
+
+##### Returns
+
+An object of type
+[ILease](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Runtime.Remoting.Lifetime.ILease 'System.Runtime.Remoting.Lifetime.ILease') used to control the
+lifetime policy for this instance.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-RedrawItems-System-Int32,System-Int32,System-Boolean-'></a>
+### RedrawItems(startIndex,endIndex,invalidateOnly) `method`
+
+##### Summary
+
+Forces the ListView to redraw the specified items.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the first item to redraw. |
+| endIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the last item to redraw. |
+| invalidateOnly | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to just invalidate the
+items; `false` to force an immediate repaint. |
+
+<a name='M-xyLOGIX-Core-Extensions-IListView-Sort'></a>
+### Sort() `method`
+
+##### Summary
+
+Sorts the items using the current sort settings.
+
+##### Parameters
+
+This method has no parameters.
 
 <a name='T-xyLOGIX-Core-Extensions-IScrollableControl'></a>
 ## IScrollableControl `type`

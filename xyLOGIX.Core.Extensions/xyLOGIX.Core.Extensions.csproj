@@ -124,6 +124,7 @@
     <None Include="key.snk" />
     <Compile Include="ComponentExtensions.cs" />
     <Compile Include="GetLanguageArticleTypeValidator.cs" />
+    <Compile Include="IListView.cs" />
     <Compile Include="LanguageArticleType.cs" />
     <Compile Include="LanguageArticleTypeValidator.cs" />
     <Compile Include="BoundComboBox.cs">

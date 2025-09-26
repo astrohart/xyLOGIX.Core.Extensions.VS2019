@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.Remoting;
 using System.Windows.Forms;
@@ -9,48 +10,190 @@ namespace xyLOGIX.Core.Extensions
 {
     public interface IListView : IControl
     {
-        ItemActivation Activation { get; set; }
-        ListViewAlignment Alignment { get; set; }
-        bool AllowColumnReorder { get; set; }
-        bool AutoArrange { get; set; }
-        bool BackgroundImageTiled { get; set; }
-        BorderStyle BorderStyle { get; set; }
-        bool CheckBoxes { get; set; }
+        ItemActivation Activation
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        ListViewAlignment Alignment
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool AllowColumnReorder
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool AutoArrange
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool BackgroundImageTiled
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        BorderStyle BorderStyle
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool CheckBoxes
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
         ListView.CheckedIndexCollection CheckedIndices { get; }
         ListView.CheckedListViewItemCollection CheckedItems { get; }
         ListView.ColumnHeaderCollection Columns { get; }
         IContainer Container { get; }
-        ListViewItem FocusedItem { get; set; }
-        bool FullRowSelect { get; set; }
-        bool GridLines { get; set; }
+
+        ListViewItem FocusedItem
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool FullRowSelect
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool GridLines { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
         ListViewGroupCollection Groups { get; }
-        ColumnHeaderStyle HeaderStyle { get; set; }
-        bool HideSelection { get; set; }
-        bool HotTracking { get; set; }
-        bool HoverSelection { get; set; }
+
+        ColumnHeaderStyle HeaderStyle
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool HideSelection
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool HotTracking
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool HoverSelection
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
         ListViewInsertionMark InsertionMark { get; }
         ListView.ListViewItemCollection Items { get; }
-        bool LabelEdit { get; set; }
-        bool LabelWrap { get; set; }
-        ImageList LargeImageList { get; set; }
-        IComparer ListViewItemSorter { get; set; }
-        bool MultiSelect { get; set; }
-        bool OwnerDraw { get; set; }
-        bool RightToLeftLayout { get; set; }
-        bool Scrollable { get; set; }
+        bool LabelEdit { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+        bool LabelWrap { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+
+        ImageList LargeImageList
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        IComparer ListViewItemSorter
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool MultiSelect
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool OwnerDraw { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+
+        bool RightToLeftLayout
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool Scrollable
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
         ListView.SelectedIndexCollection SelectedIndices { get; }
         ListView.SelectedListViewItemCollection SelectedItems { get; }
-        bool ShowGroups { get; set; }
-        bool ShowItemToolTips { get; set; }
-        ImageList SmallImageList { get; set; }
-        SortOrder Sorting { get; set; }
-        ImageList StateImageList { get; set; }
-        Size TileSize { get; set; }
-        ListViewItem TopItem { get; set; }
-        bool UseCompatibleStateImageBehavior { get; set; }
-        View View { get; set; }
-        int VirtualListSize { get; set; }
-        bool VirtualMode { get; set; }
+
+        bool ShowGroups
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool ShowItemToolTips
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        ImageList SmallImageList
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        SortOrder Sorting
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        ImageList StateImageList
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        Size TileSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+
+        ListViewItem TopItem
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool UseCompatibleStateImageBehavior
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        View View { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+
+        int VirtualListSize
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
+        bool VirtualMode
+        {
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
+        }
+
         event LabelEditEventHandler AfterLabelEdit;
         void ArrangeIcons(ListViewAlignment value);
         void ArrangeIcons();

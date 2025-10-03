@@ -4164,6 +4164,7 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> from which to remove space(s).
         /// </param>
+        /// <remarks>If the specified <paramref name="value"/> is <see langword="null" />, the <see cref="F:System.String.Empty" /> value, devoid of space character(s), then this method is idempotent.</remarks>
         /// <returns>
         /// If successful, a <see cref="T:System.String" /> containing none of the
         /// space(s) that were formerly in the specified <paramref name="value" />;
@@ -4176,7 +4177,7 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (string.IsNullOrEmpty(value)) return result;
                 if (!value.Contains(' ')) return result;
 
                 result = value.Replace(" ", string.Empty);

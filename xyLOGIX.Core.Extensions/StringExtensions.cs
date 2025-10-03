@@ -4141,7 +4141,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
-                if (value.Contains('.')) return result;
+                if (!value.Contains('.')) return result;
 
                 result = value.Replace(".", string.Empty);
             }
@@ -4177,7 +4177,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
-                if (value.Contains(' ')) return result;
+                if (!value.Contains(' ')) return result;
 
                 result = value.Replace(" ", string.Empty);
             }

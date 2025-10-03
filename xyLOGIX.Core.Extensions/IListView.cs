@@ -606,7 +606,7 @@ namespace xyLOGIX.Core.Extensions
         event CacheVirtualItemsEventHandler CacheVirtualItems;
 
         /// <summary>
-        /// Removes all items from the control.
+        /// Removes all item(s) and column(s) from the control.
         /// </summary>
         void Clear();
 

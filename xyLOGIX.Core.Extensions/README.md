@@ -640,6 +640,8 @@
   - [RemoveErrorPrefix(message)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveErrorPrefix-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveErrorPrefix(System.String)')
   - [RemoveExtraEmptyLines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveExtraEmptyLines(System.String)')
   - [RemoveLastWord(text)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveLastWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveLastWord(System.String)')
+  - [RemovePeriods(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemovePeriods-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemovePeriods(System.String)')
+  - [RemoveSpaces(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveSpaces-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveSpaces(System.String)')
   - [RemoveTrailingBackslashes(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.RemoveTrailingBackslashes(System.String)')
   - [Replace(source,oldValue,newValue,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Replace(System.String,System.String,System.String,System.StringComparison)')
   - [Replace(source,oldChar,newChar,comparisonType)](#M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-Char,System-Char,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.Replace(System.String,System.Char,System.Char,System.StringComparison)')
@@ -13045,6 +13047,44 @@ the original value is returned.
 | ---- | ---- | ----------- |
 | text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The phrase to process. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemovePeriods-System-String-'></a>
+### RemovePeriods(value) `method`
+
+##### Summary
+
+Removes all period(s) from the specified `value`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing none of the
+period(s) that were formerly in the specified `value`;
+otherwise, the method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') from which to remove period(s). |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveSpaces-System-String-'></a>
+### RemoveSpaces(value) `method`
+
+##### Summary
+
+Removes all space(s) from the specified `value`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing none of the
+space(s) that were formerly in the specified `value`;
+otherwise, the method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') from which to remove space(s). |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String-'></a>
 ### RemoveTrailingBackslashes(value) `method`
 
@@ -13163,11 +13203,15 @@ the `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF
 | replacementText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
 is to serve as the replacement for any of the specified
 `findWhatValues` in `source`. |
-| option | [xyLOGIX.Core.Extensions.ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') | (Required.) One of the [ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') value(s) that indicates which of the occurrence(s) of the specified `source` string are to be replaced.
+| option | [xyLOGIX.Core.Extensions.ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') | (Required.) One of the
+[ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') value(s) that
+indicates which of the occurrence(s) of the specified
+`source` string are to be replaced.
 
 
 
-The default value of this parameter is [First](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First'). |
+The default value of this parameter is
+[First](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First'). |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceCopyrightSymbolWithEscapeSequence-System-String-'></a>
 ### ReplaceCopyrightSymbolWithEscapeSequence(value) `method`

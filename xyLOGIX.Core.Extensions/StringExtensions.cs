@@ -4123,6 +4123,78 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Removes all period(s) from the specified <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> from which to remove period(s).
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing none of the
+        /// period(s) that were formerly in the specified <paramref name="value" />;
+        /// otherwise, the method is idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string RemovePeriods([NotLogged] this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (value.Contains('.')) return result;
+
+                result = value.Replace(".", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                // By default, this method is idempotent.  This means
+                // that it returns its own input.
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Removes all space(s) from the specified <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> from which to remove space(s).
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing none of the
+        /// space(s) that were formerly in the specified <paramref name="value" />;
+        /// otherwise, the method is idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string RemoveSpaces([NotLogged] this string value)
+        {
+            var result = value;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+                if (value.Contains(' ')) return result;
+
+                result = value.Replace(" ", string.Empty);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                // By default, this method is idempotent.  This means
+                // that it returns its own input.
+                result = value;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Removes any trailing <c>\</c> characters from the string provided in
         /// <paramref name="value" />.
         /// </summary>
@@ -4441,7 +4513,13 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="findWhatValues" /> in <paramref name="source" />.
         /// </param>
         /// <param name="option">
-        /// (Required.) One of the <see cref="T:xyLOGIX.Core.Extensions.ReplaceAnyOfOption" /> value(s) that indicates which of the occurrence(s) of the specified <paramref name="source"/> string are to be replaced.<para/>The default value of this parameter is <see cref="F:xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First"/>.
+        /// (Required.) One of the
+        /// <see cref="T:xyLOGIX.Core.Extensions.ReplaceAnyOfOption" /> value(s) that
+        /// indicates which of the occurrence(s) of the specified
+        /// <paramref name="source" /> string are to be replaced.
+        /// <para />
+        /// The default value of this parameter is
+        /// <see cref="F:xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First" />.
         /// </param>
         /// <returns>
         /// If successful, the <paramref name="source" /> string, with any of the

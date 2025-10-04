@@ -7191,7 +7191,7 @@ This method has no parameters.
 
 ##### Summary
 
-Removes all items from the control.
+Removes all item(s) and column(s) from the control.
 
 ##### Parameters
 
@@ -13084,6 +13084,19 @@ otherwise, the method is idempotent.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') from which to remove space(s). |
+
+##### Remarks
+
+If the specified `value` is `null`,
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, devoid of space character(s),
+then this method is idempotent.
+
+
+
+In the specific scenario where the string is not the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, not `null`, but
+otherwise consists only of whitespace, then this method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String-'></a>
 ### RemoveTrailingBackslashes(value) `method`

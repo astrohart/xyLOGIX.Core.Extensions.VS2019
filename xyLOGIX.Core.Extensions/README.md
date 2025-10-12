@@ -765,7 +765,7 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Exposes static methods to perform various mathematical calculations, such as
+Exposes static method(s) to perform various mathematical calculations, such as
 percentage change.
 
 <a name='M-xyLOGIX-Core-Extensions-Calculate-DeltaBetween-System-Decimal,System-Decimal-'></a>
@@ -9947,7 +9947,7 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Exposes static methods to extend the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') class in
+Exposes static method(s) to extend the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') class in
 order to help a caller in using [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variables known
 or suspected to contain the fully-qualified pathname of a folder or a file.
 

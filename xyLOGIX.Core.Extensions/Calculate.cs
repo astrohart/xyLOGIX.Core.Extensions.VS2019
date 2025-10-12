@@ -7,7 +7,7 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Exposes static methods to perform various mathematical calculations, such as
+    /// Exposes static method(s) to perform various mathematical calculations, such as
     /// percentage change.
     /// </summary>
     [Log(AttributeExclude = true)]

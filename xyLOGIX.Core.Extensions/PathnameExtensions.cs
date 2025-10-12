@@ -7,7 +7,7 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Exposes static methods to extend the <see cref="T:System.String" /> class in
+    /// Exposes static method(s) to extend the <see cref="T:System.String" /> class in
     /// order to help a caller in using <see cref="T:System.String" /> variables known
     /// or suspected to contain the fully-qualified pathname of a folder or a file.
     /// </summary>

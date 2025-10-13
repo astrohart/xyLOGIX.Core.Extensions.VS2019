@@ -5506,6 +5506,62 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Splits a specified <paramref name="source" /> <see cref="T:System.String" /> on
+        /// the specified <paramref name="delimeter" /> into distinct, trimmed, non-empty
+        /// tokens (case-insensitive uniqueness). Returns empty array if input is
+        /// null/blank.
+        /// </summary>
+        /// <param name="source">
+        /// (Required.) A <see cref="T:System.String" /> containing the string that is to
+        /// be tokenized.
+        /// </param>
+        /// <param name="delimeter">
+        /// (Optional.) A <see cref="T:System.Char" /> that specifies the character on
+        /// which to split the <paramref name="source" /> string.
+        /// <para />
+        /// The default is the pipe character (<c>'|'</c>).
+        /// </param>
+        [return: NotLogged]
+        private static string[] TokenizeOn(
+            [NotLogged] this string source,
+            char delimeter = '|'
+        )
+        {
+            var result = Array.Empty<string>();
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(source)) return result;
+                if ('\0' == delimeter) return result;
+                if ("" == delimeter.ToString()
+                                   .Trim()) return result;
+
+                var newResult = new AdvisableCollection<string>();
+
+                foreach (var part in source.Split(delimeter))
+                {
+                    if (string.IsNullOrWhiteSpace(part)) continue;
+                    var trimmedPart = part.Trim();
+                    if (newResult.ContainsNoCase(trimmedPart)) continue;
+                    newResult.Add(trimmedPart);
+                }
+
+                if (newResult.Count <= 0) return result;
+
+                result = newResult.ToArray();
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = Array.Empty<string>();
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Obtains the text of the language article specified by the
         /// <paramref name="type" /> parameter for the <paramref name="value" /> passed.
         /// </summary>

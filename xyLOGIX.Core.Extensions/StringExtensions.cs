@@ -5521,8 +5521,13 @@ namespace xyLOGIX.Core.Extensions
         /// <para />
         /// The default is the pipe character (<c>'|'</c>).
         /// </param>
+        /// <returns>
+        /// If successful, a collection of <see cref="T:System.String" /> value(s)
+        /// which comprise the non-blank, distinct token(s) found in the
+        /// <paramref name="source" />; otherwise, the empty collection is returned.
+        /// </returns>
         [return: NotLogged]
-        private static string[] TokenizeOn(
+        public static string[] TokenizeOn(
             [NotLogged] this string source,
             char delimeter = '|'
         )
@@ -5560,6 +5565,18 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
+
+        /// <summary>
+        /// Alias for the <c>TokenizeOn</c> method, with the delimiter set to a pipe
+        /// character, for better semantics.
+        /// </summary>
+        /// <param name="source">
+        /// (Required.) A <see cref="T:System.String" /> containing the string that is to
+        /// be tokenized.
+        /// </param>
+        /// <returns></returns>
+        public static string[] TokenizeWithPipe(this string source)
+            => TokenizeOn(source);
 
         /// <summary>
         /// Obtains the text of the language article specified by the

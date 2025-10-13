@@ -674,6 +674,8 @@
   - [ToTitleCase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToTitleCase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToTitleCase(System.String)')
   - [ToUnicode(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUnicode(System.String)')
   - [ToUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ToUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ToUppercase(System.String)')
+  - [TokenizeOn(source,delimeter)](#M-xyLOGIX-Core-Extensions-StringExtensions-TokenizeOn-System-String,System-Char- 'xyLOGIX.Core.Extensions.StringExtensions.TokenizeOn(System.String,System.Char)')
+  - [TokenizeWithPipe(source)](#M-xyLOGIX-Core-Extensions-StringExtensions-TokenizeWithPipe-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TokenizeWithPipe(System.String)')
   - [TrimAnyOffEnd(value,caseSensitive,recursive,badEndings)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimAnyOffEnd-System-String,System-Boolean,System-Boolean,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.TrimAnyOffEnd(System.String,System.Boolean,System.Boolean,System.String[])')
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
 - [TextBoxExtensions](#T-xyLOGIX-Core-Extensions-TextBoxExtensions 'xyLOGIX.Core.Extensions.TextBoxExtensions')
@@ -13984,6 +13986,54 @@ to uppercase; otherwise, this method is idempotent.
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
 converted to uppercase. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-TokenizeOn-System-String,System-Char-'></a>
+### TokenizeOn(source,delimeter) `method`
+
+##### Summary
+
+Splits a specified `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') on
+the specified `delimeter` into distinct, trimmed, non-empty
+tokens (case-insensitive uniqueness). Returns empty array if input is
+null/blank.
+
+##### Returns
+
+If successful, a collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s)
+which comprise the non-blank, distinct token(s) found in the
+`source`; otherwise, the empty collection is returned.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the string that is to
+be tokenized. |
+| delimeter | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Optional.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') that specifies the character on
+which to split the `source` string.
+
+
+
+The default is the pipe character (`'|'`). |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-TokenizeWithPipe-System-String-'></a>
+### TokenizeWithPipe(source) `method`
+
+##### Summary
+
+Alias for the `TokenizeOn` method, with the delimiter set to a pipe
+character, for better semantics.
+
+##### Returns
+
+
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the string that is to
+be tokenized. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimAnyOffEnd-System-String,System-Boolean,System-Boolean,System-String[]-'></a>
 ### TrimAnyOffEnd(value,caseSensitive,recursive,badEndings) `method`

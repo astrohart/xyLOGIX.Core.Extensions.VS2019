@@ -401,6 +401,56 @@
   - [VerticalScroll](#P-xyLOGIX-Core-Extensions-IScrollableControl-VerticalScroll 'xyLOGIX.Core.Extensions.IScrollableControl.VerticalScroll')
   - [ScrollControlIntoView(activeControl)](#M-xyLOGIX-Core-Extensions-IScrollableControl-ScrollControlIntoView-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.IScrollableControl.ScrollControlIntoView(System.Windows.Forms.Control)')
   - [SetAutoScrollMargin(x,y)](#M-xyLOGIX-Core-Extensions-IScrollableControl-SetAutoScrollMargin-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IScrollableControl.SetAutoScrollMargin(System.Int32,System.Int32)')
+- [ITextBox](#T-xyLOGIX-Core-Extensions-ITextBox 'xyLOGIX.Core.Extensions.ITextBox')
+  - [AcceptsReturn](#P-xyLOGIX-Core-Extensions-ITextBox-AcceptsReturn 'xyLOGIX.Core.Extensions.ITextBox.AcceptsReturn')
+  - [AcceptsTab](#P-xyLOGIX-Core-Extensions-ITextBox-AcceptsTab 'xyLOGIX.Core.Extensions.ITextBox.AcceptsTab')
+  - [AutoCompleteCustomSource](#P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteCustomSource 'xyLOGIX.Core.Extensions.ITextBox.AutoCompleteCustomSource')
+  - [AutoCompleteMode](#P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteMode 'xyLOGIX.Core.Extensions.ITextBox.AutoCompleteMode')
+  - [AutoCompleteSource](#P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteSource 'xyLOGIX.Core.Extensions.ITextBox.AutoCompleteSource')
+  - [CanUndo](#P-xyLOGIX-Core-Extensions-ITextBox-CanUndo 'xyLOGIX.Core.Extensions.ITextBox.CanUndo')
+  - [CharacterCasing](#P-xyLOGIX-Core-Extensions-ITextBox-CharacterCasing 'xyLOGIX.Core.Extensions.ITextBox.CharacterCasing')
+  - [Container](#P-xyLOGIX-Core-Extensions-ITextBox-Container 'xyLOGIX.Core.Extensions.ITextBox.Container')
+  - [HideSelection](#P-xyLOGIX-Core-Extensions-ITextBox-HideSelection 'xyLOGIX.Core.Extensions.ITextBox.HideSelection')
+  - [Lines](#P-xyLOGIX-Core-Extensions-ITextBox-Lines 'xyLOGIX.Core.Extensions.ITextBox.Lines')
+  - [MaxLength](#P-xyLOGIX-Core-Extensions-ITextBox-MaxLength 'xyLOGIX.Core.Extensions.ITextBox.MaxLength')
+  - [Modified](#P-xyLOGIX-Core-Extensions-ITextBox-Modified 'xyLOGIX.Core.Extensions.ITextBox.Modified')
+  - [Multiline](#P-xyLOGIX-Core-Extensions-ITextBox-Multiline 'xyLOGIX.Core.Extensions.ITextBox.Multiline')
+  - [PasswordChar](#P-xyLOGIX-Core-Extensions-ITextBox-PasswordChar 'xyLOGIX.Core.Extensions.ITextBox.PasswordChar')
+  - [PreferredHeight](#P-xyLOGIX-Core-Extensions-ITextBox-PreferredHeight 'xyLOGIX.Core.Extensions.ITextBox.PreferredHeight')
+  - [ReadOnly](#P-xyLOGIX-Core-Extensions-ITextBox-ReadOnly 'xyLOGIX.Core.Extensions.ITextBox.ReadOnly')
+  - [ScrollBars](#P-xyLOGIX-Core-Extensions-ITextBox-ScrollBars 'xyLOGIX.Core.Extensions.ITextBox.ScrollBars')
+  - [SelectedText](#P-xyLOGIX-Core-Extensions-ITextBox-SelectedText 'xyLOGIX.Core.Extensions.ITextBox.SelectedText')
+  - [SelectionLength](#P-xyLOGIX-Core-Extensions-ITextBox-SelectionLength 'xyLOGIX.Core.Extensions.ITextBox.SelectionLength')
+  - [SelectionStart](#P-xyLOGIX-Core-Extensions-ITextBox-SelectionStart 'xyLOGIX.Core.Extensions.ITextBox.SelectionStart')
+  - [ShortcutsEnabled](#P-xyLOGIX-Core-Extensions-ITextBox-ShortcutsEnabled 'xyLOGIX.Core.Extensions.ITextBox.ShortcutsEnabled')
+  - [TextAlign](#P-xyLOGIX-Core-Extensions-ITextBox-TextAlign 'xyLOGIX.Core.Extensions.ITextBox.TextAlign')
+  - [TextLength](#P-xyLOGIX-Core-Extensions-ITextBox-TextLength 'xyLOGIX.Core.Extensions.ITextBox.TextLength')
+  - [UseSystemPasswordChar](#P-xyLOGIX-Core-Extensions-ITextBox-UseSystemPasswordChar 'xyLOGIX.Core.Extensions.ITextBox.UseSystemPasswordChar')
+  - [WordWrap](#P-xyLOGIX-Core-Extensions-ITextBox-WordWrap 'xyLOGIX.Core.Extensions.ITextBox.WordWrap')
+  - [AppendText(text)](#M-xyLOGIX-Core-Extensions-ITextBox-AppendText-System-String- 'xyLOGIX.Core.Extensions.ITextBox.AppendText(System.String)')
+  - [Clear()](#M-xyLOGIX-Core-Extensions-ITextBox-Clear 'xyLOGIX.Core.Extensions.ITextBox.Clear')
+  - [ClearUndo()](#M-xyLOGIX-Core-Extensions-ITextBox-ClearUndo 'xyLOGIX.Core.Extensions.ITextBox.ClearUndo')
+  - [Copy()](#M-xyLOGIX-Core-Extensions-ITextBox-Copy 'xyLOGIX.Core.Extensions.ITextBox.Copy')
+  - [CreateObjRef(requestedType)](#M-xyLOGIX-Core-Extensions-ITextBox-CreateObjRef-System-Type- 'xyLOGIX.Core.Extensions.ITextBox.CreateObjRef(System.Type)')
+  - [Cut()](#M-xyLOGIX-Core-Extensions-ITextBox-Cut 'xyLOGIX.Core.Extensions.ITextBox.Cut')
+  - [DeselectAll()](#M-xyLOGIX-Core-Extensions-ITextBox-DeselectAll 'xyLOGIX.Core.Extensions.ITextBox.DeselectAll')
+  - [GetCharFromPosition(pt)](#M-xyLOGIX-Core-Extensions-ITextBox-GetCharFromPosition-System-Drawing-Point- 'xyLOGIX.Core.Extensions.ITextBox.GetCharFromPosition(System.Drawing.Point)')
+  - [GetCharIndexFromPosition(pt)](#M-xyLOGIX-Core-Extensions-ITextBox-GetCharIndexFromPosition-System-Drawing-Point- 'xyLOGIX.Core.Extensions.ITextBox.GetCharIndexFromPosition(System.Drawing.Point)')
+  - [GetFirstCharIndexFromLine(lineNumber)](#M-xyLOGIX-Core-Extensions-ITextBox-GetFirstCharIndexFromLine-System-Int32- 'xyLOGIX.Core.Extensions.ITextBox.GetFirstCharIndexFromLine(System.Int32)')
+  - [GetFirstCharIndexOfCurrentLine()](#M-xyLOGIX-Core-Extensions-ITextBox-GetFirstCharIndexOfCurrentLine 'xyLOGIX.Core.Extensions.ITextBox.GetFirstCharIndexOfCurrentLine')
+  - [GetLifetimeService()](#M-xyLOGIX-Core-Extensions-ITextBox-GetLifetimeService 'xyLOGIX.Core.Extensions.ITextBox.GetLifetimeService')
+  - [GetLineFromCharIndex(index)](#M-xyLOGIX-Core-Extensions-ITextBox-GetLineFromCharIndex-System-Int32- 'xyLOGIX.Core.Extensions.ITextBox.GetLineFromCharIndex(System.Int32)')
+  - [GetPositionFromCharIndex(index)](#M-xyLOGIX-Core-Extensions-ITextBox-GetPositionFromCharIndex-System-Int32- 'xyLOGIX.Core.Extensions.ITextBox.GetPositionFromCharIndex(System.Int32)')
+  - [InitializeLifetimeService()](#M-xyLOGIX-Core-Extensions-ITextBox-InitializeLifetimeService 'xyLOGIX.Core.Extensions.ITextBox.InitializeLifetimeService')
+  - [Paste()](#M-xyLOGIX-Core-Extensions-ITextBox-Paste 'xyLOGIX.Core.Extensions.ITextBox.Paste')
+  - [Paste(text)](#M-xyLOGIX-Core-Extensions-ITextBox-Paste-System-String- 'xyLOGIX.Core.Extensions.ITextBox.Paste(System.String)')
+  - [ScrollToCaret()](#M-xyLOGIX-Core-Extensions-ITextBox-ScrollToCaret 'xyLOGIX.Core.Extensions.ITextBox.ScrollToCaret')
+  - [Select(start,length)](#M-xyLOGIX-Core-Extensions-ITextBox-Select-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.ITextBox.Select(System.Int32,System.Int32)')
+  - [SelectAll()](#M-xyLOGIX-Core-Extensions-ITextBox-SelectAll 'xyLOGIX.Core.Extensions.ITextBox.SelectAll')
+  - [ToString()](#M-xyLOGIX-Core-Extensions-ITextBox-ToString 'xyLOGIX.Core.Extensions.ITextBox.ToString')
+  - [Undo()](#M-xyLOGIX-Core-Extensions-ITextBox-Undo 'xyLOGIX.Core.Extensions.ITextBox.Undo')
+- [IUserControl](#T-xyLOGIX-Core-Extensions-IUserControl 'xyLOGIX.Core.Extensions.IUserControl')
+  - [BorderStyle](#P-xyLOGIX-Core-Extensions-IUserControl-BorderStyle 'xyLOGIX.Core.Extensions.IUserControl.BorderStyle')
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
   - [IsBitmaskOn(num,bitmask)](#M-xyLOGIX-Core-Extensions-IntExtensions-IsBitmaskOn-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.IsBitmaskOn(System.Int32,System.Int32)')
@@ -7649,6 +7699,649 @@ Sets the size of the auto-scroll margins.
 | ---- | ---- | ----------- |
 | x | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The [Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Width 'System.Drawing.Size.Width') value. |
 | y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size.Height 'System.Drawing.Size.Height') value. |
+
+<a name='T-xyLOGIX-Core-Extensions-ITextBox'></a>
+## ITextBox `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Defines the publicly-exposed events, methods and properties of a
+text-entry control that is interface-compatible with
+[TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') while supporting interface-first
+programming and dark-theme hosting scenarios.
+
+##### Remarks
+
+This interface is intended to be implemented by controls that behave
+like a [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox'), including wrappers which
+host a real [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') internally. Consumers
+should depend on [ITextBox](#T-ITextBox 'ITextBox') to enable
+loose coupling, improved testability, and SOLID design.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-AcceptsReturn'></a>
+### AcceptsReturn `property`
+
+##### Summary
+
+Gets or sets a value indicating whether pressing `ENTER` in a multiline
+text box creates a new line of text.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-AcceptsTab'></a>
+### AcceptsTab `property`
+
+##### Summary
+
+Gets or sets a value indicating whether pressing `TAB` in a multiline text
+box inserts a tab character instead of moving focus.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteCustomSource'></a>
+### AutoCompleteCustomSource `property`
+
+##### Summary
+
+Gets or sets the custom source of strings used for automatic completion.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteMode'></a>
+### AutoCompleteMode `property`
+
+##### Summary
+
+Gets or sets the auto-completion mode for this control.
+
+##### Remarks
+
+Implementers should validate assigned values and ignore or coerce invalid
+enumeration values.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteSource'></a>
+### AutoCompleteSource `property`
+
+##### Summary
+
+Gets or sets the auto-completion string source for this control.
+
+##### Remarks
+
+Implementers should validate assigned values and ignore or coerce invalid
+enumeration values.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-CanUndo'></a>
+### CanUndo `property`
+
+##### Summary
+
+Gets a value indicating whether the previous operation can be undone.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-CharacterCasing'></a>
+### CharacterCasing `property`
+
+##### Summary
+
+Gets or sets how the control modifies the case of characters as they are typed.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-Container'></a>
+### Container `property`
+
+##### Summary
+
+Gets the [IContainer](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IContainer 'System.ComponentModel.IContainer') that contains the
+component.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-HideSelection'></a>
+### HideSelection `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the selected text remains highlighted
+when the control loses focus.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-Lines'></a>
+### Lines `property`
+
+##### Summary
+
+Gets or sets the lines of text within the control.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-MaxLength'></a>
+### MaxLength `property`
+
+##### Summary
+
+Gets or sets the maximum number of characters the user can type or paste.
+
+##### Remarks
+
+Implementers should reject values less than 1.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-Modified'></a>
+### Modified `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the text has been modified by the user.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-Multiline'></a>
+### Multiline `property`
+
+##### Summary
+
+Gets or sets a value indicating whether this is a multiline text box.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-PasswordChar'></a>
+### PasswordChar `property`
+
+##### Summary
+
+Gets or sets the masking character used to display password input for a
+single-line text box.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-PreferredHeight'></a>
+### PreferredHeight `property`
+
+##### Summary
+
+Gets the preferred height for a text box.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-ReadOnly'></a>
+### ReadOnly `property`
+
+##### Summary
+
+Gets or sets a value indicating whether the text box is read-only.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-ScrollBars'></a>
+### ScrollBars `property`
+
+##### Summary
+
+Gets or sets which scroll bars appear in a multiline control.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-SelectedText'></a>
+### SelectedText `property`
+
+##### Summary
+
+Gets or sets the currently selected text.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-SelectionLength'></a>
+### SelectionLength `property`
+
+##### Summary
+
+Gets or sets the number of characters selected.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-SelectionStart'></a>
+### SelectionStart `property`
+
+##### Summary
+
+Gets or sets the starting index of the selection.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-ShortcutsEnabled'></a>
+### ShortcutsEnabled `property`
+
+##### Summary
+
+Gets or sets a value indicating whether standard editing shortcuts are enabled.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-TextAlign'></a>
+### TextAlign `property`
+
+##### Summary
+
+Gets or sets how text is horizontally aligned within the control.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-TextLength'></a>
+### TextLength `property`
+
+##### Summary
+
+Gets the length of the text content.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-UseSystemPasswordChar'></a>
+### UseSystemPasswordChar `property`
+
+##### Summary
+
+Gets or sets a value indicating whether to display the system password
+character.
+
+<a name='P-xyLOGIX-Core-Extensions-ITextBox-WordWrap'></a>
+### WordWrap `property`
+
+##### Summary
+
+Gets or sets a value indicating whether a multiline text box automatically
+wraps words to the next line.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-AppendText-System-String-'></a>
+### AppendText(text) `method`
+
+##### Summary
+
+Appends the specified text to the existing content.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to append. If
+`null`,
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty'), or whitespace, implementers should
+perform no action. |
+
+##### Remarks
+
+Implementations should be resilient to large input and avoid exceptions. If the
+control is read-only or disabled,
+no action is expected.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-Clear'></a>
+### Clear() `method`
+
+##### Summary
+
+Clears all text.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+If the control is read-only, implementers should perform no action.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-ClearUndo'></a>
+### ClearUndo() `method`
+
+##### Summary
+
+Clears the most recent operation from the undo buffer.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Implementers should perform no action if there is nothing to clear.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-Copy'></a>
+### Copy() `method`
+
+##### Summary
+
+Copies the current selection to the Clipboard.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Implementers should perform no action if there is no selection or Clipboard
+access is unavailable.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-CreateObjRef-System-Type-'></a>
+### CreateObjRef(requestedType) `method`
+
+##### Summary
+
+Creates an object that contains all the relevant information required to
+generate a proxy used to communicate with a remote object.
+
+##### Returns
+
+[ObjRef](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Runtime.Remoting.ObjRef 'System.Runtime.Remoting.ObjRef') containing remoting information
+for the object.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| requestedType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | (Required.) Reference to an instance of [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') that
+represents the type of the proxy requested. |
+
+##### Remarks
+
+This member mirrors
+[CreateObjRef](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.MarshalByRefObject.CreateObjRef 'System.MarshalByRefObject.CreateObjRef(System.Type)') semantics.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-Cut'></a>
+### Cut() `method`
+
+##### Summary
+
+Cuts the current selection and places it on the Clipboard.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Implementers should perform no action if the control is read-only or there is
+no selection.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-DeselectAll'></a>
+### DeselectAll() `method`
+
+##### Summary
+
+Clears the current selection.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Implementers should set
+[SelectionLength](#P-SelectionLength 'SelectionLength') to zero
+without altering the caret position.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-GetCharFromPosition-System-Drawing-Point-'></a>
+### GetCharFromPosition(pt) `method`
+
+##### Summary
+
+Gets the character closest to the specified point within the client area.
+
+##### Returns
+
+A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') representing the character at the location; if
+the position cannot be resolved,
+implementers may return [MinValue](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char.MinValue 'System.Char.MinValue').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | (Required.) Reference to an instance of [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point')
+specifying the location (client coordinates). |
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-GetCharIndexFromPosition-System-Drawing-Point-'></a>
+### GetCharIndexFromPosition(pt) `method`
+
+##### Summary
+
+Gets the zero-based index of the character nearest to the specified point.
+
+##### Returns
+
+A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') character index. If the index
+cannot be determined, implementers may return `0`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | (Required.) Reference to an instance of [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point')
+specifying the location (client coordinates). |
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-GetFirstCharIndexFromLine-System-Int32-'></a>
+### GetFirstCharIndexFromLine(lineNumber) `method`
+
+##### Summary
+
+Gets the zero-based index of the first character of the specified line.
+
+##### Returns
+
+A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') index of the first character in
+the line.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| lineNumber | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the
+zero-based line number. |
+
+##### Remarks
+
+Implementers should handle out-of-range values gracefully (e.g., return
+`0` or clamp to valid ranges).
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-GetFirstCharIndexOfCurrentLine'></a>
+### GetFirstCharIndexOfCurrentLine() `method`
+
+##### Summary
+
+Gets the zero-based index of the first character in the current line.
+
+##### Returns
+
+A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') index.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-GetLifetimeService'></a>
+### GetLifetimeService() `method`
+
+##### Summary
+
+Obtains the lifetime service object that controls the lifetime policy for this
+instance.
+
+##### Returns
+
+Reference to an instance of [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') controlling lifetime
+policy, or `null`.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Mirrors [GetLifetimeService](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.MarshalByRefObject.GetLifetimeService 'System.MarshalByRefObject.GetLifetimeService')
+semantics.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-GetLineFromCharIndex-System-Int32-'></a>
+### GetLineFromCharIndex(index) `method`
+
+##### Summary
+
+Retrieves the zero-based line number corresponding to the specified character
+index.
+
+##### Returns
+
+A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') line number.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the
+character position. |
+
+##### Remarks
+
+Implementers should validate `index` against
+[TextLength](#P-TextLength 'TextLength').
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-GetPositionFromCharIndex-System-Int32-'></a>
+### GetPositionFromCharIndex(index) `method`
+
+##### Summary
+
+Gets the client coordinates of the specified character index.
+
+##### Returns
+
+Reference to an instance of [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') indicating
+the location; if unavailable, implementers may return
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point.Empty 'System.Drawing.Point.Empty').
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the
+character index (<
+[TextLength](#P-TextLength 'TextLength')). |
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-InitializeLifetimeService'></a>
+### InitializeLifetimeService() `method`
+
+##### Summary
+
+Initializes the lifetime service object that controls the lifetime policy for
+this instance.
+
+##### Returns
+
+Reference to an instance of [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') that controls
+lifetime policy for this instance, or `null`.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Mirrors [InitializeLifetimeService](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.MarshalByRefObject.InitializeLifetimeService 'System.MarshalByRefObject.InitializeLifetimeService')
+semantics.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-Paste'></a>
+### Paste() `method`
+
+##### Summary
+
+Pastes the contents of the Clipboard at the current caret position.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Implementers should perform no action if Clipboard access is unavailable or the
+control is read-only.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-Paste-System-String-'></a>
+### Paste(text) `method`
+
+##### Summary
+
+Pastes the specified text at the current caret position (replacing the
+selection, if any).
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to insert. If
+`null`,
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty'), or whitespace, implementers should
+perform no action. |
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-ScrollToCaret'></a>
+### ScrollToCaret() `method`
+
+##### Summary
+
+Scrolls the content to the current caret position.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-Select-System-Int32,System-Int32-'></a>
+### Select(start,length) `method`
+
+##### Summary
+
+Selects a range of text.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| start | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the
+zero-based index of the first character in the selection. |
+| length | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A positive [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the number of
+characters to select. |
+
+##### Remarks
+
+Implementers should validate `start` and
+`length` against
+[TextLength](#P-TextLength 'TextLength') and perform no
+action for out-of-range requests.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-SelectAll'></a>
+### SelectAll() `method`
+
+##### Summary
+
+Selects all text within the control.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Implementers should perform no action if there is no content to select.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-ToString'></a>
+### ToString() `method`
+
+##### Summary
+
+Returns a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that represents the current object.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') representing the object; typically the type
+name or a concise state description.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-xyLOGIX-Core-Extensions-ITextBox-Undo'></a>
+### Undo() `method`
+
+##### Summary
+
+Undoes the last edit operation, if possible.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+Implementers should perform no action if there is nothing to undo.
+
+<a name='T-xyLOGIX-Core-Extensions-IUserControl'></a>
+## IUserControl `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Defines the publicly-exposed events, methods and properties of a control that
+inherits [UserControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.UserControl 'System.Windows.Forms.UserControl').
+
+<a name='P-xyLOGIX-Core-Extensions-IUserControl-BorderStyle'></a>
+### BorderStyle `property`
+
+##### Summary
+
+Gets or sets the border style for the text box.
 
 <a name='T-xyLOGIX-Core-Extensions-IntExtensions'></a>
 ## IntExtensions `type`

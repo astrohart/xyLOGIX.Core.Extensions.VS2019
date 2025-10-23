@@ -14719,7 +14719,10 @@ character, for better semantics.
 
 ##### Returns
 
-
+If successful, a reference to an array of
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')(s), each element of which is one of the
+pipe-separated token(s) in the specified `source`; otherwise,
+the empty array is returned.
 
 ##### Parameters
 

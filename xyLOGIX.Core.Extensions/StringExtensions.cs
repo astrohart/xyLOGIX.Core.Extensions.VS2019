@@ -5527,7 +5527,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="source" />; otherwise, the empty collection is returned.
         /// </returns>
         [return: NotLogged]
-        public static string[] TokenizeOn(
+        public static IList<string> TokenizeOn(
             [NotLogged] this string source,
             char delimeter = '|'
         )
@@ -5574,8 +5574,16 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) A <see cref="T:System.String" /> containing the string that is to
         /// be tokenized.
         /// </param>
-        /// <returns></returns>
-        public static string[] TokenizeWithPipe(this string source)
+        /// <returns>
+        /// If successful, a reference to an array of
+        /// <see cref="T:System.String" />(s), each element of which is one of the
+        /// pipe-separated token(s) in the specified <paramref name="source" />; otherwise,
+        /// the empty array is returned.
+        /// </returns>
+        [return: NotLogged]
+        public static IList<string> TokenizeWithPipe(
+            [NotLogged] this string source
+        )
             => TokenizeOn(source);
 
         /// <summary>

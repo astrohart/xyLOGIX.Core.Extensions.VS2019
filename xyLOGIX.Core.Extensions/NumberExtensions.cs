@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Core.Debug;
 
@@ -334,6 +333,40 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if an integer value is between a pair of values or equal to
+        /// either of them.
+        /// </summary>
+        /// <param name="value"> The value to be checked. </param>
+        /// <param name="lowerBound"> Lower bound. </param>
+        /// <param name="upperBound"> Upper bound. </param>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to either of the bounds; <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool IsIncludedInRangeSilent(
+            [NotLogged] this int value,
+            [NotLogged] int lowerBound,
+            [NotLogged] int upperBound
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound >= value && value >= lowerBound;
+            }
+            catch
+            {
                 result = false;
             }
 

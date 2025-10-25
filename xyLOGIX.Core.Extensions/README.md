@@ -534,6 +534,7 @@
   - [IsInRangeWithUpperBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithUpperBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithUpperBound(System.Int32,System.Int32,System.Int32)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Int32,System.Int32,System.Int32)')
+  - [IsIncludedInRangeSilent(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRangeSilent-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRangeSilent(System.Int32,System.Int32,System.Int32)')
   - [IsNaturalNumber(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNaturalNumber-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNaturalNumber(System.Int32)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Int32)')
@@ -10160,6 +10161,27 @@ specified or equal to either of the bounds; `false` otherwise.
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32-'></a>
 ### IsIncludedInRange(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines if an integer value is between a pair of values or equal to
+either of them.
+
+##### Returns
+
+`true` if the value is either within the range
+specified or equal to either of the bounds; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The value to be checked. |
+| lowerBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound. |
+| upperBound | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRangeSilent-System-Int32,System-Int32,System-Int32-'></a>
+### IsIncludedInRangeSilent(value,lowerBound,upperBound) `method`
 
 ##### Summary
 

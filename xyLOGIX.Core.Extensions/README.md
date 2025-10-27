@@ -30,7 +30,6 @@
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsUppercase-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsUppercase(System.Char)')
 - [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
   - [AreAllItemsSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.AreAllItemsSelected(System.Windows.Forms.CheckedListBox)')
-  - [CheckAll(checkedListBox,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckAll(System.Windows.Forms.CheckedListBox,System.Boolean)')
   - [CheckByName(checkedListBox,itemName,isChecked)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckByName-System-Windows-Forms-CheckedListBox,System-String,System-Boolean- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.CheckByName(System.Windows.Forms.CheckedListBox,System.String,System.Boolean)')
   - [GetCheckedByName(checkedListBox,itemName)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-GetCheckedByName-System-Windows-Forms-CheckedListBox,System-String- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.GetCheckedByName(System.Windows.Forms.CheckedListBox,System.String)')
   - [NoItemsAreSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-NoItemsAreSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.NoItemsAreSelected(System.Windows.Forms.CheckedListBox)')
@@ -1350,29 +1349,6 @@ be checked. |
 | ---- | ----------- |
 | [ArgumentNullException](#T-ArgumentNullException 'ArgumentNullException') | Thrown if the required parameter,
 `checkedListBox`, is passed a `null` value. |
-
-<a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckAll-System-Windows-Forms-CheckedListBox,System-Boolean-'></a>
-### CheckAll(checkedListBox,isChecked) `method`
-
-##### Summary
-
-Toggles the Checked state of all the items in the specified
-`checkedListBox`
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) A
-[CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') to act upon. |
-| isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of all
-the list items or not. Default value is `true`. |
-
-##### Remarks
-
-If the `checkedListBox` parameter is
-`null`, or if the checked list box contains zero items, then
-this method does nothing.
 
 <a name='M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-CheckByName-System-Windows-Forms-CheckedListBox,System-String,System-Boolean-'></a>
 ### CheckByName(checkedListBox,itemName,isChecked) `method`

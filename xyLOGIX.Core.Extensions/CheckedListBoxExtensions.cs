@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Windows.Forms;
 using xyLOGIX.Core.Debug;
@@ -44,45 +43,6 @@ namespace xyLOGIX.Core.Extensions
             return checkedListBox.Items.Count > 0 &&
                    checkedListBox.CheckedItems.Count ==
                    checkedListBox.Items.Count;
-        }
-
-        /// <summary>
-        /// Toggles the Checked state of all the items in the specified
-        /// <paramref name="checkedListBox" />
-        /// </summary>
-        /// <param name="checkedListBox">
-        /// (Required.) A
-        /// <see cref="T:System.Windows.Forms.CheckedListBox" /> to act upon.
-        /// </param>
-        /// <param name="isChecked">
-        /// (Optional.) Whether to set the Checked state of all
-        /// the list items or not. Default value is <see langword="true" />.
-        /// </param>
-        /// <remarks>
-        /// If the <paramref name="checkedListBox" /> parameter is
-        /// <see langword="null" />, or if the checked list box contains zero items, then
-        /// this method does nothing.
-        /// </remarks>
-        public static void CheckAll(
-            this CheckedListBox checkedListBox,
-            bool isChecked = true
-        )
-        {
-            try
-            {
-                if (checkedListBox == null) return;
-                if (checkedListBox.Items.Count <= 0) return;
-
-                for (var i = 0; i < checkedListBox.Items.Count; i++)
-                    checkedListBox.SetItemCheckState(
-                        i, isChecked ? CheckState.Checked : CheckState.Unchecked
-                    );
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-            }
         }
 
         /// <summary>

@@ -4234,7 +4234,8 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (string.IsNullOrWhiteSpace(value)) return result;
 
-                result = value.TrimEnd('\\');
+                result = value.TrimEnd(Path.DirectorySeparatorChar)
+                              .TrimEnd(Path.AltDirectorySeparatorChar);
             }
             catch (Exception ex)
             {

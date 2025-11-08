@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -203,7 +202,8 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// Basically, this method flattens the dictionary provided into a POCO.
-        /// The dictionary must be a list of key-value pairs, and it is assumed that the key
+        /// The dictionary must be a list of key-value pairs, and it is assumed that the
+        /// key
         /// is the name of a property, and the value is a string that is the property's
         /// value. Therefore, the base object is assumed to have all its properties
         /// be of type <see cref="T:System.String" /> and the name of each property should
@@ -219,7 +219,7 @@ namespace xyLOGIX.Core.Extensions
 
             foreach (var item in quote)
                 someObjectType.GetProperty(item.Key)
-                                 ?.SetValue(someObject, item.Value, null);
+                              ?.SetValue(someObject, item.Value, null);
 
             return someObject;
         }

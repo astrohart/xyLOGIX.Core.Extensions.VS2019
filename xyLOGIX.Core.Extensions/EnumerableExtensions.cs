@@ -215,15 +215,14 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (collection == null) return;
-                
+
                 var collectionArray = collection.ToArray();
 
-                if (collectionArray
-                        .Length <= 0) return;
+                if (collectionArray.Length <= 0) return;
 
                 if (action == null) return;
 
-                foreach(var item in collectionArray)
+                foreach (var item in collectionArray)
                     action(item);
             }
             catch (Exception ex)
@@ -264,15 +263,14 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (collection == null) return;
-                
+
                 var collectionArray = collection.ToArray();
 
-                if (collectionArray
-                        .Length <= 0) return;
+                if (collectionArray.Length <= 0) return;
 
                 if (action == null) return;
 
-                foreach(var item in collectionArray)
+                foreach (var item in collectionArray)
                     action(item);
             }
             catch (Exception ex)

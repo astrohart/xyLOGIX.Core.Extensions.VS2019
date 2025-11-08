@@ -39,42 +39,6 @@ namespace xyLOGIX.Core.Extensions
         public static extern bool IsWindow(IntPtr hWnd);
 
         /// <summary>
-        /// Sets the cue banner of the specified <paramref name="textBox" />  to the
-        /// specified <paramref name="cueText" />.
-        /// </summary>
-        /// <param name="textBox">
-        /// (Required.) Reference to an instance of
-        /// <see cref="T:System.Windows.Forms.TextBox" /> that refers to the textbox for
-        /// which cue text is to be set.
-        /// </param>
-        /// <param name="cueText">
-        /// (Optional.) A <see cref="T:System.String" /> that
-        /// contains the cue text.
-        /// <para />
-        /// Pass the <see cref="F:System.String.Empty" /> value to remove the cue text.
-        /// </param>
-        public static void SetCueBanner(this TextBoxBase textBox, string cueText)
-        {
-            try
-            {
-                if (textBox == null) return;
-                if (textBox.IsDisposed) return;
-                if (!(textBox is TextBoxBase theTextBox)) return;
-                if (!IsWindow(theTextBox.Handle)) return;
-                if (string.IsNullOrWhiteSpace(cueText)) return;
-
-                SendMessage(
-                    theTextBox.Handle, EM_SETCUEBANNER, (IntPtr)1, cueText
-                );
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-            }
-        }
-
-        /// <summary>
         /// Sends the specified message to a window or windows.
         /// <para />
         /// The <c>SendMessage</c> function calls the window procedure for the specified
@@ -105,5 +69,44 @@ namespace xyLOGIX.Core.Extensions
             IntPtr wParam,
             string lParam
         );
+
+        /// <summary>
+        /// Sets the cue banner of the specified <paramref name="textBox" />  to the
+        /// specified <paramref name="cueText" />.
+        /// </summary>
+        /// <param name="textBox">
+        /// (Required.) Reference to an instance of
+        /// <see cref="T:System.Windows.Forms.TextBox" /> that refers to the textbox for
+        /// which cue text is to be set.
+        /// </param>
+        /// <param name="cueText">
+        /// (Optional.) A <see cref="T:System.String" /> that
+        /// contains the cue text.
+        /// <para />
+        /// Pass the <see cref="F:System.String.Empty" /> value to remove the cue text.
+        /// </param>
+        public static void SetCueBanner(
+            this TextBoxBase textBox,
+            string cueText
+        )
+        {
+            try
+            {
+                if (textBox == null) return;
+                if (textBox.IsDisposed) return;
+                if (!(textBox is TextBoxBase theTextBox)) return;
+                if (!IsWindow(theTextBox.Handle)) return;
+                if (string.IsNullOrWhiteSpace(cueText)) return;
+
+                SendMessage(
+                    theTextBox.Handle, EM_SETCUEBANNER, (IntPtr)1, cueText
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+        }
     }
 }

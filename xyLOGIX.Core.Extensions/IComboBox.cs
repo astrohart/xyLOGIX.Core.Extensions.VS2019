@@ -342,6 +342,12 @@ namespace xyLOGIX.Core.Extensions
         bool Sorted { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
+        /// Maintains performance when items are added to the
+        /// <see cref="T:System.Windows.Forms.ComboBox" /> one at a time.
+        /// </summary>
+        void BeginUpdate();
+
+        /// <summary>
         /// Occurs when a visual aspect of an owner-drawn
         /// <see cref="T:System.Windows.Forms.ComboBox" /> changes.
         /// </summary>
@@ -365,38 +371,6 @@ namespace xyLOGIX.Core.Extensions
         /// changed.
         /// </summary>
         event EventHandler DropDownStyleChanged;
-
-        /// <summary>
-        /// Occurs each time an owner-drawn
-        /// <see cref="T:System.Windows.Forms.ComboBox" /> item needs to be drawn and when
-        /// the sizes of the list items are determined.
-        /// </summary>
-        event MeasureItemEventHandler MeasureItem;
-
-        /// <summary>
-        /// Occurs when the
-        /// <see cref="P:System.Windows.Forms.ComboBox.SelectedIndex" /> property has
-        /// changed.
-        /// </summary>
-        event EventHandler SelectedIndexChanged;
-
-        /// <summary>
-        /// Occurs when the user changes the selected item and that change is
-        /// displayed in the <see cref="T:System.Windows.Forms.ComboBox" />.
-        /// </summary>
-        event EventHandler SelectionChangeCommitted;
-
-        /// <summary>
-        /// Occurs when the control has formatted the text, but before the text
-        /// is displayed.
-        /// </summary>
-        event EventHandler TextUpdate;
-
-        /// <summary>
-        /// Maintains performance when items are added to the
-        /// <see cref="T:System.Windows.Forms.ComboBox" /> one at a time.
-        /// </summary>
-        void BeginUpdate();
 
         /// <summary>
         /// Resumes painting the <see cref="T:System.Windows.Forms.ComboBox" />
@@ -487,6 +461,13 @@ namespace xyLOGIX.Core.Extensions
         int GetItemHeight(int index);
 
         /// <summary>
+        /// Occurs each time an owner-drawn
+        /// <see cref="T:System.Windows.Forms.ComboBox" /> item needs to be drawn and when
+        /// the sizes of the list items are determined.
+        /// </summary>
+        event MeasureItemEventHandler MeasureItem;
+
+        /// <summary>
         /// Selects a range of text in the editable portion of the
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
         /// </summary>
@@ -507,6 +488,25 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
         /// </summary>
         void SelectAll();
+
+        /// <summary>
+        /// Occurs when the
+        /// <see cref="P:System.Windows.Forms.ComboBox.SelectedIndex" /> property has
+        /// changed.
+        /// </summary>
+        event EventHandler SelectedIndexChanged;
+
+        /// <summary>
+        /// Occurs when the user changes the selected item and that change is
+        /// displayed in the <see cref="T:System.Windows.Forms.ComboBox" />.
+        /// </summary>
+        event EventHandler SelectionChangeCommitted;
+
+        /// <summary>
+        /// Occurs when the control has formatted the text, but before the text
+        /// is displayed.
+        /// </summary>
+        event EventHandler TextUpdate;
 
         /// <summary>
         /// Returns a string that represents the

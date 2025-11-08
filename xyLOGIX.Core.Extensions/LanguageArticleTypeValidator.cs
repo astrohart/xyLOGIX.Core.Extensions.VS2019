@@ -11,7 +11,10 @@ namespace xyLOGIX.Core.Extensions
     /// </summary>
     public class LanguageArticleTypeValidator : ILanguageArticleTypeValidator
     {
-        /// <summary>Empty, <see langword="static" /> constructor to prohibit direct allocation of this class.</summary>
+        /// <summary>
+        /// Empty, <see langword="static" /> constructor to prohibit direct
+        /// allocation of this class.
+        /// </summary>
         [Log(AttributeExclude = true)]
         static LanguageArticleTypeValidator() { }
 
@@ -40,7 +43,8 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="type">
         /// (Required.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that is to
+        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that is
+        /// to
         /// be examined.
         /// </param>
         /// <returns>

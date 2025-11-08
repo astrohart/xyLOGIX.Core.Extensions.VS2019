@@ -534,8 +534,31 @@ namespace xyLOGIX.Core.Extensions
             [DebuggerStepThrough] set;
         }
 
+        /// <summary> Activates the form and gives it focus. </summary>
+        void Activate();
+
         /// <summary> Occurs when the form is activated in code or by the user. </summary>
         event EventHandler Activated;
+
+        /// <summary> Adds an owned form to this form. </summary>
+        /// <param name="ownedForm">
+        /// The <see cref="T:System.Windows.Forms.Form" /> that
+        /// this form will own.
+        /// </param>
+        void AddOwnedForm(Form ownedForm);
+
+        /// <summary> Closes the form. </summary>
+        /// <exception cref="T:System.InvalidOperationException">
+        /// The form was closed while
+        /// a handle was being created.
+        /// </exception>
+        /// <exception cref="T:System.ObjectDisposedException">
+        /// You cannot call this method
+        /// from the <see cref="E:System.Windows.Forms.Form.Activated" /> event when
+        /// <see cref="P:System.Windows.Forms.Form.WindowState" /> is set to
+        /// <see cref="F:System.Windows.Forms.FormWindowState.Maximized" />.
+        /// </exception>
+        void Close();
 
         /// <summary> Occurs when the form is closed. </summary>
         event EventHandler Closed;
@@ -569,6 +592,16 @@ namespace xyLOGIX.Core.Extensions
         /// form.
         /// </summary>
         event InputLanguageChangingEventHandler InputLanguageChanging;
+
+        /// <summary>
+        /// Arranges the multiple-document interface (MDI) child forms within the
+        /// MDI parent form.
+        /// </summary>
+        /// <param name="value">
+        /// One of the <see cref="T:System.Windows.Forms.MdiLayout" />
+        /// values that defines the layout of MDI child forms.
+        /// </param>
+        void LayoutMdi(MdiLayout value);
 
         /// <summary> Occurs before a form is displayed for the first time. </summary>
         event EventHandler Load;
@@ -604,6 +637,13 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler MinimumSizeChanged;
 
+        /// <summary> Removes an owned form from this form. </summary>
+        /// <param name="ownedForm">
+        /// A <see cref="T:System.Windows.Forms.Form" />
+        /// representing the form to remove from the list of owned forms for this form.
+        /// </param>
+        void RemoveOwnedForm(Form ownedForm);
+
         /// <summary> Occurs when a form enters resizing mode. </summary>
         event EventHandler ResizeBegin;
 
@@ -615,49 +655,6 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="P:System.Windows.Forms.Form.RightToLeftLayout" /> property changes.
         /// </summary>
         event EventHandler RightToLeftLayoutChanged;
-
-        /// <summary> Occurs whenever the form is first displayed. </summary>
-        event EventHandler Shown;
-
-        /// <summary> Activates the form and gives it focus. </summary>
-        void Activate();
-
-        /// <summary> Adds an owned form to this form. </summary>
-        /// <param name="ownedForm">
-        /// The <see cref="T:System.Windows.Forms.Form" /> that
-        /// this form will own.
-        /// </param>
-        void AddOwnedForm(Form ownedForm);
-
-        /// <summary> Closes the form. </summary>
-        /// <exception cref="T:System.InvalidOperationException">
-        /// The form was closed while
-        /// a handle was being created.
-        /// </exception>
-        /// <exception cref="T:System.ObjectDisposedException">
-        /// You cannot call this method
-        /// from the <see cref="E:System.Windows.Forms.Form.Activated" /> event when
-        /// <see cref="P:System.Windows.Forms.Form.WindowState" /> is set to
-        /// <see cref="F:System.Windows.Forms.FormWindowState.Maximized" />.
-        /// </exception>
-        void Close();
-
-        /// <summary>
-        /// Arranges the multiple-document interface (MDI) child forms within the
-        /// MDI parent form.
-        /// </summary>
-        /// <param name="value">
-        /// One of the <see cref="T:System.Windows.Forms.MdiLayout" />
-        /// values that defines the layout of MDI child forms.
-        /// </param>
-        void LayoutMdi(MdiLayout value);
-
-        /// <summary> Removes an owned form from this form. </summary>
-        /// <param name="ownedForm">
-        /// A <see cref="T:System.Windows.Forms.Form" />
-        /// representing the form to remove from the list of owned forms for this form.
-        /// </param>
-        void RemoveOwnedForm(Form ownedForm);
 
         /// <summary> Sets the bounds of the form in desktop coordinates. </summary>
         /// <param name="x"> The x-coordinate of the form's location. </param>
@@ -689,7 +686,10 @@ namespace xyLOGIX.Core.Extensions
         void Show(IWin32Window owner);
 
         /// <summary> Shows the form as a modal dialog box. </summary>
-        /// <returns> One of the <see cref="T:System.Windows.Forms.DialogResult" /> value(s). </returns>
+        /// <returns>
+        /// One of the <see cref="T:System.Windows.Forms.DialogResult" />
+        /// value(s).
+        /// </returns>
         /// <exception cref="T:System.InvalidOperationException">
         /// The form being shown is
         /// already visible. -or- The form being shown is disabled. -or- The form being
@@ -706,7 +706,10 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.IWin32Window" /> that represents the
         /// top-level window that will own the modal dialog box.
         /// </param>
-        /// <returns> One of the <see cref="T:System.Windows.Forms.DialogResult" /> value(s). </returns>
+        /// <returns>
+        /// One of the <see cref="T:System.Windows.Forms.DialogResult" />
+        /// value(s).
+        /// </returns>
         /// <exception cref="T:System.ArgumentException">
         /// The form specified in the
         /// <paramref name="owner" /> parameter is the same as the form being shown.
@@ -720,6 +723,9 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="P:System.Windows.Forms.SystemInformation.UserInteractive" />).
         /// </exception>
         DialogResult ShowDialog(IWin32Window owner);
+
+        /// <summary> Occurs whenever the form is first displayed. </summary>
+        event EventHandler Shown;
 
         /// <summary> Gets a string representing the current instance of the form. </summary>
         /// <returns>

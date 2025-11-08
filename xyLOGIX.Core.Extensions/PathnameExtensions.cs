@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using System.IO;
 using xyLOGIX.Core.Debug;
@@ -74,7 +73,8 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// If the <paramref name="pathname" /> or <paramref name="extensions" />
-        /// have <see langword="null" /> or blank <see cref="T:System.String" /> value(s) as
+        /// have <see langword="null" /> or blank <see cref="T:System.String" /> value(s)
+        /// as
         /// their arguments, then this method returns <see langword="false" />.
         /// <para />
         /// <see langword="false" /> is also returned if the argument of the
@@ -133,7 +133,8 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// If the <paramref name="pathname" /> or <paramref name="extension" />
-        /// have <see langword="null" /> or blank <see cref="T:System.String" /> value(s) as
+        /// have <see langword="null" /> or blank <see cref="T:System.String" /> value(s)
+        /// as
         /// their arguments, then this method returns <see langword="false" />.
         /// <para />
         /// <see langword="false" /> is also returned if the argument of the

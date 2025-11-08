@@ -128,6 +128,46 @@ namespace xyLOGIX.Core.Extensions.Providers
         }
 
         /// <summary>
+        /// Removes the specified <paramref name="control" /> and the corresponding
+        /// association to its containing <see cref="T:System.Windows.Forms.Form" />.
+        /// </summary>
+        /// <param name="control">
+        /// (Required.) Reference to an instance of
+        /// <see cref="T:System.Windows.Forms.Control" /> that refers to the control that
+        /// is to be removed.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the specified operation(s) have completed
+        /// successfully; <see langword="false" /> otherwise.
+        /// </returns>
+        public bool Remove([NotLogged] Control control)
+        {
+            var result = false;
+
+            try
+            {
+                if (ParentFormDictionary == null) return result;
+                if (ParentFormDictionary.Count <= 0) return result;
+
+                result = ParentFormDictionary.Remove(control);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"ControlFormAssociationProvider.Remove: Result = {result}"
+            );
+
+            return result;
+        }
+
+        /// <summary>
         /// Subscribes the
         /// <see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> event of the
         /// specified <paramref name="control" /> to remove all the mappings for it from
@@ -324,53 +364,16 @@ namespace xyLOGIX.Core.Extensions.Providers
         /// dictionary that correspond to the specified form.
         /// </remarks>
         [EntryPoint]
-        private void OnMemberFormClosed([NotLogged] object sender, [NotLogged] FormClosedEventArgs e)
+        private void OnMemberFormClosed(
+            [NotLogged] object sender,
+            [NotLogged] FormClosedEventArgs e
+        )
         {
             if (!(sender is Form form)) return;
             if (ParentFormDictionary == null) return;
             if (!ParentFormDictionary.Any()) return;
 
             DetachForm(form);
-        }
-
-        /// <summary>
-        /// Removes the specified <paramref name="control" /> and the corresponding
-        /// association to its containing <see cref="T:System.Windows.Forms.Form" />.
-        /// </summary>
-        /// <param name="control">
-        /// (Required.) Reference to an instance of
-        /// <see cref="T:System.Windows.Forms.Control" /> that refers to the control that
-        /// is to be removed.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the specified operation(s) have completed
-        /// successfully; <see langword="false" /> otherwise.
-        /// </returns>
-        public bool Remove([NotLogged] Control control)
-        {
-            var result = false;
-
-            try
-            {
-                if (ParentFormDictionary == null) return result;
-                if (ParentFormDictionary.Count <= 0) return result;
-
-                result = ParentFormDictionary.Remove(control);
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = false;
-            }
-
-            DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"ControlFormAssociationProvider.Remove: Result = {result}"
-            );
-
-            return result;
         }
     }
 }

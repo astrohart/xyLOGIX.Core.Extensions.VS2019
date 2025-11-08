@@ -34,7 +34,8 @@ namespace xyLOGIX.Core.Extensions
         /// <returns> String containing the enumeration value expressed as a string. </returns>
         [DebuggerStepThrough]
         [return: NotLogged]
-        public static string AsString<T>([NotLogged] this T enumerationValue) where T : Enum
+        public static string AsString<T>([NotLogged] this T enumerationValue)
+            where T : Enum
         {
             var result = enumerationValue.ToString();
 

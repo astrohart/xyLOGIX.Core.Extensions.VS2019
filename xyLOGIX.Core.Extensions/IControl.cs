@@ -1326,7 +1326,8 @@ namespace xyLOGIX.Core.Extensions
         /// represents the message to process.
         /// </param>
         /// <returns>
-        /// One of the <see cref="T:System.Windows.Forms.PreProcessControlState" /> value(s),
+        /// One of the <see cref="T:System.Windows.Forms.PreProcessControlState" />
+        /// value(s),
         /// depending on whether
         /// <see
         ///     cref="M:System.Windows.Forms.Control.PreProcessMessage(ref System.Windows.Forms.Message)" />
@@ -1598,7 +1599,8 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="specified">
         /// A bitwise combination of the
-        /// <see cref="T:System.Windows.Forms.BoundsSpecified" /> value(s). OfType any parameter
+        /// <see cref="T:System.Windows.Forms.BoundsSpecified" /> value(s). OfType any
+        /// parameter
         /// not specified, the current value will be used.
         /// </param>
         void SetBounds(

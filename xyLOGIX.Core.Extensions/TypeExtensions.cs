@@ -29,8 +29,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         public static AdvisableDictionary<Type, Type> CachedActualType
         {
-            [DebuggerStepThrough]
-            get;
+            [DebuggerStepThrough] get;
         } = new AdvisableDictionary<Type, Type>();
 
         /// <summary>

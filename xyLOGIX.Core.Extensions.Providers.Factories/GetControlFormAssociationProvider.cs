@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions.Providers.Factories

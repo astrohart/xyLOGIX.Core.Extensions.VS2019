@@ -5294,7 +5294,8 @@ before they are dispatched.
 
 ##### Returns
 
-One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState') value(s),
+One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState')
+value(s),
 depending on whether
 [PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(ref System.Windows.Forms.Message)')
 is `true` or `false` and whether
@@ -5659,7 +5660,8 @@ control. |
 [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property value of the
 control. |
 | specified | [System.Windows.Forms.BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') | A bitwise combination of the
-[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') value(s). OfType any parameter
+[BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') value(s). OfType any
+parameter
 not specified, the current value will be used. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Show'></a>
@@ -6443,7 +6445,8 @@ Shows the form as a modal dialog box.
 
 ##### Returns
 
-One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') value(s).
+One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult')
+value(s).
 
 ##### Parameters
 
@@ -6469,7 +6472,8 @@ Shows the form as a modal dialog box with the specified owner.
 
 ##### Returns
 
-One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult') value(s).
+One of the [DialogResult](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DialogResult 'System.Windows.Forms.DialogResult')
+value(s).
 
 ##### Parameters
 
@@ -6595,7 +6599,8 @@ passed is within the value set that is defined by the
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is to
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is
+to
 be examined. |
 
 <a name='T-xyLOGIX-Core-Extensions-IListView'></a>
@@ -8508,7 +8513,8 @@ interface.
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of this class.
+Empty, `static` constructor to prohibit direct
+allocation of this class.
 
 ##### Parameters
 
@@ -8534,7 +8540,8 @@ passed is within the value set that is defined by the
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is to
+[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is
+to
 be examined. |
 
 <a name='T-xyLOGIX-Core-Extensions-ListExtensions'></a>
@@ -10700,7 +10707,8 @@ possible extension(s) that the provided `pathname` must have. |
 ##### Remarks
 
 If the `pathname` or `extensions`
-have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) as
+have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s)
+as
 their arguments, then this method returns `false`.
 
 
@@ -10743,7 +10751,8 @@ containing the filename extension that the specified
 ##### Remarks
 
 If the `pathname` or `extension`
-have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) as
+have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s)
+as
 their arguments, then this method returns `false`.
 
 

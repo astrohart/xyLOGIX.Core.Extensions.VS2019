@@ -727,7 +727,9 @@
   - [TokenizeOn(source,delimeter)](#M-xyLOGIX-Core-Extensions-StringExtensions-TokenizeOn-System-String,System-Char- 'xyLOGIX.Core.Extensions.StringExtensions.TokenizeOn(System.String,System.Char)')
   - [TokenizeWithPipe(source)](#M-xyLOGIX-Core-Extensions-StringExtensions-TokenizeWithPipe-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TokenizeWithPipe(System.String)')
   - [TrimAnyOffEnd(value,caseSensitive,recursive,badEndings)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimAnyOffEnd-System-String,System-Boolean,System-Boolean,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.TrimAnyOffEnd(System.String,System.Boolean,System.Boolean,System.String[])')
+  - [TrimEnd(target,trimString)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimEnd-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimEnd(System.String,System.String)')
   - [TrimLine(currentLine)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimLine(System.String)')
+  - [TrimStart(target,trimString)](#M-xyLOGIX-Core-Extensions-StringExtensions-TrimStart-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.TrimStart(System.String,System.String)')
 - [TextBoxExtensions](#T-xyLOGIX-Core-Extensions-TextBoxExtensions 'xyLOGIX.Core.Extensions.TextBoxExtensions')
   - [EM_SETCUEBANNER](#F-xyLOGIX-Core-Extensions-TextBoxExtensions-EM_SETCUEBANNER 'xyLOGIX.Core.Extensions.TextBoxExtensions.EM_SETCUEBANNER')
   - [IsWindow(hWnd)](#M-xyLOGIX-Core-Extensions-TextBoxExtensions-IsWindow-System-IntPtr- 'xyLOGIX.Core.Extensions.TextBoxExtensions.IsWindow(System.IntPtr)')
@@ -14786,6 +14788,36 @@ the value of `caseSensitive`.
 If `recursive` is set to `true`, the method
 will repeatedly trim matches until no further matches are found.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimEnd-System-String,System-String-'></a>
+### TrimEnd(target,trimString) `method`
+
+##### Summary
+
+Removes the `trimString`, if present, from the end
+of the specified `target`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the trimmed
+version of `target` with the specified
+`trimString` removed from the end of it; otherwise, the
+method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
+trimmed. |
+| trimString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+contains the character(s) that are to be trimmed. |
+
+##### Remarks
+
+If either of the required parameters, `target`, or
+`trimString`, are `null`, blank, or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String-'></a>
 ### TrimLine(currentLine) `method`
 
@@ -14809,6 +14841,36 @@ Trimmed text.
 If the empty or whitespace string is provided for
 `currentLine` , then the empty string is returned by this
 method.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimStart-System-String,System-String-'></a>
+### TrimStart(target,trimString) `method`
+
+##### Summary
+
+Removes the `trimString`, if present, from the start of the
+specified `target`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the trimmed
+version of `target` with the specified
+`trimString` removed from the start of it; otherwise, the
+method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
+trimmed. |
+| trimString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
+contains the character(s) that are to be trimmed. |
+
+##### Remarks
+
+If either of the required parameters, `target`, or
+`trimString`, are `null`, blank, or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
 
 <a name='T-xyLOGIX-Core-Extensions-TextBoxExtensions'></a>
 ## TextBoxExtensions `type`

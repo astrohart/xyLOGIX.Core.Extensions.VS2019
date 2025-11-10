@@ -6020,6 +6020,60 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Removes the <paramref name="trimString" />, if present, from the end
+        /// of the specified <paramref name="target" />.
+        /// </summary>
+        /// <param name="target">
+        /// (Required.) A <see cref="T:System.String" /> that is to be
+        /// trimmed.
+        /// </param>
+        /// <param name="trimString">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// contains the character(s) that are to be trimmed.
+        /// </param>
+        /// <remarks>
+        /// If either of the required parameters, <paramref name="target" />, or
+        /// <paramref name="trimString" />, are <see langword="null" />, blank, or the
+        /// <see cref="F:System.String.Empty" /> value, then this method is idempotent.
+        /// </remarks>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the trimmed
+        /// version of <paramref name="target" /> with the specified
+        /// <paramref name="trimString" /> removed from the end of it; otherwise, the
+        /// method is idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string TrimEnd(
+            [NotLogged] this string target,
+            [NotLogged] string trimString
+        )
+        {
+            var result = target;
+
+            try
+            {
+                if (string.IsNullOrEmpty(trimString)) return result;
+                if (!target.EndsWith(trimString)) return result;
+
+                while (result.EndsWith(trimString))
+                {
+                    result = result.Substring(
+                        0, result.Length - trimString.Length
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = target;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Trims the <paramref name="currentLine" /> of text; i.e., removes
         /// whitespace both before and after the text.
         /// </summary>
@@ -6034,6 +6088,58 @@ namespace xyLOGIX.Core.Extensions
             => !string.IsNullOrWhiteSpace(currentLine)
                 ? currentLine.Trim()
                 : string.Empty;
+
+        /// <summary>
+        /// Removes the <paramref name="trimString" />, if present, from the start of the
+        /// specified <paramref name="target" />.
+        /// </summary>
+        /// <param name="target">
+        /// (Required.) A <see cref="T:System.String" /> that is to be
+        /// trimmed.
+        /// </param>
+        /// <param name="trimString">
+        /// (Required.) A <see cref="T:System.String" /> that
+        /// contains the character(s) that are to be trimmed.
+        /// </param>
+        /// <remarks>
+        /// If either of the required parameters, <paramref name="target" />, or
+        /// <paramref name="trimString" />, are <see langword="null" />, blank, or the
+        /// <see cref="F:System.String.Empty" /> value, then this method is idempotent.
+        /// </remarks>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the trimmed
+        /// version of <paramref name="target" /> with the specified
+        /// <paramref name="trimString" /> removed from the start of it; otherwise, the
+        /// method is idempotent.
+        /// </returns>
+        [return: NotLogged]
+        public static string TrimStart(
+            [NotLogged] this string target,
+            [NotLogged] string trimString
+        )
+        {
+            var result = target;
+
+            try
+            {
+                if (string.IsNullOrEmpty(trimString)) return result;
+                if (!target.StartsWith(trimString)) return result;
+
+                while (result.StartsWith(trimString))
+                {
+                    result = result.Substring(trimString.Length);
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = target;
+            }
+
+            return result;
+        }
     }
 }
 

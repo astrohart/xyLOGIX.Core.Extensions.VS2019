@@ -28,11 +28,12 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// This method is superior to calling the
-        /// <see cref="M:Alphaleonis.Win32.Filesystem.File.Exists" /> method.  This is due
+        /// <see cref="M:Alphaleonis.Win32.Filesystem.File.Exists(System.String)" />
+        /// method.  This is due
         /// to the fact that the other method throws an exception if it is passed a blank
         /// string, whereas this method simply returns <see langword="false" />.
         /// </remarks>
-        private static bool FileExists(string pathname)
+        private static bool FileExists([NotLogged] this string pathname)
         {
             bool result;
 
@@ -85,8 +86,8 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.String" />.
         /// </remarks>
         public static bool HasAnyOfTheseExtensions(
-            this string pathname,
-            params string[] extensions
+            [NotLogged] this string pathname,
+            [NotLogged] params string[] extensions
         )
         {
             var result = false;
@@ -159,6 +160,85 @@ namespace xyLOGIX.Core.Extensions
                 result = extension.Equals(
                     Path.GetExtension(pathname),
                     StringComparison.OrdinalIgnoreCase
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="target" /> path matches the
+        /// specified
+        /// <paramref
+        ///     name="source" />
+        /// path.
+        /// </summary>
+        /// <remarks>
+        /// This method normalizes and resolves the absolute paths of both
+        /// <paramref
+        ///     name="target" />
+        /// and <paramref name="source" />  before performing a case-insensitive
+        /// comparison.
+        /// <para />
+        /// Trailing
+        /// directory separator(s), if any are present, are ignored during the comparison.
+        /// <para />
+        /// <b>NOTE:</b> If either or both of <paramref name="target" /> and
+        /// <paramref name="source" /> are <see langword="null" />, blank, or the
+        /// <see cref="F:System.String.Empty" /> value, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <param name="target">
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the target pathname to compare.
+        /// <para />
+        /// This parameter cannot be null, empty, or consist only of whitespace.
+        /// </param>
+        /// <param name="source">
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the source path to compare against.
+        /// <para />
+        /// This parameter cannot be null, empty, or consist only of whitespace.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the normalized, absolute path(s) of
+        /// <paramref name="target" /> and
+        /// <paramref
+        ///     name="source" />
+        /// are equal, ignoring case and trailing directory separators; otherwise,
+        /// <see
+        ///     langword="false" />
+        /// .
+        /// </returns>
+        public static bool MatchesPath(
+            [NotLogged] this string target,
+            [NotLogged] string source
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(target)) return result;
+                if (string.IsNullOrWhiteSpace(source)) return result;
+
+                result = string.Equals(
+                    Path.GetFullPath(target)
+                        .TrimEnd(
+                            Path.DirectorySeparatorChar,
+                            Path.AltDirectorySeparatorChar
+                        ), Path.GetFullPath(source)
+                               .TrimEnd(
+                                   Path.DirectorySeparatorChar,
+                                   Path.AltDirectorySeparatorChar
+                               ), StringComparison.OrdinalIgnoreCase
                 );
             }
             catch (Exception ex)

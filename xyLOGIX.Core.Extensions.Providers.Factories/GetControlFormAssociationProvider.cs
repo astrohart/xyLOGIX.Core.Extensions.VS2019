@@ -1,4 +1,5 @@
 ﻿using PostSharp.Patterns.Diagnostics;
+using System.Diagnostics;
 using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions.Providers.Factories
@@ -24,6 +25,8 @@ namespace xyLOGIX.Core.Extensions.Providers.Factories
         ///     cref="T:xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
         /// interface.
         /// </returns>
+        [return: NotLogged]
+        [DebuggerStepThrough]
         public static IControlFormAssociationProvider SoleInstance()
             => ControlFormAssociationProvider.Instance;
     }

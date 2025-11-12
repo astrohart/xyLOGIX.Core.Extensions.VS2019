@@ -147,7 +147,7 @@
       <Name>xyLOGIX.Core.Extensions.Providers.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\xyLOGIX.Core.Extensions.Providers\xyLOGIX.Core.Extensions.Providers.csproj">
-      <Project>{EA03D76A-0A2F-4BDE-9690-92F82AF551D7}</Project>
+      <Project>{ea03d76a-0a2f-4bde-9690-92f82af551d7}</Project>
       <Name>xyLOGIX.Core.Extensions.Providers</Name>
     </ProjectReference>
   </ItemGroup>

@@ -559,6 +559,7 @@
   - [FileExists(pathname)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.FileExists(System.String)')
   - [HasAnyOfTheseExtensions(pathname,extensions)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasAnyOfTheseExtensions(System.String,System.String[])')
   - [HasExtension(pathname,extension)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasExtension-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasExtension(System.String,System.String)')
+  - [MatchesPath(target,source)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-MatchesPath-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.MatchesPath(System.String,System.String)')
 - [ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption')
   - [All](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-All 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.All')
   - [First](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First')
@@ -10677,7 +10678,8 @@ the fully-qualified pathname of the file to check for existence. |
 ##### Remarks
 
 This method is superior to calling the
-[Exists](#M-Alphaleonis-Win32-Filesystem-File-Exists 'Alphaleonis.Win32.Filesystem.File.Exists') method.  This is due
+[Exists](#M-Alphaleonis-Win32-Filesystem-File-Exists-System-String- 'Alphaleonis.Win32.Filesystem.File.Exists(System.String)')
+method.  This is due
 to the fact that the other method throws an exception if it is passed a blank
 string, whereas this method simply returns `false`.
 
@@ -10767,6 +10769,61 @@ the filesystem.
 
 This method is meant to be used as an extension method of type
 [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String').
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-MatchesPath-System-String,System-String-'></a>
+### MatchesPath(target,source) `method`
+
+##### Summary
+
+Determines whether the specified `target` path matches the
+specified
+`source`
+path.
+
+##### Returns
+
+`true` if the normalized, absolute path(s) of
+`target` and
+`source`
+are equal, ignoring case and trailing directory separators; otherwise,
+`false`
+.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the target pathname to compare.
+
+
+
+This parameter cannot be null, empty, or consist only of whitespace. |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the source path to compare against.
+
+
+
+This parameter cannot be null, empty, or consist only of whitespace. |
+
+##### Remarks
+
+This method normalizes and resolves the absolute paths of both
+`target`
+and `source` before performing a case-insensitive
+comparison.
+
+
+
+Trailing
+directory separator(s), if any are present, are ignored during the comparison.
+
+
+
+If either or both of `target` and
+`source` are `null`, blank, or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method returns
+`false`.
 
 <a name='T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption'></a>
 ## ReplaceAnyOfOption `type`

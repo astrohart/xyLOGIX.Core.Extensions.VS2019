@@ -2935,6 +2935,46 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the <paramref name="value" /> passed is the string
         /// representation of a 32-bit <c>int</c> or not.
         /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the text that is to be examined.
+        /// </param>
+        /// <remarks>
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// parameter, <paramref name="value" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the string passed in
+        /// <paramref name="value" /> is the string representation of a value that is in
+        /// the range of the 32-bit <c>int</c> data type; <see langword="false" />
+        /// otherwise. The method also returns <see langword="false" /> if it is passed the
+        /// empty string.
+        /// </returns>
+        public static bool IsNumericValue([NotLogged] this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = Regex.IsMatch(value, @"^-?\d+(\.\d+)?$");
+            }
+            catch
+            {
+                /* silence! */
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the <paramref name="value" /> passed is the string
+        /// representation of a 32-bit <c>int</c> or not.
+        /// </summary>
         /// <param name="value"> (Required.) String containing the value or not. </param>
         /// <returns>
         /// <see langword="true" /> if the string passed in

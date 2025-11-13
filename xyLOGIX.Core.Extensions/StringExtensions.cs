@@ -30,6 +30,35 @@ namespace xyLOGIX.Core.Extensions
     public static class StringExtensions
     {
         /// <summary>
+        /// Determines whether the specified <paramref name="value"/> begins with a single slash, but is not strictly checking whether there are no other dashes following it.
+        /// </summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that contains the text that is to be examined.<para/><b>NOTE:</b> This parameter cannot be <see langword="null" />, the <see cref="F:System.String.Empty" /> value, or contain only whitespace.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns></returns>
+        public static bool StartsWithSingleDashLenient([NotLogged] this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.StartsWith(
+                    "-", StringComparison.OrdinalIgnoreCase
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Reference to an instance of <see cref="T:System.Globalization.TextInfo" /> that
         /// works for the <see cref="P:System.Globalization.CultureInfo.CurrentCulture" />.
         /// </summary>

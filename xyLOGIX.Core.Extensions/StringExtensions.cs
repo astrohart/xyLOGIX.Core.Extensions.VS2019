@@ -2914,12 +2914,77 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool IsNumeric(string value)
         {
-            if (string.IsNullOrWhiteSpace(value)) return false;
+            var result = false;
 
-            bool result;
             try
             {
-                result = int.TryParse(value, out _);
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = Regex.IsMatch(value, @"^-?\d+(\.\d+)?$");
+            }
+            catch
+            {
+                /* silence! */
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the <paramref name="value" /> passed is the string
+        /// representation of a 32-bit <c>int</c> or not.
+        /// </summary>
+        /// <param name="value"> (Required.) String containing the value or not. </param>
+        /// <returns>
+        /// <see langword="true" /> if the string passed in
+        /// <paramref name="value" /> is the string representation of a value that is in
+        /// the range of the 32-bit <c>int</c> data type; <see langword="false" />
+        /// otherwise. The method also returns <see langword="false" /> if it is passed the
+        /// empty string.
+        /// </returns>
+        public static bool IsNumericVerbose([NotLogged] this string value)
+        {
+            var result = false;
+
+            try
+            {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "StringExtensions.IsNumericVerbose *** INFO: Checking whether the value of the parameter, 'value', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'value', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    // The parameter, 'value' was either passed a null value, or it is blank.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "StringExtensions.IsNumericVerbose: *** ERROR *** The parameter, 'value', was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"StringExtensions.IsNumericVerbose: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter 'value', is not blank.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    $@"*** FYI *** Checking whether the value, '{value}', matches the Regex, '^-?\d+(\.\d+)?$'..."
+                );
+
+                result = Regex.IsMatch(value, @"^-?\d+(\.\d+)?$");
             }
             catch
             {

@@ -5079,8 +5079,9 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="false" />.
         /// </remarks>
         /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" /> starts with
-        /// a single dash at all; <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// starts with a single dash with subsequent character(s) being non-dash(es);
+        /// <see langword="false" /> otherwise.
         /// </returns>
         public static bool StartsWithSingleDashStrict(
             [NotLogged] this string value

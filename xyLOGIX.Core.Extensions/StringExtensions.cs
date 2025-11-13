@@ -2677,6 +2677,55 @@ namespace xyLOGIX.Core.Extensions
             => string.IsNullOrWhiteSpace(value);
 
         /// <summary>
+        /// Determines whether the specified text <paramref name="value" /> is equal to
+        /// either of the words <c>TRUE</c> or <c>FALSE</c> while performing a
+        /// case-insensitive comparison.
+        /// <para />
+        /// Whitespace is ignored.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
+        /// examined.
+        /// </param>
+        /// <remarks>
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// parameter, <paramref name="value" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the text is equal to either <c>TRUE</c> or
+        /// <c>FALSE</c> without regards to whitespace or character casing; otherwise,
+        /// <see langword="false" />.
+        /// </returns>
+        public static bool IsBooleanValue([NotLogged] this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.Trim()
+                              .EqualsAnyOfNoCase("TRUE", "FALSE");
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"StringExtensions.IsBooleanValue: Result = {result}"
+            );
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the <paramref name="value" /> passed is a
         /// <c>decimal</c> number or not.
         /// </summary>

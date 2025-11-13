@@ -2673,7 +2673,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the specified <paramref name="value" /> is
         /// blank, only consists of whitespace, or a <see langword="null" /> reference.
         /// </returns>
-        public static bool IsBlankOrNull(this string value)
+        public static bool IsBlankOrNull([NotLogged] this string value)
             => string.IsNullOrWhiteSpace(value);
 
         /// <summary>
@@ -2688,7 +2688,7 @@ namespace xyLOGIX.Core.Extensions
         /// The method also returns <see langword="false" /> if it is passed the empty
         /// string.
         /// </returns>
-        public static bool IsDecimal(string value)
+        public static bool IsDecimal([NotLogged] string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return false;
 
@@ -2700,6 +2700,47 @@ namespace xyLOGIX.Core.Extensions
             catch
             {
                 /* silence! */
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified text <paramref name="value" /> is surrounded
+        /// by double quotes.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
+        /// examined.
+        /// </param>
+        /// <remarks>
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// parameter, <paramref name="value" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified text
+        /// <paramref name="value" /> is surrounded by double quotes;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsDoubleQuoted([NotLogged] this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.StartsWith("\"", StringComparison.Ordinal) &&
+                         value.EndsWith("\"", StringComparison.Ordinal);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
                 result = false;
             }
 
@@ -2869,7 +2910,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="value"> Value to be checked. </param>
         /// <returns> TRUE if the value contains Roman numerals; FALSE otherwise. </returns>
-        private static bool IsRomanNumerals(this string value)
+        private static bool IsRomanNumerals([NotLogged] this string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return false;
 
@@ -2877,6 +2918,47 @@ namespace xyLOGIX.Core.Extensions
                 @"(?i)^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
             );
             var result = regex.IsMatch(value);
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified text <paramref name="value" /> is surrounded
+        /// by single quotes.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
+        /// examined.
+        /// </param>
+        /// <remarks>
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// parameter, <paramref name="value" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified text
+        /// <paramref name="value" /> is surrounded by single quotes;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsSingleQuoted([NotLogged] this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.StartsWith("'", StringComparison.Ordinal) &&
+                         value.EndsWith("'", StringComparison.Ordinal);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
             return result;
         }
 

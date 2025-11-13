@@ -2912,7 +2912,7 @@ namespace xyLOGIX.Core.Extensions
         /// otherwise. The method also returns <see langword="false" /> if it is passed the
         /// empty string.
         /// </returns>
-        public static bool IsNumeric(string value)
+        public static bool IsNumeric([NotLogged] string value)
         {
             var result = false;
 

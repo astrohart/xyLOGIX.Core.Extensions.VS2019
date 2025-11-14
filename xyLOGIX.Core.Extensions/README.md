@@ -706,6 +706,8 @@
   - [StartsWithAny(value,beginnings)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAny(System.String,System.String[])')
   - [StartsWithAnyOf(text,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithAnyOf(System.String,System.String[])')
   - [StartsWithNoCase(value,searchText)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithNoCase(System.String,System.String)')
+  - [StartsWithSingleDashLenient(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithSingleDashLenient-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithSingleDashLenient(System.String)')
+  - [StartsWithSingleDashStrict(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithSingleDashStrict-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StartsWithSingleDashStrict(System.String)')
   - [StripIncompatibleQuotes(inputString)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatibleQuotes-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripIncompatibleQuotes(System.String)')
   - [StripNewlines(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-StripNewlines-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.StripNewlines(System.String)')
   - [Sub(format,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.Sub(System.String,System.Object[])')
@@ -14258,6 +14260,72 @@ Tells whether the `value` starts with the substring
 
 If `value` is the empty string or if
 `searchText` is the empty string, then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithSingleDashLenient-System-String-'></a>
+### StartsWithSingleDashLenient(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` begins with a single
+slash, but is not strictly checking whether there are no other dashes following
+it.
+
+##### Returns
+
+`true` if the specified value starts with a single
+dash at all; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+the text that is to be examined.
+
+
+
+This parameter cannot be `null`, the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or contain only whitespace. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `value`, then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithSingleDashStrict-System-String-'></a>
+### StartsWithSingleDashStrict(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` begins with a single
+slash, and strictly checks whether there are no other dashes following it.
+
+##### Returns
+
+`true` if the specified `value`
+starts with a single dash with subsequent character(s) being non-dash(es);
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+the text that is to be examined.
+
+
+
+This parameter cannot be `null`, the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or contain only whitespace. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `value`, then this method returns
 `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatibleQuotes-System-String-'></a>

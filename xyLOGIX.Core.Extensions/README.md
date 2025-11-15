@@ -657,12 +657,17 @@
   - [IsAlphaNumericLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericLowercase(System.String)')
   - [IsAlphaNumericUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericUppercase(System.String)')
   - [IsBlankOrNull(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsBlankOrNull-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsBlankOrNull(System.String)')
+  - [IsBooleanValue(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsBooleanValue-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsBooleanValue(System.String)')
   - [IsDecimal(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsDecimal-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsDecimal(System.String)')
+  - [IsDoubleQuoted(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsDoubleQuoted-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsDoubleQuoted(System.String)')
   - [IsFolderPath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsFolderPath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsFolderPath(System.String)')
   - [IsLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsLowercase(System.String)')
   - [IsNumeric(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsNumeric-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsNumeric(System.String)')
+  - [IsNumericValue(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsNumericValue-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsNumericValue(System.String)')
+  - [IsNumericVerbose(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsNumericVerbose-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsNumericVerbose(System.String)')
   - [IsOneOf(value,choices)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsOneOf-System-String,System-Collections-Generic-IEnumerable{System-String}- 'xyLOGIX.Core.Extensions.StringExtensions.IsOneOf(System.String,System.Collections.Generic.IEnumerable{System.String})')
   - [IsRomanNumerals(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsRomanNumerals-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsRomanNumerals(System.String)')
+  - [IsSingleQuoted(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsSingleQuoted-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsSingleQuoted(System.String)')
   - [IsSpecialWordAtBeginningOfPhrase(words,currentWord)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsSpecialWordAtBeginningOfPhrase-System-String[],System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsSpecialWordAtBeginningOfPhrase(System.String[],System.String)')
   - [IsStreetNameComponent(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsStreetNameComponent-System-Collections-Generic-IReadOnlyList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsStreetNameComponent(System.Collections.Generic.IReadOnlyList{System.String},System.Int32)')
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsUppercase(System.String)')
@@ -12884,6 +12889,39 @@ blank, only consists of whitespace, or a `null` reference.
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that
 should be checked. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsBooleanValue-System-String-'></a>
+### IsBooleanValue(value) `method`
+
+##### Summary
+
+Determines whether the specified text `value` is equal to
+either of the words `TRUE` or `FALSE` while performing a
+case-insensitive comparison.
+
+
+
+Whitespace is ignored.
+
+##### Returns
+
+`true` if the text is equal to either `TRUE` or
+`FALSE` without regards to whitespace or character casing; otherwise,
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
+examined. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `value`, then this method returns
+`false`.
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsDecimal-System-String-'></a>
 ### IsDecimal(value) `method`
 
@@ -12905,6 +12943,34 @@ string.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value or not. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsDoubleQuoted-System-String-'></a>
+### IsDoubleQuoted(value) `method`
+
+##### Summary
+
+Determines whether the specified text `value` is surrounded
+by double quotes.
+
+##### Returns
+
+`true` if the specified text
+`value` is surrounded by double quotes;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
+examined. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `value`, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsFolderPath-System-String-'></a>
 ### IsFolderPath(path) `method`
@@ -12980,6 +13046,64 @@ If an error occurs during the check, then this method returns
 
 ##### Summary
 
+Determines whether the specified text `value` is a
+representation of a numeric quantity (using Arabic numerals) or not.
+
+##### Returns
+
+`true` if the specified text `value` is a
+representation of a numeric quantity (using Arabic numerals);
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
+the text that is to be examined. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `value`, then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsNumericValue-System-String-'></a>
+### IsNumericValue(value) `method`
+
+##### Summary
+
+Determines whether the `value` passed is the string
+representation of a 32-bit `int` or not.
+
+##### Returns
+
+`true` if the string passed in
+`value` is the string representation of a value that is in
+the range of the 32-bit `int` data type; `false`
+otherwise. The method also returns `false` if it is passed the
+empty string.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the text that is to be examined. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `value`, then this method returns
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsNumericVerbose-System-String-'></a>
+### IsNumericVerbose(value) `method`
+
+##### Summary
+
 Determines whether the `value` passed is the string
 representation of a 32-bit `int` or not.
 
@@ -13041,6 +13165,34 @@ TRUE if the value contains Roman numerals; FALSE otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Value to be checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsSingleQuoted-System-String-'></a>
+### IsSingleQuoted(value) `method`
+
+##### Summary
+
+Determines whether the specified text `value` is surrounded
+by single quotes.
+
+##### Returns
+
+`true` if the specified text
+`value` is surrounded by single quotes;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
+examined. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `value`, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsSpecialWordAtBeginningOfPhrase-System-String[],System-String-'></a>
 ### IsSpecialWordAtBeginningOfPhrase(words,currentWord) `method`

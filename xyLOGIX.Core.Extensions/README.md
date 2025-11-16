@@ -629,6 +629,7 @@
   - [EndsWithAnyOf(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAnyOf(System.String,System.String[])')
   - [EndsWithAnyOf(value,comparisonType,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-StringComparison,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAnyOf(System.String,System.StringComparison,System.String[])')
   - [EndsWithColonAndNumber(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumber-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithColonAndNumber(System.String)')
+  - [EndsWithEqualsSign(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithEqualsSign-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithEqualsSign(System.String)')
   - [EnsureAtIsInFront(twitterSite)](#M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.EnsureAtIsInFront(System.String)')
   - [EqualsAnyOf(value,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOf-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsAnyOf(System.String,System.String[])')
   - [EqualsAnyOfNoCase(value,list)](#M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOfNoCase-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EqualsAnyOfNoCase(System.String,System.String[])')
@@ -12104,6 +12105,33 @@ with a colon and a number; `false` otherwise.
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to
 the value that is to be examined. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithEqualsSign-System-String-'></a>
+### EndsWithEqualsSign(value) `method`
+
+##### Summary
+
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'),
+`value`, ends with an equals sign.
+
+##### Returns
+
+`true` if the specified `value`
+ends with an equals sign; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that is
+to be examined. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `value`, then this method returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String-'></a>
 ### EnsureAtIsInFront(twitterSite) `method`

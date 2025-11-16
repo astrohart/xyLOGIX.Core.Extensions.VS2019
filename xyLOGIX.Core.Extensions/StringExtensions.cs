@@ -1419,6 +1419,45 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines if the specified <see cref="T:System.String" />,
+        /// <paramref name="value" />, ends with an equals sign.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.String" /> value that is
+        /// to be examined.
+        /// </param>
+        /// <remarks>
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// parameter, <paramref name="value" />, then this method returns
+        /// <see langword="false" />.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the specified <paramref name="value" />
+        /// ends with an equals sign; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool EndsWithEqualsSign([NotLogged] this string value)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(value)) return result;
+
+                result = value.EndsWith("=", StringComparison.Ordinal);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Double-checks a <paramref name="twitterSite" /> (at-mention) string
         /// to make sure it begins with the character '@'.
         /// </summary>

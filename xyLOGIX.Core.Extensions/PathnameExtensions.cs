@@ -14,6 +14,44 @@ namespace xyLOGIX.Core.Extensions
     public static class PathnameExtensions
     {
         /// <summary>
+        /// Ensures a trailing directory separator is present.
+        /// </summary>
+        /// <param name="path">
+        /// (Required.) A <see cref="T:System.String" /> containing the pathname that is to
+        /// be modified.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> ending with a directory
+        /// separator; otherwise, the method is idempotent.
+        /// </returns>
+        [return: NotLogged]
+        private static string AppendDirectorySeparatorChar(
+            [NotLogged] this string path
+        )
+        {
+            var result = path;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(path)) return string.Empty;
+
+                var sep = Path.DirectorySeparatorChar;
+                if (!path.EndsWith(sep.ToString(), StringComparison.Ordinal))
+                {
+                    result = path + sep;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex, false);
+                result = path;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the file having the specified
         /// <paramref name="pathname" /> exists on the filesystem or not.
         /// </summary>
@@ -48,6 +86,103 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Attempts to get the fully-qualified pathname of the containing folder of the
+        /// specified <paramref name="file" />.
+        /// </summary>
+        /// <param name="file">
+        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname of the file for whom the pathname of the containing folder is to be
+        /// retrieved.
+        /// </param>
+        /// <remarks>
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
+        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// parameter, <paramref name="file" />, then this method returns the
+        /// <see cref="F:System.String.Empty" /> value.
+        /// <para />
+        /// The method also returns the <see cref="F:System.String.Empty" /> value if an
+        /// exception is encountered while attempting to retrieve the containing folder's
+        /// pathname.
+        /// <para />
+        /// <b>NOTE:</b> This method will attempt to discover the fully-qualified pathname
+        /// of the folder that contains the specified <paramref name="file" /> regardless
+        /// of whether the specified <paramref name="file" /> exists.
+        /// </remarks>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the fully-qualified
+        /// pathname of the folder that contains the specified <paramref name="file" />;
+        /// otherwise, the method returns the <see cref="F:System.String.Empty" /> value.
+        /// </returns>
+        [return: NotLogged]
+        public static string GetDirectoryName([NotLogged] this string file)
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(file)) return result;
+
+                result = Path.GetDirectoryName(file);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Computes a relative path string from <paramref name="baseDir" /> to
+        /// <paramref name="path" />.
+        /// </summary>
+        /// <param name="baseDir">
+        /// (Required.) A <see cref="T:System.String" /> base directory path.
+        /// </param>
+        /// <param name="path">
+        /// (Required.) A <see cref="T:System.String" /> absolute path to be relativized.
+        /// </param>
+        /// <returns>
+        /// A <see cref="T:System.String" /> relative path;
+        /// <see cref="F:System.String.Empty" /> on failure.
+        /// </returns>
+        [return: NotLogged]
+        public static string GetRelativePath(
+            [NotLogged] this string baseDir,
+            [NotLogged] string path
+        )
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(baseDir)) return result;
+                if (string.IsNullOrWhiteSpace(path)) return result;
+
+                var uriBase = new Uri(
+                    baseDir.AppendDirectorySeparatorChar(), UriKind.Absolute
+                );
+                var uriPath = new Uri(path, UriKind.Absolute);
+                result = Uri.UnescapeDataString(
+                    uriBase.MakeRelativeUri(uriPath)
+                           .ToString()
+                           .Replace('/', Path.DirectorySeparatorChar)
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex, false);
+                result = string.Empty;
             }
 
             return result;

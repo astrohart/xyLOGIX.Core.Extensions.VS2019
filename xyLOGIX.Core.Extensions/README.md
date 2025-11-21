@@ -556,7 +556,10 @@
   - [#cctor()](#M-xyLOGIX-Core-Extensions-ObjectExtensions-#cctor 'xyLOGIX.Core.Extensions.ObjectExtensions.#cctor')
   - [ToLogRepresentation(value)](#M-xyLOGIX-Core-Extensions-ObjectExtensions-ToLogRepresentation-System-Object- 'xyLOGIX.Core.Extensions.ObjectExtensions.ToLogRepresentation(System.Object)')
 - [PathnameExtensions](#T-xyLOGIX-Core-Extensions-PathnameExtensions 'xyLOGIX.Core.Extensions.PathnameExtensions')
+  - [AppendDirectorySeparatorChar(path)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-AppendDirectorySeparatorChar-System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.AppendDirectorySeparatorChar(System.String)')
   - [FileExists(pathname)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.FileExists(System.String)')
+  - [GetDirectoryName(file)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-GetDirectoryName-System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.GetDirectoryName(System.String)')
+  - [GetRelativePath(baseDir,path)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-GetRelativePath-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.GetRelativePath(System.String,System.String)')
   - [HasAnyOfTheseExtensions(pathname,extensions)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasAnyOfTheseExtensions(System.String,System.String[])')
   - [HasExtension(pathname,extension)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasExtension-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasExtension(System.String,System.String)')
   - [MatchesPath(target,source)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-MatchesPath-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.MatchesPath(System.String,System.String)')
@@ -10662,6 +10665,25 @@ Exposes static method(s) to extend the [String](http://msdn.microsoft.com/query/
 order to help a caller in using [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variables known
 or suspected to contain the fully-qualified pathname of a folder or a file.
 
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-AppendDirectorySeparatorChar-System-String-'></a>
+### AppendDirectorySeparatorChar(path) `method`
+
+##### Summary
+
+Ensures a trailing directory separator is present.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') ending with a directory
+separator; otherwise, the method is idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the pathname that is to
+be modified. |
+
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String-'></a>
 ### FileExists(pathname) `method`
 
@@ -10690,6 +10712,67 @@ This method is superior to calling the
 method.  This is due
 to the fact that the other method throws an exception if it is passed a blank
 string, whereas this method simply returns `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-GetDirectoryName-System-String-'></a>
+### GetDirectoryName(file) `method`
+
+##### Summary
+
+Attempts to get the fully-qualified pathname of the containing folder of the
+specified `file`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname of the folder that contains the specified `file`;
+otherwise, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| file | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
+pathname of the file for whom the pathname of the containing folder is to be
+retrieved. |
+
+##### Remarks
+
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+parameter, `file`, then this method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+
+
+
+The method also returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value if an
+exception is encountered while attempting to retrieve the containing folder's
+pathname.
+
+
+
+This method will attempt to discover the fully-qualified pathname
+of the folder that contains the specified `file` regardless
+of whether the specified `file` exists.
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-GetRelativePath-System-String,System-String-'></a>
+### GetRelativePath(baseDir,path) `method`
+
+##### Summary
+
+Computes a relative path string from `baseDir` to
+`path`.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') relative path;
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') on failure.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| baseDir | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') base directory path. |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') absolute path to be relativized. |
 
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]-'></a>
 ### HasAnyOfTheseExtensions(pathname,extensions) `method`

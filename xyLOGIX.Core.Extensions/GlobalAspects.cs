@@ -7,17 +7,15 @@ using PostSharp.Patterns.Diagnostics;
         AttributePriority = 1,
         AttributeTargetTypeAttributes = MulticastAttributes.Private |
                                         MulticastAttributes.Protected |
-                                        MulticastAttributes.Internal |
-                                        MulticastAttributes.Internal,
+                                        MulticastAttributes.Internal ,
         AttributeTargetMemberAttributes = MulticastAttributes.Private |
                                           MulticastAttributes.Protected |
-                                          MulticastAttributes.Internal |
                                           MulticastAttributes.Internal |
                                           MulticastAttributes.UserGenerated
     )]
 [assembly:
     Log(
         AttributeExclude = true,
-        AttributeTargetMembers = "regex:^get_|^set_|^add_|^remove_|^._get",
+        AttributeTargetMembers = "regex:^get_|^set_|^add_|^remove_",
         AttributePriority = 2
     )]

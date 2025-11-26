@@ -44,7 +44,7 @@ namespace xyLOGIX.Core.Extensions
             catch (Exception ex)
             {
                 // dump all the exception info to the log
-                DebugUtils.LogException(ex, false);
+                DebugUtils.LogException(ex);
                 result = path;
             }
 
@@ -181,7 +181,7 @@ namespace xyLOGIX.Core.Extensions
             catch (Exception ex)
             {
                 // dump all the exception info to the log
-                DebugUtils.LogException(ex, false);
+                DebugUtils.LogException(ex);
                 result = string.Empty;
             }
 

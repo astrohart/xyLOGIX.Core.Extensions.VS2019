@@ -6175,7 +6175,7 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         /// <returns>
         /// If successful, the specified <paramref name="pathname" />, formatted
-        /// as a Visual Studio Solution (<c>*.sln</c>) file entry, e.g.,
+        /// as a Visual Studio Solution (<c>*.sln</c>, <c>*.slnx</c>) file entry, e.g.,
         /// <c>MyProject\MyProject.csproj</c>; otherwise, the
         /// <see cref="F:System.String.Empty" /> value is returned.
         /// </returns>

@@ -14991,7 +14991,7 @@ Formats the specified `pathname` as a Visual Studio Solution
 ##### Returns
 
 If successful, the specified `pathname`, formatted
-as a Visual Studio Solution (`*.sln`) file entry, e.g.,
+as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry, e.g.,
 `MyProject\MyProject.csproj`; otherwise, the
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is returned.
 

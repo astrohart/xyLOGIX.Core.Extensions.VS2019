@@ -7,7 +7,7 @@ using PostSharp.Patterns.Diagnostics;
         AttributePriority = 1,
         AttributeTargetTypeAttributes = MulticastAttributes.Private |
                                         MulticastAttributes.Protected |
-                                        MulticastAttributes.Internal ,
+                                        MulticastAttributes.Internal,
         AttributeTargetMemberAttributes = MulticastAttributes.Private |
                                           MulticastAttributes.Protected |
                                           MulticastAttributes.Internal |

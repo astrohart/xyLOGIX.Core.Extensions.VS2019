@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("xyLOGIX.Core.Extensions")]
 [assembly:
     AssemblyDescription(
-        "Provides objects and functionality support to extend the default behavior of system objects and types."
+        "Provides object(s) and functionality support to extend the default behavior of system objects and types."
     )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]

@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("xyLOGIX.Core.Extensions.Providers.Interfaces")]
 [assembly:
     AssemblyDescription(
-        "Provides objects and functionality to provide access to data and UI element associations.  This particular library holds the C# interfaces for this component."
+        "Provides object(s) and functionality to provide access to data and UI element associations.  This particular library holds the C# interfaces for this component."
     )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]

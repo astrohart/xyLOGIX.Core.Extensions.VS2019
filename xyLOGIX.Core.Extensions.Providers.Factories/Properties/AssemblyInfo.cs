@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("xyLOGIX.Core.Extensions.Providers.Factories")]
 [assembly:
     AssemblyDescription(
-        "Provides objects and functionality to provide access to data and UI element associations.  This particular library holds the factories for this component."
+        "Provides object(s) and functionality to provide access to data and UI element associations.  This particular library holds the factories for this component."
     )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]

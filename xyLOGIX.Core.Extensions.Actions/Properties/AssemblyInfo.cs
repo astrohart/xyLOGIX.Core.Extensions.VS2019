@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("xyLOGIX.Core.Extensions.Actions")]
-[assembly: AssemblyDescription("Provides objects and functionality support to extend the default behavior of system objects and types.  This particular class library contains static action class(es) (named after verbs) and extension methods to carry out operation(s) in a functional-programming style.")]
+[assembly: AssemblyDescription("Provides object(s) and functionality support to extend the default behavior of system objects and types.  This particular class library contains static action class(es) (named after verbs) and extension methods to carry out operation(s) in a functional-programming style.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
 [assembly: AssemblyProduct("xyLOGIX Core Extensions Library")]

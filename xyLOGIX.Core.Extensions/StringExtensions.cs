@@ -6159,13 +6159,11 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Formats the specified <paramref name="pathname" /> as a Visual Studio Solution
-        /// (<c>*.sln</c>) file entry, e.g., <c>MyProject\MyProject.csproj</c>.
-        /// </summary>
+        /// Formats the specified <paramref name="pathname" /> as a Visual Studio Solution (<c>*.sln</c>, <c>*.slnx</c>) file entry, e.g., <c>MyProject\MyProject.csproj</c>.
+        /// </summary>  
         /// <param name="pathname">
         /// (Required.) A <see cref="T:System.String" /> that contains the fully-qualified
-        /// pathname of a file that is to be formatted as a Visual Studio Solution (
-        /// <c>*.sln</c>) file entry.
+        /// pathname of a file that is to be formatted as a Visual Studio Solution (<c>*.sln</c>, <c>*.slnx</c>) file entry.
         /// </param>
         /// <remarks>
         /// If a <see langword="null" /> blank, or

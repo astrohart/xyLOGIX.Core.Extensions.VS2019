@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 using xyLOGIX.Core.Debug;
 using xyLOGIX.Core.Extensions.Properties;
@@ -1066,6 +1067,66 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Counts the number of times that the specified <paramref name="text" /> appears
+        /// in the specified <paramref name="target" /> <see cref="T:System.String" />.
+        /// </summary>
+        /// <param name="target">
+        /// (Required.) A <see cref="T:System.String" /> in which to
+        /// search for the specified <paramref name="text" />.
+        /// </param>
+        /// <param name="text">
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// text for which to search in the <paramref name="target" />.
+        /// </param>
+        /// <param name="comparison">
+        /// (Optional.) One of the <see cref="T:System.StringComparison" /> value(s) that
+        /// defines how to perform the comparison of the <paramref name="target" /> and
+        /// <paramref name="text" />.
+        /// <para />
+        /// The default value of this parameter is
+        /// <see cref="F:System.StringComparison.Ordinal" />.
+        /// </param>
+        /// <returns>
+        /// The number of times that the specified <paramref name="text" />
+        /// appears in the specified <paramref name="target" />; otherwise, zero.
+        /// </returns>
+        public static int CountNumberOfOccurrences(
+            [NotLogged] this string target,
+            [NotLogged] string text,
+            StringComparison comparison = StringComparison.Ordinal
+        )
+        {
+            var result = 0;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(target))
+                    return result;
+                if (string.IsNullOrEmpty(text)) return result;
+                if (!Enum.IsDefined(typeof(StringComparison), comparison))
+                    return result;
+
+                var position = 0;
+                while ((position = target.IndexOf(
+                           text, position, comparison
+                       )) != -1)
+                {
+                    Interlocked.Increment(ref result);
+                    position = Interlocked.Add(ref position, text.Length);
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = 0;
             }
 
             return result;
@@ -6159,11 +6220,14 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Formats the specified <paramref name="pathname" /> as a Visual Studio Solution (<c>*.sln</c>, <c>*.slnx</c>) file entry, e.g., <c>MyProject\MyProject.csproj</c>.
-        /// </summary>  
+        /// Formats the specified <paramref name="pathname" /> as a Visual Studio Solution
+        /// (<c>*.sln</c>, <c>*.slnx</c>) file entry, e.g.,
+        /// <c>MyProject\MyProject.csproj</c>.
+        /// </summary>
         /// <param name="pathname">
         /// (Required.) A <see cref="T:System.String" /> that contains the fully-qualified
-        /// pathname of a file that is to be formatted as a Visual Studio Solution (<c>*.sln</c>, <c>*.slnx</c>) file entry.
+        /// pathname of a file that is to be formatted as a Visual Studio Solution (
+        /// <c>*.sln</c>, <c>*.slnx</c>) file entry.
         /// </param>
         /// <remarks>
         /// If a <see langword="null" /> blank, or

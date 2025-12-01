@@ -582,6 +582,7 @@
 - [StringArrayExtensions](#T-xyLOGIX-Core-Extensions-StringArrayExtensions 'xyLOGIX.Core.Extensions.StringArrayExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-StringArrayExtensions-#cctor 'xyLOGIX.Core.Extensions.StringArrayExtensions.#cctor')
   - [DumpToLog(values)](#M-xyLOGIX-Core-Extensions-StringArrayExtensions-DumpToLog-System-String[]- 'xyLOGIX.Core.Extensions.StringArrayExtensions.DumpToLog(System.String[])')
+  - [ReplaceInAll(target,findWhat,replaceWith)](#M-xyLOGIX-Core-Extensions-StringArrayExtensions-ReplaceInAll-System-Collections-Generic-IEnumerable{System-String},System-String,System-String- 'xyLOGIX.Core.Extensions.StringArrayExtensions.ReplaceInAll(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)')
 - [StringExtensions](#T-xyLOGIX-Core-Extensions-StringExtensions 'xyLOGIX.Core.Extensions.StringExtensions')
   - [AcronymList](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList 'xyLOGIX.Core.Extensions.StringExtensions.AcronymList')
   - [AcronymPattern](#F-xyLOGIX-Core-Extensions-StringExtensions-AcronymPattern 'xyLOGIX.Core.Extensions.StringExtensions.AcronymPattern')
@@ -11151,6 +11152,57 @@ array to the application log.
 | values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Reference to the [String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') whose
 contents are to be logged. |
 
+<a name='M-xyLOGIX-Core-Extensions-StringArrayExtensions-ReplaceInAll-System-Collections-Generic-IEnumerable{System-String},System-String,System-String-'></a>
+### ReplaceInAll(target,findWhat,replaceWith) `method`
+
+##### Summary
+
+Replaces all occurrences of a specified substring with another
+substring in each string within the provided `target`
+collection.
+
+##### Returns
+
+An [IEnumerable\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable`1 'System.Collections.Generic.IEnumerable`1')
+containing the string(s) with the specified replacements applied.
+
+
+
+String(s) that are `null`, the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or whitespace in the
+`target` collection are returned unchanged.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| target | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | The collection of strings to process.
+
+
+
+If `target` is `null`, an empty collection
+is returned. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to find within each string. If
+`findWhat` is `null` or empty, no
+replacements are performed. |
+| replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to replace `findWhat`
+with.
+
+
+
+If `replaceWith` is `null`, it is treated as
+an empty string. |
+
+##### Remarks
+
+This method processes each string in the collection individually.
+
+
+
+If a string in the collection  is `null`, the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or consists only of whitespace, it
+is included in the resultset without modification.
+
 <a name='T-xyLOGIX-Core-Extensions-StringExtensions'></a>
 ## StringExtensions `type`
 
@@ -14985,8 +15037,7 @@ string is returned.
 
 ##### Summary
 
-Formats the specified `pathname` as a Visual Studio Solution
-(`*.sln`) file entry, e.g., `MyProject\MyProject.csproj`.
+Formats the specified `pathname` as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry, e.g., `MyProject\MyProject.csproj`.
 
 ##### Returns
 
@@ -15000,8 +15051,7 @@ as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry, e.g.,
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the fully-qualified
-pathname of a file that is to be formatted as a Visual Studio Solution (
-`*.sln`) file entry. |
+pathname of a file that is to be formatted as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry. |
 
 ##### Remarks
 

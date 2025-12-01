@@ -624,6 +624,7 @@
   - [ContainsNoCase(collection,value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-Collections-Generic-IEnumerable{System-String},System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNoCase(System.Collections.Generic.IEnumerable{System.String},System.String)')
   - [ContainsNumbers(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNumbers-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsNumbers(System.String)')
   - [ContainsWhitespace(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-ContainsWhitespace-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.ContainsWhitespace(System.String)')
+  - [CountNumberOfOccurrences(target,text,comparison)](#M-xyLOGIX-Core-Extensions-StringExtensions-CountNumberOfOccurrences-System-String,System-String,System-StringComparison- 'xyLOGIX.Core.Extensions.StringExtensions.CountNumberOfOccurrences(System.String,System.String,System.StringComparison)')
   - [DoInitialCaps(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.DoInitialCaps(System.String)')
   - [DomainMapper(match)](#M-xyLOGIX-Core-Extensions-StringExtensions-DomainMapper-System-Text-RegularExpressions-Match- 'xyLOGIX.Core.Extensions.StringExtensions.DomainMapper(System.Text.RegularExpressions.Match)')
   - [EndsWithAny(value,endings)](#M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-String[]- 'xyLOGIX.Core.Extensions.StringExtensions.EndsWithAny(System.String,System.String[])')
@@ -11985,6 +11986,36 @@ If the argument of the `value` parameter is
 `null`, blank, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
 value, then this method returns `true`.
 
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-CountNumberOfOccurrences-System-String,System-String,System-StringComparison-'></a>
+### CountNumberOfOccurrences(target,text,comparison) `method`
+
+##### Summary
+
+Counts the number of times that the specified `text` appears
+in the specified `target`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String').
+
+##### Returns
+
+The number of times that the specified `text`
+appears in the specified `target`; otherwise, zero.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') in which to
+search for the specified `text`. |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+text for which to search in the `target`. |
+| comparison | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Optional.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
+defines how to perform the comparison of the `target` and
+`text`.
+
+
+
+The default value of this parameter is
+[Ordinal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison.Ordinal 'System.StringComparison.Ordinal'). |
+
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String-'></a>
 ### DoInitialCaps(value) `method`
 
@@ -15037,7 +15068,9 @@ string is returned.
 
 ##### Summary
 
-Formats the specified `pathname` as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry, e.g., `MyProject\MyProject.csproj`.
+Formats the specified `pathname` as a Visual Studio Solution
+(`*.sln`, `*.slnx`) file entry, e.g.,
+`MyProject\MyProject.csproj`.
 
 ##### Returns
 
@@ -15051,7 +15084,8 @@ as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry, e.g.,
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the fully-qualified
-pathname of a file that is to be formatted as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry. |
+pathname of a file that is to be formatted as a Visual Studio Solution (
+`*.sln`, `*.slnx`) file entry. |
 
 ##### Remarks
 

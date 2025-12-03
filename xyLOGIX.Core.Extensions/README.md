@@ -658,6 +658,7 @@
   - [GetPersonFirstName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonFirstName(System.String)')
   - [GetPersonLastName(fullName)](#M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.GetPersonLastName(System.String)')
   - [IsAbsolutePath(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePath(System.String)')
+  - [IsAbsolutePathSilent(path)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePathSilent-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAbsolutePathSilent(System.String)')
   - [IsAcronymOrStateAbbr(array,i)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAcronymOrStateAbbr-System-Collections-Generic-IList{System-String},System-Int32- 'xyLOGIX.Core.Extensions.StringExtensions.IsAcronymOrStateAbbr(System.Collections.Generic.IList{System.String},System.Int32)')
   - [IsAlphaNumeric(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumeric-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumeric(System.String)')
   - [IsAlphaNumericLowercase(value)](#M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.IsAlphaNumericLowercase(System.String)')
@@ -12940,6 +12941,25 @@ input, a [InvalidDataException](http://msdn.microsoft.com/query/dev14.query?appI
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String-'></a>
 ### IsAbsolutePath(path) `method`
+
+##### Summary
+
+Determines whether the specified `path` is a
+fully-qualified, absolute path or not.
+
+##### Returns
+
+`true` if the `path` specified is
+a fully-qualified, absolute path; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the path to be checked. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePathSilent-System-String-'></a>
+### IsAbsolutePathSilent(path) `method`
 
 ##### Summary
 

@@ -1608,6 +1608,9 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the specified <paramref name="value" /> is equal to,
         /// regardless of case, any of the item(s) in the specified
         /// <paramref name="list" />.
+        /// <para/>
+        /// <b>NOTE:</b> A case-insensitive comparison is done of each of the element(s)
+        /// in <paramref name="list"/> to the specified <paramref name="value"/>.
         /// </summary>
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing the

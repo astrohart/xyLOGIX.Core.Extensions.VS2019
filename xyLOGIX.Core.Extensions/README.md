@@ -12369,6 +12369,11 @@ Determines whether the specified `value` is equal to,
 regardless of case, any of the item(s) in the specified
 `list`.
 
+
+
+A case-insensitive comparison is done of each of the element(s)
+in `list` to the specified `value`.
+
 ##### Returns
 
 `true` if one of the element(s) of the specified

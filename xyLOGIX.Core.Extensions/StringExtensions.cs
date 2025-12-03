@@ -2546,7 +2546,141 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the <paramref name="path" /> specified is
         /// a fully-qualified, absolute path; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool IsAbsolutePath(this string path)
+        [Log(AttributeExclude = false)]
+        public static bool IsAbsolutePath([NotLogged] this string path)
+        {
+            var result = false;
+
+            try
+            {
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "StringExtensions.IsAbsolutePath *** INFO: Checking whether the value of the parameter, 'path', is blank..."
+                );
+
+                // Check whether the value of the parameter, 'path', is blank.
+                // If this is so, then emit an error message to the log file, and
+                // then terminate the execution of this method.
+                if (string.IsNullOrWhiteSpace(path))
+                {
+                    // The parameter, 'path' was either passed a null value, or it is blank.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "StringExtensions.IsAbsolutePath: *** ERROR *** The parameter, 'path', was either passed a null value, or it is blank. Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"StringExtensions.IsAbsolutePath: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** SUCCESS *** The parameter, 'path', is not blank.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "*** StringExtensions.IsAbsolutePath: Checking whether the specified pathname is rooted..."
+                );
+
+                // Check to see whether the specified pathname is rooted.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (!Path.IsPathRooted(path))
+                {
+                    // The specified pathname is NOT rooted.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR *** The specified pathname is NOT rooted.  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"*** StringExtensions.IsAbsolutePath: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "StringExtensions.IsAbsolutePath: *** SUCCESS *** The specified pathname is rooted.  Proceeding..."
+                );
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "StringExtensions.IsAbsolutePath: Checking whether the path root does NOT equal the directory-separator character..."
+                );
+
+                // Check to see whether the path root does NOT equal the directory-separator character.
+                // If this is not the case, then write an error message to the log file,
+                // and then terminate the execution of this method.
+                if (Path.GetPathRoot(path)
+                        .Equals(
+                            Path.DirectorySeparatorChar.ToString(),
+                            StringComparison.Ordinal
+                        ))
+                {
+                    // The path root is equal to the directory-separator character.  This is not desirable.
+                    DebugUtils.WriteLine(
+                        DebugLevel.Error,
+                        "*** ERROR *** The path root is equal to the directory-separator character.  Stopping..."
+                    );
+
+                    DebugUtils.WriteLine(
+                        DebugLevel.Debug,
+                        $"*** StringExtensions.IsAbsolutePath: Result = {result}"
+                    );
+
+                    // stop.
+                    return result;
+                }
+
+                DebugUtils.WriteLine(
+                    DebugLevel.Info,
+                    "StringExtensions.IsAbsolutePath: *** SUCCESS *** The path root does NOT equal the directory-separator character.  Proceeding..."
+                );
+
+                /*
+                 * If we made it this far with no Exception(s) getting caught, then
+                 * assume that the operation(s) succeeded.
+                 */
+
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"StringExtensions.IsAbsolutePath: Result = {result}"
+            );
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <paramref name="path" /> is a
+        /// fully-qualified, absolute path or not.
+        /// </summary>
+        /// <param name="path"> (Required.) String containing the path to be checked. </param>
+        /// <returns>
+        /// <see langword="true" /> if the <paramref name="path" /> specified is
+        /// a fully-qualified, absolute path; <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool IsAbsolutePathSilent([NotLogged] this string path)
         {
             if (string.IsNullOrWhiteSpace(path))
                 return false; // obviously not the case

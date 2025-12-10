@@ -673,18 +673,6 @@ namespace xyLOGIX.Core.Extensions
             [DebuggerStepThrough] set;
         }
 
-        /// <summary>
-        /// Gets a value indicating whether the control should display focus cues.
-        /// </summary>
-        /// <remarks>
-        /// The return value of this property is hard coded to be
-        /// <see langword="true" /> if, and only if, the value of the
-        /// <see cref="P:xyLOGIX.Core.Extensions.IListView.View" />
-        /// property is not
-        /// equal to <see cref="F:System.Windows.Forms.View.Details" />.
-        /// </remarks>
-        bool ShowFocusCues { [DebuggerStepThrough] get; }
-
         /// <summary> Gets or sets the height and width of the control. </summary>
         /// <returns>
         /// The <see cref="T:System.Drawing.Size" /> that represents the height

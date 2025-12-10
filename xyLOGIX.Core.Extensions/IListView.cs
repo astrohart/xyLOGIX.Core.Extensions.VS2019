@@ -168,13 +168,17 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Gets or sets a value indicating whether clicking an item selects all its
-        /// subitems.
+        /// subitem(s).
         /// </summary>
-        /// <returns>
-        /// <see langword="true" /> if clicking an item selects all its subitems;
-        /// otherwise, <see langword="false" />.
-        /// The default is <see langword="false" />.
-        /// </returns>
+        /// <remarks>
+        /// When set to <see langword="true" />, clicking an item selects the entire row in
+        /// Details view.
+        /// <para />
+        /// When set to <see langword="false" />, only the item's label is selected.
+        /// <para />
+        /// This property affects both the visual appearance and the behavior of the
+        /// control.
+        /// </remarks>
         bool FullRowSelect
         {
             [DebuggerStepThrough] get;

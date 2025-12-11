@@ -32,16 +32,22 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the specified <paramref name="component" /> is set to a
         /// <see langword="null" /> reference or has been disposed.
         /// </summary>
+        /// <param name="component">
+        /// (Required.) Reference to an instance of an object that implements the
+        /// <see cref="T:System.ComponentModel.IComponent" /> interface that refers to the
+        /// component that is to be checked.
+        /// </param>
         /// <remarks>
         /// Uses the <see cref="P:System.Windows.Forms.Control.IsDisposed" /> for
         /// WinForms controls and falls back to reflection and a conservative probe for
-        /// other Component implementations.
+        /// other <see cref="T:System.ComponentModel.IComponent" /> interface
+        /// implementations.
         /// <para />
         /// On any exception the method logs and returns <see langword="true" />.
         /// </remarks>
         [Log(AttributeExclude = true)]
         public static bool IsNullOrDisposed(
-            [NotLogged] this Component component
+            [NotLogged] this IComponent component
         )
         {
             var result = false;

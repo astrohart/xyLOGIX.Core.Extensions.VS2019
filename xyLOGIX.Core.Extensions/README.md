@@ -46,7 +46,7 @@
   - [SelectFirstItem(comboBox)](#M-xyLOGIX-Core-Extensions-ComboBoxExtensions-SelectFirstItem-System-Windows-Forms-ComboBox- 'xyLOGIX.Core.Extensions.ComboBoxExtensions.SelectFirstItem(System.Windows.Forms.ComboBox)')
 - [ComponentExtensions](#T-xyLOGIX-Core-Extensions-ComponentExtensions 'xyLOGIX.Core.Extensions.ComponentExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-ComponentExtensions-#cctor 'xyLOGIX.Core.Extensions.ComponentExtensions.#cctor')
-  - [IsNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ComponentExtensions-IsNullOrDisposed-System-ComponentModel-Component- 'xyLOGIX.Core.Extensions.ComponentExtensions.IsNullOrDisposed(System.ComponentModel.Component)')
+  - [IsNullOrDisposed(component)](#M-xyLOGIX-Core-Extensions-ComponentExtensions-IsNullOrDisposed-System-ComponentModel-IComponent- 'xyLOGIX.Core.Extensions.ComponentExtensions.IsNullOrDisposed(System.ComponentModel.IComponent)')
 - [ControlExtensions](#T-xyLOGIX-Core-Extensions-ControlExtensions 'xyLOGIX.Core.Extensions.ControlExtensions')
   - [ControlFormAssociationProvider](#P-xyLOGIX-Core-Extensions-ControlExtensions-ControlFormAssociationProvider 'xyLOGIX.Core.Extensions.ControlExtensions.ControlFormAssociationProvider')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-ControlExtensions-#cctor 'xyLOGIX.Core.Extensions.ControlExtensions.#cctor')
@@ -1813,8 +1813,8 @@ being created or before any `static` members are referenced.
 We've decorated this constructor with the `[Log(AttributeExclude = true)]`
 attribute in order to simplify the logging output.
 
-<a name='M-xyLOGIX-Core-Extensions-ComponentExtensions-IsNullOrDisposed-System-ComponentModel-Component-'></a>
-### IsNullOrDisposed() `method`
+<a name='M-xyLOGIX-Core-Extensions-ComponentExtensions-IsNullOrDisposed-System-ComponentModel-IComponent-'></a>
+### IsNullOrDisposed(component) `method`
 
 ##### Summary
 
@@ -1823,13 +1823,18 @@ Determines whether the specified `component` is set to a
 
 ##### Parameters
 
-This method has no parameters.
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| component | [System.ComponentModel.IComponent](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IComponent 'System.ComponentModel.IComponent') | (Required.) Reference to an instance of an object that implements the
+[IComponent](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IComponent 'System.ComponentModel.IComponent') interface that refers to the
+component that is to be checked. |
 
 ##### Remarks
 
 Uses the [IsDisposed](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsDisposed 'System.Windows.Forms.Control.IsDisposed') for
 WinForms controls and falls back to reflection and a conservative probe for
-other Component implementations.
+other [IComponent](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IComponent 'System.ComponentModel.IComponent') interface
+implementations.
 
 
 

@@ -6788,13 +6788,21 @@ that has focus.
 ##### Summary
 
 Gets or sets a value indicating whether clicking an item selects all its
-subitems.
+subitem(s).
 
-##### Returns
+##### Remarks
 
-`true` if clicking an item selects all its subitems;
-otherwise, `false`.
-The default is `false`.
+When set to `true`, clicking an item selects the entire row in
+Details view.
+
+
+
+When set to `false`, only the item's label is selected.
+
+
+
+This property affects both the visual appearance and the behavior of the
+control.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-GridLines'></a>
 ### GridLines `property`

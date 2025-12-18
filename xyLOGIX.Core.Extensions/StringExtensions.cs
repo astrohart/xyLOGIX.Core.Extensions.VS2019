@@ -4703,12 +4703,11 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         /// <remarks>
         /// If the argument of the <paramref name="value" /> parameter is blank
-        /// or <see langword="null" />, then the <see cref="F:System.String.Empty" /> value
-        /// is returned.
+        /// or <see langword="null" />, then the method is idempotent.
         /// </remarks>
         public static string RemoveTrailingBackslashes(this string value)
         {
-            var result = string.Empty;
+            var result = value;
 
             try
             {

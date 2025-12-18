@@ -14273,8 +14273,7 @@ trailing backslash characters. |
 ##### Remarks
 
 If the argument of the `value` parameter is blank
-or `null`, then the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value
-is returned.
+or `null`, then the method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-String,System-String,System-StringComparison-'></a>
 ### Replace(source,oldValue,newValue,comparisonType) `method`

@@ -6634,7 +6634,7 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Defines the publicly-exposed methods, properties, and events of a Windows Forms
+Defines the publicly-exposed method(s), property(ies), and event(s) of a Windows Forms
 ListView control.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Activation'></a>

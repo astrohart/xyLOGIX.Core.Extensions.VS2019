@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
 [assembly:
-    AssemblyProduct("xyLOGIX Support Library for Providers of Extension Data")]
+    AssemblyProduct("Providers of Extension Data")]
 [assembly:
     AssemblyCopyright(
         "Copyright © 2019-24 by xyLOGIX, LLC.  All rights reserved."

@@ -94,7 +94,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         [Log(AttributeExclude = true)]
         public static bool AnyEqualAnyOf<T>(
-            this IEnumerable<T> collection,
+            [NotLogged] this IEnumerable<T> collection,
             params T[] values
         )
         {
@@ -107,7 +107,7 @@ namespace xyLOGIX.Core.Extensions
                               .Length <= 0) return result;
                 if (values == null) return result;
                 if (values.Length <= 0) return result;
-                if (values.Length == 1) return AnyEqual(collection, values[0]);
+                if (values.Length == 1) return collection.AnyEqual(values[0]);
 
                 foreach (var element in collection)
                 {
@@ -289,7 +289,7 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="value"> Source object to check. </param>
         /// <param name="testObjects">
         /// Object or objects that should be compared to value
-        /// with the <see cref="M:System.Object.Equals" /> method.
+        /// with the <see cref="M:System.Object.Equals(System.Object)" /> method.
         /// </param>
         /// <returns>
         /// True if any of the <paramref name="testObjects" /> equals the value;

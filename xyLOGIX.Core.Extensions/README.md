@@ -2724,7 +2724,7 @@ false otherwise.
 | ---- | ---- | ----------- |
 | value | [\`\`0](#T-``0 '``0') | Source object to check. |
 | testObjects | [\`\`0[]](#T-``0[] '``0[]') | Object or objects that should be compared to value
-with the [Equals](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object.Equals 'System.Object.Equals') method. |
+with the [Equals](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object.Equals 'System.Object.Equals(System.Object)') method. |
 
 ##### Generic Types
 

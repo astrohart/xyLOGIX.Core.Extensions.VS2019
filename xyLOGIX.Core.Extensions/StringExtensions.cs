@@ -494,7 +494,7 @@ namespace xyLOGIX.Core.Extensions
         /// If this method is passed the empty string or a blank string as input,
         /// then it returns the empty collection.
         /// </remarks>
-        public static IEnumerable<string> BreakTextIntoLines(string text)
+        public static IEnumerable<string> BreakTextIntoLines(this string text)
         {
             if (string.IsNullOrWhiteSpace(text))
                 return Enumerable.Empty<string>();

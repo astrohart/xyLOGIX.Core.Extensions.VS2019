@@ -547,6 +547,7 @@
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsPositive(System.Decimal)')
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.IsPositive(System.Double)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Decimal)')
+  - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Int32)')
   - [ToNearestCent(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ToNearestCent-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.ToNearestCent(System.Decimal)')
   - [TruncateDecimalPlaces(val,places)](#M-xyLOGIX-Core-Extensions-NumberExtensions-TruncateDecimalPlaces-System-Decimal,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.TruncateDecimalPlaces(System.Decimal,System.Int32)')
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Int32)')
@@ -10472,6 +10473,23 @@ True if the `value` is zero; false otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Value to be compared. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Int32-'></a>
+### IsZero(value) `method`
+
+##### Summary
+
+Determines whether a `value` is zero.
+
+##### Returns
+
+True if the `value` is zero; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to be compared. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ToNearestCent-System-Decimal-'></a>
 ### ToNearestCent(value) `method`

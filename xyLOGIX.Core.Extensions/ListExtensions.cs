@@ -81,7 +81,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="collection">
         /// Reference to a list that implements the
-        /// <see cref="T:System.Collections.Generic.ICollection{T}" /> interface for items
+        /// <see cref="T:System.Collections.Generic.ICollection`1" /> interface for items
         /// of type <typeparamref name="T" />.
         /// </param>
         /// <param name="item">

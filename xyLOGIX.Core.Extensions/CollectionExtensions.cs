@@ -24,7 +24,7 @@ namespace xyLOGIX.Core.Extensions
         /// </typeparam>
         /// <param name="collection">
         /// (Required.) Reference to an instance of an object
-        /// that implements the <see cref="ICollection{T}" /> interface.
+        /// that implements the <see cref="ICollection`1" /> interface.
         /// </param>
         /// <param name="items">
         /// (Required.) One or more instances of
@@ -151,7 +151,7 @@ namespace xyLOGIX.Core.Extensions
         /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
         /// <param name="collection">
         /// (Required.) Reference to an instance of an object
-        /// that implements the <see cref="ICollection{T}" /> interface.
+        /// that implements the <see cref="ICollection`1" /> interface.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified
@@ -192,7 +192,7 @@ namespace xyLOGIX.Core.Extensions
         /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
         /// <param name="collection">
         /// (Required.) Reference to an instance of an object
-        /// that implements the <see cref="ICollection{T}" /> interface.
+        /// that implements the <see cref="ICollection`1" /> interface.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified

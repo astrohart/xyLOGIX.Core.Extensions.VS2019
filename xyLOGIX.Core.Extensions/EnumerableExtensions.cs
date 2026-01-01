@@ -198,7 +198,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="action">
         /// (Required.) Reference to an instance of a
-        /// <see cref="T:System.Action{T}" /> <see langword="delegate" /> that is executed
+        /// <see cref="T:System.Action`1" /> <see langword="delegate" /> that is executed
         /// for each of the elements in the collection, with the corresponding element
         /// passed as its input.
         /// </param>
@@ -246,7 +246,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="action">
         /// (Required.) Reference to an instance of a
-        /// <see cref="T:System.Action{T}" /> <see langword="delegate" /> that is executed
+        /// <see cref="T:System.Action`1" /> <see langword="delegate" /> that is executed
         /// for each of the elements in the collection, with the corresponding element
         /// passed as its input.
         /// </param>

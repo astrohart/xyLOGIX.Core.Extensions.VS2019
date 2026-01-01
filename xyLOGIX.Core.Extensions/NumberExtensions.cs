@@ -625,6 +625,12 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsZero(this decimal value)
             => value == decimal.Zero;
 
+        /// <summary> Determines whether a <paramref name="value" /> is zero. </summary>
+        /// <param name="value"> Value to be compared. </param>
+        /// <returns> True if the <paramref name="value" /> is zero; false otherwise. </returns>
+        public static bool IsZero(this int value)
+            => value == 0;
+
         /// <summary>
         /// Rounds the specified <paramref name="value" /> to the nearest cent, using
         /// banker's rounding, assuming that the specified <paramref name="value" /> is

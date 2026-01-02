@@ -2656,7 +2656,7 @@ specified `collection`.
 | collection | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) Reference to an instance of a collection
 of elements, each of which are of type `T`. |
 | action | [System.Action{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{``0}') | (Required.) Reference to an instance of a
-[Action`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action`1')`delegate` that is executed
+[Action{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{T}')`delegate` that is executed
 for each of the elements in the collection, with the corresponding element
 passed as its input. |
 
@@ -2688,7 +2688,7 @@ specified `collection`.
 | collection | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Reference to an instance of a collection
 of elements, each of which are of type `T`. |
 | action | [System.Action{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{``0}') | (Required.) Reference to an instance of a
-[Action`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action`1')`delegate` that is executed
+[Action{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Action 'System.Action{T}')`delegate` that is executed
 for each of the elements in the collection, with the corresponding element
 passed as its input. |
 
@@ -8674,7 +8674,7 @@ but only if the item is not already present in the collection. If the
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | Reference to a list that implements the
-[ICollection`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection`1') interface for items
+[ICollection{T}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{T}') interface for items
 of type `T`. |
 | item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the
 collection already. |

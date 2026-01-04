@@ -497,16 +497,11 @@ namespace xyLOGIX.Core.Extensions
         public static IEnumerable<string> BreakTextIntoLines(this string text)
         {
             if (string.IsNullOrWhiteSpace(text))
-                return Enumerable.Empty<string>();
+                yield break;
 
-            text = text.Replace("\r\n", "\n");
-            var result = text.Split('\n')
-                             .ToAdvisableCollection();
-            if (result.Any())
-                result = result.Select(TrimLine)
-                               .ToAdvisableCollection();
-
-            return result;
+            var textToUse = text.Replace("\r\n", "\n");
+            foreach (var line in textToUse.Split('\n'))
+                yield return line;
         }
 
         /// <summary>
@@ -736,7 +731,7 @@ namespace xyLOGIX.Core.Extensions
             this string value,
             params string[] searchStrings
         )
-            => ContainsAnyOf(value, searchStrings);
+            => value.ContainsAnyOf(searchStrings);
 
         /// <summary>
         /// Returns <see langword="true" /> if the <paramref name="value" /> has
@@ -762,7 +757,7 @@ namespace xyLOGIX.Core.Extensions
             this string value,
             IEnumerable<string> searchStrings
         )
-            => ContainsAnyOf(value, searchStrings);
+            => value.ContainsAnyOf(searchStrings);
 
         /// <summary>
         /// Returns <see langword="true" /> if the <paramref name="value" />
@@ -786,7 +781,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="false" />.
         /// </remarks>
         public static bool ContainsAny(this string value, char[] searchChars)
-            => ContainsAnyOf(value, searchChars);
+            => value.ContainsAnyOf(searchChars);
 
         /// <summary>
         /// Returns <see langword="true" /> if the <paramref name="value" /> has
@@ -813,7 +808,7 @@ namespace xyLOGIX.Core.Extensions
             IEnumerable<string> searchStrings
         )
             => !string.IsNullOrWhiteSpace(value) && searchStrings != null &&
-               searchStrings.Any(item => ContainsNoCase(value, item));
+               searchStrings.Any(item => value.ContainsNoCase(item));
 
         /// <summary>
         /// Returns <see langword="true" /> if the <paramref name="value" /> has
@@ -849,8 +844,8 @@ namespace xyLOGIX.Core.Extensions
                 if (searchStrings == null || !searchStrings.Any())
                     return result;
 
-                result = ContainsAnyOf(
-                    value, (IEnumerable<string>)searchStrings
+                result = value.ContainsAnyOf(
+                    (IEnumerable<string>)searchStrings
                 );
             }
             catch (Exception ex)
@@ -887,7 +882,7 @@ namespace xyLOGIX.Core.Extensions
         /// </remarks>
         public static bool ContainsAnyOf(this string value, char[] searchChars)
             => !string.IsNullOrWhiteSpace(value) && searchChars != null &&
-               searchChars.Any(item => ContainsNoCase(value, item));
+               searchChars.Any(item => value.ContainsNoCase(item));
 
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> contains a namespace
@@ -976,8 +971,7 @@ namespace xyLOGIX.Core.Extensions
             this IEnumerable<string> collection,
             string value
         )
-            => collection != null &&
-               collection.Any(s => EqualsNoCase(s, value));
+            => collection != null && collection.Any(s => s.EqualsNoCase(value));
 
         /// <summary>
         /// Ascertains whether the specified <see cref="T:System.String" />,
@@ -1341,7 +1335,7 @@ namespace xyLOGIX.Core.Extensions
             this string value,
             IEnumerable<string> endings
         )
-            => EndsWithAny(value, endings.ToArray());
+            => value.EndsWithAny(endings.ToArray());
 
         /// <summary>
         /// Determines if the specified <see cref="T:System.String" />
@@ -1377,7 +1371,7 @@ namespace xyLOGIX.Core.Extensions
             StringComparison comparisonType,
             IEnumerable<string> endings
         )
-            => EndsWithAny(value, comparisonType, endings.ToArray());
+            => value.EndsWithAny(comparisonType, endings.ToArray());
 
         /// <summary>
         /// Determines if the specified <see cref="T:System.String" />
@@ -1408,7 +1402,7 @@ namespace xyLOGIX.Core.Extensions
             this string value,
             params string[] endings
         )
-            => EndsWithAny(value, endings);
+            => value.EndsWithAny(endings);
 
         /// <summary>
         /// Determines if the specified <see cref="T:System.String" />
@@ -1444,7 +1438,7 @@ namespace xyLOGIX.Core.Extensions
             StringComparison comparisonType,
             params string[] endings
         )
-            => EndsWithAny(value, comparisonType, endings);
+            => value.EndsWithAny(comparisonType, endings);
 
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> ends with a colon
@@ -1608,9 +1602,9 @@ namespace xyLOGIX.Core.Extensions
         /// Determines whether the specified <paramref name="value" /> is equal to,
         /// regardless of case, any of the item(s) in the specified
         /// <paramref name="list" />.
-        /// <para/>
+        /// <para />
         /// <b>NOTE:</b> A case-insensitive comparison is done of each of the element(s)
-        /// in <paramref name="list"/> to the specified <paramref name="value"/>.
+        /// in <paramref name="list" /> to the specified <paramref name="value" />.
         /// </summary>
         /// <param name="value">
         /// (Required.) A <see cref="T:System.String" /> containing the
@@ -2734,7 +2728,7 @@ namespace xyLOGIX.Core.Extensions
                 return StateAbbrList.ContainsNoCase(array[i]) |
                        new Regex("\"[^\"]*\"").IsMatch(array[i]) |
                        (!CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
-                        AcronymList.Any(s => EqualsNoCase(s, array[i])));
+                        AcronymList.Any(s => s.EqualsNoCase(array[i])));
             }
 
             if (i > 0) /* means we are past the first word of a phrase */
@@ -3377,14 +3371,15 @@ namespace xyLOGIX.Core.Extensions
 
             if (string.IsNullOrWhiteSpace(currentWord)) return false;
 
-            return (currentWord.EndsWith(".") && EqualsNoCase(
-                       currentWord, words.First()
-                   )) // this is most likely someone's title
+            return (currentWord.EndsWith(".") &&
+                    currentWord.EqualsNoCase(
+                        words.First()
+                    )) // this is most likely someone's title
                    | CapitalizeableAsFirstWords
                        .ContainsNoCase(
                            currentWord
                        ) // any words appearing in this array that are at the beginning of our phrase, should always be initial-capitalized
-                   && EqualsNoCase(currentWord, words.First());
+                   && currentWord.EqualsNoCase(words.First());
         }
 
         /// <summary>
@@ -3957,7 +3952,7 @@ namespace xyLOGIX.Core.Extensions
         /// method returns the empty string.
         /// </remarks>
         public static string PluralizeWord(this string word)
-            => PluralizeWord(word, CultureInfo.CurrentUICulture);
+            => word.PluralizeWord(CultureInfo.CurrentUICulture);
 
         /// <summary>
         /// More Pythonic version of the
@@ -6048,7 +6043,8 @@ namespace xyLOGIX.Core.Extensions
                         .Split('-');
                     array[i] = string.Empty;
                     for (var j = 0; j < parts.Length; j++)
-                        parts[j] = ToInitialCaps(parts[j]);
+                        parts[j] = parts[j]
+                            .ToInitialCaps();
                     array[i] = string.Join("-", parts);
                 }
                 else if (array.Length == 1 || array[i].Length == 1)
@@ -6168,7 +6164,7 @@ namespace xyLOGIX.Core.Extensions
         public static IList<string> TokenizeWithPipe(
             [NotLogged] this string source
         )
-            => TokenizeOn(source);
+            => source.TokenizeOn();
 
         /// <summary>
         /// Obtains the text of the language article specified by the
@@ -6386,7 +6382,7 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 if (string.IsNullOrWhiteSpace(pathname)) return result;
-                if (!IsAbsolutePath(pathname)) return result;
+                if (!pathname.IsAbsolutePath()) return result;
 
                 result =
                     $@"{Path.GetFileName(Path.GetDirectoryName(pathname))}\{Path.GetFileName(pathname)}";

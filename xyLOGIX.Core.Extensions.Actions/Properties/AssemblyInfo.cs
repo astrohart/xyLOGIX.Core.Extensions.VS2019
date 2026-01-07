@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("xyLOGIX Core Extensions Library")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2017-25 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright © 2017-26 by xyLOGIX, LLC.  All rights reserved.")]
 [assembly:
     AssemblyTrademark(
         "This software is a component of xyLOGIX Core Extensions Library.  Core Extensions Library is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]

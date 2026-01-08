@@ -1477,8 +1477,9 @@ It seemed like the `AddRange` way was a waste of system resources.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object
-that implements the [](#!-ICollection`1 'ICollection`1') interface. |
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that
+implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1')
+interface. |
 | items | [\`\`0[]](#T-``0[] '``0[]') | (Required.) One or more instances of
 `T` that are to be added to the collection. |
 

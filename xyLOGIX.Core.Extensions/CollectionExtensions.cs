@@ -23,8 +23,9 @@ namespace xyLOGIX.Core.Extensions
         /// specified <paramref name="collection" />.
         /// </typeparam>
         /// <param name="collection">
-        /// (Required.) Reference to an instance of an object
-        /// that implements the <see cref="ICollection`1" /> interface.
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:System.Collections.Generic.ICollection`1" />
+        /// interface.
         /// </param>
         /// <param name="items">
         /// (Required.) One or more instances of

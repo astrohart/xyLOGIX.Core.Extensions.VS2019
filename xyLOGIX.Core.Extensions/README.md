@@ -1589,7 +1589,7 @@ otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object
-that implements the [](#!-ICollection`1 'ICollection`1') interface. |
+that implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
 
 ##### Generic Types
 
@@ -1622,7 +1622,7 @@ contains zero elements; `false` otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object
-that implements the [](#!-ICollection`1 'ICollection`1') interface. |
+that implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') interface. |
 
 ##### Generic Types
 

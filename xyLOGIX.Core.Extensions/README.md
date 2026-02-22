@@ -564,6 +564,9 @@
   - [HasAnyOfTheseExtensions(pathname,extensions)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasAnyOfTheseExtensions(System.String,System.String[])')
   - [HasExtension(pathname,extension)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-HasExtension-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.HasExtension(System.String,System.String)')
   - [MatchesPath(target,source)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-MatchesPath-System-String,System-String- 'xyLOGIX.Core.Extensions.PathnameExtensions.MatchesPath(System.String,System.String)')
+  - [ReplaceFileNameWith(pathname,newFileName,newPath)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-ReplaceFileNameWith-System-String,System-String,System-String@- 'xyLOGIX.Core.Extensions.PathnameExtensions.ReplaceFileNameWith(System.String,System.String,System.String@)')
+  - [ReplaceInFileName(pathname,findWhat,replaceWith,newFileName)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-ReplaceInFileName-System-String,System-String,System-String,System-String@- 'xyLOGIX.Core.Extensions.PathnameExtensions.ReplaceInFileName(System.String,System.String,System.String,System.String@)')
+  - [ReplaceInLowestLevelFolderName(pathname,findWhat,replaceWith,newPath)](#M-xyLOGIX-Core-Extensions-PathnameExtensions-ReplaceInLowestLevelFolderName-System-String,System-String,System-String,System-String@- 'xyLOGIX.Core.Extensions.PathnameExtensions.ReplaceInLowestLevelFolderName(System.String,System.String,System.String,System.String@)')
 - [ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption')
   - [All](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-All 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.All')
   - [First](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First')
@@ -10950,6 +10953,124 @@ If either or both of `target` and
 `source` are `null`, blank, or the
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method returns
 `false`.
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-ReplaceFileNameWith-System-String,System-String,System-String@-'></a>
+### ReplaceFileNameWith(pathname,newFileName,newPath) `method`
+
+##### Summary
+
+Replaces the file name component of the specified path with a new file name and
+outputs the resulting path.
+
+##### Returns
+
+true if the file name was successfully replaced and the resulting path differs
+from the original; otherwise,
+false.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The full or relative path whose file name will be replaced. Must reference an
+existing directory; otherwise,
+the operation will not succeed. |
+| newFileName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The new file name to use in place of the original file name in the path. This
+should not contain directory
+separators. |
+| newPath | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When the method returns, contains the path with the file name replaced if
+successful; otherwise, contains
+the original path. |
+
+##### Remarks
+
+If the directory portion of the provided path does not exist or is invalid, the
+method returns false and outputs the original path. The method does not check
+whether the new file name is
+valid or whether the resulting file exists. No file system changes are
+performed; only the path string is
+modified.
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-ReplaceInFileName-System-String,System-String,System-String,System-String@-'></a>
+### ReplaceInFileName(pathname,findWhat,replaceWith,newFileName) `method`
+
+##### Summary
+
+Replaces all occurrences of a specified substring, `findWhat`
+, with the substring, `replaceWith`, in the file name portion
+of the specified `pathname` and returns the updated file
+name.
+
+##### Returns
+
+true if the file name was changed as a result of the replacement;
+otherwise, false.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The full or relative path of the file whose file name
+will be modified. Must refer to an existing directory. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to search for within the file name. All
+occurrences will be replaced. |
+| replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string to replace each occurrence of the
+specified substring in the file name. |
+| newFileName | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When this method returns, contains the updated file name with replacements
+applied, or the original file
+name if no replacements were made. If the directory does not exist or the file
+name is invalid, this
+parameter is set to `null`. |
+
+##### Remarks
+
+This method does not modify any files on disk; it only returns the new file
+name as a
+string. The directory specified in `pathname` must exist for
+the operation to succeed. If
+the directory does not exist or the file name is invalid, the method returns
+false and
+`newFileName`
+is set to `null`.
+
+<a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-ReplaceInLowestLevelFolderName-System-String,System-String,System-String,System-String@-'></a>
+### ReplaceInLowestLevelFolderName(pathname,findWhat,replaceWith,newPath) `method`
+
+##### Summary
+
+Replaces occurrences of a specified substring in the name of the lowest-level
+folder containing the file at
+the given path, and outputs a new path with the modified folder name.
+
+##### Returns
+
+true if the folder name was successfully modified and a new path was
+generated; otherwise, false.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The full or relative path to the file whose containing folder name will be
+modified. Cannot be null or
+whitespace. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to search for in the folder name. If not
+found, the folder name remains unchanged. |
+| replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to replace each occurrence of
+`findWhat` in the folder name. |
+| newPath | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When the method returns, contains the new path with the modified folder name if
+the operation succeeds;
+otherwise, contains the original `pathname`. |
+
+##### Remarks
+
+The method does not modify the file system or rename any folders; it only
+generates a
+new path string. If the specified directory or its parent does not exist, or if
+the folder name is null or
+whitespace, the method returns false and outputs the original path. The
+operation is case-sensitive and only
+affects the lowest-level folder in the path.
 
 <a name='T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption'></a>
 ## ReplaceAnyOfOption `type`

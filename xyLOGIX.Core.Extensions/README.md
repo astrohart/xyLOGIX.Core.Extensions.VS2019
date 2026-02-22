@@ -11039,12 +11039,12 @@ is set to `null`.
 ##### Summary
 
 Replaces occurrences of a specified substring in the name of the lowest-level
-folder containing the file at
-the given path, and outputs a new path with the modified folder name.
+folder containing the file
+referenced by the given path, and outputs the modified path.
 
 ##### Returns
 
-true if the folder name was successfully modified and a new path was
+true if the folder name was successfully replaced and the new path was
 generated; otherwise, false.
 
 ##### Parameters
@@ -11054,23 +11054,24 @@ generated; otherwise, false.
 | pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The full or relative path to the file whose containing folder name will be
 modified. Cannot be null or
 whitespace. |
-| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to search for in the folder name. If not
-found, the folder name remains unchanged. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to search for in the lowest-level folder
+name. If not found, no replacement is made. |
 | replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to replace each occurrence of
 `findWhat` in the folder name. |
-| newPath | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When the method returns, contains the new path with the modified folder name if
-the operation succeeds;
-otherwise, contains the original `pathname`. |
+| newPath | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When the method returns, contains the path with the modified folder name if the
+replacement was successful;
+otherwise, contains the original path. |
 
 ##### Remarks
 
-The method does not modify the file system or rename any folders; it only
-generates a
-new path string. If the specified directory or its parent does not exist, or if
-the folder name is null or
-whitespace, the method returns false and outputs the original path. The
-operation is case-sensitive and only
-affects the lowest-level folder in the path.
+The method does not modify the file system; it only returns the modified path
+as a
+string. If the directory or its parent does not exist, or if the folder name is
+null or whitespace, the
+method returns false and outputs the original path. The method handles both
+absolute and relative paths.
+Exceptions encountered during processing are logged and result in a return
+value of false.
 
 <a name='T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption'></a>
 ## ReplaceAnyOfOption `type`

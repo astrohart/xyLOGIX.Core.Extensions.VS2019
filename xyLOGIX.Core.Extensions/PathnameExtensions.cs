@@ -479,55 +479,58 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Replaces all occurrences of the specified substring in
-        /// <paramref name="findWhat" /> in the file name portion of the specified
-        /// <paramref name="pathname" /> with another substring,
-        /// <paramref name="replaceWith" />, and outputs the resulting path.
+        /// Replaces all occurrences of a specified substring, <paramref name="findWhat" />
+        /// , with the substring, <paramref name="replaceWith" />, in the file name portion
+        /// of the specified <paramref name="pathname" /> and returns the updated file
+        /// name.
         /// </summary>
         /// <remarks>
-        /// If the directory specified in <paramref name="pathname" /> does not exist or
-        /// the file
-        /// name is null or whitespace, the method returns false and
-        /// <paramref name="newPath" /> is set to the original
-        /// path. The method does not modify any files on disk; it only returns the
-        /// modified path string. Exceptions
-        /// encountered during processing are logged and result in a return value of false.
+        /// This method does not modify any files on disk; it only returns the new file
+        /// name as a
+        /// string. The directory specified in <paramref name="pathname" /> must exist for
+        /// the operation to succeed. If
+        /// the directory does not exist or the file name is invalid, the method returns
+        /// false and
+        /// <paramref
+        ///     name="newFileName" />
+        /// is set to <see langword="null" />.
         /// </remarks>
         /// <param name="pathname">
-        /// The full or relative path whose file name will be modified. Must refer to a
-        /// file within an existing
-        /// directory.
+        /// The full or relative path of the file whose file name
+        /// will be modified. Must refer to an existing directory.
         /// </param>
         /// <param name="findWhat">
-        /// The substring to search for within the file name portion
-        /// of the path.
+        /// The substring to search for within the file name. All
+        /// occurrences will be replaced.
         /// </param>
         /// <param name="replaceWith">
-        /// The substring to replace each occurrence of
-        /// <paramref name="findWhat" /> in the file name.
+        /// The string to replace each occurrence of the
+        /// specified substring in the file name.
         /// </param>
-        /// <param name="newPath">
-        /// When the method returns, contains the path with the modified file name if the
-        /// operation succeeds; otherwise,
-        /// contains the original path.
+        /// <param name="newFileName">
+        /// When this method returns, contains the updated file name with replacements
+        /// applied, or the original file
+        /// name if no replacements were made. If the directory does not exist or the file
+        /// name is invalid, this
+        /// parameter is set to <see langword="null" />.
         /// </param>
         /// <returns>
-        /// true if the file name was changed and a new path was generated;
+        /// true if the file name was changed as a result of the replacement;
         /// otherwise, false.
         /// </returns>
         public static bool ReplaceInFileName(
             this string pathname,
             string findWhat,
             string replaceWith,
-            out string newPath
+            out string newFileName
         )
         {
             var result = false;
-            newPath = pathname;
+            newFileName = default;
 
             try
             {
-                // Replace the text, findWhat, in the value of Path.GetFileName(pathname) with the text, replaceWith, and then combine it with the result of calling Path.GetDirectoryName(pathname)
+                // Replace the text, findWhat, in the value of Path.GetFileName(pathname) with the text, replaceWith, and then return the new file name in the out parameter, newFileName
                 var directory =
                     Path.GetDirectoryName(
                         Path.GetFullPath(pathname)
@@ -536,7 +539,7 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(directory))
                 {
                     // If the directory is null or whitespace, just return false
-                    newPath = pathname;
+                    newFileName = default;
                     return result;
                 }
 
@@ -547,7 +550,7 @@ namespace xyLOGIX.Core.Extensions
                         DebugLevel.Warning,
                         $"Directory '{directory}' does not exist. Cannot replace file name."
                     );
-                    newPath = pathname;
+                    newFileName = default;
                     return result;
                 }
 
@@ -559,16 +562,14 @@ namespace xyLOGIX.Core.Extensions
                     return result;
                 }
 
-                var newFileName = fileName.Replace(findWhat, replaceWith);
-
-                newPath = Path.Combine(directory, newFileName);
+                newFileName = fileName.Replace(findWhat, replaceWith);
 
                 DebugUtils.Write(
                     DebugLevel.Info,
-                    $"Original pathname: '{pathname}'. New pathname: '{newPath}'."
+                    $"Original pathname: '{pathname}'. New file name: '{newFileName}'."
                 );
-                result = !Path.GetFullPath(pathname)
-                              .Equals(newPath);
+                result = !Path.GetFileName(Path.GetFullPath(pathname))
+                              .Equals(newFileName);
             }
             catch (Exception ex)
             {
@@ -576,7 +577,7 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 result = false;
-                newPath = pathname;
+                newFileName = pathname;
             }
 
             DebugUtils.WriteLine(
@@ -589,17 +590,18 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Replaces occurrences of a specified substring in the name of the lowest-level
-        /// folder containing the file at
-        /// the given path, and outputs a new path with the modified folder name.
+        /// folder containing the file
+        /// referenced by the given path, and outputs the modified path.
         /// </summary>
         /// <remarks>
-        /// The method does not modify the file system or rename any folders; it only
-        /// generates a
-        /// new path string. If the specified directory or its parent does not exist, or if
-        /// the folder name is null or
-        /// whitespace, the method returns false and outputs the original path. The
-        /// operation is case-sensitive and only
-        /// affects the lowest-level folder in the path.
+        /// The method does not modify the file system; it only returns the modified path
+        /// as a
+        /// string. If the directory or its parent does not exist, or if the folder name is
+        /// null or whitespace, the
+        /// method returns false and outputs the original path. The method handles both
+        /// absolute and relative paths.
+        /// Exceptions encountered during processing are logged and result in a return
+        /// value of false.
         /// </remarks>
         /// <param name="pathname">
         /// The full or relative path to the file whose containing folder name will be
@@ -607,20 +609,20 @@ namespace xyLOGIX.Core.Extensions
         /// whitespace.
         /// </param>
         /// <param name="findWhat">
-        /// The substring to search for in the folder name. If not
-        /// found, the folder name remains unchanged.
+        /// The substring to search for in the lowest-level folder
+        /// name. If not found, no replacement is made.
         /// </param>
         /// <param name="replaceWith">
         /// The substring to replace each occurrence of
         /// <paramref name="findWhat" /> in the folder name.
         /// </param>
         /// <param name="newPath">
-        /// When the method returns, contains the new path with the modified folder name if
-        /// the operation succeeds;
-        /// otherwise, contains the original <paramref name="pathname" />.
+        /// When the method returns, contains the path with the modified folder name if the
+        /// replacement was successful;
+        /// otherwise, contains the original path.
         /// </param>
         /// <returns>
-        /// true if the folder name was successfully modified and a new path was
+        /// true if the folder name was successfully replaced and the new path was
         /// generated; otherwise, false.
         /// </returns>
         public static bool ReplaceInLowestLevelFolderName(
@@ -689,10 +691,7 @@ namespace xyLOGIX.Core.Extensions
                 }
 
                 var newFolderName = folderName.Replace(findWhat, replaceWith);
-                newPath = Path.Combine(
-                    parentDirectory, newFolderName,
-                    Path.GetFileName(Path.GetFullPath(pathname))
-                );
+                newPath = Path.Combine(parentDirectory, newFolderName);
                 DebugUtils.Write(
                     DebugLevel.Info,
                     $"Original pathname: '{pathname}'. New pathname: '{newPath}'."

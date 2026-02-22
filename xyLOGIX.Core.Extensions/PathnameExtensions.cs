@@ -231,7 +231,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (extensions == null) return result;
                 if (extensions.Length <= 0) return result;
-                if (!FileExists(pathname)) return result;
+                if (!pathname.FileExists()) return result;
 
                 result = Path.GetExtension(pathname)
                              .IsAnyOf(extensions);
@@ -383,6 +383,334 @@ namespace xyLOGIX.Core.Extensions
 
                 result = false;
             }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Replaces the file name component of the specified path with a new file name and
+        /// outputs the resulting path.
+        /// </summary>
+        /// <remarks>
+        /// If the directory portion of the provided path does not exist or is invalid, the
+        /// method returns false and outputs the original path. The method does not check
+        /// whether the new file name is
+        /// valid or whether the resulting file exists. No file system changes are
+        /// performed; only the path string is
+        /// modified.
+        /// </remarks>
+        /// <param name="pathname">
+        /// The full or relative path whose file name will be replaced. Must reference an
+        /// existing directory; otherwise,
+        /// the operation will not succeed.
+        /// </param>
+        /// <param name="newFileName">
+        /// The new file name to use in place of the original file name in the path. This
+        /// should not contain directory
+        /// separators.
+        /// </param>
+        /// <param name="newPath">
+        /// When the method returns, contains the path with the file name replaced if
+        /// successful; otherwise, contains
+        /// the original path.
+        /// </param>
+        /// <returns>
+        /// true if the file name was successfully replaced and the resulting path differs
+        /// from the original; otherwise,
+        /// false.
+        /// </returns>
+        public static bool ReplaceFileNameWith(
+            this string pathname,
+            string newFileName,
+            out string newPath
+        )
+        {
+            var result = false;
+            newPath = pathname;
+
+            try
+            {
+                // Replace just the result of calling Path.GetFileName(pathname) with newFileName, and then combine it with the result of calling Path.GetDirectoryName(pathname)
+                var directory =
+                    Path.GetDirectoryName(
+                        Path.GetFullPath(pathname)
+                    ); // account for a relative pathname being passed in
+
+                if (string.IsNullOrWhiteSpace(directory))
+                {
+                    // If the directory is null or whitespace, just return false
+                    return result;
+                }
+
+                if (!Directory.Exists(directory))
+                {
+                    // If the directory does not exist, log a warning and return
+                    DebugUtils.Write(
+                        DebugLevel.Warning,
+                        $"Directory '{directory}' does not exist. Cannot replace file name."
+                    );
+                    return result;
+                }
+
+                newPath = Path.Combine(directory, newFileName);
+                DebugUtils.Write(
+                    DebugLevel.Info,
+                    $"Original pathname: '{pathname}'. New pathname: '{newPath}'."
+                );
+
+                result = !Path.GetFullPath(pathname)
+                              .Equals(newPath);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+                newPath = pathname;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"PathnameExtensions.ReplaceFileNameWith: Result = {result}"
+            );
+
+            return result;
+        }
+
+        /// <summary>
+        /// Replaces all occurrences of the specified substring in
+        /// <paramref name="findWhat" /> in the file name portion of the specified
+        /// <paramref name="pathname" /> with another substring,
+        /// <paramref name="replaceWith" />, and outputs the resulting path.
+        /// </summary>
+        /// <remarks>
+        /// If the directory specified in <paramref name="pathname" /> does not exist or
+        /// the file
+        /// name is null or whitespace, the method returns false and
+        /// <paramref name="newPath" /> is set to the original
+        /// path. The method does not modify any files on disk; it only returns the
+        /// modified path string. Exceptions
+        /// encountered during processing are logged and result in a return value of false.
+        /// </remarks>
+        /// <param name="pathname">
+        /// The full or relative path whose file name will be modified. Must refer to a
+        /// file within an existing
+        /// directory.
+        /// </param>
+        /// <param name="findWhat">
+        /// The substring to search for within the file name portion
+        /// of the path.
+        /// </param>
+        /// <param name="replaceWith">
+        /// The substring to replace each occurrence of
+        /// <paramref name="findWhat" /> in the file name.
+        /// </param>
+        /// <param name="newPath">
+        /// When the method returns, contains the path with the modified file name if the
+        /// operation succeeds; otherwise,
+        /// contains the original path.
+        /// </param>
+        /// <returns>
+        /// true if the file name was changed and a new path was generated;
+        /// otherwise, false.
+        /// </returns>
+        public static bool ReplaceInFileName(
+            this string pathname,
+            string findWhat,
+            string replaceWith,
+            out string newPath
+        )
+        {
+            var result = false;
+            newPath = pathname;
+
+            try
+            {
+                // Replace the text, findWhat, in the value of Path.GetFileName(pathname) with the text, replaceWith, and then combine it with the result of calling Path.GetDirectoryName(pathname)
+                var directory =
+                    Path.GetDirectoryName(
+                        Path.GetFullPath(pathname)
+                    ); // account for a relative pathname being passed in
+
+                if (string.IsNullOrWhiteSpace(directory))
+                {
+                    // If the directory is null or whitespace, just return false
+                    newPath = pathname;
+                    return result;
+                }
+
+                if (!Directory.Exists(directory))
+                {
+                    // If the directory does not exist, log a warning and return
+                    DebugUtils.Write(
+                        DebugLevel.Warning,
+                        $"Directory '{directory}' does not exist. Cannot replace file name."
+                    );
+                    newPath = pathname;
+                    return result;
+                }
+
+                var fileName = Path.GetFileName(pathname);
+
+                if (string.IsNullOrWhiteSpace(fileName))
+                {
+                    // If the file name is null or whitespace, just return false
+                    return result;
+                }
+
+                var newFileName = fileName.Replace(findWhat, replaceWith);
+
+                newPath = Path.Combine(directory, newFileName);
+
+                DebugUtils.Write(
+                    DebugLevel.Info,
+                    $"Original pathname: '{pathname}'. New pathname: '{newPath}'."
+                );
+                result = !Path.GetFullPath(pathname)
+                              .Equals(newPath);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+                newPath = pathname;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"PathnameExtensions.ReplaceInFileName: Result = {result}"
+            );
+
+            return result;
+        }
+
+        /// <summary>
+        /// Replaces occurrences of a specified substring in the name of the lowest-level
+        /// folder containing the file at
+        /// the given path, and outputs a new path with the modified folder name.
+        /// </summary>
+        /// <remarks>
+        /// The method does not modify the file system or rename any folders; it only
+        /// generates a
+        /// new path string. If the specified directory or its parent does not exist, or if
+        /// the folder name is null or
+        /// whitespace, the method returns false and outputs the original path. The
+        /// operation is case-sensitive and only
+        /// affects the lowest-level folder in the path.
+        /// </remarks>
+        /// <param name="pathname">
+        /// The full or relative path to the file whose containing folder name will be
+        /// modified. Cannot be null or
+        /// whitespace.
+        /// </param>
+        /// <param name="findWhat">
+        /// The substring to search for in the folder name. If not
+        /// found, the folder name remains unchanged.
+        /// </param>
+        /// <param name="replaceWith">
+        /// The substring to replace each occurrence of
+        /// <paramref name="findWhat" /> in the folder name.
+        /// </param>
+        /// <param name="newPath">
+        /// When the method returns, contains the new path with the modified folder name if
+        /// the operation succeeds;
+        /// otherwise, contains the original <paramref name="pathname" />.
+        /// </param>
+        /// <returns>
+        /// true if the folder name was successfully modified and a new path was
+        /// generated; otherwise, false.
+        /// </returns>
+        public static bool ReplaceInLowestLevelFolderName(
+            this string pathname,
+            string findWhat,
+            string replaceWith,
+            out string newPath
+        )
+        {
+            var result = false;
+            newPath = pathname;
+
+            try
+            {
+                // Replace the text, findWhat, in the name of the lowest-level folder containing the file having the specified pathname, with the text, replaceWith, and then combine it with the result of calling Path.GetFileName(pathname)
+                var directory =
+                    Path.GetDirectoryName(
+                        Path.GetFullPath(pathname)
+                    ); // account for a relative pathname being passed in
+
+                if (string.IsNullOrWhiteSpace(directory))
+                {
+                    // If the directory is null or whitespace, just return false
+                    newPath = pathname;
+                    return result;
+                }
+
+                if (!Directory.Exists(directory))
+                {
+                    // If the directory does not exist, log a warning and return
+                    DebugUtils.Write(
+                        DebugLevel.Warning,
+                        $"Directory '{directory}' does not exist. Cannot replace folder name."
+                    );
+                    newPath = pathname;
+                    return result;
+                }
+
+                var parentDirectory = Path.GetDirectoryName(directory);
+
+                if (string.IsNullOrWhiteSpace(parentDirectory))
+                {
+                    // If the parent directory is null or whitespace, just return false
+                    newPath = pathname;
+                    return result;
+                }
+
+                if (!Directory.Exists(parentDirectory))
+                {
+                    // If the parent directory does not exist, log a warning and return
+                    DebugUtils.Write(
+                        DebugLevel.Warning,
+                        $"Parent directory, '{parentDirectory}', does not exist. Cannot replace folder name."
+                    );
+                    newPath = pathname;
+                    return result;
+                }
+
+                var folderName = Path.GetFileName(directory);
+
+                if (string.IsNullOrWhiteSpace(folderName))
+                {
+                    // If the folder name is null or whitespace, just return false
+                    newPath = pathname;
+                    return result;
+                }
+
+                var newFolderName = folderName.Replace(findWhat, replaceWith);
+                newPath = Path.Combine(
+                    parentDirectory, newFolderName,
+                    Path.GetFileName(Path.GetFullPath(pathname))
+                );
+                DebugUtils.Write(
+                    DebugLevel.Info,
+                    $"Original pathname: '{pathname}'. New pathname: '{newPath}'."
+                );
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+                newPath = pathname;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"PathnameExtensions.ReplaceInFolderName: Result = {result}"
+            );
 
             return result;
         }

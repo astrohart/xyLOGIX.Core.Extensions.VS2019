@@ -80,6 +80,7 @@
   - [#cctor()](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-#cctor 'xyLOGIX.Core.Extensions.EnumerableExtensions.#cctor')
   - [AnyEqualAnyOf\`\`1(collection,values)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-AnyEqualAnyOf``1-System-Collections-Generic-IEnumerable{``0},``0[]- 'xyLOGIX.Core.Extensions.EnumerableExtensions.AnyEqualAnyOf``1(System.Collections.Generic.IEnumerable{``0},``0[])')
   - [AnyEqual\`\`1(collection,value)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-AnyEqual``1-System-Collections-Generic-IEnumerable{``0},``0- 'xyLOGIX.Core.Extensions.EnumerableExtensions.AnyEqual``1(System.Collections.Generic.IEnumerable{``0},``0)')
+  - [AnyEquals\`\`1(collection,value)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-AnyEquals``1-System-Collections-Generic-IEnumerable{``0},``0- 'xyLOGIX.Core.Extensions.EnumerableExtensions.AnyEquals``1(System.Collections.Generic.IEnumerable{``0},``0)')
   - [Except\`\`1(source,value)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-Except``1-System-Collections-Generic-IEnumerable{``0},``0- 'xyLOGIX.Core.Extensions.EnumerableExtensions.Except``1(System.Collections.Generic.IEnumerable{``0},``0)')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IList{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IList{``0},System.Action{``0})')
   - [ForEach\`\`1(collection,action)](#M-xyLOGIX-Core-Extensions-EnumerableExtensions-ForEach``1-System-Collections-Generic-IEnumerable{``0},System-Action{``0}- 'xyLOGIX.Core.Extensions.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})')
@@ -2586,6 +2587,36 @@ specified `collection`. |
 
 <a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-AnyEqual``1-System-Collections-Generic-IEnumerable{``0},``0-'></a>
 ### AnyEqual\`\`1(collection,value) `method`
+
+##### Summary
+
+Determines if any of the element(s) of the specified
+`collection` happen to equal the specified
+`value`.
+
+##### Returns
+
+`true` if at least one element of the specified
+`collection` matches the specified `value`;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| collection | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Collection of values, all of the type,
+`T`, that is to be searched. |
+| value | [\`\`0](#T-``0 '``0') | (Required.) The value that is to be matched. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T | (Required.) Data type of the individual elements of the
+specified `collection`. |
+
+<a name='M-xyLOGIX-Core-Extensions-EnumerableExtensions-AnyEquals``1-System-Collections-Generic-IEnumerable{``0},``0-'></a>
+### AnyEquals\`\`1(collection,value) `method`
 
 ##### Summary
 

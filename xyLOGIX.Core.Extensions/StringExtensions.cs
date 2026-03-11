@@ -3910,6 +3910,53 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Normalizes all line ending(s) in the specified <paramref name="content" /> to
+        /// Windows-style line ending(s), i.e., <c>\r\n</c>.
+        /// </summary>
+        /// <param name="content">
+        /// (Required.) A <see cref="T:System.String" /> containing the text whose line
+        /// ending(s) are to be normalized to Windows-style line ending(s).
+        /// </param>
+        /// <remarks>
+        /// This method first normalizes all line ending variants — including <c>\r\n</c>
+        /// (Windows), <c>\r</c> (legacy Mac), and <c>\n</c> (Unix/Linux) — to a single
+        /// <c>\n</c> character, and then replaces each <c>\n</c> with
+        /// <see cref="P:System.Environment.NewLine" />, which on Windows is <c>\r\n</c>.
+        /// <para />
+        /// If an exception is caught during the normalization process, then this method is
+        /// idempotent; i.e., the original <paramref name="content" /> value is returned
+        /// unchanged.
+        /// </remarks>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the
+        /// <paramref name="content" /> with all line ending(s) normalized to
+        /// Windows-style (<c>\r\n</c>) line ending(s); otherwise, the method is
+        /// idempotent.
+        /// </returns>
+        public static string NormalizeLineEndingsToWindows(
+            [NotLogged] this string content
+        )
+        {
+            var result = content;
+
+            try
+            {
+                result = content.Replace("\r\n", "\n")
+                                .Replace("\r", "\n")
+                                .Replace("\n", Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = content;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Pluralizes the word passed in, applying language rules from the
         /// specified <paramref name="culture" />.
         /// </summary>

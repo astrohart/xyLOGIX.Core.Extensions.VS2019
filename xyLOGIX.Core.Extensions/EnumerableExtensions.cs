@@ -130,6 +130,31 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines if any of the element(s) of the specified
+        /// <paramref name="collection" /> happen to equal the specified
+        /// <paramref name="value" />.
+        /// </summary>
+        /// <typeparam name="T">
+        /// (Required.) Data type of the individual elements of the
+        /// specified <paramref name="collection" />.
+        /// </typeparam>
+        /// <param name="collection">
+        /// (Required.) Collection of values, all of the type,
+        /// <typeparamref name="T" />, that is to be searched.
+        /// </param>
+        /// <param name="value">(Required.) The value that is to be matched.</param>
+        /// <returns>
+        /// <see langword="true" /> if at least one element of the specified
+        /// <paramref name="collection" /> matches the specified <paramref name="value" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool AnyEquals<T>(this IEnumerable<T> collection, T value)
+
+            // ReSharper disable once InvokeAsExtensionMemberFromSameClass
+            => AnyEqual(collection, value);
+
+        /// <summary>
         /// A more fluent version of the LINQ <c>Except</c> extension method; this method
         /// takes a <paramref name="source" /> enumerable collection, and filters out just
         /// the element equalling <paramref name="value" /> from it.

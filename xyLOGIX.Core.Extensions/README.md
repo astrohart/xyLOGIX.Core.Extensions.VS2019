@@ -692,6 +692,7 @@
   - [MakeSingular(pluralWord)](#M-xyLOGIX-Core-Extensions-StringExtensions-MakeSingular-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MakeSingular(System.String)')
   - [MatchesNoCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesNoCase(System.String,System.String)')
   - [MatchesWithCase(stringToSearch,findWhat)](#M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String- 'xyLOGIX.Core.Extensions.StringExtensions.MatchesWithCase(System.String,System.String)')
+  - [NormalizeLineEndingsToWindows(content)](#M-xyLOGIX-Core-Extensions-StringExtensions-NormalizeLineEndingsToWindows-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.NormalizeLineEndingsToWindows(System.String)')
   - [PluralizeWord(word,culture)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String,System.Globalization.CultureInfo)')
   - [PluralizeWord(word)](#M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String- 'xyLOGIX.Core.Extensions.StringExtensions.PluralizeWord(System.String)')
   - [PostfixFormat(value,args)](#M-xyLOGIX-Core-Extensions-StringExtensions-PostfixFormat-System-String,System-Object[]- 'xyLOGIX.Core.Extensions.StringExtensions.PostfixFormat(System.String,System.Object[])')
@@ -13919,6 +13920,41 @@ the `stringToSearch` value(s) contains instances of the
 value containing the text that is to be searched. |
 | findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
 the text that is to be located within the `stringToSearch`. |
+
+<a name='M-xyLOGIX-Core-Extensions-StringExtensions-NormalizeLineEndingsToWindows-System-String-'></a>
+### NormalizeLineEndingsToWindows(content) `method`
+
+##### Summary
+
+Normalizes all line ending(s) in the specified `content` to
+Windows-style line ending(s), i.e., `\r\n`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+`content` with all line ending(s) normalized to
+Windows-style (`\r\n`) line ending(s); otherwise, the method is
+idempotent.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text whose line
+ending(s) are to be normalized to Windows-style line ending(s). |
+
+##### Remarks
+
+This method first normalizes all line ending variants — including `\r\n`
+(Windows), `\r` (legacy Mac), and `\n` (Unix/Linux) — to a single
+`\n` character, and then replaces each `\n` with
+[NewLine](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Environment.NewLine 'System.Environment.NewLine'), which on Windows is `\r\n`.
+
+
+
+If an exception is caught during the normalization process, then this method is
+idempotent; i.e., the original `content` value is returned
+unchanged.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo-'></a>
 ### PluralizeWord(word,culture) `method`

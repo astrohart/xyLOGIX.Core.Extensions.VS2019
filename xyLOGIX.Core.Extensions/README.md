@@ -8912,7 +8912,7 @@ true if `value` is in the
 ##### Summary
 
 Returns the `index`-th element counted from the end of
-the `source` collection (0 ??? last, 1 ??? second-to-last,
+the `source` collection (0 ⇒ last, 1 ⇒ second-to-last,
 and so on).
 
 ##### Returns
@@ -9071,7 +9071,7 @@ prior to being returned by this method.
 
 ##### Summary
 
-Writes a list variable out in ???Pythonic??? notation, e.g.,
+Writes a list variable out in “Pythonic” notation, e.g.,
 `[ 1, 2, 3 ]`.
 
 ##### Returns
@@ -13945,8 +13945,8 @@ ending(s) are to be normalized to Windows-style line ending(s). |
 
 ##### Remarks
 
-This method first normalizes all line ending variants ??? including `\r\n`
-(Windows), `\r` (legacy Mac), and `\n` (Unix/Linux) ??? to a single
+This method first normalizes all line ending variants — including `\r\n`
+(Windows), `\r` (legacy Mac), and `\n` (Unix/Linux) — to a single
 `\n` character, and then replaces each `\n` with
 [NewLine](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Environment.NewLine 'System.Environment.NewLine'), which on Windows is `\r\n`.
 
@@ -14519,7 +14519,7 @@ Replaces all occurrences of `oldChar` with
 `newChar`.  The
 `comparisonType` parameter is accepted only to
 mirror the other overload; it is ignored because
-character???for???character replacement is culture???invariant.
+character‑for‑character replacement is culture‑invariant.
 
 ##### Returns
 
@@ -14585,7 +14585,7 @@ The default value of this parameter is
 
 ##### Summary
 
-Replaces the copyright symbol (??) with a PowerShell escape sequence that allows
+Replaces the copyright symbol (©) with a PowerShell escape sequence that allows
 it to show up correctly in a Git commit message.
 
 ##### Returns

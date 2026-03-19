@@ -968,10 +968,42 @@ namespace xyLOGIX.Core.Extensions
         /// regardless of case; FALSE otherwise.
         /// </returns>
         public static bool ContainsNoCase(
-            this IEnumerable<string> collection,
+            [NotLogged] this IEnumerable<string> collection,
             string value
         )
-            => collection != null && collection.Any(s => s.EqualsNoCase(value));
+        {
+            var result = false;
+
+            try
+            {
+                if (collection == null) return result;
+                if (!collection.Any()) return result;
+
+                foreach (var current in collection.ToArray())
+                {
+                    if (!current.EqualsNoCase(
+                            value, StringComparison.OrdinalIgnoreCase
+                        )) continue;
+
+                    result = true;
+                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            DebugUtils.WriteLine(
+                DebugLevel.Debug,
+                $"StringExtensions.ContainsNoCase: Result = {result}"
+            );
+
+            return result;
+        }
 
         /// <summary>
         /// Ascertains whether the specified <see cref="T:System.String" />,

@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
     AssemblyProduct("Providers of Extension Data")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2019-24 by xyLOGIX, LLC.  All rights reserved."
+        "Copyright © 2019-26 by xyLOGIX, LLC.  All rights reserved."
     )]
 [assembly:
     AssemblyTrademark(

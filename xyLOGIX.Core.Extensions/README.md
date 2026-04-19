@@ -7,6 +7,10 @@
   - [#cctor()](#M-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions-#cctor 'xyLOGIX.Core.Extensions.BindingManagerBaseExtensions.#cctor')
 - [BoundComboBox](#T-xyLOGIX-Core-Extensions-BoundComboBox 'xyLOGIX.Core.Extensions.BoundComboBox')
   - [OnSelectedIndexChanged(e)](#M-xyLOGIX-Core-Extensions-BoundComboBox-OnSelectedIndexChanged-System-EventArgs- 'xyLOGIX.Core.Extensions.BoundComboBox.OnSelectedIndexChanged(System.EventArgs)')
+- [ByteArrayExtensions](#T-xyLOGIX-Core-Extensions-ByteArrayExtensions 'xyLOGIX.Core.Extensions.ByteArrayExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-ByteArrayExtensions-#cctor 'xyLOGIX.Core.Extensions.ByteArrayExtensions.#cctor')
+  - [GetSafeLength(bytes)](#M-xyLOGIX-Core-Extensions-ByteArrayExtensions-GetSafeLength-System-Byte[]- 'xyLOGIX.Core.Extensions.ByteArrayExtensions.GetSafeLength(System.Byte[])')
+  - [ToHexString(bytes)](#M-xyLOGIX-Core-Extensions-ByteArrayExtensions-ToHexString-System-Byte[]- 'xyLOGIX.Core.Extensions.ByteArrayExtensions.ToHexString(System.Byte[])')
 - [Calculate](#T-xyLOGIX-Core-Extensions-Calculate 'xyLOGIX.Core.Extensions.Calculate')
   - [DeltaBetween(end,start)](#M-xyLOGIX-Core-Extensions-Calculate-DeltaBetween-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.DeltaBetween(System.Decimal,System.Decimal)')
   - [FractionalChangeBetween(end,start)](#M-xyLOGIX-Core-Extensions-Calculate-FractionalChangeBetween-System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.Calculate.FractionalChangeBetween(System.Decimal,System.Decimal)')
@@ -830,6 +834,91 @@ Raises the
 | ---- | ---- | ----------- |
 | e | [System.EventArgs](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.EventArgs 'System.EventArgs') | An [EventArgs](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.EventArgs 'System.EventArgs') that contains the event
 data. |
+
+<a name='T-xyLOGIX-Core-Extensions-ByteArrayExtensions'></a>
+## ByteArrayExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Provides extension method(s) for working with byte array(s).
+
+<a name='M-xyLOGIX-Core-Extensions-ByteArrayExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[ByteArrayExtensions](#T-xyLOGIX-Core-Extensions-ByteArrayExtensions 'xyLOGIX.Core.Extensions.ByteArrayExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any `static` members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-ByteArrayExtensions-GetSafeLength-System-Byte[]-'></a>
+### GetSafeLength(bytes) `method`
+
+##### Summary
+
+Returns the length of the specified byte array, `bytes`, or
+zero if the array is set to a `null` reference.
+
+##### Returns
+
+The length of the byte array, or zero if the array is set to a
+`null` reference.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| bytes | [System.Byte[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Byte[] 'System.Byte[]') | (Require.) Reference to the byte array whose length is to
+be determined. |
+
+##### Remarks
+
+Calls to this method are not logged.
+
+<a name='M-xyLOGIX-Core-Extensions-ByteArrayExtensions-ToHexString-System-Byte[]-'></a>
+### ToHexString(bytes) `method`
+
+##### Summary
+
+Converts a byte array, `bytes` to a
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') of hex value(s), separated by space(s), each of
+which correspond to the value of the byte(s) in the array.
+
+##### Returns
+
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') representation of the byte array.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| bytes | [System.Byte[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Byte[] 'System.Byte[]') | (Required.) Reference to the byte array that is to be
+converted. |
+
+##### Remarks
+
+If a `null` reference is supplied as the argument of
+the `bytes` parameter, or if the `bytes`
+parameter refers to an array with zero element(s), then the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is returned.
 
 <a name='T-xyLOGIX-Core-Extensions-Calculate'></a>
 ## Calculate `type`

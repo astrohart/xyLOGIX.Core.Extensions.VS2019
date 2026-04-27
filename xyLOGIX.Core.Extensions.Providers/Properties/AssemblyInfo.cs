@@ -11,8 +11,7 @@ using System.Runtime.InteropServices;
     )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
-[assembly:
-    AssemblyProduct("Providers of Extension Data")]
+[assembly: AssemblyProduct("Providers of Extension Data")]
 [assembly:
     AssemblyCopyright(
         "Copyright © 2019-26 by xyLOGIX, LLC.  All rights reserved."

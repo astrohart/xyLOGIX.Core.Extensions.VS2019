@@ -7,7 +7,7 @@ namespace xyLOGIX.Core.Extensions
     /// Defines the publicly-exposed events, methods and properties of a control that
     /// inherits <see cref="T:System.Windows.Forms.UserControl" />.
     /// </summary>
-    public interface IUserControl
+    public interface IUserControl : IWin32Window
     {
         /// <summary>
         /// Gets or sets the border style for the text box.

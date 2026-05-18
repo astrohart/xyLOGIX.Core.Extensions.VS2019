@@ -1,7 +1,7 @@
-﻿# xyLOGIX.Core.Extensions � Programmer's Guide
+# xyLOGIX.Core.Extensions — Programmer's Guide
 
-> **Target stack:** C# 7.3 � .NET Framework 4.8 � Visual Studio 2019 / 2022  
-> **NuGet dependencies of note:** PostSharp 2024.x � log4net 3.0.x � AlphaFS 2.2.x � Newtonsoft.Json 13.0.x
+> **Target stack:** C# 7.3 — .NET Framework 4.8 — Visual Studio 2019 / 2022  
+> **NuGet dependencies of note:** PostSharp 2024.x — log4net 3.0.x — AlphaFS 2.2.x — Newtonsoft.Json 13.0.x
 
 ---
 
@@ -30,15 +30,15 @@
    - 4.10 [Pathname Utilities](#410-pathname-utilities)
    - 4.11 [Markdown Utilities](#411-markdown-utilities)
    - 4.12 [Text Transformation Utilities](#412-text-transformation-utilities)
-   - 4.13 [WinForms � Control Utilities](#413-winforms--control-utilities)
-   - 4.14 [WinForms � Form Utilities](#414-winforms--form-utilities)
-   - 4.15 [WinForms � TextBox Utilities](#415-winforms--textbox-utilities)
-   - 4.16 [WinForms � ComboBox Utilities](#416-winforms--combobox-utilities)
-   - 4.17 [WinForms � CheckedListBox Utilities](#417-winforms--checkedlistbox-utilities)
-   - 4.18 [WinForms � ToolStripMenuItem Utilities](#418-winforms--toolstripmenuitem-utilities)
-   - 4.19 [WinForms � BindingManagerBase Utilities](#419-winforms--bindingmanagerbase-utilities)
-   - 4.20 [WinForms � Component Utilities](#420-winforms--component-utilities)
-   - 4.21 [WinForms Interfaces � IForm, IControl, IUserControl, etc.](#421-winforms-interfaces--iform-icontrol-iusercontrol-etc)
+   - 4.13 [WinForms — Control Utilities](#413-winforms--control-utilities)
+   - 4.14 [WinForms — Form Utilities](#414-winforms--form-utilities)
+   - 4.15 [WinForms — TextBox Utilities](#415-winforms--textbox-utilities)
+   - 4.16 [WinForms — ComboBox Utilities](#416-winforms--combobox-utilities)
+   - 4.17 [WinForms — CheckedListBox Utilities](#417-winforms--checkedlistbox-utilities)
+   - 4.18 [WinForms — ToolStripMenuItem Utilities](#418-winforms--toolstripmenuitem-utilities)
+   - 4.19 [WinForms — BindingManagerBase Utilities](#419-winforms--bindingmanagerbase-utilities)
+   - 4.20 [WinForms — Component Utilities](#420-winforms--component-utilities)
+   - 4.21 [WinForms Interfaces — IForm, IControl, IUserControl, etc.](#421-winforms-interfaces--iform-icontrol-iusercontrol-etc)
    - 4.22 [The Prefer Class (Actions)](#422-the-prefer-class-actions)
    - 4.23 [The Round Class (Actions)](#423-the-round-class-actions)
    - 4.24 [The Calculate Class](#424-the-calculate-class)
@@ -62,7 +62,7 @@ The **xyLOGIX.Core.Extensions** solution is a cohesive group of .NET Framework 4
 
 - A `result` variable is declared and initialized to a safe default at the top of every non-`void` method.
 - The entire method body is wrapped in a single `try`/`catch(Exception)` block.
-- Exceptions are logged via `xyLOGIX.Core.Debug.DebugUtils.LogException` and the safe default is returned � callers never receive an unhandled exception.
+- Exceptions are logged via `xyLOGIX.Core.Debug.DebugUtils.LogException` and the safe default is returned — callers never receive an unhandled exception.
 - Input parameters are validated eagerly and individually, using separate `if` guards that `return result;` immediately.
 - PostSharp aspects (`[Log]`, `[ExplicitlySynchronized]`, `[NotLogged]`) are applied consistently to control logging verbosity and threading semantics.
 
@@ -124,7 +124,7 @@ graph TB
 
 This is the primary class library of the solution.  It contains the largest collection of extension classes and support types, including:
 
-- All `*Extensions` static classes � catalogued in full in the table below.
+- All `*Extensions` static classes — catalogued in full in the table below.
 - The `Calculate` and `Transform` static action classes.
 - The `LanguageArticleType` enum and its associated `LanguageArticleTypeValidator`.
 - The `ReplaceAnyOfOption` enum.
@@ -137,11 +137,11 @@ Every class in this table is `public static` and lives in the `xyLOGIX.Core.Exte
 
 | Class | Extended type(s) | 50,000-foot synopsis |
 |---|---|---|
-| `BindingManagerBaseExtensions` | `BindingManagerBase` | Suspends and resumes two-way WinForms data binding on a `BindingManagerBase` instance by toggling each binding's `DataSourceUpdateMode` between `Never` and its original value � useful when you need to update the data source programmatically without triggering cascading change notifications. |
+| `BindingManagerBaseExtensions` | `BindingManagerBase` | Suspends and resumes two-way WinForms data binding on a `BindingManagerBase` instance by toggling each binding's `DataSourceUpdateMode` between `Never` and its original value — useful when you need to update the data source programmatically without triggering cascading change notifications. |
 | `ByteArrayExtensions` | `byte[]` | Provides null-safe helpers for byte arrays, including a safe `Length` accessor that returns `0` for `null` arrays, a hex-string formatter that produces space-separated uppercase pairs (e.g., `"4A 2F 00"`), and a Base-64 encoder. |
 | `CharExtensions` | `char` | Extends `char` with semantic classification predicates such as `IsVowel` and `IsConsonant`, which are used internally by string-manipulation methods like `GetLanguageArticle`. |
 | `CheckedListBoxExtensions` | `CheckedListBox` | Adds bulk check/uncheck operations (`CheckAll`, `UncheckAll`) and a typed `GetCheckedItems<T>` query to `CheckedListBox`, eliminating the need for manual iteration over `CheckedItems` in calling code. |
-| `CollectionExtensions` | `ICollection<T>` | Adds `AddMultiple<T>`, a `params`-based variadic insert that populates an `ICollection<T>` in a single call without allocating a temporary list � a lighter alternative to `AddRange`. |
+| `CollectionExtensions` | `ICollection<T>` | Adds `AddMultiple<T>`, a `params`-based variadic insert that populates an `ICollection<T>` in a single call without allocating a temporary list — a lighter alternative to `AddRange`. |
 | `ComboBoxExtensions` | `ComboBox` | Provides enum-binding helpers (`BindToEnum<T>`, `GetSelectedEnumValue<T>`, `SelectEnumValue<T>`) that populate a `ComboBox` from any `enum` type and leverage `[Description]` attributes for human-readable display text. |
 | `ComponentExtensions` | `IComponent` | Exposes `IsBeingDisposed`, a lightweight heuristic that returns `true` when a component's `Site` property is `null`, signalling that the component is in mid-disposal and should not be interacted with. |
 | `ControlExtensions` | `Control` | The central WinForms threading and lifetime helper: provides the safe cross-thread `InvokeIfRequired` / `InvokeIfRequired<T>` overloads, and the `AssociateWithParentForm` / `GetParentForm` pair that maintains a live `Control`?`Form` registry via the provider infrastructure. |
@@ -157,22 +157,22 @@ Every class in this table is `public static` and lives in the `xyLOGIX.Core.Exte
 | `LongExtensions` | `long` | Mirrors `IntExtensions` for the `long` (`Int64`) type, adding `IsPositive`, `IsNegative`, and `IsZero` predicates so that `long` fields used as counts or identifiers can be guarded with the same idiom. |
 | `MarkdownExtensions` | `string` / `XNode` | Wraps a string in the minimum number of backticks needed to produce a valid Markdown inline-code span (including the edge case where the content itself contains backticks), and preserves XML-node leading whitespace when converting documentation nodes to Markdown. |
 | `NullableDecimalExtensions` | `decimal?` | Provides null-safe sign-check predicates (`IsNegative`, `IsPositive`, `IsZero`, `HasPositiveValue`) for `decimal?`, returning `false` rather than throwing when the nullable has no value. |
-| `NullableDoubleExtensions` | `double?` | The `double?` counterpart of `NullableDecimalExtensions` � same null-safe sign predicates applied to nullable floating-point values. |
-| `NullableIntExtensions` | `int?` | The `int?` counterpart of `NullableDecimalExtensions` � null-safe `IsNegative`, `IsPositive`, `IsZero`, and `HasPositiveValue` for nullable integers. |
-| `NullableLongExtensions` | `long?` | The `long?` counterpart of `NullableDecimalExtensions` � null-safe sign predicates for nullable 64-bit integers. |
+| `NullableDoubleExtensions` | `double?` | The `double?` counterpart of `NullableDecimalExtensions` — same null-safe sign predicates applied to nullable floating-point values. |
+| `NullableIntExtensions` | `int?` | The `int?` counterpart of `NullableDecimalExtensions` — null-safe `IsNegative`, `IsPositive`, `IsZero`, and `HasPositiveValue` for nullable integers. |
+| `NullableLongExtensions` | `long?` | The `long?` counterpart of `NullableDecimalExtensions` — null-safe sign predicates for nullable 64-bit integers. |
 | `NumberExtensions` | `double` / `decimal` | Provides cross-numeric-type helpers including `AsDecimal` (converts `double` to `decimal` safely), and `IsZero`, `IsPositive`, `IsNegative`, and `IsNaN` predicates for both `double` and `decimal`. |
 | `ObjectExtensions` | `object` | Extends `object` with a `ToFormattedString` helper that leverages PostSharp's `IFormattable` infrastructure to produce a structured log-friendly representation of any object without risking a `NullReferenceException`. |
 | `PathnameExtensions` | `string` (path-valued) | Treats an extended `string` as a file-system path and provides AlphaFS-backed helpers including a null-safe file-existence check and an idempotent trailing-separator appender, both correctly handling long (> 260-character) and UNC paths. |
 | `SetExtensions` | `ISet<T>` | Adds a bulk `AddRange<T>` overload to any `ISet<T>`, silently skipping `null` elements and absorbing duplicates in accordance with set semantics. |
-| `StringArrayExtensions` | `string[]` | Extends `string[]` with filtering, joining, and searching helpers � including a `ContainsIgnoreCase` predicate and an `ExceptNullOrWhiteSpace` filter � that would otherwise require verbose inline LINQ in calling code. |
+| `StringArrayExtensions` | `string[]` | Extends `string[]` with filtering, joining, and searching helpers — including a `ContainsIgnoreCase` predicate and an `ExceptNullOrWhiteSpace` filter — that would otherwise require verbose inline LINQ in calling code. |
 | `StringExtensions` | `string` | The largest class in the solution: covers Title Case and sentence-case formatting (with acronym preservation and small-word rules), GUID detection, pluralization / singularization via the EF design-time `PluralizationService`, `ContainsAnyOf`, `ReplaceAnyOf`, `Repeat`, `RemoveAll`, language-article resolution, and numerous other string-manipulation utilities. |
 | `TextBoxExtensions` | `TextBox` | Exposes `SetCueBannerText`, which sends the Win32 `EM_SETCUEBANNER` message (via P/Invoke `SendMessage`) to display grayed-out watermark text in an empty, unfocused `TextBox`, with a live-handle guard via `IsWindow`. |
-| `ToolStripMenuItemExtensions` | `ToolStripMenuItem` | Adds `SetShortcutKeyDisplayString`, which writes a custom string into the shortcut-key column of a menu item � useful for displaying non-standard key-chord descriptions (e.g., mouse gestures) in a `MenuStrip`. |
+| `ToolStripMenuItemExtensions` | `ToolStripMenuItem` | Adds `SetShortcutKeyDisplayString`, which writes a custom string into the shortcut-key column of a menu item — useful for displaying non-standard key-chord descriptions (e.g., mouse gestures) in a `MenuStrip`. |
 | `TypeExtensions` | `Type` | Reflection helpers for working with generic and array `Type` objects: `GetActualType` unwraps the element type of `IList<T>` or array types (with an `AdvisableDictionary` result cache), `HasInterface` checks for interface implementation, and `IsNullable` tests for `Nullable<T>`. |
 
 **Notable external dependencies:**
-- `AlphaFS 2.2.x` � used in place of `System.IO` for file and path operations throughout `PathnameExtensions` and `StringExtensions`.
-- `System.Data.Entity.Design` � used in `StringExtensions` for the `PluralizationService`.
+- `AlphaFS 2.2.x` — used in place of `System.IO` for file and path operations throughout `PathnameExtensions` and `StringExtensions`.
+- `System.Data.Entity.Design` — used in `StringExtensions` for the `PluralizationService`.
 
 ---
 
@@ -250,7 +250,7 @@ All test fixtures derive from `LoggingTestBase` (from `xyLOGIX.Tests.Logging`) s
 
 ### 4.1 String Utilities
 
-**Class:** `StringExtensions` � `xyLOGIX.Core.Extensions`
+**Class:** `StringExtensions` — `xyLOGIX.Core.Extensions`
 
 `StringExtensions` is the largest class in the solution.  It provides operations in several categories.
 
@@ -517,8 +517,8 @@ Console.WriteLine("foo`bar".AsCode());      // `` foo`bar ``
 
 | Member | Kind | Description |
 |---|---|---|
-| `AcronymPattern` | `public const string` | Regex pattern `^[A-Z]+$` � matches strings consisting entirely of uppercase ASCII letters (i.e., acronyms). |
-| `InitialCapsWordPattern` | `public const string` | Regex pattern `[A-Z]+(?![a-z])\|[A-Z][a-z]*` � tokenizes a PascalCase or CamelCase string into its constituent words, treating runs of uppercase letters as acronyms. |
+| `AcronymPattern` | `public const string` | Regex pattern `^[A-Z]+$` — matches strings consisting entirely of uppercase ASCII letters (i.e., acronyms). |
+| `InitialCapsWordPattern` | `public const string` | Regex pattern `[A-Z]+(?![a-z])\|[A-Z][a-z]*` — tokenizes a PascalCase or CamelCase string into its constituent words, treating runs of uppercase letters as acronyms. |
 | `PascalCasedTextToPhrase` | `string PascalCasedTextToPhrase(string input)` | Converts a PascalCase or CamelCase identifier into a human-readable, space-separated phrase.  Acronyms (all-uppercase runs) are preserved in uppercase; other words are lowercased.  Example: `"MyNASAResearchLab"` ? `"My NASA research lab"`. |
 
 **Usage example:**
@@ -535,7 +535,7 @@ Console.WriteLine(Transform.PascalCasedTextToPhrase("xyLOGIXCoreExtensions"));
 
 ---
 
-### 4.13 WinForms � Control Utilities
+### 4.13 WinForms — Control Utilities
 
 **Class:** `ControlExtensions`
 
@@ -546,7 +546,7 @@ Console.WriteLine(Transform.PascalCasedTextToPhrase("xyLOGIXCoreExtensions"));
 | `InvokeIfRequired` | `void InvokeIfRequired(this Control control, Action action)` | Calls `control.Invoke(action)` if `control.InvokeRequired` is `true`; otherwise calls `action` directly on the current thread.  This is the safe cross-thread UI update pattern. |
 | `InvokeIfRequired<T>` | `T InvokeIfRequired<T>(this Control control, Func<T> func)` | Same as above but returns a value. |
 
-**The `InvokeIfRequired` pattern � usage example:**
+**The `InvokeIfRequired` pattern — usage example:**
 
 ```csharp
 using xyLOGIX.Core.Extensions;
@@ -560,7 +560,7 @@ int count = myListBox.InvokeIfRequired(() => myListBox.Items.Count);
 
 ---
 
-### 4.14 WinForms � Form Utilities
+### 4.14 WinForms — Form Utilities
 
 **Class:** `FormExtensions`
 
@@ -575,7 +575,7 @@ int count = myListBox.InvokeIfRequired(() => myListBox.Items.Count);
 
 ---
 
-### 4.15 WinForms � TextBox Utilities
+### 4.15 WinForms — TextBox Utilities
 
 **Class:** `TextBoxExtensions`
 
@@ -596,19 +596,19 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.16 WinForms � ComboBox Utilities
+### 4.16 WinForms — ComboBox Utilities
 
 **Class:** `ComboBoxExtensions`
 
 | Method | Signature | Description |
 |---|---|---|
-| `BindToEnum<T>` | `void BindToEnum<T>(this ComboBox comboBox) where T : Enum` | Populates `comboBox` with `EnumBoundComboBoxItem<T>` entries � one for each defined value of `T` � and sets `DisplayMember` / `ValueMember` appropriately so that the combo box displays the `[Description]` attribute text (or the member name as a fallback) and returns the strongly typed enum value. |
+| `BindToEnum<T>` | `void BindToEnum<T>(this ComboBox comboBox) where T : Enum` | Populates `comboBox` with `EnumBoundComboBoxItem<T>` entries — one for each defined value of `T` — and sets `DisplayMember` / `ValueMember` appropriately so that the combo box displays the `[Description]` attribute text (or the member name as a fallback) and returns the strongly typed enum value. |
 | `GetSelectedEnumValue<T>` | `T GetSelectedEnumValue<T>(this ComboBox comboBox) where T : Enum` | Returns the currently selected enum value of type `T`, or `default(T)` if nothing is selected. |
 | `SelectEnumValue<T>` | `void SelectEnumValue<T>(this ComboBox comboBox, T value) where T : Enum` | Selects the item whose underlying enum value equals `value`, or does nothing if not found. |
 
 ---
 
-### 4.17 WinForms � CheckedListBox Utilities
+### 4.17 WinForms — CheckedListBox Utilities
 
 **Class:** `CheckedListBoxExtensions`
 
@@ -620,7 +620,7 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.18 WinForms � ToolStripMenuItem Utilities
+### 4.18 WinForms — ToolStripMenuItem Utilities
 
 **Class:** `ToolStripMenuItemExtensions`
 
@@ -630,7 +630,7 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.19 WinForms � BindingManagerBase Utilities
+### 4.19 WinForms — BindingManagerBase Utilities
 
 **Class:** `BindingManagerBaseExtensions`
 
@@ -641,17 +641,17 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.20 WinForms � Component Utilities
+### 4.20 WinForms — Component Utilities
 
 **Class:** `ComponentExtensions`
 
 | Method | Signature | Description |
 |---|---|---|
-| `IsBeingDisposed` | `bool IsBeingDisposed(this IComponent component)` | Returns `true` if the component's `Site` is `null` � a reliable heuristic for whether the component is in the process of being disposed. |
+| `IsBeingDisposed` | `bool IsBeingDisposed(this IComponent component)` | Returns `true` if the component's `Site` is `null` — a reliable heuristic for whether the component is in the process of being disposed. |
 
 ---
 
-### 4.21 WinForms Interfaces � `IForm`, `IControl`, `IUserControl`, etc.
+### 4.21 WinForms Interfaces — `IForm`, `IControl`, `IUserControl`, etc.
 
 The solution defines a set of thin WinForms interfaces that mirror the public API of the corresponding `System.Windows.Forms` types.  They are used as parameter and return types throughout the extension classes so that callers can substitute mock objects in tests without depending on a live Win32 window handle.
 
@@ -762,7 +762,7 @@ decimal roundedDiscount = Round.ToNearestCent(discount); // 0.00
 | Method | Signature | Description |
 |---|---|---|
 | `DeltaBetween` | `decimal DeltaBetween(decimal end, decimal start)` | Returns `end - start`.  Returns `decimal.Zero` if `end == start`. Useful for time-series deltas where `end` is the more recent value and `start` is the earlier one. |
-| `FractionalChangeBetween` | `decimal FractionalChangeBetween(decimal end, decimal start)` | Returns `(end - start) / start`.  Defined as zero when `start` is zero (avoids division by zero).  Returns the fractional rate of change � multiply by 100 to obtain a percentage. |
+| `FractionalChangeBetween` | `decimal FractionalChangeBetween(decimal end, decimal start)` | Returns `(end - start) / start`.  Defined as zero when `start` is zero (avoids division by zero).  Returns the fractional rate of change — multiply by 100 to obtain a percentage. |
 | `PercentChangeBetween` | `decimal PercentChangeBetween(decimal end, decimal start)` | Returns `FractionalChangeBetween(end, start) * 100m`, expressed as a percentage. |
 
 **Usage example:**
@@ -826,7 +826,7 @@ IControlFormAssociationProvider provider =
     GetControlFormAssociationProvider.SoleInstance();
 ```
 
-In practice, you will almost never need to call the provider directly � `ControlExtensions.AssociateWithParentForm` and `ControlExtensions.GetParentForm` are the intended entry points.
+In practice, you will almost never need to call the provider directly — `ControlExtensions.AssociateWithParentForm` and `ControlExtensions.GetParentForm` are the intended entry points.
 
 **Interface summary:**
 
@@ -842,7 +842,7 @@ In practice, you will almost never need to call the provider directly � `Contr
 
 ### 5.1 PostSharp Logging Integration
 
-Every project in the solution contains a `GlobalAspects.cs` file that applies assembly-level PostSharp `[Log]` attributes.  This means **every public method call is automatically logged** at entry and exit through PostSharp's weaving � without any manual `DebugUtils.WriteLine` calls needed in the method body for that purpose.
+Every project in the solution contains a `GlobalAspects.cs` file that applies assembly-level PostSharp `[Log]` attributes.  This means **every public method call is automatically logged** at entry and exit through PostSharp's weaving — without any manual `DebugUtils.WriteLine` calls needed in the method body for that purpose.
 
 Methods that are explicitly decorated with `[Log(AttributeExclude = true)]` are excluded from this automatic logging.  These are typically:
 
@@ -850,7 +850,7 @@ Methods that are explicitly decorated with `[Log(AttributeExclude = true)]` are 
 - Very high-frequency, trivially simple methods (e.g., simple property getters and `IsZero` helpers) where log chatter would outweigh benefit.
 - `protected` and `public` instance constructors of singletons and base classes.
 
-The `[NotLogged]` parameter attribute suppresses the logging of individual method parameter values � applied to all non-primitive parameters (`string`, `object`, structs, and reference types) to prevent sensitive or verbose data from appearing in log files.
+The `[NotLogged]` parameter attribute suppresses the logging of individual method parameter values — applied to all non-primitive parameters (`string`, `object`, structs, and reference types) to prevent sensitive or verbose data from appearing in log files.
 
 The `[return: NotLogged]` return attribute suppresses logging of return values for methods returning non-primitive types.
 
@@ -865,7 +865,7 @@ public ReturnType MethodName(ParamType param)
 
     try
     {
-        // Validation gates � each on its own line, each returning result immediately
+        // Validation gates — each on its own line, each returning result immediately
         if (param == null) return result;
         if (param.Length <= 0) return result;
 
@@ -888,10 +888,10 @@ public ReturnType MethodName(ParamType param)
 Key rules:
 
 - The `result` variable is **always** declared before the `try` block.
-- Each validation gate is its own `if` statement � no `||` or `&&` combining multiple checks.
+- Each validation gate is its own `if` statement — no `||` or `&&` combining multiple checks.
 - The `catch` block **always** resets `result` to the same safe default before returning.
 - `void` methods still use `try`/`catch` and validate inputs, but have no `result` variable; they use bare `return;` at gate points.
-- `try`/`catch` blocks are **never** nested � a nested `try` is always extracted into a helper method.
+- `try`/`catch` blocks are **never** nested — a nested `try` is always extracted into a helper method.
 
 ### 5.3 AlphaFS vs. `System.IO`
 
@@ -903,7 +903,7 @@ using File      = Alphaleonis.Win32.Filesystem.File;
 using Path      = Alphaleonis.Win32.Filesystem.Path;
 ```
 
-This is done at the top of the file as `using` aliases so the rest of the file's code reads identically to standard .NET code.  The benefit is transparent support for paths longer than 260 characters (`MAX_PATH`) and correct handling of UNC paths � both common in enterprise Windows environments.
+This is done at the top of the file as `using` aliases so the rest of the file's code reads identically to standard .NET code.  The benefit is transparent support for paths longer than 260 characters (`MAX_PATH`) and correct handling of UNC paths — both common in enterprise Windows environments.
 
 ### 5.4 Thread Safety
 
@@ -927,11 +927,11 @@ foreach (var item in snapshot)
 
 This solution uses `packages.config`-based NuGet management and legacy `.csproj` format (non-SDK-style).
 
-**Step 1 � Add the project reference** (if consuming from within the same solution):
+**Step 1 — Add the project reference** (if consuming from within the same solution):
 
 In Visual Studio 2022, right-click your project ? **Add** ? **Project Reference** ? select `xyLOGIX.Core.Extensions` (and any other projects from this solution you need).
 
-**Step 2 � Add the `using` directive:**
+**Step 2 — Add the `using` directive:**
 
 ```csharp
 using xyLOGIX.Core.Extensions;          // Core extension methods
@@ -939,11 +939,11 @@ using xyLOGIX.Core.Extensions.Actions;  // Prefer, Round
 using xyLOGIX.Core.Extensions.Dynamic;  // DynamicPrefer
 ```
 
-**Step 3 � Verify PostSharp is present:**
+**Step 3 — Verify PostSharp is present:**
 
 This library's `GlobalAspects.cs` applies PostSharp aspects.  If your consuming project does not have PostSharp licensed and installed, you will see build errors from the weaver.  Add the `PostSharp` NuGet package (version matching this solution's `packages.config`) to your consuming project.
 
-**Step 4 � Verify AlphaFS is present (for pathname methods):**
+**Step 4 — Verify AlphaFS is present (for pathname methods):**
 
 Add `AlphaFS 2.2.x` to your project's `packages.config` if you are calling any method in `PathnameExtensions` or the file-related methods of `StringExtensions`.
 

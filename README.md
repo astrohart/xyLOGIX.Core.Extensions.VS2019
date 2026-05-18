@@ -1,7 +1,15 @@
 # xyLOGIX.Core.Extensions — Programmer's Guide
 
-> **Target stack:** C# 7.3 — .NET Framework 4.8 — Visual Studio 2019 / 2022  
-> **NuGet dependencies of note:** PostSharp 2024.x — log4net 3.0.x — AlphaFS 2.2.x — Newtonsoft.Json 13.0.x
+**Target stack:**
+- C# 7.3
+- .NET Framework 4.8
+- Visual Studio 2019 / 2022
+
+**Key NuGet dependencies:**
+- PostSharp 2024.x
+- log4net 3.0.x
+- AlphaFS 2.2.x
+- Newtonsoft.Json 13.0.x
 
 ---
 
@@ -30,14 +38,14 @@
    - 4.10 [Pathname Utilities](#410-pathname-utilities)
    - 4.11 [Markdown Utilities](#411-markdown-utilities)
    - 4.12 [Text Transformation Utilities](#412-text-transformation-utilities)
-   - 4.13 [WinForms — Control Utilities](#413-winforms--control-utilities)
-   - 4.14 [WinForms — Form Utilities](#414-winforms--form-utilities)
-   - 4.15 [WinForms — TextBox Utilities](#415-winforms--textbox-utilities)
-   - 4.16 [WinForms — ComboBox Utilities](#416-winforms--combobox-utilities)
-   - 4.17 [WinForms — CheckedListBox Utilities](#417-winforms--checkedlistbox-utilities)
-   - 4.18 [WinForms — ToolStripMenuItem Utilities](#418-winforms--toolstripmenuitem-utilities)
-   - 4.19 [WinForms — BindingManagerBase Utilities](#419-winforms--bindingmanagerbase-utilities)
-   - 4.20 [WinForms — Component Utilities](#420-winforms--component-utilities)
+   - 4.13 [WinForms: Control Utilities](#413-winforms-control-utilities)
+   - 4.14 [WinForms: Form Utilities](#414-winforms-form-utilities)
+   - 4.15 [WinForms: TextBox Utilities](#415-winforms-textbox-utilities)
+   - 4.16 [WinForms: ComboBox Utilities](#416-winforms-combobox-utilities)
+   - 4.17 [WinForms: CheckedListBox Utilities](#417-winforms-checkedlistbox-utilities)
+   - 4.18 [WinForms: ToolStripMenuItem Utilities](#418-winforms-toolstripmenuitem-utilities)
+   - 4.19 [WinForms: BindingManagerBase Utilities](#419-winforms-bindingmanagerbase-utilities)
+   - 4.20 [WinForms: Component Utilities](#420-winforms-component-utilities)
    - 4.21 [WinForms Interfaces — IForm, IControl, IUserControl, etc.](#421-winforms-interfaces--iform-icontrol-iusercontrol-etc)
    - 4.22 [The Prefer Class (Actions)](#422-the-prefer-class-actions)
    - 4.23 [The Round Class (Actions)](#423-the-round-class-actions)
@@ -535,7 +543,7 @@ Console.WriteLine(Transform.PascalCasedTextToPhrase("xyLOGIXCoreExtensions"));
 
 ---
 
-### 4.13 WinForms — Control Utilities
+### 4.13 WinForms: Control Utilities
 
 **Class:** `ControlExtensions`
 
@@ -560,7 +568,7 @@ int count = myListBox.InvokeIfRequired(() => myListBox.Items.Count);
 
 ---
 
-### 4.14 WinForms — Form Utilities
+### 4.14 WinForms: Form Utilities
 
 **Class:** `FormExtensions`
 
@@ -575,7 +583,7 @@ int count = myListBox.InvokeIfRequired(() => myListBox.Items.Count);
 
 ---
 
-### 4.15 WinForms — TextBox Utilities
+### 4.15 WinForms: TextBox Utilities
 
 **Class:** `TextBoxExtensions`
 
@@ -596,7 +604,7 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.16 WinForms — ComboBox Utilities
+### 4.16 WinForms: ComboBox Utilities
 
 **Class:** `ComboBoxExtensions`
 
@@ -608,7 +616,7 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.17 WinForms — CheckedListBox Utilities
+### 4.17 WinForms: CheckedListBox Utilities
 
 **Class:** `CheckedListBoxExtensions`
 
@@ -620,7 +628,7 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.18 WinForms — ToolStripMenuItem Utilities
+### 4.18 WinForms: ToolStripMenuItem Utilities
 
 **Class:** `ToolStripMenuItemExtensions`
 
@@ -630,7 +638,7 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.19 WinForms — BindingManagerBase Utilities
+### 4.19 WinForms: BindingManagerBase Utilities
 
 **Class:** `BindingManagerBaseExtensions`
 
@@ -641,7 +649,7 @@ mySearchBox.SetCueBannerText("Type here to search...");
 
 ---
 
-### 4.20 WinForms — Component Utilities
+### 4.20 WinForms: Component Utilities
 
 **Class:** `ComponentExtensions`
 

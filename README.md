@@ -1,4 +1,4 @@
-# xyLOGIX.Core.Extensions — Programmer's Guide
+# xyLOGIX.Core.Extensions `module`
 
 **Target stack:**
 - C# 7.3

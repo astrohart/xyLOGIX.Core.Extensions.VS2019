@@ -120,6 +120,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UInt32Extensions.cs" />
     <None Include="key.snk" />
     <Compile Include="ByteArrayExtensions.cs" />
     <Compile Include="ComponentExtensions.cs" />

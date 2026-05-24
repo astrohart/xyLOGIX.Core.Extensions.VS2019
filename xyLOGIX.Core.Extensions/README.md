@@ -553,6 +553,7 @@
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.IsPositive(System.Double)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Decimal)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Int32)')
+  - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-UInt32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.UInt32)')
   - [ToNearestCent(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ToNearestCent-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.ToNearestCent(System.Decimal)')
   - [TruncateDecimalPlaces(val,places)](#M-xyLOGIX-Core-Extensions-NumberExtensions-TruncateDecimalPlaces-System-Decimal,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.TruncateDecimalPlaces(System.Decimal,System.Int32)')
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Int32)')
@@ -776,6 +777,10 @@
   - [#cctor()](#M-xyLOGIX-Core-Extensions-TypeExtensions-#cctor 'xyLOGIX.Core.Extensions.TypeExtensions.#cctor')
   - [GetActualType()](#M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.GetActualType(System.Type)')
   - [IsSameOrSubclassOf(potentialDescendant,potentialBaseType)](#M-xyLOGIX-Core-Extensions-TypeExtensions-IsSameOrSubclassOf-System-Type,System-Type- 'xyLOGIX.Core.Extensions.TypeExtensions.IsSameOrSubclassOf(System.Type,System.Type)')
+- [UInt32Extensions](#T-xyLOGIX-Core-Extensions-UInt32Extensions 'xyLOGIX.Core.Extensions.UInt32Extensions')
+  - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-UInt32Extensions-EqualsOneOf-System-UInt32,System-UInt32[]- 'xyLOGIX.Core.Extensions.UInt32Extensions.EqualsOneOf(System.UInt32,System.UInt32[])')
+  - [IsBitmaskOn(num,bitmask)](#M-xyLOGIX-Core-Extensions-UInt32Extensions-IsBitmaskOn-System-UInt32,System-UInt32- 'xyLOGIX.Core.Extensions.UInt32Extensions.IsBitmaskOn(System.UInt32,System.UInt32)')
+  - [ToOrdinalString(value)](#M-xyLOGIX-Core-Extensions-UInt32Extensions-ToOrdinalString-System-UInt32- 'xyLOGIX.Core.Extensions.UInt32Extensions.ToOrdinalString(System.UInt32)')
 
 <a name='T-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions'></a>
 ## BindingManagerBaseExtensions `type`
@@ -10619,6 +10624,23 @@ True if the `value` is zero; false otherwise.
 | ---- | ---- | ----------- |
 | value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to be compared. |
 
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-UInt32-'></a>
+### IsZero(value) `method`
+
+##### Summary
+
+Determines whether a `value` is zero.
+
+##### Returns
+
+True if the `value` is zero; false otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Value to be compared. |
+
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ToNearestCent-System-Decimal-'></a>
 ### ToNearestCent(value) `method`
 
@@ -16075,3 +16097,89 @@ the same as, or a subclass of, the base type.
 | potentialBaseType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | Reference to the [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type')
 structure of the class you think might be the
 `potentialDescendant`'s base. |
+
+<a name='T-xyLOGIX-Core-Extensions-UInt32Extensions'></a>
+## UInt32Extensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Provides methods that extend the [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32')
+class.
+
+<a name='M-xyLOGIX-Core-Extensions-UInt32Extensions-EqualsOneOf-System-UInt32,System-UInt32[]-'></a>
+### EqualsOneOf(value,list) `method`
+
+##### Summary
+
+Returns a value indicating whether the specified
+`value` is equal to one of the items in a collection of
+integers.
+
+##### Returns
+
+`true` if `value` is one of the
+elements of the collection; `false` if not.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Integer to be compared to the members of the list. |
+| list | [System.UInt32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32[] 'System.UInt32[]') | Collection of integers that should be searched for the
+`value`. |
+
+<a name='M-xyLOGIX-Core-Extensions-UInt32Extensions-IsBitmaskOn-System-UInt32,System-UInt32-'></a>
+### IsBitmaskOn(num,bitmask) `method`
+
+##### Summary
+
+Determines whether a bitmask is 'on' or 'off'.
+
+##### Returns
+
+`true` if the bit that is identified by the bitmask
+in the data is 'on'; `false` if it is not.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| num | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) Value containing the data to be checked. |
+| bitmask | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) Bitmask. |
+
+<a name='M-xyLOGIX-Core-Extensions-UInt32Extensions-ToOrdinalString-System-UInt32-'></a>
+### ToOrdinalString(value) `method`
+
+##### Summary
+
+Converts an [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32')`value` to
+its ordinal string representation, appending the appropriate suffix (e.g.,
+`"st"`, `"nd"`, `"rd"`, `"th"`, etc.) based on the
+specified `value`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the ordinal
+representation of the provided `value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) An [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') value that
+represents the number to format.
+
+
+
+The argument of this parameter must be `1` or greater. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown when the provided
+`value` is less than 1. |

@@ -37,7 +37,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <param name="list">
         /// Reference to a list that implements the
-        /// <see cref="T:System.Collections.Generic.IList" /> interface for items of type
+        /// <see cref="T:System.Collections.Generic.IList`1" /> interface for items of type
         /// <typeparamref name="T" />.
         /// </param>
         /// <param name="item">
@@ -855,7 +855,7 @@ namespace xyLOGIX.Core.Extensions
 
                 // Take (max + 1) to know whether we truncated without
                 // double-enumerating.
-                var items = new List<object>(collection.Count);
+                var items = new AdvisableCollection<object>(collection.Count);
 
                 var itemsTaken = 0;
                 foreach (object item in collection)
@@ -867,8 +867,6 @@ namespace xyLOGIX.Core.Extensions
                     // stop at the greater of max or collection.Count
                     if (itemsTaken >= max + 1) break;
                 }
-
-                items.TrimExcess();
 
                 var sb = new StringBuilder();
 
@@ -931,9 +929,8 @@ namespace xyLOGIX.Core.Extensions
 
             // Take (max + 1) to know whether we truncated without
             // double-enumerating.
-            var items = new List<object>();
+            var items = new AdvisableCollection<object>();
             items.Clear();
-            items.TrimExcess();
 
             var itemsTaken = 0;
             foreach (object item in source)
@@ -945,8 +942,6 @@ namespace xyLOGIX.Core.Extensions
                 // stop at the greater of max or collection.Count
                 if (itemsTaken >= max + 1) break;
             }
-
-            items.TrimExcess();
 
             if (items.Count == 0) return "[]";
 

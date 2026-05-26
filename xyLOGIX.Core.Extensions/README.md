@@ -8775,7 +8775,7 @@ method does nothing.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | Reference to a list that implements the
-[IList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList') interface for items of type
+[IList\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList`1 'System.Collections.Generic.IList`1') interface for items of type
 `T`. |
 | item | [\`\`0](#T-``0 '``0') | Element to be added to the collection, unless it's in the
 collection already. |

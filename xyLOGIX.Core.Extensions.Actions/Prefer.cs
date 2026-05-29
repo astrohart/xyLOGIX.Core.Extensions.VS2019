@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using PostSharp.Patterns.Diagnostics;
+﻿using PostSharp.Patterns.Diagnostics;
 using System;
 using xyLOGIX.Core.Debug;
 
@@ -306,12 +305,12 @@ namespace xyLOGIX.Core.Extensions.Actions
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
-        /// <see cref="T:Single" /> variable whose value is to be returned if it
+        /// <see cref="T:float" /> variable whose value is to be returned if it
         /// indeed does have a value.
         /// </param>
         /// <param name="preferredValue">
         /// (Required.) Reference to the preferred
-        /// <see cref="T:Single" /> value that is to be returned if the
+        /// <see cref="T:float" /> value that is to be returned if the
         /// <paramref name="nullableValue" /> is <see langword="null" /> or does not have a
         /// value.
         /// </param>

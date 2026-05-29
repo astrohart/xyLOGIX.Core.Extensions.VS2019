@@ -251,10 +251,10 @@ returned.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | nullableValue | [System.Nullable{System.Single}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Single}') | (Required.) A nullable
-[Single](#T-Single 'Single') variable whose value is to be returned if it
+[float](#T-float 'float') variable whose value is to be returned if it
 indeed does have a value. |
 | preferredValue | [System.Single](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Single 'System.Single') | (Required.) Reference to the preferred
-[Single](#T-Single 'Single') value that is to be returned if the
+[float](#T-float 'float') value that is to be returned if the
 `nullableValue` is `null` or does not have a
 value. |
 

@@ -5,16 +5,21 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("xyLOGIX.Core.Extensions.Actions")]
-[assembly: AssemblyDescription("Provides object(s) and functionality support to extend the default behavior of system objects and types.  This particular class library contains static action class(es) (named after verbs) and extension methods to carry out operation(s) in a functional-programming style.")]
+[assembly:
+    AssemblyDescription(
+        "Provides object(s) and functionality support to extend the default behavior of system objects and types.  This particular class library contains static action class(es) (named after verbs) and extension methods to carry out operation(s) in a functional-programming style."
+    )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xyLOGIX, LLC")]
 [assembly: AssemblyProduct("xyLOGIX Core Extensions Library")]
 [assembly:
     AssemblyCopyright(
-        "Copyright © 2017-26 by xyLOGIX, LLC.  All rights reserved.")]
+        "Copyright © 2017-26 by xyLOGIX, LLC.  All rights reserved."
+    )]
 [assembly:
     AssemblyTrademark(
-        "This software is a component of xyLOGIX Core Extensions Library.  Core Extensions Library is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties.")]
+        "This software is a component of xyLOGIX Core Extensions Library.  Core Extensions Library is a trademark of xyLOGIX, LLC.  All rights reserved, especially those granted by international treaties."
+    )]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

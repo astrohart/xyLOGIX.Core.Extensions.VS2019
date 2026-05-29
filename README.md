@@ -1,86 +1,94 @@
 # xyLOGIX.Core.Extensions `module`
 
-**Target stack:**
-- C# 7.3
-- .NET Framework 4.8
-- Visual Studio 2019 / 2022
+`xyLOGIX.Core.Extensions` is a proprietary .NET Framework 4.8 / C# 7.3 module that extends the .NET Base Class Library and Windows Forms with defensive, heavily documented utility methods, fluent action classes, dynamic helpers, provider infrastructure, and NUnit test coverage.
 
-**Key NuGet dependencies:**
-- PostSharp 2024.x
-- log4net 3.0.x
-- AlphaFS 2.2.x
-- Newtonsoft.Json 13.0.x
+This repository is part of the xyLOGIX family of class-library modules. It is intentionally conservative: legacy MSBuild projects, `packages.config`, PostSharp, log4net, AlphaFS, and Vsxmd are preserved so downstream xyLOGIX applications and Visual Studio extension code can continue to consume the libraries without churn.
 
----
+## Important notice
 
-## Table of Contents
+This codebase is proprietary software. It is not MIT licensed.
 
-1. [Solution Overview](#1-solution-overview)
-2. [Solution Architecture and Dependency Graph](#2-solution-architecture-and-dependency-graph)
-3. [Project-by-Project Reference](#3-project-by-project-reference)
-   - 3.1 [xyLOGIX.Core.Extensions](#31-xylogixcoreextensions)
-   - 3.2 [xyLOGIX.Core.Extensions.Actions](#32-xylogixcoreextensionsactions)
-   - 3.3 [xyLOGIX.Core.Extensions.Dynamic](#33-xylogixcoreextensionsdynamic)
-   - 3.4 [xyLOGIX.Core.Extensions.Providers.Interfaces](#34-xylogixcoreextensionsprovidersinterfaces)
-   - 3.5 [xyLOGIX.Core.Extensions.Providers](#35-xylogixcoreextensionsproviders)
-   - 3.6 [xyLOGIX.Core.Extensions.Providers.Factories](#36-xylogixcoreextensionsprovidersfactories)
-   - 3.7 [xyLOGIX.Core.Extensions.Tests](#37-xylogixcoreextensionstests)
-4. [Detailed API Reference](#4-detailed-api-reference)
-   - 4.1 [String Utilities](#41-string-utilities)
-   - 4.2 [Enumerable and Collection Utilities](#42-enumerable-and-collection-utilities)
-   - 4.3 [Numeric Utilities](#43-numeric-utilities)
-   - 4.4 [DateTime Utilities](#44-datetime-utilities)
-   - 4.5 [Guid Utilities](#45-guid-utilities)
-   - 4.6 [Enum Utilities](#46-enum-utilities)
-   - 4.7 [Byte Array Utilities](#47-byte-array-utilities)
-   - 4.8 [Dictionary Utilities](#48-dictionary-utilities)
-   - 4.9 [Type Reflection Utilities](#49-type-reflection-utilities)
-   - 4.10 [Pathname Utilities](#410-pathname-utilities)
-   - 4.11 [Markdown Utilities](#411-markdown-utilities)
-   - 4.12 [Text Transformation Utilities](#412-text-transformation-utilities)
-   - 4.13 [WinForms: Control Utilities](#413-winforms-control-utilities)
-   - 4.14 [WinForms: Form Utilities](#414-winforms-form-utilities)
-   - 4.15 [WinForms: TextBox Utilities](#415-winforms-textbox-utilities)
-   - 4.16 [WinForms: ComboBox Utilities](#416-winforms-combobox-utilities)
-   - 4.17 [WinForms: CheckedListBox Utilities](#417-winforms-checkedlistbox-utilities)
-   - 4.18 [WinForms: ToolStripMenuItem Utilities](#418-winforms-toolstripmenuitem-utilities)
-   - 4.19 [WinForms: BindingManagerBase Utilities](#419-winforms-bindingmanagerbase-utilities)
-   - 4.20 [WinForms: Component Utilities](#420-winforms-component-utilities)
-   - 4.21 [WinForms Interfaces — IForm, IControl, IUserControl, etc.](#421-winforms-interfaces--iform-icontrol-iusercontrol-etc)
-   - 4.22 [The Prefer Class (Actions)](#422-the-prefer-class-actions)
-   - 4.23 [The Round Class (Actions)](#423-the-round-class-actions)
-   - 4.24 [The Calculate Class](#424-the-calculate-class)
-   - 4.25 [The Transform Class](#425-the-transform-class)
-   - 4.26 [DynamicPrefer (Dynamic)](#426-dynamicprefer-dynamic)
-   - 4.27 [ControlFormAssociationProvider (Providers)](#427-controlformassociationprovider-providers)
-5. [Cross-Cutting Concerns and Design Decisions](#5-cross-cutting-concerns-and-design-decisions)
-   - 5.1 [PostSharp Logging Integration](#51-postsharp-logging-integration)
-   - 5.2 [Defensive Programming and the `result` Variable Pattern](#52-defensive-programming-and-the-result-variable-pattern)
-   - 5.3 [AlphaFS vs. System.IO](#53-alphafs-vs-systemio)
-   - 5.4 [Thread Safety](#54-thread-safety)
-6. [How to Add a Reference to This Library](#6-how-to-add-a-reference-to-this-library)
-7. [Running the Tests](#7-running-the-tests)
-8. [Code Documentation](#8-code-documentation)
+Do not add MIT license text, MIT license references, or mandatory MIT-style source-file headers to this repository. Preserve existing file headers or above-namespace documentation if present, but do not introduce a new mandatory header standard.
 
----
+## Target stack
 
-## 1. Solution Overview
+| Area | Technology |
+|---|---|
+| Language | C# 7.3 |
+| Runtime | .NET Framework 4.8 |
+| IDE | Visual Studio 2022 / 2026-compatible solution files |
+| Project format | Legacy MSBuild `.csproj` |
+| NuGet style | `packages.config` |
+| Logging | `xyLOGIX.Core.Debug`, log4net 3.0.3, PostSharp Diagnostics |
+| AOP / threading | PostSharp 2024.1.6 |
+| File system | AlphaFS 2.2.6 where already used |
+| JSON | Newtonsoft.Json 13.0.3 where already used |
+| Documentation | Vsxmd 1.4.5 |
+| Tests | NUnit 4.3.2 |
+| Strong naming support | StrongNamer 0.2.5 where present |
 
-The **xyLOGIX.Core.Extensions** solution is a cohesive group of .NET Framework 4.8 class libraries whose collective purpose is to augment the base class library and Windows Forms with a rich set of tightly-focused, defensive extension methods, action classes, and provider infrastructure.  Every public method in this solution follows the same hardened coding idioms:
+Do not convert these projects to SDK-style format, migrate to `PackageReference`, introduce nullable reference types, or use C# language features newer than C# 7.3 unless explicitly requested.
 
-- A `result` variable is declared and initialized to a safe default at the top of every non-`void` method.
-- The entire method body is wrapped in a single `try`/`catch(Exception)` block.
-- Exceptions are logged via `xyLOGIX.Core.Debug.DebugUtils.LogException` and the safe default is returned — callers never receive an unhandled exception.
-- Input parameters are validated eagerly and individually, using separate `if` guards that `return result;` immediately.
-- PostSharp aspects (`[Log]`, `[ExplicitlySynchronized]`, `[NotLogged]`) are applied consistently to control logging verbosity and threading semantics.
+## Table of contents
 
-The solution is structured following the xyLOGIX module convention: the base class library (`xyLOGIX.Core.Extensions`) owns concrete extension classes; `.Actions` contains static action classes; `.Dynamic` handles `dynamic`-typed scenarios; `.Providers`, `.Providers.Interfaces`, and `.Providers.Factories` implement the provider pattern for the control-to-form association service; and `.Tests` houses the NUnit 4.x test suite.
+1. [Solution overview](#solution-overview)
+2. [Repository shape](#repository-shape)
+3. [Architecture and dependency direction](#architecture-and-dependency-direction)
+4. [Project guide](#project-guide)
+5. [API area guide](#api-area-guide)
+6. [Cross-cutting design conventions](#cross-cutting-design-conventions)
+7. [Build, packages, and generated documentation](#build-packages-and-generated-documentation)
+8. [Running tests](#running-tests)
+9. [Using the libraries](#using-the-libraries)
+10. [Contributor workflow](#contributor-workflow)
+11. [Detailed API reference](#detailed-api-reference)
+12. [Documentation links](#documentation-links)
 
----
+## Solution overview
 
-## 2. Solution Architecture and Dependency Graph
+The `xyLOGIX.Core.Extensions` solution is a cohesive group of .NET Framework class libraries whose collective purpose is to augment the Base Class Library and Windows Forms with focused, defensive extension methods, action classes, and provider infrastructure.
 
-The diagram below shows every project in the solution and the direction of its compile-time references.  An arrow from **A ? B** means **A** has a project or assembly reference to **B**.
+The module emphasizes:
+
+- Backward compatibility for public API consumers.
+- Defensive validation before work is attempted.
+- Safe default return values instead of avoidable exception propagation.
+- Explicit logging through `xyLOGIX.Core.Debug.DebugUtils`.
+- PostSharp logging, synchronization, and `[NotLogged]` usage.
+- XML documentation that can be converted into Markdown documentation by Vsxmd.
+- Clean dependency direction with no circular project references.
+- Small, focused helpers rather than broad framework rewrites.
+
+Most nontrivial non-`void` methods follow the local `result` variable pattern: initialize a safe default, validate eagerly, perform work inside a `try` block, log exceptions in `catch`, reset to a safe default if needed, and return `result`.
+
+## Repository shape
+
+The solution file is:
+
+- `xyLOGIX.Core.Extensions.sln`
+
+The module contains these projects:
+
+| Project | Responsibility |
+|---|---|
+| `xyLOGIX.Core.Extensions` | Primary extension-method library plus WinForms interfaces, helper types, validators, and utility classes. |
+| `xyLOGIX.Core.Extensions.Actions` | Fluent static action classes such as `Prefer` and `Round`. |
+| `xyLOGIX.Core.Extensions.Dynamic` | Dynamic-value helpers such as `DynamicPrefer`, isolated from the main library. |
+| `xyLOGIX.Core.Extensions.Providers.Interfaces` | Provider contracts, currently including `IControlFormAssociationProvider`. |
+| `xyLOGIX.Core.Extensions.Providers` | Provider implementations, currently including `ControlFormAssociationProvider`. |
+| `xyLOGIX.Core.Extensions.Providers.Factories` | Factory accessors such as `GetControlFormAssociationProvider.SoleInstance()`. |
+| `xyLOGIX.Core.Extensions.Tests` | NUnit tests for extension and action behavior. |
+
+The solution also references external sibling repositories/projects, including:
+
+- `xyLOGIX.Core.Debug`
+- `xyLOGIX.Collections.Synchronized`
+
+Do not assume those sibling repositories can be edited as part of this repository unless the prompt explicitly provides them or requests cross-repository work.
+
+## Architecture and dependency direction
+
+Maintain the existing acyclic dependency direction:
 
 ```mermaid
 graph TB
@@ -111,835 +119,262 @@ graph TB
     TST --> DBG
 ```
 
-**Key observations:**
+Key rules:
 
 | Rule | Detail |
 |---|---|
-| No circular references | All arrows are strictly acyclic. |
-| `xyLOGIX.Core.Debug` is a leaf | Every project references it; it references nothing in this solution. |
-| `xyLOGIX.Core.Extensions` is the hub | All WinForms extension classes live here; it pulls in the `Providers.Factories` project to resolve the singleton provider. |
-| `Actions` and `Dynamic` are independent | They do not reference each other, or the main `Extensions` project; they only share the `Debug` library. |
-| Provider trio follows Interface ? Impl ? Factory order | This keeps the dependency arrow direction clean and avoids cycles. |
+| Avoid cycles | Before adding a project reference, verify the direct and transitive reference graph. |
+| Keep provider contracts low-level | `Providers.Interfaces` defines contracts and must not depend on implementation projects. |
+| Keep dynamic usage isolated | `xyLOGIX.Core.Extensions.Dynamic` contains dynamic-specific helpers so the main library does not accumulate avoidable DLR usage. |
+| Keep actions independent | `xyLOGIX.Core.Extensions.Actions` does not depend on the main `Extensions` project. |
+| Use factories for provider access | Consumers should use factory accessors rather than directly constructing provider implementations. |
 
----
+## Project guide
 
-## 3. Project-by-Project Reference
+### `xyLOGIX.Core.Extensions`
 
-### 3.1 `xyLOGIX.Core.Extensions`
+This is the primary library. It contains:
 
-**Assembly:** `xyLOGIX.Core.Extensions.dll`  
-**Namespace:** `xyLOGIX.Core.Extensions`
+- Static `*Extensions` classes for BCL, collection, path, markdown, enum, type, string, numeric, and WinForms types.
+- WinForms interfaces such as `IForm`, `IControl`, `IUserControl`, `IScrollableControl`, `IComboBox`, `IListView`, and `ITextBox`.
+- Helper types such as `BoundComboBox` and `EnumBoundComboBoxItem`.
+- Enums and validators such as `LanguageArticleType`, `LanguageArticleTypeValidator`, and `ReplaceAnyOfOption`.
+- Static helper/action-style classes such as `Calculate` and `Transform`.
 
-This is the primary class library of the solution.  It contains the largest collection of extension classes and support types, including:
+When adding extension methods, place them in the extension class that matches the extended type. If no suitable class exists, create a public static `<Type>Extensions` class in the `xyLOGIX.Core.Extensions` namespace.
 
-- All `*Extensions` static classes — catalogued in full in the table below.
-- The `Calculate` and `Transform` static action classes.
-- The `LanguageArticleType` enum and its associated `LanguageArticleTypeValidator`.
-- The `ReplaceAnyOfOption` enum.
-- The WinForms interface definitions: `IForm`, `IControl`, `IUserControl`, `IScrollableControl`, `IComboBox`, `IListView`, `ITextBox`.
-- The `BoundComboBox` and `EnumBoundComboBoxItem` helper types.
+### `xyLOGIX.Core.Extensions.Actions`
 
-#### `*Extensions` Class Catalogue
-
-Every class in this table is `public static` and lives in the `xyLOGIX.Core.Extensions` namespace.
-
-| Class | Extended type(s) | 50,000-foot synopsis |
-|---|---|---|
-| `BindingManagerBaseExtensions` | `BindingManagerBase` | Suspends and resumes two-way WinForms data binding on a `BindingManagerBase` instance by toggling each binding's `DataSourceUpdateMode` between `Never` and its original value — useful when you need to update the data source programmatically without triggering cascading change notifications. |
-| `ByteArrayExtensions` | `byte[]` | Provides null-safe helpers for byte arrays, including a safe `Length` accessor that returns `0` for `null` arrays, a hex-string formatter that produces space-separated uppercase pairs (e.g., `"4A 2F 00"`), and a Base-64 encoder. |
-| `CharExtensions` | `char` | Extends `char` with semantic classification predicates such as `IsVowel` and `IsConsonant`, which are used internally by string-manipulation methods like `GetLanguageArticle`. |
-| `CheckedListBoxExtensions` | `CheckedListBox` | Adds bulk check/uncheck operations (`CheckAll`, `UncheckAll`) and a typed `GetCheckedItems<T>` query to `CheckedListBox`, eliminating the need for manual iteration over `CheckedItems` in calling code. |
-| `CollectionExtensions` | `ICollection<T>` | Adds `AddMultiple<T>`, a `params`-based variadic insert that populates an `ICollection<T>` in a single call without allocating a temporary list — a lighter alternative to `AddRange`. |
-| `ComboBoxExtensions` | `ComboBox` | Provides enum-binding helpers (`BindToEnum<T>`, `GetSelectedEnumValue<T>`, `SelectEnumValue<T>`) that populate a `ComboBox` from any `enum` type and leverage `[Description]` attributes for human-readable display text. |
-| `ComponentExtensions` | `IComponent` | Exposes `IsBeingDisposed`, a lightweight heuristic that returns `true` when a component's `Site` property is `null`, signalling that the component is in mid-disposal and should not be interacted with. |
-| `ControlExtensions` | `Control` | The central WinForms threading and lifetime helper: provides the safe cross-thread `InvokeIfRequired` / `InvokeIfRequired<T>` overloads, and the `AssociateWithParentForm` / `GetParentForm` pair that maintains a live `Control`?`Form` registry via the provider infrastructure. |
-| `DateTimeExtensions` | `DateTime` | Formats `DateTime` values as RFC 3339 / ISO 8601 strings (auto-converting to UTC) and as human-readable sentence fragments such as `"on 10/16/2024 at 4:59:02 PM"` for use in log messages and UI labels. |
-| `DateTimeOffsetExtensions` | `DateTimeOffset` | Mirrors `DateTimeExtensions` for `DateTimeOffset` values and additionally exposes a temporal ordering helper (`IsMoreRecentThan`) for comparing two `DateTimeOffset` timestamps. |
-| `DictionaryExtensions` | `IDictionary<TKey,TValue>` / `ConcurrentDictionary<TKey,TValue>` | Adds `GetValueOrDefault` (safe key lookup with a caller-supplied fallback) and `AddOrUpdate` (insert-or-replace in a single call) to any `IDictionary<TKey,TValue>`, plus overloads for `ConcurrentDictionary`. |
-| `EnumExtensions` | `Enum` | Resolves the `[Description]` attribute value for any enum member via `AsString<T>` and provides `IsOutOfRange<T>` / `IsInRange<T>` predicates that call `Enum.IsDefined` to guard against out-of-band integer casts. |
-| `EnumerableExtensions` | `IEnumerable<T>` | A broad LINQ companion providing `IsNullOrEmpty<T>`, `ForEach<T>` (with null-element skipping), `AnyEqual<T>`, `AnyEqualAnyOf<T>`, and `ToAdvisableCollection<T>` for materializing sequences into PostSharp-observable collections. |
-| `FormExtensions` | `IForm` / `Form` | Geometry and presentation helpers for WinForms windows: arithmetic center-to-parent and center-to-screen positioning, opacity clamping, and async `FadeIn` / `FadeOut` effects using `Task`-based opacity stepping. |
-| `GuidExtensions` | `Guid` | Provides ergonomic `Guid` formatters (`AsDigitsWithHyphens`, `AsDigitsWithHyphensAndBraces`) and an `IsZero` predicate that returns `true` for `Guid.Empty`, preventing the Zero GUID from being treated as a valid identifier. |
-| `IntExtensions` | `int` | Adds semantic sign-check predicates (`IsPositive`, `IsNegative`, `IsZero`) and a range predicate (`IsBetween`) to `int`, making guard clauses on integer values read as plain English. |
-| `ListExtensions` | `IList<T>` / `IList` | Extends both generic and non-generic list interfaces with `ContainsAny<T>`, `IndexOfFirst<T>`, thread-safe snapshot helpers, and bulk-string-join utilities used by code-generation pipelines. |
-| `LongExtensions` | `long` | Mirrors `IntExtensions` for the `long` (`Int64`) type, adding `IsPositive`, `IsNegative`, and `IsZero` predicates so that `long` fields used as counts or identifiers can be guarded with the same idiom. |
-| `MarkdownExtensions` | `string` / `XNode` | Wraps a string in the minimum number of backticks needed to produce a valid Markdown inline-code span (including the edge case where the content itself contains backticks), and preserves XML-node leading whitespace when converting documentation nodes to Markdown. |
-| `NullableDecimalExtensions` | `decimal?` | Provides null-safe sign-check predicates (`IsNegative`, `IsPositive`, `IsZero`, `HasPositiveValue`) for `decimal?`, returning `false` rather than throwing when the nullable has no value. |
-| `NullableDoubleExtensions` | `double?` | The `double?` counterpart of `NullableDecimalExtensions` — same null-safe sign predicates applied to nullable floating-point values. |
-| `NullableIntExtensions` | `int?` | The `int?` counterpart of `NullableDecimalExtensions` — null-safe `IsNegative`, `IsPositive`, `IsZero`, and `HasPositiveValue` for nullable integers. |
-| `NullableLongExtensions` | `long?` | The `long?` counterpart of `NullableDecimalExtensions` — null-safe sign predicates for nullable 64-bit integers. |
-| `NumberExtensions` | `double` / `decimal` | Provides cross-numeric-type helpers including `AsDecimal` (converts `double` to `decimal` safely), and `IsZero`, `IsPositive`, `IsNegative`, and `IsNaN` predicates for both `double` and `decimal`. |
-| `ObjectExtensions` | `object` | Extends `object` with a `ToFormattedString` helper that leverages PostSharp's `IFormattable` infrastructure to produce a structured log-friendly representation of any object without risking a `NullReferenceException`. |
-| `PathnameExtensions` | `string` (path-valued) | Treats an extended `string` as a file-system path and provides AlphaFS-backed helpers including a null-safe file-existence check and an idempotent trailing-separator appender, both correctly handling long (> 260-character) and UNC paths. |
-| `SetExtensions` | `ISet<T>` | Adds a bulk `AddRange<T>` overload to any `ISet<T>`, silently skipping `null` elements and absorbing duplicates in accordance with set semantics. |
-| `StringArrayExtensions` | `string[]` | Extends `string[]` with filtering, joining, and searching helpers — including a `ContainsIgnoreCase` predicate and an `ExceptNullOrWhiteSpace` filter — that would otherwise require verbose inline LINQ in calling code. |
-| `StringExtensions` | `string` | The largest class in the solution: covers Title Case and sentence-case formatting (with acronym preservation and small-word rules), GUID detection, pluralization / singularization via the EF design-time `PluralizationService`, `ContainsAnyOf`, `ReplaceAnyOf`, `Repeat`, `RemoveAll`, language-article resolution, and numerous other string-manipulation utilities. |
-| `TextBoxExtensions` | `TextBox` | Exposes `SetCueBannerText`, which sends the Win32 `EM_SETCUEBANNER` message (via P/Invoke `SendMessage`) to display grayed-out watermark text in an empty, unfocused `TextBox`, with a live-handle guard via `IsWindow`. |
-| `ToolStripMenuItemExtensions` | `ToolStripMenuItem` | Adds `SetShortcutKeyDisplayString`, which writes a custom string into the shortcut-key column of a menu item — useful for displaying non-standard key-chord descriptions (e.g., mouse gestures) in a `MenuStrip`. |
-| `TypeExtensions` | `Type` | Reflection helpers for working with generic and array `Type` objects: `GetActualType` unwraps the element type of `IList<T>` or array types (with an `AdvisableDictionary` result cache), `HasInterface` checks for interface implementation, and `IsNullable` tests for `Nullable<T>`. |
-
-**Notable external dependencies:**
-- `AlphaFS 2.2.x` — used in place of `System.IO` for file and path operations throughout `PathnameExtensions` and `StringExtensions`.
-- `System.Data.Entity.Design` — used in `StringExtensions` for the `PluralizationService`.
-
----
-
-### 3.2 `xyLOGIX.Core.Extensions.Actions`
-
-**Assembly:** `xyLOGIX.Core.Extensions.Actions.dll`  
-**Namespace:** `xyLOGIX.Core.Extensions.Actions`
-
-Houses two static action classes that follow the xyLOGIX *verb-noun* naming convention:
+This project contains static action classes that are named as verbs and read fluently at call sites.
 
 | Class | Purpose |
 |---|---|
-| `Prefer` | Merges a nullable value with a preferred (default) value for every C++ primitive type, `string`, and `object`. |
-| `Round` | Rounds `decimal` quantities to a desired precision (e.g., nearest cent using banker's rounding). |
+| `Prefer` | Merges nullable or optional input values with preferred fallback values. |
+| `Round` | Performs rounding operations such as rounding decimal values to the nearest cent. |
 
-This project intentionally has no dependency on the main `Extensions` project; it is a pure utility library.
+The project intentionally stays independent from the main `Extensions` project.
 
----
+### `xyLOGIX.Core.Extensions.Dynamic`
 
-### 3.3 `xyLOGIX.Core.Extensions.Dynamic`
+This project contains dynamic-value helpers such as `DynamicPrefer`.
 
-**Assembly:** `xyLOGIX.Core.Extensions.Dynamic.dll`  
-**Namespace:** `xyLOGIX.Core.Extensions.Dynamic`
+`dynamic` is isolated here so the main extension library does not acquire avoidable DLR-related behavior. Add dynamic-specific behavior here rather than to `xyLOGIX.Core.Extensions` unless the owner explicitly requests otherwise.
 
-Contains the single class `DynamicPrefer`, which provides the same *prefer-over-null* semantics as `Prefer` but operates on `dynamic`-typed values.  It is kept in its own assembly because the C# `dynamic` keyword introduces a dependency on the DLR; isolating it prevents that dependency from infecting the rest of the solution.
+### Provider projects
 
----
+The provider trio maintains clean dependency direction around control-to-form association behavior.
 
-### 3.4 `xyLOGIX.Core.Extensions.Providers.Interfaces`
-
-**Assembly:** `xyLOGIX.Core.Extensions.Providers.Interfaces.dll`  
-**Namespace:** `xyLOGIX.Core.Extensions.Providers.Interfaces`
-
-Declares the `IControlFormAssociationProvider` interface.  Following the xyLOGIX convention, this `.Interfaces` project is always the lowest-level project in the provider trio; nothing in the solution depends on a concrete type from this project.
-
----
-
-### 3.5 `xyLOGIX.Core.Extensions.Providers`
-
-**Assembly:** `xyLOGIX.Core.Extensions.Providers.dll`  
-**Namespace:** `xyLOGIX.Core.Extensions.Providers`
-
-Contains `ControlFormAssociationProvider`, the concrete singleton implementation of `IControlFormAssociationProvider`.  It maintains an `AdvisableDictionary<Control, Form>` that maps each registered `Control` to the `Form` that contains it, and automatically cleans up entries when either the control or its parent form is destroyed.
-
-The constructor is `protected` and the class exposes a `public static IControlFormAssociationProvider Instance` property; callers are expected to obtain the singleton via the factory in the `.Factories` project rather than accessing `Instance` directly.
-
----
-
-### 3.6 `xyLOGIX.Core.Extensions.Providers.Factories`
-
-**Assembly:** `xyLOGIX.Core.Extensions.Providers.Factories.dll`  
-**Namespace:** `xyLOGIX.Core.Extensions.Providers.Factories`
-
-Exposes `GetControlFormAssociationProvider.SoleInstance()`, which is the canonical way to obtain the singleton `IControlFormAssociationProvider`.  `ControlExtensions` (in the main library) calls this factory internally so that consumers of `ControlExtensions` need not know how the provider is constructed.
-
----
-
-### 3.7 `xyLOGIX.Core.Extensions.Tests`
-
-**Assembly:** `xyLOGIX.Core.Extensions.Tests.dll`  
-**Namespace:** `xyLOGIX.Core.Extensions.Tests`
-
-NUnit 4.x test project.  Currently covers:
-
-| Test Fixture | Class Under Test |
+| Project | Role |
 |---|---|
-| `PreferTests` | `Prefer` (in `Actions`) |
-| `NumberExtensionsTests` | `NumberExtensions` |
+| `xyLOGIX.Core.Extensions.Providers.Interfaces` | Defines provider contracts such as `IControlFormAssociationProvider`. |
+| `xyLOGIX.Core.Extensions.Providers` | Implements provider contracts, including singleton-style provider implementations. |
+| `xyLOGIX.Core.Extensions.Providers.Factories` | Exposes fluent factory accessors such as `GetControlFormAssociationProvider.SoleInstance()`. |
 
-All test fixtures derive from `LoggingTestBase` (from `xyLOGIX.Tests.Logging`) so that PostSharp and log4net logging is active during test runs.  Each fixture is annotated `[TestFixture]` and `[ExplicitlySynchronized]`.
+`ControlFormAssociationProvider` maintains a synchronized mapping between WinForms controls and parent forms, and removes associations as controls and forms are disposed or closed.
 
----
+### `xyLOGIX.Core.Extensions.Tests`
 
-## 4. Detailed API Reference
+This project contains NUnit tests for selected library behavior. Existing tests cover areas such as `Prefer` and `NumberExtensions`.
 
-### 4.1 String Utilities
+Add tests here when requested or when a change is risky enough to warrant coverage. Prefer focused fixtures corresponding to the concrete class or extension class under test.
 
-**Class:** `StringExtensions` — `xyLOGIX.Core.Extensions`
+## API area guide
 
-`StringExtensions` is the largest class in the solution.  It provides operations in several categories.
+### Core extension classes
 
-#### Case and Title Formatting
+The main project contains extension classes including, but not limited to:
 
-| Method | Signature | Description |
+| Area | Representative class(es) | Purpose |
 |---|---|---|
-| `ToTitleCase` | `string ToTitleCase(this string value)` | Converts a string to Title Case using the current culture's `TextInfo`, while intelligently preserving known acronyms (e.g., `"AP"`, `"LSAT"`) in all-caps and handling small words (`"of"`, `"the"`, `"and"`, etc.) that should not be capitalized unless they are the first word. |
-| `ToSentenceCase` | `string ToSentenceCase(this string value)` | Capitalizes only the first character of a string. |
+| Strings | `StringExtensions`, `StringArrayExtensions`, `MarkdownExtensions` | Case conversion, matching, replacement, Markdown formatting, pluralization, and text helpers. |
+| Collections | `EnumerableExtensions`, `CollectionExtensions`, `ListExtensions`, `SetExtensions`, `DictionaryExtensions` | Null-safe enumeration, additions, lookups, snapshots, and collection helpers. |
+| Numbers | `NumberExtensions`, `IntExtensions`, `LongExtensions`, nullable numeric extensions | Sign checks, zero checks, range checks, nullable numeric guards, and conversions. |
+| Dates | `DateTimeExtensions`, `DateTimeOffsetExtensions` | RFC 3339 formatting and sentence-fragment formatting. |
+| GUIDs | `GuidExtensions` | GUID formatting and Zero GUID detection. |
+| Enums | `EnumExtensions`, validators | Description lookup and range validation. |
+| Bytes | `ByteArrayExtensions` | Safe length, hex, and Base64 formatting. |
+| Types | `TypeExtensions` | Reflection helpers and cached actual-type resolution. |
+| Paths | `PathnameExtensions` | AlphaFS-backed path helpers. |
+| WinForms | `ControlExtensions`, `FormExtensions`, `TextBoxExtensions`, `ComboBoxExtensions`, `CheckedListBoxExtensions`, `ToolStripMenuItemExtensions`, `BindingManagerBaseExtensions`, `ComponentExtensions` | UI-thread, lifetime, geometry, cue-banner, binding, and control helpers. |
 
-#### Searching and Matching
+### Fluent action classes
 
-| Method | Signature | Description |
-|---|---|---|
-| `ContainsAnyOf` | `bool ContainsAnyOf(this string value, params string[] candidates)` | Returns `true` if the string contains any one of the provided candidate substrings. |
-| `IsGuid` | `bool IsGuid(this string value)` | Returns `true` if the string is parseable as a `Guid` with no surrounding braces (lowercase hex digits with hyphens). |
-| `ContainsGuid` | `bool ContainsGuid(this string value)` | Returns `true` if the string contains an embedded GUID pattern anywhere within it. |
+`xyLOGIX.Core.Extensions.Actions` contains verb-named utility classes whose method names complete the phrase at the call site.
 
-#### Manipulation
-
-| Method | Signature | Description |
-|---|---|---|
-| `ReplaceAnyOf` | `string ReplaceAnyOf(this string value, string[] targets, string replacement, ReplaceAnyOfOption option)` | Replaces all occurrences of any of the `targets` substrings with `replacement`. The `ReplaceAnyOfOption` enum controls whether the search is case-sensitive. |
-| `Repeat` | `string Repeat(this string value, int count)` | Returns a new string formed by repeating `value` exactly `count` times. Returns `string.Empty` if `count` is zero or negative. |
-| `RemoveAll` | `string RemoveAll(this string value, params char[] chars)` | Removes every character in `chars` from the string. |
-| `RemoveLeading` | `string RemoveLeading(this string value, string prefix)` | If the string starts with `prefix`, returns the string with that prefix removed; otherwise returns the string unchanged. |
-
-#### Pluralization
-
-| Method | Signature | Description |
-|---|---|---|
-| `Pluralize` | `string Pluralize(this string word)` | Uses `System.Data.Entity.Design.PluralizationServices.PluralizationService` to return the plural form of `word` in English. Returns `string.Empty` on failure. |
-| `Singularize` | `string Singularize(this string word)` | Returns the singular form of `word` using the same pluralization service. |
-
-#### Validation Helpers
-
-| Method | Signature | Description |
-|---|---|---|
-| `IsNullOrEmpty` | `bool IsNullOrEmpty(this string value)` | Extension-method wrapper for `string.IsNullOrEmpty`. |
-| `IsNullOrWhiteSpace` | `bool IsNullOrWhiteSpace(this string value)` | Extension-method wrapper for `string.IsNullOrWhiteSpace`. |
-
-#### Language Article
-
-| Method | Signature | Description |
-|---|---|---|
-| `GetLanguageArticle` | `string GetLanguageArticle(this string noun)` | Returns `"a"` or `"an"` as appropriate for the given English noun, based on whether it starts with a vowel sound. |
-
----
-
-### 4.2 Enumerable and Collection Utilities
-
-**Classes:** `EnumerableExtensions`, `CollectionExtensions`, `ListExtensions`, `SetExtensions`
-
-#### `EnumerableExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `AnyEqual<T>` | `bool AnyEqual<T>(this IEnumerable<T> collection, T value)` | Returns `true` if at least one element of `collection` equals `value`. |
-| `AnyEqualAnyOf<T>` | `bool AnyEqualAnyOf<T>(this IEnumerable<T> collection, params T[] values)` | Returns `true` if any element of `collection` is equal to any element of `values`. |
-| `IsNullOrEmpty<T>` | `bool IsNullOrEmpty<T>(this IEnumerable<T> source)` | Returns `true` if `source` is `null` or contains no elements. |
-| `ForEach<T>` | `void ForEach<T>(this IEnumerable<T> source, Action<T> action)` | Iterates `source` and calls `action` for each element.  Null elements are skipped. |
-| `ToAdvisableCollection<T>` | `AdvisableCollection<T> ToAdvisableCollection<T>(this IEnumerable<T> source)` | Materializes the sequence into a PostSharp `AdvisableCollection<T>`, which supports change notifications. |
-
-#### `CollectionExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `AddMultiple<T>` | `void AddMultiple<T>(this ICollection<T> collection, params T[] items)` | Adds multiple items to `collection` without allocating a temporary list for `AddRange`. Null items are silently skipped. |
-
-#### `ListExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `ContainsAny<T>` | `bool ContainsAny<T>(this IList<T> list, params T[] values)` | Returns `true` if `list` contains at least one element from `values`. |
-| `IndexOfFirst<T>` | `int IndexOfFirst<T>(this IList<T> list, Predicate<T> match)` | Returns the zero-based index of the first element that satisfies `match`, or `-1` if none is found. |
-
-#### `SetExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `AddRange<T>` | `void AddRange<T>(this ISet<T> set, IEnumerable<T> items)` | Adds all elements of `items` to `set`, silently skipping null items. |
-
----
-
-### 4.3 Numeric Utilities
-
-**Classes:** `NumberExtensions`, `IntExtensions`, `LongExtensions`, `NullableIntExtensions`, `NullableDoubleExtensions`, `NullableDecimalExtensions`, `NullableLongExtensions`
-
-#### `NumberExtensions` (operating on `double` and `decimal`)
-
-| Method | Signature | Description |
-|---|---|---|
-| `AsDecimal` | `decimal AsDecimal(this double value)` | Converts `double` to `decimal` using `Convert.ToDecimal`. Returns `decimal.Zero` on failure or when `value` is `0D`. |
-| `IsZero` | `bool IsZero(this decimal value)` | Returns `true` if `value` equals `decimal.Zero`. |
-| `IsZero` | `bool IsZero(this double value)` | Returns `true` if `value` equals `0D`. |
-| `IsPositive` | `bool IsPositive(this decimal value)` | Returns `true` if `value > decimal.Zero`. |
-| `IsNegative` | `bool IsNegative(this decimal value)` | Returns `true` if `value < decimal.Zero`. |
-| `IsNaN` | `bool IsNaN(this double value)` | Returns `true` if `double.IsNaN(value)`. |
-
-#### `IntExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `IsPositive` | `bool IsPositive(this int value)` | Returns `true` if `value > 0`. |
-| `IsNegative` | `bool IsNegative(this int value)` | Returns `true` if `value < 0`. |
-| `IsZero` | `bool IsZero(this int value)` | Returns `true` if `value == 0`. |
-| `IsBetween` | `bool IsBetween(this int value, int lowerBound, int upperBound)` | Returns `true` if `lowerBound <= value <= upperBound`. |
-
-#### Nullable numeric types
-
-`NullableIntExtensions`, `NullableDoubleExtensions`, `NullableDecimalExtensions`, and `NullableLongExtensions` each expose analogous `IsZero`, `IsPositive`, `IsNegative`, and `HasPositiveValue` methods that gracefully return `false` when the nullable has no value, rather than throwing.
-
----
-
-### 4.4 DateTime Utilities
-
-**Classes:** `DateTimeExtensions`, `DateTimeOffsetExtensions`
-
-#### `DateTimeExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `ToRFC3339` | `string ToRFC3339(this DateTime date)` | Formats a `DateTime` as an RFC 3339 / ISO 8601 string (`yyyy-MM-ddTHH:mm:ss...Z`).  Converts to UTC automatically if the value's `Kind` is not already `Utc`. Returns `string.Empty` on failure. |
-| `ToSentencePart` | `string ToSentencePart(this DateTime dateTime)` | Produces a human-readable phrase such as `"on 10/16/2024 at 4:59:02 PM"` suitable for use in log messages or UI text. |
-
-#### `DateTimeOffsetExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `ToRFC3339` | `string ToRFC3339(this DateTimeOffset date)` | Same semantics as `DateTimeExtensions.ToRFC3339` but operates on a `DateTimeOffset`. |
-
----
-
-### 4.5 Guid Utilities
-
-**Class:** `GuidExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `AsDigitsWithHyphens` | `string AsDigitsWithHyphens(this Guid guid)` | Formats the GUID as lowercase digits with hyphens and no surrounding braces (the `"D"` format specifier). Returns `string.Empty` if the Zero GUID is passed. |
-| `AsDigitsWithHyphensAndBraces` | `string AsDigitsWithHyphensAndBraces(this Guid guid)` | Formats the GUID with surrounding braces (the `"B"` format specifier). Returns `string.Empty` for the Zero GUID. |
-| `IsZero` | `bool IsZero(this Guid value)` | Returns `true` if `value == Guid.Empty`. |
-
-**Usage example:**
+Examples:
 
 ```csharp
-var id = Guid.NewGuid();
-Console.WriteLine(id.AsDigitsWithHyphens());
-// e.g., "b8f967ce-911d-4184-a0ba-b37e443b4541"
-
-if (Guid.Empty.IsZero())
-    Console.WriteLine("It is the Zero GUID.");
+var port = Prefer.IntOverNull(userPort, configuredPort);
+var amount = Round.ToNearestCent(rawAmount);
 ```
 
----
+### Dynamic helpers
 
-### 4.6 Enum Utilities
+`xyLOGIX.Core.Extensions.Dynamic` contains `DynamicPrefer`, which provides prefer-over-null semantics for `dynamic` values without adding DLR-oriented behavior to the main extension library.
 
-**Class:** `EnumExtensions`
+### Provider infrastructure
 
-| Method | Signature | Description |
-|---|---|---|
-| `AsString<T>` | `string AsString<T>(this T enumerationValue) where T : Enum` | If the enum member is decorated with `[Description("...")]`, returns the description string; otherwise falls back to `value.ToString()`. |
-| `IsOutOfRange<T>` | `bool IsOutOfRange<T>(this T enumerationValue) where T : Enum` | Returns `true` if `enumerationValue` is not a defined member of its enum type (i.e., `!Enum.IsDefined`). |
-| `IsInRange<T>` | `bool IsInRange<T>(this T enumerationValue) where T : Enum` | The inverse of `IsOutOfRange`. |
-
-**Usage example:**
+`ControlExtensions` uses the provider/factory trio to associate WinForms controls with parent forms while keeping dependency direction clean:
 
 ```csharp
-using System.ComponentModel;
 using xyLOGIX.Core.Extensions;
 
-public enum Status
+control.AssociateWithParentForm();
+var form = control.GetParentForm();
+```
+
+Consumers normally use the extension methods rather than calling the provider directly.
+
+## Cross-cutting design conventions
+
+### Defensive programming
+
+Methods should validate input values before they are used. Do not assume:
+
+- Strings are nonblank.
+- Paths exist.
+- Collections contain useful values.
+- Enum values are defined.
+- WinForms controls are alive, undisposed, or handle-created.
+- Numeric values, counts, sizes, or indexes are positive or in range.
+- File-system operations succeed.
+- Called helper methods return useful values.
+
+Prefer guard clauses and early returns. Avoid deep nesting. Keep validation gates explicit when separate checks improve logging and control-flow clarity.
+
+### Result-variable pattern
+
+Most value-returning methods use a `result` variable:
+
+```csharp
+public bool TryDoSomething(string value)
 {
-    [Description("Ready to Go")] Ready,
-    [Description("All Done")]   Done,
-    Unknown = -1
-}
-
-var s = Status.Ready;
-Console.WriteLine(s.AsString()); // "Ready to Go"
-Console.WriteLine(((Status)999).IsOutOfRange()); // true
-```
-
----
-
-### 4.7 Byte Array Utilities
-
-**Class:** `ByteArrayExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `GetSafeLength` | `int GetSafeLength(this byte[] bytes)` | Returns `bytes.Length`, or `0` if `bytes` is `null`.  This avoids a `NullReferenceException` in length checks. |
-| `ToHexString` | `string ToHexString(this byte[] bytes)` | Converts the byte array to a space-separated string of uppercase hex pairs (e.g., `"4A 2F 00"`). Returns `string.Empty` for `null` or empty arrays. |
-| `ToBase64` | `string ToBase64(this byte[] bytes)` | Converts the byte array to a Base-64 encoded string.  Returns `string.Empty` on failure. |
-
----
-
-### 4.8 Dictionary Utilities
-
-**Class:** `DictionaryExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `GetValueOrDefault<TKey, TValue>` | `TValue GetValueOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue defaultValue)` | Returns the value for `key`, or `defaultValue` if `key` is not present or the dictionary is `null`. |
-| `AddOrUpdate<TKey, TValue>` | `void AddOrUpdate<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)` | If `key` is already in the dictionary its value is updated; otherwise the pair is inserted. |
-
----
-
-### 4.9 Type Reflection Utilities
-
-**Class:** `TypeExtensions`
-
-| Member | Kind | Description |
-|---|---|---|
-| `CachedActualType` | `AdvisableDictionary<Type, Type>` (static property) | Caches results of `GetActualType` for repeated calls on the same `Type`. |
-| `GetActualType` | `Type GetActualType(this Type type)` | Returns the element type of an array, the first generic type argument of a generic collection, or `type` itself if neither applies.  This is useful for data-binding scenarios where you need the "inner" type of an `IList<T>`. |
-| `HasInterface` | `bool HasInterface(this Type type, Type interfaceType)` | Returns `true` if `type` implements `interfaceType`. |
-| `IsNullable` | `bool IsNullable(this Type type)` | Returns `true` if `type` is `Nullable<T>`. |
-
----
-
-### 4.10 Pathname Utilities
-
-**Class:** `PathnameExtensions`
-
-All methods in this class treat the extended `string` as a file-system path.  They use **AlphaFS** (`Alphaleonis.Win32.Filesystem`) internally rather than `System.IO`, which means they correctly handle long paths (> 260 characters) and UNC paths on Windows.
-
-| Method | Access | Description |
-|---|---|---|
-| `FileExists` | `private` | Returns `true` if the path refers to an existing file; gracefully returns `false` instead of throwing when passed blank or null. |
-| `AppendDirectorySeparatorChar` | `private` | Ensures the path ends with a `\` separator; idempotent. |
-
-> **Note:** These are `private` helpers consumed by other public methods in the class.  The public API surface for path checking in consuming assemblies is `xyLOGIX.Core.Files.Does` (a separate library); this class provides the lower-level primitives.
-
----
-
-### 4.11 Markdown Utilities
-
-**Class:** `MarkdownExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `AsCode` | `string AsCode(this string code)` | Wraps the string in the minimum number of backticks required to avoid collisions with any backtick characters already present in `code`.  If `code` itself starts or ends with a backtick a space is inserted for correctness. Returns `string.Empty` for blank input. |
-| `WithPreservedWhitespace` | `string WithPreservedWhitespace(this XNode node)` | Attempts to detect and carry over leading whitespace from an XML node value into the corresponding Markdown output. |
-
-**Usage example:**
-
-```csharp
-using xyLOGIX.Core.Extensions;
-
-// Simple case
-Console.WriteLine("Hello".AsCode());        // `Hello`
-
-// Code that itself contains a backtick
-Console.WriteLine("foo`bar".AsCode());      // `` foo`bar ``
-```
-
----
-
-### 4.12 Text Transformation Utilities
-
-**Class:** `Transform`
-
-| Member | Kind | Description |
-|---|---|---|
-| `AcronymPattern` | `public const string` | Regex pattern `^[A-Z]+$` — matches strings consisting entirely of uppercase ASCII letters (i.e., acronyms). |
-| `InitialCapsWordPattern` | `public const string` | Regex pattern `[A-Z]+(?![a-z])\|[A-Z][a-z]*` — tokenizes a PascalCase or CamelCase string into its constituent words, treating runs of uppercase letters as acronyms. |
-| `PascalCasedTextToPhrase` | `string PascalCasedTextToPhrase(string input)` | Converts a PascalCase or CamelCase identifier into a human-readable, space-separated phrase.  Acronyms (all-uppercase runs) are preserved in uppercase; other words are lowercased.  Example: `"MyNASAResearchLab"` ? `"My NASA research lab"`. |
-
-**Usage example:**
-
-```csharp
-using xyLOGIX.Core.Extensions;
-
-Console.WriteLine(Transform.PascalCasedTextToPhrase("GetHTTPResponse"));
-// Output: "Get HTTP response"
-
-Console.WriteLine(Transform.PascalCasedTextToPhrase("xyLOGIXCoreExtensions"));
-// Output: "xy LOGIX core extensions"
-```
-
----
-
-### 4.13 WinForms: Control Utilities
-
-**Class:** `ControlExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `AssociateWithParentForm` | `void AssociateWithParentForm(this Control control)` | Registers `control` with the singleton `IControlFormAssociationProvider` so that its parent `Form` can later be retrieved by calling `GetParentForm`.  If the control is `null`, being disposed, or already disposed, the method either does nothing or removes it from the registry automatically. |
-| `GetParentForm` | `Form GetParentForm(this Control control)` | Returns the parent `Form` that was previously associated with `control` via `AssociateWithParentForm`, or `null` if no association exists. |
-| `InvokeIfRequired` | `void InvokeIfRequired(this Control control, Action action)` | Calls `control.Invoke(action)` if `control.InvokeRequired` is `true`; otherwise calls `action` directly on the current thread.  This is the safe cross-thread UI update pattern. |
-| `InvokeIfRequired<T>` | `T InvokeIfRequired<T>(this Control control, Func<T> func)` | Same as above but returns a value. |
-
-**The `InvokeIfRequired` pattern — usage example:**
-
-```csharp
-using xyLOGIX.Core.Extensions;
-
-// From a background thread:
-myLabel.InvokeIfRequired(() => myLabel.Text = "Done!");
-
-// With a return value:
-int count = myListBox.InvokeIfRequired(() => myListBox.Items.Count);
-```
-
----
-
-### 4.14 WinForms: Form Utilities
-
-**Class:** `FormExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `CenterForm(IForm, IForm)` | `void CenterForm(this IForm child, IForm parent)` | Moves `child` so its center aligns with the center of `parent` by setting `StartPosition = Manual` and computing the `Location` arithmetically. Does nothing if either form is `null` or disposed. |
-| `CenterForm(IForm, Screen)` | `void CenterForm(this IForm form, Screen screen)` | Centers `form` on the specified `Screen`.  Throws `ArgumentNullException` if `screen` is `null`. |
-| `CenterOnScreen` | `void CenterOnScreen(this IForm form)` | Convenience overload that centers `form` on the primary screen. |
-| `SetOpacity` | `void SetOpacity(this IForm form, double opacity)` | Sets the `Opacity` property of `form` to `opacity` (clamped to `[0.0, 1.0]`).  Used for fade-in/fade-out effects. |
-| `FadeIn` | `Task FadeIn(this IForm form, int durationMs)` | Asynchronously fades `form` from transparent to fully opaque over `durationMs` milliseconds by repeatedly adjusting `Opacity` with small delays. |
-| `FadeOut` | `Task FadeOut(this IForm form, int durationMs)` | The inverse of `FadeIn`. |
-
----
-
-### 4.15 WinForms: TextBox Utilities
-
-**Class:** `TextBoxExtensions`
-
-`TextBoxExtensions` includes P/Invoke signatures for two Win32 functions (`SendMessage` and `IsWindow`) used to set watermark (cue banner) text on text boxes.
-
-| Method | Signature | Description |
-|---|---|---|
-| `SetCueBannerText` | `void SetCueBannerText(this TextBox textBox, string bannerText)` | Sends the `EM_SETCUEBANNER` (0x1501) message to `textBox.Handle` to display `bannerText` as gray placeholder text when the box is empty and unfocused.  Validates that the window handle is live via `IsWindow` before sending the message. |
-
-**Usage example:**
-
-```csharp
-using xyLOGIX.Core.Extensions;
-
-// In Form_Load or the control's handle-created event:
-mySearchBox.SetCueBannerText("Type here to search...");
-```
-
----
-
-### 4.16 WinForms: ComboBox Utilities
-
-**Class:** `ComboBoxExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `BindToEnum<T>` | `void BindToEnum<T>(this ComboBox comboBox) where T : Enum` | Populates `comboBox` with `EnumBoundComboBoxItem<T>` entries — one for each defined value of `T` — and sets `DisplayMember` / `ValueMember` appropriately so that the combo box displays the `[Description]` attribute text (or the member name as a fallback) and returns the strongly typed enum value. |
-| `GetSelectedEnumValue<T>` | `T GetSelectedEnumValue<T>(this ComboBox comboBox) where T : Enum` | Returns the currently selected enum value of type `T`, or `default(T)` if nothing is selected. |
-| `SelectEnumValue<T>` | `void SelectEnumValue<T>(this ComboBox comboBox, T value) where T : Enum` | Selects the item whose underlying enum value equals `value`, or does nothing if not found. |
-
----
-
-### 4.17 WinForms: CheckedListBox Utilities
-
-**Class:** `CheckedListBoxExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `CheckAll` | `void CheckAll(this CheckedListBox listBox)` | Sets the `CheckState` of every item to `Checked`. |
-| `UncheckAll` | `void UncheckAll(this CheckedListBox listBox)` | Sets the `CheckState` of every item to `Unchecked`. |
-| `GetCheckedItems<T>` | `IList<T> GetCheckedItems<T>(this CheckedListBox listBox)` | Returns a list of the values (cast to `T`) of all currently checked items. Returns an empty list if `listBox` is `null` or has no checked items. |
-
----
-
-### 4.18 WinForms: ToolStripMenuItem Utilities
-
-**Class:** `ToolStripMenuItemExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `SetShortcutKeyDisplayString` | `void SetShortcutKeyDisplayString(this ToolStripMenuItem item, string displayString)` | Sets `item.ShortcutKeyDisplayString` to `displayString`, allowing a custom text label for the keyboard shortcut column in the menu. |
-
----
-
-### 4.19 WinForms: BindingManagerBase Utilities
-
-**Class:** `BindingManagerBaseExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `GetCurrentPosition` | `int GetCurrentPosition(this BindingManagerBase manager)` | Returns `manager.Position`, or `-1` if `manager` is `null`. |
-| `SetCurrentPosition` | `void SetCurrentPosition(this BindingManagerBase manager, int position)` | Sets `manager.Position` to `position` after validating that it is within the bounds of the underlying data source. |
-
----
-
-### 4.20 WinForms: Component Utilities
-
-**Class:** `ComponentExtensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `IsBeingDisposed` | `bool IsBeingDisposed(this IComponent component)` | Returns `true` if the component's `Site` is `null` — a reliable heuristic for whether the component is in the process of being disposed. |
-
----
-
-### 4.21 WinForms Interfaces — `IForm`, `IControl`, `IUserControl`, etc.
-
-The solution defines a set of thin WinForms interfaces that mirror the public API of the corresponding `System.Windows.Forms` types.  They are used as parameter and return types throughout the extension classes so that callers can substitute mock objects in tests without depending on a live Win32 window handle.
-
-```mermaid
-graph TB
-    IForm["IForm"]
-    IControl["IControl"]
-    IUserControl["IUserControl"]
-    IScrollableControl["IScrollableControl"]
-    IComboBox["IComboBox"]
-    IListView["IListView"]
-    ITextBox["ITextBox"]
-
-    IForm --> IScrollableControl
-    IUserControl --> IScrollableControl
-    IControl --> IScrollableControl
-    IComboBox --> IControl
-    IListView --> IControl
-    ITextBox --> IControl
-```
-
-| Interface | Mirrors | Key Additional Members |
-|---|---|---|
-| `IForm` | `System.Windows.Forms.Form` | `AcceptButton`, `CancelButton`, `ActiveMdiChild`, `DialogResult`, `IsMdiContainer`, `Opacity`, `ShowInTaskbar`, `WindowState`, `Close()`, `Show()`, `ShowDialog()` |
-| `IControl` | `System.Windows.Forms.Control` | `Bounds`, `ClientSize`, `Dock`, `Enabled`, `Font`, `Handle`, `Location`, `Name`, `Parent`, `Size`, `Text`, `Visible` |
-| `IScrollableControl` | `System.Windows.Forms.ScrollableControl` | `AutoScroll`, `HorizontalScroll`, `VerticalScroll` |
-| `IUserControl` | `System.Windows.Forms.UserControl` | Inherits `IScrollableControl`; no additional members |
-| `IComboBox` | `System.Windows.Forms.ComboBox` | `DataSource`, `DisplayMember`, `Items`, `SelectedIndex`, `SelectedItem`, `ValueMember` |
-| `IListView` | `System.Windows.Forms.ListView` | `Columns`, `Items`, `MultiSelect`, `SelectedItems`, `View` |
-| `ITextBox` | `System.Windows.Forms.TextBox` | `Multiline`, `PasswordChar`, `ReadOnly`, `ScrollBars`, `WordWrap` |
-
----
-
-### 4.22 The `Prefer` Class (Actions)
-
-**Namespace:** `xyLOGIX.Core.Extensions.Actions`
-
-`Prefer` is a static class that solves a common problem in application configuration: you have a *preferred* (default) value from your config file, and an *optional* value that the user may or may not have supplied (e.g., on the command line).  If the user supplied a value, use it; otherwise fall back to the preferred default.
-
-Every method follows the exact same contract:
-
-> If `nullableValue` is non-`null` and has a value **and** that value differs from `preferredValue`, then return `nullableValue.Value`; otherwise return `preferredValue`.
-
-| Method | Nullable input type | Return type |
-|---|---|---|
-| `BoolOverNull` | `bool?` | `bool` |
-| `ByteOverNull` | `byte?` | `byte` |
-| `CharOverNull` | `char?` | `char` |
-| `DecimalOverNull` | `decimal?` | `decimal` |
-| `DoubleOverNull` | `double?` | `double` |
-| `FloatOverNull` | `float?` | `float` |
-| `IntOverNull` | `int?` | `int` |
-| `IntPtrOverNull` | `IntPtr?` | `IntPtr` |
-| `LongOverNull` | `long?` | `long` |
-| `NonZeroIntPtrOverZero` | `IntPtr` | `IntPtr` |
-| `NonZeroUIntPtrOverZero` | `UIntPtr` | `UIntPtr` |
-| `ObjectOverNull` | `object` | `object` |
-| `SByteOverNull` | `sbyte?` | `sbyte` |
-| `ShortOverNull` | `short?` | `short` |
-| `StringOverNull` | `string` | `string` |
-| `UInt32OverNull` | `uint?` | `uint` |
-| `UIntPtrOverNull` | `UIntPtr?` | `UIntPtr` |
-| `UShortOverNull` | `ushort?` | `ushort` |
-
-**Usage example:**
-
-```csharp
-using xyLOGIX.Core.Extensions.Actions;
-
-// Command-line argument parsing returns null if the user did not supply --port
-int? userPort = ParseCommandLinePort(); // may be null
-
-// Application config provides the default
-int configPort = Properties.Settings.Default.ListenPort; // e.g., 8080
-
-// Use the user's value if provided, otherwise use the config value
-int effectivePort = Prefer.IntOverNull(userPort, configPort);
-```
-
----
-
-### 4.23 The `Round` Class (Actions)
-
-**Namespace:** `xyLOGIX.Core.Extensions.Actions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `ToNearestCent` | `decimal ToNearestCent(decimal value)` | Rounds `value` to two decimal places using banker's rounding (`MidpointRounding.ToEven`).  Returns `decimal.Zero` if `value` is zero or negative. |
-
-**Usage example:**
-
-```csharp
-using xyLOGIX.Core.Extensions.Actions;
-
-decimal price = 9.9950m;
-decimal rounded = Round.ToNearestCent(price); // 10.00 (banker's rounding)
-
-decimal discount = 0.0049m;
-decimal roundedDiscount = Round.ToNearestCent(discount); // 0.00
-```
-
----
-
-### 4.24 The `Calculate` Class
-
-**Namespace:** `xyLOGIX.Core.Extensions`
-
-| Method | Signature | Description |
-|---|---|---|
-| `DeltaBetween` | `decimal DeltaBetween(decimal end, decimal start)` | Returns `end - start`.  Returns `decimal.Zero` if `end == start`. Useful for time-series deltas where `end` is the more recent value and `start` is the earlier one. |
-| `FractionalChangeBetween` | `decimal FractionalChangeBetween(decimal end, decimal start)` | Returns `(end - start) / start`.  Defined as zero when `start` is zero (avoids division by zero).  Returns the fractional rate of change — multiply by 100 to obtain a percentage. |
-| `PercentChangeBetween` | `decimal PercentChangeBetween(decimal end, decimal start)` | Returns `FractionalChangeBetween(end, start) * 100m`, expressed as a percentage. |
-
-**Usage example:**
-
-```csharp
-using xyLOGIX.Core.Extensions;
-
-decimal yesterdayClose = 150.00m;
-decimal todayClose     = 153.75m;
-
-decimal delta      = Calculate.DeltaBetween(todayClose, yesterdayClose);   // 3.75
-decimal pctChange  = Calculate.PercentChangeBetween(todayClose, yesterdayClose); // 2.50
-```
-
----
-
-### 4.25 The `Transform` Class
-
-**Namespace:** `xyLOGIX.Core.Extensions`
-
-| Member | Description |
-|---|---|
-| `PascalCasedTextToPhrase(string input)` | Splits a PascalCase or CamelCase string into a human-readable space-separated phrase, preserving all-uppercase acronyms. Returns `input` unchanged if it is `null` or empty (idempotent). |
-
-The two public regex patterns (`AcronymPattern`, `InitialCapsWordPattern`) are also exposed as `public const string` fields so consuming code can reuse them without duplicating the regular expression literals.
-
----
-
-### 4.26 `DynamicPrefer` (Dynamic)
-
-**Namespace:** `xyLOGIX.Core.Extensions.Dynamic`
-
-| Method | Signature | Description |
-|---|---|---|
-| `DynamicOverNull` | `dynamic DynamicOverNull(dynamic nullableValue, dynamic preferredValue)` | If `nullableValue` is non-`null`, returns `nullableValue`; otherwise returns `preferredValue`.  If both are `null`, returns `preferredValue` (which is also `null`). |
-
-This class exists because the C# 7.3 compiler does not allow `dynamic` as a generic type argument, so the type-safe `Prefer` class cannot cover this case.
-
----
-
-### 4.27 `ControlFormAssociationProvider` (Providers)
-
-**Namespace:** `xyLOGIX.Core.Extensions.Providers`
-
-The `ControlFormAssociationProvider` maintains a live dictionary that maps each registered `Control` to the `Form` that owns it.  It manages its own lifetime cleanup:
-
-- When a registered `Control` is destroyed (`Disposed` event), the association is removed.
-- When the parent `Form` is closed (`FormClosed` event), all associations for controls on that form are removed.
-
-This prevents memory leaks that would otherwise arise from event-handler closures keeping disposed objects alive.
-
-**How the provider is obtained:**
-
-Never instantiate `ControlFormAssociationProvider` directly.  Instead, always use the factory:
-
-```csharp
-using xyLOGIX.Core.Extensions.Providers.Factories;
-using xyLOGIX.Core.Extensions.Providers.Interfaces;
-
-IControlFormAssociationProvider provider =
-    GetControlFormAssociationProvider.SoleInstance();
-```
-
-In practice, you will almost never need to call the provider directly — `ControlExtensions.AssociateWithParentForm` and `ControlExtensions.GetParentForm` are the intended entry points.
-
-**Interface summary:**
-
-| Member | Description |
-|---|---|
-| `void Add(Control control)` | Registers `control` and its parent form. Idempotent; already-registered controls are ignored. |
-| `Form GetFormFor(Control control)` | Retrieves the registered parent form, or `null` if none is registered. |
-| `bool Remove(Control control)` | Removes the registration for `control`.  Returns `true` on success. |
-
----
-
-## 5. Cross-Cutting Concerns and Design Decisions
-
-### 5.1 PostSharp Logging Integration
-
-Every project in the solution contains a `GlobalAspects.cs` file that applies assembly-level PostSharp `[Log]` attributes.  This means **every public method call is automatically logged** at entry and exit through PostSharp's weaving — without any manual `DebugUtils.WriteLine` calls needed in the method body for that purpose.
-
-Methods that are explicitly decorated with `[Log(AttributeExclude = true)]` are excluded from this automatic logging.  These are typically:
-
-- Static constructors (to avoid cluttering the log file with `.cctor` entries).
-- Very high-frequency, trivially simple methods (e.g., simple property getters and `IsZero` helpers) where log chatter would outweigh benefit.
-- `protected` and `public` instance constructors of singletons and base classes.
-
-The `[NotLogged]` parameter attribute suppresses the logging of individual method parameter values — applied to all non-primitive parameters (`string`, `object`, structs, and reference types) to prevent sensitive or verbose data from appearing in log files.
-
-The `[return: NotLogged]` return attribute suppresses logging of return values for methods returning non-primitive types.
-
-### 5.2 Defensive Programming and the `result` Variable Pattern
-
-All non-`void` methods follow this invariant pattern:
-
-```csharp
-public ReturnType MethodName(ParamType param)
-{
-    var result = /* safe default */;
+    var result = false;
 
     try
     {
-        // Validation gates — each on its own line, each returning result immediately
-        if (param == null) return result;
-        if (param.Length <= 0) return result;
+        if (string.IsNullOrWhiteSpace(value)) return result;
 
-        // ... main logic ...
-
-        result = computedValue;
+        /* If we made it this far with no Exception(s) getting caught, then assume that the operation(s) succeeded. */
+        result = true;
     }
     catch (Exception ex)
     {
         // dump all the exception info to the log
         DebugUtils.LogException(ex);
 
-        result = /* safe default, reset */;
+        result = false;
     }
 
     return result;
 }
 ```
 
-Key rules:
+Match the surrounding method family when it uses a more specific variant of this pattern.
 
-- The `result` variable is **always** declared before the `try` block.
-- Each validation gate is its own `if` statement — no `||` or `&&` combining multiple checks.
-- The `catch` block **always** resets `result` to the same safe default before returning.
-- `void` methods still use `try`/`catch` and validate inputs, but have no `result` variable; they use bare `return;` at gate points.
-- `try`/`catch` blocks are **never** nested — a nested `try` is always extracted into a helper method.
+### Logging and PostSharp
 
-### 5.3 AlphaFS vs. `System.IO`
+The projects use `xyLOGIX.Core.Debug.DebugUtils`, log4net, and PostSharp Diagnostics.
 
-Throughout `StringExtensions` and `PathnameExtensions`, `System.IO.File`, `System.IO.Directory`, and `System.IO.Path` are **replaced** with their AlphaFS counterparts:
+Common conventions:
 
-```csharp
-using Directory = Alphaleonis.Win32.Filesystem.Directory;
-using File      = Alphaleonis.Win32.Filesystem.File;
-using Path      = Alphaleonis.Win32.Filesystem.Path;
+- Use `DebugUtils.LogException(ex);` in exception paths.
+- Place `// dump all the exception info to the log` immediately before exception logging.
+- Use `*** SUCCESS ***`, `*** WARNING ***`, and `*** ERROR ***` consistently where surrounding code does so.
+- Log final `Result = {result}` values where the surrounding method family does so.
+- Avoid `GetType().Name` in log messages when the literal type name is known.
+- Use `[Log(AttributeExclude = true)]` for static constructors and other members that should be excluded from automatic PostSharp logging.
+- Do not apply `[Log(AttributeExclude = true)]` to enums or enum members.
+- Do not regenerate `GlobalAspects.cs` unless explicitly requested.
+
+### `[NotLogged]` usage
+
+Use `[NotLogged]` on method parameters that should not be captured by PostSharp logging, including complex reference types, `object`, delegates, WinForms controls and forms, collections, and structured value types such as `Guid` or `Rectangle`.
+
+Use `[return: NotLogged]` on methods returning non-primitive or sensitive values.
+
+Do not add `[return: NotLogged]` to properties solely because the property type is complex. The projects' `GlobalAspects.cs` files already exclude property getters and setters from logging.
+
+### XML documentation
+
+XML documentation matters because Vsxmd turns it into project README files.
+
+General expectations:
+
+- Document public, internal, protected, and private code entities when generating or revising code.
+- Preserve existing documentation unless behavior changes.
+- Use fully qualified `<see cref="..." />` references when doing so is valid and does not create an inappropriate project reference or circular dependency.
+- Use `<c>...</c>` for file names, attributes, code constructs, and conceptual type mentions that should not be cross-reference targets.
+- Use `<see langword="null" />`, `<see langword="true" />`, and `<see langword="false" />` for C# keywords when referring to keyword values.
+- Start new `<param>` tag contents with `(Required.)` or `(Optional.)`.
+- Use `<paramref name="..." />` when referring to parameters.
+- Use `<para />` between adjacent documentation sentences when multiline remarks are needed.
+- Use accurate value-type and reference-type wording.
+
+### Collections, LINQ, and thread safety
+
+Avoid materializing collections unless it is necessary for correctness, performance, or thread safety.
+
+Do not iterate an `IEnumerable<T>` more than once needlessly. When a thread-safe snapshot is required, materialize with `ToArray()` and iterate the snapshot unless the source is already a known concurrent or synchronized collection.
+
+Avoid LINQ extension methods in hot, multithreaded, or parallel-processing paths when an explicit loop provides safer control. LINQ is acceptable in ordinary non-thread-sensitive code when it improves clarity and matches the surrounding implementation.
+
+### General code style
+
+- Use C# 7.3-compatible syntax only.
+- Prefer `var`, `out var`, and compatible pattern matching where it matches surrounding code.
+- Place fields and constants before properties that depend on them.
+- Use auto-properties where possible.
+- Decorate property getters and setters with `[DebuggerStepThrough]` when surrounding code does so.
+- Do not use `#region` or `#endregion`.
+- Avoid `++` and `--`; prefer `Interlocked.Increment` and `Interlocked.Decrement` when mutation must be atomic or thread-aware.
+- Delete dead code when a refactor makes it obsolete, unless asked to preserve it.
+- Do not regenerate `AssemblyInfo.cs` unless explicitly requested.
+
+## Build, packages, and generated documentation
+
+This repository intentionally uses legacy project conventions.
+
+When changing dependencies:
+
+- Do not migrate to `PackageReference` unless explicitly requested.
+- Do not update package versions as incidental cleanup.
+- Keep `allowedVersions` ranges aligned with pinned package versions where already present.
+- Keep `PostSharp.props`, `PostSharp.targets`, `NUnit.props`, and `Vsxmd.targets` imports intact.
+- Do not add project references unless there is a clear requirement and no circular dependency risk.
+
+The projects import Vsxmd targets and contain generated `README.md` files. When changing public XML documentation, ensure generated Markdown remains useful and conceptually aligned.
+
+## Running tests
+
+Tests are located in `xyLOGIX.Core.Extensions.Tests`.
+
+For .NET Framework 4.8 projects, Visual Studio Test Explorer or `vstest.console.exe` is usually the most reliable runner.
+
+```shell
+vstest.console.exe xyLOGIX.Core.Extensions.Tests\bin\Debug\xyLOGIX.Core.Extensions.Tests.dll /Framework:net48
 ```
 
-This is done at the top of the file as `using` aliases so the rest of the file's code reads identically to standard .NET code.  The benefit is transparent support for paths longer than 260 characters (`MAX_PATH`) and correct handling of UNC paths — both common in enterprise Windows environments.
+If using a Developer Command Prompt or an environment with compatible .NET test tooling, `dotnet test` may also work:
 
-### 5.4 Thread Safety
-
-Classes annotated with `[ExplicitlySynchronized]` (a PostSharp threading model attribute) require that all accesses to their members are synchronized by the caller or by PostSharp's generated thread-safe wrappers.  In this solution:
-
-- `ControlFormAssociationProvider` is `[ExplicitlySynchronized]` because `Control`-to-`Form` associations can be modified from multiple threads (the UI thread creates controls; background threads may query the dictionary).
-- `StringExtensions` is also `[ExplicitlySynchronized]` because some of its static fields (e.g., `_textInfoFromCurrentCulture`, `AcronymList`) could be accessed concurrently.
-
-In multithreaded consuming code, **never** call LINQ extension methods on shared `IEnumerable<T>` sequences directly.  Snapshot first:
-
-```csharp
-// Safe cross-thread iteration pattern
-var snapshot = myCollection.ToArray();
-foreach (var item in snapshot)
-    Process(item);
+```shell
+dotnet test xyLOGIX.Core.Extensions.Tests\xyLOGIX.Core.Extensions.Tests.csproj
 ```
 
----
+When adding or updating tests:
 
-## 6. How to Add a Reference to This Library
+1. Put tests in `xyLOGIX.Core.Extensions.Tests` unless a new test project is explicitly requested.
+2. Prefer focused fixtures corresponding to the concrete class or extension class under test.
+3. Preserve existing NUnit style and naming patterns.
+4. Use `Assert.That(...)` where the surrounding tests do.
+5. Wrap test bodies in `try`/`catch` when following repository-wide test style.
+6. Log exceptions and rethrow them; do not swallow test failures.
 
-This solution uses `packages.config`-based NuGet management and legacy `.csproj` format (non-SDK-style).
+## Using the libraries
 
-**Step 1 — Add the project reference** (if consuming from within the same solution):
+Reference only the projects needed by the consuming code.
 
-In Visual Studio 2022, right-click your project ? **Add** ? **Project Reference** ? select `xyLOGIX.Core.Extensions` (and any other projects from this solution you need).
-
-**Step 2 — Add the `using` directive:**
+Common namespaces:
 
 ```csharp
 using xyLOGIX.Core.Extensions;          // Core extension methods
@@ -947,47 +382,156 @@ using xyLOGIX.Core.Extensions.Actions;  // Prefer, Round
 using xyLOGIX.Core.Extensions.Dynamic;  // DynamicPrefer
 ```
 
-**Step 3 — Verify PostSharp is present:**
+Examples:
 
-This library's `GlobalAspects.cs` applies PostSharp aspects.  If your consuming project does not have PostSharp licensed and installed, you will see build errors from the weaver.  Add the `PostSharp` NuGet package (version matching this solution's `packages.config`) to your consuming project.
+```csharp
+using xyLOGIX.Core.Extensions;
 
-**Step 4 — Verify AlphaFS is present (for pathname methods):**
+if (someGuid.IsZero()) return;
 
-Add `AlphaFS 2.2.x` to your project's `packages.config` if you are calling any method in `PathnameExtensions` or the file-related methods of `StringExtensions`.
-
----
-
-## 7. Running the Tests
-
-Tests are located in `xyLOGIX.Core.Extensions.Tests`.  The test runner requires an STA thread for any test that shows a WinForms window.
-
-```shell
-# From the solution root in a Developer Command Prompt or PowerShell:
-dotnet test xyLOGIX.Core.Extensions.Tests\xyLOGIX.Core.Extensions.Tests.csproj
-
-# Or, using vstest.console.exe directly (required for .NET Framework 4.8):
-vstest.console.exe xyLOGIX.Core.Extensions.Tests\bin\Debug\xyLOGIX.Core.Extensions.Tests.dll /Framework:net48
+var text = "hello world".ToTitleCase();
+var code = "value`with`ticks".AsCode();
 ```
 
-To collect code coverage:
+```csharp
+using xyLOGIX.Core.Extensions.Actions;
 
-```shell
-dotnet-coverage collect -f cobertura -o coverage.cobertura.xml ^
-    dotnet test xyLOGIX.Core.Extensions.Tests\xyLOGIX.Core.Extensions.Tests.csproj
+var port = Prefer.IntOverNull(commandLinePort, configuredPort);
+var amount = Round.ToNearestCent(rawAmount);
 ```
 
-### Adding New Tests
+```csharp
+using xyLOGIX.Core.Extensions;
 
-1. Create your fixture class in `xyLOGIX.Core.Extensions.Tests`, mirroring the file name of the class under test (e.g., `GuidExtensionsTests.cs`).
-2. Decorate the class with `[TestFixture]` and `[ExplicitlySynchronized]`.
-3. Derive from `LoggingTestBase`.
-4. Follow the Arrange-Act-Assert pattern; one behavior per `[Test]` method; use `[Theory]` / `[TestCase]` for parameterized cases.
+myLabel.InvokeIfRequired(() => myLabel.Text = "Ready");
+```
 
----
+If consuming path-related helpers, ensure AlphaFS is available in the consuming project. If consuming projects are woven by PostSharp, align PostSharp package versions with this repository.
 
-## 8. Code Documentation
+## Contributor workflow
 
-Per-class and per-method XML documentation is compiled into a `README.md` in each project's folder by **Vsxmd** at build time.  Links:
+Before modifying existing code:
+
+1. Read the target file.
+2. Read nearby related files, especially interfaces, providers, factories, enums, validators, and tests.
+3. If a class is `partial`, scan adjacent files for other parts of the same class.
+4. Check the `.csproj` for compile inclusion and package/reference context.
+5. Determine whether the requested change already exists.
+6. Emit the smallest useful delta.
+
+When generating code, use reference order: code that depends on nothing else first, then code that depends on it, and so forth. Within a class, place fields and constants before properties that use them.
+
+For a brand-new Strategy Pattern family, define:
+
+1. Strategy enum.
+2. Strategy interface.
+3. Abstract base class using the Template Method pattern.
+4. Concrete strategy classes, one by one.
+5. Factory for each concrete class when applicable.
+6. Strategy factory.
+
+## Detailed API reference
+
+### String utilities
+
+**Class:** `StringExtensions`
+
+`StringExtensions` is the largest class in the solution. It provides case conversion, title formatting, GUID detection, substring matching, replacement, pluralization, singularization, language-article selection, repetition, removal, and other string-manipulation helpers.
+
+Representative methods include:
+
+| Method | Purpose |
+|---|---|
+| `ToTitleCase` | Converts text to title case while preserving known acronyms and small-word rules. |
+| `ToSentenceCase` | Capitalizes the first character of a string. |
+| `ContainsAnyOf` | Determines whether a string contains any candidate substring. |
+| `IsGuid` | Determines whether a string is parseable as a GUID. |
+| `ContainsGuid` | Determines whether a string contains an embedded GUID pattern. |
+| `ReplaceAnyOf` | Replaces any of several target strings with a replacement string. |
+| `Repeat` | Repeats a string a specified number of times. |
+| `RemoveAll` | Removes specified characters from a string. |
+| `Pluralize` / `Singularize` | Uses the English pluralization service from `System.Data.Entity.Design`. |
+| `GetLanguageArticle` | Returns `a` or `an` for a noun-like string. |
+
+### Enumerable and collection utilities
+
+**Classes:** `EnumerableExtensions`, `CollectionExtensions`, `ListExtensions`, `SetExtensions`, `DictionaryExtensions`
+
+These classes provide null-safe collection checks, bulk additions, typed list searching, dictionary lookup helpers, set additions, and materialization into PostSharp-friendly collection types.
+
+Representative methods include:
+
+| Method | Purpose |
+|---|---|
+| `IsNullOrEmpty<T>` | Tests whether a sequence is `null` or empty. |
+| `ForEach<T>` | Iterates a sequence and applies an action. |
+| `AnyEqual<T>` / `AnyEqualAnyOf<T>` | Tests whether any element matches one or more values. |
+| `AddMultiple<T>` | Adds a parameter array of items to a collection. |
+| `ContainsAny<T>` | Tests whether a list contains any specified value. |
+| `IndexOfFirst<T>` | Returns the first index matching a predicate. |
+| `AddRange<T>` | Adds multiple values to a set. |
+| `GetValueOrDefault<TKey, TValue>` | Reads a dictionary value with fallback behavior. |
+| `AddOrUpdate<TKey, TValue>` | Inserts or updates a dictionary entry. |
+
+### Numeric utilities
+
+**Classes:** `NumberExtensions`, `IntExtensions`, `LongExtensions`, nullable numeric extensions
+
+Numeric helpers emphasize safe sign checks, zero checks, range checks, nullable value guards, and simple conversion behavior.
+
+Representative methods include:
+
+| Method | Purpose |
+|---|---|
+| `AsDecimal` | Converts a `double` to a `decimal` safely. |
+| `IsZero` | Checks whether a numeric value is zero. |
+| `IsPositive` | Checks whether a numeric value is positive. |
+| `IsNegative` | Checks whether a numeric value is negative. |
+| `IsNaN` | Checks whether a `double` is NaN. |
+| `IsBetween` | Checks whether an `int` lies between two bounds. |
+| `HasPositiveValue` | Checks whether a nullable numeric value exists and is positive. |
+
+### Date, GUID, enum, byte, type, and Markdown utilities
+
+| Area | Class | Purpose |
+|---|---|---|
+| Date/time | `DateTimeExtensions`, `DateTimeOffsetExtensions` | RFC 3339 formatting and readable sentence-part formatting. |
+| GUID | `GuidExtensions` | GUID formatting and Zero GUID checks. |
+| Enum | `EnumExtensions` | Description lookup and defined-value checks. |
+| Byte arrays | `ByteArrayExtensions` | Safe length, hex formatting, and Base64 formatting. |
+| Reflection | `TypeExtensions` | Actual-type resolution, interface checks, nullable type checks, and caching. |
+| Markdown | `MarkdownExtensions` | Inline-code span escaping and XML-node whitespace preservation. |
+
+### WinForms utilities
+
+WinForms helpers provide safe threading, lifetime, positioning, cue-banner, binding, and interface abstraction support.
+
+| Class | Purpose |
+|---|---|
+| `ControlExtensions` | `InvokeIfRequired`, parent-form association, and parent-form lookup. |
+| `FormExtensions` | Centering, opacity, fade-in, and fade-out helpers. |
+| `TextBoxExtensions` | Win32 cue-banner text support. |
+| `ComboBoxExtensions` | Enum binding, selected enum retrieval, and enum selection. |
+| `CheckedListBoxExtensions` | Bulk check/uncheck and typed checked-item retrieval. |
+| `ToolStripMenuItemExtensions` | Shortcut key display text helper. |
+| `BindingManagerBaseExtensions` | Current-position and data-binding helpers. |
+| `ComponentExtensions` | Disposal-state heuristics for components. |
+
+### Actions, dynamic helpers, and providers
+
+| Class | Project | Purpose |
+|---|---|---|
+| `Prefer` | `xyLOGIX.Core.Extensions.Actions` | Selects user-supplied nullable values over preferred fallback values. |
+| `Round` | `xyLOGIX.Core.Extensions.Actions` | Rounds decimal values using project-specific rules. |
+| `Calculate` | `xyLOGIX.Core.Extensions` | Calculates deltas, fractional changes, and percent changes. |
+| `Transform` | `xyLOGIX.Core.Extensions` | Converts PascalCase or CamelCase text to readable phrases. |
+| `DynamicPrefer` | `xyLOGIX.Core.Extensions.Dynamic` | Provides prefer-over-null semantics for `dynamic` values. |
+| `ControlFormAssociationProvider` | `xyLOGIX.Core.Extensions.Providers` | Maintains synchronized control-to-form associations. |
+| `GetControlFormAssociationProvider` | `xyLOGIX.Core.Extensions.Providers.Factories` | Returns the provider singleton through the factory layer. |
+
+## Documentation links
+
+Per-project API documentation is generated from XML documentation by Vsxmd.
 
 | Project | Documentation |
 |---|---|
@@ -999,5 +543,6 @@ Per-class and per-method XML documentation is compiled into a `README.md` in eac
 | `xyLOGIX.Core.Extensions.Providers.Factories` | [xyLOGIX.Core.Extensions.Providers.Factories/README.md](xyLOGIX.Core.Extensions.Providers.Factories/README.md) |
 | `xyLOGIX.Core.Extensions.Tests` | [xyLOGIX.Core.Extensions.Tests/README.md](xyLOGIX.Core.Extensions.Tests/README.md) |
 
-The GitHub repository for this solution is:  
+The GitHub repository for this solution is:
+
 [https://github.com/astrohart/xyLOGIX.Core.Extensions.VS2019](https://github.com/astrohart/xyLOGIX.Core.Extensions.VS2019)

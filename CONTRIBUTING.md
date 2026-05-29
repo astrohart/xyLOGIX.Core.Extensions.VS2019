@@ -2,7 +2,7 @@
 
 Thank you for contributing to `xyLOGIX.Core.Extensions`.
 
-This repository contains a proprietary .NET Framework 4.8 / C# 7.3 module that extends the .NET Base Class Library and Windows Forms with defensive, heavily documented utility methods, action classes, dynamic helpers, provider infrastructure, and NUnit test coverage.
+This repository contains a proprietary .NET Framework 4.8 / C# 7.3 module that extends the .NET Base Class Library and Windows Forms with defensive, heavily documented utility methods, fluent action classes, dynamic helpers, provider infrastructure, and NUnit test coverage.
 
 ## Important licensing and header notice
 
@@ -137,6 +137,29 @@ This project contains NUnit tests for extension and action behavior.
 
 Add tests here only when requested or when the change is risky enough to warrant test coverage.
 
+## Code-generation and response-order preferences
+
+When generating code for this repository, produce code in reference order:
+
+1. Code that depends on nothing else.
+2. Code that depends on the preceding code.
+3. Code that depends on that, and so forth.
+
+Within a class, place field and constant declarations before properties that depend on them. This prevents paste-in workflows from producing confusing compiler errors as the code is copied from top to bottom.
+
+When generating a brand-new Strategy Pattern family, define items in this order:
+
+1. Strategy enum.
+2. Strategy interface.
+3. Abstract base class using the Template Method pattern.
+4. Concrete strategy classes, one by one.
+5. Factory for each concrete class when applicable.
+6. Strategy factory.
+
+Generate the smallest useful code delta that fully answers the prompt. Do not teach experienced contributors how to add files to projects unless the prompt asks for that.
+
+If a task is large, break the work into clear steps and stop at the requested step. Do not ask about unrelated new tasks until the current task is complete.
+
 ## Coding standards
 
 ### C# language level
@@ -171,8 +194,11 @@ Do not assume:
 - Cross-thread control access is safe.
 - File-system operations succeed.
 - External helper methods return useful values.
+- Numeric, size, count, or index values are positive or in range.
 
-Prefer simple guard clauses and early returns over deep nesting.
+Prefer simple guard clauses and early returns over deep nesting. Negate `if` statements where doing so reduces nesting and cyclomatic complexity.
+
+Avoid combining eager-return validation gates with `&&` or `||` when separate checks would produce clearer logging and safer control flow. Prefer one validation per line with its own return path when feasible.
 
 ### Result-variable pattern
 
@@ -206,6 +232,8 @@ public bool TryDoSomething(string value)
 
 Follow the surrounding file's established result-assignment style when it is more specific than the generic example above.
 
+For logic gates in `bool` methods, it is acceptable to set `result` to the optimistic value before a gate, log the gate, and then reset it to the default value if the gate fails. Match the surrounding method style.
+
 ### Exception handling
 
 Most nontrivial methods in this repository are wrapped in `try`/`catch` blocks.
@@ -229,8 +257,11 @@ Preserve existing logging conventions:
 - Use `*** ERROR ***` for failed gates or failed operations.
 - Use `*** WARNING ***` for non-fatal anomalies.
 - Use `Proceeding...` or `Stopping...` when it clarifies control flow.
+- Log final `Result = {result}` values where the surrounding method family does so.
 
 Do not replace explicit diagnostic logging with terse or implicit behavior.
+
+Refrain from using `GetType().Name` in logging messages. Prefer the literal type name in the message text when the type is known.
 
 ### PostSharp attributes
 
@@ -247,17 +278,60 @@ Do not regenerate `GlobalAspects.cs` unless explicitly requested.
 
 Do not apply `[Log(AttributeExclude = true)]` to enums or enum members.
 
-### Thread safety
+Static classes that expose static helper, action, extension, or factory methods should generally define a static constructor decorated with `[Log(AttributeExclude = true)]`, matching the surrounding project style.
 
-Be careful around extension methods that operate on WinForms controls, collections, and shared provider dictionaries.
+### `[NotLogged]` usage
 
-When changing shared or UI-adjacent logic:
+Use `[NotLogged]` on method parameters that should not be captured by PostSharp logging.
 
-- Preserve cross-thread `InvokeIfRequired` behavior.
-- Avoid unnecessary mutable static state.
-- Preserve `AdvisableDictionary` or synchronized collection usage where already present.
-- Avoid LINQ in hot or thread-sensitive code paths if the surrounding implementation avoids it.
-- Do not introduce unsafe lazy initialization patterns.
+Apply `[NotLogged]` to method parameters whose types are complex or sensitive, including:
+
+- Reference types other than ordinary scalar cases.
+- `object`.
+- Delegates.
+- WinForms controls and forms.
+- Collections.
+- Value types used as structured values, such as `Guid`, `Rectangle`, or other structs.
+
+Apply `[return: NotLogged]` to methods that return non-primitive or sensitive values.
+
+Do not add `[return: NotLogged]` to properties solely because the property type is complex. The projects' `GlobalAspects.cs` files already exclude property getters and setters from logging.
+
+For `string` parameters and return values, follow the surrounding file and current owner preference. When in doubt, mark method `string` parameters and method `string` return values as not logged.
+
+### Properties, fields, and accessors
+
+Place fields and constants before properties that use them.
+
+Use auto-properties where possible. Use backing fields only when a value must be cached, validation must be applied, or an event must be raised when a value changes.
+
+Property getters and setters should be decorated at the accessor level with `[DebuggerStepThrough]` when the surrounding code does so.
+
+For auto-properties, prefer this form when editing or adding similar code:
+
+```csharp
+public string Text
+{
+    [DebuggerStepThrough] get;
+    [DebuggerStepThrough] set;
+}
+```
+
+Do not use expression-bodied properties or expression-bodied accessors when the surrounding code uses statement bodies or accessor attributes.
+
+### General code style
+
+Prefer `var`, `out var`, and pattern matching when compatible with C# 7.3 and when the surrounding code style supports it.
+
+Do not use `#region` or `#endregion`.
+
+Avoid `++` and `--`; prefer `Interlocked.Increment` and `Interlocked.Decrement` when mutation must be atomic or thread-aware.
+
+Delete dead code when a refactor makes it obsolete, unless the prompt explicitly asks to preserve it.
+
+Do not regenerate `AssemblyInfo.cs` unless explicitly requested.
+
+Do not place project files beside the solution file. Each project should remain in its own project directory below the solution directory.
 
 ## Extension-method conventions
 
@@ -277,6 +351,7 @@ When adding an extension method:
 - Validate the receiver parameter if it can be `null`.
 - Prefer safe default values over thrown exceptions, unless the existing method family intentionally throws.
 - Preserve XML documentation and examples consistent with nearby methods.
+- Avoid extension classes outside a namespace/project ending in `.Extensions` unless the existing project already establishes a different pattern.
 
 ## WinForms extension and interface guidance
 
@@ -288,6 +363,7 @@ For WinForms extension methods:
 - Use `InvokeIfRequired` patterns for cross-thread UI updates.
 - Do not add ProjectCloner-specific dialog, MVP, wizard, or dark-theme form rules to this repository.
 - Do not introduce UI control designer conventions unless this module actually adds forms or designer files.
+- Do not put control text or user-visible control values into `Resources.resx` unless the repository owner explicitly asks.
 
 For WinForms interfaces such as `IForm`, `IControl`, `IUserControl`, and related contracts:
 
@@ -308,6 +384,8 @@ When changing provider behavior:
 - Preserve singleton semantics and defensive validation.
 - Avoid circular references between provider projects.
 
+Factory classes are static and named fluently, such as `GetControlFormAssociationProvider`. Factory methods should read naturally at the call site, such as `GetControlFormAssociationProvider.SoleInstance()`.
+
 ## Enum and validator guidance
 
 Enums in this repository include `LanguageArticleType` and `ReplaceAnyOfOption`.
@@ -325,6 +403,7 @@ For validators:
 - Keep validator logic close to the value set it validates unless a separate project is explicitly requested.
 - Validate enum values before switching on them.
 - Return `false` for invalid values rather than throwing unless the existing contract says otherwise.
+- Provide or preserve `IsValid` and `IsValidSilent` style entry points where the surrounding validator pattern uses them.
 
 ## XML documentation standards
 
@@ -340,11 +419,36 @@ XML documentation is important because this repository uses Vsxmd to generate Ma
 - Use `<paramref name="..." />` when referring to a method parameter.
 - Use `<para />` between adjacent documentation sentences when multiline remarks are needed.
 - Prefer XML documentation that resembles Microsoft Learn output.
+- Use `(Required.)` or `(Optional.)` at the beginning of `<param>` tag contents when generating new parameter documentation.
+- When documenting generic types in `cref` values, prefer the backtick-plus-arity notation when needed, such as `T:Namespace.Type`1`.
+
+### Type and member references
+
+Use these `cref` prefixes where appropriate:
+
+- `T:` for classes, interfaces, structs, delegates, and enums.
+- `M:` for methods and constructors.
+- `P:` for properties.
+- `F:` for fields, constants, and enum members.
+- `E:` for events.
+
+Refer to `System.String.Empty` and `System.Guid.Empty` with `F:` references when a cross-reference is appropriate.
+
+When referring to the `xyLOGIX.Core.Debug.DebugUtils.LogException(System.Exception,System.Boolean)` method in XML documentation, use its fully qualified method signature.
+
+### Value-type and reference-type wording
+
+Use reference semantics accurately.
+
+For reference types, use wording such as `Reference to an instance of ...` when appropriate.
+
+For value types, do not write `Reference to a...`. Prefer wording such as `A <see cref="T:System.String" /> value...`, `A <see cref="T:System.Int32" /> value...`, or `A <see cref="T:System.Guid" /> value...` as appropriate.
 
 ### Interface documentation
 
 When creating or updating interfaces:
 
+- Begin interface summaries with `Defines the publicly-exposed events, methods and properties of ...` when that convention fits the interface.
 - Define only the public contract needed by consumers.
 - Keep documentation duplicatable on implementing members.
 - Avoid referring to private helper methods in interface documentation.
@@ -355,6 +459,14 @@ When documentation mentions a type that is not available without creating a new 
 
 Use `<see cref="T:..." />`, `<see cref="M:..." />`, `<see cref="P:..." />`, `<see cref="F:..." />`, and `<see cref="E:..." />` only when the reference is available and appropriate.
 
+### XML documentation formatting
+
+The existing codebase contains both multi-line XML documentation and ReSharper-formatted wrapping. Preserve existing formatting when editing nearby code.
+
+When generating new standalone code for paste-in use, prefer concise single-line XML documentation for each code entity when it remains readable, because ReSharper can reflow it afterward.
+
+Do not churn XML documentation solely to change line wrapping.
+
 ## Events
 
 When adding events:
@@ -363,8 +475,21 @@ When adding events:
 - Provide a corresponding `protected virtual OnXxx(...)` method for instance members.
 - Use null-conditional invocation, for example `SomeEvent?.Invoke(...)`.
 - Preserve existing delegate and `EventArgs` patterns.
+- Remove the `sealed` modifier from a class if a new `protected virtual` event invoker must be added.
 
 For static classes, follow the existing event-raising pattern used by the surrounding code.
+
+## Collections, iteration, and LINQ
+
+Avoid materializing collections unless it is necessary for correctness, performance, or thread safety.
+
+Do not iterate an `IEnumerable<T>` more than once needlessly.
+
+When a thread-safe snapshot is required, materialize with `ToArray()` and iterate the snapshot, unless the source is already a known concurrent or synchronized collection.
+
+Avoid LINQ extension methods in hot, multithreaded, or parallel-processing paths when an explicit loop provides safer control. LINQ is acceptable in ordinary non-thread-sensitive code when it improves clarity and matches the surrounding implementation.
+
+Preserve `AdvisableDictionary` or other synchronized collection usage where already present.
 
 ## Package and dependency management
 
@@ -403,6 +528,8 @@ The codebase currently contains:
 
 Do not churn files for formatting-only reasons unless that is the requested change.
 
+When editing only formatting, ensure behavior, metadata values, package IDs, package versions, target frameworks, and binding redirects remain unchanged.
+
 ## Testing guidance
 
 The repository includes `xyLOGIX.Core.Extensions.Tests` using NUnit 4.3.2.
@@ -413,8 +540,8 @@ When adding or updating tests:
 - Prefer focused fixtures that correspond to the concrete class or extension class under test.
 - Preserve existing NUnit style and naming patterns.
 - Use `Assert.That(...)` as the surrounding tests do.
-- Log exceptions and rethrow them when following repository-wide test style.
-- Do not swallow test failures.
+- Wrap test bodies in `try`/`catch` when following repository-wide test style.
+- Log exceptions and rethrow them; do not swallow test failures.
 
 ## Read-before-write workflow
 
@@ -422,21 +549,28 @@ Before modifying existing code:
 
 1. Read the target file.
 2. Read nearby related files, especially interfaces, providers, factories, enums, validators, and tests.
-3. Check the `.csproj` for compile inclusion and package/reference context.
-4. Determine whether the requested change already exists.
-5. Emit the smallest useful delta.
+3. If a class is `partial`, scan adjacent files for other parts of the same class.
+4. Check the `.csproj` for compile inclusion and package/reference context.
+5. Determine whether the requested change already exists.
+6. Emit the smallest useful delta.
 
 Do not regenerate an entire file when a small targeted change is sufficient.
+
+When producing a drop-in replacement for an existing file, keep unchanged code faithful to the original file.
 
 ## Commit-message guidance
 
 Commit messages should follow the repository's concise outline style:
 
 - First line: present-tense, sentence-case summary, no more than 50 characters.
+- First word of the first line is a present-tense verb.
+- If a single file is being added as the only change, use `Create` followed by the file name.
+- If a single file is being modified as the only change, use `Update` followed by the file name.
 - Second line: blank.
 - Body: present-tense outline bullets.
 - Wrap file names, paths, code entities, package IDs, XML elements, and values in backticks in the body.
 - Do not put backticks in the top line.
+- Do not use Comprehensive Commit format.
 
 ## Pull request and issue guidance
 

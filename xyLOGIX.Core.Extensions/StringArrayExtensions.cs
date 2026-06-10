@@ -27,11 +27,11 @@ namespace xyLOGIX.Core.Extensions
         static StringArrayExtensions() { }
 
         /// <summary>
-        /// Dumps the contents of the specified <see cref="T:System.String[]" />
+        /// Dumps the contents of the specified <see cref="T:System.String" />
         /// array to the application log.
         /// </summary>
         /// <param name="values">
-        /// (Required.) Reference to the <see cref="T:System.String[]" /> whose
+        /// (Required.) Reference to the <see cref="T:System.String" /> whose
         /// contents are to be logged.
         /// </param>
         [DebuggerStepThrough]

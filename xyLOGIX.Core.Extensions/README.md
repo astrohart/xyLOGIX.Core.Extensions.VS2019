@@ -10441,7 +10441,7 @@ non-negative; i.e., zero, or a positive number.
 
 `true` if the specified `value` is
 nonnegative; `false` if the `value` is
-strictly less than [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32.Zero 'System.Int32.Zero').
+strictly less than zero
 
 ##### Parameters
 
@@ -10483,7 +10483,7 @@ non-positive; i.e., zero, or a negative number.
 
 `true` if the specified `value` is
 nonpositive; `false` if the `value` is
-strictly greater than[Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32.Zero 'System.Int32.Zero').
+strictly greater than zero.
 
 ##### Parameters
 
@@ -11415,7 +11415,7 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Provides extension methods for [String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') arrays.
+Provides extension methods for [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') arrays.
 
 <a name='M-xyLOGIX-Core-Extensions-StringArrayExtensions-#cctor'></a>
 ### #cctor() `method`
@@ -11444,14 +11444,14 @@ attribute in order to simplify the logging output.
 
 ##### Summary
 
-Dumps the contents of the specified [String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]')
+Dumps the contents of the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
 array to the application log.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Reference to the [String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') whose
+| values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Reference to the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose
 contents are to be logged. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringArrayExtensions-ReplaceInAll-System-Collections-Generic-IEnumerable{System-String},System-String,System-String-'></a>

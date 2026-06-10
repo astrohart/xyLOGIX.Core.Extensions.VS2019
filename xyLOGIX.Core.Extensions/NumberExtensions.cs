@@ -517,7 +517,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
         /// nonnegative; <see langword="false" /> if the <paramref name="value" /> is
-        /// strictly less than <see cref="F:System.Int32.Zero" />.
+        /// strictly less than zero
         /// </returns>
         public static bool IsNonNegative(this int value)
             => value >= 0;
@@ -549,7 +549,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
         /// nonpositive; <see langword="false" /> if the <paramref name="value" /> is
-        /// strictly greater than<see cref="F:System.Int32.Zero" />.
+        /// strictly greater than zero.
         /// </returns>
         public static bool IsNonPositive(this int value)
             => value <= 0;

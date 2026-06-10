@@ -8,7 +8,7 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Provides extension methods for <see cref="T:System.String[]" /> arrays.
+    /// Provides extension methods for <see cref="T:System.String" /> arrays.
     /// </summary>
     public static class StringArrayExtensions
     {

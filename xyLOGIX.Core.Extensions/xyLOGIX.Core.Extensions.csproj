@@ -20,7 +20,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\x86\Debug\xyLOGIX.Core.Extensions.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <NoWarn>1591, 1587, 1580, 1584</NoWarn>
     <SkipPostSharp>False</SkipPostSharp>
     <IntermediateOutputPath>C:\Users\BRIANH~1\AppData\Local\Temp\vs925D.tmp\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
@@ -35,7 +35,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\x86\Release\xyLOGIX.Core.Extensions.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <NoWarn>1591, 1587, 1580, 1584</NoWarn>
     <SkipPostSharp>False</SkipPostSharp>
     <IntermediateOutputPath>C:\Users\BRIANH~1\AppData\Local\Temp\vs925D.tmp\x86\Release\</IntermediateOutputPath>
   </PropertyGroup>
@@ -62,7 +62,7 @@
     <OutputPath>bin\x64\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DocumentationFile>bin\x64\Debug\xyLOGIX.Core.Extensions.xml</DocumentationFile>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <NoWarn>1591, 1587, 1580, 1584</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>
@@ -74,7 +74,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <DocumentationFile>bin\x64\Release\xyLOGIX.Core.Extensions.xml</DocumentationFile>
     <Optimize>true</Optimize>
-    <NoWarn>CS1591;CS1587</NoWarn>
+    <NoWarn>1591, 1587, 1580, 1584</NoWarn>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>7.3</LangVersion>

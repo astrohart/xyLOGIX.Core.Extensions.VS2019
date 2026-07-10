@@ -546,6 +546,7 @@
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Int32)')
   - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonPositive(System.Decimal)')
   - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonPositive(System.Int32)')
+  - [IsNonPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-UInt32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonPositive(System.UInt32)')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonzero(System.Decimal)')
   - [IsNonzero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonzero(System.Double)')
   - [IsPositive(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsPositive(System.Int32)')
@@ -781,6 +782,10 @@
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-UInt32Extensions-EqualsOneOf-System-UInt32,System-UInt32[]- 'xyLOGIX.Core.Extensions.UInt32Extensions.EqualsOneOf(System.UInt32,System.UInt32[])')
   - [IsBitmaskOn(num,bitmask)](#M-xyLOGIX-Core-Extensions-UInt32Extensions-IsBitmaskOn-System-UInt32,System-UInt32- 'xyLOGIX.Core.Extensions.UInt32Extensions.IsBitmaskOn(System.UInt32,System.UInt32)')
   - [ToOrdinalString(value)](#M-xyLOGIX-Core-Extensions-UInt32Extensions-ToOrdinalString-System-UInt32- 'xyLOGIX.Core.Extensions.UInt32Extensions.ToOrdinalString(System.UInt32)')
+- [UnsignedIntExtensions](#T-xyLOGIX-Core-Extensions-UnsignedIntExtensions 'xyLOGIX.Core.Extensions.UnsignedIntExtensions')
+  - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-UnsignedIntExtensions-EqualsOneOf-System-UInt32,System-Int32[]- 'xyLOGIX.Core.Extensions.UnsignedIntExtensions.EqualsOneOf(System.UInt32,System.Int32[])')
+  - [IsBitmaskOn(num,bitmask)](#M-xyLOGIX-Core-Extensions-UnsignedIntExtensions-IsBitmaskOn-System-UInt32,System-UInt32- 'xyLOGIX.Core.Extensions.UnsignedIntExtensions.IsBitmaskOn(System.UInt32,System.UInt32)')
+  - [ToOrdinalString(value)](#M-xyLOGIX-Core-Extensions-UnsignedIntExtensions-ToOrdinalString-System-UInt32- 'xyLOGIX.Core.Extensions.UnsignedIntExtensions.ToOrdinalString(System.UInt32)')
 
 <a name='T-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions'></a>
 ## BindingManagerBaseExtensions `type`
@@ -10052,8 +10057,9 @@ numerical data.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
+class.
 
 ##### Parameters
 
@@ -10061,8 +10067,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -10175,8 +10181,8 @@ the `floorValue`, then this method is the identity.
 
 ##### Summary
 
-Determines whether a number is strictly between (as in, can't be
-equal to either).
+Determines whether a number is strictly between (as in, can't be equal
+to either).
 
 ##### Returns
 
@@ -10197,8 +10203,8 @@ True if `value` is strictly greater than
 
 ##### Summary
 
-Determines whether a number is strictly between (as in, can't be
-equal to either).
+Determines whether a number is strictly between (as in, can't be equal
+to either).
 
 ##### Returns
 
@@ -10219,8 +10225,8 @@ True if `value` is strictly greater than
 
 ##### Summary
 
-Determines whether a number is strictly between (as in, can't be
-equal to either).
+Determines whether a number is strictly between (as in, can't be equal
+to either).
 
 ##### Returns
 
@@ -10241,14 +10247,14 @@ True if `value` is strictly greater than
 
 ##### Summary
 
-Determines if an [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value is between a pair of
-values or equal to the lower bound of the given range.
+Determines if an [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value is between a pair
+of values or equal to the lower bound of the given range.
 
 ##### Returns
 
-`true` if the value is either within the range specified or
-equal to the `lowerBound`; `false`
-otherwise.
+`true` if the value is either within the range
+specified or equal to the `lowerBound`;
+`false` otherwise.
 
 ##### Parameters
 
@@ -10268,14 +10274,15 @@ value(s) by this method.
 
 ##### Summary
 
-Determines if an [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value is either strictly between
-a pair of values or equal to the upper bound of the given range.
+Determines if an [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value is either
+strictly between a pair of values or equal to the upper bound of the given
+range.
 
 ##### Returns
 
-`true` if the value is either within the range specified or
-equal to the `upperBound`; `false`
-otherwise.
+`true` if the value is either within the range
+specified or equal to the `upperBound`;
+`false` otherwise.
 
 ##### Parameters
 
@@ -10353,8 +10360,8 @@ specified or equal to either of the bounds; `false` otherwise.
 
 ##### Summary
 
-Determines whether the specified `value` is a member of the
-set of all natural numbers; i.e., one or greater.
+Determines whether the specified `value` is a member
+of the set of all natural numbers; i.e., one or greater.
 
 ##### Returns
 
@@ -10366,7 +10373,7 @@ a member of the set of all natural numbers; otherwise, `false`
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to be compared.  Must be of
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to be compared. Must be of
 [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal-'></a>
@@ -10393,20 +10400,21 @@ less than zero; `false` otherwise.
 
 ##### Summary
 
-Determines whether the specified `value` is negative; i.e.,
-strictly less than zero.
+Determines whether the specified `value` is
+negative; i.e., strictly less than zero.
 
 ##### Returns
 
-`true` if the specified `value` is negative;
-`false` if the `value` is zero or greater.
+`true` if the specified `value` is
+negative; `false` if the `value` is zero or
+greater.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared.  Must be of [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32')
-type. |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared. Must be of
+[Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal-'></a>
 ### IsNonNegative(value) `method`
@@ -10426,7 +10434,7 @@ strictly less than [Zero](http://msdn.microsoft.com/query/dev14.query?appId=Dev1
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared.  Must be of
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Int32-'></a>
@@ -10447,7 +10455,7 @@ strictly less than zero
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared.  Must be of
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared. Must be of
 [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Decimal-'></a>
@@ -10468,7 +10476,7 @@ strictly greater than[Zero](http://msdn.microsoft.com/query/dev14.query?appId=De
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared.  Must be of
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-Int32-'></a>
@@ -10489,8 +10497,29 @@ strictly greater than zero.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared.  Must be of
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value to be compared. Must be of
 [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') data type. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonPositive-System-UInt32-'></a>
+### IsNonPositive(value) `method`
+
+##### Summary
+
+Determines whether the specified `value` is
+non-positive; i.e., zero, or a negative number.
+
+##### Returns
+
+`true` if the specified `value` is
+nonpositive; `false` if the `value` is
+strictly greater than zero.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) Value to be compared. Must be of
+[UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Decimal-'></a>
 ### IsNonzero(value) `method`
@@ -10509,7 +10538,7 @@ identically equal to [Zero](http://msdn.microsoft.com/query/dev14.query?appId=De
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared.  Must be of
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonzero-System-Double-'></a>
@@ -10529,7 +10558,7 @@ identically equal to [Zero](http://msdn.microsoft.com/query/dev14.query?appId=De
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.) Value to be compared.  Must be of
+| value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.) Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Int32-'></a>
@@ -10537,8 +10566,9 @@ identically equal to [Zero](http://msdn.microsoft.com/query/dev14.query?appId=De
 
 ##### Summary
 
-Determines whether the specified `value` is a positive
-integer; i.e., the `value` is strictly greater than zero.
+Determines whether the specified `value` is a
+positive integer; i.e., the `value` is strictly greater than
+zero.
 
 ##### Returns
 
@@ -10549,7 +10579,7 @@ greater than zero; otherwise, `false`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to be compared.  Must be of
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Value to be compared. Must be of
 [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Decimal-'></a>
@@ -10568,7 +10598,7 @@ greater than zero; `false` otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.)  Value to be compared. Must be of
+| value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsPositive-System-Double-'></a>
@@ -10587,7 +10617,7 @@ greater than zero; `false` otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.)  Value to be compared. Must be of
+| value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.) Value to be compared. Must be of
 [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal-'></a>
@@ -10646,9 +10676,9 @@ True if the `value` is zero; false otherwise.
 
 ##### Summary
 
-Rounds the specified `value` to the nearest cent, using
-banker's rounding, assuming that the specified `value` is
-denominated in `U.S. Dollars (USD)`.
+Rounds the specified `value` to the nearest cent,
+using banker's rounding, assuming that the specified `value`
+is denominated in `U.S. Dollars (USD)`.
 
 ##### Returns
 
@@ -10673,8 +10703,8 @@ is to be rounded. |
 
 ##### Summary
 
-Takes a value of type decimal and truncates it to the specified
-number of places.
+Takes a value of type decimal and truncates it to the specified number
+of places.
 
 ##### Returns
 
@@ -10693,7 +10723,7 @@ following the decimal point.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified
+Computes the zero floor. Meaning, if the specified
 `value` is negative, then this method returns zero.
 
 
@@ -10718,7 +10748,7 @@ the method is the identity map.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified
+Computes the zero floor. Meaning, if the specified
 `value` is negative, then this method returns zero.
 
 
@@ -10743,7 +10773,7 @@ the method is the identity map.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified
+Computes the zero floor. Meaning, if the specified
 `value` is negative, then this method returns zero.
 
 
@@ -16152,6 +16182,91 @@ in the data is 'on'; `false` if it is not.
 | bitmask | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) Bitmask. |
 
 <a name='M-xyLOGIX-Core-Extensions-UInt32Extensions-ToOrdinalString-System-UInt32-'></a>
+### ToOrdinalString(value) `method`
+
+##### Summary
+
+Converts an [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32')`value` to
+its ordinal string representation, appending the appropriate suffix (e.g.,
+`"st"`, `"nd"`, `"rd"`, `"th"`, etc.) based on the
+specified `value`.
+
+##### Returns
+
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the ordinal
+representation of the provided `value`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) An [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') value that
+represents the number to format.
+
+
+
+The argument of this parameter must be `1` or greater. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown when the provided
+`value` is less than 1. |
+
+<a name='T-xyLOGIX-Core-Extensions-UnsignedIntExtensions'></a>
+## UnsignedIntExtensions `type`
+
+##### Namespace
+
+xyLOGIX.Core.Extensions
+
+##### Summary
+
+Provides methods that extend the [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') class.
+
+<a name='M-xyLOGIX-Core-Extensions-UnsignedIntExtensions-EqualsOneOf-System-UInt32,System-Int32[]-'></a>
+### EqualsOneOf(value,list) `method`
+
+##### Summary
+
+Returns a value indicating whether the specified
+`value` is equal to one of the items in a collection of
+integers.
+
+##### Returns
+
+`true` if `value` is one of the
+elements of the collection; `false` if not.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Integer to be compared to the members of the list. |
+| list | [System.Int32[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32[] 'System.Int32[]') | Collection of integers that should be searched for the
+`value`. |
+
+<a name='M-xyLOGIX-Core-Extensions-UnsignedIntExtensions-IsBitmaskOn-System-UInt32,System-UInt32-'></a>
+### IsBitmaskOn(num,bitmask) `method`
+
+##### Summary
+
+Determines whether a bitmask is 'on' or 'off'.
+
+##### Returns
+
+`true` if the bit that is identified by the bitmask
+in the data is 'on'; `false` if it is not.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| num | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) Value containing the data to be checked. |
+| bitmask | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) Bitmask. |
+
+<a name='M-xyLOGIX-Core-Extensions-UnsignedIntExtensions-ToOrdinalString-System-UInt32-'></a>
 ### ToOrdinalString(value) `method`
 
 ##### Summary

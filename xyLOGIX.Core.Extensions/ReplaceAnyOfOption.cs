@@ -7,23 +7,16 @@
     /// </summary>
     public enum ReplaceAnyOfOption
     {
-        /// <summary>
-        /// All occurrences of the target string(s) should be replaced.
-        /// </summary>
+        /// <summary>All occurrences of the target string(s) should be replaced.</summary>
         All,
 
-        /// <summary>
-        /// Only the first occurrence of the target string(s) should be replaced.
-        /// </summary>
+        /// <summary>Only the first occurrence of the target string(s) should be replaced.</summary>
         First,
 
-        /// <summary>
-        /// Represents an unknown or undefined state.
-        /// </summary>
+        /// <summary>Represents an unknown or undefined state.</summary>
         /// <remarks>
-        /// This value is typically used as a default or sentinel value to indicate that
-        /// the
-        /// state is not recognized or has not been explicitly set.
+        /// This value is typically used as a default or sentinel value to
+        /// indicate that the state is not recognized or has not been explicitly set.
         /// </remarks>
         Unknown = -1
     }

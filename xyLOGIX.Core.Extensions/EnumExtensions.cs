@@ -6,17 +6,18 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Extension methods to utilize on enums. </summary>
+    /// <summary>Extension methods to utilize on enums.</summary>
     [Log(AttributeExclude = true)]
     public static class EnumExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.EnumExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.EnumExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -29,13 +30,12 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.ComponentModel.DescriptionAttribute" /> applied to it) to a
         /// string value.
         /// </summary>
-        /// <typeparam name="T"> Type of the enumeration. </typeparam>
-        /// <param name="enumerationValue"> Value of the enumeration. </param>
-        /// <returns> String containing the enumeration value expressed as a string. </returns>
+        /// <typeparam name="T">Type of the enumeration.</typeparam>
+        /// <param name="enumerationValue">Value of the enumeration.</param>
+        /// <returns>String containing the enumeration value expressed as a string.</returns>
         [DebuggerStepThrough]
         [return: NotLogged]
-        public static string AsString<T>([NotLogged] this T enumerationValue)
-            where T : Enum
+        public static string AsString<T>([NotLogged] this T enumerationValue) where T : Enum
         {
             var result = enumerationValue.ToString();
 
@@ -48,8 +48,7 @@ namespace xyLOGIX.Core.Extensions
                 if (memberInfo == null) return result;
                 if (memberInfo.Length <= 0) return result;
 
-                //Tries to find a DescriptionAttribute for a potential friendly name
-                //for the enum
+                //Tries to find a DescriptionAttribute for a potential friendly name for the enum
                 var attrs = memberInfo[0]
                     .GetCustomAttributes(typeof(DescriptionAttribute), false);
                 if (attrs == null || attrs.Length <= 0) return result;
@@ -69,8 +68,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines whether the specified <paramref name="enumerationValue" /> is not
-        /// within the value set of its defining <see langword="enum" />.
+        /// Determines whether the specified <paramref name="enumerationValue" />
+        /// is not within the value set of its defining <see langword="enum" />.
         /// </summary>
         /// <typeparam name="T">
         /// (Required.) Name of the <see langword="enum" /> from which
@@ -82,8 +81,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="enumerationValue" /> is not within the value set of its
         /// defining <see langword="enum" />; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool IsUndefined<T>(this T enumerationValue)
-            where T : Enum
+        public static bool IsUndefined<T>(this T enumerationValue) where T : Enum
         {
             bool result;
 

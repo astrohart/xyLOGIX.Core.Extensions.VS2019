@@ -38,9 +38,11 @@ namespace xyLOGIX.Core.Extensions
         ///     cref="T:xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
         /// interface.
         /// </summary>
-        private static IControlFormAssociationProvider
-            ControlFormAssociationProvider { [DebuggerStepThrough] get; } =
-            GetControlFormAssociationProvider.SoleInstance();
+        private static IControlFormAssociationProvider ControlFormAssociationProvider
+        {
+            [DebuggerStepThrough]
+            get;
+        } = GetControlFormAssociationProvider.SoleInstance();
 
         /// <summary>
         /// Associates the specified <paramref name="control" /> with its
@@ -56,9 +58,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="null" /> reference as its argument, then this method does
         /// nothing.
         /// </remarks>
-        public static void AssociateWithParentForm(
-            [NotLogged] this Control control
-        )
+        public static void AssociateWithParentForm([NotLogged] this Control control)
         {
             try
             {
@@ -87,9 +87,10 @@ namespace xyLOGIX.Core.Extensions
         /// contains this control.
         /// </returns>
         /// <remarks>
-        /// If the <c>Control-Form Association Provider</c> does not contain a reference to
-        /// the containing <see cref="T:System.Windows.Forms.Form" />, then the method
-        /// calls the <see cref="M:System.Windows.Forms.Control.FindForm" /> method.
+        /// If the <c>Control-Form Association Provider</c> does not contain a
+        /// reference to the containing <see cref="T:System.Windows.Forms.Form" />, then
+        /// the method calls the <see cref="M:System.Windows.Forms.Control.FindForm" />
+        /// method.
         /// </remarks>
         [Log(AttributeExclude = true)]
         public static Form GetParentForm([NotLogged] this Control control)
@@ -105,8 +106,7 @@ namespace xyLOGIX.Core.Extensions
                     return result;
                 }
 
-                result = ControlFormAssociationProvider.GetFormFor(control) ??
-                         control.FindForm();
+                result = ControlFormAssociationProvider.GetFormFor(control) ?? control.FindForm();
             }
             catch (Exception ex)
             {
@@ -233,9 +233,7 @@ namespace xyLOGIX.Core.Extensions
         /// initialized, or if that <see cref="T:System.Windows.Forms.Form" /> has been
         /// disposed; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool IsParentFormNullOrDisposed(
-            [NotLogged] this Control control
-        )
+        public static bool IsParentFormNullOrDisposed([NotLogged] this Control control)
         {
             var result = false;
 
@@ -248,10 +246,8 @@ namespace xyLOGIX.Core.Extensions
                     return result;
                 }
 
-                var parentForm =
-                    ControlFormAssociationProvider.GetFormFor(control);
-                result = parentForm == null || parentForm.Disposing ||
-                         parentForm.IsDisposed;
+                var parentForm = ControlFormAssociationProvider.GetFormFor(control);
+                result = parentForm == null || parentForm.Disposing || parentForm.IsDisposed;
             }
             catch (Exception ex)
             {

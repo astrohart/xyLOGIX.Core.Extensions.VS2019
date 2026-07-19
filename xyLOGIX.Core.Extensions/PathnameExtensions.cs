@@ -6,28 +6,25 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Exposes static method(s) to extend the <see cref="T:System.String" /> class in
-    /// order to help a caller in using <see cref="T:System.String" /> variables known
-    /// or suspected to contain the fully-qualified pathname of a folder or a file.
+    /// Exposes static method(s) to extend the <see cref="T:System.String" />
+    /// class in order to help a caller in using <see cref="T:System.String" />
+    /// variables known or suspected to contain the fully-qualified pathname of a
+    /// folder or a file.
     /// </summary>
     [Log(AttributeExclude = true)]
     public static class PathnameExtensions
     {
-        /// <summary>
-        /// Ensures a trailing directory separator is present.
-        /// </summary>
+        /// <summary>Ensures a trailing directory separator is present.</summary>
         /// <param name="path">
-        /// (Required.) A <see cref="T:System.String" /> containing the pathname that is to
-        /// be modified.
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// pathname that is to be modified.
         /// </param>
         /// <returns>
-        /// If successful, a <see cref="T:System.String" /> ending with a directory
-        /// separator; otherwise, the method is idempotent.
+        /// If successful, a <see cref="T:System.String" /> ending with a
+        /// directory separator; otherwise, the method is idempotent.
         /// </returns>
         [return: NotLogged]
-        private static string AppendDirectorySeparatorChar(
-            [NotLogged] this string path
-        )
+        private static string AppendDirectorySeparatorChar([NotLogged] this string path)
         {
             var result = path;
 
@@ -67,9 +64,9 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// This method is superior to calling the
         /// <see cref="M:Alphaleonis.Win32.Filesystem.File.Exists(System.String)" />
-        /// method.  This is due
-        /// to the fact that the other method throws an exception if it is passed a blank
-        /// string, whereas this method simply returns <see langword="false" />.
+        /// method. This is due to the fact that the other method throws an exception if it
+        /// is passed a blank string, whereas this method simply returns
+        /// <see langword="false" />.
         /// </remarks>
         private static bool FileExists([NotLogged] this string pathname)
         {
@@ -77,8 +74,7 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                result = !string.IsNullOrWhiteSpace(pathname) &&
-                         File.Exists(pathname);
+                result = !string.IsNullOrWhiteSpace(pathname) && File.Exists(pathname);
             }
             catch (Exception ex)
             {
@@ -92,17 +88,17 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Attempts to get the fully-qualified pathname of the containing folder of the
-        /// specified <paramref name="file" />.
+        /// Attempts to get the fully-qualified pathname of the containing folder
+        /// of the specified <paramref name="file" />.
         /// </summary>
         /// <param name="file">
-        /// (Required.) A <see cref="T:System.String" /> containing the fully-qualified
-        /// pathname of the file for whom the pathname of the containing folder is to be
-        /// retrieved.
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// fully-qualified pathname of the file for whom the pathname of the containing
+        /// folder is to be retrieved.
         /// </param>
         /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or
+        /// the <see cref="F:System.String.Empty" /> value is passed as the argument of the
         /// parameter, <paramref name="file" />, then this method returns the
         /// <see cref="F:System.String.Empty" /> value.
         /// <para />
@@ -115,9 +111,10 @@ namespace xyLOGIX.Core.Extensions
         /// of whether the specified <paramref name="file" /> exists.
         /// </remarks>
         /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the fully-qualified
-        /// pathname of the folder that contains the specified <paramref name="file" />;
-        /// otherwise, the method returns the <see cref="F:System.String.Empty" /> value.
+        /// If successful, a <see cref="T:System.String" /> containing the
+        /// fully-qualified pathname of the folder that contains the specified
+        /// <paramref name="file" />; otherwise, the method returns the
+        /// <see cref="F:System.String.Empty" /> value.
         /// </returns>
         [return: NotLogged]
         public static string GetDirectoryName([NotLogged] this string file)
@@ -146,10 +143,12 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="path" />.
         /// </summary>
         /// <param name="baseDir">
-        /// (Required.) A <see cref="T:System.String" /> base directory path.
+        /// (Required.) A <see cref="T:System.String" /> base
+        /// directory path.
         /// </param>
         /// <param name="path">
-        /// (Required.) A <see cref="T:System.String" /> absolute path to be relativized.
+        /// (Required.) A <see cref="T:System.String" /> absolute path
+        /// to be relativized.
         /// </param>
         /// <returns>
         /// A <see cref="T:System.String" /> relative path;
@@ -168,9 +167,7 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(baseDir)) return result;
                 if (string.IsNullOrWhiteSpace(path)) return result;
 
-                var uriBase = new Uri(
-                    baseDir.AppendDirectorySeparatorChar(), UriKind.Absolute
-                );
+                var uriBase = new Uri(baseDir.AppendDirectorySeparatorChar(), UriKind.Absolute);
                 var uriPath = new Uri(path, UriKind.Absolute);
                 result = Uri.UnescapeDataString(
                     uriBase.MakeRelativeUri(uriPath)
@@ -199,8 +196,9 @@ namespace xyLOGIX.Core.Extensions
         /// the fully-qualified pathname whose filename extension is to be tested.
         /// </param>
         /// <param name="extensions">
-        /// (Required.) One or more <see cref="T:System.String" /> value(s) indicating the
-        /// possible extension(s) that the provided <paramref name="pathname" /> must have.
+        /// (Required.) One or more <see cref="T:System.String" />
+        /// value(s) indicating the possible extension(s) that the provided
+        /// <paramref name="pathname" /> must have.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="pathname" />
@@ -210,8 +208,7 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// If the <paramref name="pathname" /> or <paramref name="extensions" />
         /// have <see langword="null" /> or blank <see cref="T:System.String" /> value(s)
-        /// as
-        /// their arguments, then this method returns <see langword="false" />.
+        /// as their arguments, then this method returns <see langword="false" />.
         /// <para />
         /// <see langword="false" /> is also returned if the argument of the
         /// <paramref name="pathname" /> parameter refers to a file that does not exist on
@@ -258,9 +255,9 @@ namespace xyLOGIX.Core.Extensions
         /// the fully-qualified pathname whose filename extension is to be tested.
         /// </param>
         /// <param name="extension">
-        /// (Required.) A <see cref="T:System.String" />
-        /// containing the filename extension that the specified
-        /// <paramref name="pathname" /> should have.
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the filename extension that the specified <paramref name="pathname" /> should
+        /// have.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="pathname" />
@@ -270,8 +267,7 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// If the <paramref name="pathname" /> or <paramref name="extension" />
         /// have <see langword="null" /> or blank <see cref="T:System.String" /> value(s)
-        /// as
-        /// their arguments, then this method returns <see langword="false" />.
+        /// as their arguments, then this method returns <see langword="false" />.
         /// <para />
         /// <see langword="false" /> is also returned if the argument of the
         /// <paramref name="pathname" /> parameter refers to a file that does not exist on
@@ -280,10 +276,7 @@ namespace xyLOGIX.Core.Extensions
         /// <b>NOTE:</b> This method is meant to be used as an extension method of type
         /// <see cref="T:System.String" />.
         /// </remarks>
-        public static bool HasExtension(
-            [NotLogged] this string pathname,
-            string extension
-        )
+        public static bool HasExtension([NotLogged] this string pathname, string extension)
         {
             var result = false;
 
@@ -293,8 +286,7 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(extension)) return result;
 
                 result = extension.Equals(
-                    Path.GetExtension(pathname),
-                    StringComparison.OrdinalIgnoreCase
+                    Path.GetExtension(pathname), StringComparison.OrdinalIgnoreCase
                 );
             }
             catch (Exception ex)
@@ -309,21 +301,16 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines whether the specified <paramref name="target" /> path matches the
-        /// specified
-        /// <paramref
-        ///     name="source" />
-        /// path.
+        /// Determines whether the specified <paramref name="target" /> path
+        /// matches the specified <paramref name="source" /> path.
         /// </summary>
         /// <remarks>
         /// This method normalizes and resolves the absolute paths of both
-        /// <paramref
-        ///     name="target" />
-        /// and <paramref name="source" />  before performing a case-insensitive
-        /// comparison.
+        /// <paramref name="target" /> and <paramref name="source" /> before performing a
+        /// case-insensitive comparison.
         /// <para />
-        /// Trailing
-        /// directory separator(s), if any are present, are ignored during the comparison.
+        /// Trailing directory separator(s), if any are present, are ignored during the
+        /// comparison.
         /// <para />
         /// <b>NOTE:</b> If either or both of <paramref name="target" /> and
         /// <paramref name="source" /> are <see langword="null" />, blank, or the
@@ -344,18 +331,10 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the normalized, absolute path(s) of
-        /// <paramref name="target" /> and
-        /// <paramref
-        ///     name="source" />
-        /// are equal, ignoring case and trailing directory separators; otherwise,
-        /// <see
-        ///     langword="false" />
-        /// .
+        /// <paramref name="target" /> and <paramref name="source" /> are equal, ignoring
+        /// case and trailing directory separators; otherwise, <see langword="false" /> .
         /// </returns>
-        public static bool MatchesPath(
-            [NotLogged] this string target,
-            [NotLogged] string source
-        )
+        public static bool MatchesPath([NotLogged] this string target, [NotLogged] string source)
         {
             var result = false;
 
@@ -366,14 +345,10 @@ namespace xyLOGIX.Core.Extensions
 
                 result = string.Equals(
                     Path.GetFullPath(target)
-                        .TrimEnd(
-                            Path.DirectorySeparatorChar,
-                            Path.AltDirectorySeparatorChar
-                        ), Path.GetFullPath(source)
-                               .TrimEnd(
-                                   Path.DirectorySeparatorChar,
-                                   Path.AltDirectorySeparatorChar
-                               ), StringComparison.OrdinalIgnoreCase
+                        .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar), Path
+                        .GetFullPath(source)
+                        .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar),
+                    StringComparison.OrdinalIgnoreCase
                 );
             }
             catch (Exception ex)
@@ -388,36 +363,31 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Replaces the file name component of the specified path with a new file name and
-        /// outputs the resulting path.
+        /// Replaces the file name component of the specified path with a new file
+        /// name and outputs the resulting path.
         /// </summary>
         /// <remarks>
-        /// If the directory portion of the provided path does not exist or is invalid, the
-        /// method returns false and outputs the original path. The method does not check
-        /// whether the new file name is
-        /// valid or whether the resulting file exists. No file system changes are
-        /// performed; only the path string is
-        /// modified.
+        /// If the directory portion of the provided path does not exist or is
+        /// invalid, the method returns false and outputs the original path. The method
+        /// does not check whether the new file name is valid or whether the resulting file
+        /// exists. No file system changes are performed; only the path string is modified.
         /// </remarks>
         /// <param name="pathname">
-        /// The full or relative path whose file name will be replaced. Must reference an
-        /// existing directory; otherwise,
-        /// the operation will not succeed.
+        /// The full or relative path whose file name will be
+        /// replaced. Must reference an existing directory; otherwise, the operation will
+        /// not succeed.
         /// </param>
         /// <param name="newFileName">
-        /// The new file name to use in place of the original file name in the path. This
-        /// should not contain directory
-        /// separators.
+        /// The new file name to use in place of the original
+        /// file name in the path. This should not contain directory separators.
         /// </param>
         /// <param name="newPath">
-        /// When the method returns, contains the path with the file name replaced if
-        /// successful; otherwise, contains
-        /// the original path.
+        /// When the method returns, contains the path with the file
+        /// name replaced if successful; otherwise, contains the original path.
         /// </param>
         /// <returns>
-        /// true if the file name was successfully replaced and the resulting path differs
-        /// from the original; otherwise,
-        /// false.
+        /// true if the file name was successfully replaced and the resulting path
+        /// differs from the original; otherwise, false.
         /// </returns>
         public static bool ReplaceFileNameWith(
             this string pathname,
@@ -430,7 +400,8 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                // Replace just the result of calling Path.GetFileName(pathname) with newFileName, and then combine it with the result of calling Path.GetDirectoryName(pathname)
+                // Replace just the result of calling Path.GetFileName(pathname) with newFileName,
+                // and then combine it with the result of calling Path.GetDirectoryName(pathname)
                 var directory =
                     Path.GetDirectoryName(
                         Path.GetFullPath(pathname)
@@ -454,8 +425,7 @@ namespace xyLOGIX.Core.Extensions
 
                 newPath = Path.Combine(directory, newFileName);
                 DebugUtils.Write(
-                    DebugLevel.Info,
-                    $"Original pathname: '{pathname}'. New pathname: '{newPath}'."
+                    DebugLevel.Info, $"Original pathname: '{pathname}'. New pathname: '{newPath}'."
                 );
 
                 result = !Path.GetFullPath(pathname)
@@ -471,29 +441,24 @@ namespace xyLOGIX.Core.Extensions
             }
 
             DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"PathnameExtensions.ReplaceFileNameWith: Result = {result}"
+                DebugLevel.Debug, $"PathnameExtensions.ReplaceFileNameWith: Result = {result}"
             );
 
             return result;
         }
 
         /// <summary>
-        /// Replaces all occurrences of a specified substring, <paramref name="findWhat" />
-        /// , with the substring, <paramref name="replaceWith" />, in the file name portion
-        /// of the specified <paramref name="pathname" /> and returns the updated file
-        /// name.
+        /// Replaces all occurrences of a specified substring,
+        /// <paramref name="findWhat" /> , with the substring,
+        /// <paramref name="replaceWith" />, in the file name portion of the specified
+        /// <paramref name="pathname" /> and returns the updated file name.
         /// </summary>
         /// <remarks>
-        /// This method does not modify any files on disk; it only returns the new file
-        /// name as a
-        /// string. The directory specified in <paramref name="pathname" /> must exist for
-        /// the operation to succeed. If
-        /// the directory does not exist or the file name is invalid, the method returns
-        /// false and
-        /// <paramref
-        ///     name="newFileName" />
-        /// is set to <see langword="null" />.
+        /// This method does not modify any files on disk; it only returns the new
+        /// file name as a string. The directory specified in <paramref name="pathname" />
+        /// must exist for the operation to succeed. If the directory does not exist or the
+        /// file name is invalid, the method returns false and
+        /// <paramref name="newFileName" /> is set to <see langword="null" />.
         /// </remarks>
         /// <param name="pathname">
         /// The full or relative path of the file whose file name
@@ -508,10 +473,9 @@ namespace xyLOGIX.Core.Extensions
         /// specified substring in the file name.
         /// </param>
         /// <param name="newFileName">
-        /// When this method returns, contains the updated file name with replacements
-        /// applied, or the original file
-        /// name if no replacements were made. If the directory does not exist or the file
-        /// name is invalid, this
+        /// When this method returns, contains the updated file
+        /// name with replacements applied, or the original file name if no replacements
+        /// were made. If the directory does not exist or the file name is invalid, this
         /// parameter is set to <see langword="null" />.
         /// </param>
         /// <returns>
@@ -530,7 +494,9 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                // Replace the text, findWhat, in the value of Path.GetFileName(pathname) with the text, replaceWith, and then return the new file name in the out parameter, newFileName
+                // Replace the text, findWhat, in the value of Path.GetFileName(pathname) with the
+                // text, replaceWith, and then return the new file name in the out parameter,
+                // newFileName
                 var directory =
                     Path.GetDirectoryName(
                         Path.GetFullPath(pathname)
@@ -581,32 +547,27 @@ namespace xyLOGIX.Core.Extensions
             }
 
             DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"PathnameExtensions.ReplaceInFileName: Result = {result}"
+                DebugLevel.Debug, $"PathnameExtensions.ReplaceInFileName: Result = {result}"
             );
 
             return result;
         }
 
         /// <summary>
-        /// Replaces occurrences of a specified substring in the name of the lowest-level
-        /// folder containing the file
-        /// referenced by the given path, and outputs the modified path.
+        /// Replaces occurrences of a specified substring in the name of the
+        /// lowest-level folder containing the file referenced by the given path, and
+        /// outputs the modified path.
         /// </summary>
         /// <remarks>
-        /// The method does not modify the file system; it only returns the modified path
-        /// as a
-        /// string. If the directory or its parent does not exist, or if the folder name is
-        /// null or whitespace, the
-        /// method returns false and outputs the original path. The method handles both
-        /// absolute and relative paths.
-        /// Exceptions encountered during processing are logged and result in a return
-        /// value of false.
+        /// The method does not modify the file system; it only returns the
+        /// modified path as a string. If the directory or its parent does not exist, or if
+        /// the folder name is null or whitespace, the method returns false and outputs the
+        /// original path. The method handles both absolute and relative paths. Exceptions
+        /// encountered during processing are logged and result in a return value of false.
         /// </remarks>
         /// <param name="pathname">
-        /// The full or relative path to the file whose containing folder name will be
-        /// modified. Cannot be null or
-        /// whitespace.
+        /// The full or relative path to the file whose containing
+        /// folder name will be modified. Cannot be null or whitespace.
         /// </param>
         /// <param name="findWhat">
         /// The substring to search for in the lowest-level folder
@@ -617,9 +578,9 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="findWhat" /> in the folder name.
         /// </param>
         /// <param name="newPath">
-        /// When the method returns, contains the path with the modified folder name if the
-        /// replacement was successful;
-        /// otherwise, contains the original path.
+        /// When the method returns, contains the path with the
+        /// modified folder name if the replacement was successful; otherwise, contains the
+        /// original path.
         /// </param>
         /// <returns>
         /// true if the folder name was successfully replaced and the new path was
@@ -637,7 +598,9 @@ namespace xyLOGIX.Core.Extensions
 
             try
             {
-                // Replace the text, findWhat, in the name of the lowest-level folder containing the file having the specified pathname, with the text, replaceWith, and then combine it with the result of calling Path.GetFileName(pathname)
+                // Replace the text, findWhat, in the name of the lowest-level folder containing the
+                // file having the specified pathname, with the text, replaceWith, and then combine
+                // it with the result of calling Path.GetFileName(pathname)
                 var directory =
                     Path.GetDirectoryName(
                         Path.GetFullPath(pathname)
@@ -693,8 +656,7 @@ namespace xyLOGIX.Core.Extensions
                 var newFolderName = folderName.Replace(findWhat, replaceWith);
                 newPath = Path.Combine(parentDirectory, newFolderName);
                 DebugUtils.Write(
-                    DebugLevel.Info,
-                    $"Original pathname: '{pathname}'. New pathname: '{newPath}'."
+                    DebugLevel.Info, $"Original pathname: '{pathname}'. New pathname: '{newPath}'."
                 );
             }
             catch (Exception ex)
@@ -707,8 +669,7 @@ namespace xyLOGIX.Core.Extensions
             }
 
             DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"PathnameExtensions.ReplaceInFolderName: Result = {result}"
+                DebugLevel.Debug, $"PathnameExtensions.ReplaceInFolderName: Result = {result}"
             );
 
             return result;

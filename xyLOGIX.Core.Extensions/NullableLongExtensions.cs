@@ -2,7 +2,7 @@
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Extension methods for a <c>long?</c> value. </summary>
+    /// <summary>Extension methods for a <c>long?</c> value.</summary>
     [Log(AttributeExclude = true)]
     public static class NullableLongExtensions
     {

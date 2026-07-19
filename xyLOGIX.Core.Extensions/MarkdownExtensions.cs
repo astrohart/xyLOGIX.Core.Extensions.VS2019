@@ -5,18 +5,17 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Exposes static extension method(s) for manipulating Markdown text.
-    /// </summary>
+    /// <summary>Exposes static extension method(s) for manipulating Markdown text.</summary>
     public static class MarkdownExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.MarkdownExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.MarkdownExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -24,12 +23,10 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         static MarkdownExtensions() { }
 
-        /// <summary>
-        /// Wraps the <paramref name="code" /> into Markdown backticks safely.
-        /// </summary>
+        /// <summary>Wraps the <paramref name="code" /> into Markdown backticks safely.</summary>
         /// <param name="code">
-        /// (Required.) A <see cref="T:System.String" /> containing the content that is to
-        /// be wrapped in Markdown backticks.
+        /// (Required.) A <see cref="T:System.String" /> containing the
+        /// content that is to be wrapped in Markdown backticks.
         /// </param>
         /// <remarks>
         /// See also
@@ -51,18 +48,15 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(code)) return result;
 
                 var backticks = "`";
-                while (code.Contains(
-                           backticks, StringComparison.InvariantCulture
-                       ))
+                while (code.Contains(backticks, StringComparison.InvariantCulture))
                 {
                     backticks += "`";
                 }
 
-                result =
-                    code.StartsWith("`", StringComparison.Ordinal) ||
-                    code.EndsWith("`", StringComparison.Ordinal)
-                        ? $"{backticks} {code} {backticks}"
-                        : $"{backticks}{code}{backticks}";
+                result = code.StartsWith("`", StringComparison.Ordinal) ||
+                         code.EndsWith("`", StringComparison.Ordinal)
+                    ? $"{backticks} {code} {backticks}"
+                    : $"{backticks}{code}{backticks}";
             }
             catch (Exception ex)
             {
@@ -81,8 +75,9 @@ namespace xyLOGIX.Core.Extensions
         /// resultant Markdown span as a whitespace character.
         /// </summary>
         /// <param name="node">
-        /// (Required.) Reference to an instance of <see cref="T:System.Xml.Linq.XNode" />
-        /// that represents the XML node that is to be examined for leading whitespace.
+        /// (Required.) Reference to an instance of
+        /// <see cref="T:System.Xml.Linq.XNode" /> that represents the XML node that is to
+        /// be examined for leading whitespace.
         /// </param>
         /// <remarks>
         /// If a <see langword="null" /> reference is passed as the argument of
@@ -109,9 +104,8 @@ namespace xyLOGIX.Core.Extensions
                     "MarkdownExtensions.AsSpanMargin: Checking whether the 'node' method parameter has a null reference for a value..."
                 );
 
-                // Check to see if the required parameter, node, is null. If it is, send an 
-                // error to the log file and quit, returning the default return value of this
-                // method.
+                // Check to see if the required parameter, node, is null. If it is, send an  error
+                // to the log file and quit, returning the default return value of this method.
                 if (node == null)
                 {
                     // The parameter, 'node', is required and is not supposed to have a NULL value.
@@ -139,9 +133,9 @@ namespace xyLOGIX.Core.Extensions
                     "*** MarkdownExtensions.AsSpanMargin: Checking whether the specified node is an XML text node..."
                 );
 
-                // Check to see whether the specified node is an XML text node.
-                // If this is not the case, then write an error message to the log file,
-                // and then terminate the execution of this method.
+                // Check to see whether the specified node is an XML text node. If this is not the
+                // case, then write an error message to the log file, and then terminate the
+                // execution of this method.
                 if (!(node is XText text))
                 {
                     // The specified node is NOT an XML text node.  This is not desirable.
@@ -169,12 +163,13 @@ namespace xyLOGIX.Core.Extensions
                     "*** INFO: Checking whether the property, 'text.Value', appears to have a null or blank value..."
                 );
 
-                // Check to see if the required property, 'text.Value', appears to have a null 
-                // or blank value. If it does, then send an error to the log file and quit,
-                // returning the default value of the result variable.
+                // Check to see if the required property, 'text.Value', appears to have a null  or
+                // blank value. If it does, then send an error to the log file and quit, returning
+                // the default value of the result variable.
                 if (string.IsNullOrWhiteSpace(text.Value))
                 {
-                    // The property, 'text.Value', appears to have a null or blank value.  This is not desirable.
+                    // The property, 'text.Value', appears to have a null or blank value.  This is
+                    // not desirable.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
                         "*** ERROR: The property, 'text.Value', appears to have a null or blank value.  Stopping..."
@@ -182,8 +177,7 @@ namespace xyLOGIX.Core.Extensions
 
                     // log the result
                     DebugUtils.WriteLine(
-                        DebugLevel.Debug,
-                        $"MarkdownExtensions.AsSpanMargin: Result = '{result}'"
+                        DebugLevel.Debug, $"MarkdownExtensions.AsSpanMargin: Result = '{result}'"
                     );
 
                     // stop.
@@ -200,9 +194,9 @@ namespace xyLOGIX.Core.Extensions
                     "*** MarkdownExtensions.AsSpanMargin: Checking whether the text starts with leading whitespace..."
                 );
 
-                // Check to see whether the text starts with leading whitespace.
-                // If this is not the case, then write an error message to the log file,
-                // and then terminate the execution of this method.
+                // Check to see whether the text starts with leading whitespace. If this is not the
+                // case, then write an error message to the log file, and then terminate the
+                // execution of this method.
                 if (!text.Value.StartsWith(" ", StringComparison.Ordinal))
                 {
                     // The text does NOT start with leading whitespace.  This is not desirable.
@@ -236,21 +230,20 @@ namespace xyLOGIX.Core.Extensions
             }
 
             DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"MarkdownExtensions.AsSpanMargin: Result = '{result}'"
+                DebugLevel.Debug, $"MarkdownExtensions.AsSpanMargin: Result = '{result}'"
             );
 
             return result;
         }
 
         /// <summary>
-        /// Escapes the specified <paramref name="content" /> by replacing all backticks
-        /// with a backtick preceded by a backslash, so that the content can be safely used
-        /// in Markdown as-is.
+        /// Escapes the specified <paramref name="content" /> by replacing all
+        /// backticks with a backtick preceded by a backslash, so that the content can be
+        /// safely used in Markdown as-is.
         /// </summary>
         /// <param name="content">
-        /// (Required.) A <see cref="T:System.String" /> containing the content that is to
-        /// be escaped.
+        /// (Required.) A <see cref="T:System.String" /> containing
+        /// the content that is to be escaped.
         /// </param>
         /// <remarks>
         /// If <see langword="null" />, a blank <see cref="T:System.String" />, or
@@ -273,9 +266,7 @@ namespace xyLOGIX.Core.Extensions
                     return result;
 
                 // escape the backticks in the content
-                result = content.Replace(
-                    "`", @"\`", StringComparison.InvariantCulture
-                );
+                result = content.Replace("`", @"\`", StringComparison.InvariantCulture);
             }
             catch (Exception ex)
             {
@@ -288,9 +279,7 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Generates a "to here" link for the <paramref name="hyperlink" />.
-        /// </summary>
+        /// <summary>Generates a "to here" link for the <paramref name="hyperlink" />.</summary>
         /// <param name="hyperlink">
         /// (Required.) A <see cref="T:System.String" /> that
         /// contains the hyperlink reference destination.
@@ -318,16 +307,17 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Generates an opening anchor tag, i.e., <c>&lt;a name="hyperlink" &gt;</c> for
-        /// the specified <paramref name="hyperlink" />.
+        /// Generates an opening anchor tag, i.e.,
+        /// <c>&lt;a name="hyperlink" &gt;</c> for the specified
+        /// <paramref name="hyperlink" />.
         /// </summary>
         /// <param name="hyperlink">
         /// (Required.) A <see cref="T:System.String" /> that
         /// contains the hyperlink reference destination.
         /// </param>
         /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
+        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or
+        /// the <see cref="F:System.String.Empty" /> value is passed as the argument of the
         /// <paramref name="hyperlink" /> parameter, then this method returns the
         /// <see cref="F:System.String.Empty" /> value.
         /// <para />
@@ -353,12 +343,13 @@ namespace xyLOGIX.Core.Extensions
                     "MarkdownExtensions.ToOpeningAnchorTag *** INFO: Checking whether the value of the parameter, 'hyperlink', is blank..."
                 );
 
-                // Check whether the value of the parameter, 'hyperlink', is blank.
-                // If this is so, then emit an error message to the log file, and
-                // then terminate the execution of this method.
+                // Check whether the value of the parameter, 'hyperlink', is blank. If this is so,
+                // then emit an error message to the log file, and then terminate the execution of
+                // this method.
                 if (string.IsNullOrWhiteSpace(hyperlink))
                 {
-                    // The parameter, 'hyperlink' was either passed a null value, or it is blank.  This is not desirable.
+                    // The parameter, 'hyperlink' was either passed a null value, or it is blank.
+                    // This is not desirable.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
                         "MarkdownExtensions.ToOpeningAnchorTag: The parameter, 'hyperlink' was either passed a null value, or it is blank. Stopping..."
@@ -389,8 +380,7 @@ namespace xyLOGIX.Core.Extensions
             }
 
             DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"MarkdownExtensions.ToOpeningAnchorTag: Result = '{result}'"
+                DebugLevel.Debug, $"MarkdownExtensions.ToOpeningAnchorTag: Result = '{result}'"
             );
 
             return result;

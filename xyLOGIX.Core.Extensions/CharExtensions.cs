@@ -11,12 +11,13 @@ namespace xyLOGIX.Core.Extensions
     public static class CharExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.CharExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.CharExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -24,15 +25,14 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         static CharExtensions() { }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is a digit.
-        /// </summary>
+        /// <summary>Determines whether the specified <paramref name="value" /> is a digit.</summary>
         /// <param name="value">
-        /// (Required.) A <see cref="T:System.Char" /> value to evaluate.
+        /// (Required.) A <see cref="T:System.Char" /> value to
+        /// evaluate.
         /// </param>
         /// <returns>
-        /// <see langword="true" /> if <paramref name="value" /> is a digit; otherwise,
-        /// <see langword="false" />.
+        /// <see langword="true" /> if <paramref name="value" /> is a digit;
+        /// otherwise, <see langword="false" />.
         /// </returns>
         public static bool IsDigit([NotLogged] this char value)
         {
@@ -58,7 +58,8 @@ namespace xyLOGIX.Core.Extensions
         /// lowercase letter ('a' through 'z').
         /// </summary>
         /// <param name="value">
-        /// (Required.) A <see cref="T:System.Char" /> value to evaluate.
+        /// (Required.) A <see cref="T:System.Char" /> value to
+        /// evaluate.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if <paramref name="value" /> is a lowercase
@@ -89,7 +90,8 @@ namespace xyLOGIX.Core.Extensions
         /// uppercase letter ('A' through 'Z').
         /// </summary>
         /// <param name="value">
-        /// (Required.) A <see cref="T:System.Char" /> value to evaluate.
+        /// (Required.) A <see cref="T:System.Char" /> value to
+        /// evaluate.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if <paramref name="value" /> is an uppercase

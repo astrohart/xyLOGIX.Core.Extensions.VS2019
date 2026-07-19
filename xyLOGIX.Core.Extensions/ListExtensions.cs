@@ -12,17 +12,18 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Provides methods to help with lists of items. </summary>
+    /// <summary>Provides methods to help with lists of items.</summary>
     [Log(AttributeExclude = true)]
     public static class ListExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.ListExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.ListExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -45,11 +46,11 @@ namespace xyLOGIX.Core.Extensions
         /// collection already.
         /// </param>
         /// <remarks>
-        /// This method does nothing if the values of either the <paramref name="list" />
-        /// or the <paramref name="item" /> parameter(s), respectively, are set to a
-        /// <see langword="null" /> reference.
+        /// This method does nothing if the values of either the
+        /// <paramref name="list" /> or the <paramref name="item" /> parameter(s),
+        /// respectively, are set to a <see langword="null" /> reference.
         /// </remarks>
-        /// <typeparam name="T"> Type of the new element. </typeparam>
+        /// <typeparam name="T">Type of the new element.</typeparam>
         public static void AddDistinct<T>(this IList<T> list, T item)
         {
             try
@@ -92,10 +93,7 @@ namespace xyLOGIX.Core.Extensions
         /// Type of the elements of the <paramref name="collection" />
         /// .
         /// </typeparam>
-        public static void AddDistinct<T>(
-            this ICollection<T> collection,
-            T item
-        )
+        public static void AddDistinct<T>(this ICollection<T> collection, T item)
         {
             if (collection == null) return;
 
@@ -148,8 +146,7 @@ namespace xyLOGIX.Core.Extensions
         /// The specified <paramref name="list" /> with the provided
         /// <paramref name="items" /> added to it.
         /// </returns>
-        public static void AddRange<T>(this IList<T> list, IEnumerable<T> items)
-            where T : class
+        public static void AddRange<T>(this IList<T> list, IEnumerable<T> items) where T : class
         {
             try
             {
@@ -169,11 +166,11 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Creates a duplicate of the list given to it and returns a reference
-        /// to the clone.
+        /// Creates a duplicate of the list given to it and returns a reference to
+        /// the clone.
         /// </summary>
-        /// <typeparam name="T"> Type of object in the list. </typeparam>
-        /// <param name="source"> Reference to the collection to make a duplicate of. </param>
+        /// <typeparam name="T">Type of object in the list.</typeparam>
+        /// <param name="source">Reference to the collection to make a duplicate of.</param>
         /// <returns>
         /// Reference to the duplicate of the collection referenced by
         /// <paramref name="source" />.
@@ -201,8 +198,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Dumps the contents of the specified <paramref name="list" /> to the log, with
-        /// indices of the individual element(s) shown.
+        /// Dumps the contents of the specified <paramref name="list" /> to the
+        /// log, with indices of the individual element(s) shown.
         /// </summary>
         /// <typeparam name="T">(Required.) The type of each of the element(s) of the list.</typeparam>
         /// <param name="list">
@@ -228,13 +225,13 @@ namespace xyLOGIX.Core.Extensions
                     "ListExtensions.DumpToLog: Checking whether the method parameter, 'list', has a null reference for a value..."
                 );
 
-                // Check to see if the required parameter, 'list', is null. If it is,
-                // then write an error message to the log file and then terminate the
-                // execution of this method, returning the default return value.
+                // Check to see if the required parameter, 'list', is null. If it is, then write an
+                // error message to the log file and then terminate the execution of this method,
+                // returning the default return value.
                 if (list == null)
                 {
-                    // The method parameter, 'list', is required and is not supposed
-                    // to have a NULL value.  It does, and this is not desirable.
+                    // The method parameter, 'list', is required and is not supposed to have a NULL
+                    // value.  It does, and this is not desirable.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
                         "ListExtensions.DumpToLog: *** ERROR *** A null reference was passed for the method parameter, 'list'.  Stopping..."
@@ -250,8 +247,7 @@ namespace xyLOGIX.Core.Extensions
                 );
 
                 DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    "*** FYI *** Transforming the list to an array..."
+                    DebugLevel.Info, "*** FYI *** Transforming the list to an array..."
                 );
 
                 var arrList = list.ToArray();
@@ -261,9 +257,10 @@ namespace xyLOGIX.Core.Extensions
                     "ListExtensions.DumpToLog *** INFO: Checking whether the array, 'arrList', has greater than zero elements..."
                 );
 
-                // Check whether the array, 'arrList', has greater than zero elements.  If it is empty,
-                // then write an error message to the log file, and then terminate the execution of this method.
-                // It is preferred for the array to have greater than zero elements.
+                // Check whether the array, 'arrList', has greater than zero elements.  If it is
+                // empty, then write an error message to the log file, and then terminate the
+                // execution of this method. It is preferred for the array to have greater than zero
+                // elements.
                 if (arrList.Length <= 0)
                 {
                     // The array, 'arrList', has zero elements, and we can't proceed if this is so.
@@ -283,9 +280,7 @@ namespace xyLOGIX.Core.Extensions
 
                 for (var i = 0; i < arrList.Length; i++)
                 {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug, $"[{i}]: {arrList[i]}"
-                    );
+                    DebugUtils.WriteLine(DebugLevel.Debug, $"[{i}]: {arrList[i]}");
                 }
             }
             catch (Exception ex)
@@ -296,8 +291,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Searches the provided <paramref name="list" />, trying to locate the element
-        /// that satisfies the Boolean conditions imposed by the specified
+        /// Searches the provided <paramref name="list" />, trying to locate the
+        /// element that satisfies the Boolean conditions imposed by the specified
         /// <paramref name="predicate" />.
         /// <para />
         /// The zero-based index into the list at which the first matching element exists
@@ -323,10 +318,7 @@ namespace xyLOGIX.Core.Extensions
         /// evaluates to <see langword="true" />; or <c>-1</c> if no such element can be
         /// located.
         /// </returns>
-        public static int FindIndex<T>(
-            this IList<T> list,
-            Predicate<T> predicate
-        )
+        public static int FindIndex<T>(this IList<T> list, Predicate<T> predicate)
         {
             var result = -1;
 
@@ -356,7 +348,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Compares a <paramref name="left" /> and <paramref name="right" /> list.
+        /// Compares a <paramref name="left" /> and <paramref name="right" />
+        /// list.
         /// </summary>
         /// <typeparam name="T">(Required.) Data type of each element.</typeparam>
         /// <param name="left">(Required.) A collection of objects to check against.</param>
@@ -365,19 +358,18 @@ namespace xyLOGIX.Core.Extensions
         /// right-hand side of the comparison.
         /// </param>
         /// <remarks>
-        /// Returns <see langword="true" /> if either both the <paramref name="left" /> and
-        /// <paramref name="right" /> lists are set to a <see langword="null" /> reference;
-        /// otherwise, they must both be non-<see langword="null" />, have the same count
-        /// of elements, and all elements must be identical, otherwise this method returns
-        /// <see langword="false" />.
+        /// Returns <see langword="true" /> if either both the
+        /// <paramref name="left" /> and <paramref name="right" /> lists are set to a
+        /// <see langword="null" /> reference; otherwise, they must both be non-
+        /// <see langword="null" />, have the same count of elements, and all elements must
+        /// be identical, otherwise this method returns <see langword="false" />.
         /// </remarks>
         /// <returns>
         /// <see langword="true" /> if both the <paramref name="left" /> and
         /// <paramref name="right" /> lists are identical; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        public static bool IsIdenticalTo<T>(this IList<T> left, IList<T> right)
-            where T : class
+        public static bool IsIdenticalTo<T>(this IList<T> left, IList<T> right) where T : class
         {
             var result = true;
 
@@ -415,11 +407,11 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a value indicating whether the <paramref name="value" /> is
-        /// among the elements of the <paramref name="valueSet" />.
+        /// Gets a value indicating whether the <paramref name="value" /> is among
+        /// the elements of the <paramref name="valueSet" />.
         /// </summary>
-        /// <param name="value"> Value to compare. </param>
-        /// <param name="valueSet"> Range of integer values to check. </param>
+        /// <param name="value">Value to compare.</param>
+        /// <param name="valueSet">Range of integer values to check.</param>
         /// <returns>
         /// true if <paramref name="value" /> is in the
         /// <paramref name="valueSet" /> ; false otherwise.
@@ -454,26 +446,26 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Returns the <paramref name="index" />-th element counted from the end of
-        /// the <paramref name="source" /> collection (0 ⇒ last, 1 ⇒ second-to-last,
-        /// and so on).
+        /// Returns the <paramref name="index" />-th element counted from the end
+        /// of the <paramref name="source" /> collection (0 ⇒ last, 1 ⇒ second-to-last, and
+        /// so on).
         /// </summary>
         /// <typeparam name="TSource">
-        /// The element type of the <paramref name="source" /> collection.
+        /// The element type of the <paramref name="source" />
+        /// collection.
         /// </typeparam>
         /// <param name="source">
-        /// (Required.) The collection to inspect.  A <see langword="null" />
-        /// reference or an empty collection causes the method to return the default
-        /// value of <typeparamref name="TSource" />.
+        /// (Required.) The collection to inspect. A
+        /// <see langword="null" /> reference or an empty collection causes the method to
+        /// return the default value of <typeparamref name="TSource" />.
         /// </param>
         /// <param name="index">
-        /// (Required.) Zero-based offset from the last element.  Must be greater
-        /// than or equal to zero and strictly less than <c>source.Count</c>.
+        /// (Required.) Zero-based offset from the last element. Must
+        /// be greater than or equal to zero and strictly less than <c>source.Count</c>.
         /// </param>
         /// <remarks>
         /// The method never throws; on any error it returns
-        /// <c>default(<typeparamref name="TSource" />)</c> after logging the
-        /// exception.
+        /// <c>default(<typeparamref name="TSource" />)</c> after logging the exception.
         /// </remarks>
         /// <returns>
         /// A reference to the requested element, or the default value of
@@ -494,8 +486,8 @@ namespace xyLOGIX.Core.Extensions
                 if (source == null || source.Count == 0) return result;
                 if (index < 0 || index >= source.Count) return result;
 
-                // Snapshot the collection to an array so that any concurrent changes to
-                // 'source' made by another thread cannot affect our calculation.
+                // Snapshot the collection to an array so that any concurrent changes to 'source'
+                // made by another thread cannot affect our calculation.
                 var buffer = new TSource[source.Count];
                 source.CopyTo(buffer, 0);
 
@@ -528,7 +520,7 @@ namespace xyLOGIX.Core.Extensions
         /// are to be removed.
         /// </param>
         /// <param name="index">
-        /// (Required.) Must be zero or greater.  Starting zero-based
+        /// (Required.) Must be zero or greater. Starting zero-based
         /// index of the first element to be removed from the specified
         /// <paramref name="list" />.
         /// </param>
@@ -541,13 +533,9 @@ namespace xyLOGIX.Core.Extensions
         /// contains zero elements, then this method does nothing.
         /// <para />
         /// This method also does nothing in the event that <paramref name="index" /> is
-        /// less than zero, or <paramref name="count" />  is less than or equal to zero.
+        /// less than zero, or <paramref name="count" /> is less than or equal to zero.
         /// </remarks>
-        public static void RemoveRange<T>(
-            this IList<T> list,
-            int index,
-            int count
-        )
+        public static void RemoveRange<T>(this IList<T> list, int index, int count)
         {
             try
             {
@@ -558,12 +546,8 @@ namespace xyLOGIX.Core.Extensions
                 if (count <= 0) return;
 
                 /*
-                 * Iterate through the list backwards,
-                 * starting at index + count and ending on
-                 * index.
-                 *
-                 * For Each element of the list in that range,
-                 * remove it.
+                 * Iterate through the list backwards, starting at index + count and ending on
+                 * index. For Each element of the list in that range, remove it.
                  */
 
                 for (var i = index + count; i >= index; i--) list.RemoveAt(i);
@@ -577,26 +561,27 @@ namespace xyLOGIX.Core.Extensions
 
         /// <summary>
         /// Returns a new collection that contains every element of
-        /// <paramref name="source" /> <b>except</b> the last
-        /// <paramref name="count" /> element(s).
+        /// <paramref name="source" /><b>except</b> the last <paramref name="count" />
+        /// element(s).
         /// </summary>
         /// <typeparam name="TSource">
-        /// The element type of the <paramref name="source" /> collection.
+        /// The element type of the <paramref name="source" />
+        /// collection.
         /// </typeparam>
         /// <param name="source">
-        /// (Required.) The input list.  If it is <see langword="null" /> or empty,
-        /// the method returns an empty collection.
+        /// (Required.) The input list. If it is
+        /// <see langword="null" /> or empty, the method returns an empty collection.
         /// </param>
         /// <param name="count">
-        /// (Required.) The number of trailing elements to omit.  If
-        /// <paramref name="count" /> is less than or equal to zero, the method
-        /// returns a copy of the entire <paramref name="source" /> collection.  If
-        /// <paramref name="count" /> is greater than or equal to
-        /// <c>source.Count</c>, the method returns an empty collection.
+        /// (Required.) The number of trailing elements to omit. If
+        /// <paramref name="count" /> is less than or equal to zero, the method returns a
+        /// copy of the entire <paramref name="source" /> collection. If
+        /// <paramref name="count" /> is greater than or equal to <c>source.Count</c>, the
+        /// method returns an empty collection.
         /// </param>
         /// <param name="includeNulls">
-        /// (Optional.) If <see langword="true" />, the method copies
-        /// <see langword="null" /> value(s) that may be present in the specified
+        /// (Optional.) If <see langword="true" />, the method
+        /// copies <see langword="null" /> value(s) that may be present in the specified
         /// <paramref name="source" /> collection to the resulting collection; if
         /// <see langword="false" />, the method skips <see langword="null" /> value(s) in
         /// the specified <paramref name="source" /> collection.
@@ -607,24 +592,23 @@ namespace xyLOGIX.Core.Extensions
         ///     <list type="bullet">
         ///         <item>
         ///             <description>
-        ///             The method never throws; on any unexpected failure it logs
-        ///             the exception and returns an empty
+        ///             The method never throws; on any unexpected failure it
+        ///             logs the exception and returns an empty
         ///             <see cref="T:AdvisableCollection{TSource}" />.
         ///             </description>
         ///         </item>
         ///         <item>
         ///         The implementation avoids LINQ and allocates exactly one result
-        ///         collection.  It is thread-safe because it works against a
-        ///         snapshot of <paramref name="source" /> taken at the moment of
-        ///         invocation.
+        ///         collection. It is thread-safe because it works against a snapshot of
+        ///         <paramref name="source" /> taken at the moment of invocation.
         ///         </item>
         ///     </list>
         /// </remarks>
         /// <returns>
         /// A new <see cref="T:AdvisableCollection{TSource}" /> that contains all
         /// elements of <paramref name="source" /> except the last
-        /// <paramref name="count" />; or an empty collection under the conditions
-        /// noted above.
+        /// <paramref name="count" />; or an empty collection under the conditions noted
+        /// above.
         /// </returns>
         [return: NotLogged]
         public static IList<TSource> TakeAllButLast<TSource>(
@@ -648,8 +632,8 @@ namespace xyLOGIX.Core.Extensions
                 // If the caller asked to omit zero elements, return a copy of the source.
                 if (count <= 0) return source;
 
-                // If the caller asked to omit more (or the same number of) elements
-                // than exist, the result is empty.
+                // If the caller asked to omit more (or the same number of) elements than exist, the
+                // result is empty.
                 if (count >= sourceArray.Length)
                     return result; // empty
 
@@ -713,9 +697,8 @@ namespace xyLOGIX.Core.Extensions
                 foreach (var element in items) result.Add(element);
 
                 /*
-                 * NOTE: We must pierce the IList<T> interface and
-                 * call the TrimExcess() method of the concrete class
-                 * here, in order to avoid an exception.
+                 * NOTE: We must pierce the IList<T> interface and call the TrimExcess() method of
+                 * the concrete class here, in order to avoid an exception.
                  */
 
                 ((ConcurrentList<T>)result).TrimExcess();
@@ -738,8 +721,8 @@ namespace xyLOGIX.Core.Extensions
         /// <typeparam name="T">The type of each element of the list.</typeparam>
         /// <param name="list">List to be written.</param>
         /// <param name="max">
-        /// Maximum number of items to include before appending an ellipsis;
-        /// must be <c>&gt;= 1</c>. Default is <c>2</c>.
+        /// Maximum number of items to include before appending an
+        /// ellipsis; must be <c>&gt;= 1</c>. Default is <c>2</c>.
         /// </param>
         /// <param name="all">
         /// <see langword="true" /> to write **every** non-null item,
@@ -749,15 +732,11 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>The list, formatted as a string for logging.</returns>
         /// <remarks>
         /// Per-item formatting is delegated to
-        /// <see cref="ObjectExtensions.ToLogRepresentation(object)" />, so any
-        /// PostSharp <c>Formatter&lt;T&gt;</c> you register is automatically applied.
+        /// <see cref="ObjectExtensions.ToLogRepresentation(object)" />, so any PostSharp
+        /// <c>Formatter&lt;T&gt;</c> you register is automatically applied.
         /// </remarks>
         [Log(AttributeExclude = true), DebuggerStepThrough]
-        public static string ToSetString<T>(
-            this IList<T> list,
-            int max = 2,
-            bool all = false
-        )
+        public static string ToSetString<T>(this IList<T> list, int max = 2, bool all = false)
         {
             var result = "[ ";
 
@@ -766,8 +745,7 @@ namespace xyLOGIX.Core.Extensions
                 // Validate arguments first.
                 if (max < 1)
                     throw new ArgumentOutOfRangeException(
-                        nameof(max), max,
-                        "The value of the 'max' parameter must be ≥ 1."
+                        nameof(max), max, "The value of the 'max' parameter must be ≥ 1."
                     );
 
                 // Empty or null list → simple brackets.
@@ -813,15 +791,15 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Converts an <see cref="T:System.Collections.Generic.ICollection`1" /> to a
-        /// concise, Pythonic, set-style string (e.g., <c>[ 1, 2, 3, ... ]</c>) for
+        /// Converts an <see cref="T:System.Collections.Generic.ICollection`1" />
+        /// to a concise, Pythonic, set-style string (e.g., <c>[ 1, 2, 3, ... ]</c>) for
         /// logging.
         /// </summary>
         /// <typeparam name="T">Type of the collection item.</typeparam>
         /// <param name="collection">The collection to format.</param>
         /// <param name="max">
-        /// Maximum number of items to include before appending an ellipsis; must
-        /// be <c>&gt;= 1</c>. Defaults to <see langword="2" />.
+        /// Maximum number of items to include before appending an
+        /// ellipsis; must be <c>&gt;= 1</c>. Defaults to <see langword="2" />.
         /// </param>
         /// <remarks>
         /// Uses <see cref="ObjectExtensions.ToLogRepresentation(object)" /> for
@@ -833,10 +811,7 @@ namespace xyLOGIX.Core.Extensions
         /// <c>[ person:Brian, ... ]</c>, etc.
         /// </returns>
         [DebuggerStepThrough]
-        public static string ToSetString<T>(
-            this ICollection<T> collection,
-            int max = 2
-        )
+        public static string ToSetString<T>(this ICollection<T> collection, int max = 2)
         {
             var result = "[ ";
 
@@ -845,16 +820,14 @@ namespace xyLOGIX.Core.Extensions
                 // Fail-fast validation of arguments.
                 if (max < 1)
                     throw new ArgumentOutOfRangeException(
-                        nameof(max), max,
-                        "The value of the 'max' parameter must be ≥ 1."
+                        nameof(max), max, "The value of the 'max' parameter must be ≥ 1."
                     );
 
                 // Empty or null collection → simple brackets.
                 if (collection == null || collection.Count <= 0)
                     return "[]";
 
-                // Take (max + 1) to know whether we truncated without
-                // double-enumerating.
+                // Take (max + 1) to know whether we truncated without double-enumerating.
                 var items = new AdvisableCollection<object>(collection.Count);
 
                 var itemsTaken = 0;
@@ -896,39 +869,34 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the
-        /// tenth item.
+        /// Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops
+        /// past the tenth item.
         /// </summary>
-        /// <param name="source"> Collection to be written. </param>
+        /// <param name="source">Collection to be written.</param>
         /// <param name="max">
-        /// (Optional.) Integer value specifying the max number of element(s) of the
-        /// collection to write.
+        /// (Optional.) Integer value specifying the max number of
+        /// element(s) of the collection to write.
         /// <para />
         /// Must be one or greater.
         /// <para />
         /// The default value of this parameter is 2.
         /// </param>
-        /// <typeparam name="T"> The type of each element of the list. </typeparam>
-        /// <returns> The <paramref name="source" />, formatted as a set string. </returns>
+        /// <typeparam name="T">The type of each element of the list.</typeparam>
+        /// <returns>The <paramref name="source" />, formatted as a set string.</returns>
         /// <remarks>
-        /// This method is helpful for writing some of the members of a
-        /// collection to a log file.
+        /// This method is helpful for writing some of the members of a collection
+        /// to a log file.
         /// </remarks>
         [DebuggerStepThrough]
-        public static string ToSetString<T>(
-            this IEnumerable<T> source,
-            int max = 2
-        )
+        public static string ToSetString<T>(this IEnumerable<T> source, int max = 2)
         {
             if (source == null) return "[]";
             if (max < 1)
                 throw new ArgumentOutOfRangeException(
-                    nameof(max), max,
-                    "The value of the 'max' parameter must be ≥ 1."
+                    nameof(max), max, "The value of the 'max' parameter must be ≥ 1."
                 );
 
-            // Take (max + 1) to know whether we truncated without
-            // double-enumerating.
+            // Take (max + 1) to know whether we truncated without double-enumerating.
             var items = new AdvisableCollection<object>();
             items.Clear();
 

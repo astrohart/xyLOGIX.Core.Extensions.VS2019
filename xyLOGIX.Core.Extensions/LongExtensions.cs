@@ -2,7 +2,7 @@
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Extension methods for a <c>long</c> value. </summary>
+    /// <summary>Extension methods for a <c>long</c> value.</summary>
     [Log(AttributeExclude = true)]
     public static class LongExtensions
     {
@@ -24,25 +24,25 @@ namespace xyLOGIX.Core.Extensions
             => value < 0L;
 
         /// <summary>
-        /// Indicates whether the specified <paramref name="value" /> is nonnegative (i.e.,
-        /// greater than, or equal to, zero).
+        /// Indicates whether the specified <paramref name="value" /> is
+        /// nonnegative (i.e., greater than, or equal to, zero).
         /// </summary>
-        /// <param name="value"> A <see cref="T:System.Int64" /> value to be checked. </param>
+        /// <param name="value">A <see cref="T:System.Int64" /> value to be checked.</param>
         /// <returns>
-        /// <see langword="true" /> if the <paramref name="value" /> is greater than, or
-        /// equal to, zero; <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the <paramref name="value" /> is greater
+        /// than, or equal to, zero; <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsNonNegative(this long value)
             => value >= 0L;
 
         /// <summary>
-        /// Indicates whether the specified <paramref name="value" /> is nonpositive (i.e.,
-        /// less than, or equal to, zero).
+        /// Indicates whether the specified <paramref name="value" /> is
+        /// nonpositive (i.e., less than, or equal to, zero).
         /// </summary>
-        /// <param name="value"> A <see cref="T:System.Int64" /> value to be checked. </param>
+        /// <param name="value">A <see cref="T:System.Int64" /> value to be checked.</param>
         /// <returns>
-        /// <see langword="true" /> if the <paramref name="value" /> is less than, or
-        /// equal to, zero; <see langword="false" /> otherwise.
+        /// <see langword="true" /> if the <paramref name="value" /> is less than,
+        /// or equal to, zero; <see langword="false" /> otherwise.
         /// </returns>
         public static bool IsNonPositive(this long value)
             => value <= 0L;
@@ -74,7 +74,7 @@ namespace xyLOGIX.Core.Extensions
         /// Indicates whether the specified <paramref name="value" /> is strictly
         /// positive (i.e., greater than zero).
         /// </summary>
-        /// <param name="value"> A <see cref="T:System.Int64" /> value to be checked. </param>
+        /// <param name="value">A <see cref="T:System.Int64" /> value to be checked.</param>
         /// <returns>
         /// <see langword="true" /> if the <paramref name="value" /> is strictly
         /// greater than zero; <see langword="false" /> otherwise.

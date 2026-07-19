@@ -7,18 +7,17 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Provides extension methods for <see cref="T:System.String" /> arrays.
-    /// </summary>
+    /// <summary>Provides extension methods for <see cref="T:System.String" /> arrays.</summary>
     public static class StringArrayExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.StringArrayExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.StringArrayExtensions" /> class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -31,8 +30,8 @@ namespace xyLOGIX.Core.Extensions
         /// array to the application log.
         /// </summary>
         /// <param name="values">
-        /// (Required.) Reference to the <see cref="T:System.String" /> whose
-        /// contents are to be logged.
+        /// (Required.) Reference to the
+        /// <see cref="T:System.String" /> whose contents are to be logged.
         /// </param>
         [DebuggerStepThrough]
         public static void DumpToLog([NotLogged] this string[] values)
@@ -43,15 +42,12 @@ namespace xyLOGIX.Core.Extensions
                 if (values.Length <= 0) return;
 
                 DebugUtils.WriteLine(
-                    DebugLevel.Info,
-                    $"(Dumping {values.Length} value(s) to log...)"
+                    DebugLevel.Info, $"(Dumping {values.Length} value(s) to log...)"
                 );
 
                 for (var i = 0; i < values.Length; i++)
                 {
-                    DebugUtils.WriteLine(
-                        DebugLevel.Debug, $"[{i}]: '{values[i]}'"
-                    );
+                    DebugUtils.WriteLine(DebugLevel.Debug, $"[{i}]: '{values[i]}'");
                 }
             }
             catch (Exception ex)
@@ -69,7 +65,7 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// This method processes each string in the collection individually.
         /// <para />
-        /// If a string in the collection  is <see langword="null" />, the
+        /// If a string in the collection is <see langword="null" />, the
         /// <see cref="F:System.String.Empty" /> value, or consists only of whitespace, it
         /// is included in the resultset without modification.
         /// </remarks>

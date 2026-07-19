@@ -7,9 +7,10 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// A <see cref="T:System.Windows.Forms.ComboBox" /> that writes values when the
-    /// value of the <see cref="P:System.Windows.Forms.ComboBox.SelectedIndex" />
-    /// property is changed.
+    /// A <see cref="T:System.Windows.Forms.ComboBox" /> that writes values
+    /// when the value of the
+    /// <see cref="P:System.Windows.Forms.ComboBox.SelectedIndex" /> property is
+    /// changed.
     /// </summary>
     [ExplicitlySynchronized]
     public class BoundComboBox : ComboBox

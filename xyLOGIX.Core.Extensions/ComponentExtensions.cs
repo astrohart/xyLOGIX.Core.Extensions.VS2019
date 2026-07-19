@@ -29,13 +29,13 @@ namespace xyLOGIX.Core.Extensions
         static ComponentExtensions() { }
 
         /// <summary>
-        /// Determines whether the specified <paramref name="component" /> is set to a
-        /// <see langword="null" /> reference or has been disposed.
+        /// Determines whether the specified <paramref name="component" /> is set
+        /// to a <see langword="null" /> reference or has been disposed.
         /// </summary>
         /// <param name="component">
-        /// (Required.) Reference to an instance of an object that implements the
-        /// <see cref="T:System.ComponentModel.IComponent" /> interface that refers to the
-        /// component that is to be checked.
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:System.ComponentModel.IComponent" /> interface that
+        /// refers to the component that is to be checked.
         /// </param>
         /// <remarks>
         /// Uses the <see cref="P:System.Windows.Forms.Control.IsDisposed" /> for
@@ -46,9 +46,7 @@ namespace xyLOGIX.Core.Extensions
         /// On any exception the method logs and returns <see langword="true" />.
         /// </remarks>
         [Log(AttributeExclude = true)]
-        public static bool IsNullOrDisposed(
-            [NotLogged] this IComponent component
-        )
+        public static bool IsNullOrDisposed([NotLogged] this IComponent component)
         {
             var result = false;
 
@@ -68,47 +66,43 @@ namespace xyLOGIX.Core.Extensions
                     }
                     else
                     {
-                        // Reflection: look for public/non-public bool properties named IsDisposed / Disposed
+                        // Reflection: look for public/non-public bool properties named IsDisposed /
+                        // Disposed
                         new Control().InvokeIfRequired(() =>
                             {
                                 var t = component.GetType();
                                 var prop =
                                     t.GetProperty(
                                         "IsDisposed",
-                                        BindingFlags.Instance |
-                                        BindingFlags.Public |
+                                        BindingFlags.Instance | BindingFlags.Public |
                                         BindingFlags.NonPublic
                                     ) ?? t.GetProperty(
                                         "Disposed",
-                                        BindingFlags.Instance |
-                                        BindingFlags.Public |
+                                        BindingFlags.Instance | BindingFlags.Public |
                                         BindingFlags.NonPublic
                                     );
 
-                                if (prop != null &&
-                                    prop.PropertyType == typeof(bool))
+                                if (prop != null && prop.PropertyType == typeof(bool))
                                 {
                                     // property getter may throw if object is disposed; catch below
                                     result = (bool)prop.GetValue(component);
                                 }
                                 else
                                 {
-                                    // Reflection: common private field names often used by implementations
+                                    // Reflection: common private field names often used by
+                                    // implementations
                                     var foundField = false;
                                     foreach (var fieldName in new[]
                                              {
-                                                 "_disposed", "disposed",
-                                                 "isDisposed", "m_disposed"
+                                                 "_disposed", "disposed", "isDisposed", "m_disposed"
                                              })
                                     {
                                         var fld = t.GetField(
                                             fieldName,
-                                            BindingFlags.Instance |
-                                            BindingFlags.NonPublic |
+                                            BindingFlags.Instance | BindingFlags.NonPublic |
                                             BindingFlags.Public
                                         );
-                                        if (fld == null ||
-                                            fld.FieldType != typeof(bool))
+                                        if (fld == null || fld.FieldType != typeof(bool))
                                             continue;
                                         result = (bool)fld.GetValue(component);
                                         foundField = true;
@@ -117,8 +111,10 @@ namespace xyLOGIX.Core.Extensions
 
                                     if (foundField) return;
 
-                                    // Last resort: attempt to touch a benign property and see if ObjectDisposedException is thrown.
-                                    // If touching throws ObjectDisposedException, treat it as disposed; otherwise assume not disposed.
+                                    // Last resort: attempt to touch a benign property and see if
+                                    // ObjectDisposedException is thrown. If touching throws
+                                    // ObjectDisposedException, treat it as disposed; otherwise
+                                    // assume not disposed.
                                     try
                                     {
                                         _ = component.Site; // benign probe

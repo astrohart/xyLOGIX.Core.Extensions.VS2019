@@ -3,14 +3,12 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions.Actions
 {
-    /// <summary>
-    /// Exposes static methods to round various quantities to various values.
-    /// </summary>
+    /// <summary>Exposes static methods to round various quantities to various values.</summary>
     public static class Round
     {
         /// <summary>
-        /// Rounds the specified <paramref name="value" /> to the nearest cent, assuming
-        /// that the specified <paramref name="value" /> is denominated in
+        /// Rounds the specified <paramref name="value" /> to the nearest cent,
+        /// assuming that the specified <paramref name="value" /> is denominated in
         /// <c>U.S. Dollars (USD)</c>.
         /// </summary>
         /// <param name="value">

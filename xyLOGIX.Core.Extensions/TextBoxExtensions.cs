@@ -12,27 +12,29 @@ namespace xyLOGIX.Core.Extensions
     public static class TextBoxExtensions
     {
         /// <summary>
-        /// Specifies the message to set the cue banner text (placeholder text) for a
-        /// <see cref="T:System.Windows.Forms.TextBox" /> control.
+        /// Specifies the message to set the cue banner text (placeholder text)
+        /// for a <see cref="T:System.Windows.Forms.TextBox" /> control.
         /// </summary>
         /// <remarks>
-        /// This message is sent to a <see cref="T:System.Windows.Forms.TextBox" /> control
-        /// to display grayed-out text when the
-        /// <see cref="T:System.Windows.Forms.TextBox" /> is empty and unfocused.
+        /// This message is sent to a
+        /// <see cref="T:System.Windows.Forms.TextBox" /> control to display grayed-out
+        /// text when the <see cref="T:System.Windows.Forms.TextBox" /> is empty and
+        /// unfocused.
         /// </remarks>
         private const uint EM_SETCUEBANNER = 0x1501;
 
         /// <summary>
-        /// Determines whether the specified window handle identifies an existing window.
+        /// Determines whether the specified window handle identifies an existing
+        /// window.
         /// </summary>
         /// <param name="hWnd">A handle to the window to be tested.</param>
         /// <returns>
-        /// <see langword="true" /> if the window handle identifies an existing window;
-        /// otherwise, <see langword="false" />.
+        /// <see langword="true" /> if the window handle identifies an existing
+        /// window; otherwise, <see langword="false" />.
         /// </returns>
         /// <remarks>
-        /// The <paramref name="hWnd" /> parameter is a handle to a window.
-        /// The function checks if the window associated with the handle still exists.
+        /// The <paramref name="hWnd" /> parameter is a handle to a window. The
+        /// function checks if the window associated with the handle still exists.
         /// </remarks>
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -56,11 +58,12 @@ namespace xyLOGIX.Core.Extensions
         /// passed as a string.
         /// </param>
         /// <returns>
-        /// The result of the message processing, which depends on the message sent.
+        /// The result of the message processing, which depends on the message
+        /// sent.
         /// </returns>
         /// <remarks>
-        /// Use this method to send messages directly to a window's window procedure,
-        /// bypassing the system's message queue.
+        /// Use this method to send messages directly to a window's window
+        /// procedure, bypassing the system's message queue.
         /// </remarks>
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         private static extern IntPtr SendMessage(
@@ -71,8 +74,8 @@ namespace xyLOGIX.Core.Extensions
         );
 
         /// <summary>
-        /// Sets the cue banner of the specified <paramref name="textBox" />  to the
-        /// specified <paramref name="cueText" />.
+        /// Sets the cue banner of the specified <paramref name="textBox" /> to
+        /// the specified <paramref name="cueText" />.
         /// </summary>
         /// <param name="textBox">
         /// (Required.) Reference to an instance of
@@ -85,10 +88,7 @@ namespace xyLOGIX.Core.Extensions
         /// <para />
         /// Pass the <see cref="F:System.String.Empty" /> value to remove the cue text.
         /// </param>
-        public static void SetCueBanner(
-            this TextBoxBase textBox,
-            string cueText
-        )
+        public static void SetCueBanner(this TextBoxBase textBox, string cueText)
         {
             try
             {
@@ -98,9 +98,7 @@ namespace xyLOGIX.Core.Extensions
                 if (!IsWindow(theTextBox.Handle)) return;
                 if (string.IsNullOrWhiteSpace(cueText)) return;
 
-                SendMessage(
-                    theTextBox.Handle, EM_SETCUEBANNER, (IntPtr)1, cueText
-                );
+                SendMessage(theTextBox.Handle, EM_SETCUEBANNER, (IntPtr)1, cueText);
             }
             catch (Exception ex)
             {

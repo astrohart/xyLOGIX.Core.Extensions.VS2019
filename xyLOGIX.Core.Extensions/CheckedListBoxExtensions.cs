@@ -30,9 +30,7 @@ namespace xyLOGIX.Core.Extensions
         /// Thrown if the required parameter,
         /// <paramref name="checkedListBox" />, is passed a <see langword="null" /> value.
         /// </exception>
-        public static bool AreAllItemsSelected(
-            this CheckedListBox checkedListBox
-        )
+        public static bool AreAllItemsSelected(this CheckedListBox checkedListBox)
         {
             if (checkedListBox == null)
                 throw new ArgumentNullException(nameof(checkedListBox));
@@ -41,21 +39,20 @@ namespace xyLOGIX.Core.Extensions
                 return false;
 
             return checkedListBox.Items.Count > 0 &&
-                   checkedListBox.CheckedItems.Count ==
-                   checkedListBox.Items.Count;
+                   checkedListBox.CheckedItems.Count == checkedListBox.Items.Count;
         }
 
         /// <summary>
-        /// Sets the Checked state of the check the box whose name is identical
-        /// to the value in the <paramref name="itemName" /> parameter.
+        /// Sets the Checked state of the check the box whose name is identical to
+        /// the value in the <paramref name="itemName" /> parameter.
         /// </summary>
         /// <param name="checkedListBox">
         /// (Required.) A
         /// <see cref="T:System.Windows.Forms.CheckedListBox" /> to act upon.
         /// </param>
         /// <param name="itemName">
-        /// (Required.) String containing the name of the item
-        /// whose Checked state is to be altered.
+        /// (Required.) String containing the name of the item whose
+        /// Checked state is to be altered.
         /// </param>
         /// <param name="isChecked">
         /// (Optional.) Whether to set the Checked state of the
@@ -78,7 +75,7 @@ namespace xyLOGIX.Core.Extensions
                 for (var i = 0; i < checkedListBox.Items.Count; i++)
                 {
                     var listItemCaption = checkedListBox.Items[i]
-                        .ToString();
+                                                        .ToString();
                     if (string.IsNullOrWhiteSpace(listItemCaption)) continue;
                     if (!itemName.Equals(listItemCaption)) continue;
 
@@ -126,10 +123,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="itemName" />, is passed a blank or <see langword="null" />
         /// string for a value.
         /// </exception>
-        public static bool GetCheckedByName(
-            this CheckedListBox checkedListBox,
-            string itemName
-        )
+        public static bool GetCheckedByName(this CheckedListBox checkedListBox, string itemName)
         {
             var result = false;
 
@@ -142,11 +136,10 @@ namespace xyLOGIX.Core.Extensions
                 for (var i = 0; i < checkedListBox.Items.Count; i++)
                 {
                     var listItemCaption = checkedListBox.Items[i]
-                        .ToString();
+                                                        .ToString();
                     if (!itemName.Equals(listItemCaption)) continue;
 
-                    result = checkedListBox.GetItemCheckState(i) ==
-                             CheckState.Checked;
+                    result = checkedListBox.GetItemCheckState(i) == CheckState.Checked;
 
                     break; /* no need to keep iterating */
                 }
@@ -175,17 +168,14 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if none of the items in the list are checked
         /// or if there are zero entries in the list; <see langword="false" /> otherwise.
         /// </returns>
-        public static bool NoItemsAreSelected(
-            this CheckedListBox checkedListBox
-        )
+        public static bool NoItemsAreSelected(this CheckedListBox checkedListBox)
         {
             bool result;
 
             try
             {
-                result = checkedListBox != null &&
-                         (checkedListBox.Items.Count <= 0 ||
-                          checkedListBox.CheckedItems.Count <= 0);
+                result = checkedListBox != null && (checkedListBox.Items.Count <= 0 ||
+                                                    checkedListBox.CheckedItems.Count <= 0);
             }
             catch (Exception ex)
             {

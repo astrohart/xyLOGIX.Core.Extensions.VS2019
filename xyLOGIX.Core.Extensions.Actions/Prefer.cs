@@ -5,8 +5,8 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions.Actions
 {
     /// <summary>
-    /// Provides a set of static methods that preferentially return a specified
-    /// preferred value over a nullable value, if the nullable value is
+    /// Provides a set of static methods that preferentially return a
+    /// specified preferred value over a nullable value, if the nullable value is
     /// <see langword="null" /> or does not have a value.
     /// </summary>
     /// <remarks>
@@ -17,12 +17,13 @@ namespace xyLOGIX.Core.Extensions.Actions
     public static class Prefer
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.Actions.Prefer" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.Actions.Prefer" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -31,11 +32,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         static Prefer() { }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -84,16 +85,15 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
-        /// (Required.) A nullable
-        /// <see cref="T:System.Byte" /> variable whose value is to be returned if it
-        /// indeed does have a value.
+        /// (Required.) A nullable <see cref="T:System.Byte" />
+        /// variable whose value is to be returned if it indeed does have a value.
         /// </param>
         /// <param name="preferredValue">
         /// (Required.) Reference to the preferred
@@ -137,16 +137,15 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
-        /// (Required.) A nullable
-        /// <see cref="T:System.Char" /> variable whose value is to be returned if it
-        /// indeed does have a value.
+        /// (Required.) A nullable <see cref="T:System.Char" />
+        /// variable whose value is to be returned if it indeed does have a value.
         /// </param>
         /// <param name="preferredValue">
         /// (Required.) Reference to the preferred
@@ -191,11 +190,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -244,11 +243,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -297,16 +296,15 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
-        /// (Required.) A nullable
-        /// <see cref="T:float" /> variable whose value is to be returned if it
-        /// indeed does have a value.
+        /// (Required.) A nullable <see cref="T:float" />
+        /// variable whose value is to be returned if it indeed does have a value.
         /// </param>
         /// <param name="preferredValue">
         /// (Required.) Reference to the preferred
@@ -350,11 +348,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -403,11 +401,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -456,11 +454,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -509,11 +507,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -562,11 +560,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="valueToCheck" />, if the specified
-        /// <paramref name="valueToCheck" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="valueToCheck" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="valueToCheck" />,
+        /// if the specified <paramref name="valueToCheck" /> is <see langword="null" /> or
+        /// it does not have a value; otherwise, the value of the
+        /// <paramref name="valueToCheck" /> is returned.
         /// </summary>
         /// <param name="valueToCheck">
         /// (Required.) A nullable
@@ -582,8 +580,8 @@ namespace xyLOGIX.Core.Extensions.Actions
         /// <returns>
         /// The specified <paramref name="preferredValue" /> over the
         /// <paramref name="valueToCheck" />, if the specified
-        /// <paramref name="valueToCheck" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="valueToCheck" /> is
+        /// <paramref name="valueToCheck" /> is <see langword="null" /> or it does not have
+        /// a value; otherwise, the value of the <paramref name="valueToCheck" /> is
         /// returned.
         /// </returns>
         [Log(AttributeExclude = true)]
@@ -597,8 +595,7 @@ namespace xyLOGIX.Core.Extensions.Actions
 
             try
             {
-                if (IntPtr.Zero.Equals(valueToCheck) &&
-                    !IntPtr.Zero.Equals(result)) return result;
+                if (IntPtr.Zero.Equals(valueToCheck) && !IntPtr.Zero.Equals(result)) return result;
 
                 result = valueToCheck;
             }
@@ -614,11 +611,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="valueToCheck" />, if the specified
-        /// <paramref name="valueToCheck" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="valueToCheck" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="valueToCheck" />,
+        /// if the specified <paramref name="valueToCheck" /> is <see langword="null" /> or
+        /// it does not have a value; otherwise, the value of the
+        /// <paramref name="valueToCheck" /> is returned.
         /// </summary>
         /// <param name="valueToCheck">
         /// (Required.) A nullable
@@ -634,8 +631,8 @@ namespace xyLOGIX.Core.Extensions.Actions
         /// <returns>
         /// The specified <paramref name="preferredValue" /> over the
         /// <paramref name="valueToCheck" />, if the specified
-        /// <paramref name="valueToCheck" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="valueToCheck" /> is
+        /// <paramref name="valueToCheck" /> is <see langword="null" /> or it does not have
+        /// a value; otherwise, the value of the <paramref name="valueToCheck" /> is
         /// returned.
         /// </returns>
         [Log(AttributeExclude = true)]
@@ -649,8 +646,8 @@ namespace xyLOGIX.Core.Extensions.Actions
 
             try
             {
-                if (UIntPtr.Zero.Equals(valueToCheck) &&
-                    !UIntPtr.Zero.Equals(result)) return result;
+                if (UIntPtr.Zero.Equals(valueToCheck) && !UIntPtr.Zero.Equals(result))
+                    return result;
 
                 result = valueToCheck;
             }
@@ -666,15 +663,16 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
-        /// (Required.) A <see cref="T:System.Object" /> variable whose value is to be
-        /// returned if it indeed does have a non-<see langword="null" />, non-blank value.
+        /// (Required.) A <see cref="T:System.Object" />
+        /// variable whose value is to be returned if it indeed does have a non-
+        /// <see langword="null" />, non-blank value.
         /// </param>
         /// <param name="preferredValue">
         /// (Required.) A <see cref="T:System.Object" />
@@ -721,11 +719,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -774,11 +772,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -827,15 +825,16 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
-        /// (Required.) A <see cref="T:System.String" /> variable whose value is to be
-        /// returned if it indeed does have a non-<see langword="null" />, non-blank value.
+        /// (Required.) A <see cref="T:System.String" />
+        /// variable whose value is to be returned if it indeed does have a non-
+        /// <see langword="null" />, non-blank value.
         /// </param>
         /// <param name="preferredValue">
         /// (Required.) A <see cref="T:System.String" />
@@ -877,11 +876,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -930,11 +929,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -983,11 +982,11 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
         /// (Required.) A nullable
@@ -1036,16 +1035,17 @@ namespace xyLOGIX.Core.Extensions.Actions
         }
 
         /// <summary>
-        /// Returns the value of the <paramref name="value1" /> parameter if it is greater
-        /// than or equal to zero; otherwise, <paramref name="value2" /> is returned.
+        /// Returns the value of the <paramref name="value1" /> parameter if it is
+        /// greater than or equal to zero; otherwise, <paramref name="value2" /> is
+        /// returned.
         /// </summary>
         /// <param name="value1">
-        /// (Required.) An integer value to be returned if it is greater than or equal to
-        /// zero.
+        /// (Required.) An integer value to be returned if it is
+        /// greater than or equal to zero.
         /// </param>
         /// <param name="value2">
-        /// (Required.) An integer value to be returned if the <paramref name="value1" />
-        /// is less than zero.
+        /// (Required.) An integer value to be returned if the
+        /// <paramref name="value1" /> is less than zero.
         /// </param>
         /// <returns>
         /// <c>-1</c> if neither <paramref name="value1" /> nor

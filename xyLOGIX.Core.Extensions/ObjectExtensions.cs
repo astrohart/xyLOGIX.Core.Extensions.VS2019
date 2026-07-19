@@ -6,19 +6,18 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Exposes static extension methods for <see cref="T:System.Object" />.
-    /// </summary>
+    /// <summary>Exposes static extension methods for <see cref="T:System.Object" />.</summary>
     [Log(AttributeExclude = true)]
     public static class ObjectExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.ObjectExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.ObjectExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -36,8 +35,8 @@ namespace xyLOGIX.Core.Extensions
         /// converted to a log-friendly string representation.
         /// </param>
         /// <remarks>
-        /// If a <see langword="null" /> reference is passed as the argument of the
-        /// <paramref name="value" /> parameter, then the method returns the string
+        /// If a <see langword="null" /> reference is passed as the argument of
+        /// the <paramref name="value" /> parameter, then the method returns the string
         /// <c>&lt;null&gt;</c>.
         /// <para />
         /// This method uses PostSharp's formatting system to generate the string

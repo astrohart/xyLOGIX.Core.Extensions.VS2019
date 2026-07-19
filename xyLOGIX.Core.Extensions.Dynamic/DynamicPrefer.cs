@@ -5,18 +5,19 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions.Dynamic
 {
     /// <summary>
-    /// Contains methods that allow you to prefer one type over another when working
-    /// with <see langword="dynamic" /> objects.
+    /// Contains methods that allow you to prefer one type over another when
+    /// working with <see langword="dynamic" /> objects.
     /// </summary>
     public static class DynamicPrefer
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.Dynamic.DynamicPrefer" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.Dynamic.DynamicPrefer" /> class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -25,15 +26,16 @@ namespace xyLOGIX.Core.Extensions.Dynamic
         static DynamicPrefer() { }
 
         /// <summary>
-        /// Preferentially returns the specified <paramref name="preferredValue" /> over
-        /// the <paramref name="nullableValue" />, if the specified
-        /// <paramref name="nullableValue" /> is <see langword="null" /> or it does not
-        /// have a value; otherwise, the value of the <paramref name="nullableValue" /> is
-        /// returned.
+        /// Preferentially returns the specified
+        /// <paramref name="preferredValue" /> over the <paramref name="nullableValue" />,
+        /// if the specified <paramref name="nullableValue" /> is <see langword="null" />
+        /// or it does not have a value; otherwise, the value of the
+        /// <paramref name="nullableValue" /> is returned.
         /// </summary>
         /// <param name="nullableValue">
-        /// (Required.) A <see cref="T:System.Object" /> variable whose value is to be
-        /// returned if it indeed does have a non-<see langword="null" />, non-blank value.
+        /// (Required.) A <see cref="T:System.Object" />
+        /// variable whose value is to be returned if it indeed does have a non-
+        /// <see langword="null" />, non-blank value.
         /// </param>
         /// <param name="preferredValue">
         /// (Required.) A <see cref="T:System.Object" />

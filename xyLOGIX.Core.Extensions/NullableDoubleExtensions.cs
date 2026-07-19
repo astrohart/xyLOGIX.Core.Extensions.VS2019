@@ -1,6 +1,6 @@
 ﻿namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Extension methods for a <c>double?</c> value. </summary>
+    /// <summary>Extension methods for a <c>double?</c> value.</summary>
     public static class NullableDoubleExtensions
     {
         /// <summary>

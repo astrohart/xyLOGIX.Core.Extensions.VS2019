@@ -6,7 +6,8 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Provides access to the one and only instance of the object that implements the
+    /// Provides access to the one and only instance of the object that
+    /// implements the
     /// <see cref="T:xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator" />
     /// interface.
     /// </summary>
@@ -30,8 +31,8 @@ namespace xyLOGIX.Core.Extensions
         /// interface, and returns a reference to it.
         /// </summary>
         /// <returns>
-        /// Reference to the one, and only, instance of the object that implements the
-        /// <see cref="T:xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator" />
+        /// Reference to the one, and only, instance of the object that implements
+        /// the <see cref="T:xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator" />
         /// interface.
         /// </returns>
         [DebuggerStepThrough]

@@ -4,18 +4,18 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Exposes static extension methods for <see cref="T:System.DateTimeOffset" />
-    /// value(s).
+    /// Exposes static extension methods for
+    /// <see cref="T:System.DateTimeOffset" /> value(s).
     /// </summary>
     public static class DateTimeOffsetExtensions
     {
         /// <summary>
-        /// Determines whether <paramref name="time1" />  is closer to the present than
-        /// <paramref name="time2" />.
+        /// Determines whether <paramref name="time1" /> is closer to the present
+        /// than <paramref name="time2" />.
         /// </summary>
         /// <param name="time1">
-        /// (Required.) A <see cref="T:System.DateTimeOffset" /> that should be compared to
-        /// <paramref name="time2" />.
+        /// (Required.) A <see cref="T:System.DateTimeOffset" /> that
+        /// should be compared to <paramref name="time2" />.
         /// </param>
         /// <param name="time2">
         /// (Required.) A <see cref="T:System.DateTimeOffset" /> that
@@ -31,20 +31,19 @@ namespace xyLOGIX.Core.Extensions
         /// <para />
         /// This method concerns itself only with times that are in the relative past.
         /// </remarks>
-        public static bool IsMoreRecentThan(
-            this DateTimeOffset time1,
-            DateTimeOffset time2
-        )
+        public static bool IsMoreRecentThan(this DateTimeOffset time1, DateTimeOffset time2)
         {
             var result = false;
 
             try
             {
-                // Return false if either time1 or time2 are in the future.  We're concerned only with times that are in the relative past.
+                // Return false if either time1 or time2 are in the future.  We're concerned only
+                // with times that are in the relative past.
                 if (time1 > DateTime.UtcNow) return result;
                 if (time2 > DateTime.UtcNow) return result;
 
-                // Compare time1 and time2 and return true if time1 is more recent (i.e., in the future with respect to) time2
+                // Compare time1 and time2 and return true if time1 is more recent (i.e., in the
+                // future with respect to) time2
                 result = time1 > time2;
             }
             catch (Exception ex)
@@ -59,9 +58,9 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines if <paramref name="dto1" />  is within <paramref name="seconds" />
-        /// second(s) of <paramref name="dto2" />, where <paramref name="dto1" /> and
-        /// <paramref name="dto2" />  are both instances of
+        /// Determines if <paramref name="dto1" /> is within
+        /// <paramref name="seconds" /> second(s) of <paramref name="dto2" />, where
+        /// <paramref name="dto1" /> and <paramref name="dto2" /> are both instances of
         /// <see cref="T:System.DateTimeOffset" />.
         /// </summary>
         /// <param name="dto1">
@@ -75,11 +74,11 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="seconds">
         /// (Required.) A positive <see cref="T:System.Int32" /> that
         /// gives the number of seconds that the difference between
-        /// <paramref name="dto1" /> and <paramref name="dto2" />  must be within.
+        /// <paramref name="dto1" /> and <paramref name="dto2" /> must be within.
         /// </param>
         /// <remarks>
         /// This method measures the time difference between
-        /// <paramref name="dto1" />  and <paramref name="dto2" /> to the nearest
+        /// <paramref name="dto1" /> and <paramref name="dto2" /> to the nearest
         /// millisecond.
         /// </remarks>
         /// <returns>
@@ -118,14 +117,14 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines if <paramref name="dto1" />  is within <paramref name="seconds" />
-        /// second(s) of <paramref name="dto2" />, where <paramref name="dto1" /> and
-        /// <paramref name="dto2" />  are both instances of
+        /// Determines if <paramref name="dto1" /> is within
+        /// <paramref name="seconds" /> second(s) of <paramref name="dto2" />, where
+        /// <paramref name="dto1" /> and <paramref name="dto2" /> are both instances of
         /// <see cref="T:System.DateTimeOffset" />.
         /// </summary>
         /// <param name="dto1">
-        /// (Required.) One of the
-        /// <see cref="T:System.DateTime" /> value(s) to be compared.
+        /// (Required.) One of the <see cref="T:System.DateTime" />
+        /// value(s) to be compared.
         /// </param>
         /// <param name="dto2">
         /// (Required.) The other of the two
@@ -134,11 +133,11 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="seconds">
         /// (Required.) A positive <see cref="T:System.Int32" /> that
         /// gives the number of seconds that the difference between
-        /// <paramref name="dto1" /> and <paramref name="dto2" />  must be within.
+        /// <paramref name="dto1" /> and <paramref name="dto2" /> must be within.
         /// </param>
         /// <remarks>
         /// This method measures the time difference between
-        /// <paramref name="dto1" />  and <paramref name="dto2" /> to the nearest
+        /// <paramref name="dto1" /> and <paramref name="dto2" /> to the nearest
         /// millisecond.
         /// </remarks>
         /// <returns>
@@ -147,11 +146,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="dto2" />, are equal to or less than <paramref name="seconds" />
         /// apart.
         /// </returns>
-        public static bool IsWithinXSecondsOf(
-            this DateTime dto1,
-            DateTimeOffset dto2,
-            int seconds
-        )
+        public static bool IsWithinXSecondsOf(this DateTime dto1, DateTimeOffset dto2, int seconds)
         {
             var result = false;
 

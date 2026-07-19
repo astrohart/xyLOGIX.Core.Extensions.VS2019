@@ -20,8 +20,8 @@ namespace xyLOGIX.Core.Extensions
         /// assigned to the control.
         /// </summary>
         /// <returns>
-        /// The <see cref="T:System.Windows.Forms.AccessibleObject" /> assigned
-        /// to the control.
+        /// The <see cref="T:System.Windows.Forms.AccessibleObject" /> assigned to
+        /// the control.
         /// </returns>
         AccessibleObject AccessibilityObject { [DebuggerStepThrough] get; }
 
@@ -30,13 +30,15 @@ namespace xyLOGIX.Core.Extensions
         /// accessibility client applications.
         /// </summary>
         /// <returns>
-        /// The default action description of the control for use by
-        /// accessibility client applications.
+        /// The default action description of the control for use by accessibility
+        /// client applications.
         /// </returns>
         string AccessibleDefaultActionDescription
         {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
+            [DebuggerStepThrough]
+            get;
+            [DebuggerStepThrough]
+            set;
         }
 
         /// <summary>
@@ -47,27 +49,19 @@ namespace xyLOGIX.Core.Extensions
         /// The description of the control used by accessibility client
         /// applications. The default is <see langword="null" />.
         /// </returns>
-        string AccessibleDescription
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        string AccessibleDescription { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the name of the control used by accessibility client
         /// applications.
         /// </summary>
         /// <returns>
-        /// The name of the control used by accessibility client applications.
-        /// The default is <see langword="null" />.
+        /// The name of the control used by accessibility client applications. The
+        /// default is <see langword="null" />.
         /// </returns>
-        string AccessibleName
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        string AccessibleName { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the accessible role of the control </summary>
+        /// <summary>Gets or sets the accessible role of the control</summary>
         /// <returns>
         /// One of the values of
         /// <see cref="T:System.Windows.Forms.AccessibleRole" /> . The default is
@@ -78,19 +72,15 @@ namespace xyLOGIX.Core.Extensions
         /// value assigned is not one of the
         /// <see cref="T:System.Windows.Forms.AccessibleRole" /> value(s).
         /// </exception>
-        AccessibleRole AccessibleRole
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        AccessibleRole AccessibleRole { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control can accept data
         /// that the user drags onto it.
         /// </summary>
         /// <returns>
-        /// <see langword="true" /> if drag-and-drop operations are allowed in
-        /// the control; otherwise, <see langword="false" />. The default is
+        /// <see langword="true" /> if drag-and-drop operations are allowed in the
+        /// control; otherwise, <see langword="false" />. The default is
         /// <see langword="false" />.
         /// </returns>
         bool AllowDrop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
@@ -104,11 +94,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.AnchorStyles" /> value(s). The default is
         /// <see langword="Top" /> and <see langword="Left" />.
         /// </returns>
-        AnchorStyles Anchor
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        AnchorStyles Anchor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets where this control is scrolled to in
@@ -120,11 +106,7 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Drawing.Point" /> specifying the scroll
         /// location. The default is the upper-left corner of the control.
         /// </returns>
-        Point AutoScrollOffset
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Point AutoScrollOffset { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the height of the control
@@ -136,43 +118,34 @@ namespace xyLOGIX.Core.Extensions
         /// value is updated.
         /// </remarks>
         /// <returns>
-        /// <see langword="true" /> if the height of the control automatically adjusts when
-        /// the font is changed; otherwise, <see langword="false" />. The default is
-        /// <see langword="true" />.
+        /// <see langword="true" /> if the height of the control automatically
+        /// adjusts when the font is changed; otherwise, <see langword="false" />. The
+        /// default is <see langword="true" />.
         /// </returns>
         bool AutoSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the background color for the control. </summary>
+        /// <summary>Gets or sets the background color for the control.</summary>
         /// <returns>
-        /// A <see cref="T:System.Drawing.Color" /> that represents the
-        /// background color of the control. The default is the value of the
+        /// A <see cref="T:System.Drawing.Color" /> that represents the background
+        /// color of the control. The default is the value of the
         /// <see cref="P:System.Windows.Forms.Control.DefaultBackColor" /> property.
         /// </returns>
-        Color BackColor
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Color BackColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the background image displayed in the control. </summary>
+        /// <summary>Gets or sets the background image displayed in the control.</summary>
         /// <returns>
         /// An <see cref="T:System.Drawing.Image" /> that represents the image to
         /// display in the background of the control.
         /// </returns>
-        Image BackgroundImage
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Image BackgroundImage { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the background image layout as defined in the
         /// <see cref="T:System.Windows.Forms.ImageLayout" /> enumeration.
         /// </summary>
         /// <returns>
-        /// One of the values of
-        /// <see cref="T:System.Windows.Forms.ImageLayout" /> (
-        /// <see cref="F:System.Windows.Forms.ImageLayout.Center" /> ,
+        /// One of the values of <see cref="T:System.Windows.Forms.ImageLayout" />
+        /// ( <see cref="F:System.Windows.Forms.ImageLayout.Center" /> ,
         /// <see cref="F:System.Windows.Forms.ImageLayout.None" /> ,
         /// <see cref="F:System.Windows.Forms.ImageLayout.Stretch" /> ,
         /// <see cref="F:System.Windows.Forms.ImageLayout.Tile" /> , or
@@ -183,11 +156,7 @@ namespace xyLOGIX.Core.Extensions
         /// The
         /// specified enumeration value does not exist.
         /// </exception>
-        ImageLayout BackgroundImageLayout
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        ImageLayout BackgroundImageLayout { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the <see cref="T:System.Windows.Forms.BindingContext" />
@@ -197,20 +166,16 @@ namespace xyLOGIX.Core.Extensions
         /// A <see cref="T:System.Windows.Forms.BindingContext" /> for the
         /// control.
         /// </returns>
-        BindingContext BindingContext
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        BindingContext BindingContext { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets the distance, in pixels, between the bottom edge of the control
         /// and the top edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Int32" /> representing the distance, in
-        /// pixels, between the bottom edge of the control and the top edge of its
-        /// container's client area.
+        /// An <see cref="T:System.Int32" /> representing the distance, in pixels,
+        /// between the bottom edge of the control and the top edge of its container's
+        /// client area.
         /// </returns>
         int Bottom { [DebuggerStepThrough] get; }
 
@@ -223,20 +188,16 @@ namespace xyLOGIX.Core.Extensions
         /// parent control that represents the size and location of the control including
         /// its nonclient elements.
         /// </returns>
-        Rectangle Bounds
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Rectangle Bounds { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets a value indicating whether the control can receive focus. </summary>
+        /// <summary>Gets a value indicating whether the control can receive focus.</summary>
         /// <returns>
         /// <see langword="true" /> if the control can receive focus; otherwise,
         /// <see langword="false" />.
         /// </returns>
         bool CanFocus { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets a value indicating whether the control can be selected. </summary>
+        /// <summary>Gets a value indicating whether the control can be selected.</summary>
         /// <returns>
         /// <see langword="true" /> if the control can be selected; otherwise,
         /// <see langword="false" />.
@@ -262,38 +223,27 @@ namespace xyLOGIX.Core.Extensions
         /// performed on any controls requiring validation when it receives focus;
         /// otherwise, <see langword="false" />. The default is <see langword="true" />.
         /// </returns>
-        bool CausesValidation
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        bool CausesValidation { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets the rectangle that represents the client area of the control. </summary>
+        /// <summary>Gets the rectangle that represents the client area of the control.</summary>
         /// <returns>
-        /// A <see cref="T:System.Drawing.Rectangle" /> that represents the
-        /// client area of the control.
+        /// A <see cref="T:System.Drawing.Rectangle" /> that represents the client
+        /// area of the control.
         /// </returns>
         Rectangle ClientRectangle { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets or sets the height and width of the client area of the control. </summary>
+        /// <summary>Gets or sets the height and width of the client area of the control.</summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Size" /> that represents the dimensions
         /// of the client area of the control.
         /// </returns>
-        Size ClientSize
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Size ClientSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets the name of the company or creator of the application containing
         /// the control.
         /// </summary>
-        /// <returns>
-        /// The company name or creator of the application containing the
-        /// control.
-        /// </returns>
+        /// <returns>The company name or creator of the application containing the control.</returns>
         string CompanyName { [DebuggerStepThrough] get; }
 
         /// <summary>
@@ -306,16 +256,12 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         bool ContainsFocus { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets or sets the shortcut menu associated with the control. </summary>
+        /// <summary>Gets or sets the shortcut menu associated with the control.</summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.ContextMenu" /> that represents
         /// the shortcut menu associated with the control.
         /// </returns>
-        ContextMenu ContextMenu
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        ContextMenu ContextMenu { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the
@@ -328,20 +274,16 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="T:System.Windows.Forms.ContextMenuStrip" /> . The default is
         /// <see langword="null" />.
         /// </returns>
-        ContextMenuStrip ContextMenuStrip
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        ContextMenuStrip ContextMenuStrip { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets the collection of controls contained within the control. </summary>
+        /// <summary>Gets the collection of controls contained within the control.</summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.Control.ControlCollection" />
         /// representing the collection of controls contained within the control.
         /// </returns>
         Control.ControlCollection Controls { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets a value indicating whether the control has been created. </summary>
+        /// <summary>Gets a value indicating whether the control has been created.</summary>
         /// <returns>
         /// <see langword="true" /> if the control has been created; otherwise,
         /// <see langword="false" />.
@@ -358,10 +300,10 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         Cursor Cursor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets the data bindings for the control. </summary>
+        /// <summary>Gets the data bindings for the control.</summary>
         /// <returns>
-        /// A <see cref="T:System.Windows.Forms.ControlBindingsCollection" />
-        /// that contains the <see cref="T:System.Windows.Forms.Binding" /> objects for the
+        /// A <see cref="T:System.Windows.Forms.ControlBindingsCollection" /> that
+        /// contains the <see cref="T:System.Windows.Forms.Binding" /> objects for the
         /// control.
         /// </returns>
         ControlBindingsCollection DataBindings { [DebuggerStepThrough] get; }
@@ -370,10 +312,10 @@ namespace xyLOGIX.Core.Extensions
         /// Gets the DPI value for the display device where the control is
         /// currently being displayed.
         /// </summary>
-        /// <returns> The DPI value of the display device. </returns>
+        /// <returns>The DPI value of the display device.</returns>
         int DeviceDpi { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets the rectangle that represents the display area of the control. </summary>
+        /// <summary>Gets the rectangle that represents the display area of the control.</summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Rectangle" /> that represents the
         /// display area of the control.
@@ -418,14 +360,14 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         bool Enabled { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets a value indicating whether the control has input focus. </summary>
+        /// <summary>Gets a value indicating whether the control has input focus.</summary>
         /// <returns>
         /// <see langword="true" /> if the control has focus; otherwise,
         /// <see langword="false" />.
         /// </returns>
         bool Focused { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets or sets the font of the text displayed by the control. </summary>
+        /// <summary>Gets or sets the font of the text displayed by the control.</summary>
         /// <returns>
         /// The <see cref="T:System.Drawing.Font" /> to apply to the text
         /// displayed by the control. The default is the value of the
@@ -433,19 +375,15 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         Font Font { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the foreground color of the control. </summary>
+        /// <summary>Gets or sets the foreground color of the control.</summary>
         /// <returns>
         /// The foreground <see cref="T:System.Drawing.Color" /> of the control.
         /// The default is the value of the
         /// <see cref="P:System.Windows.Forms.Control.DefaultForeColor" /> property.
         /// </returns>
-        Color ForeColor
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Color ForeColor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets the window handle that the control is bound to. </summary>
+        /// <summary>Gets the window handle that the control is bound to.</summary>
         /// <returns>
         /// An <see cref="T:System.IntPtr" /> that contains the window handle (
         /// <see langword="HWND" />) of the control.
@@ -453,8 +391,8 @@ namespace xyLOGIX.Core.Extensions
         IntPtr Handle { [DebuggerStepThrough] get; }
 
         /// <summary>
-        /// Gets a value indicating whether the control contains one or more
-        /// child controls.
+        /// Gets a value indicating whether the control contains one or more child
+        /// controls.
         /// </summary>
         /// <returns>
         /// <see langword="true" /> if the control contains one or more child
@@ -462,11 +400,11 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         bool HasChildren { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets or sets the height of the control. </summary>
-        /// <returns> The height of the control in pixels. </returns>
+        /// <summary>Gets or sets the height of the control.</summary>
+        /// <returns>The height of the control in pixels.</returns>
         int Height { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the Input Method Editor (IME) mode of the control. </summary>
+        /// <summary>Gets or sets the Input Method Editor (IME) mode of the control.</summary>
         /// <returns>
         /// One of the <see cref="T:System.Windows.Forms.ImeMode" /> value(s). The
         /// default is <see cref="F:System.Windows.Forms.ImeMode.Inherit" />.
@@ -476,11 +414,7 @@ namespace xyLOGIX.Core.Extensions
         /// assigned value is not one of the <see cref="T:System.Windows.Forms.ImeMode" />
         /// enumeration values.
         /// </exception>
-        ImeMode ImeMode
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        ImeMode ImeMode { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control is visible to
@@ -490,13 +424,9 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if the control is visible to accessibility
         /// applications; otherwise, <see langword="false" />.
         /// </returns>
-        bool IsAccessible
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        bool IsAccessible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets a value indicating whether the control has been disposed of. </summary>
+        /// <summary>Gets a value indicating whether the control has been disposed of.</summary>
         /// <returns>
         /// <see langword="true" /> if the control has been disposed of;
         /// otherwise, <see langword="false" />.
@@ -514,14 +444,14 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         bool IsHandleCreated { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets a value indicating whether the control is mirrored. </summary>
+        /// <summary>Gets a value indicating whether the control is mirrored.</summary>
         /// <returns>
         /// <see langword="true" /> if the control is mirrored; otherwise,
         /// <see langword="false" />.
         /// </returns>
         bool IsMirrored { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets a cached instance of the control's layout engine. </summary>
+        /// <summary>Gets a cached instance of the control's layout engine.</summary>
         /// <returns>
         /// The <see cref="T:System.Windows.Forms.Layout.LayoutEngine" /> for the
         /// control's contents.
@@ -533,9 +463,9 @@ namespace xyLOGIX.Core.Extensions
         /// control and the left edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Int32" /> representing the distance, in
-        /// pixels, between the left edge of the control and the left edge of its
-        /// container's client area.
+        /// An <see cref="T:System.Int32" /> representing the distance, in pixels,
+        /// between the left edge of the control and the left edge of its container's
+        /// client area.
         /// </returns>
         int Left { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
@@ -550,10 +480,10 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         Point Location { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the space between controls. </summary>
+        /// <summary>Gets or sets the space between controls.</summary>
         /// <returns>
-        /// A <see cref="T:System.Windows.Forms.Padding" /> representing the
-        /// space between controls.
+        /// A <see cref="T:System.Windows.Forms.Padding" /> representing the space
+        /// between controls.
         /// </returns>
         Padding Margin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
@@ -567,11 +497,7 @@ namespace xyLOGIX.Core.Extensions
         /// An ordered pair of type <see cref="T:System.Drawing.Size" />
         /// representing the width and height of a rectangle.
         /// </returns>
-        Size MaximumSize
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Size MaximumSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets the size that is the lower limit that
@@ -583,47 +509,39 @@ namespace xyLOGIX.Core.Extensions
         /// An ordered pair of type <see cref="T:System.Drawing.Size" />
         /// representing the width and height of a rectangle.
         /// </returns>
-        Size MinimumSize
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Size MinimumSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the name of the control. </summary>
-        /// <returns> The name of the control. The default is an empty string (""). </returns>
+        /// <summary>Gets or sets the name of the control.</summary>
+        /// <returns>The name of the control. The default is an empty string ("").</returns>
         string Name { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets padding within the control. </summary>
+        /// <summary>Gets or sets padding within the control.</summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.Padding" /> representing the
         /// control's public spacing characteristics.
         /// </returns>
-        Padding Padding
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        Padding Padding { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the parent container of the control. </summary>
+        /// <summary>Gets or sets the parent container of the control.</summary>
         /// <returns>
         /// A <see cref="T:System.Windows.Forms.Control" /> that represents the
         /// parent or container control of the control.
         /// </returns>
         Control Parent { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets the size of a rectangular area into which the control can fit. </summary>
+        /// <summary>Gets the size of a rectangular area into which the control can fit.</summary>
         /// <returns>
         /// A <see cref="T:System.Drawing.Size" /> containing the height and
         /// width, in pixels.
         /// </returns>
         Size PreferredSize { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets the product name of the assembly containing the control. </summary>
-        /// <returns> The product name of the assembly containing the control. </returns>
+        /// <summary>Gets the product name of the assembly containing the control.</summary>
+        /// <returns>The product name of the assembly containing the control.</returns>
         string ProductName { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets the version of the assembly containing the control. </summary>
-        /// <returns> The file version of the assembly containing the control. </returns>
+        /// <summary>Gets the version of the assembly containing the control.</summary>
+        /// <returns>The file version of the assembly containing the control.</returns>
         string ProductVersion { [DebuggerStepThrough] get; }
 
         /// <summary>
@@ -636,7 +554,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         bool RecreatingHandle { [DebuggerStepThrough] get; }
 
-        /// <summary> Gets or sets the window region associated with the control. </summary>
+        /// <summary>Gets or sets the window region associated with the control.</summary>
         /// <returns>
         /// The window <see cref="T:System.Drawing.Region" /> associated with the
         /// control.
@@ -648,15 +566,15 @@ namespace xyLOGIX.Core.Extensions
         /// and the left edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Int32" /> representing the distance, in
-        /// pixels, between the right edge of the control and the left edge of its
-        /// container's client area.
+        /// An <see cref="T:System.Int32" /> representing the distance, in pixels,
+        /// between the right edge of the control and the left edge of its container's
+        /// client area.
         /// </returns>
         int Right { [DebuggerStepThrough] get; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether control's elements are
-        /// aligned to support locales using right-to-left fonts.
+        /// Gets or sets a value indicating whether control's elements are aligned
+        /// to support locales using right-to-left fonts.
         /// </summary>
         /// <returns>
         /// One of the <see cref="T:System.Windows.Forms.RightToLeft" /> value(s).
@@ -667,20 +585,16 @@ namespace xyLOGIX.Core.Extensions
         /// assigned value is not one of the
         /// <see cref="T:System.Windows.Forms.RightToLeft" /> value(s).
         /// </exception>
-        RightToLeft RightToLeft
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        RightToLeft RightToLeft { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the height and width of the control. </summary>
+        /// <summary>Gets or sets the height and width of the control.</summary>
         /// <returns>
         /// The <see cref="T:System.Drawing.Size" /> that represents the height
         /// and width of the control in pixels.
         /// </returns>
         Size Size { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the tab order of the control within its container. </summary>
+        /// <summary>Gets or sets the tab order of the control within its container.</summary>
         /// <returns>
         /// The index value of the control within the set of controls within its
         /// container. The controls in the container are included in the tab order.
@@ -688,8 +602,8 @@ namespace xyLOGIX.Core.Extensions
         int TabIndex { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the user can give the focus
-        /// to this control using the TAB key.
+        /// Gets or sets a value indicating whether the user can give the focus to
+        /// this control using the TAB key.
         /// </summary>
         /// <returns>
         /// <see langword="true" /> if the user can give the focus to the control
@@ -700,15 +614,15 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         bool TabStop { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the object that contains data about the control. </summary>
+        /// <summary>Gets or sets the object that contains data about the control.</summary>
         /// <returns>
         /// An <see cref="T:System.Object" /> that contains data about the
         /// control. The default is <see langword="null" />.
         /// </returns>
         object Tag { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the text associated with this control. </summary>
-        /// <returns> The text associated with this control. </returns>
+        /// <summary>Gets or sets the text associated with this control.</summary>
+        /// <returns>The text associated with this control.</returns>
         string Text { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
@@ -716,9 +630,9 @@ namespace xyLOGIX.Core.Extensions
         /// control and the top edge of its container's client area.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Int32" /> representing the distance, in
-        /// pixels, between the bottom edge of the control and the top edge of its
-        /// container's client area.
+        /// An <see cref="T:System.Int32" /> representing the distance, in pixels,
+        /// between the bottom edge of the control and the top edge of its container's
+        /// client area.
         /// </returns>
         int Top { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
@@ -734,19 +648,15 @@ namespace xyLOGIX.Core.Extensions
         Control TopLevelControl { [DebuggerStepThrough] get; }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to use the wait cursor for
-        /// the current control and all child controls.
+        /// Gets or sets a value indicating whether to use the wait cursor for the
+        /// current control and all child controls.
         /// </summary>
         /// <returns>
-        /// <see langword="true" /> to use the wait cursor for the current
-        /// control and all child controls; otherwise, <see langword="false" />. The
-        /// default is <see langword="false" />.
+        /// <see langword="true" /> to use the wait cursor for the current control
+        /// and all child controls; otherwise, <see langword="false" />. The default is
+        /// <see langword="false" />.
         /// </returns>
-        bool UseWaitCursor
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] set;
-        }
+        bool UseWaitCursor { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the control and all its child
@@ -759,27 +669,25 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         bool Visible { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> Gets or sets the width of the control. </summary>
-        /// <returns> The width of the control in pixels. </returns>
+        /// <summary>Gets or sets the width of the control.</summary>
+        /// <returns>The width of the control in pixels.</returns>
         int Width { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
-        /// <summary> This property is not relevant for this class. </summary>
-        /// <returns> The NativeWindow contained within the control. </returns>
+        /// <summary>This property is not relevant for this class.</summary>
+        /// <returns>The NativeWindow contained within the control.</returns>
         IWindowTarget WindowTarget
         {
             [SecurityPermission(
-                SecurityAction.LinkDemand,
-                Flags = SecurityPermissionFlag.UnmanagedCode
+                SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode
             )]
             get;
             [SecurityPermission(
-                SecurityAction.LinkDemand,
-                Flags = SecurityPermissionFlag.UnmanagedCode
+                SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode
             )]
             set;
         }
 
-        /// <summary> This event is not relevant for this class. </summary>
+        /// <summary>This event is not relevant for this class.</summary>
         event EventHandler AutoSizeChanged;
 
         /// <summary>
@@ -805,7 +713,7 @@ namespace xyLOGIX.Core.Extensions
         /// Executes the specified delegate asynchronously on the thread that the
         /// control's underlying handle was created on.
         /// </summary>
-        /// <param name="method"> A delegate to a method that takes no parameters. </param>
+        /// <param name="method">A delegate to a method that takes no parameters.</param>
         /// <returns>
         /// An <see cref="T:System.IAsyncResult" /> that represents the result of
         /// the <see cref="M:System.Windows.Forms.Control.BeginInvoke(System.Delegate)" />
@@ -823,7 +731,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler BindingContextChanged;
 
-        /// <summary> Brings the control to the front of the z-order. </summary>
+        /// <summary>Brings the control to the front of the z-order.</summary>
         void BringToFront();
 
         /// <summary>
@@ -833,10 +741,10 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler CausesValidationChanged;
 
-        /// <summary> Occurs when the focus or keyboard user interface (UI) cues change. </summary>
+        /// <summary>Occurs when the focus or keyboard user interface (UI) cues change.</summary>
         event UICuesEventHandler ChangeUICues;
 
-        /// <summary> Occurs when the control is clicked. </summary>
+        /// <summary>Occurs when the control is clicked.</summary>
         event EventHandler Click;
 
         /// <summary>
@@ -890,8 +798,8 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         void CreateControl();
 
-        /// <summary> Creates the <see cref="T:System.Drawing.Graphics" /> for the control. </summary>
-        /// <returns> The <see cref="T:System.Drawing.Graphics" /> for the control. </returns>
+        /// <summary>Creates the <see cref="T:System.Drawing.Graphics" /> for the control.</summary>
+        /// <returns>The <see cref="T:System.Drawing.Graphics" /> for the control.</returns>
         Graphics CreateGraphics();
 
         /// <summary>
@@ -906,21 +814,20 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler DockChanged;
 
-        /// <summary> Begins a drag-and-drop operation. </summary>
-        /// <param name="data"> The data to drag. </param>
+        /// <summary>Begins a drag-and-drop operation.</summary>
+        /// <param name="data">The data to drag.</param>
         /// <param name="allowedEffects">
         /// One of the
         /// <see cref="T:System.Windows.Forms.DragDropEffects" /> value(s).
         /// </param>
         /// <returns>
-        /// A value from the
-        /// <see cref="T:System.Windows.Forms.DragDropEffects" /> enumeration that
-        /// represents the final effect that was performed during the drag-and-drop
-        /// operation.
+        /// A value from the <see cref="T:System.Windows.Forms.DragDropEffects" />
+        /// enumeration that represents the final effect that was performed during the
+        /// drag-and-drop operation.
         /// </returns>
         DragDropEffects DoDragDrop(object data, DragDropEffects allowedEffects);
 
-        /// <summary> Occurs when the control is double-clicked. </summary>
+        /// <summary>Occurs when the control is double-clicked.</summary>
         event EventHandler DoubleClick;
 
         /// <summary>
@@ -935,21 +842,21 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler DpiChangedBeforeParent;
 
-        /// <summary> Occurs when a drag-and-drop operation is completed. </summary>
+        /// <summary>Occurs when a drag-and-drop operation is completed.</summary>
         event DragEventHandler DragDrop;
 
-        /// <summary> Occurs when an object is dragged into the control's bounds. </summary>
+        /// <summary>Occurs when an object is dragged into the control's bounds.</summary>
         event DragEventHandler DragEnter;
 
-        /// <summary> Occurs when an object is dragged out of the control's bounds. </summary>
+        /// <summary>Occurs when an object is dragged out of the control's bounds.</summary>
         event EventHandler DragLeave;
 
-        /// <summary> Occurs when an object is dragged over the control's bounds. </summary>
+        /// <summary>Occurs when an object is dragged over the control's bounds.</summary>
         event DragEventHandler DragOver;
 
-        /// <summary> Supports rendering to the specified bitmap. </summary>
-        /// <param name="bitmap"> The bitmap to be drawn to. </param>
-        /// <param name="targetBounds"> The bounds within which the control is rendered. </param>
+        /// <summary>Supports rendering to the specified bitmap.</summary>
+        /// <param name="bitmap">The bitmap to be drawn to.</param>
+        /// <param name="targetBounds">The bounds within which the control is rendered.</param>
         void DrawToBitmap(Bitmap bitmap, Rectangle targetBounds);
 
         /// <summary>
@@ -958,17 +865,14 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler EnabledChanged;
 
-        /// <summary> Occurs when the control is entered. </summary>
+        /// <summary>Occurs when the control is entered.</summary>
         event EventHandler Enter;
 
-        /// <summary> Retrieves the form that the control is on. </summary>
-        /// <returns>
-        /// The <see cref="T:System.Windows.Forms.Form" /> that the control is
-        /// on.
-        /// </returns>
+        /// <summary>Retrieves the form that the control is on.</summary>
+        /// <returns>The <see cref="T:System.Windows.Forms.Form" /> that the control is on.</returns>
         Form FindForm();
 
-        /// <summary> Sets input focus to the control. </summary>
+        /// <summary>Sets input focus to the control.</summary>
         /// <returns>
         /// <see langword="true" /> if the input focus request was successful;
         /// otherwise, <see langword="false" />.
@@ -1055,32 +959,29 @@ namespace xyLOGIX.Core.Extensions
         /// Retrieves the size of a rectangular area into which a control can be
         /// fitted.
         /// </summary>
-        /// <param name="proposedSize"> The custom-sized area for a control. </param>
+        /// <param name="proposedSize">The custom-sized area for a control.</param>
         /// <returns>
         /// An ordered pair of type <see cref="T:System.Drawing.Size" />
         /// representing the width and height of a rectangle.
         /// </returns>
         Size GetPreferredSize(Size proposedSize);
 
-        /// <summary> Occurs during a drag operation. </summary>
+        /// <summary>Occurs during a drag operation.</summary>
         event GiveFeedbackEventHandler GiveFeedback;
 
-        /// <summary> Occurs when the control receives focus. </summary>
+        /// <summary>Occurs when the control receives focus.</summary>
         event EventHandler GotFocus;
 
-        /// <summary> Occurs when a handle is created for the control. </summary>
+        /// <summary>Occurs when a handle is created for the control.</summary>
         event EventHandler HandleCreated;
 
-        /// <summary>
-        /// Occurs when the control's handle is in the process of being
-        /// destroyed.
-        /// </summary>
+        /// <summary>Occurs when the control's handle is in the process of being destroyed.</summary>
         event EventHandler HandleDestroyed;
 
-        /// <summary> Occurs when the user requests help for a control. </summary>
+        /// <summary>Occurs when the user requests help for a control.</summary>
         event HelpEventHandler HelpRequested;
 
-        /// <summary> Conceals the control from the user. </summary>
+        /// <summary>Conceals the control from the user.</summary>
         void Hide();
 
         /// <summary>
@@ -1094,10 +995,7 @@ namespace xyLOGIX.Core.Extensions
         /// control's update region, which is the area that will be repainted at the next
         /// paint operation), and causes a paint message to be sent to the control.
         /// </summary>
-        /// <param name="region">
-        /// The <see cref="T:System.Drawing.Region" /> to
-        /// invalidate.
-        /// </param>
+        /// <param name="region">The <see cref="T:System.Drawing.Region" /> to invalidate.</param>
         void Invalidate(Region region);
 
         /// <summary>
@@ -1106,10 +1004,7 @@ namespace xyLOGIX.Core.Extensions
         /// paint operation), and causes a paint message to be sent to the control.
         /// Optionally, invalidates the child controls assigned to the control.
         /// </summary>
-        /// <param name="region">
-        /// The <see cref="T:System.Drawing.Region" /> to
-        /// invalidate.
-        /// </param>
+        /// <param name="region">The <see cref="T:System.Drawing.Region" /> to invalidate.</param>
         /// <param name="invalidateChildren">
         /// <see langword="true" /> to invalidate the
         /// control's child controls; otherwise, <see langword="false" />.
@@ -1160,7 +1055,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         void Invalidate(Rectangle rc, bool invalidateChildren);
 
-        /// <summary> Occurs when a control's display requires redrawing. </summary>
+        /// <summary>Occurs when a control's display requires redrawing.</summary>
         event InvalidateEventHandler Invalidated;
 
         /// <summary>
@@ -1177,7 +1072,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         object Invoke(Delegate method);
 
-        /// <summary> Occurs when a key is pressed while the control has focus. </summary>
+        /// <summary>Occurs when a key is pressed while the control has focus.</summary>
         event KeyEventHandler KeyDown;
 
         /// <summary>
@@ -1186,25 +1081,24 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event KeyPressEventHandler KeyPress;
 
-        /// <summary> Occurs when a key is released while the control has focus. </summary>
+        /// <summary>Occurs when a key is released while the control has focus.</summary>
         event KeyEventHandler KeyUp;
 
-        /// <summary> Occurs when a control should reposition its child controls. </summary>
+        /// <summary>Occurs when a control should reposition its child controls.</summary>
         event LayoutEventHandler Layout;
 
-        /// <summary> Occurs when the input focus leaves the control. </summary>
+        /// <summary>Occurs when the input focus leaves the control.</summary>
         event EventHandler Leave;
 
         /// <summary>
-        /// Occurs when the
-        /// <see cref="P:System.Windows.Forms.Control.Location" /> property value has
-        /// changed.
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.Location" />
+        /// property value has changed.
         /// </summary>
         event EventHandler LocationChanged;
 
-        /// <summary> Converts a Logical DPI value to its equivalent DeviceUnit DPI value. </summary>
-        /// <param name="value"> The Logical value to convert. </param>
-        /// <returns> The resulting DeviceUnit value. </returns>
+        /// <summary>Converts a Logical DPI value to its equivalent DeviceUnit DPI value.</summary>
+        /// <param name="value">The Logical value to convert.</param>
+        /// <returns>The resulting DeviceUnit value.</returns>
         int LogicalToDeviceUnits(int value);
 
         /// <summary>
@@ -1212,23 +1106,23 @@ namespace xyLOGIX.Core.Extensions
         /// current DPI and rounding down to the nearest integer value for width and
         /// height.
         /// </summary>
-        /// <param name="value"> The size to be scaled. </param>
-        /// <returns> The scaled size. </returns>
+        /// <param name="value">The size to be scaled.</param>
+        /// <returns>The scaled size.</returns>
         Size LogicalToDeviceUnits(Size value);
 
-        /// <summary> Occurs when the control loses focus. </summary>
+        /// <summary>Occurs when the control loses focus.</summary>
         event EventHandler LostFocus;
 
-        /// <summary> Occurs when the control's margin changes. </summary>
+        /// <summary>Occurs when the control's margin changes.</summary>
         event EventHandler MarginChanged;
 
-        /// <summary> Occurs when the control loses mouse capture. </summary>
+        /// <summary>Occurs when the control loses mouse capture.</summary>
         event EventHandler MouseCaptureChanged;
 
-        /// <summary> Occurs when the control is clicked by the mouse. </summary>
+        /// <summary>Occurs when the control is clicked by the mouse.</summary>
         event MouseEventHandler MouseClick;
 
-        /// <summary> Occurs when the control is double clicked by the mouse. </summary>
+        /// <summary>Occurs when the control is double clicked by the mouse.</summary>
         event MouseEventHandler MouseDoubleClick;
 
         /// <summary>
@@ -1237,16 +1131,16 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event MouseEventHandler MouseDown;
 
-        /// <summary> Occurs when the mouse pointer enters the control. </summary>
+        /// <summary>Occurs when the mouse pointer enters the control.</summary>
         event EventHandler MouseEnter;
 
-        /// <summary> Occurs when the mouse pointer rests on the control. </summary>
+        /// <summary>Occurs when the mouse pointer rests on the control.</summary>
         event EventHandler MouseHover;
 
-        /// <summary> Occurs when the mouse pointer leaves the control. </summary>
+        /// <summary>Occurs when the mouse pointer leaves the control.</summary>
         event EventHandler MouseLeave;
 
-        /// <summary> Occurs when the mouse pointer is moved over the control. </summary>
+        /// <summary>Occurs when the mouse pointer is moved over the control.</summary>
         event MouseEventHandler MouseMove;
 
         /// <summary>
@@ -1255,16 +1149,16 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event MouseEventHandler MouseUp;
 
-        /// <summary> Occurs when the mouse wheel moves while the control has focus. </summary>
+        /// <summary>Occurs when the mouse wheel moves while the control has focus.</summary>
         event MouseEventHandler MouseWheel;
 
-        /// <summary> Occurs when the control is moved. </summary>
+        /// <summary>Occurs when the control is moved.</summary>
         event EventHandler Move;
 
-        /// <summary> Occurs when the control's padding changes. </summary>
+        /// <summary>Occurs when the control's padding changes.</summary>
         event EventHandler PaddingChanged;
 
-        /// <summary> Occurs when the control is redrawn. </summary>
+        /// <summary>Occurs when the control is redrawn.</summary>
         event PaintEventHandler Paint;
 
         /// <summary>
@@ -1273,10 +1167,10 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler ParentChanged;
 
-        /// <summary> Forces the control to apply layout logic to all its child controls. </summary>
+        /// <summary>Forces the control to apply layout logic to all its child controls.</summary>
         void PerformLayout();
 
-        /// <summary> Forces the control to apply layout logic to all its child controls. </summary>
+        /// <summary>Forces the control to apply layout logic to all its child controls.</summary>
         /// <param name="affectedControl">
         /// A <see cref="T:System.Windows.Forms.Control" />
         /// that represents the most recently changed control.
@@ -1318,8 +1212,8 @@ namespace xyLOGIX.Core.Extensions
         Point PointToScreen(Point p);
 
         /// <summary>
-        /// Preprocesses keyboard or input messages within the message loop
-        /// before they are dispatched.
+        /// Preprocesses keyboard or input messages within the message loop before
+        /// they are dispatched.
         /// </summary>
         /// <param name="msg">
         /// A <see cref="T:System.Windows.Forms.Message" /> that
@@ -1327,8 +1221,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns>
         /// One of the <see cref="T:System.Windows.Forms.PreProcessControlState" />
-        /// value(s),
-        /// depending on whether
+        /// value(s), depending on whether
         /// <see
         ///     cref="M:System.Windows.Forms.Control.PreProcessMessage(ref System.Windows.Forms.Message)" />
         /// is <see langword="true" /> or <see langword="false" /> and whether
@@ -1340,8 +1233,8 @@ namespace xyLOGIX.Core.Extensions
         PreProcessControlState PreProcessControlMessage(ref Message msg);
 
         /// <summary>
-        /// Preprocesses keyboard or input messages within the message loop
-        /// before they are dispatched.
+        /// Preprocesses keyboard or input messages within the message loop before
+        /// they are dispatched.
         /// </summary>
         /// <param name="msg">
         /// A <see cref="T:System.Windows.Forms.Message" />, passed by
@@ -1368,8 +1261,8 @@ namespace xyLOGIX.Core.Extensions
         event QueryAccessibilityHelpEventHandler QueryAccessibilityHelp;
 
         /// <summary>
-        /// Occurs during a drag-and-drop operation and enables the drag quote
-        /// to determine whether the drag-and-drop operation should be canceled.
+        /// Occurs during a drag-and-drop operation and enables the drag quote to
+        /// determine whether the drag-and-drop operation should be canceled.
         /// </summary>
         event QueryContinueDragEventHandler QueryContinueDrag;
 
@@ -1378,8 +1271,8 @@ namespace xyLOGIX.Core.Extensions
         /// client coordinates.
         /// </summary>
         /// <param name="r">
-        /// The screen coordinate
-        /// <see cref="T:System.Drawing.Rectangle" /> to convert.
+        /// The screen coordinate <see cref="T:System.Drawing.Rectangle" />
+        /// to convert.
         /// </param>
         /// <returns>
         /// A <see cref="T:System.Drawing.Rectangle" /> that represents the
@@ -1393,8 +1286,8 @@ namespace xyLOGIX.Core.Extensions
         /// screen coordinates.
         /// </summary>
         /// <param name="r">
-        /// The client coordinate
-        /// <see cref="T:System.Drawing.Rectangle" /> to convert.
+        /// The client coordinate <see cref="T:System.Drawing.Rectangle" />
+        /// to convert.
         /// </param>
         /// <returns>
         /// A <see cref="T:System.Drawing.Rectangle" /> that represents the
@@ -1435,8 +1328,8 @@ namespace xyLOGIX.Core.Extensions
         void ResetCursor();
 
         /// <summary>
-        /// Resets the <see cref="P:System.Windows.Forms.Control.Font" />
-        /// property to its default value.
+        /// Resets the <see cref="P:System.Windows.Forms.Control.Font" /> property
+        /// to its default value.
         /// </summary>
         void ResetFont();
 
@@ -1459,15 +1352,15 @@ namespace xyLOGIX.Core.Extensions
         void ResetRightToLeft();
 
         /// <summary>
-        /// Resets the <see cref="P:System.Windows.Forms.Control.Text" />
-        /// property to its default value ( <see cref="F:System.String.Empty" />).
+        /// Resets the <see cref="P:System.Windows.Forms.Control.Text" /> property
+        /// to its default value ( <see cref="F:System.String.Empty" />).
         /// </summary>
         void ResetText();
 
-        /// <summary> Occurs when the control is resized. </summary>
+        /// <summary>Occurs when the control is resized.</summary>
         event EventHandler Resize;
 
-        /// <summary> Resumes usual layout logic. </summary>
+        /// <summary>Resumes usual layout logic.</summary>
         void ResumeLayout();
 
         /// <summary>
@@ -1487,13 +1380,13 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler RightToLeftChanged;
 
-        /// <summary> Scales the control and any child controls. </summary>
-        /// <param name="ratio"> The ratio to use for scaling. </param>
+        /// <summary>Scales the control and any child controls.</summary>
+        /// <param name="ratio">The ratio to use for scaling.</param>
         void Scale(float ratio);
 
-        /// <summary> Scales the entire control and any child controls. </summary>
-        /// <param name="dx"> The horizontal scaling factor. </param>
-        /// <param name="dy"> The vertical scaling factor. </param>
+        /// <summary>Scales the entire control and any child controls.</summary>
+        /// <param name="dx">The horizontal scaling factor.</param>
+        /// <param name="dy">The vertical scaling factor.</param>
         void Scale(float dx, float dy);
 
         /// <summary>
@@ -1510,20 +1403,20 @@ namespace xyLOGIX.Core.Extensions
         /// Scales a logical bitmap value to it's equivalent device unit value
         /// when a DPI change occurs.
         /// </summary>
-        /// <param name="logicalBitmap"> The bitmap to scale. </param>
+        /// <param name="logicalBitmap">The bitmap to scale.</param>
         void ScaleBitmapLogicalToDevice(ref Bitmap logicalBitmap);
 
-        /// <summary> Activates the control. </summary>
+        /// <summary>Activates the control.</summary>
         void Select();
 
-        /// <summary> Activates the next control. </summary>
+        /// <summary>Activates the next control.</summary>
         /// <param name="ctl">
-        /// The <see cref="T:System.Windows.Forms.Control" /> at which
-        /// to start the search.
+        /// The <see cref="T:System.Windows.Forms.Control" /> at which to
+        /// start the search.
         /// </param>
         /// <param name="forward">
-        /// <see langword="true" /> to move forward in the tab
-        /// order; <see langword="false" /> to move backward in the tab order.
+        /// <see langword="true" /> to move forward in the tab order;
+        /// <see langword="false" /> to move backward in the tab order.
         /// </param>
         /// <param name="tabStopOnly">
         /// <see langword="true" /> to ignore the controls with
@@ -1535,26 +1428,20 @@ namespace xyLOGIX.Core.Extensions
         /// child controls) child controls; otherwise, <see langword="false" />.
         /// </param>
         /// <param name="wrap">
-        /// <see langword="true" /> to continue searching from the
-        /// first control in the tab order after the last control has been reached;
-        /// otherwise, <see langword="false" />.
+        /// <see langword="true" /> to continue searching from the first
+        /// control in the tab order after the last control has been reached; otherwise,
+        /// <see langword="false" />.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if a control was activated; otherwise,
         /// <see langword="false" />.
         /// </returns>
-        bool SelectNextControl(
-            Control ctl,
-            bool forward,
-            bool tabStopOnly,
-            bool nested,
-            bool wrap
-        );
+        bool SelectNextControl(Control ctl, bool forward, bool tabStopOnly, bool nested, bool wrap);
 
-        /// <summary> Sends the control to the back of the z-order. </summary>
+        /// <summary>Sends the control to the back of the z-order.</summary>
         void SendToBack();
 
-        /// <summary> Sets the bounds of the control to the specified location and size. </summary>
+        /// <summary>Sets the bounds of the control to the specified location and size.</summary>
         /// <param name="x">
         /// The new <see cref="P:System.Windows.Forms.Control.Left" />
         /// property value of the control.
@@ -1564,9 +1451,8 @@ namespace xyLOGIX.Core.Extensions
         /// property value of the control.
         /// </param>
         /// <param name="width">
-        /// The new
-        /// <see cref="P:System.Windows.Forms.Control.Width" /> property value of the
-        /// control.
+        /// The new <see cref="P:System.Windows.Forms.Control.Width" />
+        /// property value of the control.
         /// </param>
         /// <param name="height">
         /// The new
@@ -1576,8 +1462,8 @@ namespace xyLOGIX.Core.Extensions
         void SetBounds(int x, int y, int width, int height);
 
         /// <summary>
-        /// Sets the specified bounds of the control to the specified location
-        /// and size.
+        /// Sets the specified bounds of the control to the specified location and
+        /// size.
         /// </summary>
         /// <param name="x">
         /// The new <see cref="P:System.Windows.Forms.Control.Left" />
@@ -1588,9 +1474,8 @@ namespace xyLOGIX.Core.Extensions
         /// property value of the control.
         /// </param>
         /// <param name="width">
-        /// The new
-        /// <see cref="P:System.Windows.Forms.Control.Width" /> property value of the
-        /// control.
+        /// The new <see cref="P:System.Windows.Forms.Control.Width" />
+        /// property value of the control.
         /// </param>
         /// <param name="height">
         /// The new
@@ -1600,18 +1485,11 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="specified">
         /// A bitwise combination of the
         /// <see cref="T:System.Windows.Forms.BoundsSpecified" /> value(s). OfType any
-        /// parameter
-        /// not specified, the current value will be used.
+        /// parameter not specified, the current value will be used.
         /// </param>
-        void SetBounds(
-            int x,
-            int y,
-            int width,
-            int height,
-            BoundsSpecified specified
-        );
+        void SetBounds(int x, int y, int width, int height, BoundsSpecified specified);
 
-        /// <summary> Displays the control to the user. </summary>
+        /// <summary>Displays the control to the user.</summary>
         void Show();
 
         /// <summary>
@@ -1620,18 +1498,18 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler SizeChanged;
 
-        /// <summary> Occurs when the control style changes. </summary>
+        /// <summary>Occurs when the control style changes.</summary>
         event EventHandler StyleChanged;
 
-        /// <summary> Temporarily suspends the layout logic for the control. </summary>
+        /// <summary>Temporarily suspends the layout logic for the control.</summary>
         void SuspendLayout();
 
-        /// <summary> Occurs when the system colors change. </summary>
+        /// <summary>Occurs when the system colors change.</summary>
         event EventHandler SystemColorsChanged;
 
         /// <summary>
-        /// Occurs when the
-        /// <see cref="P:System.Windows.Forms.Control.TabIndex" /> property value changes.
+        /// Occurs when the <see cref="P:System.Windows.Forms.Control.TabIndex" />
+        /// property value changes.
         /// </summary>
         event EventHandler TabIndexChanged;
 
@@ -1648,15 +1526,15 @@ namespace xyLOGIX.Core.Extensions
         event EventHandler TextChanged;
 
         /// <summary>
-        /// Causes the control to redraw the invalidated regions within its
-        /// client area.
+        /// Causes the control to redraw the invalidated regions within its client
+        /// area.
         /// </summary>
         void Update();
 
-        /// <summary> Occurs when the control is finished validating. </summary>
+        /// <summary>Occurs when the control is finished validating.</summary>
         event EventHandler Validated;
 
-        /// <summary> Occurs when the control is validating. </summary>
+        /// <summary>Occurs when the control is validating.</summary>
         event CancelEventHandler Validating;
 
         /// <summary>

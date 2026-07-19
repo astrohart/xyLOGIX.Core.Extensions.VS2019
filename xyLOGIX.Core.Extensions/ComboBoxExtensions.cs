@@ -14,12 +14,13 @@ namespace xyLOGIX.Core.Extensions
     public static class ComboBoxExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.ComboBoxExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -43,10 +44,8 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) Default value to be selected when
         /// the form is first displayed.
         /// </param>
-        public static void BindToEnum<T>(
-            this ComboBox comboBox,
-            T defaultSelection
-        ) where T : struct, Enum
+        public static void BindToEnum<T>(this ComboBox comboBox, T defaultSelection)
+            where T : struct, Enum
         {
             try
             {
@@ -61,18 +60,15 @@ namespace xyLOGIX.Core.Extensions
                 comboBox.DisplayMember = "Description";
                 comboBox.ValueMember = "Value";
 
-                var defaultComboBoxItem =
-                    EnumBoundComboBoxItem<T>.ForEnumValue(defaultSelection);
+                var defaultComboBoxItem = EnumBoundComboBoxItem<T>.ForEnumValue(defaultSelection);
                 if (defaultComboBoxItem == null) return;
                 if (string.IsNullOrWhiteSpace(defaultComboBoxItem.Description))
                     return;
 
-                // more thread-safe this way
-                // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+                // more thread-safe this way ReSharper disable once
+                // ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
                 foreach (var comboBoxItem in comboBoxItems)
-                    if (comboBoxItem.Description.Equals(
-                            defaultComboBoxItem.Description
-                        ))
+                    if (comboBoxItem.Description.Equals(defaultComboBoxItem.Description))
                         comboBox.SelectedItem = comboBoxItem;
             }
             catch (Exception ex)
@@ -83,19 +79,17 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Attempts to gather a collection of combo box items for the specified C#
-        /// enumeration.
+        /// Attempts to gather a collection of combo box items for the specified
+        /// C# enumeration.
         /// </summary>
         /// <typeparam name="T">(Required.) Name of the enumeration.</typeparam>
         /// <returns>
         /// A collection of instances of
-        /// <see
-        ///     cref="T:xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1" />
-        /// , each of which represent an item to be added to a
+        /// <see cref="T:xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1" /> , each of
+        /// which represent an item to be added to a
         /// <see cref="T:System.Windows.Forms.ComboBox" />.
         /// </returns>
-        private static IList<EnumBoundComboBoxItem<T>> GetComboBoxItems<T>()
-            where T : struct, Enum
+        private static IList<EnumBoundComboBoxItem<T>> GetComboBoxItems<T>() where T : struct, Enum
         {
             IList<EnumBoundComboBoxItem<T>> result =
                 new AdvisableCollection<EnumBoundComboBoxItem<T>>();
@@ -111,8 +105,7 @@ namespace xyLOGIX.Core.Extensions
                     if (Convert.ToInt32(value) == -1) continue;
                     if (Convert.ToInt32(value) < 0) continue;
 
-                    var comboBoxItem =
-                        EnumBoundComboBoxItem<T>.ForEnumValue(value);
+                    var comboBoxItem = EnumBoundComboBoxItem<T>.ForEnumValue(value);
                     if (comboBoxItem == null) continue;
                     if (string.IsNullOrWhiteSpace(comboBoxItem.Description))
                         continue;
@@ -132,8 +125,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Attempts to select the first item in the list of items present in the specified
-        /// <paramref name="comboBox" />.
+        /// Attempts to select the first item in the list of items present in the
+        /// specified <paramref name="comboBox" />.
         /// </summary>
         /// <param name="comboBox">
         /// (Required.) Reference to an instance of
@@ -154,11 +147,12 @@ namespace xyLOGIX.Core.Extensions
                     "ComboBoxExtensions.SelectFirstItem: Checking whether the 'comboBox' method parameter has a null reference for a value..."
                 );
 
-                // Check to see if the required parameter, comboBox, is null. If it is, send an 
+                // Check to see if the required parameter, comboBox, is null. If it is, send an
                 // error to the log file and quit, returning from this method.
                 if (comboBox == null)
                 {
-                    // The parameter, 'comboBox', is required and is not supposed to have a NULL value.
+                    // The parameter, 'comboBox', is required and is not supposed to have a NULL
+                    // value.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,
                         "ComboBoxExtensions.SelectFirstItem: *** *ERROR *** A null reference was passed for the 'comboBox' method parameter.  Stopping."
@@ -178,12 +172,12 @@ namespace xyLOGIX.Core.Extensions
                     "*** ComboBoxExtensions.SelectFirstItem: Checking whether the 'comboBox.Items' collection contains greater than zero elements..."
                 );
 
-                // Check to see whether the 'comboBox.Items' collection contains greater than
-                // zero elements. Otherwise, write an error message to the log file, and then
-                // terminate the execution of this method.
+                // Check to see whether the 'comboBox.Items' collection contains greater than zero
+                // elements. Otherwise, write an error message to the log file, and then terminate
+                // the execution of this method.
                 if (comboBox.Items.Count <= 0)
                 {
-                    // The 'comboBox.Items' collection contains zero elements.  This is not 
+                    // The 'comboBox.Items' collection contains zero elements.  This is not
                     // desirable.
                     DebugUtils.WriteLine(
                         DebugLevel.Error,

@@ -11,21 +11,20 @@ using xyLOGIX.Core.Extensions.Providers.Interfaces;
 
 namespace xyLOGIX.Core.Extensions.Providers
 {
-    /// <summary> Defines associations between forms and their contained controls. </summary>
+    /// <summary>Defines associations between forms and their contained controls.</summary>
     [Log(AttributeExclude = true), ExplicitlySynchronized]
-    public class
-        ControlFormAssociationProvider : IControlFormAssociationProvider
+    public class ControlFormAssociationProvider : IControlFormAssociationProvider
     {
         /// <summary>
-        /// Empty, <see langword="static" /> constructor to prohibit direct allocation of
-        /// this class.
+        /// Empty, <see langword="static" /> constructor to prohibit direct
+        /// allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         static ControlFormAssociationProvider() { }
 
         /// <summary>
-        /// Empty, <see langword="private" /> constructor to prohibit direct allocation of
-        /// this class.
+        /// Empty, <see langword="private" /> constructor to prohibit direct
+        /// allocation of this class.
         /// </summary>
         [Log(AttributeExclude = true)]
         protected ControlFormAssociationProvider()
@@ -37,20 +36,15 @@ namespace xyLOGIX.Core.Extensions.Providers
         ///     cref="T:xyLOGIX.Core.Extensions.Providers.Interfaces.IControlFormAssociationProvider" />
         /// interface.
         /// </summary>
-        public static IControlFormAssociationProvider Instance
-        {
-            [DebuggerStepThrough] get;
-        } = new ControlFormAssociationProvider();
+        public static IControlFormAssociationProvider Instance { [DebuggerStepThrough] get; } =
+            new ControlFormAssociationProvider();
 
         /// <summary>
         /// Reference to an instance of a dictionary that maps instances of
         /// <see cref="T:System.Windows.Forms.Control" />s to the parent
         /// <see cref="T:System.Windows.Forms.Form" />s that contain them.
         /// </summary>
-        protected IDictionary<Control, Form> ParentFormDictionary
-        {
-            [DebuggerStepThrough] get;
-        }
+        protected IDictionary<Control, Form> ParentFormDictionary { [DebuggerStepThrough] get; }
 
         /// <summary>
         /// Adds an association between the specified <paramref name="control" />
@@ -128,8 +122,9 @@ namespace xyLOGIX.Core.Extensions.Providers
         }
 
         /// <summary>
-        /// Removes the specified <paramref name="control" /> and the corresponding
-        /// association to its containing <see cref="T:System.Windows.Forms.Form" />.
+        /// Removes the specified <paramref name="control" /> and the
+        /// corresponding association to its containing
+        /// <see cref="T:System.Windows.Forms.Form" />.
         /// </summary>
         /// <param name="control">
         /// (Required.) Reference to an instance of
@@ -160,8 +155,7 @@ namespace xyLOGIX.Core.Extensions.Providers
             }
 
             DebugUtils.WriteLine(
-                DebugLevel.Debug,
-                $"ControlFormAssociationProvider.Remove: Result = {result}"
+                DebugLevel.Debug, $"ControlFormAssociationProvider.Remove: Result = {result}"
             );
 
             return result;
@@ -188,10 +182,9 @@ namespace xyLOGIX.Core.Extensions.Providers
                     return;
 
                 // Subscribe the HandleDestroyed event of the control to make sure and remove the
-                // items from the dictionary for that control (to preserve memory).
-                //
-                // Unsubscribe the event first, in case we already subscribed the handler to
-                // the control's HandleDestroyed event.
+                // items from the dictionary for that control (to preserve memory).  Unsubscribe the
+                // event first, in case we already subscribed the handler to the control's
+                // HandleDestroyed event.
 
                 control.HandleDestroyed += OnMemberControlHandleDestroyed;
             }
@@ -227,11 +220,9 @@ namespace xyLOGIX.Core.Extensions.Providers
                 if (!ParentFormDictionary.Values.Any(f => f.Equals(form)))
                     return;
 
-                // Subscribe the FormClosed event of the form to make sure and remove the
-                // items from the dictionary for that form (to preserve memory).
-                //
-                // Unsubscribe the event first, in case we already subscribed the handler to
-                // the form's FormClosed event.
+                // Subscribe the FormClosed event of the form to make sure and remove the items from
+                // the dictionary for that form (to preserve memory).  Unsubscribe the event first,
+                // in case we already subscribed the handler to the form's FormClosed event.
 
                 form.FormClosed -= OnMemberFormClosed;
                 form.FormClosed += OnMemberFormClosed;
@@ -265,9 +256,8 @@ namespace xyLOGIX.Core.Extensions.Providers
                 if (!ParentFormDictionary.Any()) return;
                 if (!ParentFormDictionary.ContainsKey(control)) return;
 
-                var keysToRemove = ParentFormDictionary.Keys
-                    .Where(k => k.Equals(control))
-                    .ToAdvisableCollection();
+                var keysToRemove = ParentFormDictionary.Keys.Where(k => k.Equals(control))
+                                                       .ToAdvisableCollection();
 
                 foreach (var key in keysToRemove)
                     ParentFormDictionary.Remove(key);
@@ -279,7 +269,7 @@ namespace xyLOGIX.Core.Extensions.Providers
             }
         }
 
-        /// <summary> Called to remove all the key-value pairs that </summary>
+        /// <summary>Called to remove all the key-value pairs that</summary>
         /// <param name="form">
         /// (Required.) Reference to the instance of
         /// <see cref="T:System.Windows.Forms.Form" /> whose associated controls are to be
@@ -297,14 +287,11 @@ namespace xyLOGIX.Core.Extensions.Providers
                 if (form == null) return;
 
                 /*
-                 * OKAY, get all the entries in the dictionary
-                 * that map to the specified form.
-                 *
-                 * Then, remove all of them.
+                 * OKAY, get all the entries in the dictionary that map to the specified form. Then,
+                 * remove all of them.
                  */
-                var itemsToRemove = ParentFormDictionary
-                                    .Where(kvp => kvp.Value.Equals(form))
-                                    .ToAdvisableCollection();
+                var itemsToRemove = ParentFormDictionary.Where(kvp => kvp.Value.Equals(form))
+                                                        .ToAdvisableCollection();
                 if (!itemsToRemove.Any()) return;
 
                 foreach (var item in itemsToRemove)

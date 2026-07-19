@@ -12,12 +12,13 @@ namespace xyLOGIX.Core.Extensions
     public static class GuidExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.GuidExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.GuidExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -37,7 +38,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// If successful, the <paramref name="guid" /> is expressed a
         /// <see cref="T:System.String" /> containing only the <see cref="T:System.Guid" />
-        /// digits, including hyphens.  Otherwise, and including the case where the Zero
+        /// digits, including hyphens. Otherwise, and including the case where the Zero
         /// GUID is passed, the method returns the <see cref="F:System.String.Empty" />
         /// value.
         /// </returns>
@@ -63,12 +64,12 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Determines whether the specified <see cref="T:System.Guid" /> value
-        /// is the Zero GUID or not.
+        /// Determines whether the specified <see cref="T:System.Guid" /> value is
+        /// the Zero GUID or not.
         /// </summary>
         /// <param name="value">
-        /// (Required.) The <see cref="T:System.Guid" /> that should
-        /// be checked whether it's the Zero GUID.
+        /// (Required.) The <see cref="T:System.Guid" /> that should be
+        /// checked whether it's the Zero GUID.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="value" /> is
@@ -104,8 +105,8 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <returns></returns>
         /// <remarks>
-        /// If this method is passed the <see cref="F:System.Guid.Empty" />
-        /// value, then this method returns the <see cref="F:System.String.Empty" /> value.
+        /// If this method is passed the <see cref="F:System.Guid.Empty" /> value,
+        /// then this method returns the <see cref="F:System.String.Empty" /> value.
         /// </remarks>
         public static string ToUppercaseWithBraces(this Guid guid)
         {
@@ -141,7 +142,7 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>
         /// If successful, the <paramref name="guid" /> is expressed as a
         /// <see cref="T:System.String" />, surrounded by braces (as in the system
-        /// Registry, for instance).  Otherwise, and including the case where the Zero GUID
+        /// Registry, for instance). Otherwise, and including the case where the Zero GUID
         /// is passed, the method returns the <see cref="F:System.String.Empty" /> value.
         /// </returns>
         public static string WithBraces(this Guid guid)

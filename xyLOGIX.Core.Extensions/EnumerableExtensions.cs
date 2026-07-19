@@ -7,16 +7,17 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Helper methods for collections. </summary>
+    /// <summary>Helper methods for collections.</summary>
     public static class EnumerableExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.EnumerableExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.EnumerableExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -155,9 +156,9 @@ namespace xyLOGIX.Core.Extensions
             => AnyEqual(collection, value);
 
         /// <summary>
-        /// A more fluent version of the LINQ <c>Except</c> extension method; this method
-        /// takes a <paramref name="source" /> enumerable collection, and filters out just
-        /// the element equalling <paramref name="value" /> from it.
+        /// A more fluent version of the LINQ <c>Except</c> extension method; this
+        /// method takes a <paramref name="source" /> enumerable collection, and filters
+        /// out just the element equalling <paramref name="value" /> from it.
         /// </summary>
         /// <typeparam name="T">
         /// (Required.) Data type of each element of the source
@@ -172,15 +173,12 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="source" />.
         /// </param>
         /// <returns>
-        /// A sequence containing all elements from the <paramref name="source" />,
-        /// except for any that match the specified <paramref name="value" />.
-        /// The original <paramref name="source" /> is not cloned or modified.
+        /// A sequence containing all elements from the <paramref name="source" />
+        /// , except for any that match the specified <paramref name="value" />. The
+        /// original <paramref name="source" /> is not cloned or modified.
         /// </returns>
         [DebuggerStepThrough, Log(AttributeExclude = true)]
-        public static IEnumerable<T> Except<T>(
-            this IEnumerable<T> source,
-            T value
-        )
+        public static IEnumerable<T> Except<T>(this IEnumerable<T> source, T value)
         {
             if (source == null) yield break;
             if (!source.Any()) yield break;
@@ -198,8 +196,7 @@ namespace xyLOGIX.Core.Extensions
                 {
                     // Log and decide whether to skip or include the element in case of error
                     DebugUtils.LogException(ex);
-                    shouldYield =
-                        true; // Default behavior: don't filter out on exception
+                    shouldYield = true; // Default behavior: don't filter out on exception
                 }
 
                 if (shouldYield)
@@ -223,7 +220,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="action">
         /// (Required.) Reference to an instance of a
-        /// <see cref="T:System.Action`1" /> <see langword="delegate" /> that is executed
+        /// <see cref="T:System.Action`1" /><see langword="delegate" /> that is executed
         /// for each of the elements in the collection, with the corresponding element
         /// passed as its input.
         /// </param>
@@ -232,10 +229,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="action" /> is <see langword="null" />, then this method does
         /// nothing.
         /// </remarks>
-        public static void ForEach<T>(
-            this IList<T> collection,
-            Action<T> action
-        )
+        public static void ForEach<T>(this IList<T> collection, Action<T> action)
         {
             try
             {
@@ -271,7 +265,7 @@ namespace xyLOGIX.Core.Extensions
         /// </param>
         /// <param name="action">
         /// (Required.) Reference to an instance of a
-        /// <see cref="T:System.Action`1" /> <see langword="delegate" /> that is executed
+        /// <see cref="T:System.Action`1" /><see langword="delegate" /> that is executed
         /// for each of the elements in the collection, with the corresponding element
         /// passed as its input.
         /// </param>
@@ -280,10 +274,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="action" /> is <see langword="null" />, then this method does
         /// nothing.
         /// </remarks>
-        public static void ForEach<T>(
-            this IEnumerable<T> collection,
-            Action<T> action
-        )
+        public static void ForEach<T>(this IEnumerable<T> collection, Action<T> action)
         {
             try
             {
@@ -310,8 +301,8 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="testObjects" /> provided, to see if any of the
         /// <paramref name="testObjects" /> is a match.
         /// </summary>
-        /// <typeparam name="T"> Type of the object to be tested. </typeparam>
-        /// <param name="value"> Source object to check. </param>
+        /// <typeparam name="T">Type of the object to be tested.</typeparam>
+        /// <param name="value">Source object to check.</param>
         /// <param name="testObjects">
         /// Object or objects that should be compared to value
         /// with the <see cref="M:System.Object.Equals(System.Object)" /> method.
@@ -328,8 +319,8 @@ namespace xyLOGIX.Core.Extensions
         /// Shuffles the elements of the sequence into a random order, and then
         /// returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle.
         /// </summary>
-        /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
-        /// <param name="quote"> Sequence to be shuffled. </param>
+        /// <typeparam name="T">Type of the elements of the sequence.</typeparam>
+        /// <param name="quote">Sequence to be shuffled.</param>
         /// <returns>
         /// A new sequence, with the order of the elements randomized, according
         /// to the Fisher-Yates-Durstenfeld shuffle.
@@ -353,8 +344,8 @@ namespace xyLOGIX.Core.Extensions
         /// returns the resulting sequence. From the Fisher-Yates-Durstenfeld shuffle. Uses
         /// the random-number generator passed in the <paramref name="rng" /> parameter.
         /// </summary>
-        /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
-        /// <param name="quote"> Sequence to be shuffled. </param>
+        /// <typeparam name="T">Type of the elements of the sequence.</typeparam>
+        /// <param name="quote">Sequence to be shuffled.</param>
         /// <param name="rng">
         /// A <see cref="T:System.Random" /> instance with which to
         /// generate new random values for the shuffle operation.
@@ -371,10 +362,7 @@ namespace xyLOGIX.Core.Extensions
         /// StackOverflow article.
         /// </a>
         /// </remarks>
-        private static IEnumerable<T> Shuffle<T>(
-            this IEnumerable<T> quote,
-            Random rng
-        )
+        private static IEnumerable<T> Shuffle<T>(this IEnumerable<T> quote, Random rng)
         {
             if (quote == null) throw new ArgumentNullException(nameof(quote));
             if (rng == null) throw new ArgumentNullException(nameof(rng));
@@ -390,8 +378,8 @@ namespace xyLOGIX.Core.Extensions
         /// <see cref="M:xyLOGIX.Core.Extensions.EnumerableExtensions.Shuffle" /> method,
         /// although this method can be utilized as an iterator.
         /// </summary>
-        /// <typeparam name="T"> Type of the elements of the sequence. </typeparam>
-        /// <param name="quote"> Sequence to be shuffled. </param>
+        /// <typeparam name="T">Type of the elements of the sequence.</typeparam>
+        /// <param name="quote">Sequence to be shuffled.</param>
         /// <param name="rng">
         /// A <see cref="T:System.Random" /> instance with which to
         /// generate new random values for the shuffle operation.
@@ -408,10 +396,7 @@ namespace xyLOGIX.Core.Extensions
         /// StackOverflow article.
         /// </a>
         /// </remarks>
-        private static IEnumerable<T> ShuffleIterator<T>(
-            this IEnumerable<T> quote,
-            Random rng
-        )
+        private static IEnumerable<T> ShuffleIterator<T>(this IEnumerable<T> quote, Random rng)
         {
             var buffer = quote.ToList();
 
@@ -428,15 +413,13 @@ namespace xyLOGIX.Core.Extensions
         /// Returns all the elements of the <paramref name="quote" /> enumerable
         /// object, except for the last.
         /// </summary>
-        /// <typeparam name="T"> Name of the type of item in the collection. </typeparam>
-        /// <param name="quote"> Reference to an enumerable collection. </param>
+        /// <typeparam name="T">Name of the type of item in the collection.</typeparam>
+        /// <param name="quote">Reference to an enumerable collection.</param>
         /// <returns>
         /// Enumerable iterator over the collection that yields every item in the
         /// collection, except for the last.
         /// </returns>
-        public static IEnumerable<T> TakeAllButLast<T>(
-            this IEnumerable<T> quote
-        )
+        public static IEnumerable<T> TakeAllButLast<T>(this IEnumerable<T> quote)
         {
             if (quote == null) throw new ArgumentNullException(nameof(quote));
             using (var it = quote.GetEnumerator())

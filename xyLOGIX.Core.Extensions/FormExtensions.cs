@@ -9,7 +9,7 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Helper methods for manipulating windows forms. </summary>
+    /// <summary>Helper methods for manipulating windows forms.</summary>
     public static class FormExtensions
     {
         /// <summary>
@@ -27,7 +27,7 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         static FormExtensions() { }
 
-        /// <summary> Centers this form on the specified <paramref name="parent" /> form. </summary>
+        /// <summary>Centers this form on the specified <paramref name="parent" /> form.</summary>
         /// <param name="child">
         /// (Required.) Reference to an instance of an object that
         /// implements the <see cref="T:xyLOGIX.Core.Extensions.IForm" /> interface that
@@ -39,10 +39,7 @@ namespace xyLOGIX.Core.Extensions
         /// implements the <see cref="T:xyLOGIX.Core.Extensions.IForm" /> interface that
         /// represents the parent form.
         /// </param>
-        public static void CenterForm(
-            [NotLogged] this IForm child,
-            [NotLogged] IForm parent
-        )
+        public static void CenterForm([NotLogged] this IForm child, [NotLogged] IForm parent)
         {
             if (child == null || child.IsDisposed) return;
             if (parent == null || parent.IsDisposed) return;
@@ -81,16 +78,16 @@ namespace xyLOGIX.Core.Extensions
 
             var bounds = screen.WorkingArea;
             form.SetBounds(
-                (bounds.Width - form.Width) / 2,
-                (bounds.Height - form.Height) / 2, form.Width, form.Height
+                (bounds.Width - form.Width) / 2, (bounds.Height - form.Height) / 2, form.Width,
+                form.Height
             );
 
             form.StartPosition = FormStartPosition.CenterScreen;
         }
 
         /// <summary>
-        /// Invokes the specified <paramref name="message" /> on the form unless it's NOT
-        /// disposed, in which case nothing is done.
+        /// Invokes the specified <paramref name="message" /> on the form unless
+        /// it's NOT disposed, in which case nothing is done.
         /// </summary>
         /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form" /> on which to
@@ -101,10 +98,7 @@ namespace xyLOGIX.Core.Extensions
         /// run if the form is disposed.
         /// </param>
         [Yielder]
-        public static void DoIfDisposed(
-            [NotLogged] this IForm form,
-            [NotLogged] Action message
-        )
+        public static void DoIfDisposed([NotLogged] this IForm form, [NotLogged] Action message)
         {
             if (form != null && !form.IsDisposed) return;
 
@@ -112,8 +106,8 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Invokes the specified <paramref name="message" /> on the form unless it's
-        /// disposed, in which case nothing is done.
+        /// Invokes the specified <paramref name="message" /> on the form unless
+        /// it's disposed, in which case nothing is done.
         /// </summary>
         /// <param name="form">
         /// A <see cref="T:System.Windows.Forms.Form" /> on which to
@@ -124,10 +118,7 @@ namespace xyLOGIX.Core.Extensions
         /// run if the form is not disposed.
         /// </param>
         [Yielder]
-        public static void DoIfNotDisposed(
-            [NotLogged] this IForm form,
-            [NotLogged] Action message
-        )
+        public static void DoIfNotDisposed([NotLogged] this IForm form, [NotLogged] Action message)
         {
             if (form == null || form.IsDisposed) return;
             if (message == null) return;
@@ -139,19 +130,19 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Gets a value indicating whether the specified <paramref name="form" /> is
-        /// either set to a <see langword="null" /> reference, or is in the process of
+        /// Gets a value indicating whether the specified <paramref name="form" />
+        /// is either set to a <see langword="null" /> reference, or is in the process of
         /// being disposed, or has already been disposed.
         /// </summary>
         /// <param name="form">
-        /// (Required.) Reference to an instance of an object that implements the
-        /// <see cref="T:xyLOGIX.Core.Extensions.IForm" /> interface that is to be
-        /// checked for being in the <c>Disposed</c> state.
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:xyLOGIX.Core.Extensions.IForm" /> interface that is
+        /// to be checked for being in the <c>Disposed</c> state.
         /// </param>
         /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="form" />
-        /// is in the <see langword="null" /> reference or <c>Disposed</c> state, or if it
-        /// is in the process of being disposed.
+        /// <see langword="true" /> if the specified <paramref name="form" /> is
+        /// in the <see langword="null" /> reference or <c>Disposed</c> state, or if it is
+        /// in the process of being disposed.
         /// </returns>
         [Log(AttributeExclude = true)]
         public static bool IsNullOrDisposed([NotLogged] this IForm form)
@@ -168,9 +159,8 @@ namespace xyLOGIX.Core.Extensions
                 DebugUtils.LogException(ex);
 
                 /*
-                 * We are actually going to return TRUE here, so
-                 * that the caller of this method errs on the side of
-                 * caution and does not use the specified form.
+                 * We are actually going to return TRUE here, so that the caller of this method errs
+                 * on the side of caution and does not use the specified form.
                  */
 
                 result = true;
@@ -179,7 +169,7 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>
+        /// <summary>Shows a modal dialog that can be awaited upon while a task completes.</summary>
         /// <param name="form">
         /// Reference to an instance of an object that is a child class
         /// of <see cref="T:System.Windows.Forms.Form" /> that represents the form to be
@@ -191,9 +181,8 @@ namespace xyLOGIX.Core.Extensions
         /// owner window.
         /// </param>
         /// <returns>
-        /// An awaitable
-        /// <see cref="T:DialogResult" />
-        /// that contains the result of the dialog's closure.
+        /// An awaitable <see cref="T:DialogResult" /> that contains the result of
+        /// the dialog's closure.
         /// </returns>
         public static async Task<DialogResult> ShowDialogAsync(
             [NotLogged] this IForm form,
@@ -204,20 +193,17 @@ namespace xyLOGIX.Core.Extensions
             return form.IsDisposed ? DialogResult.OK : form.ShowDialog(owner);
         }
 
-        /// <summary> Shows a modal dialog that can be awaited upon while a task completes. </summary>
+        /// <summary>Shows a modal dialog that can be awaited upon while a task completes.</summary>
         /// <param name="form">
         /// Reference to an instance of an object that is a child class
         /// of <see cref="T:System.Windows.Forms.Form" /> that represents the form to be
         /// shown.
         /// </param>
         /// <returns>
-        /// An awaitable
-        /// <see cref="T:DialogResult" />
-        /// that contains the result of the dialog's closure.
+        /// An awaitable <see cref="T:DialogResult" /> that contains the result of
+        /// the dialog's closure.
         /// </returns>
-        public static async Task<DialogResult> ShowDialogAsync(
-            [NotLogged] this IForm form
-        )
+        public static async Task<DialogResult> ShowDialogAsync([NotLogged] this IForm form)
         {
             await Task.Yield();
             return form.IsDisposed ? DialogResult.OK : form.ShowDialog();
@@ -242,8 +228,8 @@ namespace xyLOGIX.Core.Extensions
                                .WorkingArea;
 
             form.SetBounds(
-                (bounds.Width - form.Width) / 2,
-                (bounds.Height - form.Height) / 2, form.Width, form.Height
+                (bounds.Width - form.Width) / 2, (bounds.Height - form.Height) / 2, form.Width,
+                form.Height
             );
 
             form.StartPosition = FormStartPosition.CenterScreen;

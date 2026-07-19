@@ -4,7 +4,7 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Provides methods that extend the <see cref="T:System.UInt32" /> class. </summary>
+    /// <summary>Provides methods that extend the <see cref="T:System.UInt32" /> class.</summary>
     [Log(AttributeExclude = true)]
     public static class UnsignedIntExtensions
     {
@@ -13,7 +13,7 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> is equal to one of the items in a collection of
         /// integers.
         /// </summary>
-        /// <param name="value"> Integer to be compared to the members of the list. </param>
+        /// <param name="value">Integer to be compared to the members of the list.</param>
         /// <param name="list">
         /// Collection of integers that should be searched for the
         /// <paramref name="value" />.
@@ -22,10 +22,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if <paramref name="value" /> is one of the
         /// elements of the collection; <see langword="false" /> if not.
         /// </returns>
-        public static bool EqualsOneOf(
-            [NotLogged] this uint value,
-            [NotLogged] params int[] list
-        )
+        public static bool EqualsOneOf([NotLogged] this uint value, [NotLogged] params int[] list)
         {
             var result = false;
 
@@ -53,7 +50,7 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary> Determines whether a bitmask is 'on' or 'off'. </summary>
+        /// <summary>Determines whether a bitmask is 'on' or 'off'.</summary>
         /// <param name="num">(Required.) Value containing the data to be checked.</param>
         /// <param name="bitmask">(Required.) Bitmask.</param>
         /// <returns>
@@ -64,7 +61,7 @@ namespace xyLOGIX.Core.Extensions
             => (num & bitmask) != 0;
 
         /// <summary>
-        /// Converts an <see cref="T:System.UInt32" /> <paramref name="value" /> to
+        /// Converts an <see cref="T:System.UInt32" /><paramref name="value" /> to
         /// its ordinal string representation, appending the appropriate suffix (e.g.,
         /// <c>"st"</c>, <c>"nd"</c>, <c>"rd"</c>, <c>"th"</c>, etc.) based on the
         /// specified <paramref name="value" />.
@@ -86,9 +83,7 @@ namespace xyLOGIX.Core.Extensions
         public static string ToOrdinalString(this uint value)
         {
             if (value < 1)
-                throw new ArgumentOutOfRangeException(
-                    nameof(value), "Value must be 1 or greater."
-                );
+                throw new ArgumentOutOfRangeException(nameof(value), "Value must be 1 or greater.");
 
             // Determine the suffix
             var lastDigit = value % 10;

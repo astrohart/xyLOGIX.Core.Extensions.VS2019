@@ -7,16 +7,17 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Provides methods for extending any dictionary. </summary>
+    /// <summary>Provides methods for extending any dictionary.</summary>
     public static class DictionaryExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.DictionaryExtensions" /> class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.DictionaryExtensions" />
+        /// class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -45,11 +46,7 @@ namespace xyLOGIX.Core.Extensions
         /// key's data type, then this method will do nothing.
         /// </param>
         /// <param name="value">(Required.) Value to be added/updated in the dictionary.</param>
-        public static void AddDistinct<K, V>(
-            this IDictionary<K, V> dictionary,
-            K key,
-            V value
-        )
+        public static void AddDistinct<K, V>(this IDictionary<K, V> dictionary, K key, V value)
         {
             if (dictionary == null) return;
             if (EqualityComparer<K>.Default.Equals(key, default)) return;
@@ -66,8 +63,8 @@ namespace xyLOGIX.Core.Extensions
         /// <typeparam name="K">(Required.) Data type of the key.</typeparam>
         /// <typeparam name="V">(Required.) Data type of the value.</typeparam>
         /// <param name="target">
-        /// (Required.) The dictionary that is to be the target of
-        /// the merge.
+        /// (Required.) The dictionary that is to be the target of the
+        /// merge.
         /// </param>
         /// <param name="quote">
         /// (Required.) A dictionary that has the items to be merged
@@ -77,14 +74,11 @@ namespace xyLOGIX.Core.Extensions
         /// key's data type, then this method will do nothing.
         /// </param>
         /// <remarks>
-        /// If a key in the <paramref name="quote" /> dictionary matches a key
-        /// in the <paramref name="target" /> dictionary, then the corresponding value is
+        /// If a key in the <paramref name="quote" /> dictionary matches a key in
+        /// the <paramref name="target" /> dictionary, then the corresponding value is
         /// overwritten.
         /// </remarks>
-        public static void MergeWith<K, V>(
-            this IDictionary<K, V> target,
-            IDictionary<K, V> quote
-        )
+        public static void MergeWith<K, V>(this IDictionary<K, V> target, IDictionary<K, V> quote)
         {
             try
             {
@@ -134,10 +128,10 @@ namespace xyLOGIX.Core.Extensions
         /// result element value from each element of <paramref name="quote" />.
         /// </param>
         /// <remarks>
-        /// If any of the inputs are invalid values, i.e.,
-        /// <see langword="null" /> reference and the like, or if an issue occurs during
-        /// the generation of the requested <c>Dictionary</c> object, then the method
-        /// returns the empty collection.
+        /// If any of the inputs are invalid values, i.e., <see langword="null" />
+        /// reference and the like, or if an issue occurs during the generation of the
+        /// requested <c>Dictionary</c> object, then the method returns the empty
+        /// collection.
         /// </remarks>
         /// <returns>
         /// A
@@ -145,15 +139,13 @@ namespace xyLOGIX.Core.Extensions
         /// contains values of type <typeparamref name="TElement" /> selected from the
         /// input sequence.
         /// </returns>
-        public static IDictionary<TKey, TElement>
-            ToConcurrentDictionary<TSource, TKey, TElement>(
-                this IEnumerable<TSource> quote,
-                Func<TSource, TKey> keySelector,
-                Func<TSource, TElement> elementSelector
-            )
+        public static IDictionary<TKey, TElement> ToConcurrentDictionary<TSource, TKey, TElement>(
+            this IEnumerable<TSource> quote,
+            Func<TSource, TKey> keySelector,
+            Func<TSource, TElement> elementSelector
+        )
         {
-            IDictionary<TKey, TElement> result =
-                new ConcurrentDictionary<TKey, TElement>();
+            IDictionary<TKey, TElement> result = new ConcurrentDictionary<TKey, TElement>();
 
             try
             {
@@ -176,9 +168,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Transforms an instance of an object of type
-        /// <see
-        ///     cref="T:string" />
+        /// Transforms an instance of an object of type <see cref="T:string" />
         /// into an object by mapping the dictionary elements onto the object's properties
         /// that have the same name.
         /// </summary>
@@ -188,9 +178,8 @@ namespace xyLOGIX.Core.Extensions
         /// </typeparam>
         /// <param name="quote">
         /// Reference to an instance of an object of type
-        /// <see
-        ///     cref="T:string" />
-        /// , whose key-value pairs identify what properties to fill with what information.
+        /// <see cref="T:string" /> , whose key-value pairs identify what properties to
+        /// fill with what information.
         /// </param>
         /// <remarks>
         /// In order for this method to work, the object and the dictionary must
@@ -203,16 +192,14 @@ namespace xyLOGIX.Core.Extensions
         /// <remarks>
         /// Basically, this method flattens the dictionary provided into a POCO.
         /// The dictionary must be a list of key-value pairs, and it is assumed that the
-        /// key
-        /// is the name of a property, and the value is a string that is the property's
-        /// value. Therefore, the base object is assumed to have all its properties
-        /// be of type <see cref="T:System.String" /> and the name of each property should
-        /// match each key. Each corresponding property named the same as a key will have
-        /// its value set to the value in the dictionary that corresponds to the key with
-        /// the same name.
+        /// key is the name of a property, and the value is a string that is the property's
+        /// value. Therefore, the base object is assumed to have all its properties be of
+        /// type <see cref="T:System.String" /> and the name of each property should match
+        /// each key. Each corresponding property named the same as a key will have its
+        /// value set to the value in the dictionary that corresponds to the key with the
+        /// same name.
         /// </remarks>
-        public static T ToObject<T>(this Dictionary<string, string> quote)
-            where T : class, new()
+        public static T ToObject<T>(this Dictionary<string, string> quote) where T : class, new()
         {
             var someObject = new T();
             var someObjectType = someObject.GetType();

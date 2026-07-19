@@ -7,7 +7,7 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Exposes static extension methods for collection types. </summary>
+    /// <summary>Exposes static extension methods for collection types.</summary>
     [Log(AttributeExclude = true)]
     public static class CollectionExtensions
     {
@@ -45,10 +45,7 @@ namespace xyLOGIX.Core.Extensions
         /// a member of the specified <paramref name="collection" />, it is still added.
         /// Typical use of this method is for, e.g., generating script files.
         /// </remarks>
-        public static void AddMultiple<T>(
-            this ICollection<T> collection,
-            params T[] items
-        )
+        public static void AddMultiple<T>(this ICollection<T> collection, params T[] items)
         {
             try
             {
@@ -89,13 +86,13 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="values" /> collection.
         /// </param>
         /// <remarks>
-        /// This method can make no guarantee about the order in which it evaluates the
-        /// <paramref name="predicate" /> on the elements of the <paramref name="values" />
-        /// collection.
+        /// This method can make no guarantee about the order in which it
+        /// evaluates the <paramref name="predicate" /> on the elements of the
+        /// <paramref name="values" /> collection.
         /// <para />
-        /// This method enumerates the entire <paramref name="values" />
-        /// collection twice; once to determine if it contains any elements, and the other
-        /// to test each element with the specified <paramref name="predicate" />.
+        /// This method enumerates the entire <paramref name="values" /> collection twice;
+        /// once to determine if it contains any elements, and the other to test each
+        /// element with the specified <paramref name="predicate" />.
         /// <para />
         /// If you do not want that, then use the LINQ <c>Any</c> method on the
         /// <paramref name="values" /> collection instead.
@@ -112,10 +109,7 @@ namespace xyLOGIX.Core.Extensions
         /// matches the supplied <paramref name="predicate" />; <see langword="false" />
         /// otheriwse.
         /// </returns>
-        public static bool AnyAre<T>(
-            this IEnumerable<T> values,
-            Func<T, bool> predicate
-        )
+        public static bool AnyAre<T>(this IEnumerable<T> values, Func<T, bool> predicate)
         {
             var result = false;
 
@@ -151,8 +145,8 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
         /// <param name="collection">
-        /// (Required.) Reference to an instance of an object
-        /// that implements the <see cref="T:System.Collections.Generic.ICollection`1" />
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:System.Collections.Generic.ICollection`1" />
         /// interface.
         /// </param>
         /// <returns>
@@ -161,8 +155,8 @@ namespace xyLOGIX.Core.Extensions
         /// otherwise.
         /// </returns>
         /// <remarks>
-        /// If this method is passed a <see langword="null" /> reference, then
-        /// the method also returns <see langword="false" />.
+        /// If this method is passed a <see langword="null" /> reference, then the
+        /// method also returns <see langword="false" />.
         /// </remarks>
         public static bool IsEmpty<T>(this ICollection<T> collection)
         {
@@ -193,8 +187,8 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         /// <typeparam name="T">(Required.) Data type of the collection's elements.</typeparam>
         /// <param name="collection">
-        /// (Required.) Reference to an instance of an object
-        /// that implements the <see cref="T:System.Collections.Generic.ICollection`1" />
+        /// (Required.) Reference to an instance of an object that
+        /// implements the <see cref="T:System.Collections.Generic.ICollection`1" />
         /// interface.
         /// </param>
         /// <returns>
@@ -214,8 +208,8 @@ namespace xyLOGIX.Core.Extensions
         /// be.
         /// </typeparam>
         /// <param name="obj">
-        /// A <see cref="T:System.Object" /> instance whose type is to
-        /// be checked.
+        /// A <see cref="T:System.Object" /> instance whose type is to be
+        /// checked.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the specified <c>object</c> is one of the
@@ -234,8 +228,7 @@ namespace xyLOGIX.Core.Extensions
         /// To perform that check, you would pass
         /// <c>Tuple&lt;Button, CheckBox, Label&gt;</c> as this method's type parameter.
         /// </remarks>
-        public static bool IsOneOf<TTypes>(this object obj)
-            where TTypes : ITuple
+        public static bool IsOneOf<TTypes>(this object obj) where TTypes : ITuple
         {
             var result = false;
 

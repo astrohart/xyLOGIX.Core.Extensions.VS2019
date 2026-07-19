@@ -23,21 +23,33 @@ using Path = Alphaleonis.Win32.Filesystem.Path;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Provides methods and properties to assist with manipulating strings
-    /// of text.
-    /// </summary>
+    /// <summary>Provides methods and properties to assist with manipulating strings of text.</summary>
     [Log(AttributeExclude = true), ExplicitlySynchronized]
     public static class StringExtensions
     {
-        /// <summary>
-        /// Reference to an instance of <see cref="T:System.Globalization.TextInfo" /> that
-        /// works for the <see cref="P:System.Globalization.CultureInfo.CurrentCulture" />.
-        /// </summary>
+        /// <summary>Collection of strings which are short words but are not acronyms per se.</summary>
+        public static readonly string[] ShortWordsThatAreNotAcronyms =
+        {
+            "a", "an", "and", "of", "or", "the", "this", "that", "o", "O\'",
+            "al-", "el-", "thus", "if", "then", "Jr.", "Sr.", "Ph.D.",
+            "M.S.", "M.D."
+        };
+
+        /// <summary>A regular expression pattern that matches an entire string consisting only of uppercase letters. This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR") that appear as standalone words without any lowercase letters. <para>This pattern ensures that the input string contains only uppercase letters from A to Z and does not include numbers, spaces, or lowercase characters.</para></summary>
+        private const string AcronymPattern = @"^[A-Z]+$";
+
+        /// <summary>A <see cref="T:System.String" /> that is set to the error prefix used by all debugging messages.</summary>
+        private const string ErrorPrefix = "*** ERROR *** ";
+
+        /// <summary>A <see cref="T:System.String" /> containing a regular expression to match a GUID that is in all lowercase with no surrounding braces; e.g., for example, <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.</summary>
+        private const string GuidRegexLowercaseNoBraces =
+            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
+
+        /// <summary>Reference to an instance of <see cref="T:System.Globalization.TextInfo" /> that works for the <see cref="P:System.Globalization.CultureInfo.CurrentCulture" />.</summary>
         private static readonly TextInfo _textInfoFromCurrentCulture =
             CultureInfo.CurrentCulture.TextInfo;
 
-        /// <summary> Collection of strings that are commonly-used acronyms. </summary>
+        /// <summary>Collection of strings that are commonly-used acronyms.</summary>
         private static readonly string[] AcronymList =
         {
             "AP", "BC", "AB", "4S", "N", "S", "E", "W", "NE", "SE", "SW",
@@ -48,55 +60,16 @@ namespace xyLOGIX.Core.Extensions
             "CSU", "UCM", "UCR", "UCI", "UCSF", "UCSC", "UCLA", "USC",
             "USD", "CSUF", "CSULA", "CSUDH", "CSUNR", "HS", "LLC", "XOW"
         };
-
-        /// <summary>
-        /// A regular expression pattern that matches an entire string consisting only of
-        /// uppercase letters.
-        /// This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR")
-        /// that appear as
-        /// standalone words without any lowercase letters.
-        /// <para>
-        /// This pattern ensures that the input string contains only uppercase letters from
-        /// A to Z
-        /// and does not include numbers, spaces, or lowercase characters.
-        /// </para>
-        /// </summary>
-        private const string AcronymPattern = @"^[A-Z]+$";
-
-        /// <summary>
-        /// Collection of strings that should always be capitalized if they are
-        /// the first word of a phrase.
-        /// </summary>
+        /// <summary>Collection of strings that should always be capitalized if they are the first word of a phrase.</summary>
         private static readonly string[] AlwaysCapitalizeIfFirstWord = { "El" };
 
-        /// <summary>
-        /// Collection of strings that are potentially needing to be capitalized
-        /// if they are the first word of a phrase or a name.
-        /// </summary>
+        /// <summary>Collection of strings that are potentially needing to be capitalized if they are the first word of a phrase or a name.</summary>
         private static readonly string[] CapitalizeableAsFirstWords =
         {
             "Al", "A", "The", "Of", "An", "On", "With", "La", "De", "Or",
             "And", "Not"
         };
-
-        /// <summary>
-        /// A <see cref="T:System.String" /> that is set to the error prefix used by all
-        /// debugging messages.
-        /// </summary>
-        private const string ErrorPrefix = "*** ERROR *** ";
-
-        /// <summary>
-        /// A <see cref="T:System.String" /> containing a regular expression to match a
-        /// GUID that is in all lowercase with no surrounding braces; e.g., for example,
-        /// <c>b8f967ce-911d-4184-a0ba-b37e443b4541</c>.
-        /// </summary>
-        private const string GuidRegexLowercaseNoBraces =
-            @"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
-
-        /// <summary>
-        /// Collection of strings that contain words commonly found in the name
-        /// of a street, and that need to be capitalized.
-        /// </summary>
+        /// <summary>Collection of strings that contain words commonly found in the name of a street, and that need to be capitalized.</summary>
         private static readonly string[] NamesOfStreetsThatShouldBeCapitalized =
         {
             "St", "Rd", "Ave", "Blvd", "Pl", "Pky", "Pkwy", "Ct", "Ter",
@@ -105,22 +78,7 @@ namespace xyLOGIX.Core.Extensions
             "Rue", "Vieux", "Parkway", "Court", "Terrace", "Circle",
             "Highway", "Drive", "Driveway", "Pike", "Lane"
         };
-
-        /// <summary>
-        /// Collection of strings which are short words but are not acronyms per
-        /// se.
-        /// </summary>
-        public static readonly string[] ShortWordsThatAreNotAcronyms =
-        {
-            "a", "an", "and", "of", "or", "the", "this", "that", "o", "O\'",
-            "al-", "el-", "thus", "if", "then", "Jr.", "Sr.", "Ph.D.",
-            "M.S.", "M.D."
-        };
-
-        /// <summary>
-        /// Collection of strings that are the two-letter abbreviations of the 50
-        /// U.S. states.
-        /// </summary>
+        /// <summary>Collection of strings that are the two-letter abbreviations of the 50 U.S. states.</summary>
         private static readonly string[] StateAbbrList =
         {
             "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",
@@ -131,117 +89,63 @@ namespace xyLOGIX.Core.Extensions
             "DC", "PR", "VI", "AS", "GU", "MP"
         };
 
-        /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.StringExtensions" /> class.
-        /// </summary>
-        /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
-        /// <para />
-        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
-        /// attribute in order to simplify the logging output.
-        /// </remarks>
+        /// <summary>Initializes static data or performs actions that need to be performed once only for the <see cref="T:xyLOGIX.Core.Extensions.StringExtensions" /> class.</summary>
+        /// <remarks>This constructor is called automatically prior to the first instance being created or before any static members are referenced. <para /> We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c> attribute in order to simplify the logging output.</remarks>
         [Log(AttributeExclude = true)]
         static StringExtensions()
 
-            // Only initialize a new instance of the IdnMapping once per execution of a client
-            // application.
+            // Only initialize a new instance of the IdnMapping once per execution of a client application.
             => DomainMappingObject = new IdnMapping();
+
+        /// <summary>Gets or sets a value that indicates whether the string most recently checked for whether it contains a valid email address, does in fact contain such a valid address.</summary>
+        public static bool IsEmailAddressInvalid
+        {
+            [DebuggerStepThrough]
+            get;
+            [DebuggerStepThrough]
+            private set;
+        }
 
         private static IdnMapping DomainMappingObject
         {
             [DebuggerStepThrough] get;
         }
 
-        /// <summary>
-        /// Gets a reference to an instance of
-        /// <see cref="T:System.Text.RegularExpressions.Regex" /> that is compiled to match
-        /// a <see cref="T:System.String" /> that ends with a colon (<c>:</c>) and then a
-        /// natural number.
-        /// </summary>
+        /// <summary>Gets a reference to an instance of <see cref="T:System.Text.RegularExpressions.Regex" /> that is compiled to match a <see cref="T:System.String" /> that ends with a colon (<c>:</c>) and then a natural number.</summary>
         private static Regex EndsWithColonAndNumberRegex
         {
             [DebuggerStepThrough] get;
         } = new Regex(@":\d+$", RegexOptions.Compiled);
-
-        /// <summary>
-        /// Gets or sets a value that indicates whether the string most recently
-        /// checked for whether it contains a valid email address, does in fact contain
-        /// such a valid address.
-        /// </summary>
-        public static bool IsEmailAddressInvalid
-        {
-            [DebuggerStepThrough] get;
-            [DebuggerStepThrough] private set;
-        }
-
-        /// <summary>
-        /// Gets a reference to the one and only instance of the object that implements the
-        /// <see cref="T:xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator" />
-        /// interface.
-        /// </summary>
+        /// <summary>Gets a reference to the one and only instance of the object that implements the <see cref="T:xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator" /> interface.</summary>
         private static ILanguageArticleTypeValidator
             LanguageArticleTypeValidator { [DebuggerStepThrough] get; } =
             GetLanguageArticleTypeValidator.SoleInstance();
 
-        /// <summary>
-        /// Gets a reference to an instance of
-        /// <see
-        ///     cref="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" />
-        /// for the current culture.
-        /// </summary>
+        /// <summary>Gets a reference to an instance of <see cref="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" /> for the current culture.</summary>
         private static PluralizationService PluralizationService
         {
             [DebuggerStepThrough] get;
         } = PluralizationService.CreateService(CultureInfo.CurrentCulture);
 
-        /// <summary>
-        /// Gets a <see cref="T:System.Text.RegularExpressions.Regex" /> that
-        /// matches all whitespace characters.
-        /// </summary>
+        /// <summary>Gets a <see cref="T:System.Text.RegularExpressions.Regex" /> that matches all whitespace characters.</summary>
         private static Regex WhiteSpaceRegex { [DebuggerStepThrough] get; } =
             new Regex(@"\s+");
 
-        /// <summary>
-        /// Asks if the search text, in <paramref name="value" />, is a substring
-        /// of the strings in <paramref name="collection" />, ignoring case.
-        /// </summary>
-        /// <param name="collection"> Collection to search. </param>
-        /// <param name="value"> Value to compare. </param>
-        /// <returns>
-        /// <see langword="true" /> if the indicated value is in the specified
-        /// collection, regardless of case; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Asks if the search text, in <paramref name="value" />, is a substring of the strings in <paramref name="collection" />, ignoring case.</summary>
+        /// <param name="collection">Collection to search.</param>
+        /// <param name="value">Value to compare.</param>
+        /// <returns><see langword="true" /> if the indicated value is in the specified collection, regardless of case; <see langword="false" /> otherwise.</returns>
         public static bool AnyContainNoCase(
             this IEnumerable<string> collection,
             string value
         )
             => collection.Any(s => s.ContainsNoCase(value));
 
-        /// <summary>
-        /// Determines if any of the <see cref="T:System.String" />s in
-        /// <paramref name="targets" /> start with any of the specified
-        /// <paramref name="values" />.
-        /// </summary>
-        /// <param name="targets">
-        /// (Required.) Collection of <see cref="T:System.String" />
-        /// value(s) that are to be searched.
-        /// </param>
-        /// <param name="values">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// value(s) that are to be used as search criteria.
-        /// </param>
-        /// <remarks>
-        /// If a <see langword="null" /> reference is passed as the argument of
-        /// the <paramref name="targets" /> parameter, of if either of the
-        /// <paramref name="targets" /> or <paramref name="values" /> parameter(s) refer to
-        /// the empty collection, then this method returns <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" />if any of the <paramref name="targets" /> start
-        /// with any of the <paramref name="values" />; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if any of the <see cref="T:System.String" />s in <paramref name="targets" /> start with any of the specified <paramref name="values" />.</summary>
+        /// <param name="targets">(Required.) Collection of <see cref="T:System.String" /> value(s) that are to be searched.</param>
+        /// <param name="values">(Required.) One or more <see cref="T:System.String" /> value(s) that are to be used as search criteria.</param>
+        /// <remarks>If a <see langword="null" /> reference is passed as the argument of the <paramref name="targets" /> parameter, of if either of the <paramref name="targets" /> or <paramref name="values" /> parameter(s) refer to the empty collection, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" />if any of the <paramref name="targets" /> start with any of the <paramref name="values" />; <see langword="false" /> otherwise.</returns>
         public static bool AnyStartWithAny(
             this IEnumerable<string> targets,
             params string[] values
@@ -276,18 +180,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines if the specified <paramref name="value" /> contains any letters that
-        /// are recognized as lowercase.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> whose
-        /// characters are to be checked.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" /> has
-        /// at least one lowercase letter; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <paramref name="value" /> contains any letters that are recognized as lowercase.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> whose characters are to be checked.</param>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> has at least one lowercase letter; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool AreAnyLettersLowercase(this string value)
         {
@@ -319,17 +214,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Surrounds the specified <paramref name="text" /> with XML documentation
-        /// tags &lt;c&gt; and &lt;/c&gt;, to indicate inline code formatting.
-        /// </summary>
+        /// <summary>Surrounds the specified <paramref name="text" /> with XML documentation tags &lt;c&gt; and &lt;/c&gt;, to indicate inline code formatting.</summary>
         /// <param name="text">(Required.) The text to format as inline code.</param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> containing the input surrounded by
-        /// &lt;c&gt; and &lt;/c&gt; tags. If <paramref name="text" /> is
-        /// <see langword="null" />
-        /// or whitespace, the original value is returned.
-        /// </returns>
+        /// <returns>A <see cref="T:System.String" /> containing the input surrounded by &lt;c&gt; and &lt;/c&gt; tags. If <paramref name="text" /> is <see langword="null" /> or whitespace, the original value is returned.</returns>
         [return: NotLogged]
         public static string AsCodeElement([NotLogged] this string text)
         {
@@ -352,20 +239,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Attempts to express the provided <see cref="T:System.String" />
-        /// <paramref name="value" /> as a <see cref="T:System.Decimal" /> value.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the ASCII representation of a <see cref="T:System.Decimal" /> value.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.Decimal" /> value that corresponds to what is
-        /// represented by the ASCII <paramref name="value" /> specified; or
-        /// <see cref="F:System.Decimal.MinValue" /> if an issue occurred in formatting the
-        /// value.
-        /// </returns>
+        /// <summary>Attempts to express the provided <see cref="T:System.String" /><paramref name="value" /> as a <see cref="T:System.Decimal" /> value.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the ASCII representation of a <see cref="T:System.Decimal" /> value.</param>
+        /// <returns>A <see cref="T:System.Decimal" /> value that corresponds to what is represented by the ASCII <paramref name="value" /> specified; or <see cref="F:System.Decimal.MinValue" /> if an issue occurred in formatting the value.</returns>
         public static decimal AsDecimal(this string value)
         {
             var result = decimal.MinValue;
@@ -388,20 +264,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Attempts to express the provided <see cref="T:System.String" />
-        /// <paramref name="value" /> as a <see cref="T:System.Double" /> value.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the ASCII representation of a <see cref="T:System.Double" /> value.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.Double" /> value that corresponds to what is
-        /// represented by the ASCII <paramref name="value" /> specified; or
-        /// <see cref="F:System.Double.MinValue" /> if an issue occurred in formatting the
-        /// value.
-        /// </returns>
+        /// <summary>Attempts to express the provided <see cref="T:System.String" /><paramref name="value" /> as a <see cref="T:System.Double" /> value.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the ASCII representation of a <see cref="T:System.Double" /> value.</param>
+        /// <returns>A <see cref="T:System.Double" /> value that corresponds to what is represented by the ASCII <paramref name="value" /> specified; or <see cref="F:System.Double.MinValue" /> if an issue occurred in formatting the value.</returns>
         public static double AsDouble(this string value)
         {
             var result = double.MinValue;
@@ -424,29 +289,12 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Takes a quote and a selector function and exports a string that is
-        /// comma-separated according to proper English grammar, i.e.
-        /// <c> "dog, cat, and horse" </c> not just <c>"dog, cat, horse."</c>
-        /// </summary>
-        /// <typeparam name="TSource"> Type of each item in the quote collection. </typeparam>
-        /// <param name="quote">
-        /// Collection of <typeparamref name="TSource" /> to iterate
-        /// over.
-        /// </param>
-        /// <param name="selectorFunc">
-        /// Delegate specifying the way to represent each
-        /// element of the collection <paramref name="quote" /> as a string.
-        /// </param>
-        /// <returns>
-        /// String containing the strings selected by the selector, as
-        /// illustrated above.
-        /// </returns>
-        /// <remarks>
-        /// If this method is fed a <see langword="null" /> reference or the
-        /// empty collection for <paramref name="quote" />, then the return value is the
-        /// empty string.
-        /// </remarks>
+        /// <summary>Takes a quote and a selector function and exports a string that is comma-separated according to proper English grammar, i.e. <c>"dog, cat, and horse"</c> not just <c>"dog, cat, horse."</c></summary>
+        /// <typeparam name="TSource">Type of each item in the quote collection.</typeparam>
+        /// <param name="quote">Collection of <typeparamref name="TSource" /> to iterate over.</param>
+        /// <param name="selectorFunc">Delegate specifying the way to represent each element of the collection <paramref name="quote" /> as a string.</param>
+        /// <returns>String containing the strings selected by the selector, as illustrated above.</returns>
+        /// <remarks>If this method is fed a <see langword="null" /> reference or the empty collection for <paramref name="quote" />, then the return value is the empty string.</remarks>
         public static string AsProseList<TSource>(
             this IEnumerable<TSource> quote,
             Func<TSource, string> selectorFunc
@@ -457,8 +305,7 @@ namespace xyLOGIX.Core.Extensions
             if (!(quote is IList<TSource> items))
                 items = quote.ToAdvisableCollection();
 
-            // If we are passed the empty collection, then return the empty
-            // string as the result.
+            // If we are passed the empty collection, then return the empty string as the result.
             if (!items.Any()) return string.Empty;
 
             var itemStrings = items.Select(selectorFunc)
@@ -480,20 +327,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Breaks a large body of <paramref name="text" /> into individual
-        /// lines, on the newline character for the particular operating system. The result
-        /// is a collection of strings, one for each line.
-        /// </summary>
-        /// <param name="text"> (Required.) String containing the text to be split. </param>
-        /// <returns>
-        /// Collection of strings containing one string per line of
-        /// <paramref name="text" />.
-        /// </returns>
-        /// <remarks>
-        /// If this method is passed the empty string or a blank string as input,
-        /// then it returns the empty collection.
-        /// </remarks>
+        /// <summary>Breaks a large body of <paramref name="text" /> into individual lines, on the newline character for the particular operating system. The result is a collection of strings, one for each line.</summary>
+        /// <param name="text">(Required.) String containing the text to be split.</param>
+        /// <returns>Collection of strings containing one string per line of <paramref name="text" />.</returns>
+        /// <remarks>If this method is passed the empty string or a blank string as input, then it returns the empty collection.</remarks>
         public static IEnumerable<string> BreakTextIntoLines(this string text)
         {
             if (string.IsNullOrWhiteSpace(text))
@@ -504,19 +341,10 @@ namespace xyLOGIX.Core.Extensions
                 yield return line;
         }
 
-        /// <summary>
-        /// Strips newlines from the text in <paramref name="line" />, and then
-        /// calls <see cref="M:System.String.Trim()" /> on the results.
-        /// </summary>
-        /// <param name="line"> Text to clean.</param>
-        /// <returns>
-        /// Same as input, except all newline characters and whitespace has been
-        /// removed.
-        /// </returns>
-        /// <remarks>
-        /// If the empty string is provided as input, then the empty string is
-        /// returned.
-        /// </remarks>
+        /// <summary>Strips newlines from the text in <paramref name="line" />, and then calls <see cref="M:System.String.Trim()" /> on the results.</summary>
+        /// <param name="line">Text to clean.</param>
+        /// <returns>Same as input, except all newline characters and whitespace has been removed.</returns>
+        /// <remarks>If the empty string is provided as input, then the empty string is returned.</remarks>
         public static string CleanLine(this string line)
         {
             var result = string.Empty;
@@ -530,20 +358,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// "Collapses" or "folds" the specified <paramref name="value" /> so that all
-        /// newlines are transformed to single whitespace characters.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value that is to be collapsed.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> containing the value passed, but with
-        /// all newlines transformed to single whitespace characters.
-        /// <para />
-        /// Multiple newlines are removed.
-        /// </returns>
+        /// <summary>"Collapses" or "folds" the specified <paramref name="value" /> so that all newlines are transformed to single whitespace characters.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value that is to be collapsed.</param>
+        /// <returns>A <see cref="T:System.String" /> containing the value passed, but with all newlines transformed to single whitespace characters. <para /> Multiple newlines are removed.</returns>
         public static string CollapseNewlinesToSpaces(this string value)
         {
             string result;
@@ -579,32 +396,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Takes the specified <paramref name="initialString" /> and joins the provided
-        /// <see cref="T:System.String" /> <paramref name="parts" /> array of strings onto
-        /// it, in the order specified.
-        /// </summary>
-        /// <param name="initialString">
-        /// (Required.) A <see cref="T:System.String" /> that
-        /// specifies the initial value to have other <see cref="T:System.String" />
-        /// value(s)
-        /// concatenated to it.
-        /// </param>
-        /// <param name="parts">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// values that are to be concatenated, in the order specified, to the
-        /// <paramref name="initialString" />.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> consisting of the
-        /// <paramref name="initialString" /> with the <paramref name="parts" />
-        /// concatenated to it.
-        /// </returns>
-        /// <remarks>
-        /// This method does nothing if the <paramref name="initialString" /> is
-        /// blank or <see langword="null" />, or if there are zero values in the
-        /// <paramref name="parts" />.
-        /// </remarks>
+        /// <summary>Takes the specified <paramref name="initialString" /> and joins the provided <see cref="T:System.String" /><paramref name="parts" /> array of strings onto it, in the order specified.</summary>
+        /// <param name="initialString">(Required.) A <see cref="T:System.String" /> that specifies the initial value to have other <see cref="T:System.String" /> value(s) concatenated to it.</param>
+        /// <param name="parts">(Required.) One or more <see cref="T:System.String" /> values that are to be concatenated, in the order specified, to the <paramref name="initialString" />.</param>
+        /// <returns>A <see cref="T:System.String" /> consisting of the <paramref name="initialString" /> with the <paramref name="parts" /> concatenated to it.</returns>
+        /// <remarks>This method does nothing if the <paramref name="initialString" /> is blank or <see langword="null" />, or if there are zero values in the <paramref name="parts" />.</remarks>
         public static string Concat(
             this string initialString,
             params string[] parts
@@ -633,23 +429,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Returns <see langword="true" /> if <paramref name="source" />
-        /// contains <paramref name="value" />, using the chosen comparison
-        /// rule.
-        /// </summary>
-        /// <param name="source">
-        /// (Required.) A <see cref="T:System.String" /> containing the text
-        /// that is to be searched for <paramref name="value" />.
-        /// </param>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text
-        /// that is to be searched for.
-        /// </param>
-        /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" />
-        /// values that dictates how the comparison is performed.
-        /// </param>
+        /// <summary>Returns <see langword="true" /> if <paramref name="source" /> contains <paramref name="value" />, using the chosen comparison rule.</summary>
+        /// <param name="source">(Required.) A <see cref="T:System.String" /> containing the text that is to be searched for <paramref name="value" />.</param>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text that is to be searched for.</param>
+        /// <param name="comparisonType">(Required.) One of the <see cref="T:System.StringComparison" /> values that dictates how the comparison is performed.</param>
         [DebuggerStepThrough]
         public static bool Contains(
             [NotLogged] this string source,
@@ -662,15 +445,12 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 /*
-                 * For cybersecurity reasons, and to defeat reverse-engineering,
-                 * check the value of the 'comparisonType' parameter to ensure that it
-                 * is not set to a value outside the set of valid values defined
-                 * by the System.StringComparison enumeration.
-                 *
-                 * In principle, since all C# enums devolve to integer values, a
-                 * hacker could insert a different value into the CPU register that the
-                 * 'comparisonType' parameter is read from and thereby make this application
-                 * do something it's not intended to do.
+                 * For cybersecurity reasons, and to defeat reverse-engineering, check the value of
+                 * the 'comparisonType' parameter to ensure that it is not set to a value outside
+                 * the set of valid values defined by the System.StringComparison enumeration. In
+                 * principle, since all C# enums devolve to integer values, a hacker could insert a
+                 * different value into the CPU register that the 'comparisonType' parameter is read
+                 * from and thereby make this application do something it's not intended to do.
                  */
 
                 // Check to see whether the specified string comparison is within the defined value set.
@@ -707,102 +487,41 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Returns <see langword="true" /> if the <paramref name="value" /> has
-        /// any of the strings in <paramref name="searchStrings" /> as a substring.
-        /// </summary>
-        /// <param name="value"> (Required.) The value to be used as a filter. </param>
-        /// <param name="searchStrings">
-        /// (Required.) Collection of strings, any of which
-        /// might be substrings of <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// Value indicating whether any of the strings in
-        /// <paramref name="searchStrings" /> are substrings (case-insensitive) of
-        /// <paramref name="value" />.
-        /// </returns>
-        /// <remarks>
-        /// If <paramref name="value" /> is the empty string or if the
-        /// <paramref name="searchStrings" /> collection is empty or is a
-        /// <see langword="null" /> reference, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
+        /// <summary>Returns <see langword="true" /> if the <paramref name="value" /> has any of the strings in <paramref name="searchStrings" /> as a substring.</summary>
+        /// <param name="value">(Required.) The value to be used as a filter.</param>
+        /// <param name="searchStrings">(Required.) Collection of strings, any of which might be substrings of <paramref name="value" />.</param>
+        /// <returns>Value indicating whether any of the strings in <paramref name="searchStrings" /> are substrings (case-insensitive) of <paramref name="value" />.</returns>
+        /// <remarks>If <paramref name="value" /> is the empty string or if the <paramref name="searchStrings" /> collection is empty or is a <see langword="null" /> reference, then this method returns <see langword="false" />.</remarks>
         public static bool ContainsAny(
             this string value,
             params string[] searchStrings
         )
             => value.ContainsAnyOf(searchStrings);
 
-        /// <summary>
-        /// Returns <see langword="true" /> if the <paramref name="value" /> has
-        /// any of the strings in <paramref name="searchStrings" /> as a substring.
-        /// </summary>
-        /// <param name="value"> (Required.) The value to be used as a filter. </param>
-        /// <param name="searchStrings">
-        /// (Required.) Collection of strings, any of which
-        /// might be substrings of <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// Value indicating whether any of the strings in
-        /// <paramref name="searchStrings" /> are substrings (case-insensitive) of
-        /// <paramref name="value" />.
-        /// </returns>
-        /// <remarks>
-        /// If <paramref name="value" /> is the empty string or if the
-        /// <paramref name="searchStrings" /> collection is empty or is a
-        /// <see langword="null" /> reference, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
+        /// <summary>Returns <see langword="true" /> if the <paramref name="value" /> has any of the strings in <paramref name="searchStrings" /> as a substring.</summary>
+        /// <param name="value">(Required.) The value to be used as a filter.</param>
+        /// <param name="searchStrings">(Required.) Collection of strings, any of which might be substrings of <paramref name="value" />.</param>
+        /// <returns>Value indicating whether any of the strings in <paramref name="searchStrings" /> are substrings (case-insensitive) of <paramref name="value" />.</returns>
+        /// <remarks>If <paramref name="value" /> is the empty string or if the <paramref name="searchStrings" /> collection is empty or is a <see langword="null" /> reference, then this method returns <see langword="false" />.</remarks>
         public static bool ContainsAny(
             this string value,
             IEnumerable<string> searchStrings
         )
             => value.ContainsAnyOf(searchStrings);
 
-        /// <summary>
-        /// Returns <see langword="true" /> if the <paramref name="value" />
-        /// contains any of the characters in <paramref name="searchChars" />
-        /// (case-insensitive).
-        /// </summary>
-        /// <param name="value"> (Required.) String to be searched. </param>
-        /// <param name="searchChars">
-        /// (Required.) Array of characters to look for in the
-        /// <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the string in <paramref name="value" />
-        /// contains any of the characters (case-insensitive) in the
-        /// <paramref name="searchChars" /> array; <see langword="false" /> otherwise.
-        /// </returns>
-        /// <remarks>
-        /// If this method is passed the empty string for
-        /// <paramref name="value" /> or a <see langword="null" /> reference or an empty
-        /// collection for <paramref name="searchChars" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
+        /// <summary>Returns <see langword="true" /> if the <paramref name="value" /> contains any of the characters in <paramref name="searchChars" /> (case-insensitive).</summary>
+        /// <param name="value">(Required.) String to be searched.</param>
+        /// <param name="searchChars">(Required.) Array of characters to look for in the <paramref name="value" />.</param>
+        /// <returns><see langword="true" /> if the string in <paramref name="value" /> contains any of the characters (case-insensitive) in the <paramref name="searchChars" /> array; <see langword="false" /> otherwise.</returns>
+        /// <remarks>If this method is passed the empty string for <paramref name="value" /> or a <see langword="null" /> reference or an empty collection for <paramref name="searchChars" />, then this method returns <see langword="false" />.</remarks>
         public static bool ContainsAny(this string value, char[] searchChars)
             => value.ContainsAnyOf(searchChars);
 
-        /// <summary>
-        /// Returns <see langword="true" /> if the <paramref name="value" /> has
-        /// any of the strings in <paramref name="searchStrings" /> as a substring.
-        /// </summary>
-        /// <param name="value"> (Required.) The value to be used as a filter. </param>
-        /// <param name="searchStrings">
-        /// (Required.) Collection of strings, any of which
-        /// might be substrings of <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// Value indicating whether any of the strings in
-        /// <paramref name="searchStrings" /> are substrings (case-insensitive) of
-        /// <paramref name="value" />.
-        /// </returns>
-        /// <remarks>
-        /// If <paramref name="value" /> is the empty string or if the
-        /// <paramref name="searchStrings" /> collection is empty or is a
-        /// <see langword="null" /> reference, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
+        /// <summary>Returns <see langword="true" /> if the <paramref name="value" /> has any of the strings in <paramref name="searchStrings" /> as a substring.</summary>
+        /// <param name="value">(Required.) The value to be used as a filter.</param>
+        /// <param name="searchStrings">(Required.) Collection of strings, any of which might be substrings of <paramref name="value" />.</param>
+        /// <returns>Value indicating whether any of the strings in <paramref name="searchStrings" /> are substrings (case-insensitive) of <paramref name="value" />.</returns>
+        /// <remarks>If <paramref name="value" /> is the empty string or if the <paramref name="searchStrings" /> collection is empty or is a <see langword="null" /> reference, then this method returns <see langword="false" />.</remarks>
         public static bool ContainsAnyOf(
             this string value,
             IEnumerable<string> searchStrings
@@ -810,26 +529,11 @@ namespace xyLOGIX.Core.Extensions
             => !string.IsNullOrWhiteSpace(value) && searchStrings != null &&
                searchStrings.Any(item => value.ContainsNoCase(item));
 
-        /// <summary>
-        /// Returns <see langword="true" /> if the <paramref name="value" /> has
-        /// any of the strings in <paramref name="searchStrings" /> as a substring.
-        /// </summary>
-        /// <param name="value"> (Required.) The value to be used as a filter. </param>
-        /// <param name="searchStrings">
-        /// (Required.) Collection of strings, any of which
-        /// might be substrings of <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// Value indicating whether any of the strings in
-        /// <paramref name="searchStrings" /> are substrings (case-insensitive) of
-        /// <paramref name="value" />.
-        /// </returns>
-        /// <remarks>
-        /// If <paramref name="value" /> is the empty string or if the
-        /// <paramref name="searchStrings" /> collection is empty or is a
-        /// <see langword="null" /> reference, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
+        /// <summary>Returns <see langword="true" /> if the <paramref name="value" /> has any of the strings in <paramref name="searchStrings" /> as a substring.</summary>
+        /// <param name="value">(Required.) The value to be used as a filter.</param>
+        /// <param name="searchStrings">(Required.) Collection of strings, any of which might be substrings of <paramref name="value" />.</param>
+        /// <returns>Value indicating whether any of the strings in <paramref name="searchStrings" /> are substrings (case-insensitive) of <paramref name="value" />.</returns>
+        /// <remarks>If <paramref name="value" /> is the empty string or if the <paramref name="searchStrings" /> collection is empty or is a <see langword="null" /> reference, then this method returns <see langword="false" />.</remarks>
         [Log(AttributeExclude = true)]
         public static bool ContainsAnyOf(
             this string value,
@@ -859,50 +563,19 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Returns <see langword="true" /> if the <paramref name="value" />
-        /// contains any of the characters in <paramref name="searchChars" />
-        /// (case-insensitive).
-        /// </summary>
-        /// <param name="value"> (Required.) String to be searched. </param>
-        /// <param name="searchChars">
-        /// (Required.) Array of characters to look for in the
-        /// <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the string in <paramref name="value" />
-        /// contains any of the characters (case-insensitive) in the
-        /// <paramref name="searchChars" /> array; <see langword="false" /> otherwise.
-        /// </returns>
-        /// <remarks>
-        /// If this method is passed the empty string for
-        /// <paramref name="value" /> or a <see langword="null" /> reference or an empty
-        /// collection for <paramref name="searchChars" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
+        /// <summary>Returns <see langword="true" /> if the <paramref name="value" /> contains any of the characters in <paramref name="searchChars" /> (case-insensitive).</summary>
+        /// <param name="value">(Required.) String to be searched.</param>
+        /// <param name="searchChars">(Required.) Array of characters to look for in the <paramref name="value" />.</param>
+        /// <returns><see langword="true" /> if the string in <paramref name="value" /> contains any of the characters (case-insensitive) in the <paramref name="searchChars" /> array; <see langword="false" /> otherwise.</returns>
+        /// <remarks>If this method is passed the empty string for <paramref name="value" /> or a <see langword="null" /> reference or an empty collection for <paramref name="searchChars" />, then this method returns <see langword="false" />.</remarks>
         public static bool ContainsAnyOf(this string value, char[] searchChars)
             => !string.IsNullOrWhiteSpace(value) && searchChars != null &&
                searchChars.Any(item => value.ContainsNoCase(item));
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> contains a namespace
-        /// separator character, which in C# and VB is a period (<c>.</c>).
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value that is to be
-        /// checked.
-        /// </param>
-        /// <remarks>
-        /// If a <see langword="null" />, blank, or
-        /// <see cref="F:System.String.Empty" /> value is passed for the argument of the
-        /// <paramref name="value" /> parameter, then the method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// contains a namespace separator character, which in C# or VB is a period (
-        /// <c>.</c>); <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> contains a namespace separator character, which in C# and VB is a period (<c>.</c>).</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value that is to be checked.</param>
+        /// <remarks>If a <see langword="null" />, blank, or <see cref="F:System.String.Empty" /> value is passed for the argument of the <paramref name="value" /> parameter, then the method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> contains a namespace separator character, which in C# or VB is a period ( <c>.</c>); <see langword="false" /> otherwise.</returns>
         public static bool ContainsNamespaceSeparator(this string value)
         {
             var result = false;
@@ -924,13 +597,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary> Searches one string for another. Case-insensitive. </summary>
-        /// <param name="stringToSearch"> The string to be searched. </param>
-        /// <param name="value"> Value to search for. </param>
-        /// <returns>
-        /// Returns true if the stringToSearch contains the substring value,
-        /// regardless of case; false otherwise.
-        /// </returns>
+        /// <summary>Searches one string for another. Case-insensitive.</summary>
+        /// <param name="stringToSearch">The string to be searched.</param>
+        /// <param name="value">Value to search for.</param>
+        /// <returns>Returns true if the stringToSearch contains the substring value, regardless of case; false otherwise.</returns>
         public static bool ContainsNoCase(
             this string stringToSearch,
             string value
@@ -942,13 +612,10 @@ namespace xyLOGIX.Core.Extensions
                                                         value.ToLowerInvariant()
                                                     );
 
-        /// <summary> Searches one string for another. Case-insensitive. </summary>
-        /// <param name="stringToSearch"> The string to be searched. </param>
-        /// <param name="value"> Value to search for. </param>
-        /// <returns>
-        /// Returns true if the stringToSearch contains the substring value,
-        /// regardless of case; false otherwise.
-        /// </returns>
+        /// <summary>Searches one string for another. Case-insensitive.</summary>
+        /// <param name="stringToSearch">The string to be searched.</param>
+        /// <param name="value">Value to search for.</param>
+        /// <returns>Returns true if the stringToSearch contains the substring value, regardless of case; false otherwise.</returns>
         public static bool ContainsNoCase(
             this string stringToSearch,
             char value
@@ -960,13 +627,10 @@ namespace xyLOGIX.Core.Extensions
                          .ToLowerInvariant()
                 );
 
-        /// <summary> Case-insensitive version of the collection Contains method. </summary>
-        /// <param name="collection"> Collection to search. </param>
-        /// <param name="value"> Value to compare. </param>
-        /// <returns>
-        /// TRUE if the indicated value is in the specified collection,
-        /// regardless of case; FALSE otherwise.
-        /// </returns>
+        /// <summary>Case-insensitive version of the collection Contains method.</summary>
+        /// <param name="collection">Collection to search.</param>
+        /// <param name="value">Value to compare.</param>
+        /// <returns>TRUE if the indicated value is in the specified collection, regardless of case; FALSE otherwise.</returns>
         public static bool ContainsNoCase(
             [NotLogged] this IEnumerable<string> collection,
             string value
@@ -1005,19 +669,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Ascertains whether the specified <see cref="T:System.String" />,
-        /// provided as the argument to the <paramref name="value" /> parameter, contains
-        /// any digits.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that is to be
-        /// checked.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" />q if the <see cref="T:System.String" /> passed
-        /// contains any digits.
-        /// </returns>
+        /// <summary>Ascertains whether the specified <see cref="T:System.String" />, provided as the argument to the <paramref name="value" /> parameter, contains any digits.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that is to be checked.</param>
+        /// <returns><see langword="true" />q if the <see cref="T:System.String" /> passed contains any digits.</returns>
         public static bool ContainsNumbers(this string value)
         {
             var result = false;
@@ -1038,31 +692,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> contains a
-        /// whitespace character.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
-        /// examined.
-        /// </param>
-        /// <remarks>
-        /// The text in the argument of the <paramref name="value" /> parameter is
-        /// expressed as an array of <see cref="T:System.Char" /> element(s).
-        /// <para />
-        /// This method then iterates over said array, element-by-element.
-        /// <para />
-        /// The method stops iteration, and returns <see langword="true" />, the first time
-        /// any whitespace character is encountered.
-        /// <para />
-        /// If the argument of the <paramref name="value" /> parameter is
-        /// <see langword="null" />, blank, or the <see cref="F:System.String.Empty" />
-        /// value, then this method returns <see langword="true" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" /> contains a
-        /// whitespace character; otherwise, <see langword="false" />.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> contains a whitespace character.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text that is to be examined.</param>
+        /// <remarks>The text in the argument of the <paramref name="value" /> parameter is expressed as an array of <see cref="T:System.Char" /> element(s). <para /> This method then iterates over said array, element-by-element. <para /> The method stops iteration, and returns <see langword="true" />, the first time any whitespace character is encountered. <para /> If the argument of the <paramref name="value" /> parameter is <see langword="null" />, blank, or the <see cref="F:System.String.Empty" /> value, then this method returns <see langword="true" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> contains a whitespace character; otherwise, <see langword="false" />.</returns>
         public static bool ContainsWhitespace([NotLogged] this string value)
         {
             var result = true;
@@ -1072,9 +705,8 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(value)) return result;
 
                 /*
-                 * reset the default return value to false, returning
-                 * true only if a search of the string, as a character
-                 * array, turns up any whitespace character.
+                 * reset the default return value to false, returning true only if a search of the
+                 * string, as a character array, turns up any whitespace character.
                  */
 
                 result = false;
@@ -1098,30 +730,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Counts the number of times that the specified <paramref name="text" /> appears
-        /// in the specified <paramref name="target" /> <see cref="T:System.String" />.
-        /// </summary>
-        /// <param name="target">
-        /// (Required.) A <see cref="T:System.String" /> in which to
-        /// search for the specified <paramref name="text" />.
-        /// </param>
-        /// <param name="text">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// text for which to search in the <paramref name="target" />.
-        /// </param>
-        /// <param name="comparison">
-        /// (Optional.) One of the <see cref="T:System.StringComparison" /> value(s) that
-        /// defines how to perform the comparison of the <paramref name="target" /> and
-        /// <paramref name="text" />.
-        /// <para />
-        /// The default value of this parameter is
-        /// <see cref="F:System.StringComparison.Ordinal" />.
-        /// </param>
-        /// <returns>
-        /// The number of times that the specified <paramref name="text" />
-        /// appears in the specified <paramref name="target" />; otherwise, zero.
-        /// </returns>
+        /// <summary>Counts the number of times that the specified <paramref name="text" /> appears in the specified <paramref name="target" /><see cref="T:System.String" />.</summary>
+        /// <param name="target">(Required.) A <see cref="T:System.String" /> in which to search for the specified <paramref name="text" />.</param>
+        /// <param name="text">(Required.) A <see cref="T:System.String" /> containing the text for which to search in the <paramref name="target" />.</param>
+        /// <param name="comparison">(Optional.) One of the <see cref="T:System.StringComparison" /> value(s) that defines how to perform the comparison of the <paramref name="target" /> and <paramref name="text" />. <para /> The default value of this parameter is <see cref="F:System.StringComparison.Ordinal" />.</param>
+        /// <returns>The number of times that the specified <paramref name="text" /> appears in the specified <paramref name="target" />; otherwise, zero.</returns>
         public static int CountNumberOfOccurrences(
             [NotLogged] this string target,
             [NotLogged] string text,
@@ -1158,87 +771,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Helper method to aid in transforming text casing of a string to
-        /// Initial Caps.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the word that needs to be
-        /// initial-capitalized.
-        /// </param>
-        /// <returns>
-        /// Word provided in <paramref name="value" /> with its first letter
-        /// replaced with a capital letter and all the remaining letters as lowercase.
-        /// </returns>
-        /// <remarks>
-        /// If this method is provided with the empty or whitespace string, then
-        /// this method returns the empty string.
-        /// </remarks>
-        private static string DoInitialCaps(string value)
-            => string.IsNullOrWhiteSpace(value)
-                ? string.Empty
-                : value[0]
-                  .ToString(CultureInfo.InvariantCulture)
-                  .ToUpper() + value.ToLowerInvariant()
-                                    .Substring(1, value.Length - 1);
-
-        /// <summary> Helper for determining whether strings contain valid email addresses. </summary>
-        /// <param name="match">
-        /// Reference to an instance of
-        /// <see cref="T:System.Text.RegularExpressions.Match" /> that resulted from a
-        /// regex search.
-        /// </param>
-        /// <returns> Correctly-formatted domain-name matching value. </returns>
-        /// <remarks>
-        /// This method also sets the value of the
-        /// <see cref="P:xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid" />
-        /// property to <see langword="true" /> in the event that an error occurs.
-        /// </remarks>
-        private static string DomainMapper(Match match)
-        {
-            // IdnMapping class with default property values.
-
-            var domainName = match.Groups[2].Value;
-
-            try
-            {
-                if (match == null) return domainName;
-                if (string.IsNullOrWhiteSpace(domainName)) return domainName;
-
-                domainName = DomainMappingObject.GetAscii(domainName);
-            }
-            catch (ArgumentException)
-            {
-                IsEmailAddressInvalid = true;
-            }
-
-            return match.Groups[1].Value + domainName;
-        }
-
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> ends with any of the specified
-        /// <paramref name="endings" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
-        /// </param>
-        /// <param name="endings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it ends with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="endings" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with any of the specified <paramref name="endings" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <see cref="T:System.String" /><paramref name="value" /> ends with any of the specified <paramref name="endings" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to be checked.</param>
+        /// <param name="endings">(Required.) One or more <see cref="T:System.String" /> elements, each of which is to be assessed against the specified <paramref name="value" /> as being what it ends with.</param>
+        /// <remarks><b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for <paramref name="endings" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> ends with any of the specified <paramref name="endings" />; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool EndsWithAny(
             this string value,
@@ -1273,34 +810,12 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> ends with any of the specified
-        /// <paramref name="endings" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
-        /// </param>
-        /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" /> value(s) that
-        /// specifies how the comparison is to be performed.
-        /// </param>
-        /// <param name="endings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it ends with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="endings" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with any of the specified <paramref name="endings" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <see cref="T:System.String" /><paramref name="value" /> ends with any of the specified <paramref name="endings" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to be checked.</param>
+        /// <param name="comparisonType">(Required.) One of the <see cref="T:System.StringComparison" /> value(s) that specifies how the comparison is to be performed.</param>
+        /// <param name="endings">(Required.) One or more <see cref="T:System.String" /> elements, each of which is to be assessed against the specified <paramref name="value" /> as being what it ends with.</param>
+        /// <remarks><b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for <paramref name="endings" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> ends with any of the specified <paramref name="endings" />; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool EndsWithAny(
             this string value,
@@ -1338,30 +853,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> ends with any of the specified
-        /// <paramref name="endings" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
-        /// </param>
-        /// <param name="endings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it ends with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="endings" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with any of the specified <paramref name="endings" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <see cref="T:System.String" /><paramref name="value" /> ends with any of the specified <paramref name="endings" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to be checked.</param>
+        /// <param name="endings">(Required.) One or more <see cref="T:System.String" /> elements, each of which is to be assessed against the specified <paramref name="value" /> as being what it ends with.</param>
+        /// <remarks><b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for <paramref name="endings" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> ends with any of the specified <paramref name="endings" />; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool EndsWithAny(
             this string value,
@@ -1369,34 +865,12 @@ namespace xyLOGIX.Core.Extensions
         )
             => value.EndsWithAny(endings.ToArray());
 
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> ends with any of the specified
-        /// <paramref name="endings" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
-        /// </param>
-        /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" /> value(s) that
-        /// specifies how the comparison is to be performed.
-        /// </param>
-        /// <param name="endings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it ends with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="endings" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with any of the specified <paramref name="endings" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <see cref="T:System.String" /><paramref name="value" /> ends with any of the specified <paramref name="endings" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to be checked.</param>
+        /// <param name="comparisonType">(Required.) One of the <see cref="T:System.StringComparison" /> value(s) that specifies how the comparison is to be performed.</param>
+        /// <param name="endings">(Required.) One or more <see cref="T:System.String" /> elements, each of which is to be assessed against the specified <paramref name="value" /> as being what it ends with.</param>
+        /// <remarks><b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for <paramref name="endings" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> ends with any of the specified <paramref name="endings" />; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool EndsWithAny(
             this string value,
@@ -1405,30 +879,11 @@ namespace xyLOGIX.Core.Extensions
         )
             => value.EndsWithAny(comparisonType, endings.ToArray());
 
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> ends with any of the specified
-        /// <paramref name="endings" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
-        /// </param>
-        /// <param name="endings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it ends with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="endings" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with any of the specified <paramref name="endings" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <see cref="T:System.String" /><paramref name="value" /> ends with any of the specified <paramref name="endings" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to be checked.</param>
+        /// <param name="endings">(Required.) One or more <see cref="T:System.String" /> elements, each of which is to be assessed against the specified <paramref name="value" /> as being what it ends with.</param>
+        /// <remarks><b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for <paramref name="endings" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> ends with any of the specified <paramref name="endings" />; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool EndsWithAnyOf(
             this string value,
@@ -1436,34 +891,12 @@ namespace xyLOGIX.Core.Extensions
         )
             => value.EndsWithAny(endings);
 
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> ends with any of the specified
-        /// <paramref name="endings" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
-        /// </param>
-        /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" /> value(s) that
-        /// specifies how the comparison is to be performed.
-        /// </param>
-        /// <param name="endings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it ends with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="endings" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with any of the specified <paramref name="endings" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <see cref="T:System.String" /><paramref name="value" /> ends with any of the specified <paramref name="endings" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to be checked.</param>
+        /// <param name="comparisonType">(Required.) One of the <see cref="T:System.StringComparison" /> value(s) that specifies how the comparison is to be performed.</param>
+        /// <param name="endings">(Required.) One or more <see cref="T:System.String" /> elements, each of which is to be assessed against the specified <paramref name="value" /> as being what it ends with.</param>
+        /// <remarks><b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for <paramref name="endings" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> ends with any of the specified <paramref name="endings" />; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool EndsWithAnyOf(
             this string value,
@@ -1472,18 +905,9 @@ namespace xyLOGIX.Core.Extensions
         )
             => value.EndsWithAny(comparisonType, endings);
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> ends with a colon
-        /// and a number.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that is set to
-        /// the value that is to be examined.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" />if the specified <paramref name="value" /> ends
-        /// with a colon and a number; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> ends with a colon and a number.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that is set to the value that is to be examined.</param>
+        /// <returns><see langword="true" />if the specified <paramref name="value" /> ends with a colon and a number; <see langword="false" /> otherwise.</returns>
         public static bool EndsWithColonAndNumber(this string value)
         {
             var result = false;
@@ -1505,24 +929,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />,
-        /// <paramref name="value" />, ends with an equals sign.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> value that is
-        /// to be examined.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="value" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// ends with an equals sign; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <see cref="T:System.String" />, <paramref name="value" />, ends with an equals sign.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> value that is to be examined.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> ends with an equals sign; <see langword="false" /> otherwise.</returns>
         public static bool EndsWithEqualsSign([NotLogged] this string value)
         {
             var result = false;
@@ -1544,20 +954,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Double-checks a <paramref name="twitterSite" /> (at-mention) string
-        /// to make sure it begins with the character '@'.
-        /// </summary>
-        /// <param name="twitterSite"> (Required.) Twitter handle to at-mention. </param>
-        /// <returns>
-        /// String containing the same value as in
-        /// <paramref name="twitterSite" /> , but one which is guaranteed to start with the
-        /// '@' character.
-        /// </returns>
-        /// <remarks>
-        /// If this method is passed the empty string, then the result is the
-        /// empty string.
-        /// </remarks>
+        /// <summary>Double-checks a <paramref name="twitterSite" /> (at-mention) string to make sure it begins with the character '@'.</summary>
+        /// <param name="twitterSite">(Required.) Twitter handle to at-mention.</param>
+        /// <returns>String containing the same value as in <paramref name="twitterSite" /> , but one which is guaranteed to start with the '@' character.</returns>
+        /// <remarks>If this method is passed the empty string, then the result is the empty string.</remarks>
         public static string EnsureAtIsInFront(string twitterSite)
         {
             if (string.IsNullOrWhiteSpace(twitterSite)) return string.Empty;
@@ -1567,32 +967,11 @@ namespace xyLOGIX.Core.Extensions
             return twitterSite;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is equal to,
-        /// respecting case, any of the item(s) in the specified <paramref name="list" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value that is to be examined.
-        /// </param>
-        /// <param name="list">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// value(s) that are to be checked for equality without regard to case.
-        /// </param>
-        /// <remarks>
-        /// If nothing is passed for the <paramref name="list" /> parameter, then
-        /// the method returns <see langword="false" />.
-        /// <para />
-        /// If the value is the <see langword="null" />, blank, or
-        /// <see cref="F:System.String.Empty" /> value, and one of the element(s) of the
-        /// <paramref name="list" /> is also, then this method returns
-        /// <see langword="true" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if one of the element(s) of the specified
-        /// <paramref name="list" /> matches the value, accounting for character casing;
-        /// otherwise, <see langword="false" />.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> is equal to, respecting case, any of the item(s) in the specified <paramref name="list" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value that is to be examined.</param>
+        /// <param name="list">(Required.) One or more <see cref="T:System.String" /> value(s) that are to be checked for equality without regard to case.</param>
+        /// <remarks>If nothing is passed for the <paramref name="list" /> parameter, then the method returns <see langword="false" />. <para /> If the value is the <see langword="null" />, blank, or <see cref="F:System.String.Empty" /> value, and one of the element(s) of the <paramref name="list" /> is also, then this method returns <see langword="true" />.</remarks>
+        /// <returns><see langword="true" /> if one of the element(s) of the specified <paramref name="list" /> matches the value, accounting for character casing; otherwise, <see langword="false" />.</returns>
         public static bool EqualsAnyOf(
             [NotLogged] this string value,
             [NotLogged] params string[] list
@@ -1607,9 +986,10 @@ namespace xyLOGIX.Core.Extensions
 
                 foreach (var item in list)
                 {
-                    /* special case: if the current item is null or
-                     blank, and so is the value, then return true
-                     immediately */
+                    /*
+                     * special case: if the current item is null or blank, and so is the value, then
+                     * return true immediately
+                     */
                     if (string.IsNullOrWhiteSpace(item) &&
                         string.IsNullOrWhiteSpace(value)) return true;
 
@@ -1630,36 +1010,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is equal to,
-        /// regardless of case, any of the item(s) in the specified
-        /// <paramref name="list" />.
-        /// <para />
-        /// <b>NOTE:</b> A case-insensitive comparison is done of each of the element(s)
-        /// in <paramref name="list" /> to the specified <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value that is to be examined.
-        /// </param>
-        /// <param name="list">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// value(s) that are to be checked for equality without regard to case.
-        /// </param>
-        /// <remarks>
-        /// If nothing is passed for the <paramref name="list" /> parameter, then
-        /// the method returns <see langword="false" />.
-        /// <para />
-        /// If the value is the <see langword="null" />, blank, or
-        /// <see cref="F:System.String.Empty" /> value, and one of the element(s) of the
-        /// <paramref name="list" /> is also, then this method returns
-        /// <see langword="true" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if one of the element(s) of the specified
-        /// <paramref name="list" /> matches the value, regardless of case; otherwise,
-        /// <see langword="false" />.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> is equal to, regardless of case, any of the item(s) in the specified <paramref name="list" />. <para /><b>NOTE:</b> A case-insensitive comparison is done of each of the element(s) in <paramref name="list" /> to the specified <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value that is to be examined.</param>
+        /// <param name="list">(Required.) One or more <see cref="T:System.String" /> value(s) that are to be checked for equality without regard to case.</param>
+        /// <remarks>If nothing is passed for the <paramref name="list" /> parameter, then the method returns <see langword="false" />. <para /> If the value is the <see langword="null" />, blank, or <see cref="F:System.String.Empty" /> value, and one of the element(s) of the <paramref name="list" /> is also, then this method returns <see langword="true" />.</remarks>
+        /// <returns><see langword="true" /> if one of the element(s) of the specified <paramref name="list" /> matches the value, regardless of case; otherwise, <see langword="false" />.</returns>
         public static bool EqualsAnyOfNoCase(
             [NotLogged] this string value,
             [NotLogged] params string[] list
@@ -1674,15 +1029,16 @@ namespace xyLOGIX.Core.Extensions
 
                 foreach (var item in list)
                 {
-                    /* special case: if the current item is null or
-                     blank, and so is the value, then return true
-                     immediately */
+                    /*
+                     * special case: if the current item is null or blank, and so is the value, then
+                     * return true immediately
+                     */
                     if (string.IsNullOrWhiteSpace(item) &&
                         string.IsNullOrWhiteSpace(value)) return true;
 
                     /*
-                     * otherwise, skip the current item if it isn't equal
-                     * to the value, regardless of case.
+                     * otherwise, skip the current item if it isn't equal to the value, regardless
+                     * of case.
                      */
                     if (!item.Equals(
                             value, StringComparison.OrdinalIgnoreCase
@@ -1703,13 +1059,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// A case-insensitive equality comparer for strings. Basically, converts
-        /// each of its operands to lowercase before comparing.
-        /// </summary>
-        /// <param name="str1"> First string to compare. </param>
-        /// <param name="str2"> Second string to compare. </param>
-        /// <returns> Whether the two strings are the same, regardless of case. </returns>
+        /// <summary>A case-insensitive equality comparer for strings. Basically, converts each of its operands to lowercase before comparing.</summary>
+        /// <param name="str1">First string to compare.</param>
+        /// <param name="str2">Second string to compare.</param>
+        /// <returns>Whether the two strings are the same, regardless of case.</returns>
         [DebuggerStepThrough]
         public static bool EqualsNoCase(
             [NotLogged] this string str1,
@@ -1743,18 +1096,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// A case-insensitive equality comparer for strings. Basically, converts
-        /// each of its operands to lowercase before comparing.
-        /// </summary>
-        /// <param name="str1"> First string to compare. </param>
-        /// <param name="str2"> Second string to compare. </param>
-        /// <param name="comparisonType">
-        /// One of the
-        /// <see cref="T:System.StringComparison" /> value(s) saying how the strings are to
-        /// be compared.
-        /// </param>
-        /// <returns> Whether the two strings are the same, regardless of case. </returns>
+        /// <summary>A case-insensitive equality comparer for strings. Basically, converts each of its operands to lowercase before comparing.</summary>
+        /// <param name="str1">First string to compare.</param>
+        /// <param name="str2">Second string to compare.</param>
+        /// <param name="comparisonType">One of the <see cref="T:System.StringComparison" /> value(s) saying how the strings are to be compared.</param>
+        /// <returns>Whether the two strings are the same, regardless of case.</returns>
         public static bool EqualsNoCase(
             this string str1,
             string str2,
@@ -1767,34 +1113,10 @@ namespace xyLOGIX.Core.Extensions
                 : str2.ToLowerInvariant()
                       .Equals(str1.ToLowerInvariant(), comparisonType);
 
-        /// <summary>
-        /// Escapes newlines (e.g., <c>\r\n</c>) in the provided <paramref name="value" />,
-        /// assuming that it is destined to then be written to a PowerShell Script (
-        /// <c>*.ps1</c>) file.
-        /// <para />
-        /// This method is useful when you need to write a string to a PowerShell script
-        /// file, and you want to ensure that the newlines (e.g., <c>\r\n</c>), within a
-        /// value to be sent somewhere else, are properly escaped.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// original value.
-        /// </param>
-        /// <remarks>
-        /// If the <see langword="null" /> blank, or
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// <paramref name="value" /> parameter, or if there is a problem completing the
-        /// replacement, then the method is idempotent.
-        /// <para />
-        /// <b>NOTE:</b> This method is also idempotent when the text that is to be
-        /// replaced is not present.
-        /// </remarks>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the
-        /// specified <paramref name="value" />, but altered to properly escape newline(s)
-        /// so that they are sent properly to whichever command the PowerShell Script (
-        /// <c>*.ps1</c>) file is calling; otherwise, the method is idempotent.
-        /// </returns>
+        /// <summary>Escapes newlines (e.g., <c>\r\n</c>) in the provided <paramref name="value" />, assuming that it is destined to then be written to a PowerShell Script ( <c>*.ps1</c>) file. <para /> This method is useful when you need to write a string to a PowerShell script file, and you want to ensure that the newlines (e.g., <c>\r\n</c>), within a value to be sent somewhere else, are properly escaped.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the original value.</param>
+        /// <remarks>If the <see langword="null" /> blank, or <see cref="F:System.String.Empty" /> value is passed as the argument of the <paramref name="value" /> parameter, or if there is a problem completing the replacement, then the method is idempotent. <para /><b>NOTE:</b> This method is also idempotent when the text that is to be replaced is not present.</remarks>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the specified <paramref name="value" />, but altered to properly escape newline(s) so that they are sent properly to whichever command the PowerShell Script ( <c>*.ps1</c>) file is calling; otherwise, the method is idempotent.</returns>
         [DebuggerStepThrough]
         [return: NotLogged]
         public static string EscapePowerShellNewline(
@@ -1822,35 +1144,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Escapes double-quotation marks in the provided <paramref name="value" />,
-        /// assuming that it is destined to then be written to a PowerShell Script (
-        /// <c>*.ps1</c>) file.
-        /// <para />
-        /// This method is useful when you need to write a string to a PowerShell script
-        /// file, and you want to ensure that the double-quotation marks (<c>"</c>) are
-        /// properly escaped.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// original value.
-        /// </param>
-        /// <remarks>
-        /// If the <see langword="null" /> blank, or
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// <paramref name="value" /> parameter, or if there is a problem completing the
-        /// replacement, then the method is idempotent.
-        /// <para />
-        /// <b>NOTE:</b> This method is also idempotent when the text that is to be
-        /// replaced is not present.
-        /// </remarks>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the
-        /// specified <paramref name="value" />, but altered to properly escape
-        /// double-quotation mark(s) so that they are sent properly to whichever command
-        /// the PowerShell Script (<c>*.ps1</c>) file is calling; otherwise, the method is
-        /// idempotent.
-        /// </returns>
+        /// <summary>Escapes double-quotation marks in the provided <paramref name="value" />, assuming that it is destined to then be written to a PowerShell Script ( <c>*.ps1</c>) file. <para /> This method is useful when you need to write a string to a PowerShell script file, and you want to ensure that the double-quotation marks (<c>"</c>) are properly escaped.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the original value.</param>
+        /// <remarks>If the <see langword="null" /> blank, or <see cref="F:System.String.Empty" /> value is passed as the argument of the <paramref name="value" /> parameter, or if there is a problem completing the replacement, then the method is idempotent. <para /><b>NOTE:</b> This method is also idempotent when the text that is to be replaced is not present.</remarks>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the specified <paramref name="value" />, but altered to properly escape double-quotation mark(s) so that they are sent properly to whichever command the PowerShell Script (<c>*.ps1</c>) file is calling; otherwise, the method is idempotent.</returns>
         [DebuggerStepThrough]
         [return: NotLogged]
         public static string EscapePowerShellQuotes(
@@ -1876,43 +1173,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Excludes whitespace characters from the specified
-        /// <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> from which to
-        /// exclude all whitespace characters.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> that matches
-        /// <paramref name="value" />, but with all whitespace characters removed.
-        /// </returns>
-        /// <remarks>
-        /// This method is useful for conducting whitespace-insensitive testing
-        /// of strings.
-        /// </remarks>
-        private static string ExcludingWhitespace(this string value)
-            => WhiteSpaceRegex.Replace(value, "");
-
-        /// <summary>
-        /// Extracts all characters of the specified <paramref name="value" /> up to but
-        /// not including the first occurrence of a colon (<c>:</c>).
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that is set to the value to be
-        /// processed.
-        /// </param>
-        /// <remarks>
-        /// If the specified <paramref name="value" /> is <see langword="null" />,
-        /// blank, the <see cref="F:System.String.Empty" /> value, or does not contain a
-        /// colon, then the method is idempotent.
-        /// </remarks>
-        /// <returns>
-        /// A <see cref="T:System.String" /> containing all characters of the
-        /// specified <paramref name="value" /> up to but not including the first colon (
-        /// <c>:</c>), if present.
-        /// </returns>
+        /// <summary>Extracts all characters of the specified <paramref name="value" /> up to but not including the first occurrence of a colon (<c>:</c>).</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that is set to the value to be processed.</param>
+        /// <remarks>If the specified <paramref name="value" /> is <see langword="null" />, blank, the <see cref="F:System.String.Empty" /> value, or does not contain a colon, then the method is idempotent.</remarks>
+        /// <returns>A <see cref="T:System.String" /> containing all characters of the specified <paramref name="value" /> up to but not including the first colon ( <c>:</c>), if present.</returns>
         public static string ExtractUpToColon(this string value)
         {
             var result = value;
@@ -1941,28 +1205,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Returns the specified <paramref name="val2" /> if <paramref name="val1" /> is
-        /// <see langword="null" /> or a blank string; otherwise, <paramref name="val1" />
-        /// is returned if both <paramref name="val1" /> and <paramref name="val2" /> are
-        /// non-blank.
-        /// </summary>
-        /// <param name="val1">
-        /// (Required.) A <see cref="T:System.String" /> that is the
-        /// preferred value to be returned.
-        /// </param>
-        /// <param name="val2">
-        /// (Required.) A <see cref="T:System.String" /> whose value is
-        /// to be returned in the event that the argument of <paramref name="val1" /> is
-        /// <see langword="null" />, whitespace, or the
-        /// <see cref="F:System.String.Empty" /> value.
-        /// </param>
-        /// <returns>
-        /// Specified <paramref name="val2" /> if <paramref name="val1" /> is
-        /// <see langword="null" /> or a blank string; otherwise, <paramref name="val1" />
-        /// is returned if both <paramref name="val1" /> and <paramref name="val2" /> are
-        /// non-blank.
-        /// </returns>
+        /// <summary>Returns the specified <paramref name="val2" /> if <paramref name="val1" /> is <see langword="null" /> or a blank string; otherwise, <paramref name="val1" /> is returned if both <paramref name="val1" /> and <paramref name="val2" /> are non-blank.</summary>
+        /// <param name="val1">(Required.) A <see cref="T:System.String" /> that is the preferred value to be returned.</param>
+        /// <param name="val2">(Required.) A <see cref="T:System.String" /> whose value is to be returned in the event that the argument of <paramref name="val1" /> is <see langword="null" />, whitespace, or the <see cref="F:System.String.Empty" /> value.</param>
+        /// <returns>Specified <paramref name="val2" /> if <paramref name="val1" /> is <see langword="null" /> or a blank string; otherwise, <paramref name="val1" /> is returned if both <paramref name="val1" /> and <paramref name="val2" /> are non-blank.</returns>
         [Log(AttributeExclude = true), DebuggerStepThrough]
         [return: NotLogged]
         public static string FirstOrNotEmpty(
@@ -1987,45 +1233,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Formats the specified <paramref name="content" /> as HTML by replacing certain
-        /// characters
-        /// with their corresponding HTML entities.
-        /// </summary>
-        /// <param name="content">
-        /// (Required.) A <see cref="T:System.String" /> containing the text to be
-        /// formatted as HTML.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> containing the formatted HTML text.
-        /// </returns>
-        /// <remarks>
-        /// This method replaces the following characters in the input string:
-        /// <list type="bullet">
-        ///     <item>
-        ///         <description>&lt; with <c>&amp;lt;</c></description>
-        ///     </item>
-        ///     <item>
-        ///         <description>&gt; with <c>&amp;gt;</c></description>
-        ///     </item>
-        ///     <item>
-        ///         <description>" with <c>&amp;quot;</c></description>
-        ///     </item>
-        ///     <item>
-        ///         <description>Single quotes with <c>&amp;apos;</c></description>
-        ///     </item>
-        ///     <item>
-        ///         <description>Spaces with <c>&amp;nbsp;</c></description>
-        ///     </item>
-        /// </list>
-        /// <para />
-        /// In addition, this method also transforms 'smart' quotes, i.e., "curly" quotes,
-        /// to 'straight' quotes before performing the reformat of single and double
-        /// quotation marks.
-        /// <para />
-        /// If an exception occurs during the formatting process, then this method is
-        /// idempotent.
-        /// </remarks>
+        /// <summary>Formats the specified <paramref name="content" /> as HTML by replacing certain characters with their corresponding HTML entities.</summary>
+        /// <param name="content">(Required.) A <see cref="T:System.String" /> containing the text to be formatted as HTML.</param>
+        /// <returns>A <see cref="T:System.String" /> containing the formatted HTML text.</returns>
+        /// <remarks>This method replaces the following characters in the input string: <list type="bullet"><item><description>&lt; with <c>&amp;lt;</c></description></item><item><description>&gt; with <c>&amp;gt;</c></description></item><item><description>" with <c>&amp;quot;</c></description></item><item><description>Single quotes with <c>&amp;apos;</c></description></item><item><description>Spaces with <c>&amp;nbsp;</c></description></item></list><para /> In addition, this method also transforms 'smart' quotes, i.e., "curly" quotes, to 'straight' quotes before performing the reformat of single and double quotation marks. <para /> If an exception occurs during the formatting process, then this method is idempotent.</remarks>
         public static string FormatAsHtml(this string content)
         {
             var result = content;
@@ -2052,25 +1263,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Provides a method to format a string in a more Pythonic manner, where we simply
-        /// call <c>Format()</c> following the string to be formatted.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value that is to be formatted.
-        /// </param>
-        /// <param name="args">
-        /// (Required.) Zero or more object(s) whose value(s) are to be
-        /// substituted in for the format specifier(s) in the specified
-        /// <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// If successful, this method returns the specified
-        /// <paramref name="value" />, with the format placeholders updated according to
-        /// the specified <paramref name="args" />, if any; otherwise, the method is
-        /// idempotent.
-        /// </returns>
+        /// <summary>Provides a method to format a string in a more Pythonic manner, where we simply call <c>Format()</c> following the string to be formatted.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value that is to be formatted.</param>
+        /// <param name="args">(Required.) Zero or more object(s) whose value(s) are to be substituted in for the format specifier(s) in the specified <paramref name="value" />.</param>
+        /// <returns>If successful, this method returns the specified <paramref name="value" />, with the format placeholders updated according to the specified <paramref name="args" />, if any; otherwise, the method is idempotent.</returns>
         public static string FormatLikePython(
             this string value,
             params object[] args
@@ -2096,17 +1292,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Re-expresses strings with ellipsis (...) if they are longer than a
-        /// certain length.
-        /// </summary>
-        /// <param name="stringToCompact"> The text to be compacted. </param>
-        /// <param name="font"> Font the text is in. </param>
-        /// <param name="maxWidth"> The maximum length of the string. </param>
-        /// <returns>
-        /// Version of the string that has ellipsis (...) so as to fit within the
-        /// given length.
-        /// </returns>
+        /// <summary>Re-expresses strings with ellipsis (...) if they are longer than a certain length.</summary>
+        /// <param name="stringToCompact">The text to be compacted.</param>
+        /// <param name="font">Font the text is in.</param>
+        /// <param name="maxWidth">The maximum length of the string.</param>
+        /// <returns>Version of the string that has ellipsis (...) so as to fit within the given length.</returns>
         public static string GetCompactedString(
             this string stringToCompact,
             Font font,
@@ -2116,8 +1306,7 @@ namespace xyLOGIX.Core.Extensions
             if (string.IsNullOrWhiteSpace(stringToCompact))
                 return string.Empty;
 
-            // Copy the string passed in since this string will be modified in
-            // the TextRenderer MeasureText method
+            // Copy the string passed in since this string will be modified in the TextRenderer MeasureText method
             var compactedString = string.Copy(stringToCompact);
             var maxSize = new Size(maxWidth, 0);
 
@@ -2130,37 +1319,10 @@ namespace xyLOGIX.Core.Extensions
             return compactedString;
         }
 
-        /// <summary>
-        /// Gets the suffix of a so-called <i>dotted</i> string, i.e.,
-        /// <c>My.Dotted.String</c>, which is presumed to be passed as the argument of the
-        /// <paramref name="value" /> parameter.
-        /// <para />
-        /// For the example above, <c>.String</c> or <c>String</c> is the result of
-        /// calling
-        /// this method, depending on the value of the <paramref name="includingDot" />
-        /// parameter.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// text to be parsed.
-        /// </param>
-        /// <param name="includingDot">
-        /// (Optional.) <see langword="true" /> to make the resultant string include the
-        /// <c>.</c> character at the start of the suffix; <see langword="false" /> to
-        /// exclude the <c>.</c> character.
-        /// <para />
-        /// The default value of this parameter is <see langword="false" />.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the final
-        /// part, or <i>suffix</i>, of the dotted string supplied as the argument to the
-        /// <paramref name="value" /> parameter. The result includes the <c>.</c> character
-        /// if <paramref name="includingDot" /> is set to <see langword="true" />;
-        /// otherwise,
-        /// the result does not include the <c>.</c> character. If the input is invalid,
-        /// the
-        /// <paramref name="value" /> parameter is idempotently returned.
-        /// </returns>
+        /// <summary>Gets the suffix of a so-called <i>dotted</i> string, i.e., <c>My.Dotted.String</c>, which is presumed to be passed as the argument of the <paramref name="value" /> parameter. <para /> For the example above, <c>.String</c> or <c>String</c> is the result of calling this method, depending on the value of the <paramref name="includingDot" /> parameter.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be parsed.</param>
+        /// <param name="includingDot">(Optional.) <see langword="true" /> to make the resultant string include the <c>.</c> character at the start of the suffix; <see langword="false" /> to exclude the <c>.</c> character. <para /> The default value of this parameter is <see langword="false" />.</param>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the final part, or <i>suffix</i>, of the dotted string supplied as the argument to the <paramref name="value" /> parameter. The result includes the <c>.</c> character if <paramref name="includingDot" /> is set to <see langword="true" />; otherwise, the result does not include the <c>.</c> character. If the input is invalid, the <paramref name="value" /> parameter is idempotently returned.</returns>
         public static string GetDottedSuffix(
             this string value,
             bool includingDot = false
@@ -2174,9 +1336,7 @@ namespace xyLOGIX.Core.Extensions
 
                 var lastDotIndex = value.LastIndexOf('.');
 
-                // Find the last occurrence of '.' without splitting the string,
-                // except if a '.' character is not present in the string, or if
-                // the '.' is the final character of the string.
+                // Find the last occurrence of '.' without splitting the string, except if a '.' character is not present in the string, or if the '.' is the final character of the string.
                 if (lastDotIndex < 0 || lastDotIndex == value.Length - 1)
                     return result;
 
@@ -2197,32 +1357,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Gets the first <paramref name="nChars" /> characters of the string
-        /// <paramref name="value" /> and returns them; returns the entire string
-        /// <paramref name="value" /> if the string is smaller than
-        /// <paramref name="nChars" /> characters in length.
-        /// </summary>
-        /// <param name="value">
-        /// String to pull the first <paramref name="nChars" />
-        /// characters from.
-        /// </param>
-        /// <param name="nChars">
-        /// (Must be a positive number.) Number of characters from
-        /// the start of the string to get.
-        /// </param>
-        /// <returns>
-        /// First <paramref name="nChars" /> characters of the string in
-        /// <paramref name="value" />; or, if <paramref name="value" /> is shorter than
-        /// <paramref name="nChars" /> characters, the entire string that is passed in
-        /// <paramref name="value" /> is returned. If a problem occurred, the empty string
-        /// is returned.
-        /// </returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">
-        /// Thrown if
-        /// <paramref name="nChars" /> has a zero or negative number value.
-        /// <paramref name="nChars" /> must be a positive number.
-        /// </exception>
+        /// <summary>Gets the first <paramref name="nChars" /> characters of the string <paramref name="value" /> and returns them; returns the entire string <paramref name="value" /> if the string is smaller than <paramref name="nChars" /> characters in length.</summary>
+        /// <param name="value">String to pull the first <paramref name="nChars" /> characters from.</param>
+        /// <param name="nChars">(Must be a positive number.) Number of characters from the start of the string to get.</param>
+        /// <returns>First <paramref name="nChars" /> characters of the string in <paramref name="value" />; or, if <paramref name="value" /> is shorter than <paramref name="nChars" /> characters, the entire string that is passed in <paramref name="value" /> is returned. If a problem occurred, the empty string is returned.</returns>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Thrown if <paramref name="nChars" /> has a zero or negative number value. <paramref name="nChars" /> must be a positive number.</exception>
         public static string GetFirstNChars(this string value, int nChars)
         {
             if (string.IsNullOrWhiteSpace(value)) return string.Empty;
@@ -2234,20 +1373,9 @@ namespace xyLOGIX.Core.Extensions
             return value.Length <= nChars ? value : value.Substring(0, nChars);
         }
 
-        /// <summary>
-        /// Gets the first non-blank line, if any, of a multi-line
-        /// <paramref name="value" />, splitting on <c>CRLF</c>.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value for which the first line is to be obtained.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> value that corresponds
-        /// to the first non-blank line of the specified <paramref name="value" />,
-        /// splitting on <c>CRLF</c>; otherwise, the <see cref="F:System.String.Empty" />
-        /// value is returned.
-        /// </returns>
+        /// <summary>Gets the first non-blank line, if any, of a multi-line <paramref name="value" />, splitting on <c>CRLF</c>.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value for which the first line is to be obtained.</param>
+        /// <returns>If successful, a <see cref="T:System.String" /> value that corresponds to the first non-blank line of the specified <paramref name="value" />, splitting on <c>CRLF</c>; otherwise, the <see cref="F:System.String.Empty" /> value is returned.</returns>
         [Log(AttributeExclude = true)]
         [return: NotLogged]
         public static string GetFirstNonBlankLine([NotLogged] this string value)
@@ -2276,23 +1404,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Gets the first two non-blank line(s), if any, of a multi-line
-        /// <paramref name="value" />, splitting on <c>CRLF</c>.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value for which the first two non-blank line(s) are to be obtained.
-        /// </param>
-        /// <returns>
-        /// If the specified <paramref name="value" /> has less than two non-blank
-        /// line(s), then this method is idempotent.
-        /// <para />
-        /// If successful, a <see cref="T:System.String" /> value that corresponds to the
-        /// first two non-blank line(s) of the specified <paramref name="value" />,
-        /// splitting on <c>CRLF</c>; otherwise, the <see cref="F:System.String.Empty" />
-        /// value is returned.
-        /// </returns>
+        /// <summary>Gets the first two non-blank line(s), if any, of a multi-line <paramref name="value" />, splitting on <c>CRLF</c>.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value for which the first two non-blank line(s) are to be obtained.</param>
+        /// <returns>If the specified <paramref name="value" /> has less than two non-blank line(s), then this method is idempotent. <para /> If successful, a <see cref="T:System.String" /> value that corresponds to the first two non-blank line(s) of the specified <paramref name="value" />, splitting on <c>CRLF</c>; otherwise, the <see cref="F:System.String.Empty" /> value is returned.</returns>
         [Log(AttributeExclude = true)]
         [return: NotLogged]
         public static string GetFirstTwoNonBlankLines(
@@ -2325,95 +1439,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="text" /> starts with a vowel
-        /// sound, and, if so, applies the specified <paramref name="type" />
-        /// setting to determine the appropriate article, if any, to return.
-        /// </summary>
-        /// <param name="type">
-        /// (Required.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that
-        /// indicates which article, if any, is to be returned.
-        /// </param>
-        /// <param name="text">
-        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
-        /// parsed.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the appropriate
-        /// article, if any, based on the specified <paramref name="type" />
-        /// setting and whether the specified <paramref name="text" /> starts with a vowel
-        /// sound; otherwise, the method returns the <see cref="F:System.String.Empty" />
-        /// value.
-        /// </returns>
-        [return: NotLogged]
-        private static string GetLanguageArticleText(
-            LanguageArticleType type,
-            [NotLogged] string text
-        )
-        {
-            var result = string.Empty;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(text)) return result;
-                if (!LanguageArticleTypeValidator.IsValid(type)) return result;
-
-                var preferredIndefiniteArticle =
-                    IsVowelSound(text) ? "an " : "a ";
-                switch (type)
-                {
-                    case LanguageArticleType.Definite:
-                        result = "the ";
-                        break;
-
-                    case LanguageArticleType.Indefinite:
-                        result = preferredIndefiniteArticle;
-                        break;
-
-                    case LanguageArticleType.Preposition:
-                        result = "of ";
-                        break;
-
-                    case LanguageArticleType.PrepopsitionWithDefinite:
-                        result = "of the ";
-                        break;
-
-                    case LanguageArticleType.PrepopsitionWithIndefinite:
-                        result = $"of {preferredIndefiniteArticle}";
-                        break;
-
-                    case LanguageArticleType.None:
-                    default:
-                        result = string.Empty;
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-
-                result = string.Empty;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Extracts the last initial-capped word from a fully-qualified class name or
-        /// string containing a name such as <c>FooBarBaz</c> (in which case, it would
-        /// return <c>Baz</c>).
-        /// </summary>
-        /// <param name="input">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// text that is to be parsed.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the last
-        /// initial-capped word in the <paramref name="input" />; otherwise, this method is
-        /// idempotent.
-        /// </returns>
+        /// <summary>Extracts the last initial-capped word from a fully-qualified class name or string containing a name such as <c>FooBarBaz</c> (in which case, it would return <c>Baz</c>).</summary>
+        /// <param name="input">(Required.) A <see cref="T:System.String" /> containing the text that is to be parsed.</param>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the last initial-capped word in the <paramref name="input" />; otherwise, this method is idempotent.</returns>
         public static string GetLastWord(this string input)
         {
             var result = input;
@@ -2446,20 +1474,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Gets the count of the number of non-blank line(s) in the specified
-        /// <paramref name="value" />, splitting on <c>CRLF</c>, if any.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value for which the non-blank line count is to be determined.
-        /// </param>
-        /// <returns>
-        /// The count of non-blank line(s) in the specified
-        /// <paramref name="value" />, splitting on <c>CRLF</c>, or zero if, e.g., the
-        /// specified <paramref name="value" /> is blank, the
-        /// <see cref="F:System.String.Empty" /> value, or <see langword="null" />.
-        /// </returns>
+        /// <summary>Gets the count of the number of non-blank line(s) in the specified <paramref name="value" />, splitting on <c>CRLF</c>, if any.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value for which the non-blank line count is to be determined.</param>
+        /// <returns>The count of non-blank line(s) in the specified <paramref name="value" />, splitting on <c>CRLF</c>, or zero if, e.g., the specified <paramref name="value" /> is blank, the <see cref="F:System.String.Empty" /> value, or <see langword="null" />.</returns>
         [Log(AttributeExclude = true)]
         [return: NotLogged]
         public static int GetNonBlankLineCount([NotLogged] this string value)
@@ -2487,27 +1504,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Very na?ve determination of person first name 99.9% of the time,
-        /// persons' names are // given as &lt;First Name&gt; &lt;Rest&gt;.
-        /// </summary>
-        /// <param name="fullName">
-        /// (Required.) String value containing the full name of
-        /// the person.
-        /// </param>
-        /// <returns>
-        /// String containing the first name of the person. Empty string if this
-        /// method is passed the empty string as input.
-        /// </returns>
-        /// <remarks>
-        /// Therefore, we can assume that, if we break the name field up by
-        /// spaces, then everything before the first space is word of the first name. <p />
-        /// This should even catch 'fancy' last name, such as "de la Haye." For instance,
-        /// this method would read "Nathan de la Montoya" and return "Nathan," so our way
-        /// of determining the last name is pretty safe, given the above assumptions and
-        /// input patterns. If the empty string is passed as input to this method, then the
-        /// empty string is returned.
-        /// </remarks>
+        /// <summary>Very na?ve determination of person first name 99.9% of the time, persons' names are // given as &lt;First Name&gt; &lt;Rest&gt;.</summary>
+        /// <param name="fullName">(Required.) String value containing the full name of the person.</param>
+        /// <returns>String containing the first name of the person. Empty string if this method is passed the empty string as input.</returns>
+        /// <remarks>Therefore, we can assume that, if we break the name field up by spaces, then everything before the first space is word of the first name. <p /> This should even catch 'fancy' last name, such as "de la Haye." For instance, this method would read "Nathan de la Montoya" and return "Nathan," so our way of determining the last name is pretty safe, given the above assumptions and input patterns. If the empty string is passed as input to this method, then the empty string is returned.</remarks>
         public static string GetPersonFirstName(string fullName)
         {
             if (string.IsNullOrWhiteSpace(fullName)) return string.Empty;
@@ -2519,29 +1519,10 @@ namespace xyLOGIX.Core.Extensions
                 : fullName;
         }
 
-        /// <summary>
-        /// Very na?ve determination of person last name. In our software
-        /// consulting and tutoring practice, new clients tend to given their first and
-        /// last name only when signing up --- about 99.9% of the time.
-        /// </summary>
-        /// <param name="fullName">
-        /// (Required.) String value containing the full name of
-        /// the person.
-        /// </param>
-        /// <returns>
-        /// String containing the first name of the person. Empty string if this
-        /// method is passed the empty string as input.
-        /// </returns>
-        /// <remarks>
-        /// Therefore, we can assume that, if we break the name field up by
-        /// spaces, then everything after the first space is word of the last name. <p />
-        /// This should even catch 'fancy' last name, such as "de la Haye." For instance,
-        /// this method would read "Nathan de la Montoya" and return "de la Montoya," so
-        /// our way of determining the last name is pretty safe, given the above
-        /// assumptions and input patterns. If the empty string is passed as input, then
-        /// the empty string is returned. If a string containing just one word is passed as
-        /// input, a <see cref="T:System.IO.InvalidDataException" /> is thrown.
-        /// </remarks>
+        /// <summary>Very na?ve determination of person last name. In our software consulting and tutoring practice, new clients tend to given their first and last name only when signing up --- about 99.9% of the time.</summary>
+        /// <param name="fullName">(Required.) String value containing the full name of the person.</param>
+        /// <returns>String containing the first name of the person. Empty string if this method is passed the empty string as input.</returns>
+        /// <remarks>Therefore, we can assume that, if we break the name field up by spaces, then everything after the first space is word of the last name. <p /> This should even catch 'fancy' last name, such as "de la Haye." For instance, this method would read "Nathan de la Montoya" and return "de la Montoya," so our way of determining the last name is pretty safe, given the above assumptions and input patterns. If the empty string is passed as input, then the empty string is returned. If a string containing just one word is passed as input, a <see cref="T:System.IO.InvalidDataException" /> is thrown.</remarks>
         public static string GetPersonLastName(string fullName)
         {
             if (string.IsNullOrWhiteSpace(fullName)) return string.Empty;
@@ -2566,15 +1547,9 @@ namespace xyLOGIX.Core.Extensions
                           .ToInitialCaps();
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="path" /> is a
-        /// fully-qualified, absolute path or not.
-        /// </summary>
-        /// <param name="path"> (Required.) String containing the path to be checked. </param>
-        /// <returns>
-        /// <see langword="true" /> if the <paramref name="path" /> specified is
-        /// a fully-qualified, absolute path; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="path" /> is a fully-qualified, absolute path or not.</summary>
+        /// <param name="path">(Required.) String containing the path to be checked.</param>
+        /// <returns><see langword="true" /> if the <paramref name="path" /> specified is a fully-qualified, absolute path; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = false)]
         public static bool IsAbsolutePath([NotLogged] this string path)
         {
@@ -2587,9 +1562,7 @@ namespace xyLOGIX.Core.Extensions
                     "StringExtensions.IsAbsolutePath *** INFO: Checking whether the value of the parameter, 'path', is blank..."
                 );
 
-                // Check whether the value of the parameter, 'path', is blank.
-                // If this is so, then emit an error message to the log file, and
-                // then terminate the execution of this method.
+                // Check whether the value of the parameter, 'path', is blank. If this is so, then emit an error message to the log file, and then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(path))
                 {
                     // The parameter, 'path' was either passed a null value, or it is blank.  This is not desirable.
@@ -2617,9 +1590,7 @@ namespace xyLOGIX.Core.Extensions
                     "*** StringExtensions.IsAbsolutePath: Checking whether the specified pathname is rooted..."
                 );
 
-                // Check to see whether the specified pathname is rooted.
-                // If this is not the case, then write an error message to the log file,
-                // and then terminate the execution of this method.
+                // Check to see whether the specified pathname is rooted. If this is not the case, then write an error message to the log file, and then terminate the execution of this method.
                 if (!Path.IsPathRooted(path))
                 {
                     // The specified pathname is NOT rooted.  This is not desirable.
@@ -2647,9 +1618,7 @@ namespace xyLOGIX.Core.Extensions
                     "StringExtensions.IsAbsolutePath: Checking whether the path root does NOT equal the directory-separator character..."
                 );
 
-                // Check to see whether the path root does NOT equal the directory-separator character.
-                // If this is not the case, then write an error message to the log file,
-                // and then terminate the execution of this method.
+                // Check to see whether the path root does NOT equal the directory-separator character. If this is not the case, then write an error message to the log file, and then terminate the execution of this method.
                 if (Path.GetPathRoot(path)
                         .Equals(
                             Path.DirectorySeparatorChar.ToString(),
@@ -2677,8 +1646,8 @@ namespace xyLOGIX.Core.Extensions
                 );
 
                 /*
-                 * If we made it this far with no Exception(s) getting caught, then
-                 * assume that the operation(s) succeeded.
+                 * If we made it this far with no Exception(s) getting caught, then assume that the
+                 * operation(s) succeeded.
                  */
 
                 result = true;
@@ -2699,15 +1668,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="path" /> is a
-        /// fully-qualified, absolute path or not.
-        /// </summary>
-        /// <param name="path"> (Required.) String containing the path to be checked. </param>
-        /// <returns>
-        /// <see langword="true" /> if the <paramref name="path" /> specified is
-        /// a fully-qualified, absolute path; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="path" /> is a fully-qualified, absolute path or not.</summary>
+        /// <param name="path">(Required.) String containing the path to be checked.</param>
+        /// <returns><see langword="true" /> if the <paramref name="path" /> specified is a fully-qualified, absolute path; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool IsAbsolutePathSilent([NotLogged] this string path)
         {
@@ -2732,59 +1695,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the current word in the text being parsed for a
-        /// character-casing operation is
-        /// </summary>
-        /// <param name="array"> </param>
-        /// <param name="i"> </param>
-        /// <returns> </returns>
-        private static bool IsAcronymOrStateAbbr(IList<string> array, int i)
-        {
-            if (array == null || !array.Any() ||
-                string.IsNullOrWhiteSpace(array[i]) ||
-                ShortWordsThatAreNotAcronyms.ContainsNoCase(array[i]))
-                return false;
-
-            // something can be classed as an acronym if (a) it's not in the
-            // quote of "special" words, such as "The," "An", "Or", etc., and
-            // (b) it has two or more characters
-            if (i == 0 || array.Count == 1)
-            {
-                if (array.Count == 1)
-
-                    // always initial-capitalize a one-word phrase
-                    // --- but it's not an acronym
-                    return false;
-
-                return StateAbbrList.ContainsNoCase(array[i]) |
-                       new Regex("\"[^\"]*\"").IsMatch(array[i]) |
-                       (!CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
-                        AcronymList.Any(s => s.EqualsNoCase(array[i])));
-            }
-
-            if (i > 0) /* means we are past the first word of a phrase */
-                return (StateAbbrList.Contains(array[i]) && array[i - 1]
-                           .EndsWith(",")) ||
-                       !CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
-                       AcronymList.ContainsNoCase(array[i]);
-
-            return false;
-        }
-
-        /// <summary>
-        /// Determines whether the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> is alphanumeric.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that is to  be
-        /// examined.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if every character of the specified
-        /// <paramref name="value" /> is a letter or a digit, excluding any whitespace
-        /// characters; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <see cref="T:System.String" /><paramref name="value" /> is alphanumeric.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that is to be examined.</param>
+        /// <returns><see langword="true" /> if every character of the specified <paramref name="value" /> is a letter or a digit, excluding any whitespace characters; <see langword="false" /> otherwise.</returns>
         public static bool IsAlphaNumeric(this string value)
         {
             var result = false;
@@ -2797,9 +1710,8 @@ namespace xyLOGIX.Core.Extensions
                     return result;
 
                 /*
-                 * This method must return TRUE even if the
-                 * string contains whitespace characters, yet it
-                 * still fits the criteria otherwise.
+                 * This method must return TRUE even if the string contains whitespace characters,
+                 * yet it still fits the criteria otherwise.
                  */
 
                 result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit);
@@ -2815,28 +1727,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is an
-        /// alphanumeric <see cref="T:System.String" /> that consists solely of digits or
-        /// lowercase letters (excluding whitespace).
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the text to be checked.
-        /// </param>
-        /// <remarks>
-        /// If a blank <see cref="T:System.String" /> or a
-        /// <see langword="null" /> reference is passed to this method, then this method
-        /// returns <see langword="false" />.
-        /// <para />
-        /// If an error occurs during the check, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// consists solely of either digits or lowercase letters (excluding whitespace);
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> is an alphanumeric <see cref="T:System.String" /> that consists solely of digits or lowercase letters (excluding whitespace).</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be checked.</param>
+        /// <remarks>If a blank <see cref="T:System.String" /> or a <see langword="null" /> reference is passed to this method, then this method returns <see langword="false" />. <para /> If an error occurs during the check, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> consists solely of either digits or lowercase letters (excluding whitespace); <see langword="false" /> otherwise.</returns>
         public static bool IsAlphaNumericLowercase(this string value)
         {
             var result = false;
@@ -2849,9 +1743,8 @@ namespace xyLOGIX.Core.Extensions
                     return result;
 
                 /*
-                 * This method must return TRUE even if the
-                 * string contains whitespace characters, yet it
-                 * still fits the criteria otherwise.
+                 * This method must return TRUE even if the string contains whitespace characters,
+                 * yet it still fits the criteria otherwise.
                  */
 
                 result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit) &&
@@ -2869,28 +1762,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is an
-        /// alphanumeric <see cref="T:System.String" /> that consists solely of digits or
-        /// uppercase letters (excluding whitespace).
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the text to be checked.
-        /// </param>
-        /// <remarks>
-        /// If a blank <see cref="T:System.String" /> or a
-        /// <see langword="null" /> reference is passed to this method, then this method
-        /// returns <see langword="false" />.
-        /// <para />
-        /// If an error occurs during the check, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// consists solely of either digits or uppercase letters (excluding whitespace);
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> is an alphanumeric <see cref="T:System.String" /> that consists solely of digits or uppercase letters (excluding whitespace).</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be checked.</param>
+        /// <remarks>If a blank <see cref="T:System.String" /> or a <see langword="null" /> reference is passed to this method, then this method returns <see langword="false" />. <para /> If an error occurs during the check, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> consists solely of either digits or uppercase letters (excluding whitespace); <see langword="false" /> otherwise.</returns>
         public static bool IsAlphaNumericUppercase(this string value)
         {
             var result = false;
@@ -2903,9 +1778,8 @@ namespace xyLOGIX.Core.Extensions
                     return result;
 
                 /*
-                 * This method must return TRUE even if the
-                 * string contains whitespace characters, yet it
-                 * still fits the criteria otherwise.
+                 * This method must return TRUE even if the string contains whitespace characters,
+                 * yet it still fits the criteria otherwise.
                  */
 
                 result = valueExcludingWhiteSpace.All(char.IsLetterOrDigit) &&
@@ -2923,44 +1797,16 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Gets a value that indicates whether the specified
-        /// <paramref name="value" /> is blank, only consists of whitespace, or a
-        /// <see langword="null" /> reference.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> value that
-        /// should be checked.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" /> is
-        /// blank, only consists of whitespace, or a <see langword="null" /> reference.
-        /// </returns>
+        /// <summary>Gets a value that indicates whether the specified <paramref name="value" /> is blank, only consists of whitespace, or a <see langword="null" /> reference.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> value that should be checked.</param>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> is blank, only consists of whitespace, or a <see langword="null" /> reference.</returns>
         public static bool IsBlankOrNull([NotLogged] this string value)
             => string.IsNullOrWhiteSpace(value);
 
-        /// <summary>
-        /// Determines whether the specified text <paramref name="value" /> is equal to
-        /// either of the words <c>TRUE</c> or <c>FALSE</c> while performing a
-        /// case-insensitive comparison.
-        /// <para />
-        /// Whitespace is ignored.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
-        /// examined.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="value" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the text is equal to either <c>TRUE</c> or
-        /// <c>FALSE</c> without regards to whitespace or character casing; otherwise,
-        /// <see langword="false" />.
-        /// </returns>
+        /// <summary>Determines whether the specified text <paramref name="value" /> is equal to either of the words <c>TRUE</c> or <c>FALSE</c> while performing a case-insensitive comparison. <para /> Whitespace is ignored.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text that is to be examined.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the text is equal to either <c>TRUE</c> or <c>FALSE</c> without regards to whitespace or character casing; otherwise, <see langword="false" />.</returns>
         public static bool IsBooleanValue([NotLogged] this string value)
         {
             var result = false;
@@ -2988,18 +1834,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the <paramref name="value" /> passed is a
-        /// <c>decimal</c> number or not.
-        /// </summary>
-        /// <param name="value"> (Required.) String containing the value or not. </param>
-        /// <returns>
-        /// <see langword="true" /> if the string passed in
-        /// <paramref name="value" /> is the string representation of a value that is in
-        /// the range of the <c>decimal</c> data type; <see langword="false" /> otherwise.
-        /// The method also returns <see langword="false" /> if it is passed the empty
-        /// string.
-        /// </returns>
+        /// <summary>Determines whether the <paramref name="value" /> passed is a <c>decimal</c> number or not.</summary>
+        /// <param name="value">(Required.) String containing the value or not.</param>
+        /// <returns><see langword="true" /> if the string passed in <paramref name="value" /> is the string representation of a value that is in the range of the <c>decimal</c> data type; <see langword="false" /> otherwise. The method also returns <see langword="false" /> if it is passed the empty string.</returns>
         public static bool IsDecimal([NotLogged] string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return false;
@@ -3011,32 +1848,19 @@ namespace xyLOGIX.Core.Extensions
             }
             catch
             {
-                /* silence! */
+                /*
+                 * silence!
+                 */
                 result = false;
             }
 
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified text <paramref name="value" /> is surrounded
-        /// by double quotes.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
-        /// examined.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="value" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified text
-        /// <paramref name="value" /> is surrounded by double quotes;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified text <paramref name="value" /> is surrounded by double quotes.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text that is to be examined.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified text <paramref name="value" /> is surrounded by double quotes; <see langword="false" /> otherwise.</returns>
         public static bool IsDoubleQuoted([NotLogged] this string value)
         {
             var result = false;
@@ -3059,30 +1883,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="path" /> is the path
-        /// to a folder or not.
-        /// </summary>
-        /// <param name="path">
-        /// (Required.) String containing the fully-qualified pathname
-        /// of the file-system entry to be checked.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the object at the specified pathname is a
-        /// folder; <see langword="false" /> otherwise. If the specified pathname is blank,
-        /// then this method simply returns <see langword="false" />. If a file-system
-        /// error occurs during the checking, <see langword="false" /> is also returned.
-        /// </returns>
-        /// <exception cref="T:System.ArgumentException">
-        /// Thrown if the required parameter,
-        /// <paramref name="path" />, is passed a blank or <see langword="null" /> string
-        /// for a value.
-        /// </exception>
-        /// <remarks>
-        /// Note the exact words of the Returns statement: "if the object at the
-        /// specified pathname is a folder." So if you pass in the phrase, "Hello, world,"
-        /// it will be rejected.
-        /// </remarks>
+        /// <summary>Determines whether the specified <paramref name="path" /> is the path to a folder or not.</summary>
+        /// <param name="path">(Required.) String containing the fully-qualified pathname of the file-system entry to be checked.</param>
+        /// <returns><see langword="true" /> if the object at the specified pathname is a folder; <see langword="false" /> otherwise. If the specified pathname is blank, then this method simply returns <see langword="false" />. If a file-system error occurs during the checking, <see langword="false" /> is also returned.</returns>
+        /// <exception cref="T:System.ArgumentException">Thrown if the required parameter, <paramref name="path" />, is passed a blank or <see langword="null" /> string for a value.</exception>
+        /// <remarks>Note the exact words of the Returns statement: "if the object at the specified pathname is a folder." So if you pass in the phrase, "Hello, world," it will be rejected.</remarks>
         public static bool IsFolderPath(this string path)
         {
             if (string.IsNullOrWhiteSpace(path))
@@ -3111,28 +1916,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is a
-        /// <see cref="T:System.String" /> that consists solely of lowercase letters
-        /// (excluding whitespace).
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the text to be checked.
-        /// </param>
-        /// <remarks>
-        /// If a blank <see cref="T:System.String" /> or a
-        /// <see langword="null" /> reference is passed to this method, then this method
-        /// returns <see langword="false" />.
-        /// <para />
-        /// If an error occurs during the check, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// consists solely of lowercase letters (excluding whitespace);
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> is a <see cref="T:System.String" /> that consists solely of lowercase letters (excluding whitespace).</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be checked.</param>
+        /// <remarks>If a blank <see cref="T:System.String" /> or a <see langword="null" /> reference is passed to this method, then this method returns <see langword="false" />. <para /> If an error occurs during the check, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> consists solely of lowercase letters (excluding whitespace); <see langword="false" /> otherwise.</returns>
         public static bool IsLowercase([NotLogged] this string value)
         {
             var result = false;
@@ -3145,9 +1932,8 @@ namespace xyLOGIX.Core.Extensions
                     return result;
 
                 /*
-                 * This method must return TRUE even if the
-                 * string contains whitespace characters, yet it
-                 * still fits the criteria otherwise.
+                 * This method must return TRUE even if the string contains whitespace characters,
+                 * yet it still fits the criteria otherwise.
                  */
 
                 result = value.All(char.IsLower);
@@ -3163,25 +1949,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified text <paramref name="value" /> is a
-        /// representation of a numeric quantity (using Arabic numerals) or not.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that contains
-        /// the text that is to be examined.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or
-        /// the <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="value" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified text <paramref name="value" /> is a
-        /// representation of a numeric quantity (using Arabic numerals);
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified text <paramref name="value" /> is a representation of a numeric quantity (using Arabic numerals) or not.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that contains the text that is to be examined.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified text <paramref name="value" /> is a representation of a numeric quantity (using Arabic numerals); <see langword="false" /> otherwise.</returns>
         public static bool IsNumeric([NotLogged] string value)
         {
             var result = false;
@@ -3194,34 +1965,19 @@ namespace xyLOGIX.Core.Extensions
             }
             catch
             {
-                /* silence! */
+                /*
+                 * silence!
+                 */
                 result = false;
             }
 
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the <paramref name="value" /> passed is the string
-        /// representation of a 32-bit <c>int</c> or not.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the text that is to be examined.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="value" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the string passed in
-        /// <paramref name="value" /> is the string representation of a value that is in
-        /// the range of the 32-bit <c>int</c> data type; <see langword="false" />
-        /// otherwise. The method also returns <see langword="false" /> if it is passed the
-        /// empty string.
-        /// </returns>
+        /// <summary>Determines whether the <paramref name="value" /> passed is the string representation of a 32-bit <c>int</c> or not.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text that is to be examined.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the string passed in <paramref name="value" /> is the string representation of a value that is in the range of the 32-bit <c>int</c> data type; <see langword="false" /> otherwise. The method also returns <see langword="false" /> if it is passed the empty string.</returns>
         public static bool IsNumericValue([NotLogged] this string value)
         {
             var result = false;
@@ -3234,25 +1990,18 @@ namespace xyLOGIX.Core.Extensions
             }
             catch
             {
-                /* silence! */
+                /*
+                 * silence!
+                 */
                 result = false;
             }
 
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the <paramref name="value" /> passed is the string
-        /// representation of a 32-bit <c>int</c> or not.
-        /// </summary>
-        /// <param name="value"> (Required.) String containing the value or not. </param>
-        /// <returns>
-        /// <see langword="true" /> if the string passed in
-        /// <paramref name="value" /> is the string representation of a value that is in
-        /// the range of the 32-bit <c>int</c> data type; <see langword="false" />
-        /// otherwise. The method also returns <see langword="false" /> if it is passed the
-        /// empty string.
-        /// </returns>
+        /// <summary>Determines whether the <paramref name="value" /> passed is the string representation of a 32-bit <c>int</c> or not.</summary>
+        /// <param name="value">(Required.) String containing the value or not.</param>
+        /// <returns><see langword="true" /> if the string passed in <paramref name="value" /> is the string representation of a value that is in the range of the 32-bit <c>int</c> data type; <see langword="false" /> otherwise. The method also returns <see langword="false" /> if it is passed the empty string.</returns>
         public static bool IsNumericVerbose([NotLogged] this string value)
         {
             var result = false;
@@ -3264,9 +2013,7 @@ namespace xyLOGIX.Core.Extensions
                     "StringExtensions.IsNumericVerbose *** INFO: Checking whether the value of the parameter, 'value', is blank..."
                 );
 
-                // Check whether the value of the parameter, 'value', is blank.
-                // If this is so, then emit an error message to the log file, and
-                // then terminate the execution of this method.
+                // Check whether the value of the parameter, 'value', is blank. If this is so, then emit an error message to the log file, and then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     // The parameter, 'value' was either passed a null value, or it is blank.  This is not desirable.
@@ -3298,29 +2045,20 @@ namespace xyLOGIX.Core.Extensions
             }
             catch
             {
-                /* silence! */
+                /*
+                 * silence!
+                 */
                 result = false;
             }
 
             return result;
         }
 
-        /// <summary>
-        /// Performs a culture-invariant, case-insensitive, OR match of the
-        /// <paramref name="value" /> against the <paramref name="choices" /> provided.
-        /// </summary>
-        /// <param name="value"> Value to match. </param>
-        /// <param name="choices"> Choices to match against. </param>
-        /// <returns>
-        /// <see langword="true" /> if the string <paramref name="value" />
-        /// matches one or more of the <paramref name="choices" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
-        /// <remarks>
-        /// If <paramref name="value" /> is the empty string, or if
-        /// <paramref name="choices" /> is the empty collection, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
+        /// <summary>Performs a culture-invariant, case-insensitive, OR match of the <paramref name="value" /> against the <paramref name="choices" /> provided.</summary>
+        /// <param name="value">Value to match.</param>
+        /// <param name="choices">Choices to match against.</param>
+        /// <returns><see langword="true" /> if the string <paramref name="value" /> matches one or more of the <paramref name="choices" />; <see langword="false" /> otherwise.</returns>
+        /// <remarks>If <paramref name="value" /> is the empty string, or if <paramref name="choices" /> is the empty collection, then this method returns <see langword="false" />.</remarks>
         public static bool IsOneOf(
             this string value,
             IEnumerable<string> choices
@@ -3328,42 +2066,10 @@ namespace xyLOGIX.Core.Extensions
             => !string.IsNullOrWhiteSpace(value) && choices != null &&
                choices.Any(value.EqualsNoCase);
 
-        /// <summary>
-        /// Determines whether the passed <see cref="string" /> contains Roman
-        /// numerals.
-        /// </summary>
-        /// <param name="value"> Value to be checked. </param>
-        /// <returns> TRUE if the value contains Roman numerals; FALSE otherwise. </returns>
-        private static bool IsRomanNumerals([NotLogged] this string value)
-        {
-            if (string.IsNullOrWhiteSpace(value)) return false;
-
-            var regex = new Regex(
-                @"(?i)^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
-            );
-            var result = regex.IsMatch(value);
-            return result;
-        }
-
-        /// <summary>
-        /// Determines whether the specified text <paramref name="value" /> is surrounded
-        /// by single quotes.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text that is to be
-        /// examined.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="value" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified text
-        /// <paramref name="value" /> is surrounded by single quotes;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified text <paramref name="value" /> is surrounded by single quotes.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text that is to be examined.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified text <paramref name="value" /> is surrounded by single quotes; <see langword="false" /> otherwise.</returns>
         public static bool IsSingleQuoted([NotLogged] this string value)
         {
             var result = false;
@@ -3386,93 +2092,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Gets a value indicating whether a special word, such as 'The' or
-        /// 'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and still needs
-        /// to be initial-capitalized.
-        /// </summary>
-        /// <param name="words"> Array of words (a phrase split on spaces, etc.) </param>
-        /// <param name="currentWord"> Current word being checked. </param>
-        /// <returns> </returns>
-        private static bool IsSpecialWordAtBeginningOfPhrase(
-            string[] words,
-            string currentWord
-        )
-        {
-            if (words == null || !words.Any()) return false;
-
-            if (string.IsNullOrWhiteSpace(currentWord)) return false;
-
-            return (currentWord.EndsWith(".") &&
-                    currentWord.EqualsNoCase(
-                        words.First()
-                    )) // this is most likely someone's title
-                   | CapitalizeableAsFirstWords
-                       .ContainsNoCase(
-                           currentWord
-                       ) // any words appearing in this array that are at the beginning of our phrase, should always be initial-capitalized
-                   && currentWord.EqualsNoCase(words.First());
-        }
-
-        /// <summary>
-        /// Determines whether the current element in the list of words being
-        /// parsed (as part of a character-casing operation) is the component of common
-        /// names for US streets.
-        /// </summary>
-        /// <param name="array">
-        /// (Required.) Collection of words from the text being
-        /// parsed.
-        /// </param>
-        /// <param name="i">
-        /// (Required.) Index into the <paramref name="array" /> of the
-        /// current word being parsed.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the current word belongs as part of the
-        /// name of common US streets; <see langword="false" /> otherwise.
-        /// </returns>
-        /// <remarks>
-        /// If this method is provided with the empty collection or an array
-        /// index outside the bounds of the collection, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        private static bool IsStreetNameComponent(
-            IReadOnlyList<string> array,
-            int i
-        )
-            => array != null && array.Any() && i < array.Count &&
-               (i + 1 >= array.Count
-                   ? NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
-                       array[i]
-                   )
-                   : NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
-                       array[i]
-                   ) | NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
-                       array[i + 1]
-                   ));
-
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> is a
-        /// <see cref="T:System.String" /> that consists solely of uppercase letters
-        /// (excluding whitespace).
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the text to be checked.
-        /// </param>
-        /// <remarks>
-        /// If a blank <see cref="T:System.String" /> or a
-        /// <see langword="null" /> reference is passed to this method, then this method
-        /// returns <see langword="false" />.
-        /// <para />
-        /// If an error occurs during the check, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// consists solely of uppercase letters (excluding whitespace);
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> is a <see cref="T:System.String" /> that consists solely of uppercase letters (excluding whitespace).</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be checked.</param>
+        /// <remarks>If a blank <see cref="T:System.String" /> or a <see langword="null" /> reference is passed to this method, then this method returns <see langword="false" />. <para /> If an error occurs during the check, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> consists solely of uppercase letters (excluding whitespace); <see langword="false" /> otherwise.</returns>
         public static bool IsUppercase(this string value)
         {
             var result = false;
@@ -3485,9 +2108,8 @@ namespace xyLOGIX.Core.Extensions
                     return result;
 
                 /*
-                 * This method must return TRUE even if the
-                 * string contains whitespace characters, yet it
-                 * still fits the criteria otherwise.
+                 * This method must return TRUE even if the string contains whitespace characters,
+                 * yet it still fits the criteria otherwise.
                  */
 
                 result = valueExcludingWhiteSpace.All(char.IsUpper);
@@ -3503,25 +2125,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="symbol" /> string contains a
-        /// properly-formatted asset symbol, such as <c>FB</c>, <c>00</c>, <c>1INCH</c>,
-        /// <c>cBETH</c> etc.
-        /// </summary>
-        /// <param name="symbol">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the text, whose format is to be validated.
-        /// </param>
-        /// <remarks>
-        /// If the <paramref name="symbol" /> parameter is passed a
-        /// <see langword="null" /> reference, the <see cref="F:System.String.Empty" />
-        /// value, or a <see cref="T:System.String" /> containing only whitespace, then the
-        /// method returns <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="symbol" /> is
-        /// of the proper format; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="symbol" /> string contains a properly-formatted asset symbol, such as <c>FB</c>, <c>00</c>, <c>1INCH</c>, <c>cBETH</c> etc.</summary>
+        /// <param name="symbol">(Required.) A <see cref="T:System.String" /> containing the text, whose format is to be validated.</param>
+        /// <remarks>If the <paramref name="symbol" /> parameter is passed a <see langword="null" /> reference, the <see cref="F:System.String.Empty" /> value, or a <see cref="T:System.String" /> containing only whitespace, then the method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="symbol" /> is of the proper format; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool IsValidAssetSymbol(this string symbol)
         {
@@ -3544,15 +2151,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Validates whether <paramref name="value" /> is a valid email address
-        /// or not.
-        /// </summary>
-        /// <param name="value"> String to be checked. </param>
-        /// <returns>
-        /// true if the string contains a valid email address value; false
-        /// otherwise.
-        /// </returns>
+        /// <summary>Validates whether <paramref name="value" /> is a valid email address or not.</summary>
+        /// <param name="value">String to be checked.</param>
+        /// <returns>true if the string contains a valid email address value; false otherwise.</returns>
         public static bool IsValidEmail(string value)
         {
             var result = false;
@@ -3602,27 +2203,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines if the specified <paramref name="value" /> is a string that contains
-        /// a globally-unique identifier (GUID) that is in all lowercase with no
-        /// surrounding curly braces; e.g., for example,
-        /// <c>b68d770b-8e37-4a20-b2cc-6cbc2ef4f136</c>.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// data to be validated.
-        /// </param>
-        /// <remarks>
-        /// This method returns <see langword="false" /> if the argument of the
-        /// <paramref name="value" /> parameter is a <see langword="null" /> reference or
-        /// consists of only whitespace characters, or is the
-        /// <see cref="F:System.String.Empty" /> value.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the contents of <paramref name="value" />
-        /// consists of a single GUID that is in all lowercase with no surrounding curly
-        /// braces; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <paramref name="value" /> is a string that contains a globally-unique identifier (GUID) that is in all lowercase with no surrounding curly braces; e.g., for example, <c>b68d770b-8e37-4a20-b2cc-6cbc2ef4f136</c>.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the data to be validated.</param>
+        /// <remarks>This method returns <see langword="false" /> if the argument of the <paramref name="value" /> parameter is a <see langword="null" /> reference or consists of only whitespace characters, or is the <see cref="F:System.String.Empty" /> value.</remarks>
+        /// <returns><see langword="true" /> if the contents of <paramref name="value" /> consists of a single GUID that is in all lowercase with no surrounding curly braces; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool IsValidLowercaseGuidWithNoBraces(this string value)
         {
@@ -3642,92 +2226,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines if the first word of the phrase begins with a vowel sound
-        /// for the purposes of choosing between the indefinite articles 'a' or 'an'.
-        /// </summary>
-        /// <param name="text">(Required.) The phrase to analyze.</param>
-        /// <returns>
-        /// <see langword="true" /> if the first word begins with a vowel sound; otherwise,
-        /// <see langword="false" />.
-        /// </returns>
-        private static bool IsVowelSound([NotLogged] string text)
-        {
-            var result = false;
-
-            try
-            {
-                if (string.IsNullOrWhiteSpace(text))
-                    return result;
-
-                var firstWord = text.Trim()
-                                    .Split(' ')[0];
-
-                if (string.IsNullOrWhiteSpace(firstWord))
-                    return result;
-
-                firstWord = firstWord.ToLowerInvariant();
-
-                // Words starting with consonant letters but vowel sounds
-                var startsWithVowelSound = new[]
-                {
-                    "honest", "honor", "hour", "heir", "herb" // US English
-                };
-
-                // Words starting with vowel letters but consonant ("yoo") sounds
-                var startsWithYooSound = new[]
-                {
-                    "university", "unicorn", "unique", "user", "usual",
-                    "ubiquitous", "ukulele", "european", "eulogy"
-                };
-
-                result =
-                    Array.Exists(
-                        startsWithVowelSound, w => firstWord.StartsWith(w)
-                    ) || (firstWord.Length == 2 &&
-                          firstWord.ToUpperInvariant() == firstWord &&
-                          "AEFHILMNORSX".IndexOf(firstWord[0]) >= 0) ||
-                    (!"aeiou".Contains(firstWord[0]) && !Array.Exists(
-                        startsWithYooSound, w => firstWord.StartsWith(w)
-                    ) && "aeiou".IndexOf(firstWord[0]) >= 0);
-            }
-            catch (Exception ex)
-            {
-                DebugUtils.LogException(ex);
-                result = false;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Concatenates each element of <paramref name="values" /> using the
-        /// specified <paramref name="separator" />.
-        /// </summary>
-        /// <param name="values">
-        /// (Required.) A collection of <see cref="T:System.String" /> instances to
-        /// concatenate.
-        /// </param>
-        /// <param name="separator">
-        /// (Required.) The <see cref="T:System.String" /> to insert between
-        /// adjacent elements of <paramref name="values" />.  If
-        /// <see langword="null" />, it is treated as the
-        /// <see cref="F:System.String.Empty" /> value.
-        /// </param>
-        /// <remarks>
-        /// The method returns the <see cref="F:System.String.Empty" /> value if
-        /// <paramref name="values" /> is <see langword="null" /> or contains no
-        /// elements.
-        /// <para />
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or the
-        /// <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="separator" />, then this method assumes that the
-        /// separator is the <see cref="F:System.String.Empty" /> value.
-        /// </remarks>
-        /// <returns>
-        /// A <see cref="T:System.String" /> representing the concatenated result,
-        /// or the <see cref="F:System.String.Empty" /> value on failure.
-        /// </returns>
+        /// <summary>Concatenates each element of <paramref name="values" /> using the specified <paramref name="separator" />.</summary>
+        /// <param name="values">(Required.) A collection of <see cref="T:System.String" /> instances to concatenate.</param>
+        /// <param name="separator">(Required.) The <see cref="T:System.String" /> to insert between adjacent elements of <paramref name="values" />. If <see langword="null" />, it is treated as the <see cref="F:System.String.Empty" /> value.</param>
+        /// <remarks>The method returns the <see cref="F:System.String.Empty" /> value if <paramref name="values" /> is <see langword="null" /> or contains no elements. <para /> If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="separator" />, then this method assumes that the separator is the <see cref="F:System.String.Empty" /> value.</remarks>
+        /// <returns>A <see cref="T:System.String" /> representing the concatenated result, or the <see cref="F:System.String.Empty" /> value on failure.</returns>
         public static string Join(
             [NotLogged] this IList<string> values,
             string separator
@@ -3757,19 +2260,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Returns the first <paramref name="count" /> characters of
-        /// <paramref name="value" />.
-        /// If the source string is <see langword="null" />,
-        /// empty, or shorter than <paramref name="count" />, the original string (or
-        /// <see cref="F:System.String.Empty" />) is returned.
-        /// </summary>
+        /// <summary>Returns the first <paramref name="count" /> characters of <paramref name="value" />. If the source string is <see langword="null" />, empty, or shorter than <paramref name="count" />, the original string (or <see cref="F:System.String.Empty" />) is returned.</summary>
         /// <param name="value">(Required.) The source <see cref="T:System.String" />.</param>
-        /// <param name="count">
-        /// The number of leading characters to keep.
-        /// <para />
-        /// Must be a natural number and less than or equal to the length of the string.
-        /// </param>
+        /// <param name="count">The number of leading characters to keep. <para /> Must be a natural number and less than or equal to the length of the string.</param>
         /// <returns>The requested leading substring, or a safe fallback.</returns>
         [return: NotLogged]
         public static string Left([NotLogged] this string value, int count)
@@ -3815,27 +2308,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Assuming that the specified <paramref name="pluralWord" /> contains a plural
-        /// pluralWord, this method will attempt to make it singular.
-        /// </summary>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or
-        /// the <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="pluralWord" />, then this method is idempotent.
-        /// <para />
-        /// This method is also idempotent if the operation cannot be completed
-        /// successfully.
-        /// </remarks>
-        /// <param name="pluralWord">
-        /// (Required.) A <see cref="T:System.String" /> contaiing
-        /// the pluralWord to make singular.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the
-        /// singular version of the specified <paramref name="pluralWord" />; otherwise,
-        /// the method returns the <see cref="F:System.String.Empty" /> pluralWord.
-        /// </returns>
+        /// <summary>Assuming that the specified <paramref name="pluralWord" /> contains a plural pluralWord, this method will attempt to make it singular.</summary>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="pluralWord" />, then this method is idempotent. <para /> This method is also idempotent if the operation cannot be completed successfully.</remarks>
+        /// <param name="pluralWord">(Required.) A <see cref="T:System.String" /> contaiing the pluralWord to make singular.</param>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the singular version of the specified <paramref name="pluralWord" />; otherwise, the method returns the <see cref="F:System.String.Empty" /> pluralWord.</returns>
         [Log(AttributeExclude = true)]
         public static string MakeSingular([NotLogged] this string pluralWord)
         {
@@ -3858,25 +2334,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the <paramref name="stringToSearch" /> contains
-        /// the text in the <paramref name="findWhat" /> parameter, in a case-insensitive
-        /// fashion.
-        /// </summary>
-        /// <param name="stringToSearch">
-        /// (Required.) A <see cref="T:System.String" />
-        /// value containing the text that is to be searched.
-        /// </param>
-        /// <param name="findWhat">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the text that is to be located within the <paramref name="stringToSearch" />.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the case-insensitive search determines
-        /// that the <paramref name="stringToSearch" /> value(s) contains one or more
-        /// instances of the <paramref name="findWhat" /> text; <see langword="false" />
-        /// otherwise.
-        /// </returns>
+        /// <summary>Determines whether the <paramref name="stringToSearch" /> contains the text in the <paramref name="findWhat" /> parameter, in a case-insensitive fashion.</summary>
+        /// <param name="stringToSearch">(Required.) A <see cref="T:System.String" /> value containing the text that is to be searched.</param>
+        /// <param name="findWhat">(Required.) A <see cref="T:System.String" /> containing the text that is to be located within the <paramref name="stringToSearch" />.</param>
+        /// <returns><see langword="true" /> if the case-insensitive search determines that the <paramref name="stringToSearch" /> value(s) contains one or more instances of the <paramref name="findWhat" /> text; <see langword="false" /> otherwise.</returns>
         public static bool MatchesNoCase(
             this string stringToSearch,
             string findWhat
@@ -3900,24 +2361,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the <paramref name="stringToSearch" /> contains
-        /// the text in the <paramref name="findWhat" /> parameter, in a case-sensitive
-        /// fashion.
-        /// </summary>
-        /// <param name="stringToSearch">
-        /// (Required.) A <see cref="T:System.String" />
-        /// value containing the text that is to be searched.
-        /// </param>
-        /// <param name="findWhat">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the text that is to be located within the <paramref name="stringToSearch" />.
-        /// </param>
-        /// <returns>
-        /// <see langword="true" /> if the case-sensitive search determines that
-        /// the <paramref name="stringToSearch" /> value(s) contains instances of the
-        /// <paramref name="findWhat" /> text; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the <paramref name="stringToSearch" /> contains the text in the <paramref name="findWhat" /> parameter, in a case-sensitive fashion.</summary>
+        /// <param name="stringToSearch">(Required.) A <see cref="T:System.String" /> value containing the text that is to be searched.</param>
+        /// <param name="findWhat">(Required.) A <see cref="T:System.String" /> containing the text that is to be located within the <paramref name="stringToSearch" />.</param>
+        /// <returns><see langword="true" /> if the case-sensitive search determines that the <paramref name="stringToSearch" /> value(s) contains instances of the <paramref name="findWhat" /> text; <see langword="false" /> otherwise.</returns>
         public static bool MatchesWithCase(
             this string stringToSearch,
             string findWhat
@@ -3941,30 +2388,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Normalizes all line ending(s) in the specified <paramref name="content" /> to
-        /// Windows-style line ending(s), i.e., <c>\r\n</c>.
-        /// </summary>
-        /// <param name="content">
-        /// (Required.) A <see cref="T:System.String" /> containing the text whose line
-        /// ending(s) are to be normalized to Windows-style line ending(s).
-        /// </param>
-        /// <remarks>
-        /// This method first normalizes all line ending variants — including <c>\r\n</c>
-        /// (Windows), <c>\r</c> (legacy Mac), and <c>\n</c> (Unix/Linux) — to a single
-        /// <c>\n</c> character, and then replaces each <c>\n</c> with
-        /// <see cref="P:System.Environment.NewLine" />, which on Windows is <c>\r\n</c>.
-        /// <para />
-        /// If an exception is caught during the normalization process, then this method is
-        /// idempotent; i.e., the original <paramref name="content" /> value is returned
-        /// unchanged.
-        /// </remarks>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the
-        /// <paramref name="content" /> with all line ending(s) normalized to
-        /// Windows-style (<c>\r\n</c>) line ending(s); otherwise, the method is
-        /// idempotent.
-        /// </returns>
+        /// <summary>Normalizes all line ending(s) in the specified <paramref name="content" /> to Windows-style line ending(s), i.e., <c>\r\n</c>.</summary>
+        /// <param name="content">(Required.) A <see cref="T:System.String" /> containing the text whose line ending(s) are to be normalized to Windows-style line ending(s).</param>
+        /// <remarks>This method first normalizes all line ending variants — including <c>\r\n</c> (Windows), <c>\r</c> (legacy Mac), and <c>\n</c> (Unix/Linux) — to a single <c>\n</c> character, and then replaces each <c>\n</c> with <see cref="P:System.Environment.NewLine" />, which on Windows is <c>\r\n</c>. <para /> If an exception is caught during the normalization process, then this method is idempotent; i.e., the original <paramref name="content" /> value is returned unchanged.</remarks>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the <paramref name="content" /> with all line ending(s) normalized to Windows-style (<c>\r\n</c>) line ending(s); otherwise, the method is idempotent.</returns>
         public static string NormalizeLineEndingsToWindows(
             [NotLogged] this string content
         )
@@ -3988,25 +2415,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Pluralizes the word passed in, applying language rules from the
-        /// specified <paramref name="culture" />.
-        /// </summary>
-        /// <param name="word"> Word to be pluralized. </param>
-        /// <param name="culture">
-        /// Specifies the
-        /// <see cref="T:System.Globalization.CultureInfo" /> value to use when applying
-        /// language rules.
-        /// </param>
-        /// <returns>
-        /// The <paramref name="word" /> if it is already plural; otherwise, a
-        /// <see cref="T:System.String" /> containing the plural version of the
-        /// <paramref name="word" />.
-        /// </returns>
-        /// <remarks>
-        /// If the empty string is passed for <paramref name="word" />, then this
-        /// method returns the empty string.
-        /// </remarks>
+        /// <summary>Pluralizes the word passed in, applying language rules from the specified <paramref name="culture" />.</summary>
+        /// <param name="word">Word to be pluralized.</param>
+        /// <param name="culture">Specifies the <see cref="T:System.Globalization.CultureInfo" /> value to use when applying language rules.</param>
+        /// <returns>The <paramref name="word" /> if it is already plural; otherwise, a <see cref="T:System.String" /> containing the plural version of the <paramref name="word" />.</returns>
+        /// <remarks>If the empty string is passed for <paramref name="word" />, then this method returns the empty string.</remarks>
         public static string PluralizeWord(
             this string word,
             CultureInfo culture
@@ -4019,39 +2432,17 @@ namespace xyLOGIX.Core.Extensions
             return service.IsPlural(word) ? word : service.Pluralize(word);
         }
 
-        /// <summary> Pluralizes the word passed in, using the current UI culture. </summary>
-        /// <param name="word"> String containing the word to be pluralized. </param>
-        /// <returns>
-        /// The <paramref name="word" /> if it is already plural; otherwise, a
-        /// <see cref="T:System.String" /> containing the plural version of the
-        /// <paramref name="word" />.
-        /// </returns>
-        /// <remarks>
-        /// If the empty string is passed for <paramref name="word" />, then this
-        /// method returns the empty string.
-        /// </remarks>
+        /// <summary>Pluralizes the word passed in, using the current UI culture.</summary>
+        /// <param name="word">String containing the word to be pluralized.</param>
+        /// <returns>The <paramref name="word" /> if it is already plural; otherwise, a <see cref="T:System.String" /> containing the plural version of the <paramref name="word" />.</returns>
+        /// <remarks>If the empty string is passed for <paramref name="word" />, then this method returns the empty string.</remarks>
         public static string PluralizeWord(this string word)
             => word.PluralizeWord(CultureInfo.CurrentUICulture);
 
-        /// <summary>
-        /// More Pythonic version of the
-        /// <see cref="M:xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython" />
-        /// method, which you can put after a string literal or
-        /// <see cref="T:System.String" /> variable to format a string.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that
-        /// optionally contains one or more format placeholder(s).
-        /// </param>
-        /// <param name="args">
-        /// (Optional.) One or more format values to be substituted in
-        /// the corresponding locations in the specified <paramref name="value" />.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> that is the result of the formatting
-        /// operation, or idempotent if the format operation could not be carried out, or
-        /// if no format values were provided in the <paramref name="args" /> parameter.
-        /// </returns>
+        /// <summary>More Pythonic version of the <see cref="M:xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython" /> method, which you can put after a string literal or <see cref="T:System.String" /> variable to format a string.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that optionally contains one or more format placeholder(s).</param>
+        /// <param name="args">(Optional.) One or more format values to be substituted in the corresponding locations in the specified <paramref name="value" />.</param>
+        /// <returns>A <see cref="T:System.String" /> that is the result of the formatting operation, or idempotent if the format operation could not be carried out, or if no format values were provided in the <paramref name="args" /> parameter.</returns>
         public static string PostfixFormat(
             this string value,
             params object[] args
@@ -4077,19 +2468,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Prepends a bang (<c>!</c>) character before the specified
-        /// <paramref name="value" />, and then returns the result.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// value to which a bang (<c>!</c>) character is to be prepended.
-        /// </param>
-        /// <returns>
-        /// If successful, the argument of the <paramref name="value" />
-        /// parameter, with a bang (<c>!</c>) character prepended; otherwise, the method is
-        /// idempotent.
-        /// </returns>
+        /// <summary>Prepends a bang (<c>!</c>) character before the specified <paramref name="value" />, and then returns the result.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to which a bang (<c>!</c>) character is to be prepended.</param>
+        /// <returns>If successful, the argument of the <paramref name="value" /> parameter, with a bang (<c>!</c>) character prepended; otherwise, the method is idempotent.</returns>
         public static string PrependBang(this string value)
         {
             var result = value;
@@ -4111,24 +2492,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Prepends the specified <paramref name="value" /> with the text of the language
-        /// article specified by the <paramref name="type" /> parameter.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to which the
-        /// language article is to be prepended.
-        /// </param>
-        /// <param name="type">
-        /// (Required.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that
-        /// specifies the type of language article to prepend.
-        /// </param>
-        /// <returns>
-        /// If successful, the argument of the <paramref name="value" /> parameter, with
-        /// the language article specified by the <paramref name="type" /> parameter
-        /// prepended; otherwise, the method is idempotent.
-        /// </returns>
+        /// <summary>Prepends the specified <paramref name="value" /> with the text of the language article specified by the <paramref name="type" /> parameter.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to which the language article is to be prepended.</param>
+        /// <param name="type">(Required.) One of the <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that specifies the type of language article to prepend.</param>
+        /// <returns>If successful, the argument of the <paramref name="value" /> parameter, with the language article specified by the <paramref name="type" /> parameter prepended; otherwise, the method is idempotent.</returns>
         [return: NotLogged]
         public static string PrependLanguageArticle(
             [NotLogged] this string value,
@@ -4155,25 +2522,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="stringToSearch" />
-        /// matches the regular expression specified by the <paramref name="regex" />
-        /// parameter's value, without regards to upper- or lower-case.
-        /// </summary>
-        /// <param name="stringToSearch">
-        /// (Required.) String containing the data to be
-        /// searched for a match.
-        /// </param>
-        /// <param name="regex">
-        /// (Required.) String containing the regular expression that
-        /// expresses the criteria to be used for matching.
-        /// </param>
-        /// <returns>
-        /// If even one match is found by the <paramref name="regex" />, returns
-        /// <see langword="true" />. Otherwise, if one or both of the required parameters
-        /// are blank or <see langword="null" />, or if no matches are found by the
-        /// <paramref name="regex" />, then this method returns <see langword="false" />.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="stringToSearch" /> matches the regular expression specified by the <paramref name="regex" /> parameter's value, without regards to upper- or lower-case.</summary>
+        /// <param name="stringToSearch">(Required.) String containing the data to be searched for a match.</param>
+        /// <param name="regex">(Required.) String containing the regular expression that expresses the criteria to be used for matching.</param>
+        /// <returns>If even one match is found by the <paramref name="regex" />, returns <see langword="true" />. Otherwise, if one or both of the required parameters are blank or <see langword="null" />, or if no matches are found by the <paramref name="regex" />, then this method returns <see langword="false" />.</returns>
         public static bool RegexMatchesNoCase(
             this string stringToSearch,
             string regex
@@ -4183,25 +2535,10 @@ namespace xyLOGIX.Core.Extensions
                    stringToSearch, regex, RegexOptions.IgnoreCase
                );
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="stringToSearch" />
-        /// matches the regular expression specified by the <paramref name="regex" />
-        /// parameter's value, respecting case.
-        /// </summary>
-        /// <param name="stringToSearch">
-        /// (Required.) String containing the data to be
-        /// searched for a match.
-        /// </param>
-        /// <param name="regex">
-        /// (Required.) String containing the regular expression that
-        /// expresses the criteria to be used for matching.
-        /// </param>
-        /// <returns>
-        /// If even one match is found by the <paramref name="regex" />, returns
-        /// <see langword="true" />. Otherwise, if one or both of the required parameters
-        /// are blank or <see langword="null" />, or if no matches are found by the
-        /// <paramref name="regex" />, then this method returns <see langword="false" />.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="stringToSearch" /> matches the regular expression specified by the <paramref name="regex" /> parameter's value, respecting case.</summary>
+        /// <param name="stringToSearch">(Required.) String containing the data to be searched for a match.</param>
+        /// <param name="regex">(Required.) String containing the regular expression that expresses the criteria to be used for matching.</param>
+        /// <returns>If even one match is found by the <paramref name="regex" />, returns <see langword="true" />. Otherwise, if one or both of the required parameters are blank or <see langword="null" />, or if no matches are found by the <paramref name="regex" />, then this method returns <see langword="false" />.</returns>
         public static bool RegexMatchesWithCase(
             this string stringToSearch,
             string regex
@@ -4210,31 +2547,12 @@ namespace xyLOGIX.Core.Extensions
                !string.IsNullOrEmpty(stringToSearch) &&
                Regex.IsMatch(stringToSearch, regex);
 
-        /// <summary>
-        /// Replaces the string specified by <paramref name="search" /> by the
-        /// <paramref name="replacement" /> string in the <paramref name="value" /> . The
-        /// <paramref name="search" /> parameter may contain a Regular Expression (regex).
-        /// Case is ignored.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the data in which the search
-        /// and replace operation is to be performed.
-        /// </param>
-        /// <param name="search">
-        /// (Required.) String containing the data to be found in the
-        /// string. May contain a regular expression.
-        /// </param>
-        /// <param name="replacement">
-        /// (Required.) String containing the data that any
-        /// found occurrences of <paramref name="search" /> are to be substituted with.
-        /// </param>
-        /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException">
-        /// Thrown if any of the required
-        /// parameters, <paramref name="value" />, <paramref name="search" />, or
-        /// <paramref name="replacement" />, are passed blank or <see langword="null" />
-        /// strings for values.
-        /// </exception>
+        /// <summary>Replaces the string specified by <paramref name="search" /> by the <paramref name="replacement" /> string in the <paramref name="value" /> . The <paramref name="search" /> parameter may contain a Regular Expression (regex). Case is ignored.</summary>
+        /// <param name="value">(Required.) String containing the data in which the search and replace operation is to be performed.</param>
+        /// <param name="search">(Required.) String containing the data to be found in the string. May contain a regular expression.</param>
+        /// <param name="replacement">(Required.) String containing the data that any found occurrences of <paramref name="search" /> are to be substituted with.</param>
+        /// <returns>String containing the result.</returns>
+        /// <exception cref="T:System.ArgumentException">Thrown if any of the required parameters, <paramref name="value" />, <paramref name="search" />, or <paramref name="replacement" />, are passed blank or <see langword="null" /> strings for values.</exception>
         public static string RegexReplaceNoCase(
             this string value,
             string search,
@@ -4275,45 +2593,14 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces the string specified by <paramref name="search" /> by the
-        /// <paramref name="replacement" /> string in the <paramref name="value" /> . The
-        /// <paramref name="search" /> parameter may contain a Regular Expression (regex).
-        /// Case is ignored.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the data in which the search
-        /// and replace operation is to be performed.
-        /// </param>
-        /// <param name="search">
-        /// (Required.) String containing the data to be found in the
-        /// string. May contain a regular expression.
-        /// </param>
-        /// <param name="replacement">
-        /// (Required.) String containing the data that any
-        /// found occurrences of <paramref name="search" /> are to be substituted with.
-        /// </param>
-        /// <param name="options">
-        /// (Required.) A bitwise combination of the
-        /// <see cref="T:System.Text.RegularExpressions.RegexOptions" /> enumeration values
-        /// that provide options for matching.
-        /// </param>
-        /// <remarks>
-        /// This overload allows specification of options in the
-        /// <paramref name="options" /> parameter.
-        /// <para />
-        /// <b>NOTE:</b> The
-        /// <see cref="T:System.Text.RegularExpressions.RegexOptions.IgnoreCase" />
-        /// enumeration value is combined with whatever else is provided in the
-        /// <paramref name="options" /> parameter by default.
-        /// </remarks>
-        /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException">
-        /// Thrown if any of the required
-        /// parameters, <paramref name="value" />, <paramref name="search" />, or
-        /// <paramref name="replacement" />, are passed blank or <see langword="null" />
-        /// strings for values.
-        /// </exception>
+        /// <summary>Replaces the string specified by <paramref name="search" /> by the <paramref name="replacement" /> string in the <paramref name="value" /> . The <paramref name="search" /> parameter may contain a Regular Expression (regex). Case is ignored.</summary>
+        /// <param name="value">(Required.) String containing the data in which the search and replace operation is to be performed.</param>
+        /// <param name="search">(Required.) String containing the data to be found in the string. May contain a regular expression.</param>
+        /// <param name="replacement">(Required.) String containing the data that any found occurrences of <paramref name="search" /> are to be substituted with.</param>
+        /// <param name="options">(Required.) A bitwise combination of the <see cref="T:System.Text.RegularExpressions.RegexOptions" /> enumeration values that provide options for matching.</param>
+        /// <remarks>This overload allows specification of options in the <paramref name="options" /> parameter. <para /><b>NOTE:</b> The <see cref="T:System.Text.RegularExpressions.RegexOptions.IgnoreCase" /> enumeration value is combined with whatever else is provided in the <paramref name="options" /> parameter by default.</remarks>
+        /// <returns>String containing the result.</returns>
+        /// <exception cref="T:System.ArgumentException">Thrown if any of the required parameters, <paramref name="value" />, <paramref name="search" />, or <paramref name="replacement" />, are passed blank or <see langword="null" /> strings for values.</exception>
         public static string RegexReplaceNoCase(
             this string value,
             string search,
@@ -4356,30 +2643,12 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces the string specified by <paramref name="search" /> by the
-        /// <paramref name="replacement" /> string in the <paramref name="value" /> . The
-        /// <paramref name="search" /> parameter may contain a Regular Expression (regex).
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the data in which the search
-        /// and replace operation is to be performed.
-        /// </param>
-        /// <param name="search">
-        /// (Required.) String containing the data to be found in the
-        /// string. May contain a regular expression.
-        /// </param>
-        /// <param name="replacement">
-        /// (Required.) String containing the data that any
-        /// found occurrences of <paramref name="search" /> are to be substituted with.
-        /// </param>
-        /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException">
-        /// Thrown if any of the required
-        /// parameters, <paramref name="value" />, <paramref name="search" />, or
-        /// <paramref name="replacement" />, are passed blank or <see langword="null" />
-        /// strings for values.
-        /// </exception>
+        /// <summary>Replaces the string specified by <paramref name="search" /> by the <paramref name="replacement" /> string in the <paramref name="value" /> . The <paramref name="search" /> parameter may contain a Regular Expression (regex).</summary>
+        /// <param name="value">(Required.) String containing the data in which the search and replace operation is to be performed.</param>
+        /// <param name="search">(Required.) String containing the data to be found in the string. May contain a regular expression.</param>
+        /// <param name="replacement">(Required.) String containing the data that any found occurrences of <paramref name="search" /> are to be substituted with.</param>
+        /// <returns>String containing the result.</returns>
+        /// <exception cref="T:System.ArgumentException">Thrown if any of the required parameters, <paramref name="value" />, <paramref name="search" />, or <paramref name="replacement" />, are passed blank or <see langword="null" /> strings for values.</exception>
         public static string RegexReplaceWithCase(
             this string value,
             string search,
@@ -4418,35 +2687,13 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces the string specified by <paramref name="search" /> by the
-        /// <paramref name="replacement" /> string in the <paramref name="value" /> . The
-        /// <paramref name="search" /> parameter may contain a Regular Expression (regex).
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the data in which the search
-        /// and replace operation is to be performed.
-        /// </param>
-        /// <param name="search">
-        /// (Required.) String containing the data to be found in the
-        /// string. May contain a regular expression.
-        /// </param>
-        /// <param name="replacement">
-        /// (Required.) String containing the data that any
-        /// found occurrences of <paramref name="search" /> are to be substituted with.
-        /// </param>
-        /// <param name="options">
-        /// (Required.) A bitwise combination of the
-        /// <see cref="T:System.Text.RegularExpressions.RegexOptions" /> enumeration values
-        /// that provide options for matching.
-        /// </param>
-        /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException">
-        /// Thrown if any of the required
-        /// parameters, <paramref name="value" />, <paramref name="search" />, or
-        /// <paramref name="replacement" />, are passed blank or <see langword="null" />
-        /// strings for values.
-        /// </exception>
+        /// <summary>Replaces the string specified by <paramref name="search" /> by the <paramref name="replacement" /> string in the <paramref name="value" /> . The <paramref name="search" /> parameter may contain a Regular Expression (regex).</summary>
+        /// <param name="value">(Required.) String containing the data in which the search and replace operation is to be performed.</param>
+        /// <param name="search">(Required.) String containing the data to be found in the string. May contain a regular expression.</param>
+        /// <param name="replacement">(Required.) String containing the data that any found occurrences of <paramref name="search" /> are to be substituted with.</param>
+        /// <param name="options">(Required.) A bitwise combination of the <see cref="T:System.Text.RegularExpressions.RegexOptions" /> enumeration values that provide options for matching.</param>
+        /// <returns>String containing the result.</returns>
+        /// <exception cref="T:System.ArgumentException">Thrown if any of the required parameters, <paramref name="value" />, <paramref name="search" />, or <paramref name="replacement" />, are passed blank or <see langword="null" /> strings for values.</exception>
         public static string RegexReplaceWithCase(
             this string value,
             string search,
@@ -4486,25 +2733,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Removes all ampersand (<c>&amp;</c>) character(s) from the specified
-        /// <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value from which
-        /// the ampersand (<c>&amp;</c>) character(s) are to be removed.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> that is the same as the input
-        /// <paramref name="value" />, but with all ampersand (<c>&amp;</c>) character(s)
-        /// removed.
-        /// <para />
-        /// If the input <paramref name="value" /> is <see langword="null" />, empty, or
-        /// consists only of whitespace characters, then the return value is the same as
-        /// the input <paramref name="value" />.
-        /// <para />
-        /// If another sort of issue occurs, then this method is also idempotent.
-        /// </returns>
+        /// <summary>Removes all ampersand (<c>&amp;</c>) character(s) from the specified <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value from which the ampersand (<c>&amp;</c>) character(s) are to be removed.</param>
+        /// <returns>A <see cref="T:System.String" /> that is the same as the input <paramref name="value" />, but with all ampersand (<c>&amp;</c>) character(s) removed. <para /> If the input <paramref name="value" /> is <see langword="null" />, empty, or consists only of whitespace characters, then the return value is the same as the input <paramref name="value" />. <para /> If another sort of issue occurs, then this method is also idempotent.</returns>
         [return: NotLogged]
         public static string RemoveAmpersands([NotLogged] this string value)
         {
@@ -4527,16 +2758,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Strips all punctuation and numeric digits from a string and trims the
-        /// result.
-        /// </summary>
-        /// <param name="value"> String to have punctuation and numbers stripped. </param>
-        /// <returns> String after transformation. </returns>
-        /// <remarks>
-        /// If the empty string is passed to <paramref name="value" />, then the
-        /// empty string is returned.
-        /// </remarks>
+        /// <summary>Strips all punctuation and numeric digits from a string and trims the result.</summary>
+        /// <param name="value">String to have punctuation and numbers stripped.</param>
+        /// <returns>String after transformation.</returns>
+        /// <remarks>If the empty string is passed to <paramref name="value" />, then the empty string is returned.</remarks>
         public static string RemoveDigitsAndPunctuation(this string value)
             => string.IsNullOrWhiteSpace(value)
                 ? string.Empty
@@ -4547,23 +2772,10 @@ namespace xyLOGIX.Core.Extensions
                        )
                        .Trim();
 
-        /// <summary>
-        /// Removes the <c>*** ERROR *** </c> prefix from the specified
-        /// <paramref name="message" />, and then returns the altered content.
-        /// </summary>
-        /// <param name="message">
-        /// (Required.) A <see cref="T:System.String" /> containing
-        /// the message that is to be altered.
-        /// </param>
-        /// <remarks>
-        /// If the specified <paramref name="message" /> does not contain the
-        /// <c>*** ERROR *** </c> prefix, then this method is idempotent.
-        /// </remarks>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the
-        /// specified <paramref name="message" /> without the <c>*** ERROR *** </c> prefix;
-        /// otherwise, the method is idempotent.
-        /// </returns>
+        /// <summary>Removes the <c>*** ERROR ***</c> prefix from the specified <paramref name="message" />, and then returns the altered content.</summary>
+        /// <param name="message">(Required.) A <see cref="T:System.String" /> containing the message that is to be altered.</param>
+        /// <remarks>If the specified <paramref name="message" /> does not contain the <c>*** ERROR ***</c> prefix, then this method is idempotent.</remarks>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the specified <paramref name="message" /> without the <c>*** ERROR ***</c> prefix; otherwise, the method is idempotent.</returns>
         public static string RemoveErrorPrefix([NotLogged] this string message)
         {
             var result = message;
@@ -4590,19 +2802,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Removes any extra blank lines from the end of the specified
-        /// <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> to normalize trailing newlines in.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> with extra blank lines removed from the end.
-        /// If
-        /// <paramref name="value" /> is <see langword="null" /> or only whitespace,
-        /// returns <see cref="F:System.String.Empty" />.
-        /// </returns>
+        /// <summary>Removes any extra blank lines from the end of the specified <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> to normalize trailing newlines in.</param>
+        /// <returns>A <see cref="T:System.String" /> with extra blank lines removed from the end. If <paramref name="value" /> is <see langword="null" /> or only whitespace, returns <see cref="F:System.String.Empty" />.</returns>
         [return: NotLogged]
         public static string RemoveExtraEmptyLines(
             [NotLogged] this string value
@@ -4636,17 +2838,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Removes the last word from the specified space-delimited phrase.
-        /// </summary>
+        /// <summary>Removes the last word from the specified space-delimited phrase.</summary>
         /// <param name="text">(Required.) The phrase to process.</param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> containing all but the final word of
-        /// <paramref name="text" />. If <paramref name="text" /> contains only
-        /// one word, the empty string is returned.
-        /// If <paramref name="text" /> is <see langword="null" /> or whitespace,
-        /// the original value is returned.
-        /// </returns>
+        /// <returns>A <see cref="T:System.String" /> containing all but the final word of <paramref name="text" />. If <paramref name="text" /> contains only one word, the empty string is returned. If <paramref name="text" /> is <see langword="null" /> or whitespace, the original value is returned.</returns>
         [return: NotLogged]
         public static string RemoveLastWord([NotLogged] this string text)
         {
@@ -4676,17 +2870,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Removes all period(s) from the specified <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> from which to remove period(s).
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing none of the
-        /// period(s) that were formerly in the specified <paramref name="value" />;
-        /// otherwise, the method is idempotent.
-        /// </returns>
+        /// <summary>Removes all period(s) from the specified <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> from which to remove period(s).</param>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing none of the period(s) that were formerly in the specified <paramref name="value" />; otherwise, the method is idempotent.</returns>
         [return: NotLogged]
         public static string RemovePeriods([NotLogged] this string value)
         {
@@ -4704,35 +2890,17 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
-                // By default, this method is idempotent.  This means
-                // that it returns its own input.
+                // By default, this method is idempotent.  This means that it returns its own input.
                 result = value;
             }
 
             return result;
         }
 
-        /// <summary>
-        /// Removes all space(s) from the specified <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> from which to remove space(s).
-        /// </param>
-        /// <remarks>
-        /// If the specified <paramref name="value" /> is <see langword="null" />,
-        /// the <see cref="F:System.String.Empty" /> value, devoid of space character(s),
-        /// then this method is idempotent.
-        /// <para />
-        /// In the specific scenario where the string is not the
-        /// <see cref="F:System.String.Empty" /> value, not <see langword="null" />, but
-        /// otherwise consists only of whitespace, then this method returns the
-        /// <see cref="F:System.String.Empty" /> value.
-        /// </remarks>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing none of the
-        /// space(s) that were formerly in the specified <paramref name="value" />;
-        /// otherwise, the method is idempotent.
-        /// </returns>
+        /// <summary>Removes all space(s) from the specified <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> from which to remove space(s).</param>
+        /// <remarks>If the specified <paramref name="value" /> is <see langword="null" />, the <see cref="F:System.String.Empty" /> value, devoid of space character(s), then this method is idempotent. <para /> In the specific scenario where the string is not the <see cref="F:System.String.Empty" /> value, not <see langword="null" />, but otherwise consists only of whitespace, then this method returns the <see cref="F:System.String.Empty" /> value.</remarks>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing none of the space(s) that were formerly in the specified <paramref name="value" />; otherwise, the method is idempotent.</returns>
         [return: NotLogged]
         public static string RemoveSpaces([NotLogged] this string value)
         {
@@ -4752,33 +2920,17 @@ namespace xyLOGIX.Core.Extensions
                 // dump all the exception info to the log
                 DebugUtils.LogException(ex);
 
-                // By default, this method is idempotent.  This means
-                // that it returns its own input.
+                // By default, this method is idempotent.  This means that it returns its own input.
                 result = value;
             }
 
             return result;
         }
 
-        /// <summary>
-        /// Removes any trailing <c>\</c> characters from the string provided in
-        /// <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the value to be stripped of
-        /// trailing backslash characters.
-        /// </param>
-        /// <returns>
-        /// Same as <paramref name="value" />, but with no trailing backslash
-        /// characters.
-        /// <para />
-        /// If the <paramref name="value" /> parameter's argument has no trailing backslash
-        /// characters to begin with, then this method is idempotent.
-        /// </returns>
-        /// <remarks>
-        /// If the argument of the <paramref name="value" /> parameter is blank
-        /// or <see langword="null" />, then the method is idempotent.
-        /// </remarks>
+        /// <summary>Removes any trailing <c>\</c> characters from the string provided in <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) String containing the value to be stripped of trailing backslash characters.</param>
+        /// <returns>Same as <paramref name="value" />, but with no trailing backslash characters. <para /> If the <paramref name="value" /> parameter's argument has no trailing backslash characters to begin with, then this method is idempotent.</returns>
+        /// <remarks>If the argument of the <paramref name="value" /> parameter is blank or <see langword="null" />, then the method is idempotent.</remarks>
         public static string RemoveTrailingBackslashes(this string value)
         {
             var result = value;
@@ -4801,31 +2953,12 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces all occurrences of <paramref name="oldValue" /> with
-        /// <paramref name="newValue" />, using
-        /// <paramref name="comparisonType" /> to control the matching logic.
-        /// </summary>
-        /// <param name="source">
-        /// (Required.) The original <see cref="T:System.String" /> to
-        /// operate on.
-        /// </param>
-        /// <param name="oldValue">
-        /// (Required.) The substring to be replaced.
-        /// </param>
-        /// <param name="newValue">
-        /// (Required.) The replacement text.
-        /// </param>
-        /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" />
-        /// values that dictates how the comparison is performed.
-        /// </param>
-        /// <returns>
-        /// A new <see cref="T:System.String" /> with all appropriate
-        /// replacements applied, or the original
-        /// <paramref name="source" /> if no replacements were made or if
-        /// validation failed.
-        /// </returns>
+        /// <summary>Replaces all occurrences of <paramref name="oldValue" /> with <paramref name="newValue" />, using <paramref name="comparisonType" /> to control the matching logic.</summary>
+        /// <param name="source">(Required.) The original <see cref="T:System.String" /> to operate on.</param>
+        /// <param name="oldValue">(Required.) The substring to be replaced.</param>
+        /// <param name="newValue">(Required.) The replacement text.</param>
+        /// <param name="comparisonType">(Required.) One of the <see cref="T:System.StringComparison" /> values that dictates how the comparison is performed.</param>
+        /// <returns>A new <see cref="T:System.String" /> with all appropriate replacements applied, or the original <paramref name="source" /> if no replacements were made or if validation failed.</returns>
         [DebuggerStepThrough]
         public static string Replace(
             [NotLogged] this string source,
@@ -4839,24 +2972,19 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 /*
-                 * For cybersecurity reasons, and to defeat reverse-engineering,
-                 * check the value of the 'comparisonType' parameter to ensure that it
-                 * is not set to a value outside the set of valid values defined
-                 * by the System.StringComparison enumeration.
-                 *
-                 * In principle, since all C# enums devolve to integer values, a
-                 * hacker could insert a different value into the CPU register that the
-                 * 'comparisonType' parameter is read from and thereby make this application
-                 * do something it's not intended to do.
+                 * For cybersecurity reasons, and to defeat reverse-engineering, check the value of
+                 * the 'comparisonType' parameter to ensure that it is not set to a value outside
+                 * the set of valid values defined by the System.StringComparison enumeration. In
+                 * principle, since all C# enums devolve to integer values, a hacker could insert a
+                 * different value into the CPU register that the 'comparisonType' parameter is read
+                 * from and thereby make this application do something it's not intended to do.
                  */
 
                 System.Diagnostics.Debug.WriteLine(
                     $"*** StringExtensions.Replace: Checking whether the string comparison, '{comparisonType}', is within the defined value set..."
                 );
 
-                // Check to see whether the specified string comparison type is within the defined value set.
-                // If this is not the case, then write an error message to the log file,
-                // and then terminate the execution of this method.
+                // Check to see whether the specified string comparison type is within the defined value set. If this is not the case, then write an error message to the log file, and then terminate the execution of this method.
                 if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
                 {
                     // The specified string comparison type is NOT within the defined value set.  This is not desirable.
@@ -4880,9 +3008,7 @@ namespace xyLOGIX.Core.Extensions
                     "StringExtensions.Replace *** INFO: Checking whether the value of the parameter, 'source', is blank..."
                 );
 
-                // Check whether the value of the parameter, 'source', is blank.
-                // If this is so, then emit an error message to the log file, and
-                // then terminate the execution of this method.
+                // Check whether the value of the parameter, 'source', is blank. If this is so, then emit an error message to the log file, and then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(source))
                 {
                     // The parameter, 'source' was either passed a null value, or it is blank.  This is not desirable.
@@ -4906,9 +3032,7 @@ namespace xyLOGIX.Core.Extensions
                     "StringExtensions.Replace *** INFO: Checking whether the value of the parameter, 'oldValue', is blank..."
                 );
 
-                // Check whether the value of the parameter, 'oldValue', is blank.
-                // If this is so, then emit an error message to the log file, and
-                // then terminate the execution of this method.
+                // Check whether the value of the parameter, 'oldValue', is blank. If this is so, then emit an error message to the log file, and then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(oldValue))
                 {
                     // The parameter, 'oldValue' was either passed a null value, or it is blank.  This is not desirable.
@@ -4966,35 +3090,12 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces all occurrences of <paramref name="oldChar" /> with
-        /// <paramref name="newChar" />.  The
-        /// <paramref name="comparisonType" /> parameter is accepted only to
-        /// mirror the other overload; it is ignored because
-        /// character‑for‑character replacement is culture‑invariant.
-        /// </summary>
-        /// <param name="source">
-        /// (Required.) The original <see cref="T:System.String" /> to
-        /// operate on.
-        /// </param>
-        /// <param name="oldChar">
-        /// (Required.) The character to be replaced.
-        /// </param>
-        /// <param name="newChar">
-        /// (Required.) The replacement character.
-        /// </param>
-        /// <param name="comparisonType">
-        /// (Required.) One of the <see cref="T:System.StringComparison" /> value(s) that
-        /// defines how the old and new value(s) are to be compared.
-        /// <para />
-        /// This parameter is ignored; it is accepted only to provide symmetry with the
-        /// other overload(s) of this method.
-        /// </param>
-        /// <returns>
-        /// A new <see cref="T:System.String" /> with all occurrences of
-        /// <paramref name="oldChar" /> replaced, or the original string if
-        /// <paramref name="source" /> is <see langword="null" />.
-        /// </returns>
+        /// <summary>Replaces all occurrences of <paramref name="oldChar" /> with <paramref name="newChar" />. The <paramref name="comparisonType" /> parameter is accepted only to mirror the other overload; it is ignored because character‑for‑character replacement is culture‑invariant.</summary>
+        /// <param name="source">(Required.) The original <see cref="T:System.String" /> to operate on.</param>
+        /// <param name="oldChar">(Required.) The character to be replaced.</param>
+        /// <param name="newChar">(Required.) The replacement character.</param>
+        /// <param name="comparisonType">(Required.) One of the <see cref="T:System.StringComparison" /> value(s) that defines how the old and new value(s) are to be compared. <para /> This parameter is ignored; it is accepted only to provide symmetry with the other overload(s) of this method.</param>
+        /// <returns>A new <see cref="T:System.String" /> with all occurrences of <paramref name="oldChar" /> replaced, or the original string if <paramref name="source" /> is <see langword="null" />.</returns>
         [Log(AttributeExclude = true), DebuggerStepThrough]
         [return: NotLogged]
         public static string Replace(
@@ -5009,18 +3110,16 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 /*
-                 * NOTE: It is not necessary to carry out the anti-reverse-engineering
-                 * check on the value of the 'comparisonType' parameter, since the
-                 * parameter is ignored.  StringComparison.Ordinal is used by default.
+                 * NOTE: It is not necessary to carry out the anti-reverse-engineering check on the
+                 * value of the 'comparisonType' parameter, since the parameter is ignored.
+                 * StringComparison.Ordinal is used by default.
                  */
 
                 System.Diagnostics.Debug.WriteLine(
                     "StringExtensions.Replace *** INFO: Checking whether the value of the parameter, 'source', is blank..."
                 );
 
-                // Check whether the value of the parameter, 'source', is blank.
-                // If this is so, then emit an error message to the log file, and
-                // then terminate the execution of this method.
+                // Check whether the value of the parameter, 'source', is blank. If this is so, then emit an error message to the log file, and then terminate the execution of this method.
                 if (string.IsNullOrWhiteSpace(source))
                 {
                     // The parameter, 'source' was either passed a null value, or it is blank.  This is not desirable.
@@ -5059,39 +3158,12 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces any of the elements of the specified
-        /// <paramref name="findWhatValues" /> in <paramref name="source" /> with the
-        /// specified <paramref name="replacementText" />.
-        /// </summary>
-        /// <param name="source">
-        /// (Required.) A <see cref="T:System.String" /> that is to be
-        /// searched.
-        /// </param>
-        /// <param name="findWhatValues">
-        /// (Required.) Collection of
-        /// <see cref="T:System.String" /> value(s), each of which is to be searched for in
-        /// the <paramref name="source" /> <see cref="T:System.String" />.
-        /// </param>
-        /// <param name="replacementText">
-        /// (Required.) A <see cref="T:System.String" /> that
-        /// is to serve as the replacement for any of the specified
-        /// <paramref name="findWhatValues" /> in <paramref name="source" />.
-        /// </param>
-        /// <param name="option">
-        /// (Required.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.ReplaceAnyOfOption" /> value(s) that
-        /// indicates which of the occurrence(s) of the specified
-        /// <paramref name="source" /> string are to be replaced.
-        /// <para />
-        /// The default value of this parameter is
-        /// <see cref="F:xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First" />.
-        /// </param>
-        /// <returns>
-        /// If successful, the <paramref name="source" /> string, with any of the
-        /// specified <paramref name="findWhatValues" />, if they occur in it, replaced
-        /// with the specified <paramref name="replacementText" />.
-        /// </returns>
+        /// <summary>Replaces any of the elements of the specified <paramref name="findWhatValues" /> in <paramref name="source" /> with the specified <paramref name="replacementText" />.</summary>
+        /// <param name="source">(Required.) A <see cref="T:System.String" /> that is to be searched.</param>
+        /// <param name="findWhatValues">(Required.) Collection of <see cref="T:System.String" /> value(s), each of which is to be searched for in the <paramref name="source" /><see cref="T:System.String" />.</param>
+        /// <param name="replacementText">(Required.) A <see cref="T:System.String" /> that is to serve as the replacement for any of the specified <paramref name="findWhatValues" /> in <paramref name="source" />.</param>
+        /// <param name="option">(Required.) One of the <see cref="T:xyLOGIX.Core.Extensions.ReplaceAnyOfOption" /> value(s) that indicates which of the occurrence(s) of the specified <paramref name="source" /> string are to be replaced. <para /> The default value of this parameter is <see cref="F:xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First" />.</param>
+        /// <returns>If successful, the <paramref name="source" /> string, with any of the specified <paramref name="findWhatValues" />, if they occur in it, replaced with the specified <paramref name="replacementText" />.</returns>
         [return: NotLogged]
         public static string ReplaceAnyOf(
             [NotLogged] this string source,
@@ -5105,9 +3177,8 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 /*
-                 * NOTE: A conscious choice has been deliberately made to NOT
-                 * add logging statements to this method, since it may be called
-                 * very frequently.
+                 * NOTE: A conscious choice has been deliberately made to NOT add logging statements
+                 * to this method, since it may be called very frequently.
                  */
 
                 if (string.IsNullOrWhiteSpace(source)) return result;
@@ -5137,19 +3208,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces the copyright symbol (©) with a PowerShell escape sequence that allows
-        /// it to show up correctly in a Git commit message.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the
-        /// text that is to be replaced.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the
-        /// modified text; otherwise, the method returns the
-        /// <see cref="F:System.String.Empty" /> value.
-        /// </returns>
+        /// <summary>Replaces the copyright symbol (©) with a PowerShell escape sequence that allows it to show up correctly in a Git commit message.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text that is to be replaced.</param>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the modified text; otherwise, the method returns the <see cref="F:System.String.Empty" /> value.</returns>
         [DebuggerStepThrough]
         [return: NotLogged]
         public static string ReplaceCopyrightSymbolWithEscapeSequence(
@@ -5182,30 +3243,12 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces the string specified by <paramref name="search" /> by the
-        /// <paramref name="replacement" /> string in the <paramref name="value" /> ,
-        /// ignoring case.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the data in which the search
-        /// and replace operation is to be performed.
-        /// </param>
-        /// <param name="search">
-        /// (Required.) String containing the data to be found in the
-        /// string.
-        /// </param>
-        /// <param name="replacement">
-        /// (Required.) String containing the data that any
-        /// found occurrences of <paramref name="search" /> are to be substituted with.
-        /// </param>
-        /// <returns> String containing the result. </returns>
-        /// <exception cref="T:System.ArgumentException">
-        /// Thrown if any of the required
-        /// parameters, <paramref name="value" />, <paramref name="search" />, or
-        /// <paramref name="replacement" />, are passed blank or <see langword="null" />
-        /// strings for values.
-        /// </exception>
+        /// <summary>Replaces the string specified by <paramref name="search" /> by the <paramref name="replacement" /> string in the <paramref name="value" /> , ignoring case.</summary>
+        /// <param name="value">(Required.) String containing the data in which the search and replace operation is to be performed.</param>
+        /// <param name="search">(Required.) String containing the data to be found in the string.</param>
+        /// <param name="replacement">(Required.) String containing the data that any found occurrences of <paramref name="search" /> are to be substituted with.</param>
+        /// <returns>String containing the result.</returns>
+        /// <exception cref="T:System.ArgumentException">Thrown if any of the required parameters, <paramref name="value" />, <paramref name="search" />, or <paramref name="replacement" />, are passed blank or <see langword="null" /> strings for values.</exception>
         public static string ReplaceNoCase(
             this string value,
             string search,
@@ -5230,26 +3273,10 @@ namespace xyLOGIX.Core.Extensions
             return value.RegexReplaceNoCase(search, replacement);
         }
 
-        /// <summary>
-        /// Replaces single quotation marks, <c>'</c>, appearing in the specified
-        /// <paramref name="inputString" /> with the HTML entity <c>&amp;apos;</c>.
-        /// </summary>
-        /// <param name="inputString">
-        /// (Required.) A <see cref="T:System.String" /> value in
-        /// which the replacement is to take place.
-        /// </param>
-        /// <remarks>
-        /// If the value of the <paramref name="inputString" /> parameter is
-        /// <see langword="null" />, blank, contains only whitespace, or is the
-        /// <see cref="F:System.String.Empty" /> value, then this method is idempotent.
-        /// <para />
-        /// This method is also idempotent if an exception is caught during the execution
-        /// of the algorithm.v
-        /// </remarks>
-        /// <returns>
-        /// A <see cref="T:System.String" /> that contains the text that has had
-        /// the replacement done on it.
-        /// </returns>
+        /// <summary>Replaces single quotation marks, <c>'</c>, appearing in the specified <paramref name="inputString" /> with the HTML entity <c>&amp;apos;</c>.</summary>
+        /// <param name="inputString">(Required.) A <see cref="T:System.String" /> value in which the replacement is to take place.</param>
+        /// <remarks>If the value of the <paramref name="inputString" /> parameter is <see langword="null" />, blank, contains only whitespace, or is the <see cref="F:System.String.Empty" /> value, then this method is idempotent. <para /> This method is also idempotent if an exception is caught during the execution of the algorithm.v</remarks>
+        /// <returns>A <see cref="T:System.String" /> that contains the text that has had the replacement done on it.</returns>
         [return: NotLogged]
         public static string ReplaceSingleQuotesWithHTMLApostrophes(
             [NotLogged] this string inputString
@@ -5274,23 +3301,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Replaces all spaces in the specified <paramref name="inputString" /> with HTML
-        /// non-breaking space entities (<c>&amp;nbsp;</c>).
-        /// </summary>
-        /// <param name="inputString">
-        /// (Required.) A <see cref="T:System.String" /> containing the text in which
-        /// spaces are to be replaced.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> with all spaces replaced by HTML non-breaking
-        /// space entities (<c>&amp;nbsp;</c>).
-        /// </returns>
-        /// <remarks>
-        /// If the <paramref name="inputString" /> is <see langword="null" /> or consists
-        /// only of whitespace, the method returns the original
-        /// <paramref name="inputString" />.
-        /// </remarks>
+        /// <summary>Replaces all spaces in the specified <paramref name="inputString" /> with HTML non-breaking space entities (<c>&amp;nbsp;</c>).</summary>
+        /// <param name="inputString">(Required.) A <see cref="T:System.String" /> containing the text in which spaces are to be replaced.</param>
+        /// <returns>A <see cref="T:System.String" /> with all spaces replaced by HTML non-breaking space entities (<c>&amp;nbsp;</c>).</returns>
+        /// <remarks>If the <paramref name="inputString" /> is <see langword="null" /> or consists only of whitespace, the method returns the original <paramref name="inputString" />.</remarks>
         [return: NotLogged]
         public static string ReplaceSpacesWithHtmlNonBreakingSpace(
             [NotLogged] this string inputString
@@ -5315,64 +3329,13 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Rearranges a space-separated phrase by moving the last word to the front,
-        /// inserting the preposition 'of', and conditionally adding an languageArticle
-        /// before the
-        /// rest
-        /// of the phrase. Optionally pluralizes the remainder of the phrase.
-        /// </summary>
+        /// <summary>Rearranges a space-separated phrase by moving the last word to the front, inserting the preposition 'of', and conditionally adding an languageArticle before the rest of the phrase. Optionally pluralizes the remainder of the phrase.</summary>
         /// <param name="phrase">(Required.) The space-separated phrase to transform.</param>
-        /// <param name="languageArticle">
-        /// (Optional.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> enumeration
-        /// value(s) indicating which article to insert before the remaining phrase.
-        /// <para />
-        /// The default value of this parameter is
-        /// <see cref="F:xyLOGIX.Core.Extensions.LanguageArticleType.None" />.
-        /// </param>
-        /// <param name="pluralizeRemainder">
-        /// (Optional.) <see langword="true" /> to pluralize the remainder of the phrase
-        /// (after the
-        /// preposition); otherwise, <see langword="false" />.
-        /// <para />
-        /// The default value of this parameter is <see langword="false" />.
-        /// </param>
-        /// <param name="culture">
-        /// (Optional.) A <see cref="T:System.Globalization.CultureInfo" /> to apply for
-        /// languageArticle
-        /// rules and pluralization.
-        /// <para />
-        /// Defaults to
-        /// <see cref="CultureInfo.InvariantCulture" />.
-        /// </param>
-        /// <remarks>
-        /// If the <see cref="F:System.String.Empty" /> value, a blank
-        /// <see cref="T:System.String" />, or <see langword="null" /> is passed as the
-        /// argument of the <paramref name="phrase" /> parameter, then this method is
-        /// idempotent.
-        /// </remarks>
-        /// <returns>
-        /// A <see cref="T:System.String" /> formatted as one of:
-        /// <list type="bullet">
-        ///     <item>
-        ///         <description>
-        ///             <c>X of Y</c>
-        ///         </description>
-        ///     </item>
-        ///     <item>
-        ///         <description>
-        ///             <c>X of the Y</c>
-        ///         </description>
-        ///     </item>
-        ///     <item>
-        ///         <description><c>X of a Y</c> or <c>X of an Y</c></description>
-        ///     </item>
-        ///     <item>
-        ///         <description><c>X of the Ys</c> if pluralization is enabled</description>
-        ///     </item>
-        /// </list>
-        /// </returns>
+        /// <param name="languageArticle">(Optional.) One of the <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> enumeration value(s) indicating which article to insert before the remaining phrase. <para /> The default value of this parameter is <see cref="F:xyLOGIX.Core.Extensions.LanguageArticleType.None" />.</param>
+        /// <param name="pluralizeRemainder">(Optional.) <see langword="true" /> to pluralize the remainder of the phrase (after the preposition); otherwise, <see langword="false" />. <para /> The default value of this parameter is <see langword="false" />.</param>
+        /// <param name="culture">(Optional.) A <see cref="T:System.Globalization.CultureInfo" /> to apply for languageArticle rules and pluralization. <para /> Defaults to <see cref="CultureInfo.InvariantCulture" />.</param>
+        /// <remarks>If the <see cref="F:System.String.Empty" /> value, a blank <see cref="T:System.String" />, or <see langword="null" /> is passed as the argument of the <paramref name="phrase" /> parameter, then this method is idempotent.</remarks>
+        /// <returns>A <see cref="T:System.String" /> formatted as one of: <list type="bullet"><item><description><c>X of Y</c></description></item><item><description><c>X of the Y</c></description></item><item><description><c>X of a Y</c> or <c>X of an Y</c></description></item><item><description><c>X of the Ys</c> if pluralization is enabled</description></item></list></returns>
         [return: NotLogged]
         public static string RewordAsTypeOfPhrase(
             [NotLogged] this string phrase,
@@ -5421,24 +3384,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Splits a string <paramref name="value" /> on a provided
-        /// <paramref name="delimiter" />.
-        /// </summary>
-        /// <param name="value"> (Required.) String containing the value to be tokenized. </param>
-        /// <param name="delimiter">
-        /// (Required.) String containing the delimiter on which
-        /// the <paramref name="value" /> should be split.
-        /// </param>
-        /// <returns>
-        /// An array whose elements contain the substrings that were split on the
-        /// provided <paramref name="delimiter" />.
-        /// </returns>
-        /// <exception cref="T:System.ArgumentException">
-        /// Thrown if either of the required
-        /// parameters, <paramref name="value" /> or <paramref name="delimiter" />, are
-        /// passed blank or <see langword="null" /> strings for values.
-        /// </exception>
+        /// <summary>Splits a string <paramref name="value" /> on a provided <paramref name="delimiter" />.</summary>
+        /// <param name="value">(Required.) String containing the value to be tokenized.</param>
+        /// <param name="delimiter">(Required.) String containing the delimiter on which the <paramref name="value" /> should be split.</param>
+        /// <returns>An array whose elements contain the substrings that were split on the provided <paramref name="delimiter" />.</returns>
+        /// <exception cref="T:System.ArgumentException">Thrown if either of the required parameters, <paramref name="value" /> or <paramref name="delimiter" />, are passed blank or <see langword="null" /> strings for values.</exception>
         public static string[] SplitOn(this string value, string delimiter)
         {
             string[] result = { };
@@ -5463,30 +3413,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines if the specified <see cref="T:System.String" />
-        /// <paramref name="value" /> starts with any of the specified
-        /// <paramref name="beginnings" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to be
-        /// checked.
-        /// </param>
-        /// <param name="beginnings">
-        /// (Required.) One or more <see cref="T:System.String" />
-        /// elements, each of which is to be assessed against the specified
-        /// <paramref name="value" /> as being what it starts with.
-        /// </param>
-        /// <remarks>
-        /// <b>NOTE:</b> This method returns <see langword="false" /> if no values are
-        /// passed for
-        /// <paramref name="beginnings" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// starts with any of the specified <paramref name="beginnings" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines if the specified <see cref="T:System.String" /><paramref name="value" /> starts with any of the specified <paramref name="beginnings" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to be checked.</param>
+        /// <param name="beginnings">(Required.) One or more <see cref="T:System.String" /> elements, each of which is to be assessed against the specified <paramref name="value" /> as being what it starts with.</param>
+        /// <remarks><b>NOTE:</b> This method returns <see langword="false" /> if no values are passed for <paramref name="beginnings" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> starts with any of the specified <paramref name="beginnings" />; <see langword="false" /> otherwise.</returns>
         [Log(AttributeExclude = true)]
         public static bool StartsWithAny(
             this string value,
@@ -5521,21 +3452,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Gets a value indicating whether <paramref name="text" /> starts with
-        /// any of the values in the <paramref name="list" />.
-        /// </summary>
-        /// <param name="text"> String to be checked. </param>
-        /// <param name="list"> List of entries. </param>
-        /// <returns>
-        /// true if the <paramref name="text" /> starts with any of the entries
-        /// in <paramref name="list" />.
-        /// </returns>
-        /// <remarks>
-        /// This method performs a case-insensitive search. It returns
-        /// <see langword="false" /> if passed the empty string for
-        /// <paramref name="text" /> or the empty collection for <paramref name="list" />.
-        /// </remarks>
+        /// <summary>Gets a value indicating whether <paramref name="text" /> starts with any of the values in the <paramref name="list" />.</summary>
+        /// <param name="text">String to be checked.</param>
+        /// <param name="list">List of entries.</param>
+        /// <returns>true if the <paramref name="text" /> starts with any of the entries in <paramref name="list" />.</returns>
+        /// <remarks>This method performs a case-insensitive search. It returns <see langword="false" /> if passed the empty string for <paramref name="text" /> or the empty collection for <paramref name="list" />.</remarks>
         public static bool StartsWithAnyOf(
             this string text,
             params string[] list
@@ -5543,21 +3464,11 @@ namespace xyLOGIX.Core.Extensions
             => !string.IsNullOrWhiteSpace(text) &&
                list.Any(text.StartsWithNoCase);
 
-        /// <summary>
-        /// Tells whether the <paramref name="value" /> starts with the substring
-        /// <paramref name="searchText" />, ignoring case.
-        /// </summary>
-        /// <param name="value"> Value to search. </param>
-        /// <param name="searchText"> Suspected starting substring. </param>
-        /// <returns>
-        /// <see langword="true" /> if <paramref name="value" /> starts with the
-        /// <paramref name="searchText" />. <see langword="false" /> otherwise.
-        /// </returns>
-        /// <remarks>
-        /// If <paramref name="value" /> is the empty string or if
-        /// <paramref name="searchText" /> is the empty string, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
+        /// <summary>Tells whether the <paramref name="value" /> starts with the substring <paramref name="searchText" />, ignoring case.</summary>
+        /// <param name="value">Value to search.</param>
+        /// <param name="searchText">Suspected starting substring.</param>
+        /// <returns><see langword="true" /> if <paramref name="value" /> starts with the <paramref name="searchText" />. <see langword="false" /> otherwise.</returns>
+        /// <remarks>If <paramref name="value" /> is the empty string or if <paramref name="searchText" /> is the empty string, then this method returns <see langword="false" />.</remarks>
         public static bool StartsWithNoCase(
             this string value,
             string searchText
@@ -5567,28 +3478,10 @@ namespace xyLOGIX.Core.Extensions
                    .ToLowerInvariant()
                    .StartsWith(searchText.ToLowerInvariant());
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> begins with a single
-        /// slash, but is not strictly checking whether there are no other dashes following
-        /// it.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that contains
-        /// the text that is to be examined.
-        /// <para />
-        /// <b>NOTE:</b> This parameter cannot be <see langword="null" />, the
-        /// <see cref="F:System.String.Empty" /> value, or contain only whitespace.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or
-        /// the <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="value" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified value starts with a single
-        /// dash at all; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> begins with a single slash, but is not strictly checking whether there are no other dashes following it.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that contains the text that is to be examined. <para /><b>NOTE:</b> This parameter cannot be <see langword="null" />, the <see cref="F:System.String.Empty" /> value, or contain only whitespace.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified value starts with a single dash at all; <see langword="false" /> otherwise.</returns>
         public static bool StartsWithSingleDashLenient(
             [NotLogged] this string value
         )
@@ -5614,28 +3507,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="value" /> begins with a single
-        /// slash, and strictly checks whether there are no other dashes following it.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that contains
-        /// the text that is to be examined.
-        /// <para />
-        /// <b>NOTE:</b> This parameter cannot be <see langword="null" />, the
-        /// <see cref="F:System.String.Empty" /> value, or contain only whitespace.
-        /// </param>
-        /// <remarks>
-        /// If <see langword="null" />, a blank <see cref="T:System.String" />, or
-        /// the <see cref="F:System.String.Empty" /> value is passed as the argument of the
-        /// parameter, <paramref name="value" />, then this method returns
-        /// <see langword="false" />.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the specified <paramref name="value" />
-        /// starts with a single dash with subsequent character(s) being non-dash(es);
-        /// <see langword="false" /> otherwise.
-        /// </returns>
+        /// <summary>Determines whether the specified <paramref name="value" /> begins with a single slash, and strictly checks whether there are no other dashes following it.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that contains the text that is to be examined. <para /><b>NOTE:</b> This parameter cannot be <see langword="null" />, the <see cref="F:System.String.Empty" /> value, or contain only whitespace.</param>
+        /// <remarks>If <see langword="null" />, a blank <see cref="T:System.String" />, or the <see cref="F:System.String.Empty" /> value is passed as the argument of the parameter, <paramref name="value" />, then this method returns <see langword="false" />.</remarks>
+        /// <returns><see langword="true" /> if the specified <paramref name="value" /> starts with a single dash with subsequent character(s) being non-dash(es); <see langword="false" /> otherwise.</returns>
         public static bool StartsWithSingleDashStrict(
             [NotLogged] this string value
         )
@@ -5647,11 +3522,10 @@ namespace xyLOGIX.Core.Extensions
                 if (string.IsNullOrWhiteSpace(value)) return result;
 
                 /*
-                 * If we are here, assume that the string, 'value', has a length
-                 * that is greater than, or equal to, one.  If it has a length of
-                 * one, simply check whether it begins with a dash.  If it has
-                 * a length greater than one, check whether it begins with a dash
-                 * and that the following character is not also a dash.
+                 * If we are here, assume that the string, 'value', has a length that is greater
+                 * than, or equal to, one. If it has a length of one, simply check whether it begins
+                 * with a dash. If it has a length greater than one, check whether it begins with a
+                 * dash and that the following character is not also a dash.
                  */
 
                 result = value.Length == 1
@@ -5671,23 +3545,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Strips "smart quotes" from the specified <paramref name="inputString" /> and
-        /// replaces them with "straight quotes."
-        /// </summary>
-        /// <param name="inputString">
-        /// (Required.) A <see cref="T:System.String" />
-        /// containing the data on which replacement is to be performed.
-        /// </param>
-        /// <remarks>
-        /// If the value of the <paramref name="inputString" /> is
-        /// <see langword="null" />, only consists of whitespace, or is the
-        /// <see cref="F:System.String.Empty" /> value, then this method is idempotent.
-        /// </remarks>
-        /// <returns>
-        /// If successful, the <paramref name="inputString" />, but with "smart
-        /// quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
-        /// </returns>
+        /// <summary>Strips "smart quotes" from the specified <paramref name="inputString" /> and replaces them with "straight quotes."</summary>
+        /// <param name="inputString">(Required.) A <see cref="T:System.String" /> containing the data on which replacement is to be performed.</param>
+        /// <remarks>If the value of the <paramref name="inputString" /> is <see langword="null" />, only consists of whitespace, or is the <see cref="F:System.String.Empty" /> value, then this method is idempotent.</remarks>
+        /// <returns>If successful, the <paramref name="inputString" />, but with "smart quotes" replaced by "straight quotes." Otherwise, the method is idempotent.</returns>
         [Log(AttributeExclude = true), DebuggerStepThrough]
         [return: NotLogged]
         public static string StripIncompatibleQuotes(
@@ -5719,19 +3580,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Removes all carriage-return (<c>CR</c>) and newline (<c>NL</c>) ASCII
-        /// character(s) from the provided <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text from which
-        /// newline(s) are to be stripped.
-        /// </param>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> that is identical to
-        /// the specified <paramref name="value" /> but where all newline character(s) have
-        /// been converted to blanks; otherwise, the method is idempotent.
-        /// </returns>
+        /// <summary>Removes all carriage-return (<c>CR</c>) and newline (<c>NL</c>) ASCII character(s) from the provided <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text from which newline(s) are to be stripped.</param>
+        /// <returns>If successful, a <see cref="T:System.String" /> that is identical to the specified <paramref name="value" /> but where all newline character(s) have been converted to blanks; otherwise, the method is idempotent.</returns>
         [return: NotLogged]
         public static string StripNewlines([NotLogged] this string value)
         {
@@ -5756,86 +3607,21 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Formats a string using the <paramref name="format" /> and
-        /// <paramref name="args" />.
-        /// </summary>
-        /// <param name="format">
-        /// (Required.) A <see cref="T:System.String" /> that
-        /// optionally contains one or more format specifier(s).
-        /// </param>
-        /// <param name="args">
-        /// (Optional.) Collection of args whose values are to be
-        /// replaced in the format string.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> with the format placeholders replaced
-        /// by the args.
-        /// </returns>
-        /// <remarks>
-        /// This method is just an alias for the
-        /// <see cref="T:xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython" />
-        /// method.
-        /// <para />
-        /// It is here to provide a way to translate VB to C# code and still use the
-        /// moniker Sub from VB that does the same operation.
-        /// <para />
-        /// If this method is passed the empty string for <paramref name="format" />, then
-        /// the return value is the empty string.
-        /// </remarks>
+        /// <summary>Formats a string using the <paramref name="format" /> and <paramref name="args" />.</summary>
+        /// <param name="format">(Required.) A <see cref="T:System.String" /> that optionally contains one or more format specifier(s).</param>
+        /// <param name="args">(Optional.) Collection of args whose values are to be replaced in the format string.</param>
+        /// <returns>A <see cref="T:System.String" /> with the format placeholders replaced by the args.</returns>
+        /// <remarks>This method is just an alias for the <see cref="T:xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython" /> method. <para /> It is here to provide a way to translate VB to C# code and still use the moniker Sub from VB that does the same operation. <para /> If this method is passed the empty string for <paramref name="format" />, then the return value is the empty string.</remarks>
         public static string Sub(this string format, params object[] args)
             => string.IsNullOrWhiteSpace(format)
                 ? string.Empty
                 : string.Format(format, args);
 
-        /// <summary>
-        /// Produces a new <see cref="T:System.String" /> by appending the specified
-        /// <paramref name="suffix" /> to the end of the specified
-        /// <paramref name="value" />.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> that is the
-        /// original string.  If this parameter is <see langword="null" />, the method
-        /// treats it as the <see cref="F:System.String.Empty" /> value.
-        /// </param>
-        /// <param name="suffix">
-        /// (Required.) A <see cref="T:System.String" /> that contains
-        /// the text to append.
-        /// <para />
-        /// If this parameter is <see langword="null" />, the method treats it as the
-        /// <see cref="F:System.String.Empty" /> value.
-        /// </param>
-        /// <remarks>
-        ///     <list type="bullet">
-        ///         <item>
-        ///             <description>
-        ///             The method never throws; on unexpected failure it logs the
-        ///             exception and returns the <see cref="F:System.String.Empty" />
-        ///             value.
-        ///             </description>
-        ///         </item>
-        ///         <item>
-        ///             <description>
-        ///             The specified <paramref name="suffix" />  is returned if the
-        ///             argument of the <paramref name="value" /> parameter is
-        ///             <see langword="null" />, blank, or the
-        ///             <see cref="F:System.String.Empty" /> value.
-        ///             </description>
-        ///         </item>
-        ///         <item>
-        ///             <description>
-        ///             The operation is idempotent if <paramref name="suffix" /> is the
-        ///             <see cref="F:System.String.Empty" /> value.
-        ///             </description>
-        ///         </item>
-        ///     </list>
-        /// </remarks>
-        /// <returns>
-        /// If successful, a new <see cref="T:System.String" /> containing the
-        /// concatenation of
-        /// <paramref name="value" /> and <paramref name="suffix" />, or the
-        /// <see cref="F:System.String.Empty" /> value on failure.
-        /// </returns>
+        /// <summary>Produces a new <see cref="T:System.String" /> by appending the specified <paramref name="suffix" /> to the end of the specified <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> that is the original string. If this parameter is <see langword="null" />, the method treats it as the <see cref="F:System.String.Empty" /> value.</param>
+        /// <param name="suffix">(Required.) A <see cref="T:System.String" /> that contains the text to append. <para /> If this parameter is <see langword="null" />, the method treats it as the <see cref="F:System.String.Empty" /> value.</param>
+        /// <remarks><list type="bullet"><item><description>The method never throws; on unexpected failure it logs the exception and returns the <see cref="F:System.String.Empty" /> value.</description></item><item><description>The specified <paramref name="suffix" /> is returned if the argument of the <paramref name="value" /> parameter is <see langword="null" />, blank, or the <see cref="F:System.String.Empty" /> value.</description></item><item><description>The operation is idempotent if <paramref name="suffix" /> is the <see cref="F:System.String.Empty" /> value.</description></item></list></remarks>
+        /// <returns>If successful, a new <see cref="T:System.String" /> containing the concatenation of <paramref name="value" /> and <paramref name="suffix" />, or the <see cref="F:System.String.Empty" /> value on failure.</returns>
         [return: NotLogged]
         public static string Suffix(
             [NotLogged] this string value,
@@ -5847,10 +3633,10 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 /*
-                 * Obviously, the result of running this method in the event that the
-                 * method is passed the blank or empty string for the argument of the
-                 * 'value' parameter, or the blank or empty string for the argument of the
-                 * 'suffix' parameter, is just the suffix itself.
+                 * Obviously, the result of running this method in the event that the method is
+                 * passed the blank or empty string for the argument of the 'value' parameter, or
+                 * the blank or empty string for the argument of the 'suffix' parameter, is just the
+                 * suffix itself.
                  */
 
                 if (string.IsNullOrWhiteSpace(value))
@@ -5877,30 +3663,15 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Turns the specified <paramref name="phrase" /> into an all-caps acronym, if a
-        /// corresponding entry is not found in our dictionary fields of short, non-acronym
-        /// terms, i.e.,
-        /// <see
-        ///     cref="F:xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms" />
-        /// .
-        /// </summary>
-        /// <param name="phrase">
-        /// (Required.) String containing the phrase to turn into an
-        /// acronym.
-        /// </param>
-        /// <returns> Acronym converted from <paramref name="phrase" />. </returns>
-        /// <remarks>
-        /// If this method is passed the empty or whitespace string, then it
-        /// returns the empty string. If this method is passed a word or phrase that is
-        /// short, but not an acronym, then the input is returned with no alteration.
-        /// </remarks>
+        /// <summary>Turns the specified <paramref name="phrase" /> into an all-caps acronym, if a corresponding entry is not found in our dictionary fields of short, non-acronym terms, i.e., <see cref="F:xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms" /> .</summary>
+        /// <param name="phrase">(Required.) String containing the phrase to turn into an acronym.</param>
+        /// <returns>Acronym converted from <paramref name="phrase" />.</returns>
+        /// <remarks>If this method is passed the empty or whitespace string, then it returns the empty string. If this method is passed a word or phrase that is short, but not an acronym, then the input is returned with no alteration.</remarks>
         public static string ToAcronym(this string phrase)
         {
             if (string.IsNullOrWhiteSpace(phrase)) return string.Empty;
 
-            // split the phrase on space and remove everything that is a short
-            // phrase or word but is not an acronym, such as the word 'an'.
+            // split the phrase on space and remove everything that is a short phrase or word but is not an acronym, such as the word 'an'.
             var parts = phrase.ToUpperInvariant()
                               .Split(
                                   new[] { ' ' },
@@ -5919,8 +3690,7 @@ namespace xyLOGIX.Core.Extensions
                     parts.RemoveAt(i);
                 }
 
-            // If we ended up removing all parts from the list, then return the
-            // empty string
+            // If we ended up removing all parts from the list, then return the empty string
             return parts.Count <= 0
                 ? string.Empty
                 : parts.Aggregate(
@@ -5929,46 +3699,10 @@ namespace xyLOGIX.Core.Extensions
                 );
         }
 
-        /// <summary>
-        /// Uses the first letter (turned into being uppercase, if necessary) of
-        /// the <paramref name="word" /> provided to be one of the letters of an acronym
-        /// that is being built, e.g., from a phrase, using the first letter of each of the
-        /// words of the phrase as each of the corresponding letters of the resulting
-        /// acronym.
-        /// </summary>
-        /// <param name="word">
-        /// (Required.) String containing the word whose first letter
-        /// should be made into a corresponding acronym letter.
-        /// </param>
-        /// <returns> String containing the letter(s) to be utilized in the acronym. </returns>
-        /// <remarks>
-        /// If <paramref name="word" /> is the empty or whitespace string, then
-        /// this method returns the empty string.
-        /// </remarks>
-        private static string ToAcronymLetter(string word)
-            => string.IsNullOrWhiteSpace(word) ? string.Empty :
-                "Reengagement".EqualsNoCase(word) ? "RE" : word[0]
-                    .ToString(CultureInfo.InvariantCulture)
-                    .ToUpperInvariant();
-
-        /// <summary>
-        /// Forces all characters in the input string, <paramref name="value" />,
-        /// to be ASCII-encoded characters only. If any Unicode characters are found in
-        /// <paramref name="value" />, then they are mapped back into the range of
-        /// ASCII-encoded values.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) String containing the characters to be
-        /// processed.
-        /// </param>
-        /// <returns>
-        /// Same string as <paramref name="value" />, except that all characters
-        /// are now ASCII-encoded.
-        /// </returns>
-        /// <remarks>
-        /// If this method is passed the empty or whitespace string for
-        /// <paramref name="value" />, then this method returns the empty string.
-        /// </remarks>
+        /// <summary>Forces all characters in the input string, <paramref name="value" />, to be ASCII-encoded characters only. If any Unicode characters are found in <paramref name="value" />, then they are mapped back into the range of ASCII-encoded values.</summary>
+        /// <param name="value">(Required.) String containing the characters to be processed.</param>
+        /// <returns>Same string as <paramref name="value" />, except that all characters are now ASCII-encoded.</returns>
+        /// <remarks>If this method is passed the empty or whitespace string for <paramref name="value" />, then this method returns the empty string.</remarks>
         [return: NotLogged]
         public static string ToASCII([NotLogged] string value)
         {
@@ -5984,19 +3718,9 @@ namespace xyLOGIX.Core.Extensions
                      .Replace("%F1", "?");
         }
 
-        /// <summary>
-        /// Converts the specified <paramref name="text" /> into a code element by
-        /// preserving pluralization.
-        /// </summary>
-        /// <param name="text">
-        /// (Required.) A <see cref="T:System.String" /> containing the text to convert
-        /// into a code element.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> that is the same as the
-        /// <paramref name="text" /> but with the first letter of each word capitalized and
-        /// pluralization preserved.
-        /// </returns>
+        /// <summary>Converts the specified <paramref name="text" /> into a code element by preserving pluralization.</summary>
+        /// <param name="text">(Required.) A <see cref="T:System.String" /> containing the text to convert into a code element.</param>
+        /// <returns>A <see cref="T:System.String" /> that is the same as the <paramref name="text" /> but with the first letter of each word capitalized and pluralization preserved.</returns>
         [return: NotLogged]
         public static string ToCodeElementPreservingPluralization(
             [NotLogged] this string text
@@ -6068,33 +3792,16 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Turns a GUID into a string representation but removes all the '{',
-        /// '}' and '-' from the string representation, so that the string representation
-        /// contains only letters and/or numbers.
-        /// </summary>
-        /// <param name="guid">
-        /// Reference to a <see cref="T:System.Guid" /> to turn into a
-        /// string of letters and numbers.
-        /// </param>
-        /// <returns>
-        /// String representation with no '{', '}' and '-' in the string
-        /// representation, so that the string representation contains only letters and/or
-        /// numbers.
-        /// </returns>
+        /// <summary>Turns a GUID into a string representation but removes all the '{', '}' and '-' from the string representation, so that the string representation contains only letters and/or numbers.</summary>
+        /// <param name="guid">Reference to a <see cref="T:System.Guid" /> to turn into a string of letters and numbers.</param>
+        /// <returns>String representation with no '{', '}' and '-' in the string representation, so that the string representation contains only letters and/or numbers.</returns>
         public static string ToGuidWithNoPunctuation(this Guid guid)
             => guid.ToString("N");
 
-        /// <summary>
-        /// Returns a value that is the same as the string specified, but in
-        /// Initial Caps format.
-        /// </summary>
-        /// <param name="value"> Value whose case should be changed. </param>
-        /// <returns> String with the casing changed to InitialCaps. </returns>
-        /// <remarks>
-        /// If this method is passed the empty or whitespace string, then it
-        /// returns the empty string.
-        /// </remarks>
+        /// <summary>Returns a value that is the same as the string specified, but in Initial Caps format.</summary>
+        /// <param name="value">Value whose case should be changed.</param>
+        /// <returns>String with the casing changed to InitialCaps.</returns>
+        /// <remarks>If this method is passed the empty or whitespace string, then it returns the empty string.</remarks>
         public static string ToInitialCaps(this string value)
         {
             if (string.IsNullOrWhiteSpace(value)) return string.Empty;
@@ -6164,27 +3871,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Splits a specified <paramref name="source" /> <see cref="T:System.String" /> on
-        /// the specified <paramref name="delimeter" /> into distinct, trimmed, non-empty
-        /// tokens (case-insensitive uniqueness). Returns empty array if input is
-        /// null/blank.
-        /// </summary>
-        /// <param name="source">
-        /// (Required.) A <see cref="T:System.String" /> containing the string that is to
-        /// be tokenized.
-        /// </param>
-        /// <param name="delimeter">
-        /// (Optional.) A <see cref="T:System.Char" /> that specifies the character on
-        /// which to split the <paramref name="source" /> string.
-        /// <para />
-        /// The default is the pipe character (<c>'|'</c>).
-        /// </param>
-        /// <returns>
-        /// If successful, a collection of <see cref="T:System.String" /> value(s)
-        /// which comprise the non-blank, distinct token(s) found in the
-        /// <paramref name="source" />; otherwise, the empty collection is returned.
-        /// </returns>
+        /// <summary>Splits a specified <paramref name="source" /><see cref="T:System.String" /> on the specified <paramref name="delimeter" /> into distinct, trimmed, non-empty tokens (case-insensitive uniqueness). Returns empty array if input is null/blank.</summary>
+        /// <param name="source">(Required.) A <see cref="T:System.String" /> containing the string that is to be tokenized.</param>
+        /// <param name="delimeter">(Optional.) A <see cref="T:System.Char" /> that specifies the character on which to split the <paramref name="source" /> string. <para /> The default is the pipe character (<c>'|'</c>).</param>
+        /// <returns>If successful, a collection of <see cref="T:System.String" /> value(s) which comprise the non-blank, distinct token(s) found in the <paramref name="source" />; otherwise, the empty collection is returned.</returns>
         [return: NotLogged]
         public static IList<string> TokenizeOn(
             [NotLogged] this string source,
@@ -6225,44 +3915,19 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Alias for the <c>TokenizeOn</c> method, with the delimiter set to a pipe
-        /// character, for better semantics.
-        /// </summary>
-        /// <param name="source">
-        /// (Required.) A <see cref="T:System.String" /> containing the string that is to
-        /// be tokenized.
-        /// </param>
-        /// <returns>
-        /// If successful, a reference to an array of
-        /// <see cref="T:System.String" />(s), each element of which is one of the
-        /// pipe-separated token(s) in the specified <paramref name="source" />; otherwise,
-        /// the empty array is returned.
-        /// </returns>
+        /// <summary>Alias for the <c>TokenizeOn</c> method, with the delimiter set to a pipe character, for better semantics.</summary>
+        /// <param name="source">(Required.) A <see cref="T:System.String" /> containing the string that is to be tokenized.</param>
+        /// <returns>If successful, a reference to an array of <see cref="T:System.String" />(s), each element of which is one of the pipe-separated token(s) in the specified <paramref name="source" />; otherwise, the empty array is returned.</returns>
         [return: NotLogged]
         public static IList<string> TokenizeWithPipe(
             [NotLogged] this string source
         )
             => source.TokenizeOn();
 
-        /// <summary>
-        /// Obtains the text of the language article specified by the
-        /// <paramref name="type" /> parameter for the <paramref name="value" /> passed.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the value to which the
-        /// language article is to be obtained.
-        /// </param>
-        /// <param name="type">
-        /// (Required.) One of the
-        /// <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that
-        /// specifies the type of language article to obtain.
-        /// </param>
-        /// <returns>
-        /// If successful, the language article specified by the <paramref name="type" />
-        /// parameter for the <paramref name="value" /> passed; otherwise, the method is
-        /// idempotent.
-        /// </returns>
+        /// <summary>Obtains the text of the language article specified by the <paramref name="type" /> parameter for the <paramref name="value" /> passed.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the value to which the language article is to be obtained.</param>
+        /// <param name="type">(Required.) One of the <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that specifies the type of language article to obtain.</param>
+        /// <returns>If successful, the language article specified by the <paramref name="type" /> parameter for the <paramref name="value" /> passed; otherwise, the method is idempotent.</returns>
         [return: NotLogged]
         public static string ToLanguageArticle(
             [NotLogged] this string value,
@@ -6289,25 +3954,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Turns a delimited <see cref="T:System.String" /> into a collection of
-        /// strings with one delimited entry per element.
-        /// </summary>
-        /// <param name="quote">
-        /// (Required.) String containing the text to be
-        /// transformed.
-        /// </param>
-        /// <param name="separators">
-        /// Collection of strings specifying the delimiter(s) to
-        /// split upon.
-        /// </param>
-        /// <returns> Collection of strings containing the delimited entries. </returns>
-        /// <remarks>
-        /// Any empty entries in the resultant collection are removed. If the
-        /// empty string is provided as input to this method, then the method returns the
-        /// empty string. If no separators are specified, then the empty collection is
-        /// returned.
-        /// </remarks>
+        /// <summary>Turns a delimited <see cref="T:System.String" /> into a collection of strings with one delimited entry per element.</summary>
+        /// <param name="quote">(Required.) String containing the text to be transformed.</param>
+        /// <param name="separators">Collection of strings specifying the delimiter(s) to split upon.</param>
+        /// <returns>Collection of strings containing the delimited entries.</returns>
+        /// <remarks>Any empty entries in the resultant collection are removed. If the empty string is provided as input to this method, then the method returns the empty string. If no separators are specified, then the empty collection is returned.</remarks>
         public static IEnumerable<string> ToList(
             [NotLogged] this string quote,
             params string[] separators
@@ -6324,18 +3975,9 @@ namespace xyLOGIX.Core.Extensions
                 : Enumerable.Empty<string>()
                             .ToAdvisableCollection();
 
-        /// <summary>
-        /// Converts the specified <paramref name="value" /> to lowercase, ignoring
-        /// culture.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text to be
-        /// converted to lowercase.
-        /// </param>
-        /// <returns>
-        /// If successful, the <paramref name="value" /> specified, but converted to
-        /// lowercase; otherwise, this method is idempotent.
-        /// </returns>
+        /// <summary>Converts the specified <paramref name="value" /> to lowercase, ignoring culture.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be converted to lowercase.</param>
+        /// <returns>If successful, the <paramref name="value" /> specified, but converted to lowercase; otherwise, this method is idempotent.</returns>
         [return: NotLogged]
         public static string ToLowercase([NotLogged] this string value)
         {
@@ -6358,18 +4000,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Converts an initial-caps string into a space-separated, lowercase phrase,
-        /// preserving acronyms.
-        /// </summary>
+        /// <summary>Converts an initial-caps string into a space-separated, lowercase phrase, preserving acronyms.</summary>
         /// <param name="value">The initial-caps string to be transformed. (Required.)</param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> where all words are separated by spaces.
-        /// Acronyms remain in uppercase while other words are converted to lowercase.
-        /// <para />
-        /// If <paramref name="value" /> is <see langword="null" /> or empty, an empty
-        /// string is returned.
-        /// </returns>
+        /// <returns>A <see cref="T:System.String" /> where all words are separated by spaces. Acronyms remain in uppercase while other words are converted to lowercase. <para /> If <paramref name="value" /> is <see langword="null" /> or empty, an empty string is returned.</returns>
         [Log(AttributeExclude = true), DebuggerStepThrough]
         [return: NotLogged]
         public static string ToPhrase([NotLogged] this string value)
@@ -6393,19 +4026,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Converts an initial-caps string into a space-separated, title-cased phrase,
-        /// preserving acronyms.
-        /// </summary>
+        /// <summary>Converts an initial-caps string into a space-separated, title-cased phrase, preserving acronyms.</summary>
         /// <param name="value">The initial-caps string to be transformed. (Required.)</param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> where all words are separated by spaces.
-        /// Acronyms remain in uppercase while other words are converted to
-        /// <c>Title Case</c>.
-        /// <para />
-        /// If <paramref name="value" /> is <see langword="null" /> or empty, an empty
-        /// string is returned.
-        /// </returns>
+        /// <returns>A <see cref="T:System.String" /> where all words are separated by spaces. Acronyms remain in uppercase while other words are converted to <c>Title Case</c>. <para /> If <paramref name="value" /> is <see langword="null" /> or empty, an empty string is returned.</returns>
         [return: NotLogged]
         public static string ToPhraseInTitleCase([NotLogged] this string value)
         {
@@ -6430,28 +4053,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Formats the specified <paramref name="pathname" /> as a Visual Studio Solution
-        /// (<c>*.sln</c>, <c>*.slnx</c>) file entry, e.g.,
-        /// <c>MyProject\MyProject.csproj</c>.
-        /// </summary>
-        /// <param name="pathname">
-        /// (Required.) A <see cref="T:System.String" /> that contains the fully-qualified
-        /// pathname of a file that is to be formatted as a Visual Studio Solution (
-        /// <c>*.sln</c>, <c>*.slnx</c>) file entry.
-        /// </param>
-        /// <remarks>
-        /// If a <see langword="null" /> blank, or
-        /// <see cref="F:System.String.Empty" /> value is passed for the argument of the
-        /// <paramref name="pathname" /> parameter, then the method returns the
-        /// <see cref="F:System.String.Empty" /> value,
-        /// </remarks>
-        /// <returns>
-        /// If successful, the specified <paramref name="pathname" />, formatted
-        /// as a Visual Studio Solution (<c>*.sln</c>, <c>*.slnx</c>) file entry, e.g.,
-        /// <c>MyProject\MyProject.csproj</c>; otherwise, the
-        /// <see cref="F:System.String.Empty" /> value is returned.
-        /// </returns>
+        /// <summary>Formats the specified <paramref name="pathname" /> as a Visual Studio Solution (<c>*.sln</c>, <c>*.slnx</c>) file entry, e.g., <c>MyProject\MyProject.csproj</c>.</summary>
+        /// <param name="pathname">(Required.) A <see cref="T:System.String" /> that contains the fully-qualified pathname of a file that is to be formatted as a Visual Studio Solution ( <c>*.sln</c>, <c>*.slnx</c>) file entry.</param>
+        /// <remarks>If a <see langword="null" /> blank, or <see cref="F:System.String.Empty" /> value is passed for the argument of the <paramref name="pathname" /> parameter, then the method returns the <see cref="F:System.String.Empty" /> value,</remarks>
+        /// <returns>If successful, the specified <paramref name="pathname" />, formatted as a Visual Studio Solution (<c>*.sln</c>, <c>*.slnx</c>) file entry, e.g., <c>MyProject\MyProject.csproj</c>; otherwise, the <see cref="F:System.String.Empty" /> value is returned.</returns>
         public static string ToSolutionFileEntryFormat(
             [NotLogged] this string pathname
         )
@@ -6477,21 +4082,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Converts the specified <paramref name="value" /> to Title Case,
-        /// preserving the casing of acronyms.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text to be
-        /// converted to Title Case.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> containing the text from
-        /// <paramref name="value" /> converted to Title Case, with acronyms preserved.
-        /// <para />
-        /// If <paramref name="value" /> is <see langword="null" /> or whitespace, the
-        /// original value is returned.
-        /// </returns>
+        /// <summary>Converts the specified <paramref name="value" /> to Title Case, preserving the casing of acronyms.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be converted to Title Case.</param>
+        /// <returns>A <see cref="T:System.String" /> containing the text from <paramref name="value" /> converted to Title Case, with acronyms preserved. <para /> If <paramref name="value" /> is <see langword="null" /> or whitespace, the original value is returned.</returns>
         [return: NotLogged]
         public static string ToTitleCase([NotLogged] this string value)
         {
@@ -6531,18 +4124,9 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Translates each character of the provided <paramref name="value" />,
-        /// character-by-character, to Unicode encoding. This method performs the inverse
-        /// operation of the
-        /// <see cref="M:xyLOGIX.Core.Extensions.StringExtensions.ToASCII" /> method.
-        /// </summary>
-        /// <param name="value"> (Required.) String containing the text to be re-encoded. </param>
-        /// <returns>
-        /// String containing the re-encoded corresponding text to that in
-        /// <paramref name="value" />; or the empty string if the empty string is provided
-        /// to this method.
-        /// </returns>
+        /// <summary>Translates each character of the provided <paramref name="value" />, character-by-character, to Unicode encoding. This method performs the inverse operation of the <see cref="M:xyLOGIX.Core.Extensions.StringExtensions.ToASCII" /> method.</summary>
+        /// <param name="value">(Required.) String containing the text to be re-encoded.</param>
+        /// <returns>String containing the re-encoded corresponding text to that in <paramref name="value" />; or the empty string if the empty string is provided to this method.</returns>
         public static string ToUnicode(this string value)
             => string.IsNullOrWhiteSpace(value)
                 ? string.Empty
@@ -6553,18 +4137,9 @@ namespace xyLOGIX.Core.Extensions
                     )).ToString(CultureInfo.InvariantCulture)
                 );
 
-        /// <summary>
-        /// Converts the provided <see cref="T:System.String" /> <paramref name="value" />
-        /// to all uppercase, ignoring culture.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text to be
-        /// converted to uppercase.
-        /// </param>
-        /// <returns>
-        /// If successful, the <paramref name="value" /> specified, but converted
-        /// to uppercase; otherwise, this method is idempotent.
-        /// </returns>
+        /// <summary>Converts the provided <see cref="T:System.String" /><paramref name="value" /> to all uppercase, ignoring culture.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be converted to uppercase.</param>
+        /// <returns>If successful, the <paramref name="value" /> specified, but converted to uppercase; otherwise, this method is idempotent.</returns>
         public static string ToUppercase(this string value)
         {
             var result = value;
@@ -6586,47 +4161,13 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Removes any specified substrings from the end of the given string.
-        /// </summary>
-        /// <param name="value">
-        /// (Required.) A <see cref="T:System.String" /> containing the text to be
-        /// processed.
-        /// </param>
-        /// <param name="caseSensitive">
-        /// (Optional.) A <see cref="T:System.Boolean" /> value indicating whether a
-        /// case-sensitive search is to be performed.
-        /// <para />
-        /// The default value of this parameter is <see langword="false" />.
-        /// </param>
-        /// <param name="recursive">
-        /// (Optional.) A <see cref="T:System.Boolean" /> value indicating whether the
-        /// removal of bad endings should be applied repeatedly until no matches remain.
-        /// <para />
-        /// The default value of this parameter is <see langword="true" />.
-        /// </param>
-        /// <param name="badEndings">
-        /// An array of <see cref="T:System.String" /> value(s) representing the substrings
-        /// to remove from the end of <paramref name="value" />. If
-        /// <paramref name="badEndings" />
-        /// is <see langword="null" /> or empty, no changes are made.
-        /// </param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> with any matching substrings from
-        /// <paramref name="badEndings" />
-        /// removed from the end. If <paramref name="value" /> is <see langword="null" />,
-        /// whitespace,
-        /// or no matches are found, the original string is returned.
-        /// </returns>
-        /// <remarks>
-        /// The method iterates through the <paramref name="badEndings" /> array to
-        /// identify
-        /// and remove any substrings that match the end of <paramref name="value" />.
-        /// It performs case-sensitive or case-insensitive comparisons depending on
-        /// the value of <paramref name="caseSensitive" />.
-        /// If <paramref name="recursive" /> is set to <see langword="true" />, the method
-        /// will repeatedly trim matches until no further matches are found.
-        /// </remarks>
+        /// <summary>Removes any specified substrings from the end of the given string.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> containing the text to be processed.</param>
+        /// <param name="caseSensitive">(Optional.) A <see cref="T:System.Boolean" /> value indicating whether a case-sensitive search is to be performed. <para /> The default value of this parameter is <see langword="false" />.</param>
+        /// <param name="recursive">(Optional.) A <see cref="T:System.Boolean" /> value indicating whether the removal of bad endings should be applied repeatedly until no matches remain. <para /> The default value of this parameter is <see langword="true" />.</param>
+        /// <param name="badEndings">An array of <see cref="T:System.String" /> value(s) representing the substrings to remove from the end of <paramref name="value" />. If <paramref name="badEndings" /> is <see langword="null" /> or empty, no changes are made.</param>
+        /// <returns>A <see cref="T:System.String" /> with any matching substrings from <paramref name="badEndings" /> removed from the end. If <paramref name="value" /> is <see langword="null" />, whitespace, or no matches are found, the original string is returned.</returns>
+        /// <remarks>The method iterates through the <paramref name="badEndings" /> array to identify and remove any substrings that match the end of <paramref name="value" />. It performs case-sensitive or case-insensitive comparisons depending on the value of <paramref name="caseSensitive" />. If <paramref name="recursive" /> is set to <see langword="true" />, the method will repeatedly trim matches until no further matches are found.</remarks>
         public static string TrimAnyOffEnd(
             this string value,
             bool caseSensitive = false,
@@ -6678,29 +4219,11 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Removes the <paramref name="trimString" />, if present, from the end
-        /// of the specified <paramref name="target" />.
-        /// </summary>
-        /// <param name="target">
-        /// (Required.) A <see cref="T:System.String" /> that is to be
-        /// trimmed.
-        /// </param>
-        /// <param name="trimString">
-        /// (Required.) A <see cref="T:System.String" /> that
-        /// contains the character(s) that are to be trimmed.
-        /// </param>
-        /// <remarks>
-        /// If either of the required parameters, <paramref name="target" />, or
-        /// <paramref name="trimString" />, are <see langword="null" />, blank, or the
-        /// <see cref="F:System.String.Empty" /> value, then this method is idempotent.
-        /// </remarks>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the trimmed
-        /// version of <paramref name="target" /> with the specified
-        /// <paramref name="trimString" /> removed from the end of it; otherwise, the
-        /// method is idempotent.
-        /// </returns>
+        /// <summary>Removes the <paramref name="trimString" />, if present, from the end of the specified <paramref name="target" />.</summary>
+        /// <param name="target">(Required.) A <see cref="T:System.String" /> that is to be trimmed.</param>
+        /// <param name="trimString">(Required.) A <see cref="T:System.String" /> that contains the character(s) that are to be trimmed.</param>
+        /// <remarks>If either of the required parameters, <paramref name="target" />, or <paramref name="trimString" />, are <see langword="null" />, blank, or the <see cref="F:System.String.Empty" /> value, then this method is idempotent.</remarks>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the trimmed version of <paramref name="target" /> with the specified <paramref name="trimString" /> removed from the end of it; otherwise, the method is idempotent.</returns>
         [return: NotLogged]
         public static string TrimEnd(
             [NotLogged] this string target,
@@ -6732,45 +4255,20 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Trims the <paramref name="currentLine" /> of text; i.e., removes
-        /// whitespace both before and after the text.
-        /// </summary>
-        /// <param name="currentLine"> (Required.) Text to trim. </param>
-        /// <returns> Trimmed text. </returns>
-        /// <remarks>
-        /// If the empty or whitespace string is provided for
-        /// <paramref name="currentLine" /> , then the empty string is returned by this
-        /// method.
-        /// </remarks>
+        /// <summary>Trims the <paramref name="currentLine" /> of text; i.e., removes whitespace both before and after the text.</summary>
+        /// <param name="currentLine">(Required.) Text to trim.</param>
+        /// <returns>Trimmed text.</returns>
+        /// <remarks>If the empty or whitespace string is provided for <paramref name="currentLine" /> , then the empty string is returned by this method.</remarks>
         public static string TrimLine(this string currentLine)
             => !string.IsNullOrWhiteSpace(currentLine)
                 ? currentLine.Trim()
                 : string.Empty;
 
-        /// <summary>
-        /// Removes the <paramref name="trimString" />, if present, from the start of the
-        /// specified <paramref name="target" />.
-        /// </summary>
-        /// <param name="target">
-        /// (Required.) A <see cref="T:System.String" /> that is to be
-        /// trimmed.
-        /// </param>
-        /// <param name="trimString">
-        /// (Required.) A <see cref="T:System.String" /> that
-        /// contains the character(s) that are to be trimmed.
-        /// </param>
-        /// <remarks>
-        /// If either of the required parameters, <paramref name="target" />, or
-        /// <paramref name="trimString" />, are <see langword="null" />, blank, or the
-        /// <see cref="F:System.String.Empty" /> value, then this method is idempotent.
-        /// </remarks>
-        /// <returns>
-        /// If successful, a <see cref="T:System.String" /> containing the trimmed
-        /// version of <paramref name="target" /> with the specified
-        /// <paramref name="trimString" /> removed from the start of it; otherwise, the
-        /// method is idempotent.
-        /// </returns>
+        /// <summary>Removes the <paramref name="trimString" />, if present, from the start of the specified <paramref name="target" />.</summary>
+        /// <param name="target">(Required.) A <see cref="T:System.String" /> that is to be trimmed.</param>
+        /// <param name="trimString">(Required.) A <see cref="T:System.String" /> that contains the character(s) that are to be trimmed.</param>
+        /// <remarks>If either of the required parameters, <paramref name="target" />, or <paramref name="trimString" />, are <see langword="null" />, blank, or the <see cref="F:System.String.Empty" /> value, then this method is idempotent.</remarks>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the trimmed version of <paramref name="target" /> with the specified <paramref name="trimString" /> removed from the start of it; otherwise, the method is idempotent.</returns>
         [return: NotLogged]
         public static string TrimStart(
             [NotLogged] this string target,
@@ -6799,6 +4297,255 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
+
+        /// <summary>Helper method to aid in transforming text casing of a string to Initial Caps.</summary>
+        /// <param name="value">(Required.) String containing the word that needs to be initial-capitalized.</param>
+        /// <returns>Word provided in <paramref name="value" /> with its first letter replaced with a capital letter and all the remaining letters as lowercase.</returns>
+        /// <remarks>If this method is provided with the empty or whitespace string, then this method returns the empty string.</remarks>
+        private static string DoInitialCaps(string value)
+            => string.IsNullOrWhiteSpace(value)
+                ? string.Empty
+                : value[0]
+                  .ToString(CultureInfo.InvariantCulture)
+                  .ToUpper() + value.ToLowerInvariant()
+                                    .Substring(1, value.Length - 1);
+
+        /// <summary>Helper for determining whether strings contain valid email addresses.</summary>
+        /// <param name="match">Reference to an instance of <see cref="T:System.Text.RegularExpressions.Match" /> that resulted from a regex search.</param>
+        /// <returns>Correctly-formatted domain-name matching value.</returns>
+        /// <remarks>This method also sets the value of the <see cref="P:xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid" /> property to <see langword="true" /> in the event that an error occurs.</remarks>
+        private static string DomainMapper(Match match)
+        {
+            // IdnMapping class with default property values.
+
+            var domainName = match.Groups[2].Value;
+
+            try
+            {
+                if (match == null) return domainName;
+                if (string.IsNullOrWhiteSpace(domainName)) return domainName;
+
+                domainName = DomainMappingObject.GetAscii(domainName);
+            }
+            catch (ArgumentException)
+            {
+                IsEmailAddressInvalid = true;
+            }
+
+            return match.Groups[1].Value + domainName;
+        }
+        /// <summary>Excludes whitespace characters from the specified <paramref name="value" />.</summary>
+        /// <param name="value">(Required.) A <see cref="T:System.String" /> from which to exclude all whitespace characters.</param>
+        /// <returns>A <see cref="T:System.String" /> that matches <paramref name="value" />, but with all whitespace characters removed.</returns>
+        /// <remarks>This method is useful for conducting whitespace-insensitive testing of strings.</remarks>
+        private static string ExcludingWhitespace(this string value)
+            => WhiteSpaceRegex.Replace(value, "");
+        /// <summary>Determines whether the specified <paramref name="text" /> starts with a vowel sound, and, if so, applies the specified <paramref name="type" /> setting to determine the appropriate article, if any, to return.</summary>
+        /// <param name="type">(Required.) One of the <see cref="T:xyLOGIX.Core.Extensions.LanguageArticleType" /> value(s) that indicates which article, if any, is to be returned.</param>
+        /// <param name="text">(Required.) A <see cref="T:System.String" /> containing the text that is to be parsed.</param>
+        /// <returns>If successful, a <see cref="T:System.String" /> containing the appropriate article, if any, based on the specified <paramref name="type" /> setting and whether the specified <paramref name="text" /> starts with a vowel sound; otherwise, the method returns the <see cref="F:System.String.Empty" /> value.</returns>
+        [return: NotLogged]
+        private static string GetLanguageArticleText(
+            LanguageArticleType type,
+            [NotLogged] string text
+        )
+        {
+            var result = string.Empty;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text)) return result;
+                if (!LanguageArticleTypeValidator.IsValid(type)) return result;
+
+                var preferredIndefiniteArticle =
+                    IsVowelSound(text) ? "an " : "a ";
+                switch (type)
+                {
+                    case LanguageArticleType.Definite:
+                        result = "the ";
+                        break;
+
+                    case LanguageArticleType.Indefinite:
+                        result = preferredIndefiniteArticle;
+                        break;
+
+                    case LanguageArticleType.Preposition:
+                        result = "of ";
+                        break;
+
+                    case LanguageArticleType.PrepopsitionWithDefinite:
+                        result = "of the ";
+                        break;
+
+                    case LanguageArticleType.PrepopsitionWithIndefinite:
+                        result = $"of {preferredIndefiniteArticle}";
+                        break;
+
+                    case LanguageArticleType.None:
+                    default:
+                        result = string.Empty;
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = string.Empty;
+            }
+
+            return result;
+        }
+        /// <summary>Determines whether the current word in the text being parsed for a character-casing operation is</summary>
+        /// <param name="array"></param>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        private static bool IsAcronymOrStateAbbr(IList<string> array, int i)
+        {
+            if (array == null || !array.Any() ||
+                string.IsNullOrWhiteSpace(array[i]) ||
+                ShortWordsThatAreNotAcronyms.ContainsNoCase(array[i]))
+                return false;
+
+            // something can be classed as an acronym if (a) it's not in the quote of "special" words, such as "The," "An", "Or", etc., and (b) it has two or more characters
+            if (i == 0 || array.Count == 1)
+            {
+                if (array.Count == 1)
+
+                    // always initial-capitalize a one-word phrase --- but it's not an acronym
+                    return false;
+
+                return StateAbbrList.ContainsNoCase(array[i]) |
+                       new Regex("\"[^\"]*\"").IsMatch(array[i]) |
+                       (!CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
+                        AcronymList.Any(s => s.EqualsNoCase(array[i])));
+            }
+
+            if (i > 0) /* means we are past the first word of a phrase */
+                return (StateAbbrList.Contains(array[i]) && array[i - 1]
+                           .EndsWith(",")) ||
+                       !CapitalizeableAsFirstWords.ContainsNoCase(array[i]) &
+                       AcronymList.ContainsNoCase(array[i]);
+
+            return false;
+        }
+        /// <summary>Determines whether the passed <see cref="string" /> contains Roman numerals.</summary>
+        /// <param name="value">Value to be checked.</param>
+        /// <returns>TRUE if the value contains Roman numerals; FALSE otherwise.</returns>
+        private static bool IsRomanNumerals([NotLogged] this string value)
+        {
+            if (string.IsNullOrWhiteSpace(value)) return false;
+
+            var regex = new Regex(
+                @"(?i)^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
+            );
+            var result = regex.IsMatch(value);
+            return result;
+        }
+        /// <summary>Gets a value indicating whether a special word, such as 'The' or 'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and still needs to be initial-capitalized.</summary>
+        /// <param name="words">Array of words (a phrase split on spaces, etc.)</param>
+        /// <param name="currentWord">Current word being checked.</param>
+        /// <returns></returns>
+        private static bool IsSpecialWordAtBeginningOfPhrase(
+            string[] words,
+            string currentWord
+        )
+        {
+            if (words == null || !words.Any()) return false;
+
+            if (string.IsNullOrWhiteSpace(currentWord)) return false;
+
+            return (currentWord.EndsWith(".") &&
+                    currentWord.EqualsNoCase(
+                        words.First()
+                    )) // this is most likely someone's title
+                   | CapitalizeableAsFirstWords
+                       .ContainsNoCase(
+                           currentWord
+                       ) // any words appearing in this array that are at the beginning of our phrase, should always be initial-capitalized
+                   && currentWord.EqualsNoCase(words.First());
+        }
+
+        /// <summary>Determines whether the current element in the list of words being parsed (as part of a character-casing operation) is the component of common names for US streets.</summary>
+        /// <param name="array">(Required.) Collection of words from the text being parsed.</param>
+        /// <param name="i">(Required.) Index into the <paramref name="array" /> of the current word being parsed.</param>
+        /// <returns><see langword="true" /> if the current word belongs as part of the name of common US streets; <see langword="false" /> otherwise.</returns>
+        /// <remarks>If this method is provided with the empty collection or an array index outside the bounds of the collection, then this method returns <see langword="false" />.</remarks>
+        private static bool IsStreetNameComponent(
+            IReadOnlyList<string> array,
+            int i
+        )
+            => array != null && array.Any() && i < array.Count &&
+               (i + 1 >= array.Count
+                   ? NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
+                       array[i]
+                   )
+                   : NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
+                       array[i]
+                   ) | NamesOfStreetsThatShouldBeCapitalized.ContainsNoCase(
+                       array[i + 1]
+                   ));
+        /// <summary>Determines if the first word of the phrase begins with a vowel sound for the purposes of choosing between the indefinite articles 'a' or 'an'.</summary>
+        /// <param name="text">(Required.) The phrase to analyze.</param>
+        /// <returns><see langword="true" /> if the first word begins with a vowel sound; otherwise, <see langword="false" />.</returns>
+        private static bool IsVowelSound([NotLogged] string text)
+        {
+            var result = false;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(text))
+                    return result;
+
+                var firstWord = text.Trim()
+                                    .Split(' ')[0];
+
+                if (string.IsNullOrWhiteSpace(firstWord))
+                    return result;
+
+                firstWord = firstWord.ToLowerInvariant();
+
+                // Words starting with consonant letters but vowel sounds
+                var startsWithVowelSound = new[]
+                {
+                    "honest", "honor", "hour", "heir", "herb" // US English
+                };
+
+                // Words starting with vowel letters but consonant ("yoo") sounds
+                var startsWithYooSound = new[]
+                {
+                    "university", "unicorn", "unique", "user", "usual",
+                    "ubiquitous", "ukulele", "european", "eulogy"
+                };
+
+                result =
+                    Array.Exists(
+                        startsWithVowelSound, w => firstWord.StartsWith(w)
+                    ) || (firstWord.Length == 2 &&
+                          firstWord.ToUpperInvariant() == firstWord &&
+                          "AEFHILMNORSX".IndexOf(firstWord[0]) >= 0) ||
+                    (!"aeiou".Contains(firstWord[0]) && !Array.Exists(
+                        startsWithYooSound, w => firstWord.StartsWith(w)
+                    ) && "aeiou".IndexOf(firstWord[0]) >= 0);
+            }
+            catch (Exception ex)
+            {
+                DebugUtils.LogException(ex);
+                result = false;
+            }
+
+            return result;
+        }
+        /// <summary>Uses the first letter (turned into being uppercase, if necessary) of the <paramref name="word" /> provided to be one of the letters of an acronym that is being built, e.g., from a phrase, using the first letter of each of the words of the phrase as each of the corresponding letters of the resulting acronym.</summary>
+        /// <param name="word">(Required.) String containing the word whose first letter should be made into a corresponding acronym letter.</param>
+        /// <returns>String containing the letter(s) to be utilized in the acronym.</returns>
+        /// <remarks>If <paramref name="word" /> is the empty or whitespace string, then this method returns the empty string.</remarks>
+        private static string ToAcronymLetter(string word)
+            => string.IsNullOrWhiteSpace(word) ? string.Empty :
+                "Reengagement".EqualsNoCase(word) ? "RE" : word[0]
+                    .ToString(CultureInfo.InvariantCulture)
+                    .ToUpperInvariant();
     }
 }
 

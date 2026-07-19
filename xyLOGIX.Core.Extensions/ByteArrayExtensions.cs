@@ -5,9 +5,7 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Provides extension method(s) for working with byte array(s).
-    /// </summary>
+    /// <summary>Provides extension method(s) for working with byte array(s).</summary>
     public static class ByteArrayExtensions
     {
         /// <summary>
@@ -26,8 +24,9 @@ namespace xyLOGIX.Core.Extensions
         static ByteArrayExtensions() { }
 
         /// <summary>
-        /// Returns the length of the specified byte array, <paramref name="bytes" />, or
-        /// zero if the array is set to a <see langword="null" /> reference.
+        /// Returns the length of the specified byte array,
+        /// <paramref name="bytes" />, or zero if the array is set to a
+        /// <see langword="null" /> reference.
         /// </summary>
         /// <param name="bytes">
         /// (Require.) Reference to the byte array whose length is to

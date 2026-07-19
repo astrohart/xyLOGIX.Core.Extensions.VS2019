@@ -8,13 +8,13 @@ namespace xyLOGIX.Core.Extensions
     public static class BindingManagerBaseExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed once only
-        /// for the <see cref="T:xyLOGIX.Core.Extensions.BindingManagerBaseExtensions" />
-        /// class.
+        /// Initializes static data or performs actions that need to be performed
+        /// once only for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.BindingManagerBaseExtensions" /> class.
         /// </summary>
         /// <remarks>
-        /// This constructor is called automatically prior to the first instance being
-        /// created or before any static members are referenced.
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any static members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -22,9 +22,7 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         static BindingManagerBaseExtensions() { }
 
-        public static void SuspendTwoWayBinding(
-            this BindingManagerBase bindingManager
-        )
+        public static void SuspendTwoWayBinding(this BindingManagerBase bindingManager)
         {
             try
             {
@@ -40,9 +38,7 @@ namespace xyLOGIX.Core.Extensions
             }
         }
 
-        public static void UpdateDataBoundObject(
-            this BindingManagerBase bindingManager
-        )
+        public static void UpdateDataBoundObject(this BindingManagerBase bindingManager)
         {
             try
             {
@@ -50,8 +46,7 @@ namespace xyLOGIX.Core.Extensions
 
                 foreach (Binding b in bindingManager.Bindings)
                 {
-                    b.DataSourceUpdateMode =
-                        DataSourceUpdateMode.OnPropertyChanged;
+                    b.DataSourceUpdateMode = DataSourceUpdateMode.OnPropertyChanged;
                     b.WriteValue();
                 }
             }

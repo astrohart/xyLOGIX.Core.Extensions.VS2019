@@ -6,8 +6,8 @@ using xyLOGIX.Core.Debug;
 namespace xyLOGIX.Core.Extensions
 {
     /// <summary>
-    /// Exposes static method(s) to perform various mathematical calculations, such as
-    /// percentage change.
+    /// Exposes static method(s) to perform various mathematical calculations,
+    /// such as percentage change.
     /// </summary>
     [Log(AttributeExclude = true)]
     public static class Calculate
@@ -64,10 +64,7 @@ namespace xyLOGIX.Core.Extensions
         /// Average fractional rate of the change from <paramref name="start" />
         /// to <paramref name="end" />.
         /// </returns>
-        public static decimal FractionalChangeBetween(
-            decimal end,
-            decimal start
-        )
+        public static decimal FractionalChangeBetween(decimal end, decimal start)
         {
             var result = decimal.Zero;
 
@@ -75,8 +72,7 @@ namespace xyLOGIX.Core.Extensions
             {
                 if (end == start) return result; // obviously
                 if (start.IsZero())
-                    return
-                        result; // can't divide by zero; define result to be zero
+                    return result; // can't divide by zero; define result to be zero
 
                 // formula for fractional change
                 result = (end - start) / start;
@@ -93,10 +89,10 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Calculates the percentage change between an <paramref name="initialValue" />
-        /// and a <paramref name="finalValue" />.
+        /// Calculates the percentage change between an
+        /// <paramref name="initialValue" /> and a <paramref name="finalValue" />.
         /// </summary>
-        /// <param name="initialValue">The initial value.  Must not be equal to zero.</param>
+        /// <param name="initialValue">The initial value. Must not be equal to zero.</param>
         /// <param name="finalValue">The final value.</param>
         /// <returns>
         /// The percentage change between the <paramref name="initialValue" /> and
@@ -106,28 +102,22 @@ namespace xyLOGIX.Core.Extensions
         /// Thrown when the specified
         /// <paramref name="initialValue" /> is equal to zero.
         /// </exception>
-        public static double PercentageChangeOf(
-            long initialValue,
-            long finalValue
-        )
+        public static double PercentageChangeOf(long initialValue, long finalValue)
         {
             if (0L.Equals(initialValue)) // cannot divide by zero.
-                throw new DivideByZeroException(
-                    "Initial value cannot be zero."
-                );
+                throw new DivideByZeroException("Initial value cannot be zero.");
 
             double change = finalValue - initialValue;
-            var percentageChange =
-                change / initialValue * 100D; // Cast to double for precision
+            var percentageChange = change / initialValue * 100D; // Cast to double for precision
 
             return percentageChange;
         }
 
         /// <summary>
-        /// Calculates the percentage change between an <paramref name="initialValue" />
-        /// and a <paramref name="finalValue" />.
+        /// Calculates the percentage change between an
+        /// <paramref name="initialValue" /> and a <paramref name="finalValue" />.
         /// </summary>
-        /// <param name="initialValue">The initial value.  Must not be equal to zero.</param>
+        /// <param name="initialValue">The initial value. Must not be equal to zero.</param>
         /// <param name="finalValue">The final value.</param>
         /// <returns>
         /// The percentage change between the <paramref name="initialValue" /> and
@@ -137,28 +127,22 @@ namespace xyLOGIX.Core.Extensions
         /// Thrown when the specified
         /// <paramref name="initialValue" /> is equal to zero.
         /// </exception>
-        public static double PercentageChangeOf(
-            int initialValue,
-            int finalValue
-        )
+        public static double PercentageChangeOf(int initialValue, int finalValue)
         {
             if (0.Equals(initialValue)) // cannot divide by zero.
-                throw new DivideByZeroException(
-                    "Initial value cannot be zero."
-                );
+                throw new DivideByZeroException("Initial value cannot be zero.");
 
             double change = finalValue - initialValue;
-            var percentageChange =
-                change / initialValue * 100D; // Cast to double for precision
+            var percentageChange = change / initialValue * 100D; // Cast to double for precision
 
             return percentageChange;
         }
 
         /// <summary>
-        /// Calculates the percentage change between an <paramref name="initialValue" />
-        /// and a <paramref name="finalValue" />.
+        /// Calculates the percentage change between an
+        /// <paramref name="initialValue" /> and a <paramref name="finalValue" />.
         /// </summary>
-        /// <param name="initialValue">The initial value.  Must not be equal to zero.</param>
+        /// <param name="initialValue">The initial value. Must not be equal to zero.</param>
         /// <param name="finalValue">The final value.</param>
         /// <returns>
         /// The percentage change between the <paramref name="initialValue" /> and
@@ -168,28 +152,22 @@ namespace xyLOGIX.Core.Extensions
         /// Thrown when the specified
         /// <paramref name="initialValue" /> is equal to zero.
         /// </exception>
-        public static double PercentageChangeOf(
-            double initialValue,
-            double finalValue
-        )
+        public static double PercentageChangeOf(double initialValue, double finalValue)
         {
             if (0D.Equals(initialValue)) // cannot divide by zero.
-                throw new DivideByZeroException(
-                    "Initial value cannot be zero."
-                );
+                throw new DivideByZeroException("Initial value cannot be zero.");
 
             var change = finalValue - initialValue;
-            var percentageChange =
-                change / initialValue * 100D; // Cast to double for precision
+            var percentageChange = change / initialValue * 100D; // Cast to double for precision
 
             return percentageChange;
         }
 
         /// <summary>
-        /// Calculates the percentage change between an <paramref name="initialValue" />
-        /// and a <paramref name="finalValue" />.
+        /// Calculates the percentage change between an
+        /// <paramref name="initialValue" /> and a <paramref name="finalValue" />.
         /// </summary>
-        /// <param name="initialValue">The initial value.  Must not be equal to zero.</param>
+        /// <param name="initialValue">The initial value. Must not be equal to zero.</param>
         /// <param name="finalValue">The final value.</param>
         /// <returns>
         /// The percentage change between the <paramref name="initialValue" /> and
@@ -199,32 +177,24 @@ namespace xyLOGIX.Core.Extensions
         /// Thrown when the specified
         /// <paramref name="initialValue" /> is equal to zero.
         /// </exception>
-        public static decimal PercentageChangeOf(
-            decimal initialValue,
-            decimal finalValue
-        )
+        public static decimal PercentageChangeOf(decimal initialValue, decimal finalValue)
         {
             if (0M.Equals(initialValue)) // cannot divide by zero.
-                throw new DivideByZeroException(
-                    "Initial value cannot be zero."
-                );
+                throw new DivideByZeroException("Initial value cannot be zero.");
 
             var change = finalValue - initialValue;
-            var percentageChange =
-                change / initialValue * 100M; // Cast to decimal for precision
+            var percentageChange = change / initialValue * 100M; // Cast to decimal for precision
 
             return percentageChange;
         }
 
-        /// <summary>
-        /// Calculates the percentage difference between two given numbers.
-        /// </summary>
+        /// <summary>Calculates the percentage difference between two given numbers.</summary>
         /// <param name="a">The first number.</param>
         /// <param name="b">The second number.</param>
         /// <returns>The percentage difference between the two numbers.</returns>
         /// <remarks>
-        /// The formula used to calculate the percentage difference is:
-        /// (|a - b| / ((a + b) / 2)) * 100
+        /// The formula used to calculate the percentage difference is: (|a - b| /
+        /// ((a + b) / 2)) * 100
         /// </remarks>
         public static double PercentageDifference(double a, double b)
         {
@@ -235,15 +205,13 @@ namespace xyLOGIX.Core.Extensions
             return relativeDifference * 100;
         }
 
-        /// <summary>
-        /// Calculates the percentage difference between two given numbers.
-        /// </summary>
+        /// <summary>Calculates the percentage difference between two given numbers.</summary>
         /// <param name="a">The first number.</param>
         /// <param name="b">The second number.</param>
         /// <returns>The percentage difference between the two numbers.</returns>
         /// <remarks>
-        /// The formula used to calculate the percentage difference is:
-        /// (|a - b| / ((a + b) / 2)) * 100
+        /// The formula used to calculate the percentage difference is: (|a - b| /
+        /// ((a + b) / 2)) * 100
         /// </remarks>
         public static decimal PercentageDifference(decimal a, decimal b)
         {
@@ -254,15 +222,13 @@ namespace xyLOGIX.Core.Extensions
             return relativeDifference * 100M;
         }
 
-        /// <summary>
-        /// Calculates the percentage difference between two given numbers.
-        /// </summary>
+        /// <summary>Calculates the percentage difference between two given numbers.</summary>
         /// <param name="a">The first number.</param>
         /// <param name="b">The second number.</param>
         /// <returns>The percentage difference between the two numbers.</returns>
         /// <remarks>
-        /// The formula used to calculate the percentage difference is:
-        /// (|a - b| / ((a + b) / 2)) * 100
+        /// The formula used to calculate the percentage difference is: (|a - b| /
+        /// ((a + b) / 2)) * 100
         /// </remarks>
         public static double PercentageDifference(int a, int b)
         {
@@ -281,8 +247,8 @@ namespace xyLOGIX.Core.Extensions
         /// the multiplication; it simply returns zero.
         /// </summary>
         /// <param name="factors">
-        /// (Required.) One or more <see langword="decimal" />
-        /// values that will serve as the factors to be multiplied.
+        /// (Required.) One or more <see langword="decimal" /> values
+        /// that will serve as the factors to be multiplied.
         /// </param>
         /// <returns>
         /// The n-ary product of the specified <paramref name="factors" />, or
@@ -297,20 +263,16 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 /*
-                 * Remember, when we multiply, if any one factor is zero, then
-                 * the entire product is zero.
-                 *
-                 * If this is so, then let's save some processor cycles (multiplication
-                 * is expensive) and simply return zero.
+                 * Remember, when we multiply, if any one factor is zero, then the entire product is
+                 * zero. If this is so, then let's save some processor cycles (multiplication is
+                 * expensive) and simply return zero.
                  */
                 if (factors == null || !factors.Any()) return result;
                 if (factors.Any(factor => factor.Equals(decimal.Zero)))
                     return result;
 
                 result = factors.Aggregate(
-                    decimal.One,
-                    (runningProduct, currentFactor)
-                        => runningProduct * currentFactor
+                    decimal.One, (runningProduct, currentFactor) => runningProduct * currentFactor
                 );
             }
             catch (Exception ex)
@@ -375,7 +337,7 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
-        /// Computes the zero floor.  Meaning, if the specified
+        /// Computes the zero floor. Meaning, if the specified
         /// <paramref name="value" /> is negative, then this method returns zero.
         /// <para />
         /// If the specified <paramref name="value" /> is zero or greater, then this method
@@ -391,7 +353,7 @@ namespace xyLOGIX.Core.Extensions
             => value < 0 ? 0 : value;
 
         /// <summary>
-        /// Computes the zero floor.  Meaning, if the specified
+        /// Computes the zero floor. Meaning, if the specified
         /// <paramref name="value" /> is negative, then this method returns zero.
         /// <para />
         /// If the specified <paramref name="value" /> is zero or greater, then this method
@@ -407,7 +369,7 @@ namespace xyLOGIX.Core.Extensions
             => value < 0L ? 0L : value;
 
         /// <summary>
-        /// Computes the zero floor.  Meaning, if the specified
+        /// Computes the zero floor. Meaning, if the specified
         /// <paramref name="value" /> is negative, then this method returns zero.
         /// <para />
         /// If the specified <paramref name="value" /> is zero or greater, then this method
@@ -423,7 +385,7 @@ namespace xyLOGIX.Core.Extensions
             => value < 0M ? 0M : value;
 
         /// <summary>
-        /// Computes the zero floor.  Meaning, if the specified
+        /// Computes the zero floor. Meaning, if the specified
         /// <paramref name="value" /> is negative, then this method returns zero.
         /// <para />
         /// If the specified <paramref name="value" /> is zero or greater, then this method

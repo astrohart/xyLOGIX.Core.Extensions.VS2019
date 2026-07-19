@@ -3,7 +3,7 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary> Extension methods for a <c>decimal?</c> value. </summary>
+    /// <summary>Extension methods for a <c>decimal?</c> value.</summary>
     public static class NullableDecimalExtensions
     {
         /// <summary>
@@ -28,7 +28,7 @@ namespace xyLOGIX.Core.Extensions
         /// non-positive; i.e., zero, or a negative number.
         /// </summary>
         /// <param name="value">
-        /// (Required.) Value to be compared.  Must be of
+        /// (Required.) Value to be compared. Must be of
         /// <see cref="T:System.Decimal" /> data type.
         /// </param>
         /// <returns>
@@ -95,8 +95,8 @@ namespace xyLOGIX.Core.Extensions
             => value != null && value.HasValue;
 
         /// <summary>
-        /// Rounds the specified <paramref name="value" /> to the nearest cent, assuming
-        /// that the specified <paramref name="value" /> is denominated in
+        /// Rounds the specified <paramref name="value" /> to the nearest cent,
+        /// assuming that the specified <paramref name="value" /> is denominated in
         /// <c>U.S. Dollars (USD)</c>.
         /// </summary>
         /// <param name="value">

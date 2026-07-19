@@ -41,8 +41,9 @@ namespace xyLOGIX.Core.Extensions.Providers.Interfaces
         Form GetFormFor(Control control);
 
         /// <summary>
-        /// Removes the specified <paramref name="control" /> and the corresponding
-        /// association to its containing <see cref="T:System.Windows.Forms.Form" />.
+        /// Removes the specified <paramref name="control" /> and the
+        /// corresponding association to its containing
+        /// <see cref="T:System.Windows.Forms.Form" />.
         /// </summary>
         /// <param name="control">
         /// (Required.) Reference to an instance of

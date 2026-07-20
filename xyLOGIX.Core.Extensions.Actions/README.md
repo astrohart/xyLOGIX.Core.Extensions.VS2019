@@ -40,8 +40,8 @@ xyLOGIX.Core.Extensions.Actions
 
 ##### Summary
 
-Provides a set of static methods that preferentially return a specified
-preferred value over a nullable value, if the nullable value is
+Provides a set of static methods that preferentially return a
+specified preferred value over a nullable value, if the nullable value is
 `null` or does not have a value.
 
 ##### Remarks
@@ -55,8 +55,9 @@ with the config of the application.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [Prefer](#T-xyLOGIX-Core-Extensions-Actions-Prefer 'xyLOGIX.Core.Extensions.Actions.Prefer') class.
+Initializes static data or performs actions that need to be performed
+once only for the [Prefer](#T-xyLOGIX-Core-Extensions-Actions-Prefer 'xyLOGIX.Core.Extensions.Actions.Prefer')
+class.
 
 ##### Parameters
 
@@ -64,8 +65,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -77,11 +78,11 @@ attribute in order to simplify the logging output.
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -108,11 +109,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -126,9 +127,8 @@ returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| nullableValue | [System.Nullable{System.Byte}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Byte}') | (Required.) A nullable
-[Byte](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Byte 'System.Byte') variable whose value is to be returned if it
-indeed does have a value. |
+| nullableValue | [System.Nullable{System.Byte}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Byte}') | (Required.) A nullable [Byte](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Byte 'System.Byte')
+variable whose value is to be returned if it indeed does have a value. |
 | preferredValue | [System.Byte](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Byte 'System.Byte') | (Required.) Reference to the preferred
 [Byte](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Byte 'System.Byte') value that is to be returned if the
 `nullableValue` is `null` or does not have a
@@ -139,11 +139,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -157,9 +157,8 @@ returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| nullableValue | [System.Nullable{System.Char}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Char}') | (Required.) A nullable
-[Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') variable whose value is to be returned if it
-indeed does have a value. |
+| nullableValue | [System.Nullable{System.Char}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Char}') | (Required.) A nullable [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char')
+variable whose value is to be returned if it indeed does have a value. |
 | preferredValue | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) Reference to the preferred
 [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value that is to be returned if the
 `nullableValue` is `null` or does not have a
@@ -170,11 +169,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -201,11 +200,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -232,11 +231,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -250,9 +249,8 @@ returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| nullableValue | [System.Nullable{System.Single}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Single}') | (Required.) A nullable
-[float](#T-float 'float') variable whose value is to be returned if it
-indeed does have a value. |
+| nullableValue | [System.Nullable{System.Single}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Single}') | (Required.) A nullable [float](#T-float 'float')
+variable whose value is to be returned if it indeed does have a value. |
 | preferredValue | [System.Single](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Single 'System.Single') | (Required.) Reference to the preferred
 [float](#T-float 'float') value that is to be returned if the
 `nullableValue` is `null` or does not have a
@@ -263,11 +261,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -294,11 +292,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -325,11 +323,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -356,11 +354,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -387,18 +385,18 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `valueToCheck`, if the specified
-`valueToCheck` is `null` or it does not
-have a value; otherwise, the value of the `valueToCheck` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `valueToCheck`,
+if the specified `valueToCheck` is `null` or
+it does not have a value; otherwise, the value of the
+`valueToCheck` is returned.
 
 ##### Returns
 
 The specified `preferredValue` over the
 `valueToCheck`, if the specified
-`valueToCheck` is `null` or it does not
-have a value; otherwise, the value of the `valueToCheck` is
+`valueToCheck` is `null` or it does not have
+a value; otherwise, the value of the `valueToCheck` is
 returned.
 
 ##### Parameters
@@ -418,18 +416,18 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `valueToCheck`, if the specified
-`valueToCheck` is `null` or it does not
-have a value; otherwise, the value of the `valueToCheck` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `valueToCheck`,
+if the specified `valueToCheck` is `null` or
+it does not have a value; otherwise, the value of the
+`valueToCheck` is returned.
 
 ##### Returns
 
 The specified `preferredValue` over the
 `valueToCheck`, if the specified
-`valueToCheck` is `null` or it does not
-have a value; otherwise, the value of the `valueToCheck` is
+`valueToCheck` is `null` or it does not have
+a value; otherwise, the value of the `valueToCheck` is
 returned.
 
 ##### Parameters
@@ -449,11 +447,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -467,8 +465,9 @@ returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| nullableValue | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | (Required.) A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') variable whose value is to be
-returned if it indeed does have a non-`null`, non-blank value. |
+| nullableValue | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | (Required.) A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object')
+variable whose value is to be returned if it indeed does have a non-
+`null`, non-blank value. |
 | preferredValue | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | (Required.) A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object')
 containing the preferred value that is to be returned if the
 `nullableValue` is `null` or does not have a
@@ -479,11 +478,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -510,11 +509,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -541,11 +540,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -559,8 +558,9 @@ returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| nullableValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variable whose value is to be
-returned if it indeed does have a non-`null`, non-blank value. |
+| nullableValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+variable whose value is to be returned if it indeed does have a non-
+`null`, non-blank value. |
 | preferredValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
 containing the preferred value that is to be returned if the
 `nullableValue` is `null` or does not have a
@@ -571,11 +571,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -602,11 +602,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -633,11 +633,11 @@ value. |
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -664,8 +664,9 @@ value. |
 
 ##### Summary
 
-Returns the value of the `value1` parameter if it is greater
-than or equal to zero; otherwise, `value2` is returned.
+Returns the value of the `value1` parameter if it is
+greater than or equal to zero; otherwise, `value2` is
+returned.
 
 ##### Returns
 
@@ -678,10 +679,10 @@ than or equal to zero; otherwise, `value2` is returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value1 | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An integer value to be returned if it is greater than or equal to
-zero. |
-| value2 | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An integer value to be returned if the `value1`
-is less than zero. |
+| value1 | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An integer value to be returned if it is
+greater than or equal to zero. |
+| value2 | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) An integer value to be returned if the
+`value1` is less than zero. |
 
 <a name='T-xyLOGIX-Core-Extensions-Actions-Properties-Resources'></a>
 ## Resources `type`
@@ -725,8 +726,8 @@ Exposes static methods to round various quantities to various values.
 
 ##### Summary
 
-Rounds the specified `value` to the nearest cent, assuming
-that the specified `value` is denominated in
+Rounds the specified `value` to the nearest cent,
+assuming that the specified `value` is denominated in
 `U.S. Dollars (USD)`.
 
 ##### Returns

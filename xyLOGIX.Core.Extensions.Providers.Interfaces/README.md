@@ -70,8 +70,9 @@ to be obtained. |
 
 ##### Summary
 
-Removes the specified `control` and the corresponding
-association to its containing [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
+Removes the specified `control` and the
+corresponding association to its containing
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
 
 ##### Returns
 

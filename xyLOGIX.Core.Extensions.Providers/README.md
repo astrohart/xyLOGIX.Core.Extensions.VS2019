@@ -37,8 +37,8 @@ Defines associations between forms and their contained controls.
 
 ##### Summary
 
-Empty, `private` constructor to prohibit direct allocation of
-this class.
+Empty, `private` constructor to prohibit direct
+allocation of this class.
 
 ##### Parameters
 
@@ -67,8 +67,8 @@ Reference to an instance of a dictionary that maps instances of
 
 ##### Summary
 
-Empty, `static` constructor to prohibit direct allocation of
-this class.
+Empty, `static` constructor to prohibit direct
+allocation of this class.
 
 ##### Parameters
 
@@ -252,8 +252,9 @@ dictionary that correspond to the specified form.
 
 ##### Summary
 
-Removes the specified `control` and the corresponding
-association to its containing [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
+Removes the specified `control` and the
+corresponding association to its containing
+[Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form').
 
 ##### Returns
 

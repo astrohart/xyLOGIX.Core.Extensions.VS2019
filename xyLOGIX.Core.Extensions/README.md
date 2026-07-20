@@ -799,9 +799,9 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [BindingManagerBaseExtensions](#T-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions 'xyLOGIX.Core.Extensions.BindingManagerBaseExtensions')
-class.
+Initializes static data or performs actions that need to be performed
+once only for the
+[BindingManagerBaseExtensions](#T-xyLOGIX-Core-Extensions-BindingManagerBaseExtensions 'xyLOGIX.Core.Extensions.BindingManagerBaseExtensions') class.
 
 ##### Parameters
 
@@ -809,8 +809,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -826,9 +826,10 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-A [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that writes values when the
-value of the [SelectedIndex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.SelectedIndex 'System.Windows.Forms.ComboBox.SelectedIndex')
-property is changed.
+A [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox') that writes values
+when the value of the
+[SelectedIndex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.SelectedIndex 'System.Windows.Forms.ComboBox.SelectedIndex') property is
+changed.
 
 <a name='M-xyLOGIX-Core-Extensions-BoundComboBox-OnSelectedIndexChanged-System-EventArgs-'></a>
 ### OnSelectedIndexChanged(e) `method`
@@ -884,8 +885,9 @@ attribute in order to simplify the logging output.
 
 ##### Summary
 
-Returns the length of the specified byte array, `bytes`, or
-zero if the array is set to a `null` reference.
+Returns the length of the specified byte array,
+`bytes`, or zero if the array is set to a
+`null` reference.
 
 ##### Returns
 
@@ -939,8 +941,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Exposes static method(s) to perform various mathematical calculations, such as
-percentage change.
+Exposes static method(s) to perform various mathematical calculations,
+such as percentage change.
 
 <a name='M-xyLOGIX-Core-Extensions-Calculate-DeltaBetween-System-Decimal,System-Decimal-'></a>
 ### DeltaBetween(end,start) `method`
@@ -1001,8 +1003,8 @@ The result of calling this method, in the event that
 
 ##### Summary
 
-Calculates the percentage change between an `initialValue`
-and a `finalValue`.
+Calculates the percentage change between an
+`initialValue` and a `finalValue`.
 
 ##### Returns
 
@@ -1013,7 +1015,7 @@ The percentage change between the `initialValue` and
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| initialValue | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The initial value.  Must not be equal to zero. |
+| initialValue | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The initial value. Must not be equal to zero. |
 | finalValue | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The final value. |
 
 ##### Exceptions
@@ -1028,8 +1030,8 @@ The percentage change between the `initialValue` and
 
 ##### Summary
 
-Calculates the percentage change between an `initialValue`
-and a `finalValue`.
+Calculates the percentage change between an
+`initialValue` and a `finalValue`.
 
 ##### Returns
 
@@ -1040,7 +1042,7 @@ The percentage change between the `initialValue` and
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| initialValue | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The initial value.  Must not be equal to zero. |
+| initialValue | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The initial value. Must not be equal to zero. |
 | finalValue | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The final value. |
 
 ##### Exceptions
@@ -1055,8 +1057,8 @@ The percentage change between the `initialValue` and
 
 ##### Summary
 
-Calculates the percentage change between an `initialValue`
-and a `finalValue`.
+Calculates the percentage change between an
+`initialValue` and a `finalValue`.
 
 ##### Returns
 
@@ -1067,7 +1069,7 @@ The percentage change between the `initialValue` and
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| initialValue | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | The initial value.  Must not be equal to zero. |
+| initialValue | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | The initial value. Must not be equal to zero. |
 | finalValue | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | The final value. |
 
 ##### Exceptions
@@ -1082,8 +1084,8 @@ The percentage change between the `initialValue` and
 
 ##### Summary
 
-Calculates the percentage change between an `initialValue`
-and a `finalValue`.
+Calculates the percentage change between an
+`initialValue` and a `finalValue`.
 
 ##### Returns
 
@@ -1094,7 +1096,7 @@ The percentage change between the `initialValue` and
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| initialValue | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The initial value.  Must not be equal to zero. |
+| initialValue | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The initial value. Must not be equal to zero. |
 | finalValue | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | The final value. |
 
 ##### Exceptions
@@ -1124,8 +1126,8 @@ The percentage difference between the two numbers.
 
 ##### Remarks
 
-The formula used to calculate the percentage difference is:
-(|a - b| / ((a + b) / 2)) * 100
+The formula used to calculate the percentage difference is: (|a - b| /
+((a + b) / 2)) * 100
 
 <a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageDifference-System-Decimal,System-Decimal-'></a>
 ### PercentageDifference(a,b) `method`
@@ -1147,8 +1149,8 @@ The percentage difference between the two numbers.
 
 ##### Remarks
 
-The formula used to calculate the percentage difference is:
-(|a - b| / ((a + b) / 2)) * 100
+The formula used to calculate the percentage difference is: (|a - b| /
+((a + b) / 2)) * 100
 
 <a name='M-xyLOGIX-Core-Extensions-Calculate-PercentageDifference-System-Int32,System-Int32-'></a>
 ### PercentageDifference(a,b) `method`
@@ -1170,8 +1172,8 @@ The percentage difference between the two numbers.
 
 ##### Remarks
 
-The formula used to calculate the percentage difference is:
-(|a - b| / ((a + b) / 2)) * 100
+The formula used to calculate the percentage difference is: (|a - b| /
+((a + b) / 2)) * 100
 
 <a name='M-xyLOGIX-Core-Extensions-Calculate-ProductOf-System-Decimal[]-'></a>
 ### ProductOf(factors) `method`
@@ -1199,8 +1201,8 @@ If no values are passed, then this method is defined to return zero also.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| factors | [System.Decimal[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal[] 'System.Decimal[]') | (Required.) One or more `decimal`
-values that will serve as the factors to be multiplied. |
+| factors | [System.Decimal[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal[] 'System.Decimal[]') | (Required.) One or more `decimal` values
+that will serve as the factors to be multiplied. |
 
 <a name='M-xyLOGIX-Core-Extensions-Calculate-QuotientOf-System-Decimal,System-Decimal-'></a>
 ### QuotientOf(numerator,denominator) `method`
@@ -1246,7 +1248,7 @@ operator.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified
+Computes the zero floor. Meaning, if the specified
 `value` is negative, then this method returns zero.
 
 
@@ -1271,7 +1273,7 @@ the method is the identity map.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified
+Computes the zero floor. Meaning, if the specified
 `value` is negative, then this method returns zero.
 
 
@@ -1296,7 +1298,7 @@ the method is the identity map.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified
+Computes the zero floor. Meaning, if the specified
 `value` is negative, then this method returns zero.
 
 
@@ -1321,7 +1323,7 @@ the method is the identity map.
 
 ##### Summary
 
-Computes the zero floor.  Meaning, if the specified
+Computes the zero floor. Meaning, if the specified
 `value` is negative, then this method returns zero.
 
 
@@ -1358,8 +1360,9 @@ Contains extension methods to be used on instances of the
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [CharExtensions](#T-xyLOGIX-Core-Extensions-CharExtensions 'xyLOGIX.Core.Extensions.CharExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [CharExtensions](#T-xyLOGIX-Core-Extensions-CharExtensions 'xyLOGIX.Core.Extensions.CharExtensions')
+class.
 
 ##### Parameters
 
@@ -1367,8 +1370,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -1384,14 +1387,15 @@ Determines whether the specified `value` is a digit.
 
 ##### Returns
 
-`true` if `value` is a digit; otherwise,
-`false`.
+`true` if `value` is a digit;
+otherwise, `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to evaluate. |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to
+evaluate. |
 
 <a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsLowercase-System-Char-'></a>
 ### IsLowercase(value) `method`
@@ -1410,7 +1414,8 @@ ASCII letter; otherwise, `false`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to evaluate. |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to
+evaluate. |
 
 <a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsUppercase-System-Char-'></a>
 ### IsUppercase(value) `method`
@@ -1429,7 +1434,8 @@ ASCII letter; otherwise, `false`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to evaluate. |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to
+evaluate. |
 
 <a name='T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions'></a>
 ## CheckedListBoxExtensions `type`
@@ -1477,8 +1483,8 @@ be checked. |
 
 ##### Summary
 
-Sets the Checked state of the check the box whose name is identical
-to the value in the `itemName` parameter.
+Sets the Checked state of the check the box whose name is identical to
+the value in the `itemName` parameter.
 
 ##### Parameters
 
@@ -1486,8 +1492,8 @@ to the value in the `itemName` parameter.
 | ---- | ---- | ----------- |
 | checkedListBox | [System.Windows.Forms.CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') | (Required.) A
 [CheckedListBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.CheckedListBox 'System.Windows.Forms.CheckedListBox') to act upon. |
-| itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the name of the item
-whose Checked state is to be altered. |
+| itemName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the name of the item whose
+Checked state is to be altered. |
 | isChecked | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) Whether to set the Checked state of the
 list item whose name matches that of the string specified by the
 `itemName` parameter. Default value is
@@ -1648,15 +1654,15 @@ returns `true`, or if the entire collection is enumerated. |
 
 ##### Remarks
 
-This method can make no guarantee about the order in which it evaluates the
-`predicate` on the elements of the `values`
-collection.
+This method can make no guarantee about the order in which it
+evaluates the `predicate` on the elements of the
+`values` collection.
 
 
 
-This method enumerates the entire `values`
-collection twice; once to determine if it contains any elements, and the other
-to test each element with the specified `predicate`.
+This method enumerates the entire `values` collection twice;
+once to determine if it contains any elements, and the other to test each
+element with the specified `predicate`.
 
 
 
@@ -1692,8 +1698,8 @@ otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object
-that implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1')
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that
+implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1')
 interface. |
 
 ##### Generic Types
@@ -1704,8 +1710,8 @@ interface. |
 
 ##### Remarks
 
-If this method is passed a `null` reference, then
-the method also returns `false`.
+If this method is passed a `null` reference, then the
+method also returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-CollectionExtensions-IsNullOrEmpty``1-System-Collections-Generic-ICollection{``0}-'></a>
 ### IsNullOrEmpty\`\`1(collection) `method`
@@ -1726,8 +1732,8 @@ contains zero elements; `false` otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object
-that implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1')
+| collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | (Required.) Reference to an instance of an object that
+implements the [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1')
 interface. |
 
 ##### Generic Types
@@ -1753,8 +1759,8 @@ types specified; otherwise, `false` is returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| obj | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') instance whose type is to
-be checked. |
+| obj | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') instance whose type is to be
+checked. |
 
 ##### Generic Types
 
@@ -1798,8 +1804,9 @@ Exposes static extension methods for instances of
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [ComboBoxExtensions](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions 'xyLOGIX.Core.Extensions.ComboBoxExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [ComboBoxExtensions](#T-xyLOGIX-Core-Extensions-ComboBoxExtensions 'xyLOGIX.Core.Extensions.ComboBoxExtensions')
+class.
 
 ##### Parameters
 
@@ -1807,8 +1814,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -1844,14 +1851,14 @@ data-bound. |
 
 ##### Summary
 
-Attempts to gather a collection of combo box items for the specified C#
-enumeration.
+Attempts to gather a collection of combo box items for the specified
+C# enumeration.
 
 ##### Returns
 
 A collection of instances of
-[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
-, each of which represent an item to be added to a
+[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1') , each of
+which represent an item to be added to a
 [ComboBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox 'System.Windows.Forms.ComboBox').
 
 ##### Parameters
@@ -1869,8 +1876,8 @@ This method has no parameters.
 
 ##### Summary
 
-Attempts to select the first item in the list of items present in the specified
-`comboBox`.
+Attempts to select the first item in the list of items present in the
+specified `comboBox`.
 
 ##### Parameters
 
@@ -1926,16 +1933,16 @@ attribute in order to simplify the logging output.
 
 ##### Summary
 
-Determines whether the specified `component` is set to a
-`null` reference or has been disposed.
+Determines whether the specified `component` is set
+to a `null` reference or has been disposed.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| component | [System.ComponentModel.IComponent](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IComponent 'System.ComponentModel.IComponent') | (Required.) Reference to an instance of an object that implements the
-[IComponent](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IComponent 'System.ComponentModel.IComponent') interface that refers to the
-component that is to be checked. |
+| component | [System.ComponentModel.IComponent](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IComponent 'System.ComponentModel.IComponent') | (Required.) Reference to an instance of an object that
+implements the [IComponent](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IComponent 'System.ComponentModel.IComponent') interface that
+refers to the component that is to be checked. |
 
 ##### Remarks
 
@@ -2033,9 +2040,10 @@ This method has no parameters.
 
 ##### Remarks
 
-If the `Control-Form Association Provider` does not contain a reference to
-the containing [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form'), then the method
-calls the [FindForm](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.FindForm 'System.Windows.Forms.Control.FindForm') method.
+If the `Control-Form Association Provider` does not contain a
+reference to the containing [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form'), then
+the method calls the [FindForm](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.FindForm 'System.Windows.Forms.Control.FindForm')
+method.
 
 <a name='M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired-System-ComponentModel-ISynchronizeInvoke,System-Windows-Forms-MethodInvoker-'></a>
 ### InvokeIfRequired(obj,message) `method`
@@ -2191,16 +2199,16 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Exposes static extension methods for [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset')
-value(s).
+Exposes static extension methods for
+[DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') value(s).
 
 <a name='M-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions-IsMoreRecentThan-System-DateTimeOffset,System-DateTimeOffset-'></a>
 ### IsMoreRecentThan(time1,time2) `method`
 
 ##### Summary
 
-Determines whether `time1` is closer to the present than
-`time2`.
+Determines whether `time1` is closer to the present
+than `time2`.
 
 ##### Returns
 
@@ -2211,8 +2219,8 @@ than `time2`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| time1 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) A [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') that should be compared to
-`time2`. |
+| time1 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) A [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') that
+should be compared to `time2`. |
 | time2 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) A [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') that
 should be compared to `time2`. |
 
@@ -2230,9 +2238,9 @@ This method concerns itself only with times that are in the relative past.
 
 ##### Summary
 
-Determines if `dto1` is within `seconds`
-second(s) of `dto2`, where `dto1` and
-`dto2` are both instances of
+Determines if `dto1` is within
+`seconds` second(s) of `dto2`, where
+`dto1` and `dto2` are both instances of
 [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset').
 
 ##### Returns
@@ -2265,9 +2273,9 @@ millisecond.
 
 ##### Summary
 
-Determines if `dto1` is within `seconds`
-second(s) of `dto2`, where `dto1` and
-`dto2` are both instances of
+Determines if `dto1` is within
+`seconds` second(s) of `dto2`, where
+`dto1` and `dto2` are both instances of
 [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset').
 
 ##### Returns
@@ -2281,8 +2289,8 @@ apart.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| dto1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) One of the
-[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value(s) to be compared. |
+| dto1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) One of the [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime')
+value(s) to be compared. |
 | dto2 | [System.DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') | (Required.) The other of the two
 [DateTimeOffset](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTimeOffset 'System.DateTimeOffset') value(s) to be compared. |
 | seconds | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A positive [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') that
@@ -2311,8 +2319,9 @@ Provides methods for extending any dictionary.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [DictionaryExtensions](#T-xyLOGIX-Core-Extensions-DictionaryExtensions 'xyLOGIX.Core.Extensions.DictionaryExtensions')
+class.
 
 ##### Parameters
 
@@ -2320,8 +2329,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -2379,8 +2388,8 @@ Dupes are ignored.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| target | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) The dictionary that is to be the target of
-the merge. |
+| target | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) The dictionary that is to be the target of the
+merge. |
 | quote | [System.Collections.Generic.IDictionary{\`\`0,\`\`1}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IDictionary 'System.Collections.Generic.IDictionary{``0,``1}') | (Required.) A dictionary that has the items to be merged
 in.
 
@@ -2398,8 +2407,8 @@ key's data type, then this method will do nothing. |
 
 ##### Remarks
 
-If a key in the `quote` dictionary matches a key
-in the `target` dictionary, then the corresponding value is
+If a key in the `quote` dictionary matches a key in
+the `target` dictionary, then the corresponding value is
 overwritten.
 
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToConcurrentDictionary``3-System-Collections-Generic-IEnumerable{``0},System-Func{``0,``1},System-Func{``0,``2}-'></a>
@@ -2445,18 +2454,17 @@ result element value from each element of `quote`. |
 
 ##### Remarks
 
-If any of the inputs are invalid values, i.e.,
-`null` reference and the like, or if an issue occurs during
-the generation of the requested `Dictionary` object, then the method
-returns the empty collection.
+If any of the inputs are invalid values, i.e., `null`
+reference and the like, or if an issue occurs during the generation of the
+requested `Dictionary` object, then the method returns the empty
+collection.
 
 <a name='M-xyLOGIX-Core-Extensions-DictionaryExtensions-ToObject``1-System-Collections-Generic-Dictionary{System-String,System-String}-'></a>
 ### ToObject\`\`1(quote) `method`
 
 ##### Summary
 
-Transforms an instance of an object of type
-[string](#T-string 'string')
+Transforms an instance of an object of type [string](#T-string 'string')
 into an object by mapping the dictionary elements onto the object's properties
 that have the same name.
 
@@ -2470,8 +2478,8 @@ filled in with the values from the `quote`.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | quote | [System.Collections.Generic.Dictionary{System.String,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.Dictionary 'System.Collections.Generic.Dictionary{System.String,System.String}') | Reference to an instance of an object of type
-[string](#T-string 'string')
-, whose key-value pairs identify what properties to fill with what information. |
+[string](#T-string 'string') , whose key-value pairs identify what properties to
+fill with what information. |
 
 ##### Generic Types
 
@@ -2494,8 +2502,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Represents a C# `enum` value together with a user-friendly
-display name, i.e., description.
+Represents a C# `enum` value together with a
+user-friendly display name, i.e., description.
 
 ##### Generic Types
 
@@ -2508,15 +2516,16 @@ display name, i.e., description.
 
 ##### Summary
 
-Gets or sets a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a user-friendly
-display name, or description, for the specific enumeration value.
+Gets or sets a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains a
+user-friendly display name, or description, for the specific enumeration value.
 
 <a name='P-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-Value'></a>
 ### Value `property`
 
 ##### Summary
 
-Gets or sets the enumeration value that is "behind" the combo box selection.
+Gets or sets the enumeration value that is "behind" the combo box
+selection.
 
 <a name='M-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1-ForEnumValue-`0-'></a>
 ### ForEnumValue(value) `method`
@@ -2524,14 +2533,14 @@ Gets or sets the enumeration value that is "behind" the combo box selection.
 ##### Summary
 
 Creates a new instance of
-[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
-and initializes it with the specified `value`.
+[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1') and
+initializes it with the specified `value`.
 
 ##### Returns
 
 Reference to an instance of
-[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1')
-that contains the required data.
+[EnumBoundComboBoxItem\`1](#T-xyLOGIX-Core-Extensions-EnumBoundComboBoxItem`1 'xyLOGIX.Core.Extensions.EnumBoundComboBoxItem`1') that contains
+the required data.
 
 ##### Parameters
 
@@ -2556,8 +2565,9 @@ Extension methods to utilize on enums.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [EnumExtensions](#T-xyLOGIX-Core-Extensions-EnumExtensions 'xyLOGIX.Core.Extensions.EnumExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [EnumExtensions](#T-xyLOGIX-Core-Extensions-EnumExtensions 'xyLOGIX.Core.Extensions.EnumExtensions')
+class.
 
 ##### Parameters
 
@@ -2565,8 +2575,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -2603,8 +2613,8 @@ String containing the enumeration value expressed as a string.
 
 ##### Summary
 
-Determines whether the specified `enumerationValue` is not
-within the value set of its defining `enum`.
+Determines whether the specified `enumerationValue`
+is not within the value set of its defining `enum`.
 
 ##### Returns
 
@@ -2641,8 +2651,9 @@ Helper methods for collections.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [EnumerableExtensions](#T-xyLOGIX-Core-Extensions-EnumerableExtensions 'xyLOGIX.Core.Extensions.EnumerableExtensions')
+class.
 
 ##### Parameters
 
@@ -2650,8 +2661,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -2752,15 +2763,15 @@ specified `collection`. |
 
 ##### Summary
 
-A more fluent version of the LINQ `Except` extension method; this method
-takes a `source` enumerable collection, and filters out just
-the element equalling `value` from it.
+A more fluent version of the LINQ `Except` extension method; this
+method takes a `source` enumerable collection, and filters
+out just the element equalling `value` from it.
 
 ##### Returns
 
-A sequence containing all elements from the `source`,
-except for any that match the specified `value`.
-The original `source` is not cloned or modified.
+A sequence containing all elements from the `source`
+, except for any that match the specified `value`. The
+original `source` is not cloned or modified.
 
 ##### Parameters
 
@@ -3068,8 +3079,8 @@ form is to be centered on. |
 
 ##### Summary
 
-Invokes the specified `message` on the form unless it's NOT
-disposed, in which case nothing is done.
+Invokes the specified `message` on the form unless
+it's NOT disposed, in which case nothing is done.
 
 ##### Parameters
 
@@ -3085,8 +3096,8 @@ run if the form is disposed. |
 
 ##### Summary
 
-Invokes the specified `message` on the form unless it's
-disposed, in which case nothing is done.
+Invokes the specified `message` on the form unless
+it's disposed, in which case nothing is done.
 
 ##### Parameters
 
@@ -3102,23 +3113,23 @@ run if the form is not disposed. |
 
 ##### Summary
 
-Gets a value indicating whether the specified `form` is
-either set to a `null` reference, or is in the process of
+Gets a value indicating whether the specified `form`
+is either set to a `null` reference, or is in the process of
 being disposed, or has already been disposed.
 
 ##### Returns
 
-`true` if the specified `form`
-is in the `null` reference or `Disposed` state, or if it
-is in the process of being disposed.
+`true` if the specified `form` is
+in the `null` reference or `Disposed` state, or if it is
+in the process of being disposed.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | (Required.) Reference to an instance of an object that implements the
-[IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') interface that is to be
-checked for being in the `Disposed` state. |
+| form | [xyLOGIX.Core.Extensions.IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') | (Required.) Reference to an instance of an object that
+implements the [IForm](#T-xyLOGIX-Core-Extensions-IForm 'xyLOGIX.Core.Extensions.IForm') interface that is
+to be checked for being in the `Disposed` state. |
 
 <a name='M-xyLOGIX-Core-Extensions-FormExtensions-ShowDialogAsync-xyLOGIX-Core-Extensions-IForm,System-Windows-Forms-IWin32Window-'></a>
 ### ShowDialogAsync(form,owner) `method`
@@ -3129,9 +3140,8 @@ Shows a modal dialog that can be awaited upon while a task completes.
 
 ##### Returns
 
-An awaitable
-[DialogResult](#T-DialogResult 'DialogResult')
-that contains the result of the dialog's closure.
+An awaitable [DialogResult](#T-DialogResult 'DialogResult') that contains the result of
+the dialog's closure.
 
 ##### Parameters
 
@@ -3153,9 +3163,8 @@ Shows a modal dialog that can be awaited upon while a task completes.
 
 ##### Returns
 
-An awaitable
-[DialogResult](#T-DialogResult 'DialogResult')
-that contains the result of the dialog's closure.
+An awaitable [DialogResult](#T-DialogResult 'DialogResult') that contains the result of
+the dialog's closure.
 
 ##### Parameters
 
@@ -3190,7 +3199,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Provides access to the one and only instance of the object that implements the
+Provides access to the one and only instance of the object that
+implements the
 [ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
 interface.
 
@@ -3223,8 +3233,8 @@ interface, and returns a reference to it.
 
 ##### Returns
 
-Reference to the one, and only, instance of the object that implements the
-[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
+Reference to the one, and only, instance of the object that implements
+the [ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
 interface.
 
 ##### Parameters
@@ -3248,8 +3258,9 @@ class.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [GuidExtensions](#T-xyLOGIX-Core-Extensions-GuidExtensions 'xyLOGIX.Core.Extensions.GuidExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [GuidExtensions](#T-xyLOGIX-Core-Extensions-GuidExtensions 'xyLOGIX.Core.Extensions.GuidExtensions')
+class.
 
 ##### Parameters
 
@@ -3257,8 +3268,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -3278,7 +3289,7 @@ digits, including hyphens.
 
 If successful, the `guid` is expressed a
 [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing only the [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid')
-digits, including hyphens.  Otherwise, and including the case where the Zero
+digits, including hyphens. Otherwise, and including the case where the Zero
 GUID is passed, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
 value.
 
@@ -3294,8 +3305,8 @@ expressed as a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14I
 
 ##### Summary
 
-Determines whether the specified [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') value
-is the Zero GUID or not.
+Determines whether the specified [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') value is
+the Zero GUID or not.
 
 ##### Returns
 
@@ -3306,8 +3317,8 @@ equal to the Zero GUID; `false` otherwise.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | (Required.) The [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') that should
-be checked whether it's the Zero GUID. |
+| value | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | (Required.) The [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') that should be
+checked whether it's the Zero GUID. |
 
 <a name='M-xyLOGIX-Core-Extensions-GuidExtensions-ToUppercaseWithBraces-System-Guid-'></a>
 ### ToUppercaseWithBraces(guid) `method`
@@ -3331,8 +3342,8 @@ be represented as a [String](http://msdn.microsoft.com/query/dev14.query?appId=D
 
 ##### Remarks
 
-If this method is passed the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid.Empty 'System.Guid.Empty')
-value, then this method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+If this method is passed the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid.Empty 'System.Guid.Empty') value,
+then this method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='M-xyLOGIX-Core-Extensions-GuidExtensions-WithBraces-System-Guid-'></a>
 ### WithBraces(guid) `method`
@@ -3347,7 +3358,7 @@ Registry, for instance).
 
 If successful, the `guid` is expressed as a
 [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), surrounded by braces (as in the system
-Registry, for instance).  Otherwise, and including the case where the Zero GUID
+Registry, for instance). Otherwise, and including the case where the Zero GUID
 is passed, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 ##### Parameters
@@ -3415,8 +3426,8 @@ specified value is not one of the values of
 
 ##### Summary
 
-Gets or sets a value specifying the quote of complete strings used
-for automatic completion.
+Gets or sets a value specifying the quote of complete strings used for
+automatic completion.
 
 ##### Returns
 
@@ -3498,8 +3509,8 @@ Gets or sets a value specifying the style of the combo box.
 
 ##### Returns
 
-One of the [ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle')
-values. The default is `DropDown`.
+One of the [ComboBoxStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle 'System.Windows.Forms.ComboBoxStyle') values.
+The default is `DropDown`.
 
 ##### Exceptions
 
@@ -3514,8 +3525,7 @@ assigned value is not one of the
 
 ##### Summary
 
-Gets or sets the width of the of the drop-down portion of a combo
-box.
+Gets or sets the width of the of the drop-down portion of a combo box.
 
 ##### Returns
 
@@ -3593,8 +3603,8 @@ The height, in pixels, of an item in the combo box.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The item height value is less
-than zero. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The item height value is less than
+zero. |
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-Items'></a>
 ### Items `property`
@@ -3639,8 +3649,8 @@ Gets or sets the number of characters a user can type into the
 
 ##### Returns
 
-The maximum number of characters a user can enter. Values of less
-than zero are reset to zero, which is the default value.
+The maximum number of characters a user can enter. Values of less than
+zero are reset to zero, which is the default value.
 
 <a name='P-xyLOGIX-Core-Extensions-IComboBox-PreferredHeight'></a>
 ### PreferredHeight `property`
@@ -3663,8 +3673,8 @@ Gets or sets the index specifying the currently selected item.
 
 ##### Returns
 
-A zero-based index of the currently selected item. A value of
-negative one (-1) is returned if no item is selected.
+A zero-based index of the currently selected item. A value of negative
+one (-1) is returned if no item is selected.
 
 ##### Exceptions
 
@@ -3697,8 +3707,8 @@ Gets or sets the text that is selected in the editable portion of a
 
 ##### Returns
 
-A string that represents the currently selected text in the combo
-box. If [DropDownStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.DropDownStyle 'System.Windows.Forms.ComboBox.DropDownStyle') is set to
+A string that represents the currently selected text in the combo box.
+If [DropDownStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBox.DropDownStyle 'System.Windows.Forms.ComboBox.DropDownStyle') is set to
 [DropDownList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ComboBoxStyle.DropDownList 'System.Windows.Forms.ComboBoxStyle.DropDownList') , the return
 value is an empty string ("").
 
@@ -3707,8 +3717,8 @@ value is an empty string ("").
 
 ##### Summary
 
-Gets or sets the number of characters selected in the editable
-portion of the combo box.
+Gets or sets the number of characters selected in the editable portion
+of the combo box.
 
 ##### Returns
 
@@ -3743,8 +3753,8 @@ current text selection.
 
 ##### Summary
 
-Gets or sets a value indicating whether the items in the combo box
-are sorted.
+Gets or sets a value indicating whether the items in the combo box are
+sorted.
 
 ##### Returns
 
@@ -3824,8 +3834,8 @@ is found, or 0 if the `s` parameter specifies
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | s | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to search for. |
-| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first
-item to be searched. Set to -1 to search from the beginning of the control. |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first item
+to be searched. Set to -1 to search from the beginning of the control. |
 
 ##### Exceptions
 
@@ -3875,8 +3885,8 @@ is found, or 0 if the `s` parameter specifies
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | s | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to search for. |
-| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first
-item to be searched. Set to -1 to search from the beginning of the control. |
+| startIndex | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The zero-based index of the item before the first item
+to be searched. Set to -1 to search from the beginning of the control. |
 
 ##### Exceptions
 
@@ -3989,8 +3999,8 @@ assigned to the control.
 
 ##### Returns
 
-The [AccessibleObject](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleObject 'System.Windows.Forms.AccessibleObject') assigned
-to the control.
+The [AccessibleObject](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AccessibleObject 'System.Windows.Forms.AccessibleObject') assigned to
+the control.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AccessibleDefaultActionDescription'></a>
 ### AccessibleDefaultActionDescription `property`
@@ -4002,8 +4012,8 @@ accessibility client applications.
 
 ##### Returns
 
-The default action description of the control for use by
-accessibility client applications.
+The default action description of the control for use by accessibility
+client applications.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AccessibleDescription'></a>
 ### AccessibleDescription `property`
@@ -4028,8 +4038,8 @@ applications.
 
 ##### Returns
 
-The name of the control used by accessibility client applications.
-The default is `null`.
+The name of the control used by accessibility client applications. The
+default is `null`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-AccessibleRole'></a>
 ### AccessibleRole `property`
@@ -4062,8 +4072,8 @@ that the user drags onto it.
 
 ##### Returns
 
-`true` if drag-and-drop operations are allowed in
-the control; otherwise, `false`. The default is
+`true` if drag-and-drop operations are allowed in the
+control; otherwise, `false`. The default is
 `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Anchor'></a>
@@ -4104,9 +4114,9 @@ automatically adjusts when the font assigned to the control is changed.
 
 ##### Returns
 
-`true` if the height of the control automatically adjusts when
-the font is changed; otherwise, `false`. The default is
-`true`.
+`true` if the height of the control automatically
+adjusts when the font is changed; otherwise, `false`. The
+default is `true`.
 
 ##### Remarks
 
@@ -4123,8 +4133,8 @@ Gets or sets the background color for the control.
 
 ##### Returns
 
-A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the
-background color of the control. The default is the value of the
+A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the background
+color of the control. The default is the value of the
 [DefaultBackColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultBackColor 'System.Windows.Forms.Control.DefaultBackColor') property.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-BackgroundImage'></a>
@@ -4149,9 +4159,8 @@ Gets or sets the background image layout as defined in the
 
 ##### Returns
 
-One of the values of
-[ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout') (
-[Center](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Center 'System.Windows.Forms.ImageLayout.Center') ,
+One of the values of [ImageLayout](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout 'System.Windows.Forms.ImageLayout')
+( [Center](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Center 'System.Windows.Forms.ImageLayout.Center') ,
 [None](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.None 'System.Windows.Forms.ImageLayout.None') ,
 [Stretch](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Stretch 'System.Windows.Forms.ImageLayout.Stretch') ,
 [Tile](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageLayout.Tile 'System.Windows.Forms.ImageLayout.Tile') , or
@@ -4188,9 +4197,9 @@ and the top edge of its container's client area.
 
 ##### Returns
 
-An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
-pixels, between the bottom edge of the control and the top edge of its
-container's client area.
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in pixels,
+between the bottom edge of the control and the top edge of its container's
+client area.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Bounds'></a>
 ### Bounds `property`
@@ -4266,8 +4275,8 @@ Gets the rectangle that represents the client area of the control.
 
 ##### Returns
 
-A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
-client area of the control.
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the client
+area of the control.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-ClientSize'></a>
 ### ClientSize `property`
@@ -4291,8 +4300,7 @@ the control.
 
 ##### Returns
 
-The company name or creator of the application containing the
-control.
+The company name or creator of the application containing the control.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-ContainsFocus'></a>
 ### ContainsFocus `property`
@@ -4381,8 +4389,8 @@ Gets the data bindings for the control.
 
 ##### Returns
 
-A [ControlBindingsCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ControlBindingsCollection 'System.Windows.Forms.ControlBindingsCollection')
-that contains the [Binding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Binding 'System.Windows.Forms.Binding') objects for the
+A [ControlBindingsCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ControlBindingsCollection 'System.Windows.Forms.ControlBindingsCollection') that
+contains the [Binding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Binding 'System.Windows.Forms.Binding') objects for the
 control.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-DeviceDpi'></a>
@@ -4514,8 +4522,8 @@ An [IntPtr](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US
 
 ##### Summary
 
-Gets a value indicating whether the control contains one or more
-child controls.
+Gets a value indicating whether the control contains one or more child
+controls.
 
 ##### Returns
 
@@ -4625,9 +4633,9 @@ control and the left edge of its container's client area.
 
 ##### Returns
 
-An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
-pixels, between the left edge of the control and the left edge of its
-container's client area.
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in pixels,
+between the left edge of the control and the left edge of its container's
+client area.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Location'></a>
 ### Location `property`
@@ -4652,8 +4660,8 @@ Gets or sets the space between controls.
 
 ##### Returns
 
-A [Padding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Padding 'System.Windows.Forms.Padding') representing the
-space between controls.
+A [Padding](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Padding 'System.Windows.Forms.Padding') representing the space
+between controls.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-MaximumSize'></a>
 ### MaximumSize `property`
@@ -4787,17 +4795,17 @@ and the left edge of its container's client area.
 
 ##### Returns
 
-An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
-pixels, between the right edge of the control and the left edge of its
-container's client area.
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in pixels,
+between the right edge of the control and the left edge of its container's
+client area.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-RightToLeft'></a>
 ### RightToLeft `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether control's elements are
-aligned to support locales using right-to-left fonts.
+Gets or sets a value indicating whether control's elements are aligned
+to support locales using right-to-left fonts.
 
 ##### Returns
 
@@ -4841,8 +4849,8 @@ container. The controls in the container are included in the tab order.
 
 ##### Summary
 
-Gets or sets a value indicating whether the user can give the focus
-to this control using the TAB key.
+Gets or sets a value indicating whether the user can give the focus to
+this control using the TAB key.
 
 ##### Returns
 
@@ -4885,9 +4893,9 @@ control and the top edge of its container's client area.
 
 ##### Returns
 
-An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in
-pixels, between the bottom edge of the control and the top edge of its
-container's client area.
+An [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representing the distance, in pixels,
+between the bottom edge of the control and the top edge of its container's
+client area.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-TopLevelControl'></a>
 ### TopLevelControl `property`
@@ -4908,14 +4916,14 @@ top-level control that contains the current control.
 
 ##### Summary
 
-Gets or sets a value indicating whether to use the wait cursor for
-the current control and all child controls.
+Gets or sets a value indicating whether to use the wait cursor for the
+current control and all child controls.
 
 ##### Returns
 
-`true` to use the wait cursor for the current
-control and all child controls; otherwise, `false`. The
-default is `false`.
+`true` to use the wait cursor for the current control
+and all child controls; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IControl-Visible'></a>
 ### Visible `property`
@@ -5047,10 +5055,9 @@ Begins a drag-and-drop operation.
 
 ##### Returns
 
-A value from the
-[DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects') enumeration that
-represents the final effect that was performed during the drag-and-drop
-operation.
+A value from the [DragDropEffects](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.DragDropEffects 'System.Windows.Forms.DragDropEffects')
+enumeration that represents the final effect that was performed during the
+drag-and-drop operation.
 
 ##### Parameters
 
@@ -5083,8 +5090,7 @@ Retrieves the form that the control is on.
 
 ##### Returns
 
-The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is
-on.
+The [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') that the control is on.
 
 ##### Parameters
 
@@ -5234,8 +5240,7 @@ paint operation), and causes a paint message to be sent to the control.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to
-invalidate. |
+| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to invalidate. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Invalidate-System-Drawing-Region,System-Boolean-'></a>
 ### Invalidate(region,invalidateChildren) `method`
@@ -5251,8 +5256,7 @@ Optionally, invalidates the child controls assigned to the control.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to
-invalidate. |
+| region | [System.Drawing.Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') | The [Region](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Region 'System.Drawing.Region') to invalidate. |
 | invalidateChildren | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to invalidate the
 control's child controls; otherwise, `false`. |
 
@@ -5449,14 +5453,13 @@ convert. |
 
 ##### Summary
 
-Preprocesses keyboard or input messages within the message loop
-before they are dispatched.
+Preprocesses keyboard or input messages within the message loop before
+they are dispatched.
 
 ##### Returns
 
 One of the [PreProcessControlState](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.PreProcessControlState 'System.Windows.Forms.PreProcessControlState')
-value(s),
-depending on whether
+value(s), depending on whether
 [PreProcessMessage](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.PreProcessMessage 'System.Windows.Forms.Control.PreProcessMessage(ref System.Windows.Forms.Message)')
 is `true` or `false` and whether
 [IsInputKey](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.IsInputKey 'System.Windows.Forms.Control.IsInputKey(System.Windows.Forms.Keys)')
@@ -5475,8 +5478,8 @@ represents the message to process. |
 
 ##### Summary
 
-Preprocesses keyboard or input messages within the message loop
-before they are dispatched.
+Preprocesses keyboard or input messages within the message loop before
+they are dispatched.
 
 ##### Returns
 
@@ -5509,8 +5512,8 @@ client coordinates.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The screen coordinate
-[Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') to convert. |
+| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The screen coordinate [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle')
+to convert. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-RectangleToScreen-System-Drawing-Rectangle-'></a>
 ### RectangleToScreen(r) `method`
@@ -5530,8 +5533,8 @@ screen coordinates.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The client coordinate
-[Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') to convert. |
+| r | [System.Drawing.Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') | The client coordinate [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle')
+to convert. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Refresh'></a>
 ### Refresh() `method`
@@ -5587,8 +5590,8 @@ This method has no parameters.
 
 ##### Summary
 
-Resets the [Font](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Font 'System.Windows.Forms.Control.Font')
-property to its default value.
+Resets the [Font](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Font 'System.Windows.Forms.Control.Font') property
+to its default value.
 
 ##### Parameters
 
@@ -5635,8 +5638,8 @@ This method has no parameters.
 
 ##### Summary
 
-Resets the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Text 'System.Windows.Forms.Control.Text')
-property to its default value ( [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')).
+Resets the [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Text 'System.Windows.Forms.Control.Text') property
+to its default value ( [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')).
 
 ##### Parameters
 
@@ -5751,18 +5754,18 @@ Activates the next control.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') at which
-to start the search. |
-| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to move forward in the tab
-order; `false` to move backward in the tab order. |
+| ctl | [System.Windows.Forms.Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') | The [Control](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control 'System.Windows.Forms.Control') at which to
+start the search. |
+| forward | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to move forward in the tab order;
+`false` to move backward in the tab order. |
 | tabStopOnly | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to ignore the controls with
 the [TabStop](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.TabStop 'System.Windows.Forms.Control.TabStop') property set to
 `false` ; otherwise, `false`. |
 | nested | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to include nested (children of
 child controls) child controls; otherwise, `false`. |
-| wrap | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to continue searching from the
-first control in the tab order after the last control has been reached;
-otherwise, `false`. |
+| wrap | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to continue searching from the first
+control in the tab order after the last control has been reached; otherwise,
+`false`. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-SendToBack'></a>
 ### SendToBack() `method`
@@ -5790,9 +5793,8 @@ Sets the bounds of the control to the specified location and size.
 property value of the control. |
 | y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Top](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Top 'System.Windows.Forms.Control.Top')
 property value of the control. |
-| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new
-[Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width') property value of the
-control. |
+| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width')
+property value of the control. |
 | height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new
 [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property value of the
 control. |
@@ -5802,8 +5804,8 @@ control. |
 
 ##### Summary
 
-Sets the specified bounds of the control to the specified location
-and size.
+Sets the specified bounds of the control to the specified location and
+size.
 
 ##### Parameters
 
@@ -5813,16 +5815,14 @@ and size.
 property value of the control. |
 | y | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Top](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Top 'System.Windows.Forms.Control.Top')
 property value of the control. |
-| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new
-[Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width') property value of the
-control. |
+| width | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new [Width](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Width 'System.Windows.Forms.Control.Width')
+property value of the control. |
 | height | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The new
 [Height](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.Height 'System.Windows.Forms.Control.Height') property value of the
 control. |
 | specified | [System.Windows.Forms.BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') | A bitwise combination of the
 [BoundsSpecified](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BoundsSpecified 'System.Windows.Forms.BoundsSpecified') value(s). OfType any
-parameter
-not specified, the current value will be used. |
+parameter not specified, the current value will be used. |
 
 <a name='M-xyLOGIX-Core-Extensions-IControl-Show'></a>
 ### Show() `method`
@@ -5851,8 +5851,8 @@ This method has no parameters.
 
 ##### Summary
 
-Causes the control to redraw the invalidated regions within its
-client area.
+Causes the control to redraw the invalidated regions within its client
+area.
 
 ##### Parameters
 
@@ -5901,8 +5901,8 @@ currently no child windows present.
 
 ##### Summary
 
-Gets or sets a value indicating whether the opacity of the form can
-be adjusted.
+Gets or sets a value indicating whether the opacity of the form can be
+adjusted.
 
 ##### Returns
 
@@ -5944,9 +5944,8 @@ Gets or sets the mode by which the form automatically resizes itself.
 
 ##### Returns
 
-A [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated
-value. The default is
-[GrowOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode.GrowOnly 'System.Windows.Forms.AutoSizeMode.GrowOnly').
+A [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode 'System.Windows.Forms.AutoSizeMode') enumerated value.
+The default is [GrowOnly](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoSizeMode.GrowOnly 'System.Windows.Forms.AutoSizeMode.GrowOnly').
 
 ##### Exceptions
 
@@ -5960,14 +5959,14 @@ value is not a valid [AutoSizeMode](http://msdn.microsoft.com/query/dev14.query?
 
 ##### Summary
 
-Gets or sets a value that indicates whether controls in this
-container will be automatically validated when the focus changes.
+Gets or sets a value that indicates whether controls in this container
+will be automatically validated when the focus changes.
 
 ##### Returns
 
-A [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated
-value that indicates whether contained controls are implicitly validated on
-focus change. The default is Inherit.
+A [AutoValidate](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.AutoValidate 'System.Windows.Forms.AutoValidate') enumerated value
+that indicates whether contained controls are implicitly validated on focus
+change. The default is Inherit.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-CancelButton'></a>
 ### CancelButton `property`
@@ -5978,8 +5977,8 @@ Gets or sets the background color for the control.
 
 ##### Returns
 
-A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the
-background color of the control. The default is the value of the
+A [Color](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Color 'System.Drawing.Color') that represents the background
+color of the control. The default is the value of the
 [DefaultBackColor](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Control.DefaultBackColor 'System.Windows.Forms.Control.DefaultBackColor') property.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-ControlBox'></a>
@@ -6001,13 +6000,12 @@ default is `true`.
 
 ##### Summary
 
-Gets or sets the size and location of the form on the Windows
-desktop.
+Gets or sets the size and location of the form on the Windows desktop.
 
 ##### Returns
 
-A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the
-bounds of the form on the Windows desktop using desktop coordinates.
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that represents the bounds
+of the form on the Windows desktop using desktop coordinates.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-DesktopLocation'></a>
 ### DesktopLocation `property`
@@ -6070,8 +6068,8 @@ displayed in the caption box of the form.
 
 ##### Returns
 
-`true` to display a Help button in the form's
-caption bar; otherwise, `false`. The default is
+`true` to display a Help button in the form's caption
+bar; otherwise, `false`. The default is
 `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-Icon'></a>
@@ -6182,17 +6180,17 @@ size for the form.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The values of the
-height or width within the [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') object are less
-than zero. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | The values of the height
+or width within the [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') object are less than
+zero. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-MdiParent'></a>
 ### MdiParent `property`
 
 ##### Summary
 
-Gets or sets the current multiple-document interface (MDI) parent
-form of this form.
+Gets or sets the current multiple-document interface (MDI) parent form
+of this form.
 
 ##### Returns
 
@@ -6281,8 +6279,8 @@ that represent all forms that are owned by this form.
 
 ##### Returns
 
-A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') array that represents
-the owned forms for this form.
+A [Form](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form 'System.Windows.Forms.Form') array that represents the
+owned forms for this form.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-Owner'></a>
 ### Owner `property`
@@ -6311,16 +6309,16 @@ Gets the location and size of the form in its normal window state.
 
 ##### Returns
 
-A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that contains the
-location and size of the form in the normal window state.
+A [Rectangle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Rectangle 'System.Drawing.Rectangle') that contains the location
+and size of the form in the normal window state.
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-RightToLeftLayout'></a>
 ### RightToLeftLayout `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether right-to-left mirror
-placement is turned on.
+Gets or sets a value indicating whether right-to-left mirror placement
+is turned on.
 
 ##### Returns
 
@@ -6413,8 +6411,8 @@ otherwise, `false`. The default is `true`.
 
 | Name | Description |
 | ---- | ----------- |
-| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | A Multiple-document interface (MDI)
-parent form must be a top-level window. |
+| [System.Exception](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Exception 'System.Exception') | A Multiple-document interface (MDI) parent
+form must be a top-level window. |
 
 <a name='P-xyLOGIX-Core-Extensions-IForm-TopMost'></a>
 ### TopMost `property`
@@ -6671,7 +6669,7 @@ form appended to the end. OfType example, if the form is derived from the class
 `MyForm` in the `MyNamespace` namespace, and the
 [Text](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.Form.Text 'System.Windows.Forms.Form.Text') property is set to
 `Hello, World`, this method will return
-` MyNamespace.MyForm, Text: Hello, World ` .
+`MyNamespace.MyForm, Text: Hello, World` .
 
 ##### Parameters
 
@@ -6687,8 +6685,8 @@ validation to validate their data.
 
 ##### Returns
 
-`true` if all of the children validated
-successfully; otherwise, `false`. If called from the
+`true` if all of the children validated successfully;
+otherwise, `false`. If called from the
 [](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') or
 [](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated') event handlers, this
 method will always return `false`.
@@ -6707,8 +6705,8 @@ validation to validate their data.
 
 ##### Returns
 
-`true` if all of the children validated
-successfully; otherwise, `false`. If called from the
+`true` if all of the children validated successfully;
+otherwise, `false`. If called from the
 [](#E-System-Windows-Forms-Control-Validating 'System.Windows.Forms.Control.Validating') or
 [](#E-System-Windows-Forms-Control-Validated 'System.Windows.Forms.Control.Validated') event handlers, this
 method will always return `false`.
@@ -6729,9 +6727,9 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Defines the publicly-exposed events, methods and properties of a validator of
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration
-values.
+Defines the publicly-exposed events, methods and properties of a
+validator of [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType')
+enumeration values.
 
 ##### Remarks
 
@@ -6760,8 +6758,7 @@ passed is within the value set that is defined by the
 | ---- | ---- | ----------- |
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
 [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is
-to
-be examined. |
+to be examined. |
 
 <a name='T-xyLOGIX-Core-Extensions-IListView'></a>
 ## IListView `type`
@@ -6772,9 +6769,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Defines the publicly-exposed method(s), property(ies), and event(s) of a
-Windows Forms
-ListView control.
+Defines the publicly-exposed method(s), property(ies), and event(s) of
+a Windows Forms ListView control.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Activation'></a>
 ### Activation `property`
@@ -6785,8 +6781,8 @@ Gets or sets how items are activated (clicked).
 
 ##### Returns
 
-One of the [ItemActivation](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ItemActivation 'System.Windows.Forms.ItemActivation') values. The
-default is ItemActivation.Standard.
+One of the [ItemActivation](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ItemActivation 'System.Windows.Forms.ItemActivation')
+values. The default is ItemActivation.Standard.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Alignment'></a>
 ### Alignment `property`
@@ -6797,35 +6793,35 @@ Gets or sets the alignment of items in the control.
 
 ##### Returns
 
-One of the [ListViewAlignment](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewAlignment 'System.Windows.Forms.ListViewAlignment') values. The
-default is ListViewAlignment.Top.
+One of the [ListViewAlignment](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewAlignment 'System.Windows.Forms.ListViewAlignment')
+values. The default is ListViewAlignment.Top.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-AllowColumnReorder'></a>
 ### AllowColumnReorder `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the user can drag column headers to
-reorder columns.
+Gets or sets a value indicating whether the user can drag column
+headers to reorder columns.
 
 ##### Returns
 
-`true` if the user can drag column headers to reorder columns;
-otherwise, `false`.
-The default is `false`.
+`true` if the user can drag column headers to reorder
+columns; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-AutoArrange'></a>
 ### AutoArrange `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether icons are automatically arranged.
+Gets or sets a value indicating whether icons are automatically
+arranged.
 
 ##### Returns
 
-`true` if icons are automatically arranged; otherwise,
-`false`.
-The default is `false`.
+`true` if icons are automatically arranged;
+otherwise, `false`. The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-BackgroundImageTiled'></a>
 ### BackgroundImageTiled `property`
@@ -6837,8 +6833,7 @@ Gets or sets a value indicating whether the background image is tiled.
 ##### Returns
 
 `true` if the background image is tiled; otherwise,
-`false`.
-The default is `false`.
+`false`. The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-BorderStyle'></a>
 ### BorderStyle `property`
@@ -6849,22 +6844,22 @@ Gets or sets the border style of the control.
 
 ##### Returns
 
-One of the [BorderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BorderStyle 'System.Windows.Forms.BorderStyle') values. The
-default is BorderStyle.Fixed3D.
+One of the [BorderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.BorderStyle 'System.Windows.Forms.BorderStyle') values.
+The default is BorderStyle.Fixed3D.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-CheckBoxes'></a>
 ### CheckBoxes `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether a checkbox appears next to each item in
-the control.
+Gets or sets a value indicating whether a checkbox appears next to
+each item in the control.
 
 ##### Returns
 
-`true` if a checkbox appears next to each item in the control;
-otherwise, `false`.
-The default is `false`.
+`true` if a checkbox appears next to each item in the
+control; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-CheckedIndices'></a>
 ### CheckedIndices `property`
@@ -6875,7 +6870,8 @@ Gets the collection of items in the control that are checked.
 
 ##### Returns
 
-A [CheckedIndexCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.CheckedIndexCollection 'System.Windows.Forms.ListView.CheckedIndexCollection') that
+A
+[CheckedIndexCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.CheckedIndexCollection 'System.Windows.Forms.ListView.CheckedIndexCollection') that
 contains the indexes of checked items in the list.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-CheckedItems'></a>
@@ -6887,7 +6883,8 @@ Gets the collection of checked items in the control.
 
 ##### Returns
 
-A [CheckedListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.CheckedListViewItemCollection 'System.Windows.Forms.ListView.CheckedListViewItemCollection')
+A
+[CheckedListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.CheckedListViewItemCollection 'System.Windows.Forms.ListView.CheckedListViewItemCollection')
 that contains the checked items in the list.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Columns'></a>
@@ -6899,7 +6896,8 @@ Gets the collection of column headers in the control.
 
 ##### Returns
 
-A [ColumnHeaderCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.ColumnHeaderCollection 'System.Windows.Forms.ListView.ColumnHeaderCollection') that
+A
+[ColumnHeaderCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.ColumnHeaderCollection 'System.Windows.Forms.ListView.ColumnHeaderCollection') that
 contains all column header objects in the list.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Container'></a>
@@ -6911,8 +6909,8 @@ Gets the container for components.
 
 ##### Returns
 
-The [IContainer](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IContainer 'System.ComponentModel.IContainer') that contains the
-component.
+The [IContainer](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IContainer 'System.ComponentModel.IContainer') that contains
+the component.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-FocusedItem'></a>
 ### FocusedItem `property`
@@ -6923,21 +6921,21 @@ Gets or sets the item that has focus in the list view control.
 
 ##### Returns
 
-A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that represents the item
-that has focus.
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that represents
+the item that has focus.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-FullRowSelect'></a>
 ### FullRowSelect `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether clicking an item selects all its
-subitem(s).
+Gets or sets a value indicating whether clicking an item selects all
+its subitem(s).
 
 ##### Remarks
 
-When set to `true`, clicking an item selects the entire row in
-Details view.
+When set to `true`, clicking an item selects the
+entire row in Details view.
 
 
 
@@ -6953,14 +6951,14 @@ control.
 
 ##### Summary
 
-Gets or sets a value indicating whether grid lines appear between the rows and
-columns containing the items and subitems in the control.
+Gets or sets a value indicating whether grid lines appear between the
+rows and columns containing the items and subitems in the control.
 
 ##### Returns
 
-`true` if grid lines appear between the rows and columns of
-the list; otherwise, `false`.
-The default is `false`.
+`true` if grid lines appear between the rows and
+columns of the list; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Groups'></a>
 ### Groups `property`
@@ -6971,8 +6969,8 @@ Gets the collection of groups in the list view control.
 
 ##### Returns
 
-A [ListViewGroupCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewGroupCollection 'System.Windows.Forms.ListViewGroupCollection') that represents
-the groups within the list.
+A [ListViewGroupCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewGroupCollection 'System.Windows.Forms.ListViewGroupCollection') that
+represents the groups within the list.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-HeaderStyle'></a>
 ### HeaderStyle `property`
@@ -6983,50 +6981,50 @@ Gets or sets the column header style.
 
 ##### Returns
 
-One of the [ColumnHeaderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ColumnHeaderStyle 'System.Windows.Forms.ColumnHeaderStyle') values. The
-default is ColumnHeaderStyle.Clickable.
+One of the [ColumnHeaderStyle](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ColumnHeaderStyle 'System.Windows.Forms.ColumnHeaderStyle')
+values. The default is ColumnHeaderStyle.Clickable.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-HideSelection'></a>
 ### HideSelection `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the selected item in the control
-remains highlighted when the control loses focus.
+Gets or sets a value indicating whether the selected item in the
+control remains highlighted when the control loses focus.
 
 ##### Returns
 
-`true` if the selected item is not highlighted when the
-control loses focus; otherwise, `false`.
-The default is `true`.
+`true` if the selected item is not highlighted when
+the control loses focus; otherwise, `false`. The default is
+`true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-HotTracking'></a>
 ### HotTracking `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether an item is automatically selected when
-the mouse pointer remains over the item for a few seconds.
+Gets or sets a value indicating whether an item is automatically
+selected when the mouse pointer remains over the item for a few seconds.
 
 ##### Returns
 
-`true` if an item is automatically selected when the mouse
-pointer hovers over the item; otherwise, `false`.
-The default is `false`.
+`true` if an item is automatically selected when the
+mouse pointer hovers over the item; otherwise, `false`. The
+default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-HoverSelection'></a>
 ### HoverSelection `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether an item is automatically selected when
-the mouse pointer pauses over the item.
+Gets or sets a value indicating whether an item is automatically
+selected when the mouse pointer pauses over the item.
 
 ##### Returns
 
-`true` if an item is automatically selected when the mouse
-pointer hovers over the item; otherwise, `false`.
-The default is `false`.
+`true` if an item is automatically selected when the
+mouse pointer hovers over the item; otherwise, `false`. The
+default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-InsertionMark'></a>
 ### InsertionMark `property`
@@ -7037,8 +7035,8 @@ Gets the insertion mark for the list view.
 
 ##### Returns
 
-A [ListViewInsertionMark](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewInsertionMark 'System.Windows.Forms.ListViewInsertionMark') that provides
-information about the insertion mark of the list view.
+A [ListViewInsertionMark](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewInsertionMark 'System.Windows.Forms.ListViewInsertionMark') that
+provides information about the insertion mark of the list view.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Items'></a>
 ### Items `property`
@@ -7049,7 +7047,8 @@ Gets the collection of items in the control.
 
 ##### Returns
 
-A [ListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.ListViewItemCollection 'System.Windows.Forms.ListView.ListViewItemCollection') that
+A
+[ListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.ListViewItemCollection 'System.Windows.Forms.ListView.ListViewItemCollection') that
 contains all items in the list.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-LabelEdit'></a>
@@ -7057,40 +7056,40 @@ contains all items in the list.
 
 ##### Summary
 
-Gets or sets a value indicating whether the user can edit the item labels.
+Gets or sets a value indicating whether the user can edit the item
+labels.
 
 ##### Returns
 
 `true` if item labels can be edited; otherwise,
-`false`.
-The default is `false`.
+`false`. The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-LabelWrap'></a>
 ### LabelWrap `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether item labels wrap when they are too long
-to fit in the control.
+Gets or sets a value indicating whether item labels wrap when they are
+too long to fit in the control.
 
 ##### Returns
 
-`true` if item labels wrap when they are too long to fit in
-the control; otherwise, `false`.
-The default is `true`.
+`true` if item labels wrap when they are too long to
+fit in the control; otherwise, `false`. The default is
+`true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-LargeImageList'></a>
 ### LargeImageList `property`
 
 ##### Summary
 
-Gets or sets the ImageList to use when displaying items as large icons in the
-control.
+Gets or sets the ImageList to use when displaying items as large icons
+in the control.
 
 ##### Returns
 
-An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the images to
-display for the large icon view of the items.
+An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the
+images to display for the large icon view of the items.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-ListViewItemSorter'></a>
 ### ListViewItemSorter `property`
@@ -7111,55 +7110,55 @@ interface used to sort the items in the list.
 
 ##### Summary
 
-Gets or sets a value indicating whether multiple items can be selected.
+Gets or sets a value indicating whether multiple items can be
+selected.
 
 ##### Returns
 
 `true` if multiple items can be selected; otherwise,
-`false`.
-The default is `false`.
+`false`. The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-OwnerDraw'></a>
 ### OwnerDraw `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the items in the control are drawn by
-the application.
+Gets or sets a value indicating whether the items in the control are
+drawn by the application.
 
 ##### Returns
 
 `true` if the items in the control are drawn by the
-application; otherwise, `false`.
-The default is `false`.
+application; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-RightToLeftLayout'></a>
 ### RightToLeftLayout `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the RightToLeft property should affect
-the layout of the ListView control and its elements.
+Gets or sets a value indicating whether the RightToLeft property
+should affect the layout of the ListView control and its elements.
 
 ##### Returns
 
-`true` if the layout of the ListView control and its elements
-is affected by the RightToLeft property; otherwise, `false`.
-The default is `false`.
+`true` if the layout of the ListView control and its
+elements is affected by the RightToLeft property; otherwise,
+`false`. The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Scrollable'></a>
 ### Scrollable `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether scroll bars appear in the control when
-they are needed.
+Gets or sets a value indicating whether scroll bars appear in the
+control when they are needed.
 
 ##### Returns
 
-`true` if scroll bars appear in the control when they are
-needed; otherwise, `false`.
-The default is `true`.
+`true` if scroll bars appear in the control when they
+are needed; otherwise, `false`. The default is
+`true`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-SelectedIndices'></a>
 ### SelectedIndices `property`
@@ -7170,7 +7169,8 @@ Gets a collection of the indexes of the selected items in the control.
 
 ##### Returns
 
-A [SelectedIndexCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.SelectedIndexCollection 'System.Windows.Forms.ListView.SelectedIndexCollection') that
+A
+[SelectedIndexCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.SelectedIndexCollection 'System.Windows.Forms.ListView.SelectedIndexCollection') that
 contains the indexes of the selected items in the list.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-SelectedItems'></a>
@@ -7182,7 +7182,8 @@ Gets a collection of the selected items in the control.
 
 ##### Returns
 
-A [SelectedListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.SelectedListViewItemCollection 'System.Windows.Forms.ListView.SelectedListViewItemCollection')
+A
+[SelectedListViewItemCollection](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListView.SelectedListViewItemCollection 'System.Windows.Forms.ListView.SelectedListViewItemCollection')
 that contains the selected items in the list.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-ShowGroups'></a>
@@ -7195,8 +7196,7 @@ Gets or sets a value indicating whether groups are displayed.
 ##### Returns
 
 `true` if groups are displayed; otherwise,
-`false`.
-The default is `false`.
+`false`. The default is `false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-ShowItemToolTips'></a>
 ### ShowItemToolTips `property`
@@ -7208,22 +7208,22 @@ ListViewItems and SubItems.
 
 ##### Returns
 
-`true` if ToolTips are shown for the ListViewItems and
-SubItems; otherwise, `false`.
-The default is `false`.
+`true` if ToolTips are shown for the ListViewItems
+and SubItems; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-SmallImageList'></a>
 ### SmallImageList `property`
 
 ##### Summary
 
-Gets or sets the ImageList to use when displaying items as small icons in the
-control.
+Gets or sets the ImageList to use when displaying items as small icons
+in the control.
 
 ##### Returns
 
-An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the images to
-display for the small icon view of the items.
+An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the
+images to display for the small icon view of the items.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-Sorting'></a>
 ### Sorting `property`
@@ -7234,8 +7234,8 @@ Gets or sets the sort order for items in the control.
 
 ##### Returns
 
-One of the [SortOrder](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SortOrder 'System.Windows.Forms.SortOrder') values. The default
-is SortOrder.None.
+One of the [SortOrder](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.SortOrder 'System.Windows.Forms.SortOrder') values. The
+default is SortOrder.None.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-StateImageList'></a>
 ### StateImageList `property`
@@ -7246,8 +7246,8 @@ Gets or sets the state image list for the control.
 
 ##### Returns
 
-An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the images to
-use for the different states of the items.
+An [ImageList](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ImageList 'System.Windows.Forms.ImageList') that contains the
+images to use for the different states of the items.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-TileSize'></a>
 ### TileSize `property`
@@ -7258,8 +7258,8 @@ Gets or sets the size of the tiles shown in tile view.
 
 ##### Returns
 
-A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the size, in pixels, of
-the tiles.
+A [Size](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Size 'System.Drawing.Size') that represents the size, in
+pixels, of the tiles.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-TopItem'></a>
 ### TopItem `property`
@@ -7270,22 +7270,22 @@ Gets or sets the item at the top of the ListView.
 
 ##### Returns
 
-A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that represents the item
-at the top of the ListView.
+A [ListViewItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ListViewItem 'System.Windows.Forms.ListViewItem') that represents
+the item at the top of the ListView.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-UseCompatibleStateImageBehavior'></a>
 ### UseCompatibleStateImageBehavior `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the system-defined or the user-defined
-behavior for the state image of the control is used.
+Gets or sets a value indicating whether the system-defined or the
+user-defined behavior for the state image of the control is used.
 
 ##### Returns
 
-`true` if the user-defined behavior for the state image is
-used; otherwise, `false`.
-The default is `false`.
+`true` if the user-defined behavior for the state
+image is used; otherwise, `false`. The default is
+`false`.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-View'></a>
 ### View `property`
@@ -7296,33 +7296,34 @@ Gets or sets the view mode of the control.
 
 ##### Returns
 
-One of the [View](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.View 'System.Windows.Forms.View') values. The default is
-View.LargeIcon.
+One of the [View](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.View 'System.Windows.Forms.View') values. The
+default is View.LargeIcon.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-VirtualListSize'></a>
 ### VirtualListSize `property`
 
 ##### Summary
 
-Gets or sets the number of items that the list view control will display in
-virtual mode.
+Gets or sets the number of items that the list view control will
+display in virtual mode.
 
 ##### Returns
 
-The number of items that the list view control will display in virtual mode.
+The number of items that the list view control will display in virtual
+mode.
 
 <a name='P-xyLOGIX-Core-Extensions-IListView-VirtualMode'></a>
 ### VirtualMode `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the ListView uses the virtual mode.
+Gets or sets a value indicating whether the ListView uses the virtual
+mode.
 
 ##### Returns
 
-`true` if the ListView uses the virtual mode; otherwise,
-`false`.
-The default is `false`.
+`true` if the ListView uses the virtual mode;
+otherwise, `false`. The default is `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-IListView-ArrangeIcons-System-Windows-Forms-ListViewAlignment-'></a>
 ### ArrangeIcons(value) `method`
@@ -7383,7 +7384,8 @@ Resizes all columns to fit the header or the contents, as specified.
 
 ##### Summary
 
-Prevents the control from drawing until the EndUpdate method is called.
+Prevents the control from drawing until the EndUpdate method is
+called.
 
 ##### Parameters
 
@@ -7405,8 +7407,8 @@ This method has no parameters.
 
 ##### Summary
 
-Creates an object reference that can be used to marshal to the control from
-another application domain.
+Creates an object reference that can be used to marshal to the control
+from another application domain.
 
 ##### Returns
 
@@ -7424,8 +7426,8 @@ marshaled reference to the control.
 
 ##### Summary
 
-Resumes the usual painting of the control, after painting is suspended by the
-BeginUpdate method.
+Resumes the usual painting of the control, after painting is suspended
+by the BeginUpdate method.
 
 ##### Parameters
 
@@ -7436,8 +7438,8 @@ This method has no parameters.
 
 ##### Summary
 
-Ensures that the specified item is visible within the control, scrolling the
-control if necessary.
+Ensures that the specified item is visible within the control,
+scrolling the control if necessary.
 
 ##### Parameters
 
@@ -7468,8 +7470,8 @@ specified text.
 
 ##### Summary
 
-Searches for the item that matches the specified text with search options and
-starting index.
+Searches for the item that matches the specified text with search
+options and starting index.
 
 ##### Returns
 
@@ -7491,8 +7493,8 @@ from. |
 
 ##### Summary
 
-Searches for the item that matches the specified text with search options,
-starting index, and prefix search.
+Searches for the item that matches the specified text with search
+options, starting index, and prefix search.
 
 ##### Returns
 
@@ -7597,8 +7599,8 @@ you want. |
 
 ##### Summary
 
-Retrieves the bounding rectangle for an item within the control and specifies
-the portion of the item for which to retrieve the bounding rectangle.
+Retrieves the bounding rectangle for an item within the control and
+specifies the portion of the item for which to retrieve the bounding rectangle.
 
 ##### Returns
 
@@ -7620,8 +7622,8 @@ the portion of the item for which to retrieve the bounding rectangle. |
 
 ##### Summary
 
-Gets the current lifetime service object that controls the lifetime policy for
-this instance.
+Gets the current lifetime service object that controls the lifetime
+policy for this instance.
 
 ##### Returns
 
@@ -7676,8 +7678,8 @@ contains the information about the specified coordinates.
 
 ##### Summary
 
-Obtains a lifetime service object to control the lifetime policy for this
-instance.
+Obtains a lifetime service object to control the lifetime policy for
+this instance.
 
 ##### Returns
 
@@ -7733,8 +7735,8 @@ support auto-scrolling behavior.
 
 ##### Summary
 
-Gets or sets a value indicating whether the container enables the
-user to scroll to any controls placed outside its visible boundaries.
+Gets or sets a value indicating whether the container enables the user
+to scroll to any controls placed outside its visible boundaries.
 
 ##### Returns
 
@@ -7870,31 +7872,32 @@ programming and dark-theme hosting scenarios.
 This interface is intended to be implemented by controls that behave
 like a [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox'), including wrappers which
 host a real [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') internally. Consumers
-should depend on [ITextBox](#T-ITextBox 'ITextBox') to enable
-loose coupling, improved testability, and SOLID design.
+should depend on [ITextBox](#T-ITextBox 'ITextBox') to enable loose coupling, improved
+testability, and SOLID design.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-AcceptsReturn'></a>
 ### AcceptsReturn `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether pressing `ENTER` in a multiline
-text box creates a new line of text.
+Gets or sets a value indicating whether pressing `ENTER` in a
+multiline text box creates a new line of text.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-AcceptsTab'></a>
 ### AcceptsTab `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether pressing `TAB` in a multiline text
-box inserts a tab character instead of moving focus.
+Gets or sets a value indicating whether pressing `TAB` in a
+multiline text box inserts a tab character instead of moving focus.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteCustomSource'></a>
 ### AutoCompleteCustomSource `property`
 
 ##### Summary
 
-Gets or sets the custom source of strings used for automatic completion.
+Gets or sets the custom source of strings used for automatic
+completion.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteMode'></a>
 ### AutoCompleteMode `property`
@@ -7905,8 +7908,8 @@ Gets or sets the auto-completion mode for this control.
 
 ##### Remarks
 
-Implementers should validate assigned values and ignore or coerce invalid
-enumeration values.
+Implementers should validate assigned values and ignore or coerce
+invalid enumeration values.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-AutoCompleteSource'></a>
 ### AutoCompleteSource `property`
@@ -7917,8 +7920,8 @@ Gets or sets the auto-completion string source for this control.
 
 ##### Remarks
 
-Implementers should validate assigned values and ignore or coerce invalid
-enumeration values.
+Implementers should validate assigned values and ignore or coerce
+invalid enumeration values.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-CanUndo'></a>
 ### CanUndo `property`
@@ -7932,23 +7935,24 @@ Gets a value indicating whether the previous operation can be undone.
 
 ##### Summary
 
-Gets or sets how the control modifies the case of characters as they are typed.
+Gets or sets how the control modifies the case of characters as they
+are typed.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-Container'></a>
 ### Container `property`
 
 ##### Summary
 
-Gets the [IContainer](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IContainer 'System.ComponentModel.IContainer') that contains the
-component.
+Gets the [IContainer](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ComponentModel.IContainer 'System.ComponentModel.IContainer') that
+contains the component.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-HideSelection'></a>
 ### HideSelection `property`
 
 ##### Summary
 
-Gets or sets a value indicating whether the selected text remains highlighted
-when the control loses focus.
+Gets or sets a value indicating whether the selected text remains
+highlighted when the control loses focus.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-Lines'></a>
 ### Lines `property`
@@ -7962,7 +7966,8 @@ Gets or sets the lines of text within the control.
 
 ##### Summary
 
-Gets or sets the maximum number of characters the user can type or paste.
+Gets or sets the maximum number of characters the user can type or
+paste.
 
 ##### Remarks
 
@@ -7973,7 +7978,8 @@ Implementers should reject values less than 1.
 
 ##### Summary
 
-Gets or sets a value indicating whether the text has been modified by the user.
+Gets or sets a value indicating whether the text has been modified by
+the user.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-Multiline'></a>
 ### Multiline `property`
@@ -7987,8 +7993,8 @@ Gets or sets a value indicating whether this is a multiline text box.
 
 ##### Summary
 
-Gets or sets the masking character used to display password input for a
-single-line text box.
+Gets or sets the masking character used to display password input for
+a single-line text box.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-PreferredHeight'></a>
 ### PreferredHeight `property`
@@ -8037,7 +8043,8 @@ Gets or sets the starting index of the selection.
 
 ##### Summary
 
-Gets or sets a value indicating whether standard editing shortcuts are enabled.
+Gets or sets a value indicating whether standard editing shortcuts are
+enabled.
 
 <a name='P-xyLOGIX-Core-Extensions-ITextBox-TextAlign'></a>
 ### TextAlign `property`
@@ -8066,8 +8073,8 @@ character.
 
 ##### Summary
 
-Gets or sets a value indicating whether a multiline text box automatically
-wraps words to the next line.
+Gets or sets a value indicating whether a multiline text box
+automatically wraps words to the next line.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-AppendText-System-String-'></a>
 ### AppendText(text) `method`
@@ -8080,16 +8087,15 @@ Appends the specified text to the existing content.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to append. If
-`null`,
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+text to append. If `null`,
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty'), or whitespace, implementers should
 perform no action. |
 
 ##### Remarks
 
-Implementations should be resilient to large input and avoid exceptions. If the
-control is read-only or disabled,
-no action is expected.
+Implementations should be resilient to large input and avoid
+exceptions. If the control is read-only or disabled, no action is expected.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-Clear'></a>
 ### Clear() `method`
@@ -8134,28 +8140,28 @@ This method has no parameters.
 
 ##### Remarks
 
-Implementers should perform no action if there is no selection or Clipboard
-access is unavailable.
+Implementers should perform no action if there is no selection or
+Clipboard access is unavailable.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-CreateObjRef-System-Type-'></a>
 ### CreateObjRef(requestedType) `method`
 
 ##### Summary
 
-Creates an object that contains all the relevant information required to
-generate a proxy used to communicate with a remote object.
+Creates an object that contains all the relevant information required
+to generate a proxy used to communicate with a remote object.
 
 ##### Returns
 
-[ObjRef](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Runtime.Remoting.ObjRef 'System.Runtime.Remoting.ObjRef') containing remoting information
-for the object.
+[ObjRef](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Runtime.Remoting.ObjRef 'System.Runtime.Remoting.ObjRef') containing remoting
+information for the object.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| requestedType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | (Required.) Reference to an instance of [Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') that
-represents the type of the proxy requested. |
+| requestedType | [System.Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') | (Required.) Reference to an instance of
+[Type](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Type 'System.Type') that represents the type of the proxy requested. |
 
 ##### Remarks
 
@@ -8175,8 +8181,8 @@ This method has no parameters.
 
 ##### Remarks
 
-Implementers should perform no action if the control is read-only or there is
-no selection.
+Implementers should perform no action if the control is read-only or
+there is no selection.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-DeselectAll'></a>
 ### DeselectAll() `method`
@@ -8191,8 +8197,7 @@ This method has no parameters.
 
 ##### Remarks
 
-Implementers should set
-[SelectionLength](#P-SelectionLength 'SelectionLength') to zero
+Implementers should set [SelectionLength](#P-SelectionLength 'SelectionLength') to zero
 without altering the caret position.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-GetCharFromPosition-System-Drawing-Point-'></a>
@@ -8200,63 +8205,68 @@ without altering the caret position.
 
 ##### Summary
 
-Gets the character closest to the specified point within the client area.
+Gets the character closest to the specified point within the client
+area.
 
 ##### Returns
 
-A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') representing the character at the location; if
-the position cannot be resolved,
-implementers may return [MinValue](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char.MinValue 'System.Char.MinValue').
+A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') representing the character at the
+location; if the position cannot be resolved, implementers may return
+[MinValue](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char.MinValue 'System.Char.MinValue').
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | (Required.) Reference to an instance of [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point')
-specifying the location (client coordinates). |
+| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | (Required.) Reference to an instance of
+[Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') specifying the location (client
+coordinates). |
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-GetCharIndexFromPosition-System-Drawing-Point-'></a>
 ### GetCharIndexFromPosition(pt) `method`
 
 ##### Summary
 
-Gets the zero-based index of the character nearest to the specified point.
+Gets the zero-based index of the character nearest to the specified
+point.
 
 ##### Returns
 
-A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') character index. If the index
-cannot be determined, implementers may return `0`.
+A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') character index. If the
+index cannot be determined, implementers may return `0`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | (Required.) Reference to an instance of [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point')
-specifying the location (client coordinates). |
+| pt | [System.Drawing.Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') | (Required.) Reference to an instance of
+[Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') specifying the location (client
+coordinates). |
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-GetFirstCharIndexFromLine-System-Int32-'></a>
 ### GetFirstCharIndexFromLine(lineNumber) `method`
 
 ##### Summary
 
-Gets the zero-based index of the first character of the specified line.
+Gets the zero-based index of the first character of the specified
+line.
 
 ##### Returns
 
-A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') index of the first character in
-the line.
+A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') index of the first
+character in the line.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| lineNumber | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the
-zero-based line number. |
+| lineNumber | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative
+[Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the zero-based line number. |
 
 ##### Remarks
 
-Implementers should handle out-of-range values gracefully (e.g., return
-`0` or clamp to valid ranges).
+Implementers should handle out-of-range values gracefully (e.g.,
+return `0` or clamp to valid ranges).
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-GetFirstCharIndexOfCurrentLine'></a>
 ### GetFirstCharIndexOfCurrentLine() `method`
@@ -8278,13 +8288,13 @@ This method has no parameters.
 
 ##### Summary
 
-Obtains the lifetime service object that controls the lifetime policy for this
-instance.
+Obtains the lifetime service object that controls the lifetime policy
+for this instance.
 
 ##### Returns
 
-Reference to an instance of [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') controlling lifetime
-policy, or `null`.
+Reference to an instance of [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') controlling
+lifetime policy, or `null`.
 
 ##### Parameters
 
@@ -8300,8 +8310,8 @@ semantics.
 
 ##### Summary
 
-Retrieves the zero-based line number corresponding to the specified character
-index.
+Retrieves the zero-based line number corresponding to the specified
+character index.
 
 ##### Returns
 
@@ -8311,8 +8321,8 @@ A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14ID
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the
-character position. |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32')
+specifying the character position. |
 
 ##### Remarks
 
@@ -8328,30 +8338,29 @@ Gets the client coordinates of the specified character index.
 
 ##### Returns
 
-Reference to an instance of [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point') indicating
-the location; if unavailable, implementers may return
+Reference to an instance of [Point](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point 'System.Drawing.Point')
+indicating the location; if unavailable, implementers may return
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Drawing.Point.Empty 'System.Drawing.Point.Empty').
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the
-character index (<
-[TextLength](#P-TextLength 'TextLength')). |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32')
+specifying the character index (< [TextLength](#P-TextLength 'TextLength')). |
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-InitializeLifetimeService'></a>
 ### InitializeLifetimeService() `method`
 
 ##### Summary
 
-Initializes the lifetime service object that controls the lifetime policy for
-this instance.
+Initializes the lifetime service object that controls the lifetime
+policy for this instance.
 
 ##### Returns
 
-Reference to an instance of [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') that controls
-lifetime policy for this instance, or `null`.
+Reference to an instance of [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') that
+controls lifetime policy for this instance, or `null`.
 
 ##### Parameters
 
@@ -8359,8 +8368,8 @@ This method has no parameters.
 
 ##### Remarks
 
-Mirrors [InitializeLifetimeService](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.MarshalByRefObject.InitializeLifetimeService 'System.MarshalByRefObject.InitializeLifetimeService')
-semantics.
+Mirrors
+[InitializeLifetimeService](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.MarshalByRefObject.InitializeLifetimeService 'System.MarshalByRefObject.InitializeLifetimeService') semantics.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-Paste'></a>
 ### Paste() `method`
@@ -8375,8 +8384,8 @@ This method has no parameters.
 
 ##### Remarks
 
-Implementers should perform no action if Clipboard access is unavailable or the
-control is read-only.
+Implementers should perform no action if Clipboard access is
+unavailable or the control is read-only.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-Paste-System-String-'></a>
 ### Paste(text) `method`
@@ -8390,8 +8399,8 @@ selection, if any).
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to insert. If
-`null`,
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+text to insert. If `null`,
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty'), or whitespace, implementers should
 perform no action. |
 
@@ -8417,16 +8426,15 @@ Selects a range of text.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| start | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the
-zero-based index of the first character in the selection. |
-| length | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A positive [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') specifying the number of
-characters to select. |
+| start | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A non-negative [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32')
+specifying the zero-based index of the first character in the selection. |
+| length | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A positive [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32')
+specifying the number of characters to select. |
 
 ##### Remarks
 
 Implementers should validate `start` and
-`length` against
-[TextLength](#P-TextLength 'TextLength') and perform no
+`length` against [TextLength](#P-TextLength 'TextLength') and perform no
 action for out-of-range requests.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-SelectAll'></a>
@@ -8442,19 +8450,21 @@ This method has no parameters.
 
 ##### Remarks
 
-Implementers should perform no action if there is no content to select.
+Implementers should perform no action if there is no content to
+select.
 
 <a name='M-xyLOGIX-Core-Extensions-ITextBox-ToString'></a>
 ### ToString() `method`
 
 ##### Summary
 
-Returns a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that represents the current object.
+Returns a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that represents the current
+object.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') representing the object; typically the type
-name or a concise state description.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') representing the object; typically
+the type name or a concise state description.
 
 ##### Parameters
 
@@ -8484,8 +8494,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Defines the publicly-exposed events, methods and properties of a control that
-inherits [UserControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.UserControl 'System.Windows.Forms.UserControl').
+Defines the publicly-exposed events, methods and properties of a
+control that inherits [UserControl](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.UserControl 'System.Windows.Forms.UserControl').
 
 <a name='P-xyLOGIX-Core-Extensions-IUserControl-BorderStyle'></a>
 ### BorderStyle `property`
@@ -8588,8 +8598,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Specifies the kind of article, if any, to be inserted before a noun phrase
-during phrase rewording.
+Specifies the kind of article, if any, to be inserted before a noun
+phrase during phrase rewording.
 
 <a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Definite'></a>
 ### Definite `constants`
@@ -8603,8 +8613,8 @@ Indicates that the definite article `the` should be inserted.
 
 ##### Summary
 
-Indicates that the indefinite article `a` or `an` should be inserted,
-depending on the starting sound of the following word.
+Indicates that the indefinite article `a` or `an` should be
+inserted, depending on the starting sound of the following word.
 
 <a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-None'></a>
 ### None `constants`
@@ -8618,23 +8628,24 @@ Indicates that no article should be inserted.
 
 ##### Summary
 
-Indicates that a preposition should be inserted, the default being `of`,
-followed by the definite article, `the`.
+Indicates that a preposition should be inserted, the default being
+`of`, followed by the definite article, `the`.
 
 <a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-PrepopsitionWithIndefinite'></a>
 ### PrepopsitionWithIndefinite `constants`
 
 ##### Summary
 
-Indicates that a preposition should be inserted, the default being `of`,
-followed by the indefinite article, `a` or `an`.
+Indicates that a preposition should be inserted, the default being
+`of`, followed by the indefinite article, `a` or `an`.
 
 <a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Preposition'></a>
 ### Preposition `constants`
 
 ##### Summary
 
-Indicates that a preposition should be inserted, the default being `of`.
+Indicates that a preposition should be inserted, the default being
+`of`.
 
 <a name='F-xyLOGIX-Core-Extensions-LanguageArticleType-Unknown'></a>
 ### Unknown `constants`
@@ -8652,8 +8663,8 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Validates whether certain value(s) are within the defined value set of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration.
+Validates whether certain value(s) are within the defined value set of
+the [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration.
 
 <a name='M-xyLOGIX-Core-Extensions-LanguageArticleTypeValidator-#ctor'></a>
 ### #ctor() `constructor`
@@ -8710,8 +8721,7 @@ passed is within the value set that is defined by the
 | ---- | ---- | ----------- |
 | type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
 [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that is
-to
-be examined. |
+to be examined. |
 
 <a name='T-xyLOGIX-Core-Extensions-ListExtensions'></a>
 ## ListExtensions `type`
@@ -8729,8 +8739,9 @@ Provides methods to help with lists of items.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [ListExtensions](#T-xyLOGIX-Core-Extensions-ListExtensions 'xyLOGIX.Core.Extensions.ListExtensions')
+class.
 
 ##### Parameters
 
@@ -8738,8 +8749,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -8793,9 +8804,9 @@ collection already. |
 
 ##### Remarks
 
-This method does nothing if the values of either the `list`
-or the `item` parameter(s), respectively, are set to a
-`null` reference.
+This method does nothing if the values of either the
+`list` or the `item` parameter(s),
+respectively, are set to a `null` reference.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-AddDistinct``1-System-Collections-Generic-ICollection{``0},``0-'></a>
 ### AddDistinct\`\`1(collection,item) `method`
@@ -8858,8 +8869,8 @@ the `list`. |
 
 ##### Summary
 
-Creates a duplicate of the list given to it and returns a reference
-to the clone.
+Creates a duplicate of the list given to it and returns a reference to
+the clone.
 
 ##### Returns
 
@@ -8883,8 +8894,8 @@ Reference to the duplicate of the collection referenced by
 
 ##### Summary
 
-Dumps the contents of the specified `list` to the log, with
-indices of the individual element(s) shown.
+Dumps the contents of the specified `list` to the
+log, with indices of the individual element(s) shown.
 
 ##### Parameters
 
@@ -8919,8 +8930,8 @@ element(s).
 
 ##### Summary
 
-Searches the provided `list`, trying to locate the element
-that satisfies the Boolean conditions imposed by the specified
+Searches the provided `list`, trying to locate the
+element that satisfies the Boolean conditions imposed by the specified
 `predicate`.
 
 
@@ -8958,7 +8969,8 @@ element. |
 
 ##### Summary
 
-Compares a `left` and `right` list.
+Compares a `left` and `right`
+list.
 
 ##### Returns
 
@@ -8982,19 +8994,19 @@ right-hand side of the comparison. |
 
 ##### Remarks
 
-Returns `true` if either both the `left` and
-`right` lists are set to a `null` reference;
-otherwise, they must both be non-`null`, have the same count
-of elements, and all elements must be identical, otherwise this method returns
-`false`.
+Returns `true` if either both the
+`left` and `right` lists are set to a
+`null` reference; otherwise, they must both be non-
+`null`, have the same count of elements, and all elements must
+be identical, otherwise this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-IsOneOf-System-Int32,System-Collections-Generic-IEnumerable{System-Int32}-'></a>
 ### IsOneOf(value,valueSet) `method`
 
 ##### Summary
 
-Gets a value indicating whether the `value` is
-among the elements of the `valueSet`.
+Gets a value indicating whether the `value` is among
+the elements of the `valueSet`.
 
 ##### Returns
 
@@ -9013,9 +9025,9 @@ true if `value` is in the
 
 ##### Summary
 
-Returns the `index`-th element counted from the end of
-the `source` collection (0 ⇒ last, 1 ⇒ second-to-last,
-and so on).
+Returns the `index`-th element counted from the end
+of the `source` collection (0 ⇒ last, 1 ⇒ second-to-last, and
+so on).
 
 ##### Returns
 
@@ -9026,23 +9038,23 @@ A reference to the requested element, or the default value of
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) The collection to inspect.  A `null`
-reference or an empty collection causes the method to return the default
-value of `TSource`. |
-| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Zero-based offset from the last element.  Must be greater
-than or equal to zero and strictly less than `source.Count`. |
+| source | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) The collection to inspect. A
+`null` reference or an empty collection causes the method to
+return the default value of `TSource`. |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Zero-based offset from the last element. Must
+be greater than or equal to zero and strictly less than `source.Count`. |
 
 ##### Generic Types
 
 | Name | Description |
 | ---- | ----------- |
-| TSource | The element type of the `source` collection. |
+| TSource | The element type of the `source`
+collection. |
 
 ##### Remarks
 
 The method never throws; on any error it returns
-`default()` after logging the
-exception.
+`default()` after logging the exception.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-RemoveRange``1-System-Collections-Generic-IList{``0},System-Int32,System-Int32-'></a>
 ### RemoveRange\`\`1(list,index,count) `method`
@@ -9059,7 +9071,7 @@ Removes `count` items from the specified
 | ---- | ---- | ----------- |
 | list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) Collection of items from which certain elements
 are to be removed. |
-| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Must be zero or greater.  Starting zero-based
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Must be zero or greater. Starting zero-based
 index of the first element to be removed from the specified
 `list`. |
 | count | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) A number that is 1 or greater, indicating how
@@ -9088,29 +9100,29 @@ less than zero, or `count` is less than or equal to zero.
 ##### Summary
 
 Returns a new collection that contains every element of
-`source`the last
-`count` element(s).
+`source`the last `count`
+element(s).
 
 ##### Returns
 
 A new [AdvisableCollection{TSource}](#T-AdvisableCollection{TSource} 'AdvisableCollection{TSource}') that contains all
 elements of `source` except the last
-`count`; or an empty collection under the conditions
-noted above.
+`count`; or an empty collection under the conditions noted
+above.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) The input list.  If it is `null` or empty,
-the method returns an empty collection. |
-| count | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) The number of trailing elements to omit.  If
-`count` is less than or equal to zero, the method
-returns a copy of the entire `source` collection.  If
-`count` is greater than or equal to
-`source.Count`, the method returns an empty collection. |
-| includeNulls | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) If `true`, the method copies
-`null` value(s) that may be present in the specified
+| source | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | (Required.) The input list. If it is
+`null` or empty, the method returns an empty collection. |
+| count | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) The number of trailing elements to omit. If
+`count` is less than or equal to zero, the method returns a
+copy of the entire `source` collection. If
+`count` is greater than or equal to `source.Count`, the
+method returns an empty collection. |
+| includeNulls | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) If `true`, the method
+copies `null` value(s) that may be present in the specified
 `source` collection to the resulting collection; if
 `false`, the method skips `null` value(s) in
 the specified `source` collection.
@@ -9123,7 +9135,8 @@ The default value of this parameter is `true`. |
 
 | Name | Description |
 | ---- | ----------- |
-| TSource | The element type of the `source` collection. |
+| TSource | The element type of the `source`
+collection. |
 
 ##### Remarks
 
@@ -9185,8 +9198,8 @@ The list, formatted as a string for logging.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | list | [System.Collections.Generic.IList{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{``0}') | List to be written. |
-| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Maximum number of items to include before appending an ellipsis;
-must be `>= 1`. Default is `2`. |
+| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Maximum number of items to include before appending an
+ellipsis; must be `>= 1`. Default is `2`. |
 | all | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | `true` to write **every** non-null item,
 `false` (to write only the first `max`
 items) is the default. |
@@ -9200,16 +9213,16 @@ items) is the default. |
 ##### Remarks
 
 Per-item formatting is delegated to
-[ToLogRepresentation](#M-xyLOGIX-Core-Extensions-ObjectExtensions-ToLogRepresentation-System-Object- 'xyLOGIX.Core.Extensions.ObjectExtensions.ToLogRepresentation(System.Object)'), so any
-PostSharp `Formatter<T>` you register is automatically applied.
+[ToLogRepresentation](#M-xyLOGIX-Core-Extensions-ObjectExtensions-ToLogRepresentation-System-Object- 'xyLOGIX.Core.Extensions.ObjectExtensions.ToLogRepresentation(System.Object)'), so any PostSharp
+`Formatter<T>` you register is automatically applied.
 
 <a name='M-xyLOGIX-Core-Extensions-ListExtensions-ToSetString``1-System-Collections-Generic-ICollection{``0},System-Int32-'></a>
 ### ToSetString\`\`1(collection,max) `method`
 
 ##### Summary
 
-Converts an [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1') to a
-concise, Pythonic, set-style string (e.g., `[ 1, 2, 3, ... ]`) for
+Converts an [ICollection\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection`1 'System.Collections.Generic.ICollection`1')
+to a concise, Pythonic, set-style string (e.g., `[ 1, 2, 3, ... ]`) for
 logging.
 
 ##### Returns
@@ -9222,8 +9235,8 @@ A string such as `[ 42, 99 ]`, `[ <null> ]`,
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | collection | [System.Collections.Generic.ICollection{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{``0}') | The collection to format. |
-| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Maximum number of items to include before appending an ellipsis; must
-be `>= 1`. Defaults to `2`. |
+| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Maximum number of items to include before appending an
+ellipsis; must be `>= 1`. Defaults to `2`. |
 
 ##### Generic Types
 
@@ -9242,8 +9255,8 @@ PostSharp is automatically honored.
 
 ##### Summary
 
-Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops past the
-tenth item.
+Writes a list variable out as a Pythonic list, [1,2,3,4] e.g. Stops
+past the tenth item.
 
 ##### Returns
 
@@ -9254,8 +9267,8 @@ The `source`, formatted as a set string.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection to be written. |
-| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Optional.) Integer value specifying the max number of element(s) of the
-collection to write.
+| max | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Optional.) Integer value specifying the max number of
+element(s) of the collection to write.
 
 
 
@@ -9273,8 +9286,8 @@ The default value of this parameter is 2. |
 
 ##### Remarks
 
-This method is helpful for writing some of the members of a
-collection to a log file.
+This method is helpful for writing some of the members of a collection
+to a log file.
 
 <a name='T-xyLOGIX-Core-Extensions-LongExtensions'></a>
 ## LongExtensions `type`
@@ -9314,13 +9327,13 @@ checked. |
 
 ##### Summary
 
-Indicates whether the specified `value` is nonnegative (i.e.,
-greater than, or equal to, zero).
+Indicates whether the specified `value` is
+nonnegative (i.e., greater than, or equal to, zero).
 
 ##### Returns
 
-`true` if the `value` is greater than, or
-equal to, zero; `false` otherwise.
+`true` if the `value` is greater
+than, or equal to, zero; `false` otherwise.
 
 ##### Parameters
 
@@ -9333,13 +9346,13 @@ equal to, zero; `false` otherwise.
 
 ##### Summary
 
-Indicates whether the specified `value` is nonpositive (i.e.,
-less than, or equal to, zero).
+Indicates whether the specified `value` is
+nonpositive (i.e., less than, or equal to, zero).
 
 ##### Returns
 
-`true` if the `value` is less than, or
-equal to, zero; `false` otherwise.
+`true` if the `value` is less than,
+or equal to, zero; `false` otherwise.
 
 ##### Parameters
 
@@ -9411,8 +9424,9 @@ Exposes static extension method(s) for manipulating Markdown text.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [MarkdownExtensions](#T-xyLOGIX-Core-Extensions-MarkdownExtensions 'xyLOGIX.Core.Extensions.MarkdownExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [MarkdownExtensions](#T-xyLOGIX-Core-Extensions-MarkdownExtensions 'xyLOGIX.Core.Extensions.MarkdownExtensions')
+class.
 
 ##### Parameters
 
@@ -9420,8 +9434,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -9445,8 +9459,8 @@ corresponding Markdown; otherwise, the method returns the
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| code | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the content that is to
-be wrapped in Markdown backticks. |
+| code | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+content that is to be wrapped in Markdown backticks. |
 
 ##### Remarks
 
@@ -9473,8 +9487,9 @@ resultant Markdown; otherwise, the method returns the
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| node | [System.Xml.Linq.XNode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.Linq.XNode 'System.Xml.Linq.XNode') | (Required.) Reference to an instance of [XNode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.Linq.XNode 'System.Xml.Linq.XNode')
-that represents the XML node that is to be examined for leading whitespace. |
+| node | [System.Xml.Linq.XNode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.Linq.XNode 'System.Xml.Linq.XNode') | (Required.) Reference to an instance of
+[XNode](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Xml.Linq.XNode 'System.Xml.Linq.XNode') that represents the XML node that is to
+be examined for leading whitespace. |
 
 ##### Remarks
 
@@ -9493,9 +9508,9 @@ specified `node` is not of type
 
 ##### Summary
 
-Escapes the specified `content` by replacing all backticks
-with a backtick preceded by a backslash, so that the content can be safely used
-in Markdown as-is.
+Escapes the specified `content` by replacing all
+backticks with a backtick preceded by a backslash, so that the content can be
+safely used in Markdown as-is.
 
 ##### Returns
 
@@ -9505,8 +9520,8 @@ The escaped content.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the content that is to
-be escaped. |
+| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the content that is to be escaped. |
 
 ##### Remarks
 
@@ -9543,8 +9558,9 @@ contains the hyperlink reference destination. |
 
 ##### Summary
 
-Generates an opening anchor tag, i.e., `<a name="hyperlink" >` for
-the specified `hyperlink`.
+Generates an opening anchor tag, i.e.,
+`<a name="hyperlink" >` for the specified
+`hyperlink`.
 
 ##### Returns
 
@@ -9561,8 +9577,8 @@ contains the hyperlink reference destination. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
 `hyperlink` parameter, then this method returns the
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
@@ -9627,7 +9643,7 @@ strictly greater than[Zero](http://msdn.microsoft.com/query/dev14.query?appId=De
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | (Required.) Value to be compared.  Must be of
+| value | [System.Nullable{System.Decimal}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Nullable 'System.Nullable{System.Decimal}') | (Required.) Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NullableDecimalExtensions-IsNonzero-System-Nullable{System-Decimal}-'></a>
@@ -9706,8 +9722,8 @@ checked. |
 
 ##### Summary
 
-Rounds the specified `value` to the nearest cent, assuming
-that the specified `value` is denominated in
+Rounds the specified `value` to the nearest cent,
+assuming that the specified `value` is denominated in
 `U.S. Dollars (USD)`.
 
 ##### Returns
@@ -10809,8 +10825,9 @@ Exposes static extension methods for [Object](http://msdn.microsoft.com/query/de
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [ObjectExtensions](#T-xyLOGIX-Core-Extensions-ObjectExtensions 'xyLOGIX.Core.Extensions.ObjectExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [ObjectExtensions](#T-xyLOGIX-Core-Extensions-ObjectExtensions 'xyLOGIX.Core.Extensions.ObjectExtensions')
+class.
 
 ##### Parameters
 
@@ -10818,8 +10835,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -10850,8 +10867,8 @@ converted to a log-friendly string representation. |
 
 ##### Remarks
 
-If a `null` reference is passed as the argument of the
-`value` parameter, then the method returns the string
+If a `null` reference is passed as the argument of
+the `value` parameter, then the method returns the string
 `<null>`.
 
 
@@ -10875,9 +10892,10 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Exposes static method(s) to extend the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') class in
-order to help a caller in using [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variables known
-or suspected to contain the fully-qualified pathname of a folder or a file.
+Exposes static method(s) to extend the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+class in order to help a caller in using [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+variables known or suspected to contain the fully-qualified pathname of a
+folder or a file.
 
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-AppendDirectorySeparatorChar-System-String-'></a>
 ### AppendDirectorySeparatorChar(path) `method`
@@ -10888,15 +10906,15 @@ Ensures a trailing directory separator is present.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') ending with a directory
-separator; otherwise, the method is idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') ending with a
+directory separator; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the pathname that is to
-be modified. |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+pathname that is to be modified. |
 
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-FileExists-System-String-'></a>
 ### FileExists(pathname) `method`
@@ -10923,36 +10941,37 @@ the fully-qualified pathname of the file to check for existence. |
 
 This method is superior to calling the
 [Exists](#M-Alphaleonis-Win32-Filesystem-File-Exists-System-String- 'Alphaleonis.Win32.Filesystem.File.Exists(System.String)')
-method.  This is due
-to the fact that the other method throws an exception if it is passed a blank
-string, whereas this method simply returns `false`.
+method. This is due to the fact that the other method throws an exception if it
+is passed a blank string, whereas this method simply returns
+`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-GetDirectoryName-System-String-'></a>
 ### GetDirectoryName(file) `method`
 
 ##### Summary
 
-Attempts to get the fully-qualified pathname of the containing folder of the
-specified `file`.
+Attempts to get the fully-qualified pathname of the containing folder
+of the specified `file`.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
-pathname of the folder that contains the specified `file`;
-otherwise, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+fully-qualified pathname of the folder that contains the specified
+`file`; otherwise, the method returns the
+[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| file | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the fully-qualified
-pathname of the file for whom the pathname of the containing folder is to be
-retrieved. |
+| file | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+fully-qualified pathname of the file for whom the pathname of the containing
+folder is to be retrieved. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
+the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
 parameter, `file`, then this method returns the
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
@@ -10985,8 +11004,10 @@ A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| baseDir | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') base directory path. |
-| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') absolute path to be relativized. |
+| baseDir | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') base
+directory path. |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') absolute path
+to be relativized. |
 
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-HasAnyOfTheseExtensions-System-String,System-String[]-'></a>
 ### HasAnyOfTheseExtensions(pathname,extensions) `method`
@@ -11010,15 +11031,15 @@ has the specified filename `extensions`;
 | ---- | ---- | ----------- |
 | pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
 the fully-qualified pathname whose filename extension is to be tested. |
-| extensions | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) indicating the
-possible extension(s) that the provided `pathname` must have. |
+| extensions | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
+value(s) indicating the possible extension(s) that the provided
+`pathname` must have. |
 
 ##### Remarks
 
 If the `pathname` or `extensions`
 have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s)
-as
-their arguments, then this method returns `false`.
+as their arguments, then this method returns `false`.
 
 
 
@@ -11053,16 +11074,15 @@ has the specified filename `extension`;
 | ---- | ---- | ----------- |
 | pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
 the fully-qualified pathname whose filename extension is to be tested. |
-| extension | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-containing the filename extension that the specified
-`pathname` should have. |
+| extension | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
+the filename extension that the specified `pathname` should
+have. |
 
 ##### Remarks
 
 If the `pathname` or `extension`
 have `null` or blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s)
-as
-their arguments, then this method returns `false`.
+as their arguments, then this method returns `false`.
 
 
 
@@ -11080,19 +11100,14 @@ This method is meant to be used as an extension method of type
 
 ##### Summary
 
-Determines whether the specified `target` path matches the
-specified
-`source`
-path.
+Determines whether the specified `target` path
+matches the specified `source` path.
 
 ##### Returns
 
 `true` if the normalized, absolute path(s) of
-`target` and
-`source`
-are equal, ignoring case and trailing directory separators; otherwise,
-`false`
-.
+`target` and `source` are equal, ignoring
+case and trailing directory separators; otherwise, `false` .
 
 ##### Parameters
 
@@ -11114,14 +11129,13 @@ This parameter cannot be null, empty, or consist only of whitespace. |
 ##### Remarks
 
 This method normalizes and resolves the absolute paths of both
-`target`
-and `source` before performing a case-insensitive
+`target` and `source` before performing a
+case-insensitive comparison.
+
+
+
+Trailing directory separator(s), if any are present, are ignored during the
 comparison.
-
-
-
-Trailing
-directory separator(s), if any are present, are ignored during the comparison.
 
 
 
@@ -11135,47 +11149,42 @@ If either or both of `target` and
 
 ##### Summary
 
-Replaces the file name component of the specified path with a new file name and
-outputs the resulting path.
+Replaces the file name component of the specified path with a new file
+name and outputs the resulting path.
 
 ##### Returns
 
-true if the file name was successfully replaced and the resulting path differs
-from the original; otherwise,
-false.
+true if the file name was successfully replaced and the resulting path
+differs from the original; otherwise, false.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The full or relative path whose file name will be replaced. Must reference an
-existing directory; otherwise,
-the operation will not succeed. |
-| newFileName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The new file name to use in place of the original file name in the path. This
-should not contain directory
-separators. |
-| newPath | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When the method returns, contains the path with the file name replaced if
-successful; otherwise, contains
-the original path. |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The full or relative path whose file name will be
+replaced. Must reference an existing directory; otherwise, the operation will
+not succeed. |
+| newFileName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The new file name to use in place of the original
+file name in the path. This should not contain directory separators. |
+| newPath | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When the method returns, contains the path with the file
+name replaced if successful; otherwise, contains the original path. |
 
 ##### Remarks
 
-If the directory portion of the provided path does not exist or is invalid, the
-method returns false and outputs the original path. The method does not check
-whether the new file name is
-valid or whether the resulting file exists. No file system changes are
-performed; only the path string is
-modified.
+If the directory portion of the provided path does not exist or is
+invalid, the method returns false and outputs the original path. The method
+does not check whether the new file name is valid or whether the resulting file
+exists. No file system changes are performed; only the path string is modified.
 
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-ReplaceInFileName-System-String,System-String,System-String,System-String@-'></a>
 ### ReplaceInFileName(pathname,findWhat,replaceWith,newFileName) `method`
 
 ##### Summary
 
-Replaces all occurrences of a specified substring, `findWhat`
-, with the substring, `replaceWith`, in the file name portion
-of the specified `pathname` and returns the updated file
-name.
+Replaces all occurrences of a specified substring,
+`findWhat` , with the substring,
+`replaceWith`, in the file name portion of the specified
+`pathname` and returns the updated file name.
 
 ##### Returns
 
@@ -11192,31 +11201,27 @@ will be modified. Must refer to an existing directory. |
 occurrences will be replaced. |
 | replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The string to replace each occurrence of the
 specified substring in the file name. |
-| newFileName | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When this method returns, contains the updated file name with replacements
-applied, or the original file
-name if no replacements were made. If the directory does not exist or the file
-name is invalid, this
+| newFileName | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When this method returns, contains the updated file
+name with replacements applied, or the original file name if no replacements
+were made. If the directory does not exist or the file name is invalid, this
 parameter is set to `null`. |
 
 ##### Remarks
 
-This method does not modify any files on disk; it only returns the new file
-name as a
-string. The directory specified in `pathname` must exist for
-the operation to succeed. If
-the directory does not exist or the file name is invalid, the method returns
-false and
-`newFileName`
-is set to `null`.
+This method does not modify any files on disk; it only returns the new
+file name as a string. The directory specified in `pathname`
+must exist for the operation to succeed. If the directory does not exist or the
+file name is invalid, the method returns false and
+`newFileName` is set to `null`.
 
 <a name='M-xyLOGIX-Core-Extensions-PathnameExtensions-ReplaceInLowestLevelFolderName-System-String,System-String,System-String,System-String@-'></a>
 ### ReplaceInLowestLevelFolderName(pathname,findWhat,replaceWith,newPath) `method`
 
 ##### Summary
 
-Replaces occurrences of a specified substring in the name of the lowest-level
-folder containing the file
-referenced by the given path, and outputs the modified path.
+Replaces occurrences of a specified substring in the name of the
+lowest-level folder containing the file referenced by the given path, and
+outputs the modified path.
 
 ##### Returns
 
@@ -11227,27 +11232,23 @@ generated; otherwise, false.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The full or relative path to the file whose containing folder name will be
-modified. Cannot be null or
-whitespace. |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The full or relative path to the file whose containing
+folder name will be modified. Cannot be null or whitespace. |
 | findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to search for in the lowest-level folder
 name. If not found, no replacement is made. |
 | replaceWith | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | The substring to replace each occurrence of
 `findWhat` in the folder name. |
-| newPath | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When the method returns, contains the path with the modified folder name if the
-replacement was successful;
-otherwise, contains the original path. |
+| newPath | [System.String@](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String@ 'System.String@') | When the method returns, contains the path with the
+modified folder name if the replacement was successful; otherwise, contains the
+original path. |
 
 ##### Remarks
 
-The method does not modify the file system; it only returns the modified path
-as a
-string. If the directory or its parent does not exist, or if the folder name is
-null or whitespace, the
-method returns false and outputs the original path. The method handles both
-absolute and relative paths.
-Exceptions encountered during processing are logged and result in a return
-value of false.
+The method does not modify the file system; it only returns the
+modified path as a string. If the directory or its parent does not exist, or if
+the folder name is null or whitespace, the method returns false and outputs the
+original path. The method handles both absolute and relative paths. Exceptions
+encountered during processing are logged and result in a return value of false.
 
 <a name='T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption'></a>
 ## ReplaceAnyOfOption `type`
@@ -11285,9 +11286,8 @@ Represents an unknown or undefined state.
 
 ##### Remarks
 
-This value is typically used as a default or sentinel value to indicate that
-the
-state is not recognized or has not been explicitly set.
+This value is typically used as a default or sentinel value to
+indicate that the state is not recognized or has not been explicitly set.
 
 <a name='T-xyLOGIX-Core-Extensions-Properties-Resources'></a>
 ## Resources `type`
@@ -11366,16 +11366,16 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Exposes static extension methods for instances of object(s) that implement the
-[ISet\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet`1 'System.Collections.Generic.ISet`1') interface.
+Exposes static extension methods for instances of object(s) that
+implement the [ISet\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet`1 'System.Collections.Generic.ISet`1') interface.
 
 <a name='M-xyLOGIX-Core-Extensions-SetExtensions-#cctor'></a>
 ### #cctor() `method`
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [SetExtensions](#T-xyLOGIX-Core-Extensions-SetExtensions 'xyLOGIX.Core.Extensions.SetExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [SetExtensions](#T-xyLOGIX-Core-Extensions-SetExtensions 'xyLOGIX.Core.Extensions.SetExtensions') class.
 
 ##### Parameters
 
@@ -11383,8 +11383,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -11396,15 +11396,15 @@ attribute in order to simplify the logging output.
 
 ##### Summary
 
-Adds a range of data value(s) from the specified `source`
-collection to the `target` set.
+Adds a range of data value(s) from the specified
+`source` collection to the `target` set.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| target | [System.Collections.Generic.ISet{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet 'System.Collections.Generic.ISet{``0}') | (Required.) Reference to a collection of element(s), each of which is of type,
-`T`, that implements the
+| target | [System.Collections.Generic.ISet{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet 'System.Collections.Generic.ISet{``0}') | (Required.) Reference to a collection of element(s), each
+of which is of type, `T`, that implements the
 [ISet\`1](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ISet`1 'System.Collections.Generic.ISet`1') interface that is to receive
 the element(s) of `source`. |
 | source | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | (Required.) Reference to a collection of element(s), each
@@ -11427,10 +11427,9 @@ does nothing.
 
 
 This method also does nothing if a `null` reference is passed
-for the `target` collection.
-If an element from the `source` collection is
-already a member of the `target` collection, then it is
-skipped.
+for the `target` collection. If an element from the
+`source` collection is already a member of the
+`target` collection, then it is skipped.
 
 
 
@@ -11452,8 +11451,9 @@ Provides extension methods for [String](http://msdn.microsoft.com/query/dev14.qu
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [StringArrayExtensions](#T-xyLOGIX-Core-Extensions-StringArrayExtensions 'xyLOGIX.Core.Extensions.StringArrayExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the
+[StringArrayExtensions](#T-xyLOGIX-Core-Extensions-StringArrayExtensions 'xyLOGIX.Core.Extensions.StringArrayExtensions') class.
 
 ##### Parameters
 
@@ -11461,8 +11461,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -11481,8 +11481,8 @@ array to the application log.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Reference to the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose
-contents are to be logged. |
+| values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Reference to the
+[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose contents are to be logged. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringArrayExtensions-ReplaceInAll-System-Collections-Generic-IEnumerable{System-String},System-String,System-String-'></a>
 ### ReplaceInAll(target,findWhat,replaceWith) `method`
@@ -11531,7 +11531,7 @@ This method processes each string in the collection individually.
 
 
 
-If a string in the collection  is `null`, the
+If a string in the collection is `null`, the
 [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or consists only of whitespace, it
 is included in the resultset without modification.
 
@@ -11544,8 +11544,7 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Provides methods and properties to assist with manipulating strings
-of text.
+Provides methods and properties to assist with manipulating strings of text.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-AcronymList'></a>
 ### AcronymList `constants`
@@ -11559,133 +11558,107 @@ Collection of strings that are commonly-used acronyms.
 
 ##### Summary
 
-A regular expression pattern that matches an entire string consisting only of
-uppercase letters.
-This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR")
-that appear as
-standalone words without any lowercase letters.
+A regular expression pattern that matches an entire string consisting only of uppercase letters. This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR") that appear as standalone words without any lowercase letters.
 
-This pattern ensures that the input string contains only uppercase letters from
-A to Z
-and does not include numbers, spaces, or lowercase characters.
+This pattern ensures that the input string contains only uppercase letters from A to Z and does not include numbers, spaces, or lowercase characters.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-AlwaysCapitalizeIfFirstWord'></a>
 ### AlwaysCapitalizeIfFirstWord `constants`
 
 ##### Summary
 
-Collection of strings that should always be capitalized if they are
-the first word of a phrase.
+Collection of strings that should always be capitalized if they are the first word of a phrase.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-CapitalizeableAsFirstWords'></a>
 ### CapitalizeableAsFirstWords `constants`
 
 ##### Summary
 
-Collection of strings that are potentially needing to be capitalized
-if they are the first word of a phrase or a name.
+Collection of strings that are potentially needing to be capitalized if they are the first word of a phrase or a name.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-ErrorPrefix'></a>
 ### ErrorPrefix `constants`
 
 ##### Summary
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to the error prefix used by all
-debugging messages.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to the error prefix used by all debugging messages.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-GuidRegexLowercaseNoBraces'></a>
 ### GuidRegexLowercaseNoBraces `constants`
 
 ##### Summary
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a regular expression to match a
-GUID that is in all lowercase with no surrounding braces; e.g., for example,
-`b8f967ce-911d-4184-a0ba-b37e443b4541`.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing a regular expression to match a GUID that is in all lowercase with no surrounding braces; e.g., for example, `b8f967ce-911d-4184-a0ba-b37e443b4541`.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-NamesOfStreetsThatShouldBeCapitalized'></a>
 ### NamesOfStreetsThatShouldBeCapitalized `constants`
 
 ##### Summary
 
-Collection of strings that contain words commonly found in the name
-of a street, and that need to be capitalized.
+Collection of strings that contain words commonly found in the name of a street, and that need to be capitalized.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms'></a>
 ### ShortWordsThatAreNotAcronyms `constants`
 
 ##### Summary
 
-Collection of strings which are short words but are not acronyms per
-se.
+Collection of strings which are short words but are not acronyms per se.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-StateAbbrList'></a>
 ### StateAbbrList `constants`
 
 ##### Summary
 
-Collection of strings that are the two-letter abbreviations of the 50
-U.S. states.
+Collection of strings that are the two-letter abbreviations of the 50 U.S. states.
 
 <a name='F-xyLOGIX-Core-Extensions-StringExtensions-_textInfoFromCurrentCulture'></a>
 ### _textInfoFromCurrentCulture `constants`
 
 ##### Summary
 
-Reference to an instance of [TextInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.TextInfo 'System.Globalization.TextInfo') that
-works for the [CurrentCulture](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo.CurrentCulture 'System.Globalization.CultureInfo.CurrentCulture').
+Reference to an instance of [TextInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.TextInfo 'System.Globalization.TextInfo') that works for the [CurrentCulture](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo.CurrentCulture 'System.Globalization.CultureInfo.CurrentCulture').
 
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumberRegex'></a>
 ### EndsWithColonAndNumberRegex `property`
 
 ##### Summary
 
-Gets a reference to an instance of
-[Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that is compiled to match
-a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that ends with a colon (`:`) and then a
-natural number.
+Gets a reference to an instance of [Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that is compiled to match a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that ends with a colon (`:`) and then a natural number.
 
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid'></a>
 ### IsEmailAddressInvalid `property`
 
 ##### Summary
 
-Gets or sets a value that indicates whether the string most recently
-checked for whether it contains a valid email address, does in fact contain
-such a valid address.
+Gets or sets a value that indicates whether the string most recently checked for whether it contains a valid email address, does in fact contain such a valid address.
 
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-LanguageArticleTypeValidator'></a>
 ### LanguageArticleTypeValidator `property`
 
 ##### Summary
 
-Gets a reference to the one and only instance of the object that implements the
-[ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator')
-interface.
+Gets a reference to the one and only instance of the object that implements the [ILanguageArticleTypeValidator](#T-xyLOGIX-Core-Extensions-ILanguageArticleTypeValidator 'xyLOGIX.Core.Extensions.ILanguageArticleTypeValidator') interface.
 
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-PluralizationService'></a>
 ### PluralizationService `property`
 
 ##### Summary
 
-Gets a reference to an instance of
-[PluralizationService](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Data.Entity.Design.PluralizationServices.PluralizationService 'System.Data.Entity.Design.PluralizationServices.PluralizationService')
-for the current culture.
+Gets a reference to an instance of [PluralizationService](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Data.Entity.Design.PluralizationServices.PluralizationService 'System.Data.Entity.Design.PluralizationServices.PluralizationService') for the current culture.
 
 <a name='P-xyLOGIX-Core-Extensions-StringExtensions-WhiteSpaceRegex'></a>
 ### WhiteSpaceRegex `property`
 
 ##### Summary
 
-Gets a [Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that
-matches all whitespace characters.
+Gets a [Regex](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Regex 'System.Text.RegularExpressions.Regex') that matches all whitespace characters.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-#cctor'></a>
 ### #cctor() `method`
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [StringExtensions](#T-xyLOGIX-Core-Extensions-StringExtensions 'xyLOGIX.Core.Extensions.StringExtensions') class.
+Initializes static data or performs actions that need to be performed once only for the [StringExtensions](#T-xyLOGIX-Core-Extensions-StringExtensions 'xyLOGIX.Core.Extensions.StringExtensions') class.
 
 ##### Parameters
 
@@ -11693,26 +11666,22 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance being created or before any static members are referenced.
 
 
 
-We've decorated this constructor with the `[Log(AttributeExclude = true)]`
-attribute in order to simplify the logging output.
+We've decorated this constructor with the `[Log(AttributeExclude = true)]` attribute in order to simplify the logging output.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AnyContainNoCase-System-Collections-Generic-IEnumerable{System-String},System-String-'></a>
 ### AnyContainNoCase(collection,value) `method`
 
 ##### Summary
 
-Asks if the search text, in `value`, is a substring
-of the strings in `collection`, ignoring case.
+Asks if the search text, in `value`, is a substring of the strings in `collection`, ignoring case.
 
 ##### Returns
 
-`true` if the indicated value is in the specified
-collection, regardless of case; `false` otherwise.
+`true` if the indicated value is in the specified collection, regardless of case; `false` otherwise.
 
 ##### Parameters
 
@@ -11726,65 +11695,50 @@ collection, regardless of case; `false` otherwise.
 
 ##### Summary
 
-Determines if any of the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')s in
-`targets` start with any of the specified
-`values`.
+Determines if any of the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')s in `targets` start with any of the specified `values`.
 
 ##### Returns
 
-`true`if any of the `targets` start
-with any of the `values`; `false` otherwise.
+`true`if any of the `targets` start with any of the `values`; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| targets | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-value(s) that are to be searched. |
-| values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-value(s) that are to be used as search criteria. |
+| targets | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) that are to be searched. |
+| values | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) that are to be used as search criteria. |
 
 ##### Remarks
 
-If a `null` reference is passed as the argument of
-the `targets` parameter, of if either of the
-`targets` or `values` parameter(s) refer to
-the empty collection, then this method returns `false`.
+If a `null` reference is passed as the argument of the `targets` parameter, of if either of the `targets` or `values` parameter(s) refer to the empty collection, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AreAnyLettersLowercase-System-String-'></a>
 ### AreAnyLettersLowercase(value) `method`
 
 ##### Summary
 
-Determines if the specified `value` contains any letters that
-are recognized as lowercase.
+Determines if the specified `value` contains any letters that are recognized as lowercase.
 
 ##### Returns
 
-`true` if the specified `value` has
-at least one lowercase letter; `false` otherwise.
+`true` if the specified `value` has at least one lowercase letter; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose
-characters are to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose characters are to be checked. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AsCodeElement-System-String-'></a>
 ### AsCodeElement(text) `method`
 
 ##### Summary
 
-Surrounds the specified `text` with XML documentation
-tags <c> and </c>, to indicate inline code formatting.
+Surrounds the specified `text` with XML documentation tags <c> and </c>, to indicate inline code formatting.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the input surrounded by
-<c> and </c> tags. If `text` is
-`null`
-or whitespace, the original value is returned.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the input surrounded by <c> and </c> tags. If `text` is `null` or whitespace, the original value is returned.
 
 ##### Parameters
 
@@ -11801,17 +11755,13 @@ Attempts to express the provided [String](http://msdn.microsoft.com/query/dev14.
 
 ##### Returns
 
-A [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value that corresponds to what is
-represented by the ASCII `value` specified; or
-[MinValue](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.MinValue 'System.Decimal.MinValue') if an issue occurred in formatting the
-value.
+A [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value that corresponds to what is represented by the ASCII `value` specified; or [MinValue](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal.MinValue 'System.Decimal.MinValue') if an issue occurred in formatting the value.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the ASCII representation of a [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the ASCII representation of a [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') value. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AsDouble-System-String-'></a>
 ### AsDouble(value) `method`
@@ -11822,40 +11772,31 @@ Attempts to express the provided [String](http://msdn.microsoft.com/query/dev14.
 
 ##### Returns
 
-A [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value that corresponds to what is
-represented by the ASCII `value` specified; or
-[MinValue](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double.MinValue 'System.Double.MinValue') if an issue occurred in formatting the
-value.
+A [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value that corresponds to what is represented by the ASCII `value` specified; or [MinValue](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double.MinValue 'System.Double.MinValue') if an issue occurred in formatting the value.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the ASCII representation of a [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the ASCII representation of a [Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') value. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-AsProseList``1-System-Collections-Generic-IEnumerable{``0},System-Func{``0,System-String}-'></a>
 ### AsProseList\`\`1(quote,selectorFunc) `method`
 
 ##### Summary
 
-Takes a quote and a selector function and exports a string that is
-comma-separated according to proper English grammar, i.e.
-` "dog, cat, and horse" ` not just `"dog, cat, horse."`
+Takes a quote and a selector function and exports a string that is comma-separated according to proper English grammar, i.e. `"dog, cat, and horse"` not just `"dog, cat, horse."`
 
 ##### Returns
 
-String containing the strings selected by the selector, as
-illustrated above.
+String containing the strings selected by the selector, as illustrated above.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| quote | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection of `TSource` to iterate
-over. |
-| selectorFunc | [System.Func{\`\`0,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,System.String}') | Delegate specifying the way to represent each
-element of the collection `quote` as a string. |
+| quote | [System.Collections.Generic.IEnumerable{\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{``0}') | Collection of `TSource` to iterate over. |
+| selectorFunc | [System.Func{\`\`0,System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``0,System.String}') | Delegate specifying the way to represent each element of the collection `quote` as a string. |
 
 ##### Generic Types
 
@@ -11865,23 +11806,18 @@ element of the collection `quote` as a string. |
 
 ##### Remarks
 
-If this method is fed a `null` reference or the
-empty collection for `quote`, then the return value is the
-empty string.
+If this method is fed a `null` reference or the empty collection for `quote`, then the return value is the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-BreakTextIntoLines-System-String-'></a>
 ### BreakTextIntoLines(text) `method`
 
 ##### Summary
 
-Breaks a large body of `text` into individual
-lines, on the newline character for the particular operating system. The result
-is a collection of strings, one for each line.
+Breaks a large body of `text` into individual lines, on the newline character for the particular operating system. The result is a collection of strings, one for each line.
 
 ##### Returns
 
-Collection of strings containing one string per line of
-`text`.
+Collection of strings containing one string per line of `text`.
 
 ##### Parameters
 
@@ -11891,21 +11827,18 @@ Collection of strings containing one string per line of
 
 ##### Remarks
 
-If this method is passed the empty string or a blank string as input,
-then it returns the empty collection.
+If this method is passed the empty string or a blank string as input, then it returns the empty collection.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-CleanLine-System-String-'></a>
 ### CleanLine(line) `method`
 
 ##### Summary
 
-Strips newlines from the text in `line`, and then
-calls [Trim](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Trim 'System.String.Trim()') on the results.
+Strips newlines from the text in `line`, and then calls [Trim](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Trim 'System.String.Trim()') on the results.
 
 ##### Returns
 
-Same as input, except all newline characters and whitespace has been
-removed.
+Same as input, except all newline characters and whitespace has been removed.
 
 ##### Parameters
 
@@ -11915,21 +11848,18 @@ removed.
 
 ##### Remarks
 
-If the empty string is provided as input, then the empty string is
-returned.
+If the empty string is provided as input, then the empty string is returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-CollapseNewlinesToSpaces-System-String-'></a>
 ### CollapseNewlinesToSpaces(value) `method`
 
 ##### Summary
 
-"Collapses" or "folds" the specified `value` so that all
-newlines are transformed to single whitespace characters.
+"Collapses" or "folds" the specified `value` so that all newlines are transformed to single whitespace characters.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value passed, but with
-all newlines transformed to single whitespace characters.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value passed, but with all newlines transformed to single whitespace characters.
 
 
 
@@ -11939,265 +11869,197 @@ Multiple newlines are removed.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-value that is to be collapsed. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value that is to be collapsed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Concat-System-String,System-String[]-'></a>
 ### Concat(initialString,parts) `method`
 
 ##### Summary
 
-Takes the specified `initialString` and joins the provided
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`parts` array of strings onto
-it, in the order specified.
+Takes the specified `initialString` and joins the provided [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`parts` array of strings onto it, in the order specified.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') consisting of the
-`initialString` with the `parts`
-concatenated to it.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') consisting of the `initialString` with the `parts` concatenated to it.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| initialString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-specifies the initial value to have other [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-value(s)
-concatenated to it. |
-| parts | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-values that are to be concatenated, in the order specified, to the
-`initialString`. |
+| initialString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that specifies the initial value to have other [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) concatenated to it. |
+| parts | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') values that are to be concatenated, in the order specified, to the `initialString`. |
 
 ##### Remarks
 
-This method does nothing if the `initialString` is
-blank or `null`, or if there are zero values in the
-`parts`.
+This method does nothing if the `initialString` is blank or `null`, or if there are zero values in the `parts`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Contains-System-String,System-String,System-StringComparison-'></a>
 ### Contains(source,value,comparisonType) `method`
 
 ##### Summary
 
-Returns `true` if `source`
-contains `value`, using the chosen comparison
-rule.
+Returns `true` if `source` contains `value`, using the chosen comparison rule.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text
-that is to be searched for `value`. |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text
-that is to be searched for. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison')
-values that dictates how the comparison is performed. |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be searched for `value`. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be searched for. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values that dictates how the comparison is performed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-String[]-'></a>
 ### ContainsAny(value,searchStrings) `method`
 
 ##### Summary
 
-Returns `true` if the `value` has
-any of the strings in `searchStrings` as a substring.
+Returns `true` if the `value` has any of the strings in `searchStrings` as a substring.
 
 ##### Returns
 
-Value indicating whether any of the strings in
-`searchStrings` are substrings (case-insensitive) of
-`value`.
+Value indicating whether any of the strings in `searchStrings` are substrings (case-insensitive) of `value`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
-| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which
-might be substrings of `value`. |
+| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which might be substrings of `value`. |
 
 ##### Remarks
 
-If `value` is the empty string or if the
-`searchStrings` collection is empty or is a
-`null` reference, then this method returns
-`false`.
+If `value` is the empty string or if the `searchStrings` collection is empty or is a `null` reference, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### ContainsAny(value,searchStrings) `method`
 
 ##### Summary
 
-Returns `true` if the `value` has
-any of the strings in `searchStrings` as a substring.
+Returns `true` if the `value` has any of the strings in `searchStrings` as a substring.
 
 ##### Returns
 
-Value indicating whether any of the strings in
-`searchStrings` are substrings (case-insensitive) of
-`value`.
+Value indicating whether any of the strings in `searchStrings` are substrings (case-insensitive) of `value`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
-| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which
-might be substrings of `value`. |
+| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which might be substrings of `value`. |
 
 ##### Remarks
 
-If `value` is the empty string or if the
-`searchStrings` collection is empty or is a
-`null` reference, then this method returns
-`false`.
+If `value` is the empty string or if the `searchStrings` collection is empty or is a `null` reference, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAny-System-String,System-Char[]-'></a>
 ### ContainsAny(value,searchChars) `method`
 
 ##### Summary
 
-Returns `true` if the `value`
-contains any of the characters in `searchChars`
-(case-insensitive).
+Returns `true` if the `value` contains any of the characters in `searchChars` (case-insensitive).
 
 ##### Returns
 
-`true` if the string in `value`
-contains any of the characters (case-insensitive) in the
-`searchChars` array; `false` otherwise.
+`true` if the string in `value` contains any of the characters (case-insensitive) in the `searchChars` array; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String to be searched. |
-| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the
-`value`. |
+| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the `value`. |
 
 ##### Remarks
 
-If this method is passed the empty string for
-`value` or a `null` reference or an empty
-collection for `searchChars`, then this method returns
-`false`.
+If this method is passed the empty string for `value` or a `null` reference or an empty collection for `searchChars`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### ContainsAnyOf(value,searchStrings) `method`
 
 ##### Summary
 
-Returns `true` if the `value` has
-any of the strings in `searchStrings` as a substring.
+Returns `true` if the `value` has any of the strings in `searchStrings` as a substring.
 
 ##### Returns
 
-Value indicating whether any of the strings in
-`searchStrings` are substrings (case-insensitive) of
-`value`.
+Value indicating whether any of the strings in `searchStrings` are substrings (case-insensitive) of `value`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
-| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which
-might be substrings of `value`. |
+| searchStrings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) Collection of strings, any of which might be substrings of `value`. |
 
 ##### Remarks
 
-If `value` is the empty string or if the
-`searchStrings` collection is empty or is a
-`null` reference, then this method returns
-`false`.
+If `value` is the empty string or if the `searchStrings` collection is empty or is a `null` reference, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-String[]-'></a>
 ### ContainsAnyOf(value,searchStrings) `method`
 
 ##### Summary
 
-Returns `true` if the `value` has
-any of the strings in `searchStrings` as a substring.
+Returns `true` if the `value` has any of the strings in `searchStrings` as a substring.
 
 ##### Returns
 
-Value indicating whether any of the strings in
-`searchStrings` are substrings (case-insensitive) of
-`value`.
+Value indicating whether any of the strings in `searchStrings` are substrings (case-insensitive) of `value`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The value to be used as a filter. |
-| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which
-might be substrings of `value`. |
+| searchStrings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) Collection of strings, any of which might be substrings of `value`. |
 
 ##### Remarks
 
-If `value` is the empty string or if the
-`searchStrings` collection is empty or is a
-`null` reference, then this method returns
-`false`.
+If `value` is the empty string or if the `searchStrings` collection is empty or is a `null` reference, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsAnyOf-System-String,System-Char[]-'></a>
 ### ContainsAnyOf(value,searchChars) `method`
 
 ##### Summary
 
-Returns `true` if the `value`
-contains any of the characters in `searchChars`
-(case-insensitive).
+Returns `true` if the `value` contains any of the characters in `searchChars` (case-insensitive).
 
 ##### Returns
 
-`true` if the string in `value`
-contains any of the characters (case-insensitive) in the
-`searchChars` array; `false` otherwise.
+`true` if the string in `value` contains any of the characters (case-insensitive) in the `searchChars` array; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String to be searched. |
-| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the
-`value`. |
+| searchChars | [System.Char[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char[] 'System.Char[]') | (Required.) Array of characters to look for in the `value`. |
 
 ##### Remarks
 
-If this method is passed the empty string for
-`value` or a `null` reference or an empty
-collection for `searchChars`, then this method returns
-`false`.
+If this method is passed the empty string for `value` or a `null` reference or an empty collection for `searchChars`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNamespaceSeparator-System-String-'></a>
 ### ContainsNamespaceSeparator(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` contains a namespace
-separator character, which in C# and VB is a period (`.`).
+Determines whether the specified `value` contains a namespace separator character, which in C# and VB is a period (`.`).
 
 ##### Returns
 
-`true` if the specified `value`
-contains a namespace separator character, which in C# or VB is a period (
-`.`); `false` otherwise.
+`true` if the specified `value` contains a namespace separator character, which in C# or VB is a period ( `.`); `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value that is to be
-checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value that is to be checked. |
 
 ##### Remarks
 
-If a `null`, blank, or
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed for the argument of the
-`value` parameter, then the method returns
-`false`.
+If a `null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed for the argument of the `value` parameter, then the method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsNoCase-System-String,System-String-'></a>
 ### ContainsNoCase(stringToSearch,value) `method`
@@ -12208,8 +12070,7 @@ Searches one string for another. Case-insensitive.
 
 ##### Returns
 
-Returns true if the stringToSearch contains the substring value,
-regardless of case; false otherwise.
+Returns true if the stringToSearch contains the substring value, regardless of case; false otherwise.
 
 ##### Parameters
 
@@ -12227,8 +12088,7 @@ Searches one string for another. Case-insensitive.
 
 ##### Returns
 
-Returns true if the stringToSearch contains the substring value,
-regardless of case; false otherwise.
+Returns true if the stringToSearch contains the substring value, regardless of case; false otherwise.
 
 ##### Parameters
 
@@ -12246,8 +12106,7 @@ Case-insensitive version of the collection Contains method.
 
 ##### Returns
 
-TRUE if the indicated value is in the specified collection,
-regardless of case; FALSE otherwise.
+TRUE if the indicated value is in the specified collection, regardless of case; FALSE otherwise.
 
 ##### Parameters
 
@@ -12261,46 +12120,38 @@ regardless of case; FALSE otherwise.
 
 ##### Summary
 
-Ascertains whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'),
-provided as the argument to the `value` parameter, contains
-any digits.
+Ascertains whether the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), provided as the argument to the `value` parameter, contains any digits.
 
 ##### Returns
 
-`true`q if the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') passed
-contains any digits.
+`true`q if the [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') passed contains any digits.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
-checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be checked. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ContainsWhitespace-System-String-'></a>
 ### ContainsWhitespace(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` contains a
-whitespace character.
+Determines whether the specified `value` contains a whitespace character.
 
 ##### Returns
 
-`true` if the specified `value` contains a
-whitespace character; otherwise, `false`.
+`true` if the specified `value` contains a whitespace character; otherwise, `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
-examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be examined. |
 
 ##### Remarks
 
-The text in the argument of the `value` parameter is
-expressed as an array of [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') element(s).
+The text in the argument of the `value` parameter is expressed as an array of [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') element(s).
 
 
 
@@ -12308,69 +12159,55 @@ This method then iterates over said array, element-by-element.
 
 
 
-The method stops iteration, and returns `true`, the first time
-any whitespace character is encountered.
+The method stops iteration, and returns `true`, the first time any whitespace character is encountered.
 
 
 
-If the argument of the `value` parameter is
-`null`, blank, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
-value, then this method returns `true`.
+If the argument of the `value` parameter is `null`, blank, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method returns `true`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-CountNumberOfOccurrences-System-String,System-String,System-StringComparison-'></a>
 ### CountNumberOfOccurrences(target,text,comparison) `method`
 
 ##### Summary
 
-Counts the number of times that the specified `text` appears
-in the specified `target`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String').
+Counts the number of times that the specified `text` appears in the specified `target`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String').
 
 ##### Returns
 
-The number of times that the specified `text`
-appears in the specified `target`; otherwise, zero.
+The number of times that the specified `text` appears in the specified `target`; otherwise, zero.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') in which to
-search for the specified `text`. |
-| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-text for which to search in the `target`. |
-| comparison | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Optional.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
-defines how to perform the comparison of the `target` and
-`text`.
+| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') in which to search for the specified `text`. |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text for which to search in the `target`. |
+| comparison | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Optional.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that defines how to perform the comparison of the `target` and `text`.
 
 
 
-The default value of this parameter is
-[Ordinal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison.Ordinal 'System.StringComparison.Ordinal'). |
+The default value of this parameter is [Ordinal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison.Ordinal 'System.StringComparison.Ordinal'). |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-DoInitialCaps-System-String-'></a>
 ### DoInitialCaps(value) `method`
 
 ##### Summary
 
-Helper method to aid in transforming text casing of a string to
-Initial Caps.
+Helper method to aid in transforming text casing of a string to Initial Caps.
 
 ##### Returns
 
-Word provided in `value` with its first letter
-replaced with a capital letter and all the remaining letters as lowercase.
+Word provided in `value` with its first letter replaced with a capital letter and all the remaining letters as lowercase.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the word that needs to be
-initial-capitalized. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the word that needs to be initial-capitalized. |
 
 ##### Remarks
 
-If this method is provided with the empty or whitespace string, then
-this method returns the empty string.
+If this method is provided with the empty or whitespace string, then this method returns the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-DomainMapper-System-Text-RegularExpressions-Match-'></a>
 ### DomainMapper(match) `method`
@@ -12387,262 +12224,195 @@ Correctly-formatted domain-name matching value.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| match | [System.Text.RegularExpressions.Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') | Reference to an instance of
-[Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') that resulted from a
-regex search. |
+| match | [System.Text.RegularExpressions.Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') | Reference to an instance of [Match](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.Match 'System.Text.RegularExpressions.Match') that resulted from a regex search. |
 
 ##### Remarks
 
-This method also sets the value of the
-[IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid')
-property to `true` in the event that an error occurs.
+This method also sets the value of the [IsEmailAddressInvalid](#P-xyLOGIX-Core-Extensions-StringExtensions-IsEmailAddressInvalid 'xyLOGIX.Core.Extensions.StringExtensions.IsEmailAddressInvalid') property to `true` in the event that an error occurs.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-String[]-'></a>
 ### EndsWithAny(value,endings) `method`
 
 ##### Summary
 
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
-`endings`.
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified `endings`.
 
 ##### Returns
 
-`true` if the specified `value`
-ends with any of the specified `endings`;
-`false` otherwise.
+`true` if the specified `value` ends with any of the specified `endings`; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
-checked. |
-| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-elements, each of which is to be assessed against the specified
-`value` as being what it ends with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be checked. |
+| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') elements, each of which is to be assessed against the specified `value` as being what it ends with. |
 
 ##### Remarks
 
-This method returns `false` if no values are
-passed for
-`endings`.
+This method returns `false` if no values are passed for `endings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-StringComparison,System-String[]-'></a>
 ### EndsWithAny(value,comparisonType,endings) `method`
 
 ##### Summary
 
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
-`endings`.
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified `endings`.
 
 ##### Returns
 
-`true` if the specified `value`
-ends with any of the specified `endings`;
-`false` otherwise.
+`true` if the specified `value` ends with any of the specified `endings`; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
-checked. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
-specifies how the comparison is to be performed. |
-| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-elements, each of which is to be assessed against the specified
-`value` as being what it ends with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be checked. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that specifies how the comparison is to be performed. |
+| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') elements, each of which is to be assessed against the specified `value` as being what it ends with. |
 
 ##### Remarks
 
-This method returns `false` if no values are
-passed for
-`endings`.
+This method returns `false` if no values are passed for `endings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### EndsWithAny(value,endings) `method`
 
 ##### Summary
 
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
-`endings`.
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified `endings`.
 
 ##### Returns
 
-`true` if the specified `value`
-ends with any of the specified `endings`;
-`false` otherwise.
+`true` if the specified `value` ends with any of the specified `endings`; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
-checked. |
-| endings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-elements, each of which is to be assessed against the specified
-`value` as being what it ends with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be checked. |
+| endings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') elements, each of which is to be assessed against the specified `value` as being what it ends with. |
 
 ##### Remarks
 
-This method returns `false` if no values are
-passed for
-`endings`.
+This method returns `false` if no values are passed for `endings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAny-System-String,System-StringComparison,System-Collections-Generic-IEnumerable{System-String}-'></a>
 ### EndsWithAny(value,comparisonType,endings) `method`
 
 ##### Summary
 
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
-`endings`.
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified `endings`.
 
 ##### Returns
 
-`true` if the specified `value`
-ends with any of the specified `endings`;
-`false` otherwise.
+`true` if the specified `value` ends with any of the specified `endings`; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
-checked. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
-specifies how the comparison is to be performed. |
-| endings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-elements, each of which is to be assessed against the specified
-`value` as being what it ends with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be checked. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that specifies how the comparison is to be performed. |
+| endings | [System.Collections.Generic.IEnumerable{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{System.String}') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') elements, each of which is to be assessed against the specified `value` as being what it ends with. |
 
 ##### Remarks
 
-This method returns `false` if no values are
-passed for
-`endings`.
+This method returns `false` if no values are passed for `endings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-String[]-'></a>
 ### EndsWithAnyOf(value,endings) `method`
 
 ##### Summary
 
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
-`endings`.
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified `endings`.
 
 ##### Returns
 
-`true` if the specified `value`
-ends with any of the specified `endings`;
-`false` otherwise.
+`true` if the specified `value` ends with any of the specified `endings`; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
-checked. |
-| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-elements, each of which is to be assessed against the specified
-`value` as being what it ends with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be checked. |
+| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') elements, each of which is to be assessed against the specified `value` as being what it ends with. |
 
 ##### Remarks
 
-This method returns `false` if no values are
-passed for
-`endings`.
+This method returns `false` if no values are passed for `endings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithAnyOf-System-String,System-StringComparison,System-String[]-'></a>
 ### EndsWithAnyOf(value,comparisonType,endings) `method`
 
 ##### Summary
 
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified
-`endings`.
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` ends with any of the specified `endings`.
 
 ##### Returns
 
-`true` if the specified `value`
-ends with any of the specified `endings`;
-`false` otherwise.
+`true` if the specified `value` ends with any of the specified `endings`; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
-checked. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
-specifies how the comparison is to be performed. |
-| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-elements, each of which is to be assessed against the specified
-`value` as being what it ends with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be checked. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that specifies how the comparison is to be performed. |
+| endings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') elements, each of which is to be assessed against the specified `value` as being what it ends with. |
 
 ##### Remarks
 
-This method returns `false` if no values are
-passed for
-`endings`.
+This method returns `false` if no values are passed for `endings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithColonAndNumber-System-String-'></a>
 ### EndsWithColonAndNumber(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` ends with a colon
-and a number.
+Determines whether the specified `value` ends with a colon and a number.
 
 ##### Returns
 
-`true`if the specified `value` ends
-with a colon and a number; `false` otherwise.
+`true`if the specified `value` ends with a colon and a number; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to
-the value that is to be examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to the value that is to be examined. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EndsWithEqualsSign-System-String-'></a>
 ### EndsWithEqualsSign(value) `method`
 
 ##### Summary
 
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'),
-`value`, ends with an equals sign.
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), `value`, ends with an equals sign.
 
 ##### Returns
 
-`true` if the specified `value`
-ends with an equals sign; `false` otherwise.
+`true` if the specified `value` ends with an equals sign; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that is
-to be examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that is to be examined. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `value`, then this method returns
-`false`.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `value`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EnsureAtIsInFront-System-String-'></a>
 ### EnsureAtIsInFront(twitterSite) `method`
 
 ##### Summary
 
-Double-checks a `twitterSite` (at-mention) string
-to make sure it begins with the character '@'.
+Double-checks a `twitterSite` (at-mention) string to make sure it begins with the character '@'.
 
 ##### Returns
 
-String containing the same value as in
-`twitterSite` , but one which is guaranteed to start with the
-'@' character.
+String containing the same value as in `twitterSite` , but one which is guaranteed to start with the '@' character.
 
 ##### Parameters
 
@@ -12652,92 +12422,70 @@ String containing the same value as in
 
 ##### Remarks
 
-If this method is passed the empty string, then the result is the
-empty string.
+If this method is passed the empty string, then the result is the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOf-System-String,System-String[]-'></a>
 ### EqualsAnyOf(value,list) `method`
 
 ##### Summary
 
-Determines whether the specified `value` is equal to,
-respecting case, any of the item(s) in the specified `list`.
+Determines whether the specified `value` is equal to, respecting case, any of the item(s) in the specified `list`.
 
 ##### Returns
 
-`true` if one of the element(s) of the specified
-`list` matches the value, accounting for character casing;
-otherwise, `false`.
+`true` if one of the element(s) of the specified `list` matches the value, accounting for character casing; otherwise, `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-value that is to be examined. |
-| list | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-value(s) that are to be checked for equality without regard to case. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value that is to be examined. |
+| list | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) that are to be checked for equality without regard to case. |
 
 ##### Remarks
 
-If nothing is passed for the `list` parameter, then
-the method returns `false`.
+If nothing is passed for the `list` parameter, then the method returns `false`.
 
 
 
-If the value is the `null`, blank, or
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, and one of the element(s) of the
-`list` is also, then this method returns
-`true`.
+If the value is the `null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, and one of the element(s) of the `list` is also, then this method returns `true`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EqualsAnyOfNoCase-System-String,System-String[]-'></a>
 ### EqualsAnyOfNoCase(value,list) `method`
 
 ##### Summary
 
-Determines whether the specified `value` is equal to,
-regardless of case, any of the item(s) in the specified
-`list`.
+Determines whether the specified `value` is equal to, regardless of case, any of the item(s) in the specified `list`.
 
 
 
-A case-insensitive comparison is done of each of the element(s)
-in `list` to the specified `value`.
+A case-insensitive comparison is done of each of the element(s) in `list` to the specified `value`.
 
 ##### Returns
 
-`true` if one of the element(s) of the specified
-`list` matches the value, regardless of case; otherwise,
-`false`.
+`true` if one of the element(s) of the specified `list` matches the value, regardless of case; otherwise, `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-value that is to be examined. |
-| list | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-value(s) that are to be checked for equality without regard to case. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value that is to be examined. |
+| list | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) that are to be checked for equality without regard to case. |
 
 ##### Remarks
 
-If nothing is passed for the `list` parameter, then
-the method returns `false`.
+If nothing is passed for the `list` parameter, then the method returns `false`.
 
 
 
-If the value is the `null`, blank, or
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, and one of the element(s) of the
-`list` is also, then this method returns
-`true`.
+If the value is the `null`, blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, and one of the element(s) of the `list` is also, then this method returns `true`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EqualsNoCase-System-String,System-String-'></a>
 ### EqualsNoCase(str1,str2) `method`
 
 ##### Summary
 
-A case-insensitive equality comparer for strings. Basically, converts
-each of its operands to lowercase before comparing.
+A case-insensitive equality comparer for strings. Basically, converts each of its operands to lowercase before comparing.
 
 ##### Returns
 
@@ -12755,8 +12503,7 @@ Whether the two strings are the same, regardless of case.
 
 ##### Summary
 
-A case-insensitive equality comparer for strings. Basically, converts
-each of its operands to lowercase before comparing.
+A case-insensitive equality comparer for strings. Basically, converts each of its operands to lowercase before comparing.
 
 ##### Returns
 
@@ -12768,181 +12515,132 @@ Whether the two strings are the same, regardless of case.
 | ---- | ---- | ----------- |
 | str1 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | First string to compare. |
 | str2 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Second string to compare. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | One of the
-[StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) saying how the strings are to
-be compared. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) saying how the strings are to be compared. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EscapePowerShellNewline-System-String-'></a>
 ### EscapePowerShellNewline(value) `method`
 
 ##### Summary
 
-Escapes newlines (e.g., `\r\n`) in the provided `value`,
-assuming that it is destined to then be written to a PowerShell Script (
-`*.ps1`) file.
+Escapes newlines (e.g., `\r\n`) in the provided `value`, assuming that it is destined to then be written to a PowerShell Script ( `*.ps1`) file.
 
 
 
-This method is useful when you need to write a string to a PowerShell script
-file, and you want to ensure that the newlines (e.g., `\r\n`), within a
-value to be sent somewhere else, are properly escaped.
+This method is useful when you need to write a string to a PowerShell script file, and you want to ensure that the newlines (e.g., `\r\n`), within a value to be sent somewhere else, are properly escaped.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-specified `value`, but altered to properly escape newline(s)
-so that they are sent properly to whichever command the PowerShell Script (
-`*.ps1`) file is calling; otherwise, the method is idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the specified `value`, but altered to properly escape newline(s) so that they are sent properly to whichever command the PowerShell Script ( `*.ps1`) file is calling; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-original value. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the original value. |
 
 ##### Remarks
 
-If the `null` blank, or
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-`value` parameter, or if there is a problem completing the
-replacement, then the method is idempotent.
+If the `null` blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the `value` parameter, or if there is a problem completing the replacement, then the method is idempotent.
 
 
 
-This method is also idempotent when the text that is to be
-replaced is not present.
+This method is also idempotent when the text that is to be replaced is not present.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-EscapePowerShellQuotes-System-String-'></a>
 ### EscapePowerShellQuotes(value) `method`
 
 ##### Summary
 
-Escapes double-quotation marks in the provided `value`,
-assuming that it is destined to then be written to a PowerShell Script (
-`*.ps1`) file.
+Escapes double-quotation marks in the provided `value`, assuming that it is destined to then be written to a PowerShell Script ( `*.ps1`) file.
 
 
 
-This method is useful when you need to write a string to a PowerShell script
-file, and you want to ensure that the double-quotation marks (`"`) are
-properly escaped.
+This method is useful when you need to write a string to a PowerShell script file, and you want to ensure that the double-quotation marks (`"`) are properly escaped.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-specified `value`, but altered to properly escape
-double-quotation mark(s) so that they are sent properly to whichever command
-the PowerShell Script (`*.ps1`) file is calling; otherwise, the method is
-idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the specified `value`, but altered to properly escape double-quotation mark(s) so that they are sent properly to whichever command the PowerShell Script (`*.ps1`) file is calling; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-original value. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the original value. |
 
 ##### Remarks
 
-If the `null` blank, or
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-`value` parameter, or if there is a problem completing the
-replacement, then the method is idempotent.
+If the `null` blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the `value` parameter, or if there is a problem completing the replacement, then the method is idempotent.
 
 
 
-This method is also idempotent when the text that is to be
-replaced is not present.
+This method is also idempotent when the text that is to be replaced is not present.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ExcludingWhitespace-System-String-'></a>
 ### ExcludingWhitespace(value) `method`
 
 ##### Summary
 
-Excludes whitespace characters from the specified
-`value`.
+Excludes whitespace characters from the specified `value`.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that matches
-`value`, but with all whitespace characters removed.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that matches `value`, but with all whitespace characters removed.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') from which to
-exclude all whitespace characters. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') from which to exclude all whitespace characters. |
 
 ##### Remarks
 
-This method is useful for conducting whitespace-insensitive testing
-of strings.
+This method is useful for conducting whitespace-insensitive testing of strings.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ExtractUpToColon-System-String-'></a>
 ### ExtractUpToColon(value) `method`
 
 ##### Summary
 
-Extracts all characters of the specified `value` up to but
-not including the first occurrence of a colon (`:`).
+Extracts all characters of the specified `value` up to but not including the first occurrence of a colon (`:`).
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing all characters of the
-specified `value` up to but not including the first colon (
-`:`), if present.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing all characters of the specified `value` up to but not including the first colon ( `:`), if present.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to the value to be
-processed. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is set to the value to be processed. |
 
 ##### Remarks
 
-If the specified `value` is `null`,
-blank, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or does not contain a
-colon, then the method is idempotent.
+If the specified `value` is `null`, blank, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or does not contain a colon, then the method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-FirstOrNotEmpty-System-String,System-String-'></a>
 ### FirstOrNotEmpty(val1,val2) `method`
 
 ##### Summary
 
-Returns the specified `val2` if `val1` is
-`null` or a blank string; otherwise, `val1`
-is returned if both `val1` and `val2` are
-non-blank.
+Returns the specified `val2` if `val1` is `null` or a blank string; otherwise, `val1` is returned if both `val1` and `val2` are non-blank.
 
 ##### Returns
 
-Specified `val2` if `val1` is
-`null` or a blank string; otherwise, `val1`
-is returned if both `val1` and `val2` are
-non-blank.
+Specified `val2` if `val1` is `null` or a blank string; otherwise, `val1` is returned if both `val1` and `val2` are non-blank.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| val1 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the
-preferred value to be returned. |
-| val2 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose value is
-to be returned in the event that the argument of `val1` is
-`null`, whitespace, or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+| val1 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the preferred value to be returned. |
+| val2 | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') whose value is to be returned in the event that the argument of `val1` is `null`, whitespace, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-FormatAsHtml-System-String-'></a>
 ### FormatAsHtml(content) `method`
 
 ##### Summary
 
-Formats the specified `content` as HTML by replacing certain
-characters
-with their corresponding HTML entities.
+Formats the specified `content` as HTML by replacing certain characters with their corresponding HTML entities.
 
 ##### Returns
 
@@ -12952,8 +12650,7 @@ A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
-formatted as HTML. |
+| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be formatted as HTML. |
 
 ##### Remarks
 
@@ -12961,52 +12658,40 @@ This method replaces the following characters in the input string:
 
 
 
-In addition, this method also transforms 'smart' quotes, i.e., "curly" quotes,
-to 'straight' quotes before performing the reformat of single and double
-quotation marks.
+In addition, this method also transforms 'smart' quotes, i.e., "curly" quotes, to 'straight' quotes before performing the reformat of single and double quotation marks.
 
 
 
-If an exception occurs during the formatting process, then this method is
-idempotent.
+If an exception occurs during the formatting process, then this method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython-System-String,System-Object[]-'></a>
 ### FormatLikePython(value,args) `method`
 
 ##### Summary
 
-Provides a method to format a string in a more Pythonic manner, where we simply
-call `Format()` following the string to be formatted.
+Provides a method to format a string in a more Pythonic manner, where we simply call `Format()` following the string to be formatted.
 
 ##### Returns
 
-If successful, this method returns the specified
-`value`, with the format placeholders updated according to
-the specified `args`, if any; otherwise, the method is
-idempotent.
+If successful, this method returns the specified `value`, with the format placeholders updated according to the specified `args`, if any; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-value that is to be formatted. |
-| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Required.) Zero or more object(s) whose value(s) are to be
-substituted in for the format specifier(s) in the specified
-`value`. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value that is to be formatted. |
+| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Required.) Zero or more object(s) whose value(s) are to be substituted in for the format specifier(s) in the specified `value`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetCompactedString-System-String,System-Drawing-Font,System-Int32-'></a>
 ### GetCompactedString(stringToCompact,font,maxWidth) `method`
 
 ##### Summary
 
-Re-expresses strings with ellipsis (...) if they are longer than a
-certain length.
+Re-expresses strings with ellipsis (...) if they are longer than a certain length.
 
 ##### Returns
 
-Version of the string that has ellipsis (...) so as to fit within the
-given length.
+Version of the string that has ellipsis (...) so as to fit within the given length.
 
 ##### Parameters
 
@@ -13021,37 +12706,22 @@ given length.
 
 ##### Summary
 
-Gets the suffix of a so-called string, i.e.,
-`My.Dotted.String`, which is presumed to be passed as the argument of the
-`value` parameter.
+Gets the suffix of a so-called string, i.e., `My.Dotted.String`, which is presumed to be passed as the argument of the `value` parameter.
 
 
 
-For the example above, `.String` or `String` is the result of
-calling
-this method, depending on the value of the `includingDot`
-parameter.
+For the example above, `.String` or `String` is the result of calling this method, depending on the value of the `includingDot` parameter.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the final
-part, or , of the dotted string supplied as the argument to the
-`value` parameter. The result includes the `.` character
-if `includingDot` is set to `true`;
-otherwise,
-the result does not include the `.` character. If the input is invalid,
-the
-`value` parameter is idempotently returned.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the final part, or , of the dotted string supplied as the argument to the `value` parameter. The result includes the `.` character if `includingDot` is set to `true`; otherwise, the result does not include the `.` character. If the input is invalid, the `value` parameter is idempotently returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-text to be parsed. |
-| includingDot | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) `true` to make the resultant string include the
-`.` character at the start of the suffix; `false` to
-exclude the `.` character.
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be parsed. |
+| includingDot | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) `true` to make the resultant string include the `.` character at the start of the suffix; `false` to exclude the `.` character.
 
 
 
@@ -13062,230 +12732,167 @@ The default value of this parameter is `false`. |
 
 ##### Summary
 
-Gets the first `nChars` characters of the string
-`value` and returns them; returns the entire string
-`value` if the string is smaller than
-`nChars` characters in length.
+Gets the first `nChars` characters of the string `value` and returns them; returns the entire string `value` if the string is smaller than `nChars` characters in length.
 
 ##### Returns
 
-First `nChars` characters of the string in
-`value`; or, if `value` is shorter than
-`nChars` characters, the entire string that is passed in
-`value` is returned. If a problem occurred, the empty string
-is returned.
+First `nChars` characters of the string in `value`; or, if `value` is shorter than `nChars` characters, the entire string that is passed in `value` is returned. If a problem occurred, the empty string is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to pull the first `nChars`
-characters from. |
-| nChars | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Must be a positive number.) Number of characters from
-the start of the string to get. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | String to pull the first `nChars` characters from. |
+| nChars | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Must be a positive number.) Number of characters from the start of the string to get. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown if
-`nChars` has a zero or negative number value.
-`nChars` must be a positive number. |
+| [System.ArgumentOutOfRangeException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentOutOfRangeException 'System.ArgumentOutOfRangeException') | Thrown if `nChars` has a zero or negative number value. `nChars` must be a positive number. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstNonBlankLine-System-String-'></a>
 ### GetFirstNonBlankLine(value) `method`
 
 ##### Summary
 
-Gets the first non-blank line, if any, of a multi-line
-`value`, splitting on `CRLF`.
+Gets the first non-blank line, if any, of a multi-line `value`, splitting on `CRLF`.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that corresponds
-to the first non-blank line of the specified `value`,
-splitting on `CRLF`; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
-value is returned.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that corresponds to the first non-blank line of the specified `value`, splitting on `CRLF`; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-value for which the first line is to be obtained. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value for which the first line is to be obtained. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetFirstTwoNonBlankLines-System-String-'></a>
 ### GetFirstTwoNonBlankLines(value) `method`
 
 ##### Summary
 
-Gets the first two non-blank line(s), if any, of a multi-line
-`value`, splitting on `CRLF`.
+Gets the first two non-blank line(s), if any, of a multi-line `value`, splitting on `CRLF`.
 
 ##### Returns
 
-If the specified `value` has less than two non-blank
-line(s), then this method is idempotent.
+If the specified `value` has less than two non-blank line(s), then this method is idempotent.
 
 
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that corresponds to the
-first two non-blank line(s) of the specified `value`,
-splitting on `CRLF`; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
-value is returned.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that corresponds to the first two non-blank line(s) of the specified `value`, splitting on `CRLF`; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-value for which the first two non-blank line(s) are to be obtained. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value for which the first two non-blank line(s) are to be obtained. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetLanguageArticleText-xyLOGIX-Core-Extensions-LanguageArticleType,System-String-'></a>
 ### GetLanguageArticleText(type,text) `method`
 
 ##### Summary
 
-Determines whether the specified `text` starts with a vowel
-sound, and, if so, applies the specified `type`
-setting to determine the appropriate article, if any, to return.
+Determines whether the specified `text` starts with a vowel sound, and, if so, applies the specified `type` setting to determine the appropriate article, if any, to return.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the appropriate
-article, if any, based on the specified `type`
-setting and whether the specified `text` starts with a vowel
-sound; otherwise, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
-value.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the appropriate article, if any, based on the specified `type` setting and whether the specified `text` starts with a vowel sound; otherwise, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that
-indicates which article, if any, is to be returned. |
-| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
-parsed. |
+| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that indicates which article, if any, is to be returned. |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be parsed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetLastWord-System-String-'></a>
 ### GetLastWord(input) `method`
 
 ##### Summary
 
-Extracts the last initial-capped word from a fully-qualified class name or
-string containing a name such as `FooBarBaz` (in which case, it would
-return `Baz`).
+Extracts the last initial-capped word from a fully-qualified class name or string containing a name such as `FooBarBaz` (in which case, it would return `Baz`).
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the last
-initial-capped word in the `input`; otherwise, this method is
-idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the last initial-capped word in the `input`; otherwise, this method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| input | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-text that is to be parsed. |
+| input | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be parsed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetNonBlankLineCount-System-String-'></a>
 ### GetNonBlankLineCount(value) `method`
 
 ##### Summary
 
-Gets the count of the number of non-blank line(s) in the specified
-`value`, splitting on `CRLF`, if any.
+Gets the count of the number of non-blank line(s) in the specified `value`, splitting on `CRLF`, if any.
 
 ##### Returns
 
-The count of non-blank line(s) in the specified
-`value`, splitting on `CRLF`, or zero if, e.g., the
-specified `value` is blank, the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or `null`.
+The count of non-blank line(s) in the specified `value`, splitting on `CRLF`, or zero if, e.g., the specified `value` is blank, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or `null`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-value for which the non-blank line count is to be determined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value for which the non-blank line count is to be determined. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonFirstName-System-String-'></a>
 ### GetPersonFirstName(fullName) `method`
 
 ##### Summary
 
-Very na?ve determination of person first name 99.9% of the time,
-persons' names are // given as <First Name> <Rest>.
+Very na?ve determination of person first name 99.9% of the time, persons' names are // given as <First Name> <Rest>.
 
 ##### Returns
 
-String containing the first name of the person. Empty string if this
-method is passed the empty string as input.
+String containing the first name of the person. Empty string if this method is passed the empty string as input.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| fullName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String value containing the full name of
-the person. |
+| fullName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String value containing the full name of the person. |
 
 ##### Remarks
 
-Therefore, we can assume that, if we break the name field up by
-spaces, then everything before the first space is word of the first name. 
-This should even catch 'fancy' last name, such as "de la Haye." For instance,
-this method would read "Nathan de la Montoya" and return "Nathan," so our way
-of determining the last name is pretty safe, given the above assumptions and
-input patterns. If the empty string is passed as input to this method, then the
-empty string is returned.
+Therefore, we can assume that, if we break the name field up by spaces, then everything before the first space is word of the first name. This should even catch 'fancy' last name, such as "de la Haye." For instance, this method would read "Nathan de la Montoya" and return "Nathan," so our way of determining the last name is pretty safe, given the above assumptions and input patterns. If the empty string is passed as input to this method, then the empty string is returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-GetPersonLastName-System-String-'></a>
 ### GetPersonLastName(fullName) `method`
 
 ##### Summary
 
-Very na?ve determination of person last name. In our software
-consulting and tutoring practice, new clients tend to given their first and
-last name only when signing up --- about 99.9% of the time.
+Very na?ve determination of person last name. In our software consulting and tutoring practice, new clients tend to given their first and last name only when signing up --- about 99.9% of the time.
 
 ##### Returns
 
-String containing the first name of the person. Empty string if this
-method is passed the empty string as input.
+String containing the first name of the person. Empty string if this method is passed the empty string as input.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| fullName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String value containing the full name of
-the person. |
+| fullName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String value containing the full name of the person. |
 
 ##### Remarks
 
-Therefore, we can assume that, if we break the name field up by
-spaces, then everything after the first space is word of the last name. 
-This should even catch 'fancy' last name, such as "de la Haye." For instance,
-this method would read "Nathan de la Montoya" and return "de la Montoya," so
-our way of determining the last name is pretty safe, given the above
-assumptions and input patterns. If the empty string is passed as input, then
-the empty string is returned. If a string containing just one word is passed as
-input, a [InvalidDataException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IO.InvalidDataException 'System.IO.InvalidDataException') is thrown.
+Therefore, we can assume that, if we break the name field up by spaces, then everything after the first space is word of the last name. This should even catch 'fancy' last name, such as "de la Haye." For instance, this method would read "Nathan de la Montoya" and return "de la Montoya," so our way of determining the last name is pretty safe, given the above assumptions and input patterns. If the empty string is passed as input, then the empty string is returned. If a string containing just one word is passed as input, a [InvalidDataException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.IO.InvalidDataException 'System.IO.InvalidDataException') is thrown.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAbsolutePath-System-String-'></a>
 ### IsAbsolutePath(path) `method`
 
 ##### Summary
 
-Determines whether the specified `path` is a
-fully-qualified, absolute path or not.
+Determines whether the specified `path` is a fully-qualified, absolute path or not.
 
 ##### Returns
 
-`true` if the `path` specified is
-a fully-qualified, absolute path; `false` otherwise.
+`true` if the `path` specified is a fully-qualified, absolute path; `false` otherwise.
 
 ##### Parameters
 
@@ -13298,13 +12905,11 @@ a fully-qualified, absolute path; `false` otherwise.
 
 ##### Summary
 
-Determines whether the specified `path` is a
-fully-qualified, absolute path or not.
+Determines whether the specified `path` is a fully-qualified, absolute path or not.
 
 ##### Returns
 
-`true` if the `path` specified is
-a fully-qualified, absolute path; `false` otherwise.
+`true` if the `path` specified is a fully-qualified, absolute path; `false` otherwise.
 
 ##### Parameters
 
@@ -13317,8 +12922,7 @@ a fully-qualified, absolute path; `false` otherwise.
 
 ##### Summary
 
-Determines whether the current word in the text being parsed for a
-character-casing operation is
+Determines whether the current word in the text being parsed for a character-casing operation is
 
 ##### Returns
 
@@ -13340,112 +12944,87 @@ Determines whether the specified [String](http://msdn.microsoft.com/query/dev14.
 
 ##### Returns
 
-`true` if every character of the specified
-`value` is a letter or a digit, excluding any whitespace
-characters; `false` otherwise.
+`true` if every character of the specified `value` is a letter or a digit, excluding any whitespace characters; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to  be
-examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be examined. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericLowercase-System-String-'></a>
 ### IsAlphaNumericLowercase(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` is an
-alphanumeric [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of digits or
-lowercase letters (excluding whitespace).
+Determines whether the specified `value` is an alphanumeric [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of digits or lowercase letters (excluding whitespace).
 
 ##### Returns
 
-`true` if the specified `value`
-consists solely of either digits or lowercase letters (excluding whitespace);
-`false` otherwise.
+`true` if the specified `value` consists solely of either digits or lowercase letters (excluding whitespace); `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the text to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
 
 ##### Remarks
 
-If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a
-`null` reference is passed to this method, then this method
-returns `false`.
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null` reference is passed to this method, then this method returns `false`.
 
 
 
-If an error occurs during the check, then this method returns
-`false`.
+If an error occurs during the check, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsAlphaNumericUppercase-System-String-'></a>
 ### IsAlphaNumericUppercase(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` is an
-alphanumeric [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of digits or
-uppercase letters (excluding whitespace).
+Determines whether the specified `value` is an alphanumeric [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of digits or uppercase letters (excluding whitespace).
 
 ##### Returns
 
-`true` if the specified `value`
-consists solely of either digits or uppercase letters (excluding whitespace);
-`false` otherwise.
+`true` if the specified `value` consists solely of either digits or uppercase letters (excluding whitespace); `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the text to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
 
 ##### Remarks
 
-If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a
-`null` reference is passed to this method, then this method
-returns `false`.
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null` reference is passed to this method, then this method returns `false`.
 
 
 
-If an error occurs during the check, then this method returns
-`false`.
+If an error occurs during the check, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsBlankOrNull-System-String-'></a>
 ### IsBlankOrNull(value) `method`
 
 ##### Summary
 
-Gets a value that indicates whether the specified
-`value` is blank, only consists of whitespace, or a
-`null` reference.
+Gets a value that indicates whether the specified `value` is blank, only consists of whitespace, or a `null` reference.
 
 ##### Returns
 
-`true` if the specified `value` is
-blank, only consists of whitespace, or a `null` reference.
+`true` if the specified `value` is blank, only consists of whitespace, or a `null` reference.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that
-should be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value that should be checked. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsBooleanValue-System-String-'></a>
 ### IsBooleanValue(value) `method`
 
 ##### Summary
 
-Determines whether the specified text `value` is equal to
-either of the words `TRUE` or `FALSE` while performing a
-case-insensitive comparison.
+Determines whether the specified text `value` is equal to either of the words `TRUE` or `FALSE` while performing a case-insensitive comparison.
 
 
 
@@ -13453,39 +13032,28 @@ Whitespace is ignored.
 
 ##### Returns
 
-`true` if the text is equal to either `TRUE` or
-`FALSE` without regards to whitespace or character casing; otherwise,
-`false`.
+`true` if the text is equal to either `TRUE` or `FALSE` without regards to whitespace or character casing; otherwise, `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
-examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be examined. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `value`, then this method returns
-`false`.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `value`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsDecimal-System-String-'></a>
 ### IsDecimal(value) `method`
 
 ##### Summary
 
-Determines whether the `value` passed is a
-`decimal` number or not.
+Determines whether the `value` passed is a `decimal` number or not.
 
 ##### Returns
 
-`true` if the string passed in
-`value` is the string representation of a value that is in
-the range of the `decimal` data type; `false` otherwise.
-The method also returns `false` if it is passed the empty
-string.
+`true` if the string passed in `value` is the string representation of a value that is in the range of the `decimal` data type; `false` otherwise. The method also returns `false` if it is passed the empty string.
 
 ##### Parameters
 
@@ -13498,171 +13066,126 @@ string.
 
 ##### Summary
 
-Determines whether the specified text `value` is surrounded
-by double quotes.
+Determines whether the specified text `value` is surrounded by double quotes.
 
 ##### Returns
 
-`true` if the specified text
-`value` is surrounded by double quotes;
-`false` otherwise.
+`true` if the specified text `value` is surrounded by double quotes; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
-examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be examined. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `value`, then this method returns
-`false`.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `value`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsFolderPath-System-String-'></a>
 ### IsFolderPath(path) `method`
 
 ##### Summary
 
-Determines whether the specified `path` is the path
-to a folder or not.
+Determines whether the specified `path` is the path to a folder or not.
 
 ##### Returns
 
-`true` if the object at the specified pathname is a
-folder; `false` otherwise. If the specified pathname is blank,
-then this method simply returns `false`. If a file-system
-error occurs during the checking, `false` is also returned.
+`true` if the object at the specified pathname is a folder; `false` otherwise. If the specified pathname is blank, then this method simply returns `false`. If a file-system error occurs during the checking, `false` is also returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the fully-qualified pathname
-of the file-system entry to be checked. |
+| path | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the fully-qualified pathname of the file-system entry to be checked. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter,
-`path`, is passed a blank or `null` string
-for a value. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if the required parameter, `path`, is passed a blank or `null` string for a value. |
 
 ##### Remarks
 
-Note the exact words of the Returns statement: "if the object at the
-specified pathname is a folder." So if you pass in the phrase, "Hello, world,"
-it will be rejected.
+Note the exact words of the Returns statement: "if the object at the specified pathname is a folder." So if you pass in the phrase, "Hello, world," it will be rejected.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsLowercase-System-String-'></a>
 ### IsLowercase(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` is a
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of lowercase letters
-(excluding whitespace).
+Determines whether the specified `value` is a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of lowercase letters (excluding whitespace).
 
 ##### Returns
 
-`true` if the specified `value`
-consists solely of lowercase letters (excluding whitespace);
-`false` otherwise.
+`true` if the specified `value` consists solely of lowercase letters (excluding whitespace); `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the text to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
 
 ##### Remarks
 
-If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a
-`null` reference is passed to this method, then this method
-returns `false`.
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null` reference is passed to this method, then this method returns `false`.
 
 
 
-If an error occurs during the check, then this method returns
-`false`.
+If an error occurs during the check, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsNumeric-System-String-'></a>
 ### IsNumeric(value) `method`
 
 ##### Summary
 
-Determines whether the specified text `value` is a
-representation of a numeric quantity (using Arabic numerals) or not.
+Determines whether the specified text `value` is a representation of a numeric quantity (using Arabic numerals) or not.
 
 ##### Returns
 
-`true` if the specified text `value` is a
-representation of a numeric quantity (using Arabic numerals);
-`false` otherwise.
+`true` if the specified text `value` is a representation of a numeric quantity (using Arabic numerals); `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
-the text that is to be examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the text that is to be examined. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
-the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `value`, then this method returns
-`false`.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `value`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsNumericValue-System-String-'></a>
 ### IsNumericValue(value) `method`
 
 ##### Summary
 
-Determines whether the `value` passed is the string
-representation of a 32-bit `int` or not.
+Determines whether the `value` passed is the string representation of a 32-bit `int` or not.
 
 ##### Returns
 
-`true` if the string passed in
-`value` is the string representation of a value that is in
-the range of the 32-bit `int` data type; `false`
-otherwise. The method also returns `false` if it is passed the
-empty string.
+`true` if the string passed in `value` is the string representation of a value that is in the range of the 32-bit `int` data type; `false` otherwise. The method also returns `false` if it is passed the empty string.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the text that is to be examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be examined. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `value`, then this method returns
-`false`.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `value`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsNumericVerbose-System-String-'></a>
 ### IsNumericVerbose(value) `method`
 
 ##### Summary
 
-Determines whether the `value` passed is the string
-representation of a 32-bit `int` or not.
+Determines whether the `value` passed is the string representation of a 32-bit `int` or not.
 
 ##### Returns
 
-`true` if the string passed in
-`value` is the string representation of a value that is in
-the range of the 32-bit `int` data type; `false`
-otherwise. The method also returns `false` if it is passed the
-empty string.
+`true` if the string passed in `value` is the string representation of a value that is in the range of the 32-bit `int` data type; `false` otherwise. The method also returns `false` if it is passed the empty string.
 
 ##### Parameters
 
@@ -13675,14 +13198,11 @@ empty string.
 
 ##### Summary
 
-Performs a culture-invariant, case-insensitive, OR match of the
-`value` against the `choices` provided.
+Performs a culture-invariant, case-insensitive, OR match of the `value` against the `choices` provided.
 
 ##### Returns
 
-`true` if the string `value`
-matches one or more of the `choices`;
-`false` otherwise.
+`true` if the string `value` matches one or more of the `choices`; `false` otherwise.
 
 ##### Parameters
 
@@ -13693,17 +13213,14 @@ matches one or more of the `choices`;
 
 ##### Remarks
 
-If `value` is the empty string, or if
-`choices` is the empty collection, then this method returns
-`false`.
+If `value` is the empty string, or if `choices` is the empty collection, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsRomanNumerals-System-String-'></a>
 ### IsRomanNumerals(value) `method`
 
 ##### Summary
 
-Determines whether the passed [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') contains Roman
-numerals.
+Determines whether the passed [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') contains Roman numerals.
 
 ##### Returns
 
@@ -13720,37 +13237,28 @@ TRUE if the value contains Roman numerals; FALSE otherwise.
 
 ##### Summary
 
-Determines whether the specified text `value` is surrounded
-by single quotes.
+Determines whether the specified text `value` is surrounded by single quotes.
 
 ##### Returns
 
-`true` if the specified text
-`value` is surrounded by single quotes;
-`false` otherwise.
+`true` if the specified text `value` is surrounded by single quotes; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be
-examined. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be examined. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `value`, then this method returns
-`false`.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `value`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsSpecialWordAtBeginningOfPhrase-System-String[],System-String-'></a>
 ### IsSpecialWordAtBeginningOfPhrase(words,currentWord) `method`
 
 ##### Summary
 
-Gets a value indicating whether a special word, such as 'The' or
-'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and still needs
-to be initial-capitalized.
+Gets a value indicating whether a special word, such as 'The' or 'Dr.' or 'Mr.' or 'Ms.' or 'A' etc. is the first word of a word and still needs to be initial-capitalized.
 
 ##### Returns
 
@@ -13768,103 +13276,79 @@ to be initial-capitalized.
 
 ##### Summary
 
-Determines whether the current element in the list of words being
-parsed (as part of a character-casing operation) is the component of common
-names for US streets.
+Determines whether the current element in the list of words being parsed (as part of a character-casing operation) is the component of common names for US streets.
 
 ##### Returns
 
-`true` if the current word belongs as part of the
-name of common US streets; `false` otherwise.
+`true` if the current word belongs as part of the name of common US streets; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| array | [System.Collections.Generic.IReadOnlyList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IReadOnlyList 'System.Collections.Generic.IReadOnlyList{System.String}') | (Required.) Collection of words from the text being
-parsed. |
-| i | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Index into the `array` of the
-current word being parsed. |
+| array | [System.Collections.Generic.IReadOnlyList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IReadOnlyList 'System.Collections.Generic.IReadOnlyList{System.String}') | (Required.) Collection of words from the text being parsed. |
+| i | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Index into the `array` of the current word being parsed. |
 
 ##### Remarks
 
-If this method is provided with the empty collection or an array
-index outside the bounds of the collection, then this method returns
-`false`.
+If this method is provided with the empty collection or an array index outside the bounds of the collection, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsUppercase-System-String-'></a>
 ### IsUppercase(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` is a
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of uppercase letters
-(excluding whitespace).
+Determines whether the specified `value` is a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that consists solely of uppercase letters (excluding whitespace).
 
 ##### Returns
 
-`true` if the specified `value`
-consists solely of uppercase letters (excluding whitespace);
-`false` otherwise.
+`true` if the specified `value` consists solely of uppercase letters (excluding whitespace); `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the text to be checked. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be checked. |
 
 ##### Remarks
 
-If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a
-`null` reference is passed to this method, then this method
-returns `false`.
+If a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') or a `null` reference is passed to this method, then this method returns `false`.
 
 
 
-If an error occurs during the check, then this method returns
-`false`.
+If an error occurs during the check, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsValidAssetSymbol-System-String-'></a>
 ### IsValidAssetSymbol(symbol) `method`
 
 ##### Summary
 
-Determines whether the specified `symbol` string contains a
-properly-formatted asset symbol, such as `FB`, `00`, `1INCH`,
-`cBETH` etc.
+Determines whether the specified `symbol` string contains a properly-formatted asset symbol, such as `FB`, `00`, `1INCH`, `cBETH` etc.
 
 ##### Returns
 
-`true` if the specified `symbol` is
-of the proper format; `false` otherwise.
+`true` if the specified `symbol` is of the proper format; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| symbol | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the text, whose format is to be validated. |
+| symbol | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text, whose format is to be validated. |
 
 ##### Remarks
 
-If the `symbol` parameter is passed a
-`null` reference, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')
-value, or a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing only whitespace, then the
-method returns `false`.
+If the `symbol` parameter is passed a `null` reference, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing only whitespace, then the method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsValidEmail-System-String-'></a>
 ### IsValidEmail(value) `method`
 
 ##### Summary
 
-Validates whether `value` is a valid email address
-or not.
+Validates whether `value` is a valid email address or not.
 
 ##### Returns
 
-true if the string contains a valid email address value; false
-otherwise.
+true if the string contains a valid email address value; false otherwise.
 
 ##### Parameters
 
@@ -13877,43 +13361,32 @@ otherwise.
 
 ##### Summary
 
-Determines if the specified `value` is a string that contains
-a globally-unique identifier (GUID) that is in all lowercase with no
-surrounding curly braces; e.g., for example,
-`b68d770b-8e37-4a20-b2cc-6cbc2ef4f136`.
+Determines if the specified `value` is a string that contains a globally-unique identifier (GUID) that is in all lowercase with no surrounding curly braces; e.g., for example, `b68d770b-8e37-4a20-b2cc-6cbc2ef4f136`.
 
 ##### Returns
 
-`true` if the contents of `value`
-consists of a single GUID that is in all lowercase with no surrounding curly
-braces; `false` otherwise.
+`true` if the contents of `value` consists of a single GUID that is in all lowercase with no surrounding curly braces; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-data to be validated. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the data to be validated. |
 
 ##### Remarks
 
-This method returns `false` if the argument of the
-`value` parameter is a `null` reference or
-consists of only whitespace characters, or is the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+This method returns `false` if the argument of the `value` parameter is a `null` reference or consists of only whitespace characters, or is the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-IsVowelSound-System-String-'></a>
 ### IsVowelSound(text) `method`
 
 ##### Summary
 
-Determines if the first word of the phrase begins with a vowel sound
-for the purposes of choosing between the indefinite articles 'a' or 'an'.
+Determines if the first word of the phrase begins with a vowel sound for the purposes of choosing between the indefinite articles 'a' or 'an'.
 
 ##### Returns
 
-`true` if the first word begins with a vowel sound; otherwise,
-`false`.
+`true` if the first word begins with a vowel sound; otherwise, `false`.
 
 ##### Parameters
 
@@ -13926,48 +13399,33 @@ for the purposes of choosing between the indefinite articles 'a' or 'an'.
 
 ##### Summary
 
-Concatenates each element of `values` using the
-specified `separator`.
+Concatenates each element of `values` using the specified `separator`.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') representing the concatenated result,
-or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value on failure.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') representing the concatenated result, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value on failure.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| values | [System.Collections.Generic.IList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{System.String}') | (Required.) A collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') instances to
-concatenate. |
-| separator | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to insert between
-adjacent elements of `values`.  If
-`null`, it is treated as the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+| values | [System.Collections.Generic.IList{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IList 'System.Collections.Generic.IList{System.String}') | (Required.) A collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') instances to concatenate. |
+| separator | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to insert between adjacent elements of `values`. If `null`, it is treated as the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
 
 ##### Remarks
 
-The method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value if
-`values` is `null` or contains no
-elements.
+The method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value if `values` is `null` or contains no elements.
 
 
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `separator`, then this method assumes that the
-separator is the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `separator`, then this method assumes that the separator is the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Left-System-String,System-Int32-'></a>
 ### Left(value,count) `method`
 
 ##### Summary
 
-Returns the first `count` characters of
-`value`.
-If the source string is `null`,
-empty, or shorter than `count`, the original string (or
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')) is returned.
+Returns the first `count` characters of `value`. If the source string is `null`, empty, or shorter than `count`, the original string (or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty')) is returned.
 
 ##### Returns
 
@@ -13989,144 +13447,108 @@ Must be a natural number and less than or equal to the length of the string. |
 
 ##### Summary
 
-Assuming that the specified `pluralWord` contains a plural
-pluralWord, this method will attempt to make it singular.
+Assuming that the specified `pluralWord` contains a plural pluralWord, this method will attempt to make it singular.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-singular version of the specified `pluralWord`; otherwise,
-the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') pluralWord.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the singular version of the specified `pluralWord`; otherwise, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') pluralWord.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pluralWord | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') contaiing
-the pluralWord to make singular. |
+| pluralWord | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') contaiing the pluralWord to make singular. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
-the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `pluralWord`, then this method is idempotent.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `pluralWord`, then this method is idempotent.
 
 
 
-This method is also idempotent if the operation cannot be completed
-successfully.
+This method is also idempotent if the operation cannot be completed successfully.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesNoCase-System-String,System-String-'></a>
 ### MatchesNoCase(stringToSearch,findWhat) `method`
 
 ##### Summary
 
-Determines whether the `stringToSearch` contains
-the text in the `findWhat` parameter, in a case-insensitive
-fashion.
+Determines whether the `stringToSearch` contains the text in the `findWhat` parameter, in a case-insensitive fashion.
 
 ##### Returns
 
-`true` if the case-insensitive search determines
-that the `stringToSearch` value(s) contains one or more
-instances of the `findWhat` text; `false`
-otherwise.
+`true` if the case-insensitive search determines that the `stringToSearch` value(s) contains one or more instances of the `findWhat` text; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-value containing the text that is to be searched. |
-| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the text that is to be located within the `stringToSearch`. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value containing the text that is to be searched. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be located within the `stringToSearch`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-MatchesWithCase-System-String,System-String-'></a>
 ### MatchesWithCase(stringToSearch,findWhat) `method`
 
 ##### Summary
 
-Determines whether the `stringToSearch` contains
-the text in the `findWhat` parameter, in a case-sensitive
-fashion.
+Determines whether the `stringToSearch` contains the text in the `findWhat` parameter, in a case-sensitive fashion.
 
 ##### Returns
 
-`true` if the case-sensitive search determines that
-the `stringToSearch` value(s) contains instances of the
-`findWhat` text; `false` otherwise.
+`true` if the case-sensitive search determines that the `stringToSearch` value(s) contains instances of the `findWhat` text; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-value containing the text that is to be searched. |
-| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the text that is to be located within the `stringToSearch`. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value containing the text that is to be searched. |
+| findWhat | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be located within the `stringToSearch`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-NormalizeLineEndingsToWindows-System-String-'></a>
 ### NormalizeLineEndingsToWindows(content) `method`
 
 ##### Summary
 
-Normalizes all line ending(s) in the specified `content` to
-Windows-style line ending(s), i.e., `\r\n`.
+Normalizes all line ending(s) in the specified `content` to Windows-style line ending(s), i.e., `\r\n`.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-`content` with all line ending(s) normalized to
-Windows-style (`\r\n`) line ending(s); otherwise, the method is
-idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the `content` with all line ending(s) normalized to Windows-style (`\r\n`) line ending(s); otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text whose line
-ending(s) are to be normalized to Windows-style line ending(s). |
+| content | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text whose line ending(s) are to be normalized to Windows-style line ending(s). |
 
 ##### Remarks
 
-This method first normalizes all line ending variants — including `\r\n`
-(Windows), `\r` (legacy Mac), and `\n` (Unix/Linux) — to a single
-`\n` character, and then replaces each `\n` with
-[NewLine](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Environment.NewLine 'System.Environment.NewLine'), which on Windows is `\r\n`.
+This method first normalizes all line ending variants — including `\r\n` (Windows), `\r` (legacy Mac), and `\n` (Unix/Linux) — to a single `\n` character, and then replaces each `\n` with [NewLine](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Environment.NewLine 'System.Environment.NewLine'), which on Windows is `\r\n`.
 
 
 
-If an exception is caught during the normalization process, then this method is
-idempotent; i.e., the original `content` value is returned
-unchanged.
+If an exception is caught during the normalization process, then this method is idempotent; i.e., the original `content` value is returned unchanged.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String,System-Globalization-CultureInfo-'></a>
 ### PluralizeWord(word,culture) `method`
 
 ##### Summary
 
-Pluralizes the word passed in, applying language rules from the
-specified `culture`.
+Pluralizes the word passed in, applying language rules from the specified `culture`.
 
 ##### Returns
 
-The `word` if it is already plural; otherwise, a
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the plural version of the
-`word`.
+The `word` if it is already plural; otherwise, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the plural version of the `word`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | word | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Word to be pluralized. |
-| culture | [System.Globalization.CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') | Specifies the
-[CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') value to use when applying
-language rules. |
+| culture | [System.Globalization.CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') | Specifies the [CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') value to use when applying language rules. |
 
 ##### Remarks
 
-If the empty string is passed for `word`, then this
-method returns the empty string.
+If the empty string is passed for `word`, then this method returns the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-PluralizeWord-System-String-'></a>
 ### PluralizeWord(word) `method`
@@ -14137,9 +13559,7 @@ Pluralizes the word passed in, using the current UI culture.
 
 ##### Returns
 
-The `word` if it is already plural; otherwise, a
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the plural version of the
-`word`.
+The `word` if it is already plural; otherwise, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the plural version of the `word`.
 
 ##### Parameters
 
@@ -14149,138 +13569,103 @@ The `word` if it is already plural; otherwise, a
 
 ##### Remarks
 
-If the empty string is passed for `word`, then this
-method returns the empty string.
+If the empty string is passed for `word`, then this method returns the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-PostfixFormat-System-String,System-Object[]-'></a>
 ### PostfixFormat(value,args) `method`
 
 ##### Summary
 
-More Pythonic version of the
-[FormatLikePython](#M-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython 'xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython')
-method, which you can put after a string literal or
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variable to format a string.
+More Pythonic version of the [FormatLikePython](#M-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython 'xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython') method, which you can put after a string literal or [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') variable to format a string.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the result of the formatting
-operation, or idempotent if the format operation could not be carried out, or
-if no format values were provided in the `args` parameter.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the result of the formatting operation, or idempotent if the format operation could not be carried out, or if no format values were provided in the `args` parameter.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-optionally contains one or more format placeholder(s). |
-| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) One or more format values to be substituted in
-the corresponding locations in the specified `value`. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that optionally contains one or more format placeholder(s). |
+| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) One or more format values to be substituted in the corresponding locations in the specified `value`. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-PrependBang-System-String-'></a>
 ### PrependBang(value) `method`
 
 ##### Summary
 
-Prepends a bang (`!`) character before the specified
-`value`, and then returns the result.
+Prepends a bang (`!`) character before the specified `value`, and then returns the result.
 
 ##### Returns
 
-If successful, the argument of the `value`
-parameter, with a bang (`!`) character prepended; otherwise, the method is
-idempotent.
+If successful, the argument of the `value` parameter, with a bang (`!`) character prepended; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-value to which a bang (`!`) character is to be prepended. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which a bang (`!`) character is to be prepended. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-PrependLanguageArticle-System-String,xyLOGIX-Core-Extensions-LanguageArticleType-'></a>
 ### PrependLanguageArticle(value,type) `method`
 
 ##### Summary
 
-Prepends the specified `value` with the text of the language
-article specified by the `type` parameter.
+Prepends the specified `value` with the text of the language article specified by the `type` parameter.
 
 ##### Returns
 
-If successful, the argument of the `value` parameter, with
-the language article specified by the `type` parameter
-prepended; otherwise, the method is idempotent.
+If successful, the argument of the `value` parameter, with the language article specified by the `type` parameter prepended; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which the
-language article is to be prepended. |
-| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that
-specifies the type of language article to prepend. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which the language article is to be prepended. |
+| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that specifies the type of language article to prepend. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesNoCase-System-String,System-String-'></a>
 ### RegexMatchesNoCase(stringToSearch,regex) `method`
 
 ##### Summary
 
-Determines whether the specified `stringToSearch`
-matches the regular expression specified by the `regex`
-parameter's value, without regards to upper- or lower-case.
+Determines whether the specified `stringToSearch` matches the regular expression specified by the `regex` parameter's value, without regards to upper- or lower-case.
 
 ##### Returns
 
-If even one match is found by the `regex`, returns
-`true`. Otherwise, if one or both of the required parameters
-are blank or `null`, or if no matches are found by the
-`regex`, then this method returns `false`.
+If even one match is found by the `regex`, returns `true`. Otherwise, if one or both of the required parameters are blank or `null`, or if no matches are found by the `regex`, then this method returns `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be
-searched for a match. |
-| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that
-expresses the criteria to be used for matching. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be searched for a match. |
+| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that expresses the criteria to be used for matching. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexMatchesWithCase-System-String,System-String-'></a>
 ### RegexMatchesWithCase(stringToSearch,regex) `method`
 
 ##### Summary
 
-Determines whether the specified `stringToSearch`
-matches the regular expression specified by the `regex`
-parameter's value, respecting case.
+Determines whether the specified `stringToSearch` matches the regular expression specified by the `regex` parameter's value, respecting case.
 
 ##### Returns
 
-If even one match is found by the `regex`, returns
-`true`. Otherwise, if one or both of the required parameters
-are blank or `null`, or if no matches are found by the
-`regex`, then this method returns `false`.
+If even one match is found by the `regex`, returns `true`. Otherwise, if one or both of the required parameters are blank or `null`, or if no matches are found by the `regex`, then this method returns `false`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be
-searched for a match. |
-| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that
-expresses the criteria to be used for matching. |
+| stringToSearch | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be searched for a match. |
+| regex | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the regular expression that expresses the criteria to be used for matching. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String-'></a>
 ### RegexReplaceNoCase(value,search,replacement) `method`
 
 ##### Summary
 
-Replaces the string specified by `search` by the
-`replacement` string in the `value` . The
-`search` parameter may contain a Regular Expression (regex).
-Case is ignored.
+Replaces the string specified by `search` by the `replacement` string in the `value` . The `search` parameter may contain a Regular Expression (regex). Case is ignored.
 
 ##### Returns
 
@@ -14290,31 +13675,22 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
-and replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
-string. May contain a regular expression. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
-found occurrences of `search` are to be substituted with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string. May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of `search` are to be substituted with. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
-parameters, `value`, `search`, or
-`replacement`, are passed blank or `null`
-strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`, `search`, or `replacement`, are passed blank or `null` strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceNoCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions-'></a>
 ### RegexReplaceNoCase(value,search,replacement,options) `method`
 
 ##### Summary
 
-Replaces the string specified by `search` by the
-`replacement` string in the `value` . The
-`search` parameter may contain a Regular Expression (regex).
-Case is ignored.
+Replaces the string specified by `search` by the `replacement` string in the `value` . The `search` parameter may contain a Regular Expression (regex). Case is ignored.
 
 ##### Returns
 
@@ -14324,45 +13700,31 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
-and replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
-string. May contain a regular expression. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
-found occurrences of `search` are to be substituted with. |
-| options | [System.Text.RegularExpressions.RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') | (Required.) A bitwise combination of the
-[RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') enumeration values
-that provide options for matching. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string. May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of `search` are to be substituted with. |
+| options | [System.Text.RegularExpressions.RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') | (Required.) A bitwise combination of the [RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') enumeration values that provide options for matching. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
-parameters, `value`, `search`, or
-`replacement`, are passed blank or `null`
-strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`, `search`, or `replacement`, are passed blank or `null` strings for values. |
 
 ##### Remarks
 
-This overload allows specification of options in the
-`options` parameter.
+This overload allows specification of options in the `options` parameter.
 
 
 
-The
-[IgnoreCase](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions.IgnoreCase 'System.Text.RegularExpressions.RegexOptions.IgnoreCase')
-enumeration value is combined with whatever else is provided in the
-`options` parameter by default.
+The [IgnoreCase](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions.IgnoreCase 'System.Text.RegularExpressions.RegexOptions.IgnoreCase') enumeration value is combined with whatever else is provided in the `options` parameter by default.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String-'></a>
 ### RegexReplaceWithCase(value,search,replacement) `method`
 
 ##### Summary
 
-Replaces the string specified by `search` by the
-`replacement` string in the `value` . The
-`search` parameter may contain a Regular Expression (regex).
+Replaces the string specified by `search` by the `replacement` string in the `value` . The `search` parameter may contain a Regular Expression (regex).
 
 ##### Returns
 
@@ -14372,30 +13734,22 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
-and replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
-string. May contain a regular expression. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
-found occurrences of `search` are to be substituted with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string. May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of `search` are to be substituted with. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
-parameters, `value`, `search`, or
-`replacement`, are passed blank or `null`
-strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`, `search`, or `replacement`, are passed blank or `null` strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RegexReplaceWithCase-System-String,System-String,System-String,System-Text-RegularExpressions-RegexOptions-'></a>
 ### RegexReplaceWithCase(value,search,replacement,options) `method`
 
 ##### Summary
 
-Replaces the string specified by `search` by the
-`replacement` string in the `value` . The
-`search` parameter may contain a Regular Expression (regex).
+Replaces the string specified by `search` by the `replacement` string in the `value` . The `search` parameter may contain a Regular Expression (regex).
 
 ##### Returns
 
@@ -14405,44 +13759,31 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
-and replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
-string. May contain a regular expression. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
-found occurrences of `search` are to be substituted with. |
-| options | [System.Text.RegularExpressions.RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') | (Required.) A bitwise combination of the
-[RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') enumeration values
-that provide options for matching. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string. May contain a regular expression. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of `search` are to be substituted with. |
+| options | [System.Text.RegularExpressions.RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') | (Required.) A bitwise combination of the [RegexOptions](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Text.RegularExpressions.RegexOptions 'System.Text.RegularExpressions.RegexOptions') enumeration values that provide options for matching. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
-parameters, `value`, `search`, or
-`replacement`, are passed blank or `null`
-strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`, `search`, or `replacement`, are passed blank or `null` strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveAmpersands-System-String-'></a>
 ### RemoveAmpersands(value) `method`
 
 ##### Summary
 
-Removes all ampersand (`&`) character(s) from the specified
-`value`.
+Removes all ampersand (`&`) character(s) from the specified `value`.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the same as the input
-`value`, but with all ampersand (`&`) character(s)
-removed.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the same as the input `value`, but with all ampersand (`&`) character(s) removed.
 
 
 
-If the input `value` is `null`, empty, or
-consists only of whitespace characters, then the return value is the same as
-the input `value`.
+If the input `value` is `null`, empty, or consists only of whitespace characters, then the return value is the same as the input `value`.
 
 
 
@@ -14452,16 +13793,14 @@ If another sort of issue occurs, then this method is also idempotent.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value from which
-the ampersand (`&`) character(s) are to be removed. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value from which the ampersand (`&`) character(s) are to be removed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveDigitsAndPunctuation-System-String-'></a>
 ### RemoveDigitsAndPunctuation(value) `method`
 
 ##### Summary
 
-Strips all punctuation and numeric digits from a string and trims the
-result.
+Strips all punctuation and numeric digits from a string and trims the result.
 
 ##### Returns
 
@@ -14475,49 +13814,39 @@ String after transformation.
 
 ##### Remarks
 
-If the empty string is passed to `value`, then the
-empty string is returned.
+If the empty string is passed to `value`, then the empty string is returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveErrorPrefix-System-String-'></a>
 ### RemoveErrorPrefix(message) `method`
 
 ##### Summary
 
-Removes the `*** ERROR *** ` prefix from the specified
-`message`, and then returns the altered content.
+Removes the `*** ERROR ***` prefix from the specified `message`, and then returns the altered content.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-specified `message` without the `*** ERROR *** ` prefix;
-otherwise, the method is idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the specified `message` without the `*** ERROR ***` prefix; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| message | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing
-the message that is to be altered. |
+| message | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the message that is to be altered. |
 
 ##### Remarks
 
-If the specified `message` does not contain the
-`*** ERROR *** ` prefix, then this method is idempotent.
+If the specified `message` does not contain the `*** ERROR ***` prefix, then this method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveExtraEmptyLines-System-String-'></a>
 ### RemoveExtraEmptyLines(value) `method`
 
 ##### Summary
 
-Removes any extra blank lines from the end of the specified
-`value`.
+Removes any extra blank lines from the end of the specified `value`.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with extra blank lines removed from the end.
-If
-`value` is `null` or only whitespace,
-returns [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with extra blank lines removed from the end. If `value` is `null` or only whitespace, returns [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty').
 
 ##### Parameters
 
@@ -14534,11 +13863,7 @@ Removes the last word from the specified space-delimited phrase.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing all but the final word of
-`text`. If `text` contains only
-one word, the empty string is returned.
-If `text` is `null` or whitespace,
-the original value is returned.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing all but the final word of `text`. If `text` contains only one word, the empty string is returned. If `text` is `null` or whitespace, the original value is returned.
 
 ##### Parameters
 
@@ -14555,9 +13880,7 @@ Removes all period(s) from the specified `value`.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing none of the
-period(s) that were formerly in the specified `value`;
-otherwise, the method is idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing none of the period(s) that were formerly in the specified `value`; otherwise, the method is idempotent.
 
 ##### Parameters
 
@@ -14574,9 +13897,7 @@ Removes all space(s) from the specified `value`.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing none of the
-space(s) that were formerly in the specified `value`;
-otherwise, the method is idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing none of the space(s) that were formerly in the specified `value`; otherwise, the method is idempotent.
 
 ##### Parameters
 
@@ -14586,173 +13907,128 @@ otherwise, the method is idempotent.
 
 ##### Remarks
 
-If the specified `value` is `null`,
-the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, devoid of space character(s),
-then this method is idempotent.
+If the specified `value` is `null`, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, devoid of space character(s), then this method is idempotent.
 
 
 
-In the specific scenario where the string is not the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, not `null`, but
-otherwise consists only of whitespace, then this method returns the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+In the specific scenario where the string is not the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, not `null`, but otherwise consists only of whitespace, then this method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RemoveTrailingBackslashes-System-String-'></a>
 ### RemoveTrailingBackslashes(value) `method`
 
 ##### Summary
 
-Removes any trailing `\` characters from the string provided in
-`value`.
+Removes any trailing `\` characters from the string provided in `value`.
 
 ##### Returns
 
-Same as `value`, but with no trailing backslash
-characters.
+Same as `value`, but with no trailing backslash characters.
 
 
 
-If the `value` parameter's argument has no trailing backslash
-characters to begin with, then this method is idempotent.
+If the `value` parameter's argument has no trailing backslash characters to begin with, then this method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value to be stripped of
-trailing backslash characters. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value to be stripped of trailing backslash characters. |
 
 ##### Remarks
 
-If the argument of the `value` parameter is blank
-or `null`, then the method is idempotent.
+If the argument of the `value` parameter is blank or `null`, then the method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-String,System-String,System-StringComparison-'></a>
 ### Replace(source,oldValue,newValue,comparisonType) `method`
 
 ##### Summary
 
-Replaces all occurrences of `oldValue` with
-`newValue`, using
-`comparisonType` to control the matching logic.
+Replaces all occurrences of `oldValue` with `newValue`, using `comparisonType` to control the matching logic.
 
 ##### Returns
 
-A new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all appropriate
-replacements applied, or the original
-`source` if no replacements were made or if
-validation failed.
+A new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all appropriate replacements applied, or the original `source` if no replacements were made or if validation failed.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The original [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to
-operate on. |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The original [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to operate on. |
 | oldValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The substring to be replaced. |
 | newValue | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The replacement text. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison')
-values that dictates how the comparison is performed. |
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') values that dictates how the comparison is performed. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Replace-System-String,System-Char,System-Char,System-StringComparison-'></a>
 ### Replace(source,oldChar,newChar,comparisonType) `method`
 
 ##### Summary
 
-Replaces all occurrences of `oldChar` with
-`newChar`.  The
-`comparisonType` parameter is accepted only to
-mirror the other overload; it is ignored because
-character‑for‑character replacement is culture‑invariant.
+Replaces all occurrences of `oldChar` with `newChar`. The `comparisonType` parameter is accepted only to mirror the other overload; it is ignored because character‑for‑character replacement is culture‑invariant.
 
 ##### Returns
 
-A new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all occurrences of
-`oldChar` replaced, or the original string if
-`source` is `null`.
+A new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all occurrences of `oldChar` replaced, or the original string if `source` is `null`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The original [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to
-operate on. |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The original [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') to operate on. |
 | oldChar | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) The character to be replaced. |
 | newChar | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) The replacement character. |
-| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that
-defines how the old and new value(s) are to be compared.
+| comparisonType | [System.StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') | (Required.) One of the [StringComparison](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.StringComparison 'System.StringComparison') value(s) that defines how the old and new value(s) are to be compared.
 
 
 
-This parameter is ignored; it is accepted only to provide symmetry with the
-other overload(s) of this method. |
+This parameter is ignored; it is accepted only to provide symmetry with the other overload(s) of this method. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceAnyOf-System-String,System-Collections-Generic-ICollection{System-String},System-String,xyLOGIX-Core-Extensions-ReplaceAnyOfOption-'></a>
 ### ReplaceAnyOf(source,findWhatValues,replacementText,option) `method`
 
 ##### Summary
 
-Replaces any of the elements of the specified
-`findWhatValues` in `source` with the
-specified `replacementText`.
+Replaces any of the elements of the specified `findWhatValues` in `source` with the specified `replacementText`.
 
 ##### Returns
 
-If successful, the `source` string, with any of the
-specified `findWhatValues`, if they occur in it, replaced
-with the specified `replacementText`.
+If successful, the `source` string, with any of the specified `findWhatValues`, if they occur in it, replaced with the specified `replacementText`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
-searched. |
-| findWhatValues | [System.Collections.Generic.ICollection{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{System.String}') | (Required.) Collection of
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s), each of which is to be searched for in
-the `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'). |
-| replacementText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-is to serve as the replacement for any of the specified
-`findWhatValues` in `source`. |
-| option | [xyLOGIX.Core.Extensions.ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') | (Required.) One of the
-[ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') value(s) that
-indicates which of the occurrence(s) of the specified
-`source` string are to be replaced.
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be searched. |
+| findWhatValues | [System.Collections.Generic.ICollection{System.String}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.ICollection 'System.Collections.Generic.ICollection{System.String}') | (Required.) Collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s), each of which is to be searched for in the `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'). |
+| replacementText | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to serve as the replacement for any of the specified `findWhatValues` in `source`. |
+| option | [xyLOGIX.Core.Extensions.ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') | (Required.) One of the [ReplaceAnyOfOption](#T-xyLOGIX-Core-Extensions-ReplaceAnyOfOption 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption') value(s) that indicates which of the occurrence(s) of the specified `source` string are to be replaced.
 
 
 
-The default value of this parameter is
-[First](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First'). |
+The default value of this parameter is [First](#F-xyLOGIX-Core-Extensions-ReplaceAnyOfOption-First 'xyLOGIX.Core.Extensions.ReplaceAnyOfOption.First'). |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceCopyrightSymbolWithEscapeSequence-System-String-'></a>
 ### ReplaceCopyrightSymbolWithEscapeSequence(value) `method`
 
 ##### Summary
 
-Replaces the copyright symbol (©) with a PowerShell escape sequence that allows
-it to show up correctly in a Git commit message.
+Replaces the copyright symbol (©) with a PowerShell escape sequence that allows it to show up correctly in a Git commit message.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-modified text; otherwise, the method returns the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the modified text; otherwise, the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-text that is to be replaced. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text that is to be replaced. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceNoCase-System-String,System-String,System-String-'></a>
 ### ReplaceNoCase(value,search,replacement) `method`
 
 ##### Summary
 
-Replaces the string specified by `search` by the
-`replacement` string in the `value` ,
-ignoring case.
+Replaces the string specified by `search` by the `replacement` string in the `value` , ignoring case.
 
 ##### Returns
 
@@ -14762,89 +14038,68 @@ String containing the result.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search
-and replace operation is to be performed. |
-| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the
-string. |
-| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any
-found occurrences of `search` are to be substituted with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data in which the search and replace operation is to be performed. |
+| search | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data to be found in the string. |
+| replacement | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the data that any found occurrences of `search` are to be substituted with. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required
-parameters, `value`, `search`, or
-`replacement`, are passed blank or `null`
-strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if any of the required parameters, `value`, `search`, or `replacement`, are passed blank or `null` strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSingleQuotesWithHTMLApostrophes-System-String-'></a>
 ### ReplaceSingleQuotesWithHTMLApostrophes(inputString) `method`
 
 ##### Summary
 
-Replaces single quotation marks, `'`, appearing in the specified
-`inputString` with the HTML entity `&apos;`.
+Replaces single quotation marks, `'`, appearing in the specified `inputString` with the HTML entity `&apos;`.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the text that has had
-the replacement done on it.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the text that has had the replacement done on it.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value in
-which the replacement is to take place. |
+| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value in which the replacement is to take place. |
 
 ##### Remarks
 
-If the value of the `inputString` parameter is
-`null`, blank, contains only whitespace, or is the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
+If the value of the `inputString` parameter is `null`, blank, contains only whitespace, or is the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
 
 
 
-This method is also idempotent if an exception is caught during the execution
-of the algorithm.v
+This method is also idempotent if an exception is caught during the execution of the algorithm.v
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ReplaceSpacesWithHtmlNonBreakingSpace-System-String-'></a>
 ### ReplaceSpacesWithHtmlNonBreakingSpace(inputString) `method`
 
 ##### Summary
 
-Replaces all spaces in the specified `inputString` with HTML
-non-breaking space entities (`&nbsp;`).
+Replaces all spaces in the specified `inputString` with HTML non-breaking space entities (`&nbsp;`).
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all spaces replaced by HTML non-breaking
-space entities (`&nbsp;`).
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with all spaces replaced by HTML non-breaking space entities (`&nbsp;`).
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text in which
-spaces are to be replaced. |
+| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text in which spaces are to be replaced. |
 
 ##### Remarks
 
-If the `inputString` is `null` or consists
-only of whitespace, the method returns the original
-`inputString`.
+If the `inputString` is `null` or consists only of whitespace, the method returns the original `inputString`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-RewordAsTypeOfPhrase-System-String,xyLOGIX-Core-Extensions-LanguageArticleType,System-Boolean,System-Globalization-CultureInfo-'></a>
 ### RewordAsTypeOfPhrase(phrase,languageArticle,pluralizeRemainder,culture) `method`
 
 ##### Summary
 
-Rearranges a space-separated phrase by moving the last word to the front,
-inserting the preposition 'of', and conditionally adding an languageArticle
-before the
-rest
-of the phrase. Optionally pluralizes the remainder of the phrase.
+Rearranges a space-separated phrase by moving the last word to the front, inserting the preposition 'of', and conditionally adding an languageArticle before the rest of the phrase. Optionally pluralizes the remainder of the phrase.
 
 ##### Returns
 
@@ -14855,108 +14110,82 @@ A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | phrase | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) The space-separated phrase to transform. |
-| languageArticle | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Optional.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration
-value(s) indicating which article to insert before the remaining phrase.
+| languageArticle | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Optional.) One of the [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') enumeration value(s) indicating which article to insert before the remaining phrase.
 
 
 
-The default value of this parameter is
-[None](#F-xyLOGIX-Core-Extensions-LanguageArticleType-None 'xyLOGIX.Core.Extensions.LanguageArticleType.None'). |
-| pluralizeRemainder | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) `true` to pluralize the remainder of the phrase
-(after the
-preposition); otherwise, `false`.
+The default value of this parameter is [None](#F-xyLOGIX-Core-Extensions-LanguageArticleType-None 'xyLOGIX.Core.Extensions.LanguageArticleType.None'). |
+| pluralizeRemainder | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) `true` to pluralize the remainder of the phrase (after the preposition); otherwise, `false`.
 
 
 
 The default value of this parameter is `false`. |
-| culture | [System.Globalization.CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') | (Optional.) A [CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') to apply for
-languageArticle
-rules and pluralization.
+| culture | [System.Globalization.CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') | (Optional.) A [CultureInfo](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo 'System.Globalization.CultureInfo') to apply for languageArticle rules and pluralization.
 
 
 
-Defaults to
-[InvariantCulture](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo.InvariantCulture 'System.Globalization.CultureInfo.InvariantCulture'). |
+Defaults to [InvariantCulture](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Globalization.CultureInfo.InvariantCulture 'System.Globalization.CultureInfo.InvariantCulture'). |
 
 ##### Remarks
 
-If the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, a blank
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or `null` is passed as the
-argument of the `phrase` parameter, then this method is
-idempotent.
+If the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or `null` is passed as the argument of the `phrase` parameter, then this method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-SplitOn-System-String,System-String-'></a>
 ### SplitOn(value,delimiter) `method`
 
 ##### Summary
 
-Splits a string `value` on a provided
-`delimiter`.
+Splits a string `value` on a provided `delimiter`.
 
 ##### Returns
 
-An array whose elements contain the substrings that were split on the
-provided `delimiter`.
+An array whose elements contain the substrings that were split on the provided `delimiter`.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the value to be tokenized. |
-| delimiter | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the delimiter on which
-the `value` should be split. |
+| delimiter | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the delimiter on which the `value` should be split. |
 
 ##### Exceptions
 
 | Name | Description |
 | ---- | ----------- |
-| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if either of the required
-parameters, `value` or `delimiter`, are
-passed blank or `null` strings for values. |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Thrown if either of the required parameters, `value` or `delimiter`, are passed blank or `null` strings for values. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAny-System-String,System-String[]-'></a>
 ### StartsWithAny(value,beginnings) `method`
 
 ##### Summary
 
-Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` starts with any of the specified
-`beginnings`.
+Determines if the specified [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` starts with any of the specified `beginnings`.
 
 ##### Returns
 
-`true` if the specified `value`
-starts with any of the specified `beginnings`;
-`false` otherwise.
+`true` if the specified `value` starts with any of the specified `beginnings`; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be
-checked. |
-| beginnings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-elements, each of which is to be assessed against the specified
-`value` as being what it starts with. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to be checked. |
+| beginnings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | (Required.) One or more [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') elements, each of which is to be assessed against the specified `value` as being what it starts with. |
 
 ##### Remarks
 
-This method returns `false` if no values are
-passed for
-`beginnings`.
+This method returns `false` if no values are passed for `beginnings`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithAnyOf-System-String,System-String[]-'></a>
 ### StartsWithAnyOf(text,list) `method`
 
 ##### Summary
 
-Gets a value indicating whether `text` starts with
-any of the values in the `list`.
+Gets a value indicating whether `text` starts with any of the values in the `list`.
 
 ##### Returns
 
-true if the `text` starts with any of the entries
-in `list`.
+true if the `text` starts with any of the entries in `list`.
 
 ##### Parameters
 
@@ -14967,22 +14196,18 @@ in `list`.
 
 ##### Remarks
 
-This method performs a case-insensitive search. It returns
-`false` if passed the empty string for
-`text` or the empty collection for `list`.
+This method performs a case-insensitive search. It returns `false` if passed the empty string for `text` or the empty collection for `list`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithNoCase-System-String,System-String-'></a>
 ### StartsWithNoCase(value,searchText) `method`
 
 ##### Summary
 
-Tells whether the `value` starts with the substring
-`searchText`, ignoring case.
+Tells whether the `value` starts with the substring `searchText`, ignoring case.
 
 ##### Returns
 
-`true` if `value` starts with the
-`searchText`. `false` otherwise.
+`true` if `value` starts with the `searchText`. `false` otherwise.
 
 ##### Parameters
 
@@ -14993,191 +14218,147 @@ Tells whether the `value` starts with the substring
 
 ##### Remarks
 
-If `value` is the empty string or if
-`searchText` is the empty string, then this method returns
-`false`.
+If `value` is the empty string or if `searchText` is the empty string, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithSingleDashLenient-System-String-'></a>
 ### StartsWithSingleDashLenient(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` begins with a single
-slash, but is not strictly checking whether there are no other dashes following
-it.
+Determines whether the specified `value` begins with a single slash, but is not strictly checking whether there are no other dashes following it.
 
 ##### Returns
 
-`true` if the specified value starts with a single
-dash at all; `false` otherwise.
+`true` if the specified value starts with a single dash at all; `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
-the text that is to be examined.
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the text that is to be examined.
 
 
 
-This parameter cannot be `null`, the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or contain only whitespace. |
+This parameter cannot be `null`, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or contain only whitespace. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
-the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `value`, then this method returns
-`false`.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `value`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StartsWithSingleDashStrict-System-String-'></a>
 ### StartsWithSingleDashStrict(value) `method`
 
 ##### Summary
 
-Determines whether the specified `value` begins with a single
-slash, and strictly checks whether there are no other dashes following it.
+Determines whether the specified `value` begins with a single slash, and strictly checks whether there are no other dashes following it.
 
 ##### Returns
 
-`true` if the specified `value`
-starts with a single dash with subsequent character(s) being non-dash(es);
-`false` otherwise.
+`true` if the specified `value` starts with a single dash with subsequent character(s) being non-dash(es); `false` otherwise.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
-the text that is to be examined.
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the text that is to be examined.
 
 
 
-This parameter cannot be `null`, the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or contain only whitespace. |
+This parameter cannot be `null`, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, or contain only whitespace. |
 
 ##### Remarks
 
-If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or
-the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the
-parameter, `value`, then this method returns
-`false`.
+If `null`, a blank [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String'), or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed as the argument of the parameter, `value`, then this method returns `false`.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StripIncompatibleQuotes-System-String-'></a>
 ### StripIncompatibleQuotes(inputString) `method`
 
 ##### Summary
 
-Strips "smart quotes" from the specified `inputString` and
-replaces them with "straight quotes."
+Strips "smart quotes" from the specified `inputString` and replaces them with "straight quotes."
 
 ##### Returns
 
-If successful, the `inputString`, but with "smart
-quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
+If successful, the `inputString`, but with "smart quotes" replaced by "straight quotes." Otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')
-containing the data on which replacement is to be performed. |
+| inputString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the data on which replacement is to be performed. |
 
 ##### Remarks
 
-If the value of the `inputString` is
-`null`, only consists of whitespace, or is the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
+If the value of the `inputString` is `null`, only consists of whitespace, or is the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-StripNewlines-System-String-'></a>
 ### StripNewlines(value) `method`
 
 ##### Summary
 
-Removes all carriage-return (`CR`) and newline (`NL`) ASCII
-character(s) from the provided `value`.
+Removes all carriage-return (`CR`) and newline (`NL`) ASCII character(s) from the provided `value`.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is identical to
-the specified `value` but where all newline character(s) have
-been converted to blanks; otherwise, the method is idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is identical to the specified `value` but where all newline character(s) have been converted to blanks; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text from which
-newline(s) are to be stripped. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text from which newline(s) are to be stripped. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Sub-System-String,System-Object[]-'></a>
 ### Sub(format,args) `method`
 
 ##### Summary
 
-Formats a string using the `format` and
-`args`.
+Formats a string using the `format` and `args`.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with the format placeholders replaced
-by the args.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with the format placeholders replaced by the args.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| format | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-optionally contains one or more format specifier(s). |
-| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) Collection of args whose values are to be
-replaced in the format string. |
+| format | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that optionally contains one or more format specifier(s). |
+| args | [System.Object[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object[] 'System.Object[]') | (Optional.) Collection of args whose values are to be replaced in the format string. |
 
 ##### Remarks
 
-This method is just an alias for the
-[FormatLikePython](#T-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython 'xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython')
-method.
+This method is just an alias for the [FormatLikePython](#T-xyLOGIX-Core-Extensions-StringExtensions-FormatLikePython 'xyLOGIX.Core.Extensions.StringExtensions.FormatLikePython') method.
 
 
 
-It is here to provide a way to translate VB to C# code and still use the
-moniker Sub from VB that does the same operation.
+It is here to provide a way to translate VB to C# code and still use the moniker Sub from VB that does the same operation.
 
 
 
-If this method is passed the empty string for `format`, then
-the return value is the empty string.
+If this method is passed the empty string for `format`, then the return value is the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-Suffix-System-String,System-String-'></a>
 ### Suffix(value,suffix) `method`
 
 ##### Summary
 
-Produces a new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') by appending the specified
-`suffix` to the end of the specified
-`value`.
+Produces a new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') by appending the specified `suffix` to the end of the specified `value`.
 
 ##### Returns
 
-If successful, a new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
-concatenation of
-`value` and `suffix`, or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value on failure.
+If successful, a new [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the concatenation of `value` and `suffix`, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value on failure.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the
-original string.  If this parameter is `null`, the method
-treats it as the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
-| suffix | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains
-the text to append.
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the original string. If this parameter is `null`, the method treats it as the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+| suffix | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the text to append.
 
 
 
-If this parameter is `null`, the method treats it as the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
+If this parameter is `null`, the method treats it as the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value. |
 
 ##### Remarks
 
@@ -15188,38 +14369,28 @@ If this parameter is `null`, the method treats it as the
 
 ##### Summary
 
-Forces all characters in the input string, `value`,
-to be ASCII-encoded characters only. If any Unicode characters are found in
-`value`, then they are mapped back into the range of
-ASCII-encoded values.
+Forces all characters in the input string, `value`, to be ASCII-encoded characters only. If any Unicode characters are found in `value`, then they are mapped back into the range of ASCII-encoded values.
 
 ##### Returns
 
-Same string as `value`, except that all characters
-are now ASCII-encoded.
+Same string as `value`, except that all characters are now ASCII-encoded.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the characters to be
-processed. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the characters to be processed. |
 
 ##### Remarks
 
-If this method is passed the empty or whitespace string for
-`value`, then this method returns the empty string.
+If this method is passed the empty or whitespace string for `value`, then this method returns the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToAcronym-System-String-'></a>
 ### ToAcronym(phrase) `method`
 
 ##### Summary
 
-Turns the specified `phrase` into an all-caps acronym, if a
-corresponding entry is not found in our dictionary fields of short, non-acronym
-terms, i.e.,
-[ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms')
-.
+Turns the specified `phrase` into an all-caps acronym, if a corresponding entry is not found in our dictionary fields of short, non-acronym terms, i.e., [ShortWordsThatAreNotAcronyms](#F-xyLOGIX-Core-Extensions-StringExtensions-ShortWordsThatAreNotAcronyms 'xyLOGIX.Core.Extensions.StringExtensions.ShortWordsThatAreNotAcronyms') .
 
 ##### Returns
 
@@ -15229,25 +14400,18 @@ Acronym converted from `phrase`.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| phrase | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the phrase to turn into an
-acronym. |
+| phrase | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the phrase to turn into an acronym. |
 
 ##### Remarks
 
-If this method is passed the empty or whitespace string, then it
-returns the empty string. If this method is passed a word or phrase that is
-short, but not an acronym, then the input is returned with no alteration.
+If this method is passed the empty or whitespace string, then it returns the empty string. If this method is passed a word or phrase that is short, but not an acronym, then the input is returned with no alteration.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToAcronymLetter-System-String-'></a>
 ### ToAcronymLetter(word) `method`
 
 ##### Summary
 
-Uses the first letter (turned into being uppercase, if necessary) of
-the `word` provided to be one of the letters of an acronym
-that is being built, e.g., from a phrase, using the first letter of each of the
-words of the phrase as each of the corresponding letters of the resulting
-acronym.
+Uses the first letter (turned into being uppercase, if necessary) of the `word` provided to be one of the letters of an acronym that is being built, e.g., from a phrase, using the first letter of each of the words of the phrase as each of the corresponding letters of the resulting acronym.
 
 ##### Returns
 
@@ -15257,64 +14421,52 @@ String containing the letter(s) to be utilized in the acronym.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| word | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the word whose first letter
-should be made into a corresponding acronym letter. |
+| word | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the word whose first letter should be made into a corresponding acronym letter. |
 
 ##### Remarks
 
-If `word` is the empty or whitespace string, then
-this method returns the empty string.
+If `word` is the empty or whitespace string, then this method returns the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToCodeElementPreservingPluralization-System-String-'></a>
 ### ToCodeElementPreservingPluralization(text) `method`
 
 ##### Summary
 
-Converts the specified `text` into a code element by
-preserving pluralization.
+Converts the specified `text` into a code element by preserving pluralization.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the same as the
-`text` but with the first letter of each word capitalized and
-pluralization preserved.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is the same as the `text` but with the first letter of each word capitalized and pluralization preserved.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to convert
-into a code element. |
+| text | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to convert into a code element. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToGuidWithNoPunctuation-System-Guid-'></a>
 ### ToGuidWithNoPunctuation(guid) `method`
 
 ##### Summary
 
-Turns a GUID into a string representation but removes all the '{',
-'}' and '-' from the string representation, so that the string representation
-contains only letters and/or numbers.
+Turns a GUID into a string representation but removes all the '{', '}' and '-' from the string representation, so that the string representation contains only letters and/or numbers.
 
 ##### Returns
 
-String representation with no '{', '}' and '-' in the string
-representation, so that the string representation contains only letters and/or
-numbers.
+String representation with no '{', '}' and '-' in the string representation, so that the string representation contains only letters and/or numbers.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| guid | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | Reference to a [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') to turn into a
-string of letters and numbers. |
+| guid | [System.Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') | Reference to a [Guid](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Guid 'System.Guid') to turn into a string of letters and numbers. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToInitialCaps-System-String-'></a>
 ### ToInitialCaps(value) `method`
 
 ##### Summary
 
-Returns a value that is the same as the string specified, but in
-Initial Caps format.
+Returns a value that is the same as the string specified, but in Initial Caps format.
 
 ##### Returns
 
@@ -15328,40 +14480,32 @@ String with the casing changed to InitialCaps.
 
 ##### Remarks
 
-If this method is passed the empty or whitespace string, then it
-returns the empty string.
+If this method is passed the empty or whitespace string, then it returns the empty string.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToLanguageArticle-System-String,xyLOGIX-Core-Extensions-LanguageArticleType-'></a>
 ### ToLanguageArticle(value,type) `method`
 
 ##### Summary
 
-Obtains the text of the language article specified by the
-`type` parameter for the `value` passed.
+Obtains the text of the language article specified by the `type` parameter for the `value` passed.
 
 ##### Returns
 
-If successful, the language article specified by the `type`
-parameter for the `value` passed; otherwise, the method is
-idempotent.
+If successful, the language article specified by the `type` parameter for the `value` passed; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which the
-language article is to be obtained. |
-| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the
-[LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that
-specifies the type of language article to obtain. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the value to which the language article is to be obtained. |
+| type | [xyLOGIX.Core.Extensions.LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') | (Required.) One of the [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType') value(s) that specifies the type of language article to obtain. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToList-System-String,System-String[]-'></a>
 ### ToList(quote,separators) `method`
 
 ##### Summary
 
-Turns a delimited [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') into a collection of
-strings with one delimited entry per element.
+Turns a delimited [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') into a collection of strings with one delimited entry per element.
 
 ##### Returns
 
@@ -15371,55 +14515,44 @@ Collection of strings containing the delimited entries.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| quote | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be
-transformed. |
-| separators | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Collection of strings specifying the delimiter(s) to
-split upon. |
+| quote | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) String containing the text to be transformed. |
+| separators | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | Collection of strings specifying the delimiter(s) to split upon. |
 
 ##### Remarks
 
-Any empty entries in the resultant collection are removed. If the
-empty string is provided as input to this method, then the method returns the
-empty string. If no separators are specified, then the empty collection is
-returned.
+Any empty entries in the resultant collection are removed. If the empty string is provided as input to this method, then the method returns the empty string. If no separators are specified, then the empty collection is returned.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToLowercase-System-String-'></a>
 ### ToLowercase(value) `method`
 
 ##### Summary
 
-Converts the specified `value` to lowercase, ignoring
-culture.
+Converts the specified `value` to lowercase, ignoring culture.
 
 ##### Returns
 
-If successful, the `value` specified, but converted to
-lowercase; otherwise, this method is idempotent.
+If successful, the `value` specified, but converted to lowercase; otherwise, this method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
-converted to lowercase. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be converted to lowercase. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToPhrase-System-String-'></a>
 ### ToPhrase(value) `method`
 
 ##### Summary
 
-Converts an initial-caps string into a space-separated, lowercase phrase,
-preserving acronyms.
+Converts an initial-caps string into a space-separated, lowercase phrase, preserving acronyms.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces.
-Acronyms remain in uppercase while other words are converted to lowercase.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces. Acronyms remain in uppercase while other words are converted to lowercase.
 
 
 
-If `value` is `null` or empty, an empty
-string is returned.
+If `value` is `null` or empty, an empty string is returned.
 
 ##### Parameters
 
@@ -15432,19 +14565,15 @@ string is returned.
 
 ##### Summary
 
-Converts an initial-caps string into a space-separated, title-cased phrase,
-preserving acronyms.
+Converts an initial-caps string into a space-separated, title-cased phrase, preserving acronyms.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces.
-Acronyms remain in uppercase while other words are converted to
-`Title Case`.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces. Acronyms remain in uppercase while other words are converted to `Title Case`.
 
 
 
-If `value` is `null` or empty, an empty
-string is returned.
+If `value` is `null` or empty, an empty string is returned.
 
 ##### Parameters
 
@@ -15457,72 +14586,53 @@ string is returned.
 
 ##### Summary
 
-Formats the specified `pathname` as a Visual Studio Solution
-(`*.sln`, `*.slnx`) file entry, e.g.,
-`MyProject\MyProject.csproj`.
+Formats the specified `pathname` as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry, e.g., `MyProject\MyProject.csproj`.
 
 ##### Returns
 
-If successful, the specified `pathname`, formatted
-as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry, e.g.,
-`MyProject\MyProject.csproj`; otherwise, the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is returned.
+If successful, the specified `pathname`, formatted as a Visual Studio Solution (`*.sln`, `*.slnx`) file entry, e.g., `MyProject\MyProject.csproj`; otherwise, the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the fully-qualified
-pathname of a file that is to be formatted as a Visual Studio Solution (
-`*.sln`, `*.slnx`) file entry. |
+| pathname | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the fully-qualified pathname of a file that is to be formatted as a Visual Studio Solution ( `*.sln`, `*.slnx`) file entry. |
 
 ##### Remarks
 
-If a `null` blank, or
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed for the argument of the
-`pathname` parameter, then the method returns the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value,
+If a `null` blank, or [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value is passed for the argument of the `pathname` parameter, then the method returns the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value,
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToTitleCase-System-String-'></a>
 ### ToTitleCase(value) `method`
 
 ##### Summary
 
-Converts the specified `value` to Title Case,
-preserving the casing of acronyms.
+Converts the specified `value` to Title Case, preserving the casing of acronyms.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text from
-`value` converted to Title Case, with acronyms preserved.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text from `value` converted to Title Case, with acronyms preserved.
 
 
 
-If `value` is `null` or whitespace, the
-original value is returned.
+If `value` is `null` or whitespace, the original value is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
-converted to Title Case. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be converted to Title Case. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-ToUnicode-System-String-'></a>
 ### ToUnicode(value) `method`
 
 ##### Summary
 
-Translates each character of the provided `value`,
-character-by-character, to Unicode encoding. This method performs the inverse
-operation of the
-[ToASCII](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII') method.
+Translates each character of the provided `value`, character-by-character, to Unicode encoding. This method performs the inverse operation of the [ToASCII](#M-xyLOGIX-Core-Extensions-StringExtensions-ToASCII 'xyLOGIX.Core.Extensions.StringExtensions.ToASCII') method.
 
 ##### Returns
 
-String containing the re-encoded corresponding text to that in
-`value`; or the empty string if the empty string is provided
-to this method.
+String containing the re-encoded corresponding text to that in `value`; or the empty string if the empty string is provided to this method.
 
 ##### Parameters
 
@@ -15535,45 +14645,35 @@ to this method.
 
 ##### Summary
 
-Converts the provided [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value`
-to all uppercase, ignoring culture.
+Converts the provided [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')`value` to all uppercase, ignoring culture.
 
 ##### Returns
 
-If successful, the `value` specified, but converted
-to uppercase; otherwise, this method is idempotent.
+If successful, the `value` specified, but converted to uppercase; otherwise, this method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
-converted to uppercase. |
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be converted to uppercase. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TokenizeOn-System-String,System-Char-'></a>
 ### TokenizeOn(source,delimeter) `method`
 
 ##### Summary
 
-Splits a specified `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') on
-the specified `delimeter` into distinct, trimmed, non-empty
-tokens (case-insensitive uniqueness). Returns empty array if input is
-null/blank.
+Splits a specified `source`[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') on the specified `delimeter` into distinct, trimmed, non-empty tokens (case-insensitive uniqueness). Returns empty array if input is null/blank.
 
 ##### Returns
 
-If successful, a collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s)
-which comprise the non-blank, distinct token(s) found in the
-`source`; otherwise, the empty collection is returned.
+If successful, a collection of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) which comprise the non-blank, distinct token(s) found in the `source`; otherwise, the empty collection is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the string that is to
-be tokenized. |
-| delimeter | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Optional.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') that specifies the character on
-which to split the `source` string.
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the string that is to be tokenized. |
+| delimeter | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Optional.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') that specifies the character on which to split the `source` string.
 
 
 
@@ -15584,22 +14684,17 @@ The default is the pipe character (`'|'`). |
 
 ##### Summary
 
-Alias for the `TokenizeOn` method, with the delimiter set to a pipe
-character, for better semantics.
+Alias for the `TokenizeOn` method, with the delimiter set to a pipe character, for better semantics.
 
 ##### Returns
 
-If successful, a reference to an array of
-[String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')(s), each element of which is one of the
-pipe-separated token(s) in the specified `source`; otherwise,
-the empty array is returned.
+If successful, a reference to an array of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String')(s), each element of which is one of the pipe-separated token(s) in the specified `source`; otherwise, the empty array is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the string that is to
-be tokenized. |
+| source | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the string that is to be tokenized. |
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimAnyOffEnd-System-String,System-Boolean,System-Boolean,System-String[]-'></a>
 ### TrimAnyOffEnd(value,caseSensitive,recursive,badEndings) `method`
@@ -15610,82 +14705,57 @@ Removes any specified substrings from the end of the given string.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with any matching substrings from
-`badEndings`
-removed from the end. If `value` is `null`,
-whitespace,
-or no matches are found, the original string is returned.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') with any matching substrings from `badEndings` removed from the end. If `value` is `null`, whitespace, or no matches are found, the original string is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be
-processed. |
-| caseSensitive | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) A [Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') value indicating whether a
-case-sensitive search is to be performed.
+| value | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the text to be processed. |
+| caseSensitive | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) A [Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') value indicating whether a case-sensitive search is to be performed.
 
 
 
 The default value of this parameter is `false`. |
-| recursive | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) A [Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') value indicating whether the
-removal of bad endings should be applied repeatedly until no matches remain.
+| recursive | [System.Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') | (Optional.) A [Boolean](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Boolean 'System.Boolean') value indicating whether the removal of bad endings should be applied repeatedly until no matches remain.
 
 
 
 The default value of this parameter is `true`. |
-| badEndings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | An array of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) representing the substrings
-to remove from the end of `value`. If
-`badEndings`
-is `null` or empty, no changes are made. |
+| badEndings | [System.String[]](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String[] 'System.String[]') | An array of [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') value(s) representing the substrings to remove from the end of `value`. If `badEndings` is `null` or empty, no changes are made. |
 
 ##### Remarks
 
-The method iterates through the `badEndings` array to
-identify
-and remove any substrings that match the end of `value`.
-It performs case-sensitive or case-insensitive comparisons depending on
-the value of `caseSensitive`.
-If `recursive` is set to `true`, the method
-will repeatedly trim matches until no further matches are found.
+The method iterates through the `badEndings` array to identify and remove any substrings that match the end of `value`. It performs case-sensitive or case-insensitive comparisons depending on the value of `caseSensitive`. If `recursive` is set to `true`, the method will repeatedly trim matches until no further matches are found.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimEnd-System-String,System-String-'></a>
 ### TrimEnd(target,trimString) `method`
 
 ##### Summary
 
-Removes the `trimString`, if present, from the end
-of the specified `target`.
+Removes the `trimString`, if present, from the end of the specified `target`.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the trimmed
-version of `target` with the specified
-`trimString` removed from the end of it; otherwise, the
-method is idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the trimmed version of `target` with the specified `trimString` removed from the end of it; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
-trimmed. |
-| trimString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-contains the character(s) that are to be trimmed. |
+| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be trimmed. |
+| trimString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the character(s) that are to be trimmed. |
 
 ##### Remarks
 
-If either of the required parameters, `target`, or
-`trimString`, are `null`, blank, or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
+If either of the required parameters, `target`, or `trimString`, are `null`, blank, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimLine-System-String-'></a>
 ### TrimLine(currentLine) `method`
 
 ##### Summary
 
-Trims the `currentLine` of text; i.e., removes
-whitespace both before and after the text.
+Trims the `currentLine` of text; i.e., removes whitespace both before and after the text.
 
 ##### Returns
 
@@ -15699,39 +14769,29 @@ Trimmed text.
 
 ##### Remarks
 
-If the empty or whitespace string is provided for
-`currentLine` , then the empty string is returned by this
-method.
+If the empty or whitespace string is provided for `currentLine` , then the empty string is returned by this method.
 
 <a name='M-xyLOGIX-Core-Extensions-StringExtensions-TrimStart-System-String,System-String-'></a>
 ### TrimStart(target,trimString) `method`
 
 ##### Summary
 
-Removes the `trimString`, if present, from the start of the
-specified `target`.
+Removes the `trimString`, if present, from the start of the specified `target`.
 
 ##### Returns
 
-If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the trimmed
-version of `target` with the specified
-`trimString` removed from the start of it; otherwise, the
-method is idempotent.
+If successful, a [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the trimmed version of `target` with the specified `trimString` removed from the start of it; otherwise, the method is idempotent.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be
-trimmed. |
-| trimString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that
-contains the character(s) that are to be trimmed. |
+| target | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that is to be trimmed. |
+| trimString | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') that contains the character(s) that are to be trimmed. |
 
 ##### Remarks
 
-If either of the required parameters, `target`, or
-`trimString`, are `null`, blank, or the
-[Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
+If either of the required parameters, `target`, or `trimString`, are `null`, blank, or the [Empty](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String.Empty 'System.String.Empty') value, then this method is idempotent.
 
 <a name='T-xyLOGIX-Core-Extensions-TextBoxExtensions'></a>
 ## TextBoxExtensions `type`
@@ -15750,26 +14810,28 @@ Exposes static extension methods for
 
 ##### Summary
 
-Specifies the message to set the cue banner text (placeholder text) for a
-[TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') control.
+Specifies the message to set the cue banner text (placeholder text)
+for a [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') control.
 
 ##### Remarks
 
-This message is sent to a [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') control
-to display grayed-out text when the
-[TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') is empty and unfocused.
+This message is sent to a
+[TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') control to display grayed-out
+text when the [TextBox](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.TextBox 'System.Windows.Forms.TextBox') is empty and
+unfocused.
 
 <a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-IsWindow-System-IntPtr-'></a>
 ### IsWindow(hWnd) `method`
 
 ##### Summary
 
-Determines whether the specified window handle identifies an existing window.
+Determines whether the specified window handle identifies an existing
+window.
 
 ##### Returns
 
-`true` if the window handle identifies an existing window;
-otherwise, `false`.
+`true` if the window handle identifies an existing
+window; otherwise, `false`.
 
 ##### Parameters
 
@@ -15779,8 +14841,8 @@ otherwise, `false`.
 
 ##### Remarks
 
-The `hWnd` parameter is a handle to a window.
-The function checks if the window associated with the handle still exists.
+The `hWnd` parameter is a handle to a window. The
+function checks if the window associated with the handle still exists.
 
 <a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-SendMessage-System-IntPtr,System-UInt32,System-IntPtr,System-String-'></a>
 ### SendMessage(hWnd,Msg,wParam,lParam) `method`
@@ -15797,7 +14859,8 @@ message.
 
 ##### Returns
 
-The result of the message processing, which depends on the message sent.
+The result of the message processing, which depends on the message
+sent.
 
 ##### Parameters
 
@@ -15812,16 +14875,16 @@ passed as a string. |
 
 ##### Remarks
 
-Use this method to send messages directly to a window's window procedure,
-bypassing the system's message queue.
+Use this method to send messages directly to a window's window
+procedure, bypassing the system's message queue.
 
 <a name='M-xyLOGIX-Core-Extensions-TextBoxExtensions-SetCueBanner-System-Windows-Forms-TextBoxBase,System-String-'></a>
 ### SetCueBanner(textBox,cueText) `method`
 
 ##### Summary
 
-Sets the cue banner of the specified `textBox` to the
-specified `cueText`.
+Sets the cue banner of the specified `textBox` to
+the specified `cueText`.
 
 ##### Parameters
 
@@ -15854,9 +14917,9 @@ Exposes static extension methods for
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [ToolStripMenuItemExtensions](#T-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions')
-class.
+Initializes static data or performs actions that need to be performed
+once only for the
+[ToolStripMenuItemExtensions](#T-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions 'xyLOGIX.Core.Extensions.ToolStripMenuItemExtensions') class.
 
 ##### Parameters
 
@@ -15864,8 +14927,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -15877,8 +14940,8 @@ attribute in order to simplify the logging output.
 
 ##### Summary
 
-Determines whether the specified `item` contains a menu item
-with the specified `name`.
+Determines whether the specified `item` contains a
+menu item with the specified `name`.
 
 ##### Returns
 
@@ -15893,16 +14956,16 @@ with the specified `name`.
 | item | [System.Windows.Forms.ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') | (Required.) Reference to an instance of
 [ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu item
 whose drop-down item(s) are to be searched. |
-| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
-item to search for. |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+name of the menu item to search for. |
 
 <a name='M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-ContainsMenuItemNamed-System-Windows-Forms-MenuStrip,System-String-'></a>
 ### ContainsMenuItemNamed(menu,name) `method`
 
 ##### Summary
 
-Determines whether the specified `menu` contains a menu item
-with the specified `name`.
+Determines whether the specified `menu` contains a
+menu item with the specified `name`.
 
 ##### Returns
 
@@ -15915,10 +14978,10 @@ with the specified `name`.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | menu | [System.Windows.Forms.MenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MenuStrip 'System.Windows.Forms.MenuStrip') | (Required.) Reference to an instance of
-[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu
-whose drop-down menu(s) are to be searched. |
-| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
-item to search for. |
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu whose
+drop-down menu(s) are to be searched. |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+name of the menu item to search for. |
 
 <a name='M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-GetMenuItemNamed-System-Windows-Forms-ToolStripMenuItem,System-String-'></a>
 ### GetMenuItemNamed(menu,name) `method`
@@ -15934,26 +14997,25 @@ gets a reference to an instance of
 
 If successful, a reference to an instance of
 [ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that refers to the
-matching menu item; otherwise, a `null` reference is
-returned.
+matching menu item; otherwise, a `null` reference is returned.
 
 ##### Parameters
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | menu | [System.Windows.Forms.ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') | (Required.) Reference to an instance of
-[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu
-whose drop-down menu(s) are to be searched. |
-| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
-item to search for. |
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu whose
+drop-down menu(s) are to be searched. |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+name of the menu item to search for. |
 
 <a name='M-xyLOGIX-Core-Extensions-ToolStripMenuItemExtensions-GetMenuItemNamed-System-Windows-Forms-MenuStrip,System-String-'></a>
 ### GetMenuItemNamed(menu,name) `method`
 
 ##### Summary
 
-Among the drop-down items of the specified `menu`, gets a
-reference to an instance of
+Among the drop-down items of the specified `menu`,
+gets a reference to an instance of
 [ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that has the specified
 `name`.
 
@@ -15968,10 +15030,10 @@ matching menu item; otherwise, a `null` reference is returned.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | menu | [System.Windows.Forms.MenuStrip](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.MenuStrip 'System.Windows.Forms.MenuStrip') | (Required.) Reference to an instance of
-[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu
-whose drop-down menu(s) are to be searched. |
-| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the name of the menu
-item to search for. |
+[ToolStripMenuItem](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Windows.Forms.ToolStripMenuItem 'System.Windows.Forms.ToolStripMenuItem') that is the menu whose
+drop-down menu(s) are to be searched. |
+| name | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | (Required.) A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') containing the
+name of the menu item to search for. |
 
 <a name='T-xyLOGIX-Core-Extensions-Transform'></a>
 ## Transform `type`
@@ -15990,14 +15052,13 @@ Exposes static method(s) to transform text strings in various ways.
 ##### Summary
 
 A regular expression pattern that matches an entire string consisting only of
-uppercase letters.
-This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR")
-that appear as
-standalone words without any lowercase letters.
+uppercase letters. This pattern is useful for identifying acronyms (e.g.,
+"NASA", "AI", "RADAR") that appear as standalone words without any lowercase
+letters.
 
-This pattern ensures that the input string contains only uppercase letters from
-A to Z
-and does not include numbers, spaces, or lowercase characters.
+This pattern ensures that the input string contains only uppercase
+letters from A to Z and does not include numbers, spaces, or lowercase
+characters.
 
 <a name='F-xyLOGIX-Core-Extensions-Transform-InitialCapsWordPattern'></a>
 ### InitialCapsWordPattern `constants`
@@ -16005,20 +15066,18 @@ and does not include numbers, spaces, or lowercase characters.
 ##### Summary
 
 A regular expression pattern that matches words in an initial-caps formatted
-string.
-This pattern identifies:
+string. This pattern identifies:
 
 The matched words can be used to transform an initial-caps string into a
-space-separated phrase
-while preserving acronyms.
+space-separated phrase while preserving acronyms.
 
 <a name='M-xyLOGIX-Core-Extensions-Transform-#cctor'></a>
 ### #cctor() `method`
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [Transform](#T-xyLOGIX-Core-Extensions-Transform 'xyLOGIX.Core.Extensions.Transform') class.
+Initializes static data or performs actions that need to be performed
+once only for the [Transform](#T-xyLOGIX-Core-Extensions-Transform 'xyLOGIX.Core.Extensions.Transform') class.
 
 ##### Parameters
 
@@ -16026,8 +15085,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -16039,15 +15098,15 @@ attribute in order to simplify the logging output.
 
 ##### Summary
 
-Converts an initial-caps string into a space-separated, lowercase phrase,
-preserving acronyms.
+Converts an initial-caps string into a space-separated, lowercase
+phrase, preserving acronyms.
 
 ##### Returns
 
-A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by spaces.
-Acronyms remain in uppercase while other words are converted to lowercase.
-If `input` is `null` or empty, an empty
-string is returned.
+A [String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') where all words are separated by
+spaces. Acronyms remain in uppercase while other words are converted to
+lowercase. If `input` is `null` or empty, an
+empty string is returned.
 
 ##### Parameters
 
@@ -16080,8 +15139,9 @@ for faster performance.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions') class.
+Initializes static data or performs actions that need to be performed
+once only for the [TypeExtensions](#T-xyLOGIX-Core-Extensions-TypeExtensions 'xyLOGIX.Core.Extensions.TypeExtensions')
+class.
 
 ##### Parameters
 
@@ -16089,17 +15149,17 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 <a name='M-xyLOGIX-Core-Extensions-TypeExtensions-GetActualType-System-Type-'></a>
 ### GetActualType() `method`
 
 ##### Summary
 
-Gets the public type of IList. When the type is not a list then
-this method will return the same type. if type is List of T then this method
-will return the type of T.
+Gets the public type of IList. When the type is not a list then this
+method will return the same type. if type is List of T then this method will
+return the type of T.
 
 ##### Parameters
 
@@ -16116,8 +15176,8 @@ is passed.
 
 ##### Returns
 
-True if the type of the `potentialDescendant` is
-the same as, or a subclass of, the base type.
+True if the type of the `potentialDescendant` is the
+same as, or a subclass of, the base type.
 
 ##### Parameters
 
@@ -16137,8 +15197,7 @@ xyLOGIX.Core.Extensions
 
 ##### Summary
 
-Provides methods that extend the [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32')
-class.
+Provides methods that extend the [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') class.
 
 <a name='M-xyLOGIX-Core-Extensions-UInt32Extensions-EqualsOneOf-System-UInt32,System-UInt32[]-'></a>
 ### EqualsOneOf(value,list) `method`

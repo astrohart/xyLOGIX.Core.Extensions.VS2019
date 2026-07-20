@@ -903,7 +903,6 @@ namespace xyLOGIX.Core.Extensions
             var itemsTaken = 0;
             foreach (object item in source)
             {
-                if (item == null) continue; // skip nulls
                 items.Add(item);
                 Interlocked.Increment(ref itemsTaken);
 

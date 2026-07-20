@@ -19,16 +19,17 @@ xyLOGIX.Core.Extensions.Dynamic
 
 ##### Summary
 
-Contains methods that allow you to prefer one type over another when working
-with `dynamic` objects.
+Contains methods that allow you to prefer one type over another when
+working with `dynamic` objects.
 
 <a name='M-xyLOGIX-Core-Extensions-Dynamic-DynamicPrefer-#cctor'></a>
 ### #cctor() `method`
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed once only
-for the [DynamicPrefer](#T-xyLOGIX-Core-Extensions-Dynamic-DynamicPrefer 'xyLOGIX.Core.Extensions.Dynamic.DynamicPrefer') class.
+Initializes static data or performs actions that need to be performed
+once only for the
+[DynamicPrefer](#T-xyLOGIX-Core-Extensions-Dynamic-DynamicPrefer 'xyLOGIX.Core.Extensions.Dynamic.DynamicPrefer') class.
 
 ##### Parameters
 
@@ -36,8 +37,8 @@ This method has no parameters.
 
 ##### Remarks
 
-This constructor is called automatically prior to the first instance being
-created or before any static members are referenced.
+This constructor is called automatically prior to the first instance
+being created or before any static members are referenced.
 
 
 
@@ -49,11 +50,11 @@ attribute in order to simplify the logging output.
 
 ##### Summary
 
-Preferentially returns the specified `preferredValue` over
-the `nullableValue`, if the specified
-`nullableValue` is `null` or it does not
-have a value; otherwise, the value of the `nullableValue` is
-returned.
+Preferentially returns the specified
+`preferredValue` over the `nullableValue`,
+if the specified `nullableValue` is `null`
+or it does not have a value; otherwise, the value of the
+`nullableValue` is returned.
 
 ##### Returns
 
@@ -67,8 +68,9 @@ returned.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| nullableValue | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | (Required.) A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') variable whose value is to be
-returned if it indeed does have a non-`null`, non-blank value. |
+| nullableValue | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | (Required.) A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object')
+variable whose value is to be returned if it indeed does have a non-
+`null`, non-blank value. |
 | preferredValue | [System.Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object') | (Required.) A [Object](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Object 'System.Object')
 containing the preferred value that is to be returned if the
 `nullableValue` is `null` or does not have a

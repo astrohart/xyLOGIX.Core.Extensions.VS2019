@@ -534,6 +534,7 @@
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Decimal,System.Decimal,System.Decimal)')
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Int32,System.Int32,System.Int32)')
   - [IsBetween(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsBetween-System-Int64,System-Int64,System-Int64- 'xyLOGIX.Core.Extensions.NumberExtensions.IsBetween(System.Int64,System.Int64,System.Int64)')
+  - [IsInRange(index,lower,upper)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRange-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRange(System.Int32,System.Int32,System.Int32)')
   - [IsInRangeWithLowerBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithLowerBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithLowerBound(System.Int32,System.Int32,System.Int32)')
   - [IsInRangeWithUpperBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithUpperBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithUpperBound(System.Int32,System.Int32,System.Int32)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
@@ -10073,9 +10074,9 @@ numerical data.
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed
-once only for the [NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions')
-class.
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[NumberExtensions](#T-xyLOGIX-Core-Extensions-NumberExtensions 'xyLOGIX.Core.Extensions.NumberExtensions') class.
 
 ##### Parameters
 
@@ -10084,7 +10085,7 @@ This method has no parameters.
 ##### Remarks
 
 This constructor is called automatically prior to the first instance
-being created or before any static members are referenced.
+being created or before any `static` members are referenced.
 
 
 
@@ -10257,6 +10258,42 @@ True if `value` is strictly greater than
 | value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The value to be checked. |
 | lowerBound | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | Lower bound. |
 | upperBound | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | Upper bound. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRange-System-Int32,System-Int32,System-Int32-'></a>
+### IsInRange(index,lower,upper) `method`
+
+##### Summary
+
+Determines whether a zero-based index is in the interval
+`[lower, upper)`.
+
+##### Returns
+
+`true` if the value is either within the range
+specified or equal to the `lower` bound;
+`false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| index | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | The value to be checked. |
+| lower | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Lower bound.
+
+
+
+Typically, this parameter is set to zero. |
+| upper | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | Upper bound.
+
+
+
+Typically, this parameter is set to the total number of element(s) in the
+collection being indexed. |
+
+##### Remarks
+
+The `upper` bound is EXCLUDED from the range of
+valid value(s) by this method.
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithLowerBound-System-Int32,System-Int32,System-Int32-'></a>
 ### IsInRangeWithLowerBound(value,lowerBound,upperBound) `method`

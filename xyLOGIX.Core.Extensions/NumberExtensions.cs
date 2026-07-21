@@ -12,13 +12,13 @@ namespace xyLOGIX.Core.Extensions
     public static class NumberExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed
-        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.NumberExtensions" />
-        /// class.
+        /// Initializes <see langword="static" /> data or performs actions that
+        /// need to be performed once only for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.NumberExtensions" /> class.
         /// </summary>
         /// <remarks>
         /// This constructor is called automatically prior to the first instance
-        /// being created or before any static members are referenced.
+        /// being created or before any <see langword="static" /> members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -357,6 +357,34 @@ namespace xyLOGIX.Core.Extensions
 
             return result;
         }
+
+        /// <summary>
+        /// Determines whether a zero-based index is in the interval
+        /// <c>[lower, upper)</c>.
+        /// </summary>
+        /// <param name="index">The value to be checked.</param>
+        /// <param name="lower">
+        /// Lower bound.
+        /// <para />
+        /// Typically, this parameter is set to zero.
+        /// </param>
+        /// <param name="upper">
+        /// Upper bound.
+        /// <para />
+        /// Typically, this parameter is set to the total number of element(s) in the
+        /// collection being indexed.
+        /// </param>
+        /// <remarks>
+        /// The <paramref name="upper" /> bound is EXCLUDED from the range of
+        /// valid value(s) by this method.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to the <paramref name="lower" /> bound;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsInRange(this int index, int lower, int upper)
+            => index.IsInRangeWithLowerBound(lower, upper);
 
         /// <summary>
         /// Determines if an <see cref="T:System.Int32" /> value is between a pair

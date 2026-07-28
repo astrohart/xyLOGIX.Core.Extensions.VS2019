@@ -60,6 +60,13 @@
   - [InvokeIfRequired\`\`1(obj,message)](#M-xyLOGIX-Core-Extensions-ControlExtensions-InvokeIfRequired``1-System-ComponentModel-ISynchronizeInvoke,System-Func{``0}- 'xyLOGIX.Core.Extensions.ControlExtensions.InvokeIfRequired``1(System.ComponentModel.ISynchronizeInvoke,System.Func{``0})')
   - [IsParentFormNullOrDisposed()](#M-xyLOGIX-Core-Extensions-ControlExtensions-IsParentFormNullOrDisposed-System-Windows-Forms-Control- 'xyLOGIX.Core.Extensions.ControlExtensions.IsParentFormNullOrDisposed(System.Windows.Forms.Control)')
 - [DateTimeExtensions](#T-xyLOGIX-Core-Extensions-DateTimeExtensions 'xyLOGIX.Core.Extensions.DateTimeExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-#cctor 'xyLOGIX.Core.Extensions.DateTimeExtensions.#cctor')
+  - [IsAfter(dateTime1,dateTime2)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsAfter-System-DateTime,System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.IsAfter(System.DateTime,System.DateTime)')
+  - [IsAfterOrOn(dateTime1,dateTime2)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsAfterOrOn-System-DateTime,System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.IsAfterOrOn(System.DateTime,System.DateTime)')
+  - [IsBefore(dateTime1,dateTime2)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsBefore-System-DateTime,System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.IsBefore(System.DateTime,System.DateTime)')
+  - [IsBeforeOrOn(dateTime1,dateTime2)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsBeforeOrOn-System-DateTime,System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.IsBeforeOrOn(System.DateTime,System.DateTime)')
+  - [IsStrictlyAfter(dateTime1,dateTime2)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsStrictlyAfter-System-DateTime,System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.IsStrictlyAfter(System.DateTime,System.DateTime)')
+  - [IsStrictlyBefore(dateTime1,dateTime2)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsStrictlyBefore-System-DateTime,System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.IsStrictlyBefore(System.DateTime,System.DateTime)')
   - [ToRFC3339(date)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToRFC3339-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToRFC3339(System.DateTime)')
   - [ToSentencePart(dateTime)](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToSentencePart-System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.ToSentencePart(System.DateTime)')
 - [DateTimeOffsetExtensions](#T-xyLOGIX-Core-Extensions-DateTimeOffsetExtensions 'xyLOGIX.Core.Extensions.DateTimeOffsetExtensions')
@@ -2142,6 +2149,219 @@ xyLOGIX.Core.Extensions
 
 Exposes static extension methods to perform operations on
 [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value(s).
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[DateTimeExtensions](#T-xyLOGIX-Core-Extensions-DateTimeExtensions 'xyLOGIX.Core.Extensions.DateTimeExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any `static` members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsAfter-System-DateTime,System-DateTime-'></a>
+### IsAfter(dateTime1,dateTime2) `method`
+
+##### Summary
+
+Determines whether the specified `dateTime1`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value is strictly after the specified
+`dateTime2`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value.
+
+##### Returns
+
+`true` if the specified `dateTime1`
+value is strictly after the specified `dateTime2` value;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dateTime1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime2` value. |
+| dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime1` value. |
+
+##### Remarks
+
+If either `dateTime1` or
+`dateTime2` is equal to the default value of
+[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this method will return
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsAfterOrOn-System-DateTime,System-DateTime-'></a>
+### IsAfterOrOn(dateTime1,dateTime2) `method`
+
+##### Summary
+
+Determines whether the specified `dateTime1`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value is after or on the specified
+`dateTime2`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value.
+
+##### Returns
+
+`true` if the specified `dateTime1`
+value is after or on the specified `dateTime2` value;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dateTime1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime2` value. |
+| dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime1` value. |
+
+##### Remarks
+
+If either `dateTime1` or
+`dateTime2` is equal to the default value of
+[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this method will return
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsBefore-System-DateTime,System-DateTime-'></a>
+### IsBefore(dateTime1,dateTime2) `method`
+
+##### Summary
+
+Determines whether the specified `dateTime1`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value is strictly before the specified
+`dateTime2`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value.
+
+##### Returns
+
+`true` if the specified `dateTime1`
+value is before the specified `dateTime2` value; otherwise,
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dateTime1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime2` value. |
+| dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime1` value. |
+
+##### Remarks
+
+If either `dateTime1` or
+`dateTime2` is equal to the default value of
+[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this method will return
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsBeforeOrOn-System-DateTime,System-DateTime-'></a>
+### IsBeforeOrOn(dateTime1,dateTime2) `method`
+
+##### Summary
+
+Determines whether the specified `dateTime1`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value is before or on the specified
+`dateTime2`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value.
+
+##### Returns
+
+`true` if the specified `dateTime1`
+value is before or on the specified `dateTime2` value;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dateTime1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime2` value. |
+| dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime1` value. |
+
+##### Remarks
+
+If either `dateTime1` or
+`dateTime2` is equal to the default value of
+[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this method will return
+`false`.
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsStrictlyAfter-System-DateTime,System-DateTime-'></a>
+### IsStrictlyAfter(dateTime1,dateTime2) `method`
+
+##### Summary
+
+Determines whether the specified `dateTime1`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value is strictly after the specified
+`dateTime2`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value.
+
+##### Returns
+
+`true` if the specified `dateTime1`
+value is strictly after the specified `dateTime2` value;
+otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dateTime1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime2` value. |
+| dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime1` value. |
+
+##### Remarks
+
+If either `dateTime1` or `dateTime2` is
+equal to the default value of [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this
+method will return `false`.
+
+
+
+This method is simply defined to be a semantic alias for the
+[IsAfter](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsAfter-System-DateTime,System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.IsAfter(System.DateTime,System.DateTime)')
+method.
+
+<a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsStrictlyBefore-System-DateTime,System-DateTime-'></a>
+### IsStrictlyBefore(dateTime1,dateTime2) `method`
+
+##### Summary
+
+Determines whether the specified `dateTime1`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value is strictly before the specified
+`dateTime2`[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value.
+
+##### Returns
+
+`true` if the specified `dateTime1`
+value is before the specified `dateTime2` value; otherwise,
+`false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| dateTime1 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime2` value. |
+| dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
+that is to be compared to the specified `dateTime1` value. |
+
+##### Remarks
+
+If either `dateTime1` or `dateTime2` is
+equal to the default value of [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this
+method will return `false`.
+
+
+
+This method is simply defined to be a semantic alias for the
+[IsBefore](#M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsBefore-System-DateTime,System-DateTime- 'xyLOGIX.Core.Extensions.DateTimeExtensions.IsBefore(System.DateTime,System.DateTime)')
+method.
 
 <a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-ToRFC3339-System-DateTime-'></a>
 ### ToRFC3339(date) `method`

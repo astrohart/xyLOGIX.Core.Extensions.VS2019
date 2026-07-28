@@ -39,12 +39,6 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) The <see cref="T:System.DateTime" /> value
         /// that is to be compared to the specified <paramref name="dateTime1" /> value.
         /// </param>
-        /// <remarks>
-        /// If either <paramref name="dateTime1" /> or
-        /// <paramref name="dateTime2" /> is equal to the default value of
-        /// <see cref="T:System.DateTime" />, then this method will return
-        /// <see langword="false" />.
-        /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="dateTime1" />
         /// value is strictly after the specified <paramref name="dateTime2" /> value;
@@ -53,13 +47,10 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static bool IsAfter(this DateTime dateTime1, DateTime dateTime2)
         {
-            var result = false;
+            bool result;
 
             try
             {
-                if (dateTime2 == default) return result;
-                if (dateTime1 == default) return result;
-
                 result = dateTime1 > dateTime2;
             }
             catch (Exception ex)
@@ -86,12 +77,6 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) The <see cref="T:System.DateTime" /> value
         /// that is to be compared to the specified <paramref name="dateTime1" /> value.
         /// </param>
-        /// <remarks>
-        /// If either <paramref name="dateTime1" /> or
-        /// <paramref name="dateTime2" /> is equal to the default value of
-        /// <see cref="T:System.DateTime" />, then this method will return
-        /// <see langword="false" />.
-        /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="dateTime1" />
         /// value is after or on the specified <paramref name="dateTime2" /> value;
@@ -100,13 +85,10 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static bool IsAfterOrOn(this DateTime dateTime1, DateTime dateTime2)
         {
-            var result = false;
+            bool result;
 
             try
             {
-                if (dateTime1 == default) return result;
-                if (dateTime2 == default) return result;
-
                 result = dateTime1 >= dateTime2;
             }
             catch (Exception ex)
@@ -133,12 +115,6 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) The <see cref="T:System.DateTime" /> value
         /// that is to be compared to the specified <paramref name="dateTime1" /> value.
         /// </param>
-        /// <remarks>
-        /// If either <paramref name="dateTime1" /> or
-        /// <paramref name="dateTime2" /> is equal to the default value of
-        /// <see cref="T:System.DateTime" />, then this method will return
-        /// <see langword="false" />.
-        /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="dateTime1" />
         /// value is before the specified <paramref name="dateTime2" /> value; otherwise,
@@ -147,13 +123,10 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static bool IsBefore(this DateTime dateTime1, DateTime dateTime2)
         {
-            var result = false;
+            bool result;
 
             try
             {
-                if (dateTime2 == default) return result;
-                if (dateTime1 == default) return result;
-
                 result = dateTime1 < dateTime2;
             }
             catch (Exception ex)
@@ -180,12 +153,6 @@ namespace xyLOGIX.Core.Extensions
         /// (Required.) The <see cref="T:System.DateTime" /> value
         /// that is to be compared to the specified <paramref name="dateTime1" /> value.
         /// </param>
-        /// <remarks>
-        /// If either <paramref name="dateTime1" /> or
-        /// <paramref name="dateTime2" /> is equal to the default value of
-        /// <see cref="T:System.DateTime" />, then this method will return
-        /// <see langword="false" />.
-        /// </remarks>
         /// <returns>
         /// <see langword="true" /> if the specified <paramref name="dateTime1" />
         /// value is before or on the specified <paramref name="dateTime2" /> value;
@@ -194,13 +161,10 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static bool IsBeforeOrOn(this DateTime dateTime1, DateTime dateTime2)
         {
-            var result = false;
+            bool result;
 
             try
             {
-                if (dateTime2 == default) return result;
-                if (dateTime1 == default) return result;
-
                 result = dateTime1 <= dateTime2;
             }
             catch (Exception ex)

@@ -2196,13 +2196,6 @@ that is to be compared to the specified `dateTime2` value. |
 | dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
 that is to be compared to the specified `dateTime1` value. |
 
-##### Remarks
-
-If either `dateTime1` or
-`dateTime2` is equal to the default value of
-[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this method will return
-`false`.
-
 <a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsAfterOrOn-System-DateTime,System-DateTime-'></a>
 ### IsAfterOrOn(dateTime1,dateTime2) `method`
 
@@ -2225,13 +2218,6 @@ otherwise, `false`.
 that is to be compared to the specified `dateTime2` value. |
 | dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
 that is to be compared to the specified `dateTime1` value. |
-
-##### Remarks
-
-If either `dateTime1` or
-`dateTime2` is equal to the default value of
-[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this method will return
-`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsBefore-System-DateTime,System-DateTime-'></a>
 ### IsBefore(dateTime1,dateTime2) `method`
@@ -2256,13 +2242,6 @@ that is to be compared to the specified `dateTime2` value. |
 | dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
 that is to be compared to the specified `dateTime1` value. |
 
-##### Remarks
-
-If either `dateTime1` or
-`dateTime2` is equal to the default value of
-[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this method will return
-`false`.
-
 <a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsBeforeOrOn-System-DateTime,System-DateTime-'></a>
 ### IsBeforeOrOn(dateTime1,dateTime2) `method`
 
@@ -2285,13 +2264,6 @@ otherwise, `false`.
 that is to be compared to the specified `dateTime2` value. |
 | dateTime2 | [System.DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') | (Required.) The [DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime') value
 that is to be compared to the specified `dateTime1` value. |
-
-##### Remarks
-
-If either `dateTime1` or
-`dateTime2` is equal to the default value of
-[DateTime](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.DateTime 'System.DateTime'), then this method will return
-`false`.
 
 <a name='M-xyLOGIX-Core-Extensions-DateTimeExtensions-IsStrictlyAfter-System-DateTime,System-DateTime-'></a>
 ### IsStrictlyAfter(dateTime1,dateTime2) `method`

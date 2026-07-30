@@ -257,6 +257,168 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether a zero-based index is in the interval
+        /// <c>[lower, upper)</c>.
+        /// </summary>
+        /// <param name="index">The value to be checked.</param>
+        /// <param name="lower">
+        /// Lower bound.
+        /// <para />
+        /// Typically, this parameter is set to zero.
+        /// </param>
+        /// <param name="upper">
+        /// Upper bound.
+        /// <para />
+        /// Typically, this parameter is set to the total number of element(s) in the
+        /// collection being indexed.
+        /// </param>
+        /// <remarks>
+        /// The <paramref name="upper" /> bound is EXCLUDED from the range of
+        /// valid value(s) by this method.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to the <paramref name="lower" /> bound;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsInRange(this int index, int lower, int upper)
+            => index.IsInRangeWithLowerBound(lower, upper);
+
+        /// <summary>
+        /// Determines whether a zero-based index is in the interval
+        /// <c>[lower, upper)</c>.
+        /// </summary>
+        /// <param name="index">The value to be checked.</param>
+        /// <param name="lower">
+        /// Lower bound.
+        /// <para />
+        /// Typically, this parameter is set to zero.
+        /// </param>
+        /// <param name="upper">
+        /// Upper bound.
+        /// <para />
+        /// Typically, this parameter is set to the total number of element(s) in the
+        /// collection being indexed.
+        /// </param>
+        /// <remarks>
+        /// The <paramref name="upper" /> bound is EXCLUDED from the range of
+        /// valid value(s) by this method.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to the <paramref name="lower" /> bound;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsInRange(this uint index, uint lower, uint upper)
+            => index.IsInRangeWithLowerBound(lower, upper);
+
+        /// <summary>
+        /// Determines if an <see cref="T:System.Int32" /> value is between a pair
+        /// of values or equal to the lower bound of the given range.
+        /// </summary>
+        /// <param name="value">The value to be checked.</param>
+        /// <param name="lowerBound">Lower bound.</param>
+        /// <param name="upperBound">Upper bound.</param>
+        /// <remarks>
+        /// The <paramref name="upperBound" /> is EXCLUDED from the range of valid
+        /// value(s) by this method.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to the <paramref name="lowerBound" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsInRangeWithLowerBound(this int value, int lowerBound, int upperBound)
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound > value && value >= lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if a <see cref="T:System.UInt32" /> value is between a pair
+        /// of values or equal to the lower bound of the given range.
+        /// </summary>
+        /// <param name="value">The value to be checked.</param>
+        /// <param name="lowerBound">Lower bound.</param>
+        /// <param name="upperBound">Upper bound.</param>
+        /// <remarks>
+        /// The <paramref name="upperBound" /> is EXCLUDED from the range of valid
+        /// value(s) by this method.
+        /// </remarks>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to the <paramref name="lowerBound" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsInRangeWithLowerBound(
+            this uint value,
+            uint lowerBound,
+            uint upperBound
+        )
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound > value && value >= lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines if an <see cref="T:System.Int32" /> value is either
+        /// strictly between a pair of values or equal to the upper bound of the given
+        /// range.
+        /// </summary>
+        /// <param name="value">The value to be checked.</param>
+        /// <param name="lowerBound">Lower bound.</param>
+        /// <param name="upperBound">Upper bound.</param>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to the <paramref name="upperBound" />;
+        /// <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsInRangeWithUpperBound(this int value, int lowerBound, int upperBound)
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound >= value && value > lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines if a decimal value is between a pair of values or equal to
         /// either of them.
         /// </summary>
@@ -353,101 +515,6 @@ namespace xyLOGIX.Core.Extensions
             catch
             {
                 result = false;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines whether a zero-based index is in the interval
-        /// <c>[lower, upper)</c>.
-        /// </summary>
-        /// <param name="index">The value to be checked.</param>
-        /// <param name="lower">
-        /// Lower bound.
-        /// <para />
-        /// Typically, this parameter is set to zero.
-        /// </param>
-        /// <param name="upper">
-        /// Upper bound.
-        /// <para />
-        /// Typically, this parameter is set to the total number of element(s) in the
-        /// collection being indexed.
-        /// </param>
-        /// <remarks>
-        /// The <paramref name="upper" /> bound is EXCLUDED from the range of
-        /// valid value(s) by this method.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the value is either within the range
-        /// specified or equal to the <paramref name="lower" /> bound;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
-        public static bool IsInRange(this int index, int lower, int upper)
-            => index.IsInRangeWithLowerBound(lower, upper);
-
-        /// <summary>
-        /// Determines if an <see cref="T:System.Int32" /> value is between a pair
-        /// of values or equal to the lower bound of the given range.
-        /// </summary>
-        /// <param name="value">The value to be checked.</param>
-        /// <param name="lowerBound">Lower bound.</param>
-        /// <param name="upperBound">Upper bound.</param>
-        /// <remarks>
-        /// The <paramref name="upperBound" /> is EXCLUDED from the range of valid
-        /// value(s) by this method.
-        /// </remarks>
-        /// <returns>
-        /// <see langword="true" /> if the value is either within the range
-        /// specified or equal to the <paramref name="lowerBound" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
-        public static bool IsInRangeWithLowerBound(this int value, int lowerBound, int upperBound)
-        {
-            var result = false;
-
-            try
-            {
-                if ((upperBound - lowerBound).IsNonPositive()) return result;
-
-                result = upperBound > value && value >= lowerBound;
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// Determines if an <see cref="T:System.Int32" /> value is either
-        /// strictly between a pair of values or equal to the upper bound of the given
-        /// range.
-        /// </summary>
-        /// <param name="value">The value to be checked.</param>
-        /// <param name="lowerBound">Lower bound.</param>
-        /// <param name="upperBound">Upper bound.</param>
-        /// <returns>
-        /// <see langword="true" /> if the value is either within the range
-        /// specified or equal to the <paramref name="upperBound" />;
-        /// <see langword="false" /> otherwise.
-        /// </returns>
-        public static bool IsInRangeWithUpperBound(this int value, int lowerBound, int upperBound)
-        {
-            var result = false;
-
-            try
-            {
-                if ((upperBound - lowerBound).IsNonPositive()) return result;
-
-                result = upperBound >= value && value > lowerBound;
-            }
-            catch (Exception ex)
-            {
-                // dump all the exception info to the log
-                DebugUtils.LogException(ex);
             }
 
             return result;

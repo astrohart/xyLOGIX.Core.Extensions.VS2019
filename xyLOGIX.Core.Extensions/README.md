@@ -30,7 +30,10 @@
 - [CharExtensions](#T-xyLOGIX-Core-Extensions-CharExtensions 'xyLOGIX.Core.Extensions.CharExtensions')
   - [#cctor()](#M-xyLOGIX-Core-Extensions-CharExtensions-#cctor 'xyLOGIX.Core.Extensions.CharExtensions.#cctor')
   - [IsDigit(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsDigit-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsDigit(System.Char)')
+  - [IsHyphen(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsHyphen-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsHyphen(System.Char)')
   - [IsLowercase(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsLowercase-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsLowercase(System.Char)')
+  - [IsPeriod(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsPeriod-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsPeriod(System.Char)')
+  - [IsSingleSpace(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsSingleSpace-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsSingleSpace(System.Char)')
   - [IsUppercase(value)](#M-xyLOGIX-Core-Extensions-CharExtensions-IsUppercase-System-Char- 'xyLOGIX.Core.Extensions.CharExtensions.IsUppercase(System.Char)')
 - [CheckedListBoxExtensions](#T-xyLOGIX-Core-Extensions-CheckedListBoxExtensions 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions')
   - [AreAllItemsSelected(checkedListBox)](#M-xyLOGIX-Core-Extensions-CheckedListBoxExtensions-AreAllItemsSelected-System-Windows-Forms-CheckedListBox- 'xyLOGIX.Core.Extensions.CheckedListBoxExtensions.AreAllItemsSelected(System.Windows.Forms.CheckedListBox)')
@@ -1370,9 +1373,9 @@ Contains extension methods to be used on instances of the
 
 ##### Summary
 
-Initializes static data or performs actions that need to be performed
-once only for the [CharExtensions](#T-xyLOGIX-Core-Extensions-CharExtensions 'xyLOGIX.Core.Extensions.CharExtensions')
-class.
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[CharExtensions](#T-xyLOGIX-Core-Extensions-CharExtensions 'xyLOGIX.Core.Extensions.CharExtensions') class.
 
 ##### Parameters
 
@@ -1381,7 +1384,7 @@ This method has no parameters.
 ##### Remarks
 
 This constructor is called automatically prior to the first instance
-being created or before any static members are referenced.
+being created or before any `static` members are referenced.
 
 
 
@@ -1407,6 +1410,26 @@ otherwise, `false`.
 | value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to
 evaluate. |
 
+<a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsHyphen-System-Char-'></a>
+### IsHyphen(value) `method`
+
+##### Summary
+
+Determines whether the specified [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') is a
+single hyphen character (`'-'`).
+
+##### Returns
+
+`true` if `value` is a single
+hyphen character; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to
+evaluate. |
+
 <a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsLowercase-System-Char-'></a>
 ### IsLowercase(value) `method`
 
@@ -1419,6 +1442,46 @@ lowercase letter ('a' through 'z').
 
 `true` if `value` is a lowercase
 ASCII letter; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to
+evaluate. |
+
+<a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsPeriod-System-Char-'></a>
+### IsPeriod(value) `method`
+
+##### Summary
+
+Determines whether the specified [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') is a
+single period character (`'.'`).
+
+##### Returns
+
+`true` if `value` is a single
+period character; otherwise, `false`.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') | (Required.) A [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') value to
+evaluate. |
+
+<a name='M-xyLOGIX-Core-Extensions-CharExtensions-IsSingleSpace-System-Char-'></a>
+### IsSingleSpace(value) `method`
+
+##### Summary
+
+Determines whether the specified [Char](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Char 'System.Char') is a
+single space character (`' '`).
+
+##### Returns
+
+`true` if `value` is a single space
+character; otherwise, `false`.
 
 ##### Parameters
 

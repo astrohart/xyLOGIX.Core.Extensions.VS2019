@@ -11,13 +11,13 @@ namespace xyLOGIX.Core.Extensions
     public static class CharExtensions
     {
         /// <summary>
-        /// Initializes static data or performs actions that need to be performed
-        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.CharExtensions" />
-        /// class.
+        /// Initializes <see langword="static" /> data or performs actions that
+        /// need to be performed once only for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.CharExtensions" /> class.
         /// </summary>
         /// <remarks>
         /// This constructor is called automatically prior to the first instance
-        /// being created or before any static members are referenced.
+        /// being created or before any <see langword="static" /> members are referenced.
         /// <para />
         /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
         /// attribute in order to simplify the logging output.
@@ -54,6 +54,37 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether the specified <see cref="T:System.Char" /> is a
+        /// single hyphen character (<c>'-'</c>).
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.Char" /> value to
+        /// evaluate.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if <paramref name="value" /> is a single
+        /// hyphen character; otherwise, <see langword="false" />.
+        /// </returns>
+        public static bool IsHyphen([NotLogged] this char value)
+        {
+            bool result;
+
+            try
+            {
+                result = '-'.Equals(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the specified <paramref name="value" /> is an ASCII
         /// lowercase letter ('a' through 'z').
         /// </summary>
@@ -73,6 +104,68 @@ namespace xyLOGIX.Core.Extensions
             try
             {
                 result = char.IsLower(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="T:System.Char" /> is a
+        /// single period character (<c>'.'</c>).
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.Char" /> value to
+        /// evaluate.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if <paramref name="value" /> is a single
+        /// period character; otherwise, <see langword="false" />.
+        /// </returns>
+        public static bool IsPeriod([NotLogged] this char value)
+        {
+            bool result;
+
+            try
+            {
+                result = '.'.Equals(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Determines whether the specified <see cref="T:System.Char" /> is a
+        /// single space character (<c>' '</c>).
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) A <see cref="T:System.Char" /> value to
+        /// evaluate.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if <paramref name="value" /> is a single space
+        /// character; otherwise, <see langword="false" />.
+        /// </returns>
+        public static bool IsSingleSpace([NotLogged] this char value)
+        {
+            bool result;
+
+            try
+            {
+                result = ' '.Equals(value);
             }
             catch (Exception ex)
             {

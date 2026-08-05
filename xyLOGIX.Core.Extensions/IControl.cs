@@ -808,12 +808,6 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         event EventHandler CursorChanged;
 
-        /// <summary>
-        /// Occurs when the value of the
-        /// <see cref="P:System.Windows.Forms.Control.Dock" /> property changes.
-        /// </summary>
-        event EventHandler DockChanged;
-
         /// <summary>Begins a drag-and-drop operation.</summary>
         /// <param name="data">The data to drag.</param>
         /// <param name="allowedEffects">
@@ -826,6 +820,12 @@ namespace xyLOGIX.Core.Extensions
         /// drag-and-drop operation.
         /// </returns>
         DragDropEffects DoDragDrop(object data, DragDropEffects allowedEffects);
+
+        /// <summary>
+        /// Occurs when the value of the
+        /// <see cref="P:System.Windows.Forms.Control.Dock" /> property changes.
+        /// </summary>
+        event EventHandler DockChanged;
 
         /// <summary>Occurs when the control is double-clicked.</summary>
         event EventHandler DoubleClick;

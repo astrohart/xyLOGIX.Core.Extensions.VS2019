@@ -455,6 +455,38 @@ namespace xyLOGIX.Core.Extensions
         }
 
         /// <summary>
+        /// Determines if a decimal value is between a pair of values or equal to
+        /// either of them.
+        /// </summary>
+        /// <param name="value">The value to be checked.</param>
+        /// <param name="lowerBound">Lower bound.</param>
+        /// <param name="upperBound">Upper bound.</param>
+        /// <returns>
+        /// <see langword="true" /> if the value is either within the range
+        /// specified or equal to either of the bounds; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsIncludedInRange(this long value, long lowerBound, long upperBound)
+        {
+            var result = false;
+
+            try
+            {
+                if ((upperBound - lowerBound).IsNonPositive()) return result;
+
+                result = upperBound >= value && value >= lowerBound;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines if an integer value is between a pair of values or equal to
         /// either of them.
         /// </summary>
@@ -727,6 +759,40 @@ namespace xyLOGIX.Core.Extensions
         /// <returns>True if the <paramref name="value" /> is zero; false otherwise.</returns>
         public static bool IsZero(this uint value)
             => 0U.Equals(value);
+
+        /// <summary>
+        /// Converts the specified <paramref name="value" /> of type,
+        /// <see cref="T:System.Int32" />, to a value of type,
+        /// <see cref="T:System.Int64" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) The <see cref="T:System.Int32" /> value to be
+        /// converted to <see cref="T:System.Int64" />.
+        /// </param>
+        /// <returns>
+        /// The specified <paramref name="value" />, converted to type
+        /// <see cref="T:System.Int64" />.
+        /// <para />
+        /// If the conversion was not successful, this method returns -1.
+        /// </returns>
+        public static long ToLong(this int value)
+        {
+            long result;
+
+            try
+            {
+                result = Convert.ToInt64(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = -1L;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Rounds the specified <paramref name="value" /> to the nearest cent,

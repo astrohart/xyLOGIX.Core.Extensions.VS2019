@@ -550,6 +550,7 @@
   - [IsInRangeWithLowerBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithLowerBound-System-UInt32,System-UInt32,System-UInt32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithLowerBound(System.UInt32,System.UInt32,System.UInt32)')
   - [IsInRangeWithUpperBound(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsInRangeWithUpperBound-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsInRangeWithUpperBound(System.Int32,System.Int32,System.Int32)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Decimal,System-Decimal,System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Decimal,System.Decimal,System.Decimal)')
+  - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int64,System-Int64,System-Int64- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Int64,System.Int64,System.Int64)')
   - [IsIncludedInRange(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRange(System.Int32,System.Int32,System.Int32)')
   - [IsIncludedInRangeSilent(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRangeSilent-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRangeSilent(System.Int32,System.Int32,System.Int32)')
   - [IsNaturalNumber(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNaturalNumber-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNaturalNumber(System.Int32)')
@@ -568,6 +569,7 @@
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Decimal)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Int32)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-UInt32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.UInt32)')
+  - [ToLong(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ToLong-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ToLong(System.Int32)')
   - [ToNearestCent(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ToNearestCent-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.ToNearestCent(System.Decimal)')
   - [TruncateDecimalPlaces(val,places)](#M-xyLOGIX-Core-Extensions-NumberExtensions-TruncateDecimalPlaces-System-Decimal,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.TruncateDecimalPlaces(System.Decimal,System.Int32)')
   - [ZeroFloor(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ZeroFloor-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ZeroFloor(System.Int32)')
@@ -10686,6 +10688,27 @@ specified or equal to either of the bounds; `false` otherwise.
 | lowerBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Lower bound. |
 | upperBound | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | Upper bound. |
 
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int64,System-Int64,System-Int64-'></a>
+### IsIncludedInRange(value,lowerBound,upperBound) `method`
+
+##### Summary
+
+Determines if a decimal value is between a pair of values or equal to
+either of them.
+
+##### Returns
+
+`true` if the value is either within the range
+specified or equal to either of the bounds; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | The value to be checked. |
+| lowerBound | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | Lower bound. |
+| upperBound | [System.Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64') | Upper bound. |
+
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRange-System-Int32,System-Int32,System-Int32-'></a>
 ### IsIncludedInRange(value,lowerBound,upperBound) `method`
 
@@ -11043,6 +11066,31 @@ True if the `value` is zero; false otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Value to be compared. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ToLong-System-Int32-'></a>
+### ToLong(value) `method`
+
+##### Summary
+
+Converts the specified `value` of type,
+[Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32'), to a value of type,
+[Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64').
+
+##### Returns
+
+The specified `value`, converted to type
+[Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64').
+
+
+
+If the conversion was not successful, this method returns -1.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) The [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value to be
+converted to [Int64](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int64 'System.Int64'). |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ToNearestCent-System-Decimal-'></a>
 ### ToNearestCent(value) `method`

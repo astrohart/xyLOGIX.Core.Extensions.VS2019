@@ -761,6 +761,37 @@ namespace xyLOGIX.Core.Extensions
             => 0U.Equals(value);
 
         /// <summary>
+        /// Attempts to convert the specified <see cref="T:System.UInt32" />
+        /// <paramref name="value" /> to an <see cref="T:System.Int32" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) The <see cref="T:System.UInt32" /> value to be converted to
+        /// <see cref="T:System.Int32" />.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.Int32" /> representation of the specified
+        /// <paramref name="value" />; otherwise, -1.
+        /// </returns>
+        public static int ToInt32(this uint value)
+        {
+            var result = -1;
+
+            try
+            {
+                result = Convert.ToInt32(value);
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = -1;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Converts the specified <paramref name="value" /> of type,
         /// <see cref="T:System.Int32" />, to a value of type,
         /// <see cref="T:System.Int64" />.

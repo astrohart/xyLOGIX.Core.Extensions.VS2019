@@ -569,6 +569,7 @@
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Decimal)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.Int32)')
   - [IsZero(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsZero-System-UInt32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsZero(System.UInt32)')
+  - [ToInt32(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ToInt32-System-UInt32- 'xyLOGIX.Core.Extensions.NumberExtensions.ToInt32(System.UInt32)')
   - [ToLong(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ToLong-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.ToLong(System.Int32)')
   - [ToNearestCent(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-ToNearestCent-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.ToNearestCent(System.Decimal)')
   - [TruncateDecimalPlaces(val,places)](#M-xyLOGIX-Core-Extensions-NumberExtensions-TruncateDecimalPlaces-System-Decimal,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.TruncateDecimalPlaces(System.Decimal,System.Int32)')
@@ -11066,6 +11067,25 @@ True if the `value` is zero; false otherwise.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | Value to be compared. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ToInt32-System-UInt32-'></a>
+### ToInt32(value) `method`
+
+##### Summary
+
+Attempts to convert the specified [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32')`value` to an [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32').
+
+##### Returns
+
+If successful, a [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') representation of the specified
+`value`; otherwise, -1.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') | (Required.) The [UInt32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.UInt32 'System.UInt32') value to be converted to
+[Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32'). |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-ToLong-System-Int32-'></a>
 ### ToLong(value) `method`

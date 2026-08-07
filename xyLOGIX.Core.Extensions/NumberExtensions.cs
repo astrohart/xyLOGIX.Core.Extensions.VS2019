@@ -765,12 +765,12 @@ namespace xyLOGIX.Core.Extensions
         /// <paramref name="value" /> to an <see cref="T:System.Int32" />.
         /// </summary>
         /// <param name="value">
-        /// (Required.) The <see cref="T:System.UInt32" /> value to be converted to
-        /// <see cref="T:System.Int32" />.
+        /// (Required.) The <see cref="T:System.UInt32" /> value to be
+        /// converted to <see cref="T:System.Int32" />.
         /// </param>
         /// <returns>
-        /// If successful, a <see cref="T:System.Int32" /> representation of the specified
-        /// <paramref name="value" />; otherwise, -1.
+        /// If successful, a <see cref="T:System.Int32" /> representation of the
+        /// specified <paramref name="value" />; otherwise, -1.
         /// </returns>
         public static int ToInt32(this uint value)
         {

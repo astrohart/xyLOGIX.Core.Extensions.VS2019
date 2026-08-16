@@ -40,8 +40,7 @@ namespace xyLOGIX.Core.Extensions
         /// </summary>
         private static IControlFormAssociationProvider ControlFormAssociationProvider
         {
-            [DebuggerStepThrough]
-            get;
+            [DebuggerStepThrough] get;
         } = GetControlFormAssociationProvider.SoleInstance();
 
         /// <summary>

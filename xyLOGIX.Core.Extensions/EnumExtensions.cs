@@ -10,26 +10,12 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class EnumExtensions
     {
-        /// <summary>
-        /// Initializes static data or performs actions that need to be performed
-        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.EnumExtensions" />
-        /// class.
-        /// </summary>
-        /// <remarks>
-        /// This constructor is called automatically prior to the first instance
-        /// being created or before any static members are referenced.
-        /// <para />
-        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
-        /// attribute in order to simplify the logging output.
-        /// </remarks>
+        /// <summary>Initializes static data or performs actions that need to be performed once only for the <see cref="T:xyLOGIX.Core.Extensions.EnumExtensions" /> class.</summary>
+        /// <remarks>This constructor is called automatically prior to the first instance being created or before any static members are referenced. <para /> We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c> attribute in order to simplify the logging output.</remarks>
         [Log(AttributeExclude = true)]
         static EnumExtensions() { }
 
-        /// <summary>
-        /// Converts an enumeration value of the specified type (with a
-        /// <see cref="T:System.ComponentModel.DescriptionAttribute" /> applied to it) to a
-        /// string value.
-        /// </summary>
+        /// <summary>Converts an enumeration value of the specified type (with a <see cref="T:System.ComponentModel.DescriptionAttribute" /> applied to it) to a string value.</summary>
         /// <typeparam name="T">Type of the enumeration.</typeparam>
         /// <param name="enumerationValue">Value of the enumeration.</param>
         /// <returns>String containing the enumeration value expressed as a string.</returns>
@@ -67,20 +53,10 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="enumerationValue" />
-        /// is not within the value set of its defining <see langword="enum" />.
-        /// </summary>
-        /// <typeparam name="T">
-        /// (Required.) Name of the <see langword="enum" /> from which
-        /// the specified <paramref name="enumerationValue" /> comes.
-        /// </typeparam>
+        /// <summary>Determines whether the specified <paramref name="enumerationValue" /> is not within the value set of its defining <see langword="enum" />.</summary>
+        /// <typeparam name="T">(Required.) Name of the <see langword="enum" /> from which the specified <paramref name="enumerationValue" /> comes.</typeparam>
         /// <param name="enumerationValue">(Required.) Enumeration value to be checked.</param>
-        /// <returns>
-        /// <see langword="true" /> if the specified
-        /// <paramref name="enumerationValue" /> is not within the value set of its
-        /// defining <see langword="enum" />; <see langword="false" /> otherwise.
-        /// </returns>
+        /// <returns><see langword="true" /> if the specified <paramref name="enumerationValue" /> is not within the value set of its defining <see langword="enum" />; <see langword="false" /> otherwise.</returns>
         public static bool IsUndefined<T>(this T enumerationValue) where T : Enum
         {
             bool result;

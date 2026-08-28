@@ -7,44 +7,17 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>
-    /// Exposes <see langword="static" /> extension method(s) for the
-    /// <see cref="T:System.ComponentModel.Component" /> class.
-    /// </summary>
+    /// <summary>Exposes <see langword="static" /> extension method(s) for the <see cref="T:System.ComponentModel.Component" /> class.</summary>
     public static class ComponentExtensions
     {
-        /// <summary>
-        /// Initializes <see langword="static" /> data or performs actions that
-        /// need to be performed once only for the
-        /// <see cref="T:xyLOGIX.Core.Extensions.ComponentExtensions" /> class.
-        /// </summary>
-        /// <remarks>
-        /// This constructor is called automatically prior to the first instance
-        /// being created or before any <see langword="static" /> members are referenced.
-        /// <para />
-        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
-        /// attribute in order to simplify the logging output.
-        /// </remarks>
+        /// <summary>Initializes <see langword="static" /> data or performs actions that need to be performed once only for the <see cref="T:xyLOGIX.Core.Extensions.ComponentExtensions" /> class.</summary>
+        /// <remarks>This constructor is called automatically prior to the first instance being created or before any <see langword="static" /> members are referenced. <para /> We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c> attribute in order to simplify the logging output.</remarks>
         [Log(AttributeExclude = true)]
         static ComponentExtensions() { }
 
-        /// <summary>
-        /// Determines whether the specified <paramref name="component" /> is set
-        /// to a <see langword="null" /> reference or has been disposed.
-        /// </summary>
-        /// <param name="component">
-        /// (Required.) Reference to an instance of an object that
-        /// implements the <see cref="T:System.ComponentModel.IComponent" /> interface that
-        /// refers to the component that is to be checked.
-        /// </param>
-        /// <remarks>
-        /// Uses the <see cref="P:System.Windows.Forms.Control.IsDisposed" /> for
-        /// WinForms controls and falls back to reflection and a conservative probe for
-        /// other <see cref="T:System.ComponentModel.IComponent" /> interface
-        /// implementations.
-        /// <para />
-        /// On any exception the method logs and returns <see langword="true" />.
-        /// </remarks>
+        /// <summary>Determines whether the specified <paramref name="component" /> is set to a <see langword="null" /> reference or has been disposed.</summary>
+        /// <param name="component">(Required.) Reference to an instance of an object that implements the <see cref="T:System.ComponentModel.IComponent" /> interface that refers to the component that is to be checked.</param>
+        /// <remarks>Uses the <see cref="P:System.Windows.Forms.Control.IsDisposed" /> for WinForms controls and falls back to reflection and a conservative probe for other <see cref="T:System.ComponentModel.IComponent" /> interface implementations. <para /> On any exception the method logs and returns <see langword="true" />.</remarks>
         [Log(AttributeExclude = true)]
         public static bool IsNullOrDisposed([NotLogged] this IComponent component)
         {
@@ -66,8 +39,7 @@ namespace xyLOGIX.Core.Extensions
                     }
                     else
                     {
-                        // Reflection: look for public/non-public bool properties named IsDisposed /
-                        // Disposed
+                        // Reflection: look for public/non-public bool properties named IsDisposed / Disposed
                         new Control().InvokeIfRequired(() =>
                             {
                                 var t = component.GetType();
@@ -89,8 +61,7 @@ namespace xyLOGIX.Core.Extensions
                                 }
                                 else
                                 {
-                                    // Reflection: common private field names often used by
-                                    // implementations
+                                    // Reflection: common private field names often used by implementations
                                     var foundField = false;
                                     foreach (var fieldName in new[]
                                              {
@@ -111,10 +82,7 @@ namespace xyLOGIX.Core.Extensions
 
                                     if (foundField) return;
 
-                                    // Last resort: attempt to touch a benign property and see if
-                                    // ObjectDisposedException is thrown. If touching throws
-                                    // ObjectDisposedException, treat it as disposed; otherwise
-                                    // assume not disposed.
+                                    // Last resort: attempt to touch a benign property and see if ObjectDisposedException is thrown. If touching throws ObjectDisposedException, treat it as disposed; otherwise assume not disposed.
                                     try
                                     {
                                         _ = component.Site; // benign probe

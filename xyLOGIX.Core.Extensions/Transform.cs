@@ -8,63 +8,20 @@ namespace xyLOGIX.Core.Extensions
     /// <summary>Exposes static method(s) to transform text strings in various ways.</summary>
     public static class Transform
     {
-        /// <summary>
-        /// A regular expression pattern that matches an entire string consisting only of
-        /// uppercase letters. This pattern is useful for identifying acronyms (e.g.,
-        /// "NASA", "AI", "RADAR") that appear as standalone words without any lowercase
-        /// letters.
-        /// <para>
-        /// This pattern ensures that the input string contains only uppercase
-        /// letters from A to Z and does not include numbers, spaces, or lowercase
-        /// characters.
-        /// </para>
-        /// </summary>
+        /// <summary>A regular expression pattern that matches an entire string consisting only of uppercase letters. This pattern is useful for identifying acronyms (e.g., "NASA", "AI", "RADAR") that appear as standalone words without any lowercase letters. <para>This pattern ensures that the input string contains only uppercase letters from A to Z and does not include numbers, spaces, or lowercase characters.</para></summary>
         public const string AcronymPattern = @"^[A-Z]+$";
 
-        /// <summary>
-        /// A regular expression pattern that matches words in an initial-caps formatted
-        /// string. This pattern identifies:
-        /// <list type="bullet">
-        ///     <item>
-        ///         <description>All-uppercase acronyms (e.g., "NASA", "AI", "RADAR").</description>
-        ///     </item>
-        ///     <item>
-        ///         <description>
-        ///         Capitalized words that follow PascalCase or CamelCase
-        ///         conventions (e.g., "Research", "Lab").
-        ///         </description>
-        ///     </item>
-        /// </list>
-        /// The matched words can be used to transform an initial-caps string into a
-        /// space-separated phrase while preserving acronyms.
-        /// </summary>
+        /// <summary>A regular expression pattern that matches words in an initial-caps formatted string. This pattern identifies: <list type="bullet"><item><description>All-uppercase acronyms (e.g., "NASA", "AI", "RADAR").</description></item><item><description>Capitalized words that follow PascalCase or CamelCase conventions (e.g., "Research", "Lab").</description></item></list> The matched words can be used to transform an initial-caps string into a space-separated phrase while preserving acronyms.</summary>
         public const string InitialCapsWordPattern = @"[A-Z]+(?![a-z])|[A-Z][a-z]*";
 
-        /// <summary>
-        /// Initializes static data or performs actions that need to be performed
-        /// once only for the <see cref="T:xyLOGIX.Core.Extensions.Transform" /> class.
-        /// </summary>
-        /// <remarks>
-        /// This constructor is called automatically prior to the first instance
-        /// being created or before any static members are referenced.
-        /// <para />
-        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
-        /// attribute in order to simplify the logging output.
-        /// </remarks>
+        /// <summary>Initializes static data or performs actions that need to be performed once only for the <see cref="T:xyLOGIX.Core.Extensions.Transform" /> class.</summary>
+        /// <remarks>This constructor is called automatically prior to the first instance being created or before any static members are referenced. <para /> We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c> attribute in order to simplify the logging output.</remarks>
         [Log(AttributeExclude = true)]
         static Transform() { }
 
-        /// <summary>
-        /// Converts an initial-caps string into a space-separated, lowercase
-        /// phrase, preserving acronyms.
-        /// </summary>
+        /// <summary>Converts an initial-caps string into a space-separated, lowercase phrase, preserving acronyms.</summary>
         /// <param name="input">The initial-caps string to be transformed. (Required.)</param>
-        /// <returns>
-        /// A <see cref="T:System.String" /> where all words are separated by
-        /// spaces. Acronyms remain in uppercase while other words are converted to
-        /// lowercase. If <paramref name="input" /> is <see langword="null" /> or empty, an
-        /// empty string is returned.
-        /// </returns>
+        /// <returns>A <see cref="T:System.String" /> where all words are separated by spaces. Acronyms remain in uppercase while other words are converted to lowercase. If <paramref name="input" /> is <see langword="null" /> or empty, an empty string is returned.</returns>
         [Log(AttributeExclude = true)]
         [return: NotLogged]
         public static string PascalCasedTextToPhrase([NotLogged] string input)
@@ -88,8 +45,7 @@ namespace xyLOGIX.Core.Extensions
 
                 var output = string.Empty;
 
-                // Match uppercase acronyms, capitalized words, and uppercase-to-lowercase
-                // transitions
+                // Match uppercase acronyms, capitalized words, and uppercase-to-lowercase transitions
                 var matches = Regex.Matches(input, InitialCapsWordPattern);
 
                 if (matches.Count > 0)

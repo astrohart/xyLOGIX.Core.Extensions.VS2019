@@ -4,42 +4,78 @@ using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>Defines the publicly-exposed methods and properties of controls that support auto-scrolling behavior.</summary>
+    /// <summary>
+    /// Defines the publicly-exposed methods and properties of controls that
+    /// support auto-scrolling behavior.
+    /// </summary>
     public interface IScrollableControl : IControl
     {
-        /// <summary>Gets or sets a value indicating whether the container enables the user to scroll to any controls placed outside its visible boundaries.</summary>
-        /// <returns><see langword="true" /> if the container enables auto-scrolling; otherwise, <see langword="false" />. The default value is <see langword="false" />.</returns>
+        /// <summary>
+        /// Gets or sets a value indicating whether the container enables the user
+        /// to scroll to any controls placed outside its visible boundaries.
+        /// </summary>
+        /// <returns>
+        /// <see langword="true" /> if the container enables auto-scrolling;
+        /// otherwise, <see langword="false" />. The default value is
+        /// <see langword="false" />.
+        /// </returns>
         bool AutoScroll { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>Gets or sets the size of the auto-scroll margin.</summary>
-        /// <returns>A <see cref="T:System.Drawing.Size" /> that represents the height and width of the auto-scroll margin in pixels.</returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">The <see cref="P:System.Drawing.Size.Height" /> or <see cref="P:System.Drawing.Size.Width" /> value assigned is less than 0.</exception>
+        /// <returns>
+        /// A <see cref="T:System.Drawing.Size" /> that represents the height and
+        /// width of the auto-scroll margin in pixels.
+        /// </returns>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">
+        /// The
+        /// <see cref="P:System.Drawing.Size.Height" /> or
+        /// <see cref="P:System.Drawing.Size.Width" /> value assigned is less than 0.
+        /// </exception>
         Size AutoScrollMargin { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>Gets or sets the minimum size of the auto-scroll.</summary>
-        /// <returns>A <see cref="T:System.Drawing.Size" /> that determines the minimum size of the virtual area through which the user can scroll.</returns>
+        /// <returns>
+        /// A <see cref="T:System.Drawing.Size" /> that determines the minimum
+        /// size of the virtual area through which the user can scroll.
+        /// </returns>
         Size AutoScrollMinSize { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>Gets or sets the location of the auto-scroll position.</summary>
-        /// <returns>A <see cref="T:System.Drawing.Point" /> that represents the auto-scroll position in pixels.</returns>
+        /// <returns>
+        /// A <see cref="T:System.Drawing.Point" /> that represents the
+        /// auto-scroll position in pixels.
+        /// </returns>
         Point AutoScrollPosition { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
 
         /// <summary>Gets the dock padding settings for all edges of the control.</summary>
-        /// <returns>A <see cref="T:System.Windows.Forms.ScrollableControl.DockPaddingEdges" /> that represents the padding for all the edges of a docked control.</returns>
+        /// <returns>
+        /// A
+        /// <see cref="T:System.Windows.Forms.ScrollableControl.DockPaddingEdges" /> that
+        /// represents the padding for all the edges of a docked control.
+        /// </returns>
         ScrollableControl.DockPaddingEdges DockPadding { [DebuggerStepThrough] get; }
 
         /// <summary>Gets the characteristics associated with the horizontal scroll bar.</summary>
-        /// <returns>A <see cref="T:System.Windows.Forms.HScrollProperties" /> that contains information about the horizontal scroll bar.</returns>
+        /// <returns>
+        /// A <see cref="T:System.Windows.Forms.HScrollProperties" /> that
+        /// contains information about the horizontal scroll bar.
+        /// </returns>
         HScrollProperties HorizontalScroll { [DebuggerStepThrough] get; }
 
         /// <summary>Gets the characteristics associated with the vertical scroll bar.</summary>
-        /// <returns>A <see cref="T:System.Windows.Forms.VScrollProperties" /> that contains information about the vertical scroll bar.</returns>
+        /// <returns>
+        /// A <see cref="T:System.Windows.Forms.VScrollProperties" /> that
+        /// contains information about the vertical scroll bar.
+        /// </returns>
         VScrollProperties VerticalScroll { [DebuggerStepThrough] get; }
 
         /// <summary>Occurs when the user or code scrolls through the client area.</summary>
         event ScrollEventHandler Scroll;
 
-        /// <summary>Scrolls the specified child control into view on an auto-scroll enabled control.</summary>
+        /// <summary>
+        /// Scrolls the specified child control into view on an auto-scroll
+        /// enabled control.
+        /// </summary>
         /// <param name="activeControl">The child control to scroll into view.</param>
         void ScrollControlIntoView(Control activeControl);
 

@@ -8,10 +8,20 @@ namespace xyLOGIX.Core.Extensions
     [Log(AttributeExclude = true)]
     public static class UnsignedIntExtensions
     {
-        /// <summary>Returns a value indicating whether the specified <paramref name="value" /> is equal to one of the items in a collection of integers.</summary>
+        /// <summary>
+        /// Returns a value indicating whether the specified
+        /// <paramref name="value" /> is equal to one of the items in a collection of
+        /// integers.
+        /// </summary>
         /// <param name="value">Integer to be compared to the members of the list.</param>
-        /// <param name="list">Collection of integers that should be searched for the <paramref name="value" />.</param>
-        /// <returns><see langword="true" /> if <paramref name="value" /> is one of the elements of the collection; <see langword="false" /> if not.</returns>
+        /// <param name="list">
+        /// Collection of integers that should be searched for the
+        /// <paramref name="value" />.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if <paramref name="value" /> is one of the
+        /// elements of the collection; <see langword="false" /> if not.
+        /// </returns>
         public static bool EqualsOneOf([NotLogged] this uint value, [NotLogged] params int[] list)
         {
             var result = false;
@@ -43,14 +53,33 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>Determines whether a bitmask is 'on' or 'off'.</summary>
         /// <param name="num">(Required.) Value containing the data to be checked.</param>
         /// <param name="bitmask">(Required.) Bitmask.</param>
-        /// <returns><see langword="true" /> if the bit that is identified by the bitmask in the data is 'on'; <see langword="false" /> if it is not.</returns>
+        /// <returns>
+        /// <see langword="true" /> if the bit that is identified by the bitmask
+        /// in the data is 'on'; <see langword="false" /> if it is not.
+        /// </returns>
         public static bool IsBitmaskOn(this uint num, uint bitmask)
             => (num & bitmask) != 0;
 
-        /// <summary>Converts an <see cref="T:System.UInt32" /><paramref name="value" /> to its ordinal string representation, appending the appropriate suffix (e.g., <c>"st"</c>, <c>"nd"</c>, <c>"rd"</c>, <c>"th"</c>, etc.) based on the specified <paramref name="value" />.</summary>
-        /// <param name="value">(Required.) An <see cref="T:System.UInt32" /> value that represents the number to format. <para /><b>NOTE:</b> The argument of this parameter must be <c>1</c> or greater.</param>
-        /// <returns>If successful, a <see cref="T:System.String" /> containing the ordinal representation of the provided <paramref name="value" />.</returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">Thrown when the provided <paramref name="value" /> is less than 1.</exception>
+        /// <summary>
+        /// Converts an <see cref="T:System.UInt32" /><paramref name="value" /> to
+        /// its ordinal string representation, appending the appropriate suffix (e.g.,
+        /// <c>"st"</c>, <c>"nd"</c>, <c>"rd"</c>, <c>"th"</c>, etc.) based on the
+        /// specified <paramref name="value" />.
+        /// </summary>
+        /// <param name="value">
+        /// (Required.) An <see cref="T:System.UInt32" /> value that
+        /// represents the number to format.
+        /// <para />
+        /// <b>NOTE:</b> The argument of this parameter must be <c>1</c> or greater.
+        /// </param>
+        /// <returns>
+        /// If successful, a <see cref="T:System.String" /> containing the ordinal
+        /// representation of the provided <paramref name="value" />.
+        /// </returns>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">
+        /// Thrown when the provided
+        /// <paramref name="value" /> is less than 1.
+        /// </exception>
         public static string ToOrdinalString(this uint value)
         {
             if (value < 1)

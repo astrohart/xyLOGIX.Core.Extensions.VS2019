@@ -5,14 +5,28 @@ using xyLOGIX.Core.Debug;
 
 namespace xyLOGIX.Core.Extensions
 {
-    /// <summary>Exposes static method(s) to perform various mathematical calculations, such as percentage change.</summary>
+    /// <summary>
+    /// Exposes static method(s) to perform various mathematical calculations,
+    /// such as percentage change.
+    /// </summary>
     [Log(AttributeExclude = true)]
     public static class Calculate
     {
-        /// <summary>Returns the delta, or where you <paramref name="end" /> up, minus where you <paramref name="start" />. <para /> If the values are retrieved from time-series data, then <paramref name="end" /> is the value from the time closest to now, and <paramref name="start" /> is from back in the past.</summary>
+        /// <summary>
+        /// Returns the delta, or where you <paramref name="end" /> up, minus
+        /// where you <paramref name="start" />.
+        /// <para />
+        /// If the values are retrieved from time-series data, then <paramref name="end" />
+        /// is the value from the time closest to now, and <paramref name="start" /> is
+        /// from back in the past.
+        /// </summary>
         /// <param name="end">(Required.) Current, or more recent, value.</param>
         /// <param name="start">(Required.) Starting value.</param>
-        /// <returns>Zero if <paramref name="end" /> and <paramref name="start" /> are identically equal to each other; otherwise, the difference between <paramref name="end" /> and <paramref name="start" />.</returns>
+        /// <returns>
+        /// Zero if <paramref name="end" /> and <paramref name="start" /> are
+        /// identically equal to each other; otherwise, the difference between
+        /// <paramref name="end" /> and <paramref name="start" />.
+        /// </returns>
         public static decimal DeltaBetween(decimal end, decimal start)
         {
             var result = decimal.Zero;
@@ -34,11 +48,22 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>Given an <paramref name="end" /> and a <paramref name="start" /> value, where <paramref name="end" /> is further back in the past than <paramref name="start" />, computes the fractional average rate of change between the two.</summary>
+        /// <summary>
+        /// Given an <paramref name="end" /> and a <paramref name="start" />
+        /// value, where <paramref name="end" /> is further back in the past than
+        /// <paramref name="start" />, computes the fractional average rate of change
+        /// between the two.
+        /// </summary>
         /// <param name="end">(Required.) Current, or more recent, value.</param>
         /// <param name="start">(Required.) Starting value.</param>
-        /// <remarks>The result of calling this method, in the event that <paramref name="start" /> is set equal to zero, is defined to be zero.</remarks>
-        /// <returns>Average fractional rate of the change from <paramref name="start" /> to <paramref name="end" />.</returns>
+        /// <remarks>
+        /// The result of calling this method, in the event that
+        /// <paramref name="start" /> is set equal to zero, is defined to be zero.
+        /// </remarks>
+        /// <returns>
+        /// Average fractional rate of the change from <paramref name="start" />
+        /// to <paramref name="end" />.
+        /// </returns>
         public static decimal FractionalChangeBetween(decimal end, decimal start)
         {
             var result = decimal.Zero;
@@ -63,11 +88,20 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>Calculates the percentage change between an <paramref name="initialValue" /> and a <paramref name="finalValue" />.</summary>
+        /// <summary>
+        /// Calculates the percentage change between an
+        /// <paramref name="initialValue" /> and a <paramref name="finalValue" />.
+        /// </summary>
         /// <param name="initialValue">The initial value. Must not be equal to zero.</param>
         /// <param name="finalValue">The final value.</param>
-        /// <returns>The percentage change between the <paramref name="initialValue" /> and <paramref name="finalValue" />.</returns>
-        /// <exception cref="DivideByZeroException">Thrown when the specified <paramref name="initialValue" /> is equal to zero.</exception>
+        /// <returns>
+        /// The percentage change between the <paramref name="initialValue" /> and
+        /// <paramref name="finalValue" />.
+        /// </returns>
+        /// <exception cref="DivideByZeroException">
+        /// Thrown when the specified
+        /// <paramref name="initialValue" /> is equal to zero.
+        /// </exception>
         public static double PercentageChangeOf(long initialValue, long finalValue)
         {
             if (0L.Equals(initialValue)) // cannot divide by zero.
@@ -79,11 +113,20 @@ namespace xyLOGIX.Core.Extensions
             return percentageChange;
         }
 
-        /// <summary>Calculates the percentage change between an <paramref name="initialValue" /> and a <paramref name="finalValue" />.</summary>
+        /// <summary>
+        /// Calculates the percentage change between an
+        /// <paramref name="initialValue" /> and a <paramref name="finalValue" />.
+        /// </summary>
         /// <param name="initialValue">The initial value. Must not be equal to zero.</param>
         /// <param name="finalValue">The final value.</param>
-        /// <returns>The percentage change between the <paramref name="initialValue" /> and <paramref name="finalValue" />.</returns>
-        /// <exception cref="DivideByZeroException">Thrown when the specified <paramref name="initialValue" /> is equal to zero.</exception>
+        /// <returns>
+        /// The percentage change between the <paramref name="initialValue" /> and
+        /// <paramref name="finalValue" />.
+        /// </returns>
+        /// <exception cref="DivideByZeroException">
+        /// Thrown when the specified
+        /// <paramref name="initialValue" /> is equal to zero.
+        /// </exception>
         public static double PercentageChangeOf(int initialValue, int finalValue)
         {
             if (0.Equals(initialValue)) // cannot divide by zero.
@@ -95,11 +138,20 @@ namespace xyLOGIX.Core.Extensions
             return percentageChange;
         }
 
-        /// <summary>Calculates the percentage change between an <paramref name="initialValue" /> and a <paramref name="finalValue" />.</summary>
+        /// <summary>
+        /// Calculates the percentage change between an
+        /// <paramref name="initialValue" /> and a <paramref name="finalValue" />.
+        /// </summary>
         /// <param name="initialValue">The initial value. Must not be equal to zero.</param>
         /// <param name="finalValue">The final value.</param>
-        /// <returns>The percentage change between the <paramref name="initialValue" /> and <paramref name="finalValue" />.</returns>
-        /// <exception cref="DivideByZeroException">Thrown when the specified <paramref name="initialValue" /> is equal to zero.</exception>
+        /// <returns>
+        /// The percentage change between the <paramref name="initialValue" /> and
+        /// <paramref name="finalValue" />.
+        /// </returns>
+        /// <exception cref="DivideByZeroException">
+        /// Thrown when the specified
+        /// <paramref name="initialValue" /> is equal to zero.
+        /// </exception>
         public static double PercentageChangeOf(double initialValue, double finalValue)
         {
             if (0D.Equals(initialValue)) // cannot divide by zero.
@@ -111,11 +163,20 @@ namespace xyLOGIX.Core.Extensions
             return percentageChange;
         }
 
-        /// <summary>Calculates the percentage change between an <paramref name="initialValue" /> and a <paramref name="finalValue" />.</summary>
+        /// <summary>
+        /// Calculates the percentage change between an
+        /// <paramref name="initialValue" /> and a <paramref name="finalValue" />.
+        /// </summary>
         /// <param name="initialValue">The initial value. Must not be equal to zero.</param>
         /// <param name="finalValue">The final value.</param>
-        /// <returns>The percentage change between the <paramref name="initialValue" /> and <paramref name="finalValue" />.</returns>
-        /// <exception cref="DivideByZeroException">Thrown when the specified <paramref name="initialValue" /> is equal to zero.</exception>
+        /// <returns>
+        /// The percentage change between the <paramref name="initialValue" /> and
+        /// <paramref name="finalValue" />.
+        /// </returns>
+        /// <exception cref="DivideByZeroException">
+        /// Thrown when the specified
+        /// <paramref name="initialValue" /> is equal to zero.
+        /// </exception>
         public static decimal PercentageChangeOf(decimal initialValue, decimal finalValue)
         {
             if (0M.Equals(initialValue)) // cannot divide by zero.
@@ -131,7 +192,10 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="a">The first number.</param>
         /// <param name="b">The second number.</param>
         /// <returns>The percentage difference between the two numbers.</returns>
-        /// <remarks>The formula used to calculate the percentage difference is: (|a - b| / ((a + b) / 2)) * 100</remarks>
+        /// <remarks>
+        /// The formula used to calculate the percentage difference is: (|a - b| /
+        /// ((a + b) / 2)) * 100
+        /// </remarks>
         public static double PercentageDifference(double a, double b)
         {
             var absoluteDifference = Math.Abs(a - b);
@@ -145,7 +209,10 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="a">The first number.</param>
         /// <param name="b">The second number.</param>
         /// <returns>The percentage difference between the two numbers.</returns>
-        /// <remarks>The formula used to calculate the percentage difference is: (|a - b| / ((a + b) / 2)) * 100</remarks>
+        /// <remarks>
+        /// The formula used to calculate the percentage difference is: (|a - b| /
+        /// ((a + b) / 2)) * 100
+        /// </remarks>
         public static decimal PercentageDifference(decimal a, decimal b)
         {
             var absoluteDifference = Math.Abs(a - b);
@@ -159,7 +226,10 @@ namespace xyLOGIX.Core.Extensions
         /// <param name="a">The first number.</param>
         /// <param name="b">The second number.</param>
         /// <returns>The percentage difference between the two numbers.</returns>
-        /// <remarks>The formula used to calculate the percentage difference is: (|a - b| / ((a + b) / 2)) * 100</remarks>
+        /// <remarks>
+        /// The formula used to calculate the percentage difference is: (|a - b| /
+        /// ((a + b) / 2)) * 100
+        /// </remarks>
         public static double PercentageDifference(int a, int b)
         {
             var absoluteDifference = Math.Abs(a - b);
@@ -169,9 +239,23 @@ namespace xyLOGIX.Core.Extensions
             return relativeDifference * 100D;
         }
 
-        /// <summary>Computes the n-ary product of all the specified <paramref name="factors" />. <para /> If any one factor is zero, then this method does not even bother carrying out the multiplication; it simply returns zero.</summary>
-        /// <param name="factors">(Required.) One or more <see langword="decimal" /> values that will serve as the factors to be multiplied.</param>
-        /// <returns>The n-ary product of the specified <paramref name="factors" />, or zero if any one factor is zero. <para /> If no values are passed, then this method is defined to return zero also.</returns>
+        /// <summary>
+        /// Computes the n-ary product of all the specified
+        /// <paramref name="factors" />.
+        /// <para />
+        /// If any one factor is zero, then this method does not even bother carrying out
+        /// the multiplication; it simply returns zero.
+        /// </summary>
+        /// <param name="factors">
+        /// (Required.) One or more <see langword="decimal" /> values
+        /// that will serve as the factors to be multiplied.
+        /// </param>
+        /// <returns>
+        /// The n-ary product of the specified <paramref name="factors" />, or
+        /// zero if any one factor is zero.
+        /// <para />
+        /// If no values are passed, then this method is defined to return zero also.
+        /// </returns>
         public static decimal ProductOf(params decimal[] factors)
         {
             var result = decimal.Zero;
@@ -202,11 +286,34 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>Evaluates the quotient (i.e., the result when you divide two numbers) of the specified <paramref name="numerator" /> and <paramref name="denominator" />, provided the <paramref name="denominator" /> is not equal to zero and neither is the <paramref name="numerator" />.</summary>
-        /// <param name="numerator">(Required.) A <see cref="T:System.Decimal" /> value to serve as the divisor.</param>
-        /// <param name="denominator">(Required.) A <see cref="T:System.Decimal" /> value to serve as the dividend. <para /> Must not be identically equal to zero.</param>
-        /// <remarks>Zero is returned in the event that either the <paramref name="numerator" /> or the <paramref name="denominator" /> are identically zero. <para /> Zero is also returned in the event an exception is raised by the division operator.</remarks>
-        /// <returns>The quotient of the <paramref name="numerator" /> divided by the <paramref name="denominator" />.</returns>
+        /// <summary>
+        /// Evaluates the quotient (i.e., the result when you divide two numbers)
+        /// of the specified <paramref name="numerator" /> and
+        /// <paramref name="denominator" />, provided the <paramref name="denominator" />
+        /// is not equal to zero and neither is the <paramref name="numerator" />.
+        /// </summary>
+        /// <param name="numerator">
+        /// (Required.) A <see cref="T:System.Decimal" /> value to
+        /// serve as the divisor.
+        /// </param>
+        /// <param name="denominator">
+        /// (Required.) A <see cref="T:System.Decimal" /> value
+        /// to serve as the dividend.
+        /// <para />
+        /// Must not be identically equal to zero.
+        /// </param>
+        /// <remarks>
+        /// Zero is returned in the event that either the
+        /// <paramref name="numerator" /> or the <paramref name="denominator" /> are
+        /// identically zero.
+        /// <para />
+        /// Zero is also returned in the event an exception is raised by the division
+        /// operator.
+        /// </remarks>
+        /// <returns>
+        /// The quotient of the <paramref name="numerator" /> divided by the
+        /// <paramref name="denominator" />.
+        /// </returns>
         public static decimal QuotientOf(decimal numerator, decimal denominator)
         {
             var result = decimal.Zero;
@@ -229,27 +336,67 @@ namespace xyLOGIX.Core.Extensions
             return result;
         }
 
-        /// <summary>Computes the zero floor. Meaning, if the specified <paramref name="value" /> is negative, then this method returns zero. <para /> If the specified <paramref name="value" /> is zero or greater, then this method is the identity.</summary>
+        /// <summary>
+        /// Computes the zero floor. Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
         /// <param name="value">(Required.) Input value.</param>
-        /// <returns>Zero if the specified <paramref name="value" /> is negative; otherwise, if the specified <paramref name="value" /> is zero or greater, then the method is the identity map.</returns>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
         public static int ZeroFloorOf(int value)
             => value < 0 ? 0 : value;
 
-        /// <summary>Computes the zero floor. Meaning, if the specified <paramref name="value" /> is negative, then this method returns zero. <para /> If the specified <paramref name="value" /> is zero or greater, then this method is the identity.</summary>
+        /// <summary>
+        /// Computes the zero floor. Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
         /// <param name="value">(Required.) Input value.</param>
-        /// <returns>Zero if the specified <paramref name="value" /> is negative; otherwise, if the specified <paramref name="value" /> is zero or greater, then the method is the identity map.</returns>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
         public static long ZeroFloorOf(long value)
             => value < 0L ? 0L : value;
 
-        /// <summary>Computes the zero floor. Meaning, if the specified <paramref name="value" /> is negative, then this method returns zero. <para /> If the specified <paramref name="value" /> is zero or greater, then this method is the identity.</summary>
+        /// <summary>
+        /// Computes the zero floor. Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
         /// <param name="value">(Required.) Input value.</param>
-        /// <returns>Zero if the specified <paramref name="value" /> is negative; otherwise, if the specified <paramref name="value" /> is zero or greater, then the method is the identity map.</returns>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
         public static decimal ZeroFloorOf(decimal value)
             => value < 0M ? 0M : value;
 
-        /// <summary>Computes the zero floor. Meaning, if the specified <paramref name="value" /> is negative, then this method returns zero. <para /> If the specified <paramref name="value" /> is zero or greater, then this method is the identity.</summary>
+        /// <summary>
+        /// Computes the zero floor. Meaning, if the specified
+        /// <paramref name="value" /> is negative, then this method returns zero.
+        /// <para />
+        /// If the specified <paramref name="value" /> is zero or greater, then this method
+        /// is the identity.
+        /// </summary>
         /// <param name="value">(Required.) Input value.</param>
-        /// <returns>Zero if the specified <paramref name="value" /> is negative; otherwise, if the specified <paramref name="value" /> is zero or greater, then the method is the identity map.</returns>
+        /// <returns>
+        /// Zero if the specified <paramref name="value" /> is negative;
+        /// otherwise, if the specified <paramref name="value" /> is zero or greater, then
+        /// the method is the identity map.
+        /// </returns>
         public static double ZeroFloorOf(double value)
             => value < 0D ? 0D : value;
     }

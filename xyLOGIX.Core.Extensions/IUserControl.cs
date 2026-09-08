@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace xyLOGIX.Core.Extensions
@@ -8,7 +7,7 @@ namespace xyLOGIX.Core.Extensions
     /// Defines the publicly-exposed events, methods and properties of a
     /// control that inherits <see cref="T:System.Windows.Forms.UserControl" />.
     /// </summary>
-    public interface IUserControl : IWin32Window, IDisposable
+    public interface IUserControl : IControl
     {
         /// <summary>Gets or sets the border style for the text box.</summary>
         /// <value>
@@ -16,11 +15,5 @@ namespace xyLOGIX.Core.Extensions
         /// border appearance.
         /// </value>
         BorderStyle BorderStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
-
-        /// <summary>
-        /// Gets a value indicating whether the control has been disposed of by a
-        /// call to the <see cref="M:System.IDisposable.Dispose" /> method.
-        /// </summary>
-        bool IsDisposed { [DebuggerStepThrough] get; }
     }
 }

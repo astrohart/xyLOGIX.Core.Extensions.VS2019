@@ -16,5 +16,11 @@ namespace xyLOGIX.Core.Extensions
         /// border appearance.
         /// </value>
         BorderStyle BorderStyle { [DebuggerStepThrough] get; [DebuggerStepThrough] set; }
+
+        /// <summary>
+        /// Gets a value indicating whether the control has been disposed of by a
+        /// call to the <see cref="M:System.IDisposable.Dispose" /> method.
+        /// </summary>
+        bool IsDisposed { [DebuggerStepThrough] get; }
     }
 }

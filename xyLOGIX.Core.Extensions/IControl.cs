@@ -35,10 +35,8 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         string AccessibleDefaultActionDescription
         {
-            [DebuggerStepThrough]
-            get;
-            [DebuggerStepThrough]
-            set;
+            [DebuggerStepThrough] get;
+            [DebuggerStepThrough] set;
         }
 
         /// <summary>

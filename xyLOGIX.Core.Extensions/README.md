@@ -555,6 +555,7 @@
   - [IsIncludedInRangeSilent(value,lowerBound,upperBound)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsIncludedInRangeSilent-System-Int32,System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsIncludedInRangeSilent(System.Int32,System.Int32,System.Int32)')
   - [IsNaturalNumber(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNaturalNumber-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNaturalNumber(System.Int32)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Decimal)')
+  - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Double- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Double)')
   - [IsNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNegative(System.Int32)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Decimal- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Decimal)')
   - [IsNonNegative(value)](#M-xyLOGIX-Core-Extensions-NumberExtensions-IsNonNegative-System-Int32- 'xyLOGIX.Core.Extensions.NumberExtensions.IsNonNegative(System.Int32)')
@@ -10791,6 +10792,25 @@ less than zero; `false` otherwise.
 | ---- | ---- | ----------- |
 | value | [System.Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') | (Required.) Value to be compared. Must be of
 [Decimal](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Decimal 'System.Decimal') data type. |
+
+<a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Double-'></a>
+### IsNegative(value) `method`
+
+##### Summary
+
+Determines if a `value` is negative.
+
+##### Returns
+
+`true` if the `value` is strictly
+less than zero; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| value | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') | (Required.) Value to be compared. Must be of
+[Double ](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double  'System.Double ') data type. |
 
 <a name='M-xyLOGIX-Core-Extensions-NumberExtensions-IsNegative-System-Int32-'></a>
 ### IsNegative(value) `method`

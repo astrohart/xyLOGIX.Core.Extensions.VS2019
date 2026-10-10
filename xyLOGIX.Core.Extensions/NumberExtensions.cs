@@ -583,7 +583,7 @@ namespace xyLOGIX.Core.Extensions
         /// <summary>Determines if a <paramref name="value" /> is negative.</summary>
         /// <param name="value">
         /// (Required.) Value to be compared. Must be of
-        /// <see cref="T:System.Double  " /> data type.
+        /// <see cref="T:System.Double " /> data type.
         /// </param>
         /// <returns>
         /// <see langword="true" /> if the <paramref name="value" /> is strictly
@@ -786,7 +786,7 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static int ToInt32(this uint value)
         {
-            var result = -1;
+            int result;
 
             try
             {

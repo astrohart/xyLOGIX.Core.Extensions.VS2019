@@ -580,6 +580,18 @@ namespace xyLOGIX.Core.Extensions
         public static bool IsNegative(this decimal value)
             => value < decimal.Zero;
 
+        /// <summary>Determines if a <paramref name="value" /> is negative.</summary>
+        /// <param name="value">
+        /// (Required.) Value to be compared. Must be of
+        /// <see cref="T:System.Double  " /> data type.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if the <paramref name="value" /> is strictly
+        /// less than zero; <see langword="false" /> otherwise.
+        /// </returns>
+        public static bool IsNegative(this double value)
+            => value < 0.0D;
+
         /// <summary>
         /// Determines whether the specified <paramref name="value" /> is
         /// negative; i.e., strictly less than zero.

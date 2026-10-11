@@ -466,8 +466,10 @@
 - [IUserControl](#T-xyLOGIX-Core-Extensions-IUserControl 'xyLOGIX.Core.Extensions.IUserControl')
   - [BorderStyle](#P-xyLOGIX-Core-Extensions-IUserControl-BorderStyle 'xyLOGIX.Core.Extensions.IUserControl.BorderStyle')
 - [IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions')
+  - [#cctor()](#M-xyLOGIX-Core-Extensions-IntExtensions-#cctor 'xyLOGIX.Core.Extensions.IntExtensions.#cctor')
   - [EqualsOneOf(value,list)](#M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]- 'xyLOGIX.Core.Extensions.IntExtensions.EqualsOneOf(System.Int32,System.Int32[])')
   - [IsBitmaskOn(num,bitmask)](#M-xyLOGIX-Core-Extensions-IntExtensions-IsBitmaskOn-System-Int32,System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.IsBitmaskOn(System.Int32,System.Int32)')
+  - [IsNaturalNumber(number)](#M-xyLOGIX-Core-Extensions-IntExtensions-IsNaturalNumber-System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.IsNaturalNumber(System.Int32)')
   - [ToOrdinalString(value)](#M-xyLOGIX-Core-Extensions-IntExtensions-ToOrdinalString-System-Int32- 'xyLOGIX.Core.Extensions.IntExtensions.ToOrdinalString(System.Int32)')
 - [LanguageArticleType](#T-xyLOGIX-Core-Extensions-LanguageArticleType 'xyLOGIX.Core.Extensions.LanguageArticleType')
   - [Definite](#F-xyLOGIX-Core-Extensions-LanguageArticleType-Definite 'xyLOGIX.Core.Extensions.LanguageArticleType.Definite')
@@ -8777,6 +8779,29 @@ xyLOGIX.Core.Extensions
 
 Provides methods that extend the [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') class.
 
+<a name='M-xyLOGIX-Core-Extensions-IntExtensions-#cctor'></a>
+### #cctor() `method`
+
+##### Summary
+
+Initializes `static` data or performs actions that
+need to be performed once only for the
+[IntExtensions](#T-xyLOGIX-Core-Extensions-IntExtensions 'xyLOGIX.Core.Extensions.IntExtensions') class.
+
+##### Parameters
+
+This method has no parameters.
+
+##### Remarks
+
+This constructor is called automatically prior to the first instance
+being created or before any `static` members are referenced.
+
+
+
+We've decorated this constructor with the `[Log(AttributeExclude = true)]`
+attribute in order to simplify the logging output.
+
 <a name='M-xyLOGIX-Core-Extensions-IntExtensions-EqualsOneOf-System-Int32,System-Int32[]-'></a>
 ### EqualsOneOf(value,list) `method`
 
@@ -8817,6 +8842,27 @@ in the data is 'on'; `false` if it is not.
 | ---- | ---- | ----------- |
 | num | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Value containing the data to be checked. |
 | bitmask | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) Bitmask. |
+
+<a name='M-xyLOGIX-Core-Extensions-IntExtensions-IsNaturalNumber-System-Int32-'></a>
+### IsNaturalNumber(number) `method`
+
+##### Summary
+
+Gets a value indicating whether the specified
+`number` is a natural number (i.e., a positive integer
+greater than or equal to 1).
+
+##### Returns
+
+`true` if `number` is a natural
+number; `false` otherwise.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| number | [System.Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') | (Required.) The [Int32](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Int32 'System.Int32') value that
+is to be checked for membership in the set of all natural numbers. |
 
 <a name='M-xyLOGIX-Core-Extensions-IntExtensions-ToOrdinalString-System-Int32-'></a>
 ### ToOrdinalString(value) `method`

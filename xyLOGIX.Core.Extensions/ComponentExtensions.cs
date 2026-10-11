@@ -48,91 +48,90 @@ namespace xyLOGIX.Core.Extensions
         [Log(AttributeExclude = true)]
         public static bool IsNullOrDisposed([NotLogged] this IComponent component)
         {
-            var result = false;
+            var result = true;
 
             try
             {
                 // null -> considered disposed for callers that want to be defensive
-                if (component == null)
+                if (component == null) return result;
+
+                // Fast path for WinForms controls
+                if (component is Control ctrl)
                 {
-                    result = true;
+                    result = ctrl.InvokeIfRequired(() => ctrl.IsDisposed || ctrl.Disposing);
                 }
                 else
                 {
-                    // Fast path for WinForms controls
-                    if (component is Control ctrl)
-                    {
-                        result = ctrl.InvokeIfRequired(() => ctrl.IsDisposed);
-                    }
-                    else
-                    {
-                        // Reflection: look for public/non-public bool properties named IsDisposed /
-                        // Disposed
-                        new Control().InvokeIfRequired(() =>
+                    // Reflection: look for public/non-public bool properties named IsDisposed /
+                    // Disposed
+                    new Control().InvokeIfRequired(() =>
+                        {
+                            var t = component.GetType();
+                            var prop =
+                                t.GetProperty(
+                                    "IsDisposed",
+                                    BindingFlags.Instance | BindingFlags.Public |
+                                    BindingFlags.NonPublic
+                                ) ?? t.GetProperty(
+                                    "Disposed",
+                                    BindingFlags.Instance | BindingFlags.Public |
+                                    BindingFlags.NonPublic
+                                ) ?? t.GetProperty(
+                                    "Disposing",
+                                    BindingFlags.Instance | BindingFlags.Public |
+                                    BindingFlags.NonPublic
+                                );
+
+                            if (prop != null && prop.PropertyType == typeof(bool))
                             {
-                                var t = component.GetType();
-                                var prop =
-                                    t.GetProperty(
-                                        "IsDisposed",
-                                        BindingFlags.Instance | BindingFlags.Public |
-                                        BindingFlags.NonPublic
-                                    ) ?? t.GetProperty(
-                                        "Disposed",
-                                        BindingFlags.Instance | BindingFlags.Public |
-                                        BindingFlags.NonPublic
+                                // property getter may throw if object is disposed; catch below
+                                result = (bool)prop.GetValue(component);
+                            }
+                            else
+                            {
+                                // Reflection: common private field names often used by
+                                // implementations
+                                var foundField = false;
+                                foreach (var fieldName in new[]
+                                         {
+                                             "_disposed", "disposed", "isDisposed", "m_disposed"
+                                         })
+                                {
+                                    var fld = t.GetField(
+                                        fieldName,
+                                        BindingFlags.Instance | BindingFlags.NonPublic |
+                                        BindingFlags.Public
                                     );
-
-                                if (prop != null && prop.PropertyType == typeof(bool))
-                                {
-                                    // property getter may throw if object is disposed; catch below
-                                    result = (bool)prop.GetValue(component);
+                                    if (fld == null || fld.FieldType != typeof(bool))
+                                        continue;
+                                    result = (bool)fld.GetValue(component);
+                                    foundField = true;
+                                    break;
                                 }
-                                else
+
+                                if (foundField) return;
+
+                                // Last resort: attempt to touch a benign property and see if
+                                // ObjectDisposedException is thrown. If touching throws
+                                // ObjectDisposedException, treat it as disposed; otherwise
+                                // assume not disposed.
+                                try
                                 {
-                                    // Reflection: common private field names often used by
-                                    // implementations
-                                    var foundField = false;
-                                    foreach (var fieldName in new[]
-                                             {
-                                                 "_disposed", "disposed", "isDisposed", "m_disposed"
-                                             })
-                                    {
-                                        var fld = t.GetField(
-                                            fieldName,
-                                            BindingFlags.Instance | BindingFlags.NonPublic |
-                                            BindingFlags.Public
-                                        );
-                                        if (fld == null || fld.FieldType != typeof(bool))
-                                            continue;
-                                        result = (bool)fld.GetValue(component);
-                                        foundField = true;
-                                        break;
-                                    }
-
-                                    if (foundField) return;
-
-                                    // Last resort: attempt to touch a benign property and see if
-                                    // ObjectDisposedException is thrown. If touching throws
-                                    // ObjectDisposedException, treat it as disposed; otherwise
-                                    // assume not disposed.
-                                    try
-                                    {
-                                        _ = component.Site; // benign probe
-                                        result = false;
-                                    }
-                                    catch (ObjectDisposedException)
-                                    {
-                                        result = true;
-                                    }
-                                    catch
-                                    {
-                                        // If anything else goes wrong, be conservative.
-                                        result = true;
-                                    }
+                                    _ = component.Site; // benign probe
+                                    result = false;
+                                }
+                                catch (ObjectDisposedException)
+                                {
+                                    result = true;
+                                }
+                                catch
+                                {
+                                    // If anything else goes wrong, be conservative.
+                                    result = true;
                                 }
                             }
-                        );
-                    }
+                        }
+                    );
                 }
             }
             catch (Exception ex)

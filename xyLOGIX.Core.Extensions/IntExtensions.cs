@@ -9,6 +9,21 @@ namespace xyLOGIX.Core.Extensions
     public static class IntExtensions
     {
         /// <summary>
+        /// Initializes <see langword="static" /> data or performs actions that
+        /// need to be performed once only for the
+        /// <see cref="T:xyLOGIX.Core.Extensions.IntExtensions" /> class.
+        /// </summary>
+        /// <remarks>
+        /// This constructor is called automatically prior to the first instance
+        /// being created or before any <see langword="static" /> members are referenced.
+        /// <para />
+        /// We've decorated this constructor with the <c>[Log(AttributeExclude = true)]</c>
+        /// attribute in order to simplify the logging output.
+        /// </remarks>
+        [Log(AttributeExclude = true)]
+        static IntExtensions() { }
+
+        /// <summary>
         /// Returns a value indicating whether the specified
         /// <paramref name="value" /> is equal to one of the items in a collection of
         /// integers.
@@ -22,6 +37,7 @@ namespace xyLOGIX.Core.Extensions
         /// <see langword="true" /> if <paramref name="value" /> is one of the
         /// elements of the collection; <see langword="false" /> if not.
         /// </returns>
+        [Log(AttributeExclude = true)]
         public static bool EqualsOneOf([NotLogged] this int value, [NotLogged] params int[] list)
         {
             var result = false;
@@ -59,6 +75,39 @@ namespace xyLOGIX.Core.Extensions
         /// </returns>
         public static bool IsBitmaskOn(this int num, int bitmask)
             => (num & bitmask) != 0;
+
+        /// <summary>
+        /// Gets a value indicating whether the specified
+        /// <paramref name="number" /> is a natural number (i.e., a positive integer
+        /// greater than or equal to 1).
+        /// </summary>
+        /// <param name="number">
+        /// (Required.) The <see cref="T:System.Int32" /> value that
+        /// is to be checked for membership in the set of all natural numbers.
+        /// </param>
+        /// <returns>
+        /// <see langword="true" /> if <paramref name="number" /> is a natural
+        /// number; <see langword="false" /> otherwise.
+        /// </returns>
+        [Log(AttributeExclude = true)]
+        public static bool IsNaturalNumber(this int number)
+        {
+            bool result;
+
+            try
+            {
+                result = number >= 1;
+            }
+            catch (Exception ex)
+            {
+                // dump all the exception info to the log
+                DebugUtils.LogException(ex);
+
+                result = false;
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Converts an <see cref="T:System.Int32" /><paramref name="value" /> to

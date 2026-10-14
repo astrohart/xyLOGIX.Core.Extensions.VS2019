@@ -784,7 +784,7 @@ namespace xyLOGIX.Core.Extensions
         /// If successful, a <see cref="T:System.Int32" /> representation of the
         /// specified <paramref name="value" />; otherwise, -1.
         /// </returns>
-        public static int ToInt32(this uint value)
+        public static int ToInt32([NotLogged] this uint value)
         {
             int result;
 
